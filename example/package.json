@@ -1,0 +1,10 @@
+{
+  "name": "mumpui-example",
+  "scripts": {
+    "start": "vite --host",
+    "setup": "rm -rf node_modules/mumpui && mkdir -p node_modules/mumpui && cp -r ../dist/* node_modules/mumpui"
+  },
+  "dependencies": {
+    "mumpui": "*"
+  }
+}

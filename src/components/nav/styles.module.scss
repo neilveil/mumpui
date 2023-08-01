@@ -1,0 +1,36 @@
+.nav {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  overflow: auto;
+  font-size: 0.8rem;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  div {
+    padding: 0.25rem 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+
+    &:hover {
+      color: var(--c-primary);
+    }
+  }
+
+  .selected {
+    color: var(--c-primary);
+
+    &::after {
+      position: absolute;
+      content: ' ';
+      bottom: -0.25rem;
+      left: 0;
+      width: 40%;
+      margin-left: 30%;
+      height: 2px;
+      background-color: var(--c-primary);
+    }
+  }
+}

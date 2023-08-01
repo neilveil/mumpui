@@ -1,0 +1,7 @@
+{
+  "name": "mumpui",
+  "description": "A lightweight flexible design system for developers",
+  "version": "0.2.0",
+  "main": "index.js",
+  "types": "types/index.d.ts"
+}

@@ -1,0 +1,64 @@
+*,
+:after,
+:before {
+  // user-select: none;
+  box-sizing: border-box;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  margin: 0;
+}
+// iOS input field fix
+input,
+input:before,
+input:after,
+textarea,
+textarea:before,
+textarea:after {
+  user-select: initial !important;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+button {
+  cursor: pointer;
+}
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+textarea {
+  resize: none;
+}
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+button {
+  -webkit-app-region: no-drag;
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+a {
+  text-decoration: none;
+}
+select::-ms-expand {
+  display: none !important;
+}
+select {
+  appearance: none;
+}

@@ -1,0 +1,68 @@
+.viewport {
+  width: 100%;
+  max-width: var(--viewport);
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.row-even {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.row-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.row-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.row-wrap {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.margin-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pointer {
+  cursor: pointer;
+  user-select: none;
+}
+
+.no-select {
+  user-select: none;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
