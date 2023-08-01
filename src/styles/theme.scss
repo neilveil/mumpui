@@ -11,6 +11,7 @@
 body[data-theme='light'] {
   --c-primary: #000000;
   --c-bg: #ffffff;
+  --c-light: #f8f8f8;
 
   --c-font-dark: #484848;
   --c-font: #888888;
@@ -21,6 +22,8 @@ body[data-theme='light'] {
   --c-blue: #1ea6ff;
   --c-yellow: #ffd93b;
   --c-orange: #fa8c16;
+
+  --border: 1px solid #e8e8e8;
 }
 
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons+Outlined');
@@ -41,6 +44,7 @@ body[data-theme='light'] {
 
   --base-font-size: 16px;
   --mp-border-radius: 8px;
+  --mp-stroke-width: 1px;
 
   --mp-fw-light: 300;
   --mp-fw-regular: 400;
@@ -64,11 +68,14 @@ body {
   --mp-c-bg: #ffffff;
   --mp-c-hover: #f8f8f8;
   --mp-c-stroke: #e8e8e8;
+  --mp-c-stroke-hover: #c8c8c8;
+  --mp-c-stroke-active: #a8a8a8;
   --mp-c-selection: #00000020;
 
   --mp-c-font-dark: #282828;
   --mp-c-font: #484848;
   --mp-c-font-light: #888888;
+  --mp-c-placeholder: #b8b8b8;
 
   --mp-c-link: #1677ff;
   --mp-c-mark: #ffebcf;
@@ -76,7 +83,7 @@ body {
   --mp-c-code-bg: #282828;
 
   --mp-c-success: #55c610;
-  --mp-c-danger: #e83e0a;
+  --mp-c-error: #e83e0a;
   --mp-c-warning: #ffd93b;
   --mp-c-info: #1ea6ff;
 }

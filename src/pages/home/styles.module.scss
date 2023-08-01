@@ -68,4 +68,25 @@
       }
     }
   }
+
+  .showcase {
+    margin: 2rem 0;
+    padding: 1rem;
+    border: var(--border);
+
+    .title {
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+      border-bottom: var(--border);
+    }
+
+    .info {
+      display: inline-block;
+      background-color: var(--c-light);
+      color: var(--c-font);
+      font-size: 0.7rem;
+      padding: 0.25rem 0.5rem;
+      margin-top: 1rem;
+    }
+  }
 }
