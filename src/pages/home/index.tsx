@@ -1,7 +1,7 @@
 import React from 'react'
 import s from './styles.module.scss'
 import { Link } from 'react-router-dom'
-import { Dropdown, Field, Fields, Form, Input, Textarea } from 'lib'
+import { Button, Checkbox, Dropdown, Field, Fields, File, Form, Input, Radio, Range, Textarea } from 'lib'
 
 export default class Main extends React.Component {
   state = {
@@ -10,7 +10,10 @@ export default class Main extends React.Component {
     multiselect: [],
     multiselectOptions: options,
     textarea: '',
-    color: '#000000'
+    color: '#000000',
+    checkbox: [1, 2],
+    radio: 1,
+    files: []
   }
 
   componentDidMount = async () => {}
@@ -216,6 +219,75 @@ export default class Main extends React.Component {
             <Field label='Color'>
               <Input type='color' onChange={e => this.setState({ color: e.target.value })} value={this.state.color} />
             </Field>
+
+            <div className={s.info}>Range</div>
+
+            <Field label='Range'>
+              <Range />
+            </Field>
+
+            <div className={s.info}>Checkbox & Radio</div>
+
+            <div>
+              <Field label='Checkbox'>
+                <Checkbox
+                  checked={this.state.checkbox}
+                  options={[
+                    { key: 1, label: 'Option 1' },
+                    { key: 2, label: 'Option 2' },
+                    { key: 3, label: 'Option 3' },
+                    { key: 4, label: 'Option 4' },
+                    { key: 5, label: 'Option 5' }
+                  ]}
+                  onChange={checkbox => this.setState({ checkbox })}
+                />
+              </Field>
+            </div>
+
+            <div>
+              <Field label='Radio'>
+                <Radio
+                  selected={this.state.radio}
+                  options={[
+                    { key: 1, label: 'Option 1' },
+                    { key: 2, label: 'Option 2' },
+                    { key: 3, label: 'Option 3' },
+                    { key: 4, label: 'Option 4' },
+                    { key: 5, label: 'Option 5' }
+                  ]}
+                  onChange={radio => this.setState({ radio })}
+                />
+              </Field>
+            </div>
+
+            <div className={s.info}>Buttons</div>
+
+            <Fields>
+              <Button label='Submit' type='primary' />
+              <Button label='Submit' type='default' />
+              <Button label='Submit' type='danger' />
+              <Button label='Submit' type='dashed' />
+              <Button label='Submit' type='text' />
+            </Fields>
+
+            <div className={s.info}>File</div>
+
+            <Field label='File'>
+              <File
+                label='Upload image'
+                onChange={e => this.setState({ files: Array.from(e.target.files) })}
+                accept='image/jpeg'
+                multiple
+              />
+            </Field>
+
+            <div className={s.preview}>
+              {this.state.files.map(file => (
+                <div>
+                  <img src={URL.createObjectURL(file)} alt='' />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

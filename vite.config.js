@@ -4,7 +4,7 @@ import autoprefixer from 'autoprefixer'
 
 export default defineConfig({
   plugins: [react()],
-  server: { port: 4999 },
+  server: { port: 5000 },
   resolve: {
     alias: {
       lib: __dirname + '/src/lib'

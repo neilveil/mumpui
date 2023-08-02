@@ -90,3 +90,12 @@
     }
   }
 }
+
+.preview {
+  display: flex;
+  gap: 1rem;
+
+  img {
+    width: 10rem;
+  }
+}

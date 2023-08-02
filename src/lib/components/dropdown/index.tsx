@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 
 type key = number | string
 type label = string
@@ -180,10 +180,6 @@ const CrossIcon = ({ color = '#000000', onClick }: { color: string; onClick?: (e
     <path d='M116.652 12L12 116.652' stroke={color} strokeWidth='18' strokeLinecap='round' />
   </svg>
 )
-
-window.addEventListener('click', e => {
-  console.log(e.target)
-})
 
 Main.search = (search: string, options: option[], caseSensitive: boolean = false) => {
   if (search)

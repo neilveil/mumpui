@@ -1,3 +1,5 @@
+import React from 'react'
+
 type props = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
   parentClassName?: string
   parentStyle?: React.CSSProperties
@@ -13,6 +15,8 @@ export default function Main({ ...props }: props) {
   if (props.status) parentStyle.borderColor = 'var(--mp-c-' + props.status + ')'
 
   if (props.autoRows) props.rows = Math.max(props.autoRows, (props.value || '').toString().split('\n').length)
+
+  delete props.autoRows
 
   return (
     <div className={className} style={parentStyle}>

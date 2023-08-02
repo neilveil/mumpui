@@ -1,3 +1,5 @@
+import React from 'react'
+
 type props = React.InputHTMLAttributes<HTMLInputElement> & {
   parentClassName?: string
   parentStyle?: React.CSSProperties
