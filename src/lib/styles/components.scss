@@ -115,6 +115,11 @@ $field-margin: 1rem;
   display: flex;
   gap: 1rem;
   margin: $field-margin 0;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   & > div {
     width: 100%;

@@ -1,5 +1,12 @@
 # MumpUI
 
+message
+confirm
+dashboard
+loader
+placeholder
+config
+
 ## Importing stylesheet
 
 ```jsx

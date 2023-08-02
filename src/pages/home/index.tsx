@@ -1,7 +1,7 @@
 import React from 'react'
 import s from './styles.module.scss'
 import { Link } from 'react-router-dom'
-import { Button, Checkbox, Dropdown, Field, Fields, File, Form, Input, Radio, Range, Textarea } from 'lib'
+import { Button, Checkbox, Dropdown, Field, Fields, File, Form, Input, Message, Radio, Range, Textarea } from 'lib'
 
 export default class Main extends React.Component {
   state = {
@@ -53,6 +53,27 @@ export default class Main extends React.Component {
         </div>
 
         <div className='mp-content'>
+          <div className={s.showcase}>
+            <div className={s.title}>Feedback</div>
+
+            <Fields>
+              <Button label='Success' onClick={() => Message.success('Clicked successfully!')} />
+              <Button label='Error' onClick={() => Message.error('Some error occurred!')} />
+              <Button label='Info' onClick={() => Message.info('This some info!')} />
+              <Button label='Warn' onClick={() => Message.warn("Don't click!")} />
+              <Button label='Loading' onClick={() => Message.loading('Loading..', 0)} />
+              <Button
+                label='Long message'
+                onClick={() =>
+                  Message.warn(
+                    'This is a very long message. This is a very long message. This is a very long message. This is a very long message.'
+                  )
+                }
+              />
+              <Button type='text' label='Clear' onClick={() => Message.destroy()} />
+            </Fields>
+          </div>
+
           <div className={s.showcase}>
             <div className={s.title}>Date Input</div>
 
@@ -275,7 +296,7 @@ export default class Main extends React.Component {
             <Field label='File'>
               <File
                 label='Upload image'
-                onChange={e => this.setState({ files: Array.from(e.target.files) })}
+                onChange={(e: any) => this.setState({ files: Array.from(e.target.files) })}
                 accept='image/jpeg'
                 multiple
               />

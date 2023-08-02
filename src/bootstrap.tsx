@@ -1,3 +1,9 @@
+import { MumpUI } from 'lib'
+
 export default function Main() {
-  return <></>
+  return (
+    <>
+      <MumpUI />
+    </>
+  )
 }
