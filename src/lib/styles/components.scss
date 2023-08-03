@@ -10,7 +10,7 @@
 // Input
 
 $input-font-size: 0.7rem;
-$input-top-padding: 0.4rem;
+$input-top-padding: 0.3rem;
 $input-left-padding: $input-top-padding * 2;
 
 .mp-input-dummy {
@@ -235,7 +235,6 @@ $field-margin: 1rem;
 
 // Button
 .mp-button {
-  margin: 1rem 0;
   border-radius: var(--mp-border-radius);
   box-shadow: none;
   border: none;
@@ -244,7 +243,7 @@ $field-margin: 1rem;
   font-weight: var(--mp-fw-semi-bold);
 
   padding: $input-top-padding $input-left-padding;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   background-color: transparent;
   color: var(--mp-c-font);
 
@@ -581,3 +580,102 @@ $field-margin: 1rem;
 //     }
 //   }
 // }
+
+.mp-menu {
+  width: 100%;
+  user-select: none;
+  overflow: auto;
+  font-size: 0.7rem;
+
+  .mp-menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin: 0.25rem 0;
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--mp-border-radius);
+    color: var(--mp-c-font);
+
+    &:hover {
+      background-color: var(--mp-c-hover);
+    }
+
+    .mp-menu-item-icon {
+      margin-right: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--mp-c-font-light);
+    }
+
+    .mp-menu-item-name {
+      font-weight: var(--mp-fw-regular);
+    }
+
+    .mp-menu-item-expand-icon {
+      width: 0.8rem;
+      height: 0.8rem;
+      margin-left: 1rem;
+    }
+  }
+
+  .mp-menu-item-group {
+    margin-left: 1rem;
+  }
+
+  .mp-menu-item-selected {
+    background-color: var(--mp-c-hover);
+
+    .mp-menu-item-name {
+      color: var(--mp-c-primary);
+      font-weight: var(--mp-fw-semi-bold);
+    }
+  }
+}
+
+.mp-pagination {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+
+  .mp-pagination-left-arrow,
+  .mp-pagination-right-arrow {
+    padding: 0 0.5rem;
+    margin: 0 1rem;
+    cursor: pointer;
+    border: var(--mp-stroke-width) solid var(--mp-c-stroke);
+    border-radius: var(--mp-border-radius);
+    user-select: none;
+
+    svg {
+      width: 0.7rem;
+      height: 0.7rem;
+    }
+  }
+  .mp-pagination-page-number,
+  .mp-pagination-pages {
+    input {
+      border: none;
+      outline: nono;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+      color: var(--mp-c-font);
+
+      &::placeholder {
+        color: var(--mp-c-placeholder);
+      }
+    }
+  }
+  .mp-pagination-pages {
+    color: var(--mp-c-font-light);
+  }
+  .mp-pagination-seperator {
+    color: var(--mp-c-font-light);
+    padding: 0 0.25rem;
+  }
+  .mp-pagination-disabled {
+    background-color: var(--mp-c-hover);
+    opacity: 0.5;
+    cursor: default;
+  }
+}

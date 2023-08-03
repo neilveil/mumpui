@@ -1,11 +1,17 @@
 # MumpUI
 
-message
 confirm
+pagination
+
 dashboard
+
+table
 loader
 placeholder
+search
+tabs
 config
+viewport dashboard & content
 
 ## Importing stylesheet
 

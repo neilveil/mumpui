@@ -1,7 +1,22 @@
 import React from 'react'
 import s from './styles.module.scss'
 import { Link } from 'react-router-dom'
-import { Button, Checkbox, Dropdown, Field, Fields, File, Form, Input, Message, Radio, Range, Textarea } from 'lib'
+import {
+  Button,
+  Checkbox,
+  Confirm,
+  Dropdown,
+  Field,
+  Fields,
+  File,
+  Form,
+  Input,
+  Message,
+  Pagination,
+  Radio,
+  Range,
+  Textarea
+} from 'lib'
 
 export default class Main extends React.Component {
   state = {
@@ -13,7 +28,10 @@ export default class Main extends React.Component {
     color: '#000000',
     checkbox: [1, 2],
     radio: 1,
-    files: []
+    files: [],
+    paginationTotal: 956,
+    paginationPageSize: 10,
+    paginationOffset: 0
   }
 
   componentDidMount = async () => {}
@@ -54,23 +72,75 @@ export default class Main extends React.Component {
 
         <div className='mp-content'>
           <div className={s.showcase}>
+            <div className={s.title}>Pagination</div>
+
+            <Pagination
+              pageSize={this.state.paginationPageSize}
+              total={this.state.paginationTotal}
+              offset={this.state.paginationOffset}
+              onChange={paginationOffset => this.setState({ paginationOffset })}
+            />
+          </div>
+
+          <div className={s.showcase}>
             <div className={s.title}>Feedback</div>
 
             <Fields>
-              <Button label='Success' onClick={() => Message.success('Clicked successfully!')} />
-              <Button label='Error' onClick={() => Message.error('Some error occurred!')} />
-              <Button label='Info' onClick={() => Message.info('This some info!')} />
-              <Button label='Warn' onClick={() => Message.warn("Don't click!")} />
-              <Button label='Loading' onClick={() => Message.loading('Loading..', 0)} />
+              <Button onClick={() => Confirm.init({ title: 'Are you sure that you want to confirm?' })}>Confirm</Button>
               <Button
-                label='Long message'
+                onClick={() =>
+                  Confirm.init({
+                    title: 'Are you sure that you want to confirm?',
+                    info: 'After confirming this, you can still click the confirm button.'
+                  })
+                }
+              >
+                Confirm with info
+              </Button>
+
+              <Button
+                onClick={() =>
+                  Confirm.init({
+                    title: 'Are you sure that you want to confirm?',
+                    info: 'After confirming this, you can still click the confirm button.',
+                    type: 'primary'
+                  })
+                }
+              >
+                Confirm primary
+              </Button>
+
+              <Button
+                onClick={() =>
+                  Confirm.init({
+                    title: 'Are you sure that you want to confirm?',
+                    info: 'After confirming this, you can still click the confirm button.',
+                    type: 'danger'
+                  })
+                }
+              >
+                Confirm danger
+              </Button>
+            </Fields>
+
+            <Fields>
+              <Button onClick={() => Message.success('Clicked successfully!')}>Success</Button>
+              <Button onClick={() => Message.error('Some error occurred!')}>Error</Button>
+              <Button onClick={() => Message.info('This some info!')}>Info</Button>
+              <Button onClick={() => Message.warn("Don't click!")}>Warn</Button>
+              <Button onClick={() => Message.loading('Loading..', 0)}>Loading</Button>
+              <Button
                 onClick={() =>
                   Message.warn(
                     'This is a very long message. This is a very long message. This is a very long message. This is a very long message.'
                   )
                 }
-              />
-              <Button type='text' label='Clear' onClick={() => Message.destroy()} />
+              >
+                Long message
+              </Button>
+              <Button type='text' onClick={() => Message.destroy()}>
+                Clear
+              </Button>
             </Fields>
           </div>
 
@@ -284,11 +354,11 @@ export default class Main extends React.Component {
             <div className={s.info}>Buttons</div>
 
             <Fields>
-              <Button label='Submit' type='primary' />
-              <Button label='Submit' type='default' />
-              <Button label='Submit' type='danger' />
-              <Button label='Submit' type='dashed' />
-              <Button label='Submit' type='text' />
+              <Button type='primary'>Submit</Button>
+              <Button type='default'>Submit</Button>
+              <Button type='danger'>Submit</Button>
+              <Button type='dashed'>Submit</Button>
+              <Button type='text'>Submit</Button>
             </Fields>
 
             <div className={s.info}>File</div>

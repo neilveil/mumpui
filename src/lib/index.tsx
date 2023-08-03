@@ -1,4 +1,5 @@
 import Message from './components/message'
+import Confirm from './components/confirm'
 
 export { default as Dummy } from './components/dummy'
 export { default as Input } from './components/input'
@@ -12,13 +13,17 @@ export { default as Range } from './components/range'
 export { default as Checkbox } from './components/checkbox'
 export { default as Radio } from './components/radio'
 export { default as File } from './components/file'
+export { default as Dashboard } from './components/dashboard'
+export { default as Menu } from './components/menu'
+export { default as Pagination } from './components/pagination'
 
 const MumpUI = () => {
   return (
     <>
       <Message />
+      <Confirm />
     </>
   )
 }
 
-export { MumpUI, Message }
+export { MumpUI, Message, Confirm }

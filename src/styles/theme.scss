@@ -2,13 +2,15 @@
 :root {
   --font-primary: Roboto, sans-serif;
 
-  --c-font-light: 300;
-  --c-font-regular: 400;
-  --c-font-semi-bold: 500;
-  --c-font-bold: 700;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-semi-bold: 500;
+  --fw-bold: 700;
 }
 
-body[data-theme='light'] {
+@import '../lib/styles/fonts.scss';
+
+body {
   --c-primary: #000000;
   --c-bg: #ffffff;
   --c-light: #f8f8f8;
@@ -26,44 +28,37 @@ body[data-theme='light'] {
   --border: 1px solid #e8e8e8;
 }
 
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Outlined');
-.icon {
-  font-family: var(--f-icon);
-  color: inherit;
-  vertical-align: middle;
-}
-
 // MumpUI
 // @import 'mumpui/lib/styles/index.scss';
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
 
 :root {
-  --mp-f-primary: Roboto, sans-serif;
-  --mp-f-mono: Roboto Mono, sans-serif;
+  // --mp-f-primary: Roboto, sans-serif;
+  // --mp-f-mono: Roboto Mono, sans-serif;
 
   --base-font-size: 16px;
   --mp-border-radius: 8px;
   --mp-stroke-width: 1px;
 
-  --mp-fw-light: 300;
-  --mp-fw-regular: 400;
-  --mp-fw-semi-bold: 500;
-  --mp-fw-bold: 700;
-  --mp-fw-mono: 500;
+  // --mp-fw-light: 300;
+  // --mp-fw-regular: 400;
+  // --mp-fw-semi-bold: 500;
+  // --mp-fw-bold: 700;
+  // --mp-fw-mono: 500;
 
   --mp-transition: all 300ms ease;
 }
 
-body {
-  font-size: 1rem;
-  line-height: 1.5;
+// body {
+//   font-size: 1rem;
+//   line-height: 1.5;
 
-  font-family: var(--mp-f-primary);
-  color: var(--mp-c-font);
-}
+//   font-family: var(--mp-f-primary);
+//   color: var(--mp-c-font);
+// }
 
-.mumpui[data-theme='light'] {
+.mumpui {
   --mp-c-primary: #000000;
   --mp-c-bg: #ffffff;
   --mp-c-hover: #f8f8f8;
@@ -77,7 +72,7 @@ body {
   --mp-c-font-light: #888888;
   --mp-c-placeholder: #b8b8b8;
 
-  --mp-c-link: #1677ff;
+  // --mp-c-link: #1677ff;
   --mp-c-mark: #ffebcf;
   --mp-c-code: #e8e8e8;
   --mp-c-code-bg: #282828;

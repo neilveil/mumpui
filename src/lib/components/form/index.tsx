@@ -18,3 +18,8 @@ export default function Main(props: props) {
     </form>
   )
 }
+
+// autoComplete: 'off',
+// autoCorrect: 'off',
+// autoCapitalize: 'off',
+// spellCheck: 'false'
