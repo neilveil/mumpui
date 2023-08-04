@@ -1,19 +1,27 @@
 // Local
 :root {
-  --font-primary: Roboto, sans-serif;
+  --f-primary: Roboto, sans-serif;
+  --f-mono: Roboto Mono, sans-serif;
 
   --fw-light: 300;
   --fw-regular: 400;
   --fw-semi-bold: 500;
   --fw-bold: 700;
+  --fw-mono: 500;
 }
 
 @import '../lib/styles/fonts.scss';
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   --c-primary: #000000;
   --c-bg: #ffffff;
   --c-light: #f8f8f8;
+
+  --c-stroke: #e8e8e8;
 
   --c-font-dark: #484848;
   --c-font: #888888;

@@ -16,6 +16,9 @@ export { default as File } from './components/file'
 export { default as Dashboard } from './components/dashboard'
 export { default as Menu } from './components/menu'
 export { default as Pagination } from './components/pagination'
+export { default as Placeholder } from './components/placeholder'
+export { default as Loader } from './components/loader'
+export { default as Divider } from './components/divider'
 
 const MumpUI = () => {
   return (

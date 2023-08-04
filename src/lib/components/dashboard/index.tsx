@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Menu from '../menu'
 import Button from '../button'
 import Input from '../input'
-import pagination from '../pagination'
+import Pagination from '../pagination'
 import './styles.scss'
 
 declare global {
@@ -45,6 +45,11 @@ interface props {
   onCreate?: () => void
   onUpdate?: () => void
   onCancel?: () => void
+  // pagination
+  paginationPageSize?: number
+  paginationTotal?: number
+  paginationOffset?: number
+  paginationOnChange?: (offset: number) => void
 }
 
 export default function Main(props: props) {
@@ -142,39 +147,52 @@ export default function Main(props: props) {
           )}
         </div>
 
-        {(!!props.footer || !!props.onDelete || !!props.onCreate || !!props.onUpdate) && (
+        {(!!props.footer || !!props.paginationTotal || !!props.onDelete || !!props.onCreate || !!props.onUpdate) && (
           <div className='mp-dashboard-footer'>
             {!!props.footer && props.footer}
 
-            <div>
-              {!!props.onDelete && (
-                <Button type='dashed' onClick={props.onDelete}>
-                  Delete
-                </Button>
+            <div className='mp-dashboard-pagination'>
+              {!!props.paginationTotal && (
+                <Pagination
+                  pageSize={props.paginationPageSize || 0}
+                  total={props.paginationTotal}
+                  offset={props.paginationOffset || 0}
+                  onChange={props.paginationOnChange || (() => {})}
+                />
               )}
             </div>
 
-            <div>
-              {(!!props.onCreate || !!props.onUpdate) && (
-                <>
-                  <Button
-                    type='dashed'
-                    style={{ marginRight: '1rem' }}
-                    onClick={() => (props.onCancel ? props.onCancel() : window.history.back())}
-                  >
-                    Cancel
+            <div className='mp-dashboard-footer-buttons'>
+              <div>
+                {!!props.onDelete && (
+                  <Button type='dashed' onClick={props.onDelete}>
+                    Delete
                   </Button>
-                  {props.onCreate ? (
-                    <Button type='primary' onClick={props.onCreate}>
-                      Create
+                )}
+              </div>
+
+              <div>
+                {(!!props.onCreate || !!props.onUpdate) && (
+                  <>
+                    <Button
+                      type='dashed'
+                      style={{ marginRight: '1rem' }}
+                      onClick={() => (props.onCancel ? props.onCancel() : window.history.back())}
+                    >
+                      Cancel
                     </Button>
-                  ) : (
-                    <Button type='primary' onClick={props.onUpdate}>
-                      Update
-                    </Button>
-                  )}
-                </>
-              )}
+                    {props.onCreate ? (
+                      <Button type='primary' onClick={props.onCreate}>
+                        Create
+                      </Button>
+                    ) : (
+                      <Button type='primary' onClick={props.onUpdate}>
+                        Update
+                      </Button>
+                    )}
+                  </>
+                )}
+              </div>
             </div>
           </div>
         )}

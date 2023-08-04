@@ -1,23 +1,19 @@
 import React from 'react'
 
 type props = React.InputHTMLAttributes<HTMLDivElement> & {
+  children?: any
   label?: string
-  children?: React.ReactNode
-  parentClassName?: string
-  parentStyle?: object
 }
 
-export default function Main(props: props) {
-  const parentClassName = 'mp-field ' + (props.parentClassName || '')
-  const className = 'mp-label ' + (props.className || '')
+export default function Main({ children, label, ...props }: props) {
+  const className = 'mp-field ' + (props.className || '')
+  const style = Object.assign({}, props.style)
 
   return (
-    <div className={parentClassName} style={props.parentStyle}>
-      <div {...props} className={className}>
-        {props.label}
-      </div>
+    <div className={className} style={style} {...props}>
+      <div className='mp-label'>{label}</div>
 
-      {props.children}
+      {children}
     </div>
   )
 }

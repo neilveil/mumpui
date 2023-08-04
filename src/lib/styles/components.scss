@@ -139,17 +139,18 @@ $field-margin: 1rem;
   align-items: center;
   gap: 1rem;
   margin: (2 * $field-margin) 0;
-  overflow: auto;
+  overflow: hidden;
+  width: 100%;
 
   .mp-divider-line {
     border-bottom: var(--mp-stroke-width) solid var(--mp-c-stroke);
-    width: 100%;
+    width: 100vw;
   }
 
   .mp-divider-text {
     width: 100%;
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: var(--mp-c-font-light);
     white-space: pre;
   }
@@ -660,6 +661,7 @@ $field-margin: 1rem;
       margin: 0;
       text-align: center;
       color: var(--mp-c-font);
+      border-bottom: 2px solid var(--mp-c-stroke);
 
       &::placeholder {
         color: var(--mp-c-placeholder);
@@ -668,6 +670,7 @@ $field-margin: 1rem;
   }
   .mp-pagination-pages {
     color: var(--mp-c-font-light);
+    user-select: none;
   }
   .mp-pagination-seperator {
     color: var(--mp-c-font-light);

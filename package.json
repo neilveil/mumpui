@@ -8,6 +8,8 @@
   "dependencies": {
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-typescript": "^11.1.2",
+    "axios": "^1.4.0",
+    "fuse.js": "^6.6.2",
     "react-router-dom": "^6.14.2",
     "rollup": "^3.26.3",
     "rollup-plugin-postcss": "^4.0.2",

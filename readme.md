@@ -2,7 +2,6 @@
 
 confirm
 pagination
-
 dashboard
 
 table

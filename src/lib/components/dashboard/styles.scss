@@ -132,9 +132,21 @@
   bottom: 0;
   border-top: var(--mp-stroke-width) solid var(--mp-c-stroke);
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   background-color: var(--mp-c-bg);
   z-index: 1;
+}
+
+.mp-dashboard-pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.mp-dashboard-footer-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 @media (max-width: 1199px) {

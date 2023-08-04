@@ -1,20 +1,23 @@
 import React, { useCallback } from 'react'
 
 type props = React.FormHTMLAttributes<HTMLFormElement> & {
-  children?: React.ReactNode
+  children?: any
   onSubmit?: (e: React.FormEvent) => void
 }
 
-export default function Main(props: props) {
-  const onSubmit = useCallback((e: React.FormEvent) => {
+export default function Main({ children, onSubmit, ...props }: props) {
+  const _onSubmit = useCallback((e: React.FormEvent) => {
     e.preventDefault()
-    if (props.onSubmit) props.onSubmit(e)
+    if (onSubmit) onSubmit(e)
   }, [])
 
+  const className = 'mp-form ' + (props.className || '')
+  const style = Object.assign({}, props.style)
+
   return (
-    <form className='mp-form ' onSubmit={onSubmit}>
-      {props.children}
-      <button style={{ display: 'none' }} type='submit' onClick={e => onSubmit(e)}></button>
+    <form className={className} style={style} onSubmit={_onSubmit} {...props}>
+      {children}
+      <button style={{ display: 'none' }} type='submit' onClick={e => _onSubmit(e)}></button>
     </form>
   )
 }

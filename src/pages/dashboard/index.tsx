@@ -40,8 +40,13 @@ export default function Main() {
           </div>
         }
         //
-        onCreate={() => {}}
-        onDelete={() => {}}
+        // onCreate={() => {}}
+        // onDelete={() => {}}
+        //
+        paginationPageSize={10}
+        paginationTotal={956}
+        paginationOffset={0}
+        paginationOnChange={() => {}}
         //
         sidebarIcon='/logo.png'
         sidebarItems={[
