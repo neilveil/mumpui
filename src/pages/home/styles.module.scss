@@ -121,10 +121,10 @@
   .title {
     padding: 1rem;
     border-bottom: var(--border);
-    position: sticky;
-    top: 0;
+    // position: sticky;
+    // top: 0;
+    // z-index: 2;
     background-color: var(--c-bg);
-    z-index: 2;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -206,7 +206,6 @@
     border-top: var(--border);
     cursor: pointer;
     width: 100%;
-    user-select: none;
 
     .icon {
       margin-left: 0.5rem;

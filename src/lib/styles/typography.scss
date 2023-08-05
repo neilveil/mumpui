@@ -67,42 +67,42 @@ mark {
   padding: 0 0.15rem;
 }
 
-code {
-  background-color: var(--mp-c-stroke);
-  color: var(--mp-c-font-dark);
-  padding: 0 0.25rem;
-  border-radius: 4px;
-  user-select: all;
-  font-size: 0.8rem;
-  font-weight: var(--mp-fw-mono);
-  font-family: var(--mp-f-mono);
-}
+// code {
+//   background-color: var(--mp-c-stroke);
+//   color: var(--mp-c-font-dark);
+//   padding: 0 0.25rem;
+//   border-radius: 4px;
+//   user-select: all;
+//   font-size: 0.8rem;
+//   font-weight: var(--mp-fw-mono);
+//   font-family: var(--mp-f-mono);
+// }
 
-pre {
-  background-color: var(--mp-c-code-bg) !important;
-  padding: 1rem;
-  // border-radius: 16px;
-  margin: (4 * $spacing) 0 !important;
+// pre {
+//   background-color: var(--mp-c-code-bg) !important;
+//   padding: 1rem;
+//   // border-radius: 16px;
+//   margin: (4 * $spacing) 0 !important;
 
-  margin-left: -$spacing !important;
-  margin-right: -$spacing !important;
-  cursor: text;
+//   margin-left: -$spacing !important;
+//   margin-right: -$spacing !important;
+//   cursor: text;
 
-  *::selection {
-    background-color: #484848;
-  }
+//   *::selection {
+//     background-color: #484848;
+//   }
 
-  * {
-    font-size: 0.8rem !important;
-    color: var(--mp-c-code);
-  }
+//   * {
+//     font-size: 0.8rem !important;
+//     color: var(--mp-c-code);
+//   }
 
-  code {
-    background-color: transparent;
-    padding: 0;
-    user-select: auto;
-  }
-}
+//   code {
+//     background-color: transparent;
+//     padding: 0;
+//     user-select: auto;
+//   }
+// }
 
 a,
 a:visited,
@@ -143,29 +143,29 @@ ol {
   }
 }
 
-table {
-  margin: 2 * $spacing 0;
+// table {
+//   margin: 2 * $spacing 0;
 
-  * {
-    border: 1px solid var(--mp-c-stroke);
-  }
+//   * {
+//     border: 1px solid var(--mp-c-stroke);
+//   }
 
-  th {
-    text-align: left;
-    font-weight: var(--mp-fw-bold);
-    color: var(--mp-c-font-dark);
-  }
+//   th {
+//     text-align: left;
+//     font-weight: var(--mp-fw-bold);
+//     color: var(--mp-c-font-dark);
+//   }
 
-  th,
-  td {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
+//   th,
+//   td {
+//     padding: 0.5rem 1rem;
+//     font-size: 0.9rem;
+//   }
 
-  td {
-    color: var(--mp-c-font);
-  }
-}
+//   td {
+//     color: var(--mp-c-font);
+//   }
+// }
 
 .mp-content {
   width: 100%;

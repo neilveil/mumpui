@@ -36,6 +36,8 @@ export default function Main({ options = [], ...props }: props) {
   const isMultiselect = Array.isArray(props.value)
 
   const onSelect = (selected: option) => {
+    if (props.onSearch) props.onSearch('')
+
     if (Array.isArray(props.value)) props.onSelect(props.value.concat(selected))
     else props.onSelect(selected)
 
@@ -81,14 +83,14 @@ export default function Main({ options = [], ...props }: props) {
     }
   }
 
-  const placeholder = <span style={{ color: 'var(--mp-c-placeholder)' }}>{props.placeholder}</span> || <>&nbsp;</>
+  const placeholder = <span style={{ color: 'var(--mp-c-placeholder)' }}>{props.placeholder || <>&nbsp;</>}</span>
 
   return (
     <div
       tabIndex={0}
-      onKeyUp={e => {
-        if (e.key === 'Enter') setOptionsVisible(!optionsVisible)
-      }}
+      // onKeyUp={e => {
+      //   if (e.key === 'Enter') setOptionsVisible(!optionsVisible)
+      // }}
       ref={ref}
       className={className}
       style={style}

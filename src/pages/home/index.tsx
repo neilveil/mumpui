@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import s from './styles.module.scss'
 import { Link } from 'react-router-dom'
-import { Button, Field, Fields, Form, Input, Placeholder } from 'lib'
+import { Placeholder } from 'lib'
 import Fuse from 'fuse.js'
 import showcase from './showcase'
 
@@ -34,12 +34,12 @@ export default class Main extends React.Component {
                   Design System for Developers
                 </div>
 
-                <div className={s.inspired}>
+                {/* <div className={s.inspired}>
                   Inspired by&nbsp;
                   <a href='https://www.joahquin.com' target='_blank'>
                     <span>Upasana</span>
                   </a>
-                </div>
+                </div> */}
 
                 <div className={s.links}>
                   {['Setup', 'Stories'].map(x => (
@@ -93,7 +93,17 @@ export default class Main extends React.Component {
                 <Showcase
                   title='Data Input'
                   description='Data input'
-                  components={[showcase.input, showcase.form, showcase.button]}
+                  components={[
+                    showcase.input,
+                    showcase.form,
+                    showcase.dropdown,
+                    showcase.multiselect,
+                    showcase.checkbox,
+                    showcase.radio,
+                    showcase.range,
+                    showcase.file,
+                    showcase.button
+                  ]}
                   expanded={this.state.expanded}
                 />
 
@@ -160,7 +170,11 @@ const Components = ({ data }: { data: component[] }) => {
         .map((pair, i) => (
           <div key={i} className={s.componentPair}>
             {pair.map((x, j) => (
-              <div key={j} className={s.component} style={{ animationDelay: (i + j) * 200 + 'ms' }}>
+              <div
+                key={j}
+                className={s.component}
+                style={{ animationDelay: (i + j) * 200 + 'ms', zIndex: data.length - (i + j) }}
+              >
                 <div className={s.element}>{<x.component />}</div>
 
                 {x.docs ? <Link to={x.docs}>{name(x.name)}</Link> : name(x.name)}

@@ -2,6 +2,8 @@ import home from './home'
 import typography from './typography'
 import dashboard from './dashboard'
 
+import component_input from './components/input'
+
 interface route {
   path: string
   component: React.ComponentClass | React.FunctionComponent
@@ -20,7 +22,10 @@ const routes: route[] = [
   { path: '/dashboard-4', component: dashboard },
   { path: '/dashboard-5', component: dashboard },
   { path: '/dashboard-6', component: dashboard },
-  { path: '/dashboard-7', component: dashboard }
+  { path: '/dashboard-7', component: dashboard },
+
+  // Components
+  { path: '/component/input', component: component_input }
 ]
 
 export default routes

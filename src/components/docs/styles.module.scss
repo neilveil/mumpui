@@ -1,0 +1,140 @@
+.main {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+
+  & > div {
+    padding: 1rem;
+  }
+}
+
+.header {
+  border-bottom: var(--border);
+
+  .back {
+    color: var(--c-font-dark);
+
+    cursor: pointer;
+    font-size: 0.8rem;
+    user-select: nono;
+    font-weight: var(--fw-regular);
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+
+    span {
+      margin-right: 0.5rem;
+    }
+  }
+
+  .title {
+    font-size: 1.5rem;
+    font-weight: var(--fw-semi-bold);
+  }
+}
+
+.showcase {
+  .element {
+    border: var(--border);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .switch {
+    font-size: 0.7rem;
+    color: var(--c-font-dark);
+    text-align: right;
+    user-select: none;
+
+    div {
+      background-color: var(--c-light);
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.5rem;
+      cursor: pointer;
+
+      span {
+        margin-right: 0.5ch;
+      }
+    }
+  }
+}
+
+.info {
+  font-size: 0.8rem;
+  margin-top: 3rem;
+}
+
+.code {
+  font-size: 0.8rem;
+
+  *::selection {
+    background-color: #fff8;
+  }
+
+  pre {
+    background-color: var(--c-primary);
+    margin: 0;
+    padding: 1rem;
+    overflow: auto;
+  }
+}
+
+.props {
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.table {
+  width: 100%;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  table {
+    font-size: 0.8rem;
+  }
+
+  td {
+    padding: 0.25rem 1rem;
+    border: var(--border);
+  }
+
+  thead {
+    td {
+      font-weight: var(--fw-semi-bold);
+    }
+  }
+
+  .name,
+  .type {
+    font-family: var(--f-mono);
+    font-size: 0.7rem;
+  }
+
+  tbody {
+    .name {
+      code {
+        background-color: var(--c-light);
+        font-weight: var(--fw-mono);
+        font-family: var(--f-mono);
+        padding: 0 0.5rem;
+      }
+    }
+    .type {
+      color: var(--c-orange);
+    }
+    .usage {
+      color: var(--c-font);
+    }
+  }
+
+  .usage {
+    width: 100%;
+  }
+}

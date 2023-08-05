@@ -1,5 +1,9 @@
 # MumpUI
 
+set meta
+remove bold font
+
+
 confirm
 pagination
 dashboard

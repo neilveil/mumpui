@@ -7,7 +7,8 @@ export default defineConfig({
   server: { port: 4999 },
   resolve: {
     alias: {
-      lib: __dirname + '/src/lib'
+      lib: __dirname + '/src/lib',
+      components: __dirname + '/src/components'
     }
   },
   build: { outDir: 'build' },
