@@ -1,9 +1,3 @@
-.viewport {
-  width: 100%;
-  max-width: var(--viewport);
-  margin: 0 auto;
-}
-
 .text-center {
   text-align: center;
 }
@@ -18,27 +12,33 @@
   display: none;
 }
 
-.row {
+.flex {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.row-even {
+.flex-column {
+  display: inline;
+  flex-direction: column;
+}
+.flex-even {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
-.row-start {
+.flex-start {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  gap: 1rem;
 }
-.row-start {
+.flex-end {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  gap: 1rem;
 }
-.row-wrap {
+.flex-wrap {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;

@@ -11,7 +11,7 @@ export default function Main({ children, label, ...props }: props) {
 
   return (
     <div className={className} style={style} {...props}>
-      <div className='mp-label'>{label}</div>
+      <div className='mp-label'>{label ? label : <>&nbsp;</>}</div>
 
       {children}
     </div>

@@ -169,6 +169,7 @@
   border-color: var(--c-stroke);
   opacity: 0;
   animation: appear 300ms ease forwards;
+  overflow: hidden;
 
   @keyframes appear {
     0% {
@@ -201,7 +202,7 @@
   .name {
     text-align: center;
     font-size: 0.7rem;
-    color: var(--c-font);
+    color: var(--c-font-dark);
     padding: 1rem;
     border-top: var(--border);
     cursor: pointer;

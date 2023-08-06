@@ -87,7 +87,7 @@ export default class Main extends React.Component {
             </div>
 
             {this.state.search ? (
-              <div>{searchResults.length ? <Components data={searchResults} /> : <Placeholder />}</div>
+              <div>{searchResults.length ? <Components data={searchResults} expanded={true} /> : <Placeholder />}</div>
             ) : (
               <>
                 <Showcase
@@ -142,7 +142,7 @@ interface showcase {
   expanded: boolean
 }
 
-const Components = ({ data }: { data: component[] }) => {
+const Components = ({ data, expanded }: { data: component[]; expanded: boolean }) => {
   const pairs: component[][] = []
 
   var pair: component[] = []
@@ -158,7 +158,7 @@ const Components = ({ data }: { data: component[] }) => {
   if (pair.length) pairs.push(pair)
 
   const name = (name: any) => (
-    <div className={s.name}>
+    <div className={s.name} style={{ borderTop: expanded ? '' : 'none' }}>
       {name}
       <span className={'icon ' + s.icon}>east</span>
     </div>
@@ -173,9 +173,12 @@ const Components = ({ data }: { data: component[] }) => {
               <div
                 key={j}
                 className={s.component}
-                style={{ animationDelay: (i + j) * 200 + 'ms', zIndex: data.length - (i + j) }}
+                style={{
+                  animationDelay: (i + j) * 200 + 'ms',
+                  zIndex: data.length - (i + j)
+                }}
               >
-                <div className={s.element}>{<x.component />}</div>
+                {!!expanded && <div className={s.element}>{<x.component />}</div>}
 
                 {x.docs ? <Link to={x.docs}>{name(x.name)}</Link> : name(x.name)}
               </div>
@@ -206,12 +209,12 @@ const Showcase = (props: showcase) => {
         </div>
       </div>
 
-      {!!localExpanded && (
-        <>
-          <div className={s.info}>{props.description}</div>
-          <Components data={props.components} />
-        </>
-      )}
+      {/* {!!localExpanded && (
+          )} */}
+      <>
+        <div className={s.info}>{props.description}</div>
+        <Components data={props.components} expanded={localExpanded} />
+      </>
     </div>
   )
 }

@@ -90,3 +90,17 @@ body {
   --mp-c-warning: #ffd93b;
   --mp-c-info: #1ea6ff;
 }
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+::-webkit-scrollbar-track {
+  background: var(--c-light);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--c-font-light);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--c-font);
+}

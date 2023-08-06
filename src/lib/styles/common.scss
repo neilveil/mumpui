@@ -1,0 +1,18 @@
+$input-font-size: 0.7rem;
+$input-top-padding: 0.3rem;
+$input-left-padding: $input-top-padding * 2;
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin input {
+  border: var(--mp-stroke-width) solid var(--mp-c-stroke);
+  border-radius: var(--mp-border-radius);
+  color: var(--mp-c-font-dark);
+  background: var(--mp-c-bg);
+  transition: var(--mp-transition);
+  font-size: $input-font-size;
+}

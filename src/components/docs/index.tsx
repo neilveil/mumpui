@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import s from './styles.module.scss'
-import { Input } from 'lib'
+import { Input, Message } from 'lib'
 import { Children, useEffect, useRef, useState } from 'react'
 
 interface main {
@@ -21,9 +21,9 @@ export default function Main(props: main) {
         </Link>
 
         <div className={s.title}>{['MumpUI', props.type, props.name].join(' / ')}</div>
-
-        {props.children}
       </div>
+
+      {props.children}
     </div>
   )
 }
@@ -46,23 +46,24 @@ Main.Showcase = ({ children, info, code }: { children?: any; info?: any; code?: 
 
       {!!code && (
         <div className={s.switch}>
-          <div>
-            <div>
-              <span className='icon' onClick={() => navigator.clipboard.writeText(code || '')}>
-                copy
-              </span>
-            </div>
-
-            {viewCode ? (
-              <div onClick={() => setViewCode(!viewCode)}>
-                <span className='icon'>code_off</span> Hide code
-              </div>
-            ) : (
-              <div onClick={() => setViewCode(!viewCode)}>
-                <span className='icon'>code</span>Show code
-              </div>
-            )}
+          <div
+            onClick={() => {
+              navigator.clipboard.writeText(code || '')
+              Message.info('Copied!')
+            }}
+          >
+            <span className='icon'>copy</span>
           </div>
+
+          {viewCode ? (
+            <div onClick={() => setViewCode(!viewCode)}>
+              <span className='icon'>code_off</span>&nbsp;&nbsp;Hide code
+            </div>
+          ) : (
+            <div onClick={() => setViewCode(!viewCode)}>
+              <span className='icon'>code</span>&nbsp;&nbsp;Show code
+            </div>
+          )}
         </div>
       )}
 
@@ -79,8 +80,8 @@ Main.Showcase = ({ children, info, code }: { children?: any; info?: any; code?: 
 
 type field = {
   name?: string
-  type?: 'string' | 'number' | 'boolean'
-  usage?: string
+  type?: 'string' | 'number' | 'boolean' | 'object' | 'array' | 'function' | 'JSX'
+  usage?: any
   required?: boolean
 }
 
@@ -97,7 +98,7 @@ Main.Props = (props: props) => (
       <table>
         <thead>
           <tr>
-            <td className={s.name}>*</td>
+            <td className={s.required}></td>
             <td className={s.name}>Name</td>
             <td className={s.type}>Type</td>
             <td className={s.usage}>Usage</td>
@@ -108,10 +109,12 @@ Main.Props = (props: props) => (
           {props.fields?.map((x, i) => (
             <tr key={i}>
               <td className={s.required}>{x.required ? '*' : ''}</td>
+
               <td className={s.name}>
                 <code>{x.name}</code>
               </td>
-              <td className={s.type}>{x.type}</td>
+
+              <td className={s.type}>{!!x.type && <code>{x.type}</code>}</td>
               <td className={s.usage}>{x.usage}</td>
             </tr>
           ))}

@@ -1,0 +1,80 @@
+.mp-input-template {
+  @include input();
+}
+
+.mp-input-chip {
+  padding-left: 0.5rem;
+  background-color: var(--mp-c-hover);
+  border-radius: var(--mp-border-radius);
+  display: flex;
+  align-items: center;
+  user-select: none;
+
+  svg {
+    width: 1.5rem;
+    height: 1rem;
+    cursor: pointer;
+    padding: 0 0.5rem;
+  }
+}
+
+.mp-input,
+.mp-dropdown {
+  @include input();
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+
+  input,
+  textarea,
+  .mp-value {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0;
+    padding: $input-top-padding $input-left-padding;
+    border-radius: var(--mp-border-radius);
+
+    // For dropdown chips
+    display: flex;
+    gap: calc($input-left-padding / 2);
+    flex-wrap: wrap;
+
+    &::placeholder {
+      color: var(--mp-c-placeholder);
+    }
+
+    &:disabled {
+      background-color: var(--mp-c-hover);
+    }
+  }
+
+  input[type='color'] {
+    height: 2rem;
+  }
+
+  &:hover {
+    border-color: var(--mp-c-stroke-hover);
+  }
+
+  &:focus-within {
+    border-color: var(--mp-c-stroke-active);
+  }
+
+  .mp-prefix,
+  .mp-suffix {
+    @include center();
+    font-weight: var(--mp-fw-semi-bold);
+    color: var(--c-font);
+    background-color: var(--mp-c-hover);
+    padding: $input-top-padding $input-left-padding;
+    user-select: none;
+  }
+  .mp-prefix {
+    border-radius: var(--mp-border-radius) 0 0 var(--mp-border-radius);
+  }
+  .mp-suffix {
+    border-radius: 0 var(--mp-border-radius) var(--mp-border-radius) 0;
+  }
+}

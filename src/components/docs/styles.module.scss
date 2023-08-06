@@ -2,6 +2,7 @@
   width: 100%;
   max-width: 800px;
   margin: auto;
+  padding-bottom: 4rem;
 
   & > div {
     padding: 1rem;
@@ -37,9 +38,6 @@
   .element {
     border: var(--border);
     padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   .switch {
@@ -55,16 +53,34 @@
       padding: 0.25rem 0.5rem;
       cursor: pointer;
 
-      span {
-        margin-right: 0.5ch;
+      &:hover {
+        background-color: var(--c-stroke);
       }
     }
   }
 }
 
-.info {
+.info,
+p {
   font-size: 0.8rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  code {
+    font-family: var(--f-mono);
+    background-color: var(--c-light);
+    padding: 0 0.25rem;
+  }
+
+  a {
+    color: var(--c-blue);
+  }
+}
+
+p {
+  padding: 1rem;
+  margin: 0;
+  color: var(--c-font);
 }
 
 .code {
@@ -75,16 +91,17 @@
   }
 
   pre {
-    background-color: var(--c-primary);
     margin: 0;
     padding: 1rem;
     overflow: auto;
+    background-color: #080808;
+    color: #d8d8d8;
   }
 }
 
 .props {
-  font-size: 1.25rem;
-  margin-top: 2rem;
+  font-size: 1rem;
+  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -101,7 +118,7 @@
   }
 
   td {
-    padding: 0.25rem 1rem;
+    padding: 0.5rem 1rem;
     border: var(--border);
   }
 
@@ -111,23 +128,11 @@
     }
   }
 
-  .name,
-  .type {
-    font-family: var(--f-mono);
-    font-size: 0.7rem;
-  }
-
   tbody {
-    .name {
-      code {
-        background-color: var(--c-light);
-        font-weight: var(--fw-mono);
-        font-family: var(--f-mono);
-        padding: 0 0.5rem;
-      }
-    }
     .type {
-      color: var(--c-orange);
+      code {
+        color: var(--c-orange);
+      }
     }
     .usage {
       color: var(--c-font);
@@ -136,5 +141,21 @@
 
   .usage {
     width: 100%;
+  }
+
+  .required {
+    width: 1rem;
+    text-align: center;
+  }
+
+  code {
+    font-family: var(--f-mono);
+    font-size: 0.7rem;
+    font-weight: var(--fw-mono);
+    font-family: var(--f-mono);
+    background-color: var(--c-light);
+    padding: 0 0.25rem;
+    color: var(--c-font-dark);
+    user-select: all;
   }
 }

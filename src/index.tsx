@@ -21,7 +21,9 @@ pages.push({ path: '*', component: Redirect })
 
 class Main extends React.Component {
   render() {
-    var router = pages.map(({ path, component }, i) => <Route key={i} path={path} Component={component} />)
+    var router = pages.map(({ path, component }, i) => (
+      <Route key={i} path={path} Component={() => <ScrollToTop Component={component} />} />
+    ))
 
     return (
       <>
@@ -33,6 +35,14 @@ class Main extends React.Component {
 }
 
 const main = () => createRoot(document.getElementById('root') as HTMLElement).render(<Main />)
+
+function ScrollToTop({ Component }: { Component?: any }) {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+  return <Component />
+}
 
 if (import.meta.env.DEV) main()
 else window.addEventListener('SW_READY', main)

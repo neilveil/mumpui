@@ -1,110 +1,10 @@
+@import './common.scss';
+
+@import './button.scss';
+@import './input.scss';
+
 // Form
 // .mp-form {}
-
-@mixin center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-// Input
-
-$input-font-size: 0.7rem;
-$input-top-padding: 0.3rem;
-$input-left-padding: $input-top-padding * 2;
-
-.mp-input-dummy {
-  padding: $input-top-padding $input-left-padding;
-  font-size: $input-font-size;
-  color: var(--mp-c-font-dark);
-  display: flex;
-  gap: calc($input-left-padding / 2);
-  flex-wrap: wrap;
-}
-
-.mp-input-chip {
-  padding: 0 0.5rem;
-  padding-right: 0;
-  background-color: var(--mp-c-hover);
-  border-radius: var(--mp-border-radius);
-  display: flex;
-  align-items: center;
-  user-select: none;
-
-  svg {
-    width: 1.5rem;
-    height: 1rem;
-    cursor: pointer;
-    padding: 0 0.5rem;
-  }
-}
-
-.mp-input,
-.mp-dropdown {
-  border: var(--mp-stroke-width) solid var(--mp-c-stroke);
-  border-radius: var(--mp-border-radius);
-  color: var(--mp-c-font-dark);
-  background: var(--mp-c-bg);
-  transition: var(--mp-transition);
-  font-size: $input-font-size;
-  display: flex;
-  align-items: center;
-  position: relative;
-  z-index: 2;
-
-  input,
-  textarea,
-  .mp-value {
-    width: 100%;
-    border: none;
-    outline: none;
-    padding: 0;
-    padding: $input-top-padding $input-left-padding;
-    border-radius: var(--mp-border-radius);
-
-    // For dropdown chips
-    display: flex;
-    gap: calc($input-left-padding / 2);
-    flex-wrap: wrap;
-
-    &::placeholder {
-      color: var(--mp-c-placeholder);
-    }
-
-    &:disabled {
-      background-color: var(--mp-c-hover);
-    }
-  }
-
-  input[type='color'] {
-    height: 2rem;
-  }
-
-  &:hover {
-    border-color: var(--mp-c-stroke-hover);
-  }
-
-  &:focus-within {
-    border-color: var(--mp-c-stroke-active);
-  }
-
-  .mp-prefix {
-    @include center();
-    font-weight: var(--mp-fw-semi-bold);
-    color: var(--c-font);
-    background-color: var(--mp-c-hover);
-    padding: $input-top-padding $input-left-padding;
-    border-radius: var(--mp-border-radius) 0 0 var(--mp-border-radius);
-  }
-  .mp-suffix {
-    @include center();
-    font-weight: var(--mp-fw-semi-bold);
-    color: var(--c-font);
-    background-color: var(--mp-c-hover);
-    padding: $input-top-padding $input-left-padding;
-    border-radius: 0 var(--mp-border-radius) var(--mp-border-radius) 0;
-  }
-}
 
 $field-margin: 1rem;
 
@@ -232,45 +132,6 @@ $field-margin: 1rem;
       height: 0.75rem;
       cursor: pointer;
     }
-  }
-}
-
-// Button
-.mp-button {
-  border-radius: var(--mp-border-radius);
-  box-shadow: none;
-  border: none;
-  transition: var(--mp-transition);
-  border: var(--mp-stroke-width) solid;
-  font-weight: var(--mp-fw-semi-bold);
-
-  padding: $input-top-padding $input-left-padding;
-  font-size: 0.65rem;
-  background-color: transparent;
-  color: var(--mp-c-font);
-
-  &:hover {
-    opacity: 0.7;
-  }
-
-  // Type
-  // &.default {}
-  &.mp-button-primary {
-    color: var(--mp-c-bg);
-    background-color: var(--mp-c-primary);
-  }
-  &.mp-button-default {
-    border: var(--mp-stroke-width) solid var(--mp-c-stroke);
-  }
-  &.mp-button-dashed {
-    border: var(--mp-stroke-width) dashed var(--mp-c-stroke);
-  }
-  &.mp-button-danger {
-    color: var(--mp-c-error);
-    border: var(--mp-stroke-width) dashed var(--mp-c-error);
-  }
-  &.mp-button-text {
-    border: none;
   }
 }
 
