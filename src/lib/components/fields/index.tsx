@@ -1,6 +1,6 @@
 import React from 'react'
 
-type props = React.InputHTMLAttributes<HTMLDivElement> & {
+type props = React.HTMLAttributes<HTMLDivElement> & {
   children?: React.ReactNode
   className?: string
   style?: React.CSSProperties

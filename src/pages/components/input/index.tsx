@@ -1,8 +1,6 @@
 import { Docs } from 'components'
-import s from './styles.module.scss'
 import { Field, Fields, Input } from 'lib'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 
 export default function Main() {
   const [input, setInput] = useState('')
@@ -37,6 +35,7 @@ const [input, setInput] = useState('')
           <Input value={input} onChange={e => setInput(e.target.value)} placeholder='Type something..' />
         </div>
       </Docs.Showcase>
+
       <Docs.Showcase
         info={<span>Prefix & Suffix</span>}
         code={`
@@ -65,6 +64,7 @@ const [inputType, setInputType] = useState('password')
           />
         </Fields>
       </Docs.Showcase>
+
       <Docs.Showcase
         info={<span>Success, Error, Warning & Info</span>}
         code={`
@@ -81,13 +81,58 @@ const [inputType, setInputType] = useState('password')
           <Input placeholder='Type here..' status='info' />
         </Fields>
       </Docs.Showcase>
+
       <Docs.Showcase
         info={<span>Field types</span>}
         code={`
-<Input placeholder='Type here..' status='success' />
-<Input placeholder='Type here..' status='error' />
-<Input placeholder='Type here..' status='warning' />
-<Input placeholder='Type here..' status='info' />
+<Fields>
+  <Field label='Text'>
+    <Input type='text' placeholder='Enter mobile..' />
+  </Field>
+
+  <Field label='Mobile'>
+    <Input type='tel' placeholder='Enter mobile..' />
+  </Field>
+</Fields>
+
+<Fields>
+  <Field label='Email'>
+    <Input type='email' placeholder='Enter email..' />
+  </Field>
+  <Field label='URL'>
+    <Input type='url' placeholder='Enter url..' />
+  </Field>
+</Fields>
+
+<Fields>
+  <Field label='Number'>
+    <Input type='number' placeholder='Enter number..' />
+  </Field>
+
+  <Field label='Password'>
+    <Input type='password' placeholder='Enter password..' />
+  </Field>
+</Fields>
+
+<Fields>
+  <Field label='Time'>
+    <Input type='time' defaultValue='18:00' placeholder='Enter time..' />
+  </Field>
+
+  <Field label='Date'>
+    <Input type='date' defaultValue='2020-01-01' placeholder='Enter month..' />
+  </Field>
+</Fields>
+
+<Fields>
+  <Field label='Month'>
+    <Input type='month' defaultValue='2020-01' placeholder='Enter month..' />
+  </Field>
+
+  <Field label='Color'>
+    <Input type='color' placeholder='Select color..' value={color} onValue={value => setColor(value)} />
+  </Field>
+</Fields>
 `}
       >
         <Fields>
@@ -150,8 +195,9 @@ const [inputType, setInputType] = useState('password')
       </p>
 
       <Docs.Props
+        title='Input props'
         fields={[
-          { name: '..', usage: 'All input field props' },
+          { name: '..', usage: 'All input element props' },
           { name: 'status', type: 'string', usage: '"error" | "info" | "success" | "warning"' },
           { name: 'prefix', type: 'string', usage: '' },
           { name: 'onPrefixClick', type: 'function', usage: '' },

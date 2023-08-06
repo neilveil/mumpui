@@ -3,6 +3,7 @@ import typography from './typography'
 import dashboard from './dashboard'
 
 import component_input from './components/input'
+import component_form from './components/form'
 
 interface route {
   path: string
@@ -25,7 +26,8 @@ const routes: route[] = [
   { path: '/dashboard-7', component: dashboard },
 
   // Components
-  { path: '/component/input', component: component_input }
+  { path: '/component/input', component: component_input },
+  { path: '/component/form', component: component_form }
 ]
 
 export default routes
