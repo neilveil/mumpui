@@ -1,5 +1,5 @@
 import { Docs } from 'components'
-import { Dropdown, Field, Fields, Input } from 'lib'
+import { Dropdown, Field, Fields } from 'lib'
 import { useState } from 'react'
 
 export default function Main() {

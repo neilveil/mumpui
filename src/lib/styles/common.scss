@@ -19,4 +19,5 @@ $field-margin: 1rem;
   background: var(--mp-c-bg);
   transition: var(--mp-transition);
   font-size: $input-font-size;
+  position: relative;
 }

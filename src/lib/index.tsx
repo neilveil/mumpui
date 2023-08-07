@@ -19,6 +19,7 @@ export { default as Placeholder } from './components/placeholder'
 export { default as Loader } from './components/loader'
 export { default as Divider } from './components/divider'
 export { default as Code } from './components/code'
+export { default as Search } from './components/search'
 
 const MumpUI = () => {
   return (

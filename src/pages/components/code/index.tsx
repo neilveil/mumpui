@@ -1,6 +1,5 @@
 import { Docs } from 'components'
 import { Code } from 'lib'
-import { useState } from 'react'
 
 export default function Main() {
   return (

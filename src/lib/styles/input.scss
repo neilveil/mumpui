@@ -2,7 +2,9 @@
   @include input();
 }
 
-.mp-input {
+.mp-input,
+.mp-textarea,
+.mp-search {
   @include input();
   display: flex;
   align-items: center;
