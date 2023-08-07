@@ -12,17 +12,21 @@
   --mp-f-mono: Roboto Mono, monospace;
 }
 
+:root {
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-semi-bold: 500;
+  --fw-bold: 700;
+  --fw-mono: 500;
+
+  --f-primary: Roboto, sans-serif;
+  --f-mono: Roboto Mono, monospace;
+}
+
 body {
   font-size: 1rem;
   line-height: 1.5;
 
   font-family: var(--mp-f-primary);
   color: var(--mp-c-font);
-}
-
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Outlined');
-.icon,
-.material-icons-outlined {
-  font-family: 'Material Icons Outlined';
-  vertical-align: middle;
 }

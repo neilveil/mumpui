@@ -6,6 +6,8 @@ $input-padding: $input-top-padding $input-left-padding;
 
 $field-margin: 1rem;
 
+$border: var(--mp-stroke-width) solid var(--mp-c-stroke);
+
 @mixin center {
   display: flex;
   justify-content: center;
@@ -13,7 +15,7 @@ $field-margin: 1rem;
 }
 
 @mixin input {
-  border: var(--mp-stroke-width) solid var(--mp-c-stroke);
+  border: $border;
   border-radius: var(--mp-border-radius);
   color: var(--mp-c-font-dark);
   background: var(--mp-c-bg);

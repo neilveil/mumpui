@@ -1,0 +1,22 @@
+.mp-table {
+  overflow: auto;
+
+  table {
+    background-color: var(--mp-bg);
+
+    td {
+      border: 1px solid var(--mp-stroke);
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    thead {
+      background-color: var(--mp-light);
+
+      td {
+        font-weight: var(--mp-semi-bold);
+        color: var(--mp-font-dark);
+      }
+    }
+  }
+}

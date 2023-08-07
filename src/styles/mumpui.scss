@@ -1,0 +1,53 @@
+// @import 'mumpui/lib/styles/index.scss';
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+
+:root {
+  // --mp-f-primary: Roboto, sans-serif;
+  // --mp-f-mono: Roboto Mono, sans-serif;
+
+  --base-font-size: 16px;
+  --mp-border-radius: 8px;
+  --mp-stroke-width: 1px;
+
+  // --mp-fw-light: 300;
+  // --mp-fw-regular: 400;
+  // --mp-fw-semi-bold: 500;
+  // --mp-fw-bold: 700;
+  // --mp-fw-mono: 500;
+
+  --mp-transition: all 300ms ease;
+}
+
+// body {
+//   font-size: 1rem;
+//   line-height: 1.5;
+
+//   font-family: var(--mp-f-primary);
+//   color: var(--mp-c-font);
+// }
+
+.mumpui {
+  --mp-c-primary: #000000;
+  --mp-c-bg: #ffffff;
+  --mp-c-hover: #f8f8f8;
+  --mp-c-stroke: #e8e8e8;
+  --mp-c-stroke-hover: #c8c8c8;
+  --mp-c-stroke-active: #a8a8a8;
+  --mp-c-selection: #00000020;
+
+  --mp-c-font-dark: #282828;
+  --mp-c-font: #484848;
+  --mp-c-font-light: #888888;
+  --mp-c-placeholder: #b8b8b8;
+
+  // --mp-c-link: #1677ff;
+  --mp-c-mark: #ffebcf;
+  --mp-c-code: #e8e8e8;
+  --mp-c-code-bg: #282828;
+
+  --mp-c-success: #55c610;
+  --mp-c-error: #e83e0a;
+  --mp-c-warning: #ffd93b;
+  --mp-c-info: #1ea6ff;
+}
