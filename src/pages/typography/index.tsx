@@ -30,8 +30,16 @@ export default class Main extends React.Component {
       el.id = el.innerHTML.toString().replaceAll(' ', '-').toLowerCase().trim()
     })
 
+    el.querySelectorAll('table').forEach(el => {
+      const _el = el.cloneNode(true)
+      const divEl = document.createElement('div')
+      divEl.classList.add('mp-table-wrapper')
+      divEl.appendChild(_el)
+      el.replaceWith(divEl)
+    })
+
     setTimeout(() => {
-      const scrollToTitleId = window.location.href.split('#').pop()
+      const scrollToTitleId = new URL(window.location.href).hash
       if (scrollToTitleId) document.querySelector('#' + scrollToTitleId)?.scrollIntoView()
     }, 100)
   }

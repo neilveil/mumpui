@@ -71,7 +71,9 @@ Main.Showcase = ({ children, info, code }: { children?: any; info?: any; code?: 
 
       {!!viewCode && (
         <div className={s.code}>
-          <pre ref={ref}></pre>
+          <pre>
+            <code ref={ref}></code>
+          </pre>
         </div>
       )}
     </div>
@@ -99,10 +101,10 @@ Main.Props = (props: props) => (
       <table>
         <thead>
           <tr>
-            <td className={s.required}></td>
-            <td className={s.name}>Name</td>
-            <td className={s.type}>Type</td>
-            <td className={s.usage}>Usage</td>
+            <th className={s.required}></th>
+            <th className={s.name}>Name</th>
+            <th className={s.type}>Type</th>
+            <th className={s.usage}>Usage</th>
           </tr>
         </thead>
 

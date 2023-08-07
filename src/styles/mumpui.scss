@@ -3,8 +3,8 @@
 // @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
 
 :root {
-  // --mp-f-primary: Roboto, sans-serif;
-  // --mp-f-mono: Roboto Mono, sans-serif;
+  // --mp-ff-primary: Roboto, sans-serif;
+  // --mp-ff-code: Roboto Mono, sans-serif;
 
   --base-font-size: 16px;
   --mp-border-radius: 8px;
@@ -14,7 +14,8 @@
   // --mp-fw-regular: 400;
   // --mp-fw-semi-bold: 500;
   // --mp-fw-bold: 700;
-  // --mp-fw-mono: 500;
+  // --mp-fw-code: 500;
+  // --mp-fs-code: .9rem;
 
   --mp-transition: all 300ms ease;
 }
@@ -23,7 +24,7 @@
 //   font-size: 1rem;
 //   line-height: 1.5;
 
-//   font-family: var(--mp-f-primary);
+//   font-family: var(--mp-ff-primary);
 //   color: var(--mp-c-font);
 // }
 
@@ -41,10 +42,8 @@
   --mp-c-font-light: #888888;
   --mp-c-placeholder: #b8b8b8;
 
-  // --mp-c-link: #1677ff;
   --mp-c-mark: #ffebcf;
-  --mp-c-code: #e8e8e8;
-  --mp-c-code-bg: #282828;
+  --mp-c-code: #f88b16;
 
   --mp-c-success: #55c610;
   --mp-c-error: #e83e0a;

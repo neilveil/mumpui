@@ -58,6 +58,10 @@
       }
     }
   }
+
+  pre {
+    margin: 0;
+  }
 }
 
 .info,
@@ -65,12 +69,6 @@ p {
   font-size: 0.8rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
-
-  code {
-    font-family: var(--f-mono);
-    background-color: var(--c-light);
-    padding: 0 0.25rem;
-  }
 
   a {
     color: var(--c-blue);
@@ -83,22 +81,6 @@ p {
   color: var(--c-font);
 }
 
-.code {
-  font-size: 0.8rem;
-
-  *::selection {
-    background-color: #fff8;
-  }
-
-  pre {
-    margin: 0;
-    padding: 1rem;
-    overflow: auto;
-    background-color: #080808;
-    color: #d8d8d8;
-  }
-}
-
 .props {
   font-size: 1rem;
   margin-top: 1rem;
@@ -106,29 +88,15 @@ p {
 }
 
 .table {
-  width: 100%;
   overflow: auto;
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  table {
-    font-size: 0.8rem;
-  }
-
-  td {
-    padding: 0.5rem 1rem;
-    border: var(--border);
-  }
-
-  thead {
-    td {
-      font-weight: var(--fw-semi-bold);
-    }
-  }
-
   tbody {
+    .name {
+      code {
+        color: var(--c-font-dark);
+      }
+    }
+
     .type {
       code {
         color: var(--c-orange);
@@ -147,16 +115,5 @@ p {
   .required {
     width: 1rem;
     text-align: center;
-  }
-
-  code {
-    font-family: var(--f-mono);
-    font-size: 0.7rem;
-    font-weight: var(--fw-mono);
-    font-family: var(--f-mono);
-    background-color: var(--c-light);
-    padding: 0 0.25rem;
-    color: var(--c-font-dark);
-    user-select: all;
   }
 }

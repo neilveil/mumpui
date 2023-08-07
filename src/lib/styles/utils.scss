@@ -1,5 +1,11 @@
+.text-left {
+  text-align: left;
+}
 .text-center {
   text-align: center;
+}
+.text-right {
+  text-align: right;
 }
 
 .center {
@@ -60,11 +66,4 @@
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
-}
-
-.mp-content {
-  width: 100%;
-  max-width: 800px;
-  margin: auto;
-  padding: 1rem;
 }
