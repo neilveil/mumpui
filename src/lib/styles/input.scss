@@ -2,29 +2,10 @@
   @include input();
 }
 
-.mp-input-chip {
-  padding-left: 0.5rem;
-  background-color: var(--mp-c-hover);
-  border-radius: var(--mp-border-radius);
-  display: flex;
-  align-items: center;
-  user-select: none;
-
-  svg {
-    width: 1.5rem;
-    height: 1rem;
-    cursor: pointer;
-    padding: 0 0.5rem;
-  }
-}
-
-.mp-input,
-.mp-dropdown {
+.mp-input {
   @include input();
   display: flex;
   align-items: center;
-  position: relative;
-  z-index: 2;
 
   input,
   textarea,
@@ -33,20 +14,11 @@
     border: none;
     outline: none;
     padding: 0;
-    padding: $input-top-padding $input-left-padding;
+    padding: $input-padding;
     border-radius: var(--mp-border-radius);
-
-    // For dropdown chips
-    display: flex;
-    gap: calc($input-left-padding / 2);
-    flex-wrap: wrap;
 
     &::placeholder {
       color: var(--mp-c-placeholder);
-    }
-
-    &:disabled {
-      background-color: var(--mp-c-hover);
     }
   }
 
@@ -76,5 +48,40 @@
   }
   .mp-suffix {
     border-radius: 0 var(--mp-border-radius) var(--mp-border-radius) 0;
+  }
+}
+
+input:disabled,
+.mp-disabled {
+  background-color: var(--mp-c-hover) !important;
+  &,
+  * {
+    cursor: not-allowed !important;
+  }
+}
+
+.mp-input-expanded-area {
+  background-color: var(--mp-c-bg);
+  border: var(--mp-stroke-width) solid var(--mp-c-stroke);
+  border-radius: var(--mp-border-radius);
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  z-index: 100;
+  max-height: 30vh;
+  overflow: auto;
+  margin-top: 0.5rem;
+  animation: appear 300ms ease forwards;
+  user-select: none;
+
+  @keyframes appear {
+    0% {
+      margin-top: 2rem;
+      opacity: 0;
+    }
+    100% {
+      margin-top: 0.5rem;
+      opacity: 1;
+    }
   }
 }

@@ -169,7 +169,6 @@
   border-color: var(--c-stroke);
   opacity: 0;
   animation: appear 300ms ease forwards;
-  overflow: hidden;
 
   @keyframes appear {
     0% {

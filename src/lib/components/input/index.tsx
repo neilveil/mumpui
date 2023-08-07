@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 
 type props = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'prefix'> & {
   status?: 'success' | 'error' | 'warning' | 'info'
@@ -25,8 +25,6 @@ export default function Main({
 }: props) {
   className = 'mp-input ' + (className || '')
   style = Object.assign({}, style)
-
-  const ref: any = useRef()
 
   if (status) style.borderColor = 'var(--mp-c-' + status + ')'
 

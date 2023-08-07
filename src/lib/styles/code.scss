@@ -1,0 +1,10 @@
+.mp-code {
+  background-color: #181818;
+  color: #e8e8e8;
+  cursor: text;
+  font-size: 0.75rem;
+
+  *::selection {
+    background-color: #fff2;
+  }
+}

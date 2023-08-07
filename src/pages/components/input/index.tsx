@@ -194,8 +194,33 @@ const [inputType, setInputType] = useState('password')
         <b>Note:</b> Input prefix & suffix doesn't work with color type input field.
       </p>
 
+      <Docs.Showcase
+        info={<span>Use input field styles</span>}
+        code={`
+<Fields>
+  <div className='mp-input'>
+    <div className='mp-value'>Hello there!</div>
+  </div>
+
+  <div className='mp-input'>
+    <input placeholder='Type..' />
+  </div>
+</Fields>
+`}
+      >
+        <Fields>
+          <div className='mp-input'>
+            <div className='mp-value'>Hello there!</div>
+          </div>
+
+          <div className='mp-input'>
+            <input placeholder='Type..' />
+          </div>
+        </Fields>
+      </Docs.Showcase>
+
       <Docs.Props
-        title='Input props'
+        title='Input'
         fields={[
           { name: '..', usage: 'All input element props' },
           { name: 'status', type: 'string', usage: '"error" | "info" | "success" | "warning"' },

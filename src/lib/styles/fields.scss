@@ -1,0 +1,16 @@
+@import './common.scss';
+
+.mp-fields {
+  display: flex;
+  gap: 1rem;
+  margin: $field-margin 0;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  & > div {
+    width: 100%;
+    margin: 0;
+  }
+}

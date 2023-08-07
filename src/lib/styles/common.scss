@@ -1,6 +1,10 @@
 $input-font-size: 0.7rem;
+
 $input-top-padding: 0.3rem;
 $input-left-padding: $input-top-padding * 2;
+$input-padding: $input-top-padding $input-left-padding;
+
+$field-margin: 1rem;
 
 @mixin center {
   display: flex;

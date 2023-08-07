@@ -79,17 +79,17 @@ export default function Main() {
         </Form>
       </Docs.Showcase>
 
+      <Docs.Props title='Form' fields={[{ name: '..', usage: 'All div element props' }]} />
+
+      <Docs.Props title='Fields' fields={[{ name: '..', usage: 'All div element props' }]} />
+
       <p>
         <code>Fields</code> component is used to equally divide the row in multiple input fields with proper gap in
         between.
       </p>
 
-      <Docs.Props title='Form props' fields={[{ name: '..', usage: 'All div element props' }]} />
-
-      <Docs.Props title='Fields props' fields={[{ name: '..', usage: 'All div element props' }]} />
-
       <Docs.Props
-        title='Field props'
+        title='Field'
         fields={[
           { name: '..', usage: 'All div element props' },
           { name: 'label', type: 'string' }

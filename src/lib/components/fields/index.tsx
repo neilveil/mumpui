@@ -1,17 +1,11 @@
 import React from 'react'
 
 type props = React.HTMLAttributes<HTMLDivElement> & {
-  children?: React.ReactNode
   className?: string
-  style?: React.CSSProperties
 }
 
-export default function Main(props: props) {
-  const className = 'mp-fields ' + (props.className || '')
+export default function Main({ className, ...props }: props) {
+  className = 'mp-fields ' + (className || '')
 
-  return (
-    <div className={className} style={props.style}>
-      {props.children}
-    </div>
-  )
+  return <div className={className}>{props.children}</div>
 }

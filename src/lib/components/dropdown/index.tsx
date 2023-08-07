@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 type key = number | string
 type label = string
@@ -9,20 +9,45 @@ type option = {
 }
 
 type props = {
-  options: option[]
   value: null | option | option[]
-  onSelect: (option: option | option[]) => void
+  options: option[]
+  onSelect: (option: null | option | option[]) => void
   onSearch?: (search: string) => void
-  placeholder?: string
+  placeholder?: any
+  clearable?: boolean
+  disabled?: boolean
+  status?: 'success' | 'error' | 'warning' | 'info'
   className?: string
   style?: React.CSSProperties
-  status?: 'success' | 'error' | 'warning' | 'info'
 }
 
-export default function Main({ options = [], ...props }: props) {
+export default function Main({
+  value,
+  options = [],
+  onSelect,
+  onSearch,
+  placeholder,
+  clearable = false,
+  disabled = false,
+  status,
+  className,
+  style,
+  ...props
+}: props) {
   const [optionsVisible, setOptionsVisible] = useState(false)
 
+  className = 'mp-dropdown ' + (disabled ? 'mp-disabled ' : '') + (className || '')
+  style = Object.assign({}, style)
+
   const ref: React.Ref<any> = useRef(null)
+
+  const isMultiselect = Array.isArray(value)
+
+  if (status) style.borderColor = 'var(--mp-c-' + status + ')'
+
+  var valueEl: string | React.ReactNode[] = ''
+
+  placeholder = <span style={{ color: 'var(--mp-c-placeholder)' }}>{placeholder || <>&nbsp;</>}</span>
 
   const clickListener: EventListener = e => {
     if (ref.current && !ref.current.contains(e.target)) setOptionsVisible(false)
@@ -33,13 +58,11 @@ export default function Main({ options = [], ...props }: props) {
     return () => window.removeEventListener('click', clickListener)
   }, [])
 
-  const isMultiselect = Array.isArray(props.value)
+  const _onSelect = (selected: option) => {
+    if (onSearch) onSearch('')
 
-  const onSelect = (selected: option) => {
-    if (props.onSearch) props.onSearch('')
-
-    if (Array.isArray(props.value)) props.onSelect(props.value.concat(selected))
-    else props.onSelect(selected)
+    if (Array.isArray(value)) onSelect(value.concat(selected))
+    else onSelect(selected)
 
     if (!isMultiselect) setOptionsVisible(false)
     else {
@@ -51,25 +74,19 @@ export default function Main({ options = [], ...props }: props) {
     }
   }
 
-  const className = 'mp-dropdown ' + (props.className || '')
-  const style = Object.assign({}, props.style)
+  if (value) {
+    if (Array.isArray(value)) {
+      const selectedKey = value.map(x => x.key)
 
-  if (props.status) style.borderColor = 'var(--mp-c-' + props.status + ')'
-
-  var value: string | React.ReactNode[] = ''
-
-  if (props.value) {
-    if (Array.isArray(props.value)) {
-      const selectedKey = props.value.map(x => x.key)
-
-      value = props.value.map((x, i) => (
+      valueEl = value.map((x, i) => (
         <div key={i} className='mp-input-chip'>
           {x.label}
           <CrossIcon
             color='var(--mp-c-font-light)'
             onClick={e => {
+              if (disabled) return
               e.stopPropagation()
-              if (Array.isArray(props.value)) props.onSelect(props.value.filter(y => y.key !== x.key))
+              if (Array.isArray(value)) onSelect(value.filter(y => y.key !== x.key))
             }}
           />
         </div>
@@ -77,94 +94,66 @@ export default function Main({ options = [], ...props }: props) {
 
       options = options.filter(x => !selectedKey.includes(x.key))
     } else {
-      value = props.value.label
-      const key = props.value.key
+      valueEl = value.label
+      const key = value.key
+
       options = options.filter(x => key !== x.key)
     }
   }
 
-  const placeholder = <span style={{ color: 'var(--mp-c-placeholder)' }}>{props.placeholder || <>&nbsp;</>}</span>
-
   return (
     <div
       tabIndex={0}
-      // onKeyUp={e => {
-      //   if (e.key === 'Enter') setOptionsVisible(!optionsVisible)
-      // }}
       ref={ref}
       className={className}
       style={style}
-      // onFocus={() => setOptionsVisible(true)}
-      onClick={() => setOptionsVisible(!optionsVisible)}
-      // onBlur={() => setOptionsVisible(false)}
+      onClick={() => (disabled ? null : setOptionsVisible(!optionsVisible))}
     >
-      <div className='mp-value'>
-        {isMultiselect && (value.length ? value : placeholder)}
-        {!isMultiselect && (value ? value : placeholder)}
-      </div>
+      {!isMultiselect && <div className='mp-dropdown-single-select'>{valueEl ? valueEl : placeholder}</div>}
 
-      {/* <input
-          className='mp-input'
-          placeholder='Search..'
-          onChange={e => console.log(e.target.value)}
-          onFocus={() => {
-            console.log('click')
-            setOptionsVisible(true)
-          }}
-          onBlur={e => {
-            console.log('blur')
-            setOptionsVisible(false)
-          }}
-        /> */}
+      {!!isMultiselect && <div className='mp-dropdown-multi-select'>{valueEl.length ? valueEl : placeholder}</div>}
 
-      {optionsVisible && !!(options.length || props.onSearch) && (
-        <div className='mp-input-output'>
-          {props.onSearch && (
+      {optionsVisible && !!(options.length || onSearch) && (
+        <div className='mp-input-expanded-area'>
+          {!!(onSearch || clearable) && (
             <div
+              className='mp-dropdown-area'
               onClick={e => {
                 e.preventDefault()
                 e.stopPropagation()
               }}
             >
-              <input
-                className='mp-search'
-                placeholder='Search..'
-                onChange={e => props.onSearch && props.onSearch(e.target.value)}
-                onKeyUp={e => {
-                  if (e.key === 'Enter') {
-                    if (options.length) onSelect(options[0])
-                  }
-                }}
-                autoFocus
-              />
+              {!!onSearch ? (
+                <input
+                  placeholder='Search..'
+                  onChange={e => onSearch && onSearch(e.target.value)}
+                  onKeyUp={e => {
+                    if (e.key === 'Enter') {
+                      if (options.length) _onSelect(options[0])
+                    }
+                  }}
+                  className='mp-dropdown-search'
+                  autoFocus
+                />
+              ) : (
+                <div className='mp-dropdown-search'>&nbsp;</div>
+              )}
+
+              {!!clearable && (
+                <div className='mp-dropdown-clear' onClick={() => onSelect(isMultiselect ? [] : null)}>
+                  Clear
+                </div>
+              )}
             </div>
           )}
 
           {options.map(({ key, label }, i) => (
             <div
               key={i}
-              className='mp-option'
-              // tabIndex={0}
-              // onKeyUp={e => {
-              //   if (e.key === 'Enter') {
-              //     const selected = { key, label }
-
-              //     if (Array.isArray(props.value)) props.onSelect(props.value.concat(selected))
-              //     else props.onSelect(selected)
-
-              //     if (!isMultiselect) setOptionsVisible(false)
-              //     else {
-              //       const inputEl = ref.current.querySelector('input')
-              //       if (inputEl) {
-              //         inputEl.value = ''
-              //         inputEl.focus()
-              //       }
-              //     }
-              //   }
-              // }}
+              className='mp-dropdown-option'
               onClick={e => {
                 e.stopPropagation()
-                onSelect({ key, label })
+                _onSelect({ key, label })
               }}
             >
               {label}

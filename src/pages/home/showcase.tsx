@@ -41,6 +41,7 @@ export default {
             onSelect={(country: any) => setValue(country)}
             onSearch={search => setSearch(search)}
             placeholder='Empty'
+            clearable
           />
         </div>
       )

@@ -31,7 +31,8 @@ export default class Main extends React.Component {
                 <div className={s.info}>
                   A Lightweight & Flexible
                   <br />
-                  Design System for Developers
+                  Design System for Developers.
+                  <br />& It's clean!
                 </div>
 
                 {/* <div className={s.inspired}>

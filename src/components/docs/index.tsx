@@ -81,6 +81,7 @@ Main.Showcase = ({ children, info, code }: { children?: any; info?: any; code?: 
 type field = {
   name?: string
   type?: 'string' | 'number' | 'boolean' | 'object' | 'array' | 'function' | 'JSX'
+  customType?: string
   usage?: any
   required?: boolean
 }
@@ -92,7 +93,7 @@ interface props {
 
 Main.Props = (props: props) => (
   <div>
-    <div className={s.props}>{props.title || 'Props'}</div>
+    <div className={s.props}>{props.title} props</div>
 
     <div className={s.table}>
       <table>
@@ -114,7 +115,7 @@ Main.Props = (props: props) => (
                 <code>{x.name}</code>
               </td>
 
-              <td className={s.type}>{!!x.type && <code>{x.type}</code>}</td>
+              <td className={s.type}>{!!(x.type || x.customType) && <code>{x.type || x.customType}</code>}</td>
               <td className={s.usage}>{x.usage}</td>
             </tr>
           ))}
