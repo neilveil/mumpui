@@ -7,6 +7,12 @@ disabled field
 set meta
 remove bold font
 
+remove unused data
+fuse & axios dynamic
+countries object
+
+set required fields
+set object structure in code
 
 confirm
 pagination

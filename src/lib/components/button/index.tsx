@@ -4,17 +4,13 @@ type props = Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'type'> & {
   children?: any
   type?: 'default' | 'primary' | 'stroke' | 'dashed' | 'danger' | 'text'
   className?: string
-  style?: React.CSSProperties
-  disabled?: boolean
-  onClick?: () => void
 }
 
-export default function Main({ children, type, ...props }: props) {
-  const className = `mp-button mp-button-${type || 'default'} ${props.className || ''}`
-  const style = Object.assign({}, props.style)
+export default function Main({ children, type, className, ...props }: props) {
+  className = `mp-button mp-button-${type || 'default'} ${className || ''}`
 
   return (
-    <button className={className} style={style} disabled={props.disabled} onClick={props.onClick}>
+    <button className={className} disabled={props.disabled} onClick={props.onClick} {...props}>
       {children}
     </button>
   )

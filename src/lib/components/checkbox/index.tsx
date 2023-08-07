@@ -17,31 +17,31 @@ type props = {
   style?: React.CSSProperties
 }
 
-type checkbox = {
-  checked: boolean
-  _key: key
-  label: label
-  onChange: (key: key) => void
-}
+export default function Main({ options, checked, onChange, className, style }: props) {
+  className = 'mp-checkboxes ' + className
 
-export default function Main(props: props) {
   return (
-    <div className={'mp-checkboxes ' + props.className} style={props.style}>
-      {props.options.map(({ key, label }, i) => (
+    <div className={className} style={style}>
+      {options.map(({ key, label }, i) => (
         <Checkbox
           key={i}
-          checked={props.checked.includes(key)}
+          checked={checked.includes(key)}
           _key={key}
           label={label}
           onChange={(key: key) =>
-            props.onChange(
-              props.checked.includes(key) ? props.checked.filter(x => x !== key) : props.checked.concat(key)
-            )
+            onChange(checked.includes(key) ? checked.filter(x => x !== key) : checked.concat(key))
           }
         />
       ))}
     </div>
   )
+}
+
+type checkbox = {
+  checked: boolean
+  _key: key
+  label: label
+  onChange: (key: key) => void
 }
 
 export function Checkbox(props: checkbox) {

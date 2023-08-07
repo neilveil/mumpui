@@ -11,36 +11,32 @@ type option = {
 
 type props = {
   options: option[]
-  selected: key
+  checked: key
   onChange: (keys: key) => void
   className?: string
   style?: React.CSSProperties
 }
 
-type checkbox = {
+export default function Main({ options, checked, onChange, className, style }: props) {
+  className = 'mp-checkboxes ' + className
+
+  return (
+    <div className={'mp-radios ' + className} style={style}>
+      {options.map(({ key, label }, i) => (
+        <Radio key={i} checked={checked === key} _key={key} label={label} onChange={(key: key) => onChange(key)} />
+      ))}
+    </div>
+  )
+}
+
+type radio = {
   checked: boolean
   _key: key
   label: label
   onChange: (key: key) => void
 }
 
-export default function Main(props: props) {
-  return (
-    <div className={'mp-radios ' + props.className} style={props.style}>
-      {props.options.map(({ key, label }, i) => (
-        <Checkbox
-          key={i}
-          checked={props.selected === key}
-          _key={key}
-          label={label}
-          onChange={(key: key) => props.onChange(key)}
-        />
-      ))}
-    </div>
-  )
-}
-
-export function Checkbox(props: checkbox) {
+export function Radio(props: radio) {
   return (
     <div className='mp-radio'>
       <label>
