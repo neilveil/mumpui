@@ -14,6 +14,11 @@ countries object
 set required fields
 set object structure in code
 
+optimize scss with variables like padding & border
+convert all tsx example to jsx
+
+csv helper, back stack, scroll handler
+
 confirm
 pagination
 dashboard

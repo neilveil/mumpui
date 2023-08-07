@@ -6,6 +6,7 @@
 @import './dropdown.scss';
 @import './code.scss';
 @import './button.scss';
+@import './file.scss';
 
 .mp-label {
   font-size: 0.7rem;
@@ -174,18 +175,6 @@
     color: var(--mp-c-font);
     padding-right: 1rem;
     margin-left: 1.5rem;
-  }
-}
-
-// File
-.mp-file {
-  padding: $input-top-padding $input-left-padding;
-  font-size: 0.7rem;
-  border: var(--mp-stroke-width) dashed var(--mp-c-stroke);
-  border-radius: var(--mp-border-radius);
-
-  input {
-    display: none;
   }
 }
 
