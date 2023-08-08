@@ -1,3 +1,22 @@
+.mp-code {
+  overflow: auto;
+  background-color: #181818;
+  margin: 1rem 0;
+
+  *::selection {
+    background-color: #fff2 !important;
+  }
+
+  pre {
+    overflow: visible;
+    background-color: #181818;
+
+    code {
+      color: #e8e8e8;
+    }
+  }
+}
+
 code {
   color: var(--mp-c-code);
   background-color: var(--mp-c-hover);
@@ -17,20 +36,12 @@ code {
 }
 
 pre {
-  background-color: #181818 !important;
   cursor: text;
-  margin: 1rem 0;
   padding: 1rem;
-  overflow: auto;
 
   code {
     padding: 0;
-    color: #e8e8e8;
     background-color: transparent;
     user-select: unset;
-  }
-
-  *::selection {
-    background-color: #fff2 !important;
   }
 }

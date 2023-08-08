@@ -125,11 +125,12 @@ li + li {
     background-color: var(--mp-c-selection);
   }
 
-  pre {
+  .mp-code {
     margin: calc(3 * $spacing) 0;
   }
 
-  .mp-table-wrapper {
+  .mp-table-wrapper,
+  .table-wrapper {
     margin: calc(2 * $spacing) 0;
   }
 

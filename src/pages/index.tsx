@@ -13,6 +13,7 @@ import component_checkbox from './components/checkbox'
 import component_radio from './components/radio'
 import component_range from './components/range'
 import component_file from './components/file'
+import component_typography from './components/typography'
 
 interface route {
   path: string
@@ -45,7 +46,8 @@ const routes: route[] = [
   { path: '/component/checkbox', component: component_checkbox },
   { path: '/component/radio', component: component_radio },
   { path: '/component/range', component: component_range },
-  { path: '/component/file', component: component_file }
+  { path: '/component/file', component: component_file },
+  { path: '/component/typography', component: component_typography }
 ]
 
 export default routes

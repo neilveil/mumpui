@@ -70,7 +70,7 @@ Main.Showcase = ({ children, info, code }: { children?: any; info?: any; code?: 
       <div className={s.element}>{children}</div>
 
       {!!viewCode && (
-        <div className={s.code}>
+        <div className='mp-code' style={{ margin: 0 }}>
           <pre>
             <code ref={ref}></code>
           </pre>

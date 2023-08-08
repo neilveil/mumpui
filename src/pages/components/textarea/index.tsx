@@ -38,14 +38,3 @@ export default function Main() {
     </Docs>
   )
 }
-
-const snippet = `
-const snippet = \`
-function fun () {
-  return (
-    <div>Hello there!</div>
-  )
-}\`
-
-<Code snippet={snippet} lang='jsx' />
-`
