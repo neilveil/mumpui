@@ -42,6 +42,14 @@ show default value in props
 
 z-index standard
 
+version
+
+changelog
+
+version snapshots
+
+root host
+
 ## Importing stylesheet
 
 ```jsx

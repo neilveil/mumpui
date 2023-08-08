@@ -1,6 +1,13 @@
 .mp-loader {
   padding: 2rem;
   text-align: center;
+  width: 100%;
+
+  .mp-loader-text {
+    font-size: 0.7rem;
+    margin-top: 0.5rem;
+  }
+
   svg {
     width: 2.5rem;
     transform-origin: center;
@@ -8,7 +15,7 @@
 
     circle {
       fill: none;
-      stroke: var(--c-primary);
+      stroke: var(--mp-c-primary);
       stroke-width: 2;
       stroke-dasharray: 1, 200;
       stroke-dashoffset: 0;

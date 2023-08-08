@@ -1,0 +1,16 @@
+.mp-placeholder {
+  text-align: center;
+  padding: 4rem;
+
+  svg {
+    width: 100%;
+    max-width: 8rem;
+    fill: var(--mp-c-stroke-hover);
+  }
+
+  .mp-placeholder-text {
+    font-size: 0.7rem;
+    color: var(--mp-c-font-light);
+    user-select: none;
+  }
+}

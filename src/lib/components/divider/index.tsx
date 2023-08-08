@@ -1,20 +1,20 @@
 import React from 'react'
 
-type props = {
+type props = React.HTMLAttributes<HTMLDivElement> & {
   children?: any
   align?: 'left' | 'center' | 'right'
   className?: string
-  style?: React.CSSProperties
 }
 
-export default function Main({ children, align = 'center', className, style }: props) {
-  className = 'mp-divider ' + (className || '')
-  style = Object.assign({}, style)
+export default function Main({ children, align = 'center', className, ...props }: props) {
+  const isEmpty = children === undefined
+
+  className = `mp-divider ${isEmpty ? 'mp-divider-empty' : ''} ${className || ''}`
 
   return (
-    <div className={className} style={style}>
+    <div className={className} {...props}>
       <div style={align === 'left' ? { width: '10vw' } : {}} className='mp-divider-line'></div>
-      <div className='mp-divider-text'>{children}</div>
+      {!isEmpty && <div className='mp-divider-text'>{children}</div>}
       <div style={align === 'right' ? { width: '10vw' } : {}} className='mp-divider-line'></div>
     </div>
   )

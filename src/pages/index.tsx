@@ -24,6 +24,10 @@ import component_chain from './components/chain'
 import component_table from './components/table'
 import component_tooltip from './components/tooltip'
 import component_embed from './components/embed'
+import component_divider from './components/divider'
+import component_loader from './components/loader'
+import component_md from './components/md'
+import component_placeholder from './components/placeholder'
 
 interface route {
   path: string
@@ -67,7 +71,11 @@ const routes: route[] = [
   { path: '/component/chain', component: component_chain },
   { path: '/component/table', component: component_table },
   { path: '/component/tooltip', component: component_tooltip },
-  { path: '/component/embed', component: component_embed }
+  { path: '/component/embed', component: component_embed },
+  { path: '/component/divider', component: component_divider },
+  { path: '/component/loader', component: component_loader },
+  { path: '/component/md', component: component_md },
+  { path: '/component/placeholder', component: component_placeholder }
 ]
 
 export default routes
