@@ -1,4 +1,4 @@
-.main {
+.mp-message {
   position: fixed;
   z-index: 1000000;
   width: 100%;
@@ -10,7 +10,7 @@
   pointer-events: none;
 }
 
-.message {
+.mp-message-box {
   display: inline-flex;
   align-items: center;
   background-color: var(--mp-c-bg);
@@ -20,7 +20,7 @@
   max-width: 600px;
   margin-bottom: 0.5rem;
 
-  .icon {
+  .mp-message-icon {
     display: flex;
     padding: 0.25rem;
 
@@ -30,20 +30,20 @@
     }
   }
 
-  .text {
+  .mp-message-text {
     margin-left: 0.25rem;
     font-size: 0.7rem;
     color: var(--mp-c-font);
     text-align: left;
   }
-}
 
-.loaderRotate {
-  animation: rotate 700ms linear infinite;
-}
+  .mp-message-loader {
+    animation: rotate 700ms linear infinite;
+  }
 
-@keyframes rotate {
-  100% {
-    transform: rotate(360deg);
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }

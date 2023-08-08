@@ -89,13 +89,16 @@ type field = {
 }
 
 interface props {
-  title?: string
+  title?: any
   fields?: field[]
+  type?: 'props' | 'args'
 }
 
 Main.Props = (props: props) => (
   <div>
-    <div className={s.props}>{props.title} props</div>
+    <div className={s.props}>
+      {props.title} {props.type}
+    </div>
 
     <div className={s.table}>
       <table>

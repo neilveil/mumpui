@@ -1,4 +1,4 @@
-.main {
+.mp-confirm {
   position: fixed;
   overflow: auto;
   top: 0;
@@ -10,33 +10,31 @@
   padding: 1rem;
   text-align: center;
 
-  .dialog {
+  .mp-confirm-dialog {
     display: inline-block;
     background-color: var(--c-bg);
-    // width: 100%;
     min-width: 30%;
     max-width: 600px;
     margin: 4rem auto 0 auto;
     padding: 1rem;
-    padding-bottom: 0;
     border-radius: var(--mp-border-radius);
     color: var(--mp-c-font);
 
-    .content {
-      text-align: left;
+    .mp-confirm-title {
+      font-size: 0.9rem;
       color: var(--c-font-dark);
-
-      .title {
-        font-size: 0.8rem;
-      }
-      .info {
-        font-size: 0.7rem;
-        margin-top: 0.5rem;
-        color: var(--mp-c-font-light);
-      }
+      text-align: left;
     }
 
-    .buttons {
+    .mp-confirm-description {
+      font-size: 0.7rem;
+      margin-top: 0.5rem;
+      color: var(--mp-c-font-light);
+      text-align: left;
+    }
+
+    .mp-confirm-buttons {
+      margin-top: 1rem;
       display: flex;
       justify-content: flex-end;
     }

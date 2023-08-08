@@ -13,6 +13,7 @@ countries object
 
 set required fields
 set object structure in code
+simplify docs, dont use arrow functions
 
 optimize scss with variables like padding & border
 convert all tsx example to jsx

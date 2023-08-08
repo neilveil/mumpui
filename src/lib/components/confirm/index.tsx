@@ -1,14 +1,13 @@
 import React from 'react'
 import Button from '../button'
-import s from './styles.module.scss'
 
 interface data {
   id: number
   title: string
-  info?: string
+  onConfirm: () => void
+  description?: string
   confirmText?: string
   cancelText?: string
-  onConfirm?: () => void
   onCancel?: () => void
   confirmFG?: string
   confirmBG?: string
@@ -24,12 +23,12 @@ export default class Main extends React.Component {
     data: []
   }
   static _this: InstanceType<typeof Main>
-  static init = ({ title, info, confirmText, cancelText, onConfirm, onCancel, type }: Omit<data, 'id'>) => {
+  static init = ({ title, description, confirmText, cancelText, onConfirm, onCancel, type }: Omit<data, 'id'>) => {
     Main._this.setState({
       data: Main._this.state.data.concat({
         id: Math.random(),
         title,
-        info,
+        description,
         confirmText: confirmText || 'Confirm',
         cancelText: cancelText || 'Cancel',
         onConfirm,
@@ -38,6 +37,7 @@ export default class Main extends React.Component {
       })
     })
   }
+  static clear = () => Main._this.setState({ data: [] })
 
   componentDidMount = () => (Main._this = this)
   close = (id: number) => this.setState({ data: this.state.data.filter(x => x.id !== id) })
@@ -45,26 +45,36 @@ export default class Main extends React.Component {
     return this.state.data.map((x, i) => (
       <div
         key={i}
-        className={s.main}
+        className='mp-confirm'
         onClick={e => {
           e.stopPropagation()
           this.close(x.id)
         }}
       >
-        <div className={s.dialog} onClick={e => e.stopPropagation()}>
-          <div className={s.content}>
-            <div className={s.title}>{x.title}</div>
-            <div className={s.info}>{x.info}</div>
-          </div>
+        <div className='mp-confirm-dialog' onClick={e => e.stopPropagation()}>
+          <div className='mp-confirm-title'>{x.title}</div>
+          <div className='mp-confirm-description'>{x.description}</div>
 
-          <div className={s.buttons}>
-            <Button label={x.cancelText || ''} onClick={() => this.close(x.id)} />
+          <div className='mp-confirm-buttons'>
             <Button
-              label={x.confirmText || ''}
-              onClick={() => this.close(x.id)}
+              onClick={() => {
+                this.close(x.id)
+                if (x.onCancel) x.onCancel()
+              }}
+            >
+              {x.cancelText || ''}
+            </Button>
+
+            <Button
+              onClick={() => {
+                this.close(x.id)
+                if (x.onConfirm) x.onConfirm()
+              }}
               style={{ marginLeft: '1rem' }}
               type={x.type}
-            />
+            >
+              {x.confirmText || ''}
+            </Button>
           </div>
         </div>
       </div>

@@ -1,0 +1,39 @@
+.mp-note,
+.mp-content .note {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: var(--mp-border-radius);
+  border: 1px solid;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left-width: 4px;
+
+  &.blue {
+    background-color: #e6f7ff;
+    border-color: #91d5ff;
+  }
+  &.green {
+    background-color: #f6ffed;
+    border-color: #b7eb8f;
+  }
+  &.red {
+    background-color: #fff2f0;
+    border-color: #ffccc7;
+  }
+  &.yellow {
+    background-color: #fffbe6;
+    border-color: #ffe58f;
+  }
+  &.default,
+  & {
+    background-color: #f3f3f3;
+    border-color: #d8d8d8;
+  }
+  &.quote {
+    border-left-width: 8px;
+    border-color: #888888 !important;
+    background-color: var(--mp-c-bg);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}

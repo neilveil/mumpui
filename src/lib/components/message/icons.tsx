@@ -65,7 +65,7 @@ export const warn = (
 )
 
 export const loading = (
-  <svg viewBox='0 0 128 128' fill='none' xmlns='http://www.w3.org/2000/svg' className={s.loaderRotate}>
+  <svg viewBox='0 0 128 128' fill='none' xmlns='http://www.w3.org/2000/svg' className='mp-message-loader'>
     <mask
       id='mask0_302_8'
       style={{ maskType: 'alpha' }}

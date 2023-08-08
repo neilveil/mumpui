@@ -1,12 +1,12 @@
 import React from 'react'
 import * as icons from './icons'
-import s from './styles.module.scss'
 
 type icon = React.ReactNode
 type text = string
 type duration = number
 
 type message = {
+  id: symbol
   icon: icon
   type: string
   text: text
@@ -26,11 +26,12 @@ export default class Main extends React.Component {
   static duration = 3
 
   static info = (text = '', duration?: duration) => Main.pushMessage({ icon: icons.info, text, duration })
-  static warn = (text = '', duration?: duration) => Main.pushMessage({ icon: icons.warn, text, duration })
+  static warning = (text = '', duration?: duration) => Main.pushMessage({ icon: icons.warn, text, duration })
   static success = (text = '', duration?: duration) => Main.pushMessage({ icon: icons.success, text, duration })
   static error = (text = '', duration?: duration) => Main.pushMessage({ icon: icons.error, text, duration })
   static loading = (text = '', duration?: duration) => Main.pushMessage({ icon: icons.loading, text, duration })
-  static destroy = () => Main._this.setState({ messages: [] })
+  static clear = (id?: symbol) =>
+    Main._this.setState({ messages: id ? Main._this.state.messages.filter(x => x.id !== id) : [] })
 
   static pushMessage = ({ icon, text, duration }: { icon: icon; text: text; duration?: duration }) => {
     if (duration === 0) duration = 5000000000000
@@ -40,17 +41,18 @@ export default class Main extends React.Component {
     duration = duration * 1000
 
     const message: message = {
+      id: Symbol(),
       icon: icon,
       type: 'info',
       text,
       expiry: Date.now() + duration
     }
 
-    Main._this.setState({
-      messages: Main._this.state.messages.concat(message)
-    })
+    Main._this.setState({ messages: Main._this.state.messages.concat(message) })
 
     if (duration) setTimeout(Main.messageCleaner, duration)
+
+    return message.id
   }
 
   static messageCleaner = () =>
@@ -60,7 +62,7 @@ export default class Main extends React.Component {
 
   render = () => {
     return (
-      <div className={s.main}>
+      <div className='mp-message'>
         {this.state.messages.slice(-Main.max).map((x, i) => (
           <Message key={i} {...x} />
         ))}
@@ -71,9 +73,9 @@ export default class Main extends React.Component {
 
 const Message = ({ icon, text }: { icon: icon; text: text }) => (
   <div>
-    <div className={s.message}>
-      <div className={s.icon}>{icon}</div>
-      <div className={s.text}>{text}</div>
+    <div className='mp-message-box'>
+      <div className='mp-message-icon'>{icon}</div>
+      <div className='mp-message-text'>{text}</div>
     </div>
   </div>
 )

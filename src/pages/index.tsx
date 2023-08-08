@@ -14,6 +14,9 @@ import component_radio from './components/radio'
 import component_range from './components/range'
 import component_file from './components/file'
 import component_typography from './components/typography'
+import component_message from './components/message'
+import component_confirm from './components/confirm'
+import component_note from './components/note'
 
 interface route {
   path: string
@@ -47,7 +50,10 @@ const routes: route[] = [
   { path: '/component/radio', component: component_radio },
   { path: '/component/range', component: component_range },
   { path: '/component/file', component: component_file },
-  { path: '/component/typography', component: component_typography }
+  { path: '/component/typography', component: component_typography },
+  { path: '/component/message', component: component_message },
+  { path: '/component/confirm', component: component_confirm },
+  { path: '/component/note', component: component_note }
 ]
 
 export default routes
