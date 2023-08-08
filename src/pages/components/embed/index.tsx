@@ -1,29 +1,25 @@
 import { Docs } from 'components'
-import { Button, Fields } from 'lib'
+import { Embed } from 'lib'
 
 export default function Main() {
   return (
-    <Docs type='Component' name='Table'>
+    <Docs type='Component' name='Embed'>
       <Docs.Showcase
-        info={<span></span>}
+        info={<span>Embed youtube</span>}
         code={`
 `}
       >
-        <Fields>
-          <Button>Default</Button>
-          <Button type='primary'>Primary</Button>
-          <Button type='danger'>Danger</Button>
-          <Button type='dashed'>Dashed</Button>
-          <Button type='stroke'>Stroke</Button>
-          <Button type='text'>Text</Button>
-        </Fields>
+        <Embed platform='youtube' source='aircAruvnKk' aspectRatio={16 / 9} />
       </Docs.Showcase>
 
       <Docs.Props
-        title='Button'
+        title='Embed'
         fields={[
-          { name: '..', usage: 'All button element props' },
-          { name: 'children', type: 'string', usage: 'Button label' }
+          { name: 'platform', type: 'string', usage: 'youtube' },
+          { name: 'source', type: 'string', usage: 'Content ID' },
+          { name: 'aspectRatio', type: 'number' },
+          { name: 'className', type: 'string' },
+          { name: 'style', type: 'object' }
         ]}
       />
     </Docs>
