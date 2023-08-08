@@ -23,6 +23,9 @@ export { default as Search } from './components/search'
 export { default as Note } from './components/note'
 export { default as Tabs } from './components/tabs'
 export { default as Chain } from './components/chain'
+export { default as Table } from './components/table'
+export { default as Tooltip } from './components/tooltip'
+export { default as Embed } from './components/embed'
 
 const MumpUI = () => {
   return (

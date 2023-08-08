@@ -100,7 +100,7 @@ Main.Props = (props: props) => (
       {props.title} {props.type}
     </div>
 
-    <div className={s.table}>
+    <div className={'mp-table ' + s.table}>
       <table>
         <thead>
           <tr>

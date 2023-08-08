@@ -1,19 +1,19 @@
-.mp-table-wrapper {
+.mp-table {
   overflow: auto;
   margin: 1rem 0;
-}
 
-table {
-  th,
-  td {
-    color: var(--mp-c-font-dark);
-    font-size: 0.8rem;
-    border: 1px solid var(--mp-c-stroke);
-    padding: 0.5rem 1rem;
-  }
+  table {
+    th,
+    td {
+      color: var(--mp-c-font-dark);
+      font-size: 0.8rem;
+      border: $border;
+      padding: 0.5rem 1rem;
+    }
 
-  th {
-    font-weight: var(--mp-fw-semi-bold);
-    background-color: var(--mp-c-hover);
+    th {
+      font-weight: var(--mp-fw-semi-bold);
+      background-color: var(--mp-c-hover);
+    }
   }
 }

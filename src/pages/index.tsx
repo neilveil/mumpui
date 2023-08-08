@@ -21,6 +21,9 @@ import component_menu from './components/menu'
 import component_tabs from './components/tabs'
 import component_pagination from './components/pagination'
 import component_chain from './components/chain'
+import component_table from './components/table'
+import component_tooltip from './components/tooltip'
+import component_embed from './components/embed'
 
 interface route {
   path: string
@@ -61,7 +64,10 @@ const routes: route[] = [
   { path: '/component/menu', component: component_menu },
   { path: '/component/tabs', component: component_tabs },
   { path: '/component/pagination', component: component_pagination },
-  { path: '/component/chain', component: component_chain }
+  { path: '/component/chain', component: component_chain },
+  { path: '/component/table', component: component_table },
+  { path: '/component/tooltip', component: component_tooltip },
+  { path: '/component/embed', component: component_embed }
 ]
 
 export default routes

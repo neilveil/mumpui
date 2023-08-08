@@ -15,8 +15,11 @@ export default function Main({ pageSize, totalItems, offset, onChange, disabled,
   const _onChange = (pageNumber: number) => {
     if (disabled) return
 
-    if (pageNumber < 1) return
-    if (pageNumber > Math.ceil(totalItems / pageSize)) return
+    if (pageNumber.toString() === 'NaN' || pageNumber < 1 || pageNumber > Math.ceil(totalItems / pageSize)) {
+      setPageNumber(1)
+      onChange(0)
+      return
+    }
 
     const offset = (pageNumber - 1) * pageSize
 
@@ -41,6 +44,12 @@ export default function Main({ pageSize, totalItems, offset, onChange, disabled,
           min={1}
           onChange={e => setPageNumber(parseInt(e.target.value))}
           onBlur={() => _onChange(pageNumber)}
+          onKeyUp={(e: any) => {
+            if (e.key === 'Enter') {
+              _onChange(pageNumber)
+              e.target.blur()
+            }
+          }}
           style={{ width: (pageNumber || 0).toString().length + 1 + 'ch' }}
           placeholder='..'
         />

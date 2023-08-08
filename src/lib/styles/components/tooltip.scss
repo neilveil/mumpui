@@ -1,0 +1,50 @@
+.mp-tooltip {
+  position: relative;
+
+  &:hover .mp-tooltip-text {
+    animation: appear 300ms ease 300ms forwards;
+  }
+  .mp-tooltip-text {
+    white-space: pre;
+    background-color: var(--mp-c-bg);
+    border: $border;
+    border-radius: var(--mp-border-radius);
+    text-align: center;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.7rem;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    z-index: 1000;
+  }
+
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .mp-tooltip-top {
+    bottom: calc(100% + 0.5rem);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .mp-tooltip-right {
+    left: calc(100% + 0.5rem);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .mp-tooltip-bottom {
+    top: calc(100% + 0.5rem);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .mp-tooltip-left {
+    right: calc(100% + 0.5rem);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
