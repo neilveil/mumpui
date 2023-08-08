@@ -28,6 +28,7 @@ import component_divider from './components/divider'
 import component_loader from './components/loader'
 import component_md from './components/md'
 import component_placeholder from './components/placeholder'
+import component_modal from './components/modal'
 
 interface route {
   path: string
@@ -75,7 +76,8 @@ const routes: route[] = [
   { path: '/component/divider', component: component_divider },
   { path: '/component/loader', component: component_loader },
   { path: '/component/md', component: component_md },
-  { path: '/component/placeholder', component: component_placeholder }
+  { path: '/component/placeholder', component: component_placeholder },
+  { path: '/component/modal', component: component_modal }
 ]
 
 export default routes

@@ -26,6 +26,7 @@ export { default as Chain } from './components/chain'
 export { default as Table } from './components/table'
 export { default as Tooltip } from './components/tooltip'
 export { default as Embed } from './components/embed'
+export { default as Modal } from './components/modal'
 
 const MumpUI = () => {
   return (

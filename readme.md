@@ -50,6 +50,8 @@ version snapshots
 
 root host
 
+make animations unique
+
 ## Importing stylesheet
 
 ```jsx
