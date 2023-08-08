@@ -1,5 +1,6 @@
 # MumpUI
 
+index to key-label migration
 
 remove dropdown.search
 disabled field
@@ -14,6 +15,7 @@ countries object
 set required fields
 set object structure in code
 simplify docs, dont use arrow functions
+prop type input button or div
 
 optimize scss with variables like padding & border
 convert all tsx example to jsx
@@ -33,6 +35,10 @@ search
 tabs
 config
 viewport dashboard & content
+
+array to key label
+
+show default value in props
 
 ## Importing stylesheet
 

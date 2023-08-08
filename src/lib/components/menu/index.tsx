@@ -9,17 +9,17 @@ type item = {
   next?: item[]
 }
 
-export default function Main({
-  selected,
-  onSelect,
-  items = []
-}: {
+type props = React.HTMLAttributes<HTMLDivElement> & {
   selected: key
   onSelect: (key: key) => void
   items: item[]
-}) {
+}
+
+export default function Main({ selected, onSelect, items = [], className, ...props }: props) {
+  className = 'mp-menu ' + (className || '')
+
   return (
-    <div className='mp-menu'>
+    <div className={className} {...props}>
       {items.map((item, i) => (
         <MenuItem key={i} selected={selected} onSelect={onSelect} item={item} />
       ))}

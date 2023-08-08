@@ -1,35 +1,33 @@
 import React, { useState } from 'react'
 
-type props = {
+type props = React.HTMLAttributes<HTMLDivElement> & {
   pageSize: number
-  total: number
+  totalItems: number
   offset: number
   onChange: (offset: number) => void
   disabled?: boolean
   className?: string
-  style?: React.CSSProperties
 }
 
-export default function Main(props: props) {
-  const className = 'mp-pagination ' + (props.className || '')
-  const style = Object.assign({}, props.style)
+export default function Main({ pageSize, totalItems, offset, onChange, disabled, className, ...props }: props) {
+  className = 'mp-pagination ' + (className || '')
 
-  const onChange = (pageNumber: number) => {
-    if (props.disabled) return
+  const _onChange = (pageNumber: number) => {
+    if (disabled) return
 
     if (pageNumber < 1) return
-    if (pageNumber > Math.ceil(props.total / props.pageSize)) return
+    if (pageNumber > Math.ceil(totalItems / pageSize)) return
 
-    const offset = (pageNumber - 1) * props.pageSize
+    const offset = (pageNumber - 1) * pageSize
 
-    props.onChange(offset)
+    onChange(offset)
   }
 
-  const [pageNumber, setPageNumber] = useState(Math.ceil(props.offset / props.pageSize) + 1)
-  const pages = Math.ceil(props.total / props.pageSize)
+  const [pageNumber, setPageNumber] = useState(Math.ceil(offset / pageSize) + 1)
+  const pages = Math.ceil(totalItems / pageSize)
 
   return (
-    <div className={className} style={style}>
+    <div className={className} {...props}>
       <div
         className={'mp-pagination-left-arrow ' + (pageNumber <= 1 ? 'mp-pagination-disabled' : '')}
         onClick={() => (pageNumber > 1 ? setPageNumber(pageNumber - 1) : null)}
@@ -42,7 +40,7 @@ export default function Main(props: props) {
           value={pageNumber}
           min={1}
           onChange={e => setPageNumber(parseInt(e.target.value))}
-          onBlur={() => onChange(pageNumber)}
+          onBlur={() => _onChange(pageNumber)}
           style={{ width: (pageNumber || 0).toString().length + 1 + 'ch' }}
           placeholder='..'
         />
@@ -64,9 +62,7 @@ const arrow = (rotate?: boolean) => (
     xmlns='http://www.w3.org/2000/svg'
     viewBox='0 0 128 128'
     fill='none'
-    style={{
-      transform: rotate ? 'rotate(180deg)' : ''
-    }}
+    style={{ transform: rotate ? 'rotate(180deg)' : '' }}
     className='mp-menu-item-expand-icon'
   >
     <path d='M44 24L84 64L44 104' stroke='var(--mp-c-font-light)' strokeWidth='16' strokeLinecap='round' />

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import s from './styles.module.scss'
-import { Input, Message } from 'lib'
-import { Children, useEffect, useRef, useState } from 'react'
+import { Message } from 'lib'
+import { useEffect, useRef, useState } from 'react'
 
 interface main {
   children?: any
@@ -82,7 +82,7 @@ Main.Showcase = ({ children, info, code }: { children?: any; info?: any; code?: 
 
 type field = {
   name?: string
-  type?: 'string' | 'number' | 'boolean' | 'object' | 'array' | 'function' | 'JSX'
+  type?: 'string' | 'number' | 'boolean' | 'object' | 'array' | 'function' | 'jsx' | 'any'
   customType?: string
   usage?: any
   required?: boolean
@@ -91,7 +91,7 @@ type field = {
 interface props {
   title?: any
   fields?: field[]
-  type?: 'props' | 'args'
+  type?: 'props' | 'args' | 'object keys'
 }
 
 Main.Props = (props: props) => (

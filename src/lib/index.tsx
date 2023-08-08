@@ -21,6 +21,8 @@ export { default as Divider } from './components/divider'
 export { default as Code } from './components/code'
 export { default as Search } from './components/search'
 export { default as Note } from './components/note'
+export { default as Tabs } from './components/tabs'
+export { default as Chain } from './components/chain'
 
 const MumpUI = () => {
   return (

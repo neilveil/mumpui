@@ -17,6 +17,10 @@ import component_typography from './components/typography'
 import component_message from './components/message'
 import component_confirm from './components/confirm'
 import component_note from './components/note'
+import component_menu from './components/menu'
+import component_tabs from './components/tabs'
+import component_pagination from './components/pagination'
+import component_chain from './components/chain'
 
 interface route {
   path: string
@@ -53,7 +57,11 @@ const routes: route[] = [
   { path: '/component/typography', component: component_typography },
   { path: '/component/message', component: component_message },
   { path: '/component/confirm', component: component_confirm },
-  { path: '/component/note', component: component_note }
+  { path: '/component/note', component: component_note },
+  { path: '/component/menu', component: component_menu },
+  { path: '/component/tabs', component: component_tabs },
+  { path: '/component/pagination', component: component_pagination },
+  { path: '/component/chain', component: component_chain }
 ]
 
 export default routes
