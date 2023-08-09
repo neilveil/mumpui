@@ -6,22 +6,9 @@ export default function Main() {
       <Docs.Showcase
         info={<span></span>}
         code={`
-<div className='mp-content'>
-  <h1>Typography by MumpUI</h1>
-
-  <p>
-    <b>MumpUI</b> comes with typographical styling which help in rendering beautiful content on your website.
-  </p>
-
-  <h2>Inline styling</h2>
-
-  <p>
-    This paragraph is an example of how inline styling in <b>MumpUI</b> works.
-  </p>
-</div>
 `}
       >
-        <div className='mp-content'>
+        <div className='mp-container'>
           <h1>Typography by MumpUI</h1>
           <p>
             <b>MumpUI</b> comes with typographical styling which help in rendering beautiful content on your website.

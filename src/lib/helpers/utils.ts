@@ -16,10 +16,19 @@ export const theme = {
   }
 }
 
+// setMeta
+// pixel-to-rem
+// copyText
+// sortObject
+// search
+// delay
+// plural
+// round
+// download
+// csv
+
 // import Fuse from 'fuse.js'
 // import wrapper from './wrapper'
-
-// // pixel-to-rem
 
 // export const copyText = async text => {
 //   if (wrapper.IS_WRAPPER) await wrapper.async(wrapper.COPY_TO_CLIPBOARD, text)

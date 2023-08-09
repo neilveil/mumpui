@@ -133,7 +133,7 @@ Ultrices dui enim sed. Turpis phasellus fermentum egestas erat imperdiet element
 </p>
 
 ```jsx
-<div className='mp-content'>
+<div>
   <h1>Typography by MumpUI</h1>
 
   <p>

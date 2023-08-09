@@ -1,74 +1,39 @@
 # MumpUI
 
-index to key-label migration
-
-remove dropdown.search
-disabled field
-
-set meta
+remove colors
 remove bold font
-
-remove unused data
-fuse & axios dynamic
-countries object
-
-set required fields
-set object structure in code
-simplify docs, dont use arrow functions
-prop type input button or div
-
 optimize scss with variables like padding & border
-convert all tsx example to jsx
-
-mp-color-names
-
-csv helper, back stack, scroll handler
-
-confirm
-pagination
-dashboard
-
-table
-loader
-placeholder
-search
-tabs
-config
-viewport dashboard & content
-
-array to key label
-
-show default value in props
-
+remove unused imports
 z-index standard
-
-version
-
-changelog
-
-version snapshots
-
-root host
-
 make animations unique
-
+default theme
+fix type of interface according to comp
+countries object
+disabled field
+tooltip timer
+remove dropdown.search
+set required fields
+index to key-label migration
+fuse & axios dynamic
+add simplified docs, no ts, no arrow functions
+config
 related components & blogs
 
-Search query for google
+version
+changelog
+version snapshots
 
-tooltip timer
+## Discord
 
-default theme
+- general
+- issues
+- suggestions
 
 ## Importing stylesheet
 
 ```jsx
 import 'mumpui/lib/styles/index.scss'
 ```
-
-## Setting theme
-
-24x7 support
 
 # Landing Page
 
@@ -84,18 +49,20 @@ import 'mumpui/lib/styles/index.scss'
 - Field
 - Form
 
-- Dropdown / Multi-Select
-- Search
-
 - Checkbox
 - Radio
 
-- Date / Time
+- Dropdown
+- Multi-Select
+
+- Search
 - Button
+
+- Date / Time
+- Color
 
 - Range
 - File
-
 
 ## Data
 
@@ -134,10 +101,10 @@ import 'mumpui/lib/styles/index.scss'
 
 - Request
 - Storage
-- URL Handler
 - Utils
-- Depth Handler
+- URL Handler
 - Scroll Handler
+- Depth Handler
 - Wrapper
 
 ## More

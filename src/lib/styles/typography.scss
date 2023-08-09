@@ -115,12 +115,16 @@ $image-spacing: calc(2 * $spacing);
   li + li {
     margin-top: 1rem;
   }
+
+  code {
+    color: var(--mp-c-code);
+    background-color: var(--mp-c-hover);
+    padding: 0 0.25rem;
+    user-select: all;
+  }
 }
 
 .mp-content {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
   font-family: var(--mp-ff-primary);
   color: var(--mp-c-font-dark);
   padding: 0 1rem;
@@ -207,8 +211,7 @@ $image-spacing: calc(2 * $spacing);
 }
 
 @media (max-width: 1199px) {
-  .max-width,
-  pre {
+  .max-width {
     margin-left: -$spacing !important;
     margin-right: -$spacing !important;
     width: calc(100% + (2 * $spacing)) !important;
@@ -217,4 +220,10 @@ $image-spacing: calc(2 * $spacing);
 
 .mp-content .note {
   margin: calc(2 * $spacing) 0;
+}
+
+.mp-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }

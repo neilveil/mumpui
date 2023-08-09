@@ -22,4 +22,31 @@ $border: var(--mp-stroke-width) solid var(--mp-c-stroke);
   transition: var(--mp-transition);
   font-size: $input-font-size;
   position: relative;
+
+  input[type='time'],
+  input[type='date'],
+  input[type='month'] {
+    padding-right: 0.25rem !important;
+
+    &::-webkit-calendar-picker-indicator {
+      background-color: #f0f0f0;
+      font-size: 0.8rem;
+      border-radius: 4px;
+    }
+  }
+
+  input[type='color']::-webkit-color-swatch {
+    border-radius: calc(var(--mp-border-radius) / 2);
+    border: $border;
+  }
+
+  input[type='color'] + input {
+    padding-left: 0;
+  }
 }
+
+// input[type='time']::-webkit-calendar-picker-indicator {
+//   // filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
+//   color: red;
+//   background-color: red;
+// }

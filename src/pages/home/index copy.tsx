@@ -73,7 +73,7 @@ export default class Main extends React.Component {
           </div>
         </div>
 
-        <div className='mp-content'>
+        <div className='mp-container'>
           <div className={s.showcase}>
             <div className={s.title}>Pagination</div>
 

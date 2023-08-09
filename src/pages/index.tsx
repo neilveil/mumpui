@@ -1,8 +1,14 @@
 import home from './home'
+import stories from './stories'
+import story from './story'
+import setup from './setup'
+
 import typography from './typography'
 import dashboard from './dashboard'
 
 import component_input from './components/input'
+import component_color from './components/color'
+import component_datetime from './components/datetime'
 import component_form from './components/form'
 import component_dropdown from './components/dropdown'
 import component_code from './components/code'
@@ -40,7 +46,9 @@ const routes: route[] = [
   { path: '/typography', component: typography },
   { path: '/components', component: home },
   { path: '/helpers', component: home },
-  { path: '/stories', component: home },
+  { path: '/setup', component: setup },
+  { path: '/stories', component: stories },
+  { path: '/story/*', component: story },
   { path: '/dashboard', component: dashboard },
   { path: '/dashboard-1', component: dashboard },
   { path: '/dashboard-2', component: dashboard },
@@ -77,7 +85,9 @@ const routes: route[] = [
   { path: '/component/loader', component: component_loader },
   { path: '/component/md', component: component_md },
   { path: '/component/placeholder', component: component_placeholder },
-  { path: '/component/modal', component: component_modal }
+  { path: '/component/modal', component: component_modal },
+  { path: '/component/color', component: component_color },
+  { path: '/component/datetime', component: component_datetime }
 ]
 
 export default routes

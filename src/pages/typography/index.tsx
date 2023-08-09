@@ -53,7 +53,7 @@ export default class Main extends React.Component {
   render = () => {
     return (
       <div className={s.main} onClick={() => theme.toggle()}>
-        <div id='content' className='mp-content'></div>
+        <div id='content' className='mp-container'></div>
       </div>
     )
   }

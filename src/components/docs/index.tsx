@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import s from './styles.module.scss'
-import { Message } from 'lib'
+import { Code, Message } from 'lib'
 import { useEffect, useRef, useState } from 'react'
 import Footer from '../footer'
 import { theme } from 'lib/helpers/utils'
@@ -44,10 +44,6 @@ Main.Showcase = ({ children, info, code }: { children?: any; info?: any; code?: 
   const [viewCode, setViewCode] = useState(false)
   const ref: any = useRef()
 
-  useEffect(() => {
-    if (ref.current) ref.current.innerHTML = window.Prism?.highlight(code, window.Prism.languages.jsx, 'jsx')
-  }, [viewCode])
-
   code = (code || '').trim()
 
   return (
@@ -79,13 +75,7 @@ Main.Showcase = ({ children, info, code }: { children?: any; info?: any; code?: 
 
       <div className={s.element}>{children}</div>
 
-      {!!viewCode && (
-        <div className='mp-code' style={{ margin: 0 }}>
-          <pre>
-            <code ref={ref}></code>
-          </pre>
-        </div>
-      )}
+      {!!viewCode && <Code snippet={code} lang='jsx' />}
     </div>
   )
 }
