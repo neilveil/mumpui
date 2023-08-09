@@ -69,12 +69,13 @@
 .container {
   min-height: 100vh;
   width: 100%;
+  background-color: var(--c-light);
+  padding: 1rem 0;
 
   .content {
     width: 100%;
     max-width: 800px;
     margin: auto;
-    padding: 1rem;
   }
 }
 
@@ -82,8 +83,8 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding-top: 2rem;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
+  padding: 0 1rem;
 
   .foldUnfold {
     padding: 0.25rem;
@@ -116,15 +117,10 @@
 }
 
 .showcase {
-  margin: 1rem 0;
-
   .title {
     padding: 1rem;
+    margin-bottom: 1rem;
     border-bottom: var(--border);
-    // position: sticky;
-    // top: 0;
-    // z-index: 2;
-    background-color: var(--c-bg);
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -140,7 +136,7 @@
   .info {
     padding: 1rem;
     color: var(--c-font);
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -151,11 +147,10 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    // gap: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 
     & > div {
-      width: calc(50% - 1rem);
+      width: calc(50% - 0.5rem);
       border-radius: 8px;
     }
   }
@@ -163,12 +158,22 @@
 
 .component {
   border: var(--border);
-  border-color: transparent;
   display: flex;
   flex-direction: column;
   border-color: var(--c-stroke);
   opacity: 0;
   animation: appear 300ms ease forwards;
+  background-color: var(--c-bg);
+
+  &:hover {
+    .name {
+      color: var(--c-font-dark);
+
+      .icon {
+        opacity: 1;
+      }
+    }
+  }
 
   @keyframes appear {
     0% {
@@ -176,17 +181,6 @@
     }
     100% {
       opacity: 1;
-    }
-  }
-
-  &:hover {
-    .name {
-      background-color: var(--c-light);
-      color: var(--c-font-dark);
-
-      .icon {
-        opacity: 1;
-      }
     }
   }
 
@@ -201,9 +195,10 @@
   .name {
     text-align: center;
     font-size: 0.7rem;
-    color: var(--c-font-dark);
     padding: 1rem;
     border-top: var(--border);
+    color: var(--c-font);
+    font-weight: var(--fw-semi-bold);
     cursor: pointer;
     width: 100%;
 
@@ -212,21 +207,6 @@
       opacity: 0;
       position: absolute;
     }
-  }
-}
-
-.footer {
-  border-top: var(--border);
-  text-align: center;
-  margin-top: 1rem;
-  padding: 1rem;
-  font-size: 0.8rem;
-
-  a {
-    font-weight: var(--fw-code);
-    font-family: var(--f-code);
-    background-color: var(--c-light);
-    padding: 0.25rem;
   }
 }
 

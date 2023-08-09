@@ -1,0 +1,13 @@
+.footer {
+  border-top: var(--border);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+
+  a {
+    font-weight: var(--fw-code);
+    font-family: var(--f-code);
+    background-color: var(--c-light);
+    padding: 0.25rem;
+  }
+}

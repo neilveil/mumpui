@@ -22,7 +22,7 @@ export default {
     }
   },
   multiselect: {
-    name: 'Select',
+    name: 'Dropdown / Multi-Select',
     docs: '/component/dropdown',
     tags: [],
     component: () => {

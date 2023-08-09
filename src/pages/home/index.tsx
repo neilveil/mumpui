@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { Placeholder } from 'lib'
 import Fuse from 'fuse.js'
 import showcase from './showcase'
+import { Footer } from 'components'
 
 export default class Main extends React.Component {
   state = {
@@ -93,7 +94,6 @@ export default class Main extends React.Component {
               <>
                 <Showcase
                   title='Data Input'
-                  description='Data input'
                   components={[
                     showcase.input,
                     showcase.form,
@@ -108,23 +108,13 @@ export default class Main extends React.Component {
                   expanded={this.state.expanded}
                 />
 
-                <Showcase
-                  title='Elements'
-                  description=''
-                  components={[showcase.divider]}
-                  expanded={this.state.expanded}
-                />
+                <Showcase title='Elements' components={[showcase.divider]} expanded={this.state.expanded} />
               </>
             )}
           </div>
         </div>
 
-        <div className={s.footer}>
-          Developed by{' '}
-          <a href='https://github.com/neilveil' target='_blank'>
-            @neilveil
-          </a>
-        </div>
+        <Footer />
       </div>
     )
   }
@@ -138,7 +128,6 @@ type component = {
 
 interface showcase {
   title: string
-  description?: string
   components: component[]
   expanded: boolean
 }
@@ -213,7 +202,6 @@ const Showcase = (props: showcase) => {
       {/* {!!localExpanded && (
           )} */}
       <>
-        <div className={s.info}>{props.description}</div>
         <Components data={props.components} expanded={localExpanded} />
       </>
     </div>

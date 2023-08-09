@@ -10,7 +10,6 @@ export default function Main() {
   return (
     <Docs type='Component' name='Input'>
       <Docs.Showcase
-        info={<span>Text input field</span>}
         code={`
 const [input, setInput] = useState('')
 
@@ -31,55 +30,9 @@ const [input, setInput] = useState('')
 />
 `}
       >
-        <div className='center'>
+        <div className='flex-center'>
           <Input value={input} onChange={e => setInput(e.target.value)} placeholder='Type something..' />
         </div>
-      </Docs.Showcase>
-
-      <Docs.Showcase
-        info={<span>Prefix & Suffix</span>}
-        code={`
-const [inputType, setInputType] = useState('password')
-
-..
-
-<Input placeholder='Enter number..' prefix={'91'} />
-
-<Input
-  type={inputType}
-  placeholder='Enter password..'
-  suffix={<span className='icon'>{inputType === 'password' ? 'visibility' : 'visibility_off'}</span>}
-  onSuffixClick={() => setInputType(inputType === 'password' ? 'text' : 'password')}
-/>
-`}
-      >
-        <Fields>
-          <Input placeholder='Enter number..' prefix={'91'} />
-
-          <Input
-            type={inputType}
-            placeholder='Enter password..'
-            suffix={<span className='icon'>{inputType === 'password' ? 'visibility' : 'visibility_off'}</span>}
-            onSuffixClick={() => setInputType(inputType === 'password' ? 'text' : 'password')}
-          />
-        </Fields>
-      </Docs.Showcase>
-
-      <Docs.Showcase
-        info={<span>Success, Error, Warning & Info</span>}
-        code={`
-<Input placeholder='Type here..' status='success' />
-<Input placeholder='Type here..' status='error' />
-<Input placeholder='Type here..' status='warning' />
-<Input placeholder='Type here..' status='info' />
-`}
-      >
-        <Fields>
-          <Input placeholder='Type here..' status='success' />
-          <Input placeholder='Type here..' status='error' />
-          <Input placeholder='Type here..' status='warning' />
-          <Input placeholder='Type here..' status='info' />
-        </Fields>
       </Docs.Showcase>
 
       <Docs.Showcase
@@ -195,6 +148,52 @@ const [inputType, setInputType] = useState('password')
       </p>
 
       <Docs.Showcase
+        info={<span>Prefix & Suffix</span>}
+        code={`
+const [inputType, setInputType] = useState('password')
+
+..
+
+<Input placeholder='Enter number..' prefix={'91'} />
+
+<Input
+  type={inputType}
+  placeholder='Enter password..'
+  suffix={<span className='icon'>{inputType === 'password' ? 'visibility' : 'visibility_off'}</span>}
+  onSuffixClick={() => setInputType(inputType === 'password' ? 'text' : 'password')}
+/>
+`}
+      >
+        <Fields>
+          <Input placeholder='Enter number..' prefix={'91'} />
+
+          <Input
+            type={inputType}
+            placeholder='Enter password..'
+            suffix={<span className='icon'>{inputType === 'password' ? 'visibility' : 'visibility_off'}</span>}
+            onSuffixClick={() => setInputType(inputType === 'password' ? 'text' : 'password')}
+          />
+        </Fields>
+      </Docs.Showcase>
+
+      <Docs.Showcase
+        info={<span>Success, Error, Warning & Info</span>}
+        code={`
+<Input placeholder='Type here..' status='success' />
+<Input placeholder='Type here..' status='error' />
+<Input placeholder='Type here..' status='warning' />
+<Input placeholder='Type here..' status='info' />
+`}
+      >
+        <Fields>
+          <Input placeholder='Type here..' status='success' />
+          <Input placeholder='Type here..' status='error' />
+          <Input placeholder='Type here..' status='warning' />
+          <Input placeholder='Type here..' status='info' />
+        </Fields>
+      </Docs.Showcase>
+
+      <Docs.Showcase
         info={<span>Use input field styles</span>}
         code={`
 <Fields>
@@ -238,6 +237,13 @@ const [inputType, setInputType] = useState('password')
               </span>
             )
           }
+        ]}
+      />
+
+      <Docs.Related
+        components={[
+          { name: 'Form', link: '/component/form' },
+          { name: 'Dropdown', link: '/component/dropdown' }
         ]}
       />
     </Docs>

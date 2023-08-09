@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import s from './styles.module.scss'
 import { Message } from 'lib'
 import { useEffect, useRef, useState } from 'react'
+import Footer from '../footer'
 
 interface main {
   children?: any
@@ -16,7 +17,7 @@ export default function Main(props: main) {
       <div className={s.header}>
         <Link to='/'>
           <div className={s.back}>
-            <span className='icon'>west</span> Back
+            <span className='icon'>west</span> Home
           </div>
         </Link>
 
@@ -24,6 +25,10 @@ export default function Main(props: main) {
       </div>
 
       {props.children}
+
+      <div style={{ height: '2rem' }} />
+
+      <Footer />
     </div>
   )
 }
@@ -91,13 +96,19 @@ type field = {
 interface props {
   title?: any
   fields?: field[]
-  type?: 'props' | 'args' | 'object keys'
+  type?: 'component' | 'function' | 'object'
+}
+
+const typeMap = {
+  component: 'component props',
+  function: 'function arguments',
+  object: 'object keys'
 }
 
 Main.Props = (props: props) => (
   <div>
     <div className={s.props}>
-      {props.title} {props.type}
+      {props.title} {props.type ? typeMap[props.type] : null}
     </div>
 
     <div className={'mp-table ' + s.table}>
@@ -129,3 +140,28 @@ Main.Props = (props: props) => (
     </div>
   </div>
 )
+
+type component = {
+  name: string
+  link: string
+}
+
+interface related {
+  components: component[]
+}
+
+Main.Related = ({ components = [] }: related) => {
+  return (
+    <div className={s.related}>
+      <div className={s.title}>Related Components</div>
+
+      <ul>
+        {components.map((x, i) => (
+          <li key={i}>
+            <Link to={x.link}>{x.name}</Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}

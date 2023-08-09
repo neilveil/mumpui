@@ -2,15 +2,31 @@
   width: 100%;
   max-width: 800px;
   margin: auto;
-  padding-bottom: 4rem;
 
   & > div {
     padding: 1rem;
+  }
+
+  p {
+    padding: 0 1rem;
+    color: var(--c-font);
+  }
+
+  .info,
+  p {
+    font-size: 0.8rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    a {
+      color: var(--c-blue);
+    }
   }
 }
 
 .header {
   border-bottom: var(--border);
+  margin-bottom: 2rem;
 
   .back {
     color: var(--c-font-dark);
@@ -64,23 +80,6 @@
   }
 }
 
-.info,
-p {
-  font-size: 0.8rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-
-  a {
-    color: var(--c-blue);
-  }
-}
-
-p {
-  padding: 1rem;
-  margin: 0;
-  color: var(--c-font);
-}
-
 .props {
   font-size: 1rem;
   margin-top: 1rem;
@@ -115,5 +114,19 @@ p {
   .required {
     width: 1rem;
     text-align: center;
+  }
+}
+
+.related {
+  padding: 2rem;
+
+  .title {
+    font-size: 1rem;
+  }
+
+  ul {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: var(--c-blue);
   }
 }
