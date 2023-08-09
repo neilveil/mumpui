@@ -19,13 +19,13 @@
     font-size: 16px;
 
     &:hover {
-      color: var(--c-primary);
+      color: var(--mp-c-primary);
     }
   }
 
   .mp-tab-active {
-    color: var(--c-primary);
-    border-color: var(--c-primary);
+    color: var(--mp-c-primary);
+    border-color: var(--mp-c-primary);
     font-weight: var(--mp-semi-bold);
 
     // &::after {
@@ -36,7 +36,7 @@
     //   height: 2px;
     //   width: 100%;
     //   // margin-left: 25%;
-    //   background-color: var(--c-primary);
+    //   background-color: var(--mp-c-primary);
     // }
   }
 }

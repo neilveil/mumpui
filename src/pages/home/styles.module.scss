@@ -1,6 +1,6 @@
 .header {
-  background-color: var(--itc-primary);
-  color: var(--itc-bg);
+  background-color: #000000;
+  color: #ffffff;
   padding: 4rem 0;
 
   .content {
@@ -46,7 +46,7 @@
 
     .name {
       font-size: 2rem;
-      color: var(--itc-bg);
+      color: #ffffff;
     }
 
     .info {
@@ -56,13 +56,13 @@
     }
 
     .inspired {
-      color: var(--c-font-light);
+      color: var(--mp-c-font-light);
       font-size: 0.8rem;
       margin-top: 1rem;
 
       span {
-        font-weight: var(--fw-semi-bold);
-        color: var(--c-bg);
+        font-weight: var(--mp-fw-bold);
+        color: #ffffff;
       }
     }
   }
@@ -73,7 +73,7 @@
   gap: 2rem;
   margin-top: 2rem;
   font-size: 0.8rem;
-  color: var(--itc-bg);
+  color: #ffffff;
 
   div {
     &:hover {
@@ -85,7 +85,7 @@
 .container {
   min-height: 100vh;
   width: 100%;
-  background-color: var(--c-light);
+  background-color: var(--mp-c-light);
   padding: 1rem 0;
 
   .content {
@@ -105,30 +105,30 @@
   .foldUnfold {
     padding: 0.25rem;
     cursor: pointer;
-    color: var(--c-font);
+    color: var(--mp-c-font);
     user-select: none;
 
     &:hover {
-      color: var(--c-font-dark);
+      color: var(--mp-c-font-dark);
     }
   }
 
   input {
     outline: none;
-    border: 1px solid var(--c-stroke);
+    border: var(--mp-stroke-width) solid var(--mp-c-stroke);
     width: 60%;
-    color: var(--c-font-dark);
+    color: var(--mp-c-font-dark);
     padding: 0.5rem 1.5rem;
     border-radius: 10rem;
     font-size: 0.8rem;
-    background-color: var(--c-bg);
+    background-color: var(--mp-c-bg);
 
     &::placeholder {
-      color: var(--c-font-light);
+      color: var(--mp-c-font-light);
     }
 
     &:focus {
-      border-color: var(--c-font-light);
+      border-color: var(--mp-c-font-light);
     }
   }
 }
@@ -142,18 +142,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: var(--c-font-dark);
+    color: var(--mp-c-font-dark);
 
     .count {
       font-size: 0.6rem;
-      color: var(--c-font-light);
+      color: var(--mp-c-font-light);
       margin-left: 0.5rem;
     }
   }
 
   .info {
     padding: 1rem;
-    color: var(--c-font);
+    color: var(--mp-c-font);
     font-size: 0.8rem;
   }
 }
@@ -178,14 +178,14 @@
   border: var(--border);
   display: flex;
   flex-direction: column;
-  border-color: var(--c-stroke);
+  border-color: var(--mp-c-stroke);
   opacity: 0;
   animation: appear 300ms ease forwards;
-  background-color: var(--c-bg);
+  background-color: var(--mp-c-bg);
 
   &:hover {
     .name {
-      color: var(--c-font-dark);
+      color: var(--mp-c-font-dark);
 
       .icon {
         opacity: 1;
@@ -215,8 +215,8 @@
     font-size: 0.7rem;
     padding: 1rem;
     border-top: var(--border);
-    color: var(--c-font);
-    font-weight: var(--fw-semi-bold);
+    color: var(--mp-c-font);
+    font-weight: var(--mp-fw-bold);
     cursor: pointer;
     width: 100%;
 

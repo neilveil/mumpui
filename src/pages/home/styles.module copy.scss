@@ -6,7 +6,7 @@
 
     text-align: center;
     font-size: 1.5rem;
-    background-color: var(--c-primary);
+    background-color: var(--mp-c-primary);
     color: var(--c-bg);
     padding: 4rem 2rem;
 
@@ -27,11 +27,11 @@
 
     .info {
       font-size: 0.8rem;
-      color: var(--c-font);
+      color: var(--mp-c-font);
       margin-top: 1rem;
 
       span {
-        font-weight: var(--fw-semi-bold);
+        font-weight: var(--mp-fw-bold);
         color: var(--c-bg);
       }
     }
@@ -83,7 +83,7 @@
     .info {
       display: inline-block;
       background-color: var(--c-light);
-      color: var(--c-font);
+      color: var(--mp-c-font);
       font-size: 0.7rem;
       padding: 0.25rem 0.5rem;
       margin-top: 1rem;

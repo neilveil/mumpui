@@ -24,7 +24,7 @@ export default function Main() {
               display: 'flex',
               fontSize: '.8rem',
               gap: '1rem',
-              color: 'var(--c-font-light)',
+              color: 'var(--mp-c-font-light)',
               cursor: 'pointer',
               userSelect: 'none'
             }}
@@ -32,7 +32,7 @@ export default function Main() {
             <div>Last 100</div>
             <div
               style={{
-                color: 'var(--c-font-dark)'
+                color: 'var(--mp-c-font-dark)'
               }}
             >
               All

@@ -40,8 +40,8 @@
   .mp-prefix,
   .mp-suffix {
     @include center();
-    font-weight: var(--mp-fw-semi-bold);
-    color: var(--c-font);
+    font-weight: var(--mp-fw-bold);
+    color: var(--mp-c-font);
     background-color: var(--mp-c-hover);
     padding: $input-top-padding $input-left-padding;
     user-select: none;

@@ -1,12 +1,14 @@
 # MumpUI
 
-remove colors
 remove bold font
+fix colors
+default theme
+
 optimize scss with variables like padding & border
 remove unused imports
 z-index standard
+fix translucent color
 make animations unique
-default theme
 fix type of interface according to comp
 countries object
 disabled field
@@ -113,3 +115,7 @@ import 'mumpui/lib/styles/index.scss'
 - Typography
 - Code
 - MD
+
+
+
+npx sass src/lib/styles/components.scss mumpui.css --style=compressed --no-source-map --fatal-deprecation=0.0.0

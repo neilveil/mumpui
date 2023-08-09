@@ -6,8 +6,8 @@
 
     text-align: center;
     font-size: 1.5rem;
-    background-color: var(--c-primary);
-    color: var(--c-bg);
+    background-color: var(--mp-c-primary);
+    color: var(--mp-c-bg);
     padding: 4rem 2rem;
 
     img {
@@ -22,17 +22,17 @@
 
     .name {
       font-size: 2rem;
-      color: var(--c-bg);
+      color: var(--mp-c-bg);
     }
 
     .info {
       font-size: 0.8rem;
-      color: var(--c-font);
+      color: var(--mp-c-font);
       margin-top: 1rem;
 
       span {
-        font-weight: var(--fw-semi-bold);
-        color: var(--c-bg);
+        font-weight: var(--mp-fw-bold);
+        color: var(--mp-c-bg);
       }
     }
 
@@ -59,7 +59,7 @@
     font-size: 0.8rem;
 
     a {
-      color: var(--c-bg);
+      color: var(--mp-c-bg);
     }
 
     div {

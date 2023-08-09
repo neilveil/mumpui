@@ -13,7 +13,7 @@
 
   p {
     padding: 0 1rem;
-    color: var(--c-font);
+    color: var(--mp-c-font);
   }
 
   .info,
@@ -23,7 +23,7 @@
     margin-bottom: 2rem;
 
     a {
-      color: var(--c-blue);
+      color: var(--mp-c-link);
     }
   }
 }
@@ -33,7 +33,7 @@
   margin-bottom: 2rem;
 
   .back {
-    color: var(--c-font-dark);
+    color: var(--mp-c-font-dark);
 
     cursor: pointer;
     font-size: 0.8rem;
@@ -50,7 +50,7 @@
 
   .title {
     font-size: 1.5rem;
-    font-weight: var(--fw-semi-bold);
+    font-weight: var(--mp-fw-bold);
     cursor: pointer;
   }
 }
@@ -63,19 +63,19 @@
 
   .switch {
     font-size: 0.7rem;
-    color: var(--c-font-dark);
+    color: var(--mp-c-font-dark);
     text-align: right;
     user-select: none;
 
     div {
-      background-color: var(--c-light);
+      background-color: var(--mp-c-light);
       display: inline-flex;
       align-items: center;
       padding: 0.25rem 0.5rem;
       cursor: pointer;
 
       &:hover {
-        background-color: var(--c-stroke);
+        background-color: var(--mp-c-stroke);
       }
     }
   }
@@ -97,17 +97,17 @@
   tbody {
     .name {
       code {
-        color: var(--c-font-dark);
+        color: var(--mp-c-font-dark);
       }
     }
 
     .type {
       code {
-        color: var(--c-orange);
+        color: var(--mp-c-code);
       }
     }
     .usage {
-      color: var(--c-font);
+      color: var(--mp-c-font);
     }
   }
 
@@ -131,6 +131,6 @@
   ul {
     margin-top: 1rem;
     font-size: 0.8rem;
-    color: var(--c-blue);
+    color: var(--mp-c-link);
   }
 }

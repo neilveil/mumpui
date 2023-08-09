@@ -12,7 +12,7 @@
 
   .mp-confirm-dialog {
     display: inline-block;
-    background-color: var(--c-bg);
+    background-color: var(--mp-c-bg);
     min-width: 30%;
     max-width: 600px;
     margin: 4rem auto 0 auto;
@@ -22,7 +22,7 @@
 
     .mp-confirm-title {
       font-size: 0.9rem;
-      color: var(--c-font-dark);
+      color: var(--mp-c-font-dark);
       text-align: left;
     }
 

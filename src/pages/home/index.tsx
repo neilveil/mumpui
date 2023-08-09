@@ -202,7 +202,7 @@ const Showcase = (props: showcase) => {
           {props.title}
           <span className={s.count}>{props.components.length} components</span>
         </div>
-        <div className='icon' style={{ color: 'var(--c-font-light)' }}>
+        <div className='icon' style={{ color: 'var(--mp-c-font-light)' }}>
           {localExpanded ? 'expand_more' : 'chevron_right'}
         </div>
       </div>

@@ -1,46 +1,13 @@
-@import '../lib/styles/fonts/roboto.scss';
-@import '../lib/styles/fonts/mono.scss';
-@import '../lib/styles/fonts/icons.scss';
+@import '../lib/fonts/roboto.scss';
+@import '../lib/fonts/mono.scss';
+@import '../lib/fonts/icons.scss';
+
+// @import 'mumpui/lib/styles.css';
+@import '../lib/styles/index.scss';
+@import '../lib/styles/theme.scss';
 
 html {
   scroll-behavior: smooth;
-}
-
-body {
-  --c-primary: #000000;
-  --itc-primary: #000000;
-
-  --c-bg: #ffffff;
-  --itc-bg: #ffffff;
-
-  --c-light: #f8f8f8;
-
-  --c-stroke: #e8e8e8;
-
-  --c-font-dark: #282828;
-  --c-font: #484848;
-  --c-font-light: #888888;
-
-  --c-red: #e83e0a;
-  --c-green: #55c610;
-  --c-blue: #1ea6ff;
-  --c-yellow: #ffd93b;
-  --c-orange: #fa8c16;
-
-  --border: 1px solid #e8e8e8;
-}
-
-body[data-theme='dark'] {
-  --c-primary: #ffffff;
-  --c-bg: #080808;
-  --c-light: #101010;
-
-  --c-stroke: #282828;
-  --border: 1px solid #282828;
-
-  --c-font-dark: #f8f8f8;
-  --c-font: #b8b8b8;
-  --c-font-light: #888888;
 }
 
 ::-webkit-scrollbar {
@@ -51,9 +18,9 @@ body[data-theme='dark'] {
   background: var(--c-light);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--c-font-light);
+  background: var(--mp-c-font-light);
   border-radius: var(--mp-border-radius);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--c-font);
+  background: var(--mp-c-font);
 }
