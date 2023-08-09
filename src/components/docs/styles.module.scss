@@ -2,6 +2,10 @@
   width: 100%;
   max-width: 800px;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
 
   & > div {
     padding: 1rem;
@@ -47,6 +51,7 @@
   .title {
     font-size: 1.5rem;
     font-weight: var(--fw-semi-bold);
+    cursor: pointer;
   }
 }
 
@@ -118,10 +123,9 @@
 }
 
 .related {
-  padding: 2rem;
-
   .title {
     font-size: 1rem;
+    margin-top: 2rem;
   }
 
   ul {

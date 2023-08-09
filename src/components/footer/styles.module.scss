@@ -1,13 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap');
+
 .footer {
   border-top: var(--border);
   text-align: center;
   padding: 1rem;
   font-size: 0.8rem;
+  background-color: var(--c-bg);
 
   a {
-    font-weight: var(--fw-code);
-    font-family: var(--f-code);
-    background-color: var(--c-light);
-    padding: 0.25rem;
+    background: linear-gradient(148deg, #4568dc 0%, #b06ab3 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: Pacifico, monospace;
+    font-size: 1rem;
+    padding-right: 0.5rem;
   }
 }

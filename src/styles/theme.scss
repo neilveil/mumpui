@@ -8,14 +8,18 @@ html {
 
 body {
   --c-primary: #000000;
+  --itc-primary: #000000;
+
   --c-bg: #ffffff;
+  --itc-bg: #ffffff;
+
   --c-light: #f8f8f8;
 
   --c-stroke: #e8e8e8;
 
-  --c-font-dark: #484848;
-  --c-font: #888888;
-  --c-font-light: #b8b8b8;
+  --c-font-dark: #282828;
+  --c-font: #484848;
+  --c-font-light: #888888;
 
   --c-red: #e83e0a;
   --c-green: #55c610;
@@ -24,6 +28,19 @@ body {
   --c-orange: #fa8c16;
 
   --border: 1px solid #e8e8e8;
+}
+
+body[data-theme='dark'] {
+  --c-primary: #ffffff;
+  --c-bg: #080808;
+  --c-light: #101010;
+
+  --c-stroke: #282828;
+  --border: 1px solid #282828;
+
+  --c-font-dark: #f8f8f8;
+  --c-font: #b8b8b8;
+  --c-font-light: #888888;
 }
 
 ::-webkit-scrollbar {

@@ -1,6 +1,8 @@
 import Message from './components/message'
 import Confirm from './components/confirm'
 
+export * as helpers from './helpers'
+
 export { default as Input } from './components/input'
 export { default as Field } from './components/field'
 export { default as Fields } from './components/fields'

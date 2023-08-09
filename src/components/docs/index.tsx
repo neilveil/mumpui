@@ -3,6 +3,7 @@ import s from './styles.module.scss'
 import { Message } from 'lib'
 import { useEffect, useRef, useState } from 'react'
 import Footer from '../footer'
+import { theme } from 'lib/helpers/utils'
 
 interface main {
   children?: any
@@ -14,19 +15,23 @@ interface main {
 export default function Main(props: main) {
   return (
     <div className={s.main}>
-      <div className={s.header}>
-        <Link to='/'>
-          <div className={s.back}>
-            <span className='icon'>west</span> Home
+      <div>
+        <div className={s.header}>
+          <Link to='/'>
+            <div className={s.back}>
+              <span className='icon'>west</span> Home
+            </div>
+          </Link>
+
+          <div onClick={() => theme.toggle(true)} className={s.title}>
+            {['MumpUI', props.type, props.name].join(' / ')}
           </div>
-        </Link>
+        </div>
 
-        <div className={s.title}>{['MumpUI', props.type, props.name].join(' / ')}</div>
+        {props.children}
+
+        <div style={{ height: '2rem' }} />
       </div>
-
-      {props.children}
-
-      <div style={{ height: '2rem' }} />
 
       <Footer />
     </div>

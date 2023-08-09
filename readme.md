@@ -56,6 +56,10 @@ related components & blogs
 
 Search query for google
 
+tooltip timer
+
+default theme
+
 ## Importing stylesheet
 
 ```jsx

@@ -1,6 +1,6 @@
 .header {
-  background-color: var(--c-primary);
-  color: var(--c-bg);
+  background-color: var(--itc-primary);
+  color: var(--itc-bg);
   padding: 4rem 0;
 
   .content {
@@ -19,8 +19,23 @@
   }
 
   .left {
+    animation: breathe 2s ease infinite;
+    transform-origin: center center;
+
+    @keyframes breathe {
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
     img {
+      cursor: pointer;
       width: 8rem;
+      transition: all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+      &:hover {
+        transform: rotate(-30deg);
+      }
     }
   }
 
@@ -31,12 +46,12 @@
 
     .name {
       font-size: 2rem;
-      color: var(--c-bg);
+      color: var(--itc-bg);
     }
 
     .info {
       font-size: 0.8rem;
-      color: var(--c-font);
+      color: #888888;
       margin-top: 0.5rem;
     }
 
@@ -58,10 +73,11 @@
   gap: 2rem;
   margin-top: 2rem;
   font-size: 0.8rem;
+  color: var(--itc-bg);
 
   div {
     &:hover {
-      opacity: 0.7;
+      opacity: 0.9;
     }
   }
 }
@@ -125,6 +141,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: var(--c-font-dark);
 
     .count {
       font-size: 0.6rem;

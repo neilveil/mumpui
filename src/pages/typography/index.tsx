@@ -1,5 +1,6 @@
 import React from 'react'
 import s from './styles.module.scss'
+import { theme } from 'lib/helpers/utils'
 
 declare global {
   interface Window {
@@ -51,7 +52,7 @@ export default class Main extends React.Component {
 
   render = () => {
     return (
-      <div className={s.main}>
+      <div className={s.main} onClick={() => theme.toggle()}>
         <div id='content' className='mp-content'></div>
       </div>
     )

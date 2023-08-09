@@ -5,13 +5,14 @@ import { Placeholder } from 'lib'
 import Fuse from 'fuse.js'
 import showcase from './showcase'
 import { Footer } from 'components'
+import { theme } from 'lib/helpers/utils'
 
 export default class Main extends React.Component {
   state = {
     expanded: true,
     search: ''
   }
-
+  logoRotation = 0
   render = () => {
     const fuse = new Fuse(Object.values(showcase), { keys: ['name', 'docs', 'tags'] })
     const searchResults = this.state.search ? fuse.search(this.state.search).map(({ item }) => item) : []
@@ -22,7 +23,14 @@ export default class Main extends React.Component {
           <div className={s.content}>
             <div className={s.logoAndInfo}>
               <div className={s.left}>
-                <img src='/logo.png' />
+                <img
+                  src='/logo.png'
+                  onClick={(e: any) => {
+                    this.logoRotation += 360
+                    e.target.style.transform = `rotate(${this.logoRotation}deg)`
+                    theme.toggle(true)
+                  }}
+                />
               </div>
 
               <div className={s.right}>

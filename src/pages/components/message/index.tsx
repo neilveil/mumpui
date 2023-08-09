@@ -39,7 +39,7 @@ export default function Main() {
       >
         <div className='flex-wrap'>
           <Button onClick={() => Message.loading('Loading..')}>Loading</Button>
-          <Button onClick={() => Message.loading('Loading..')}>Loading till clear</Button>
+          <Button onClick={() => Message.loading('Wait..', 0)}>Loading till clear</Button>
           <Button onClick={() => Message.clear()} type='text'>
             Clear
           </Button>

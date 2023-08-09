@@ -1,116 +1,120 @@
 $spacing: 1rem;
 $image-spacing: calc(2 * $spacing);
 
-// Color
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-b,
-i,
-u,
-p {
-  color: var(--mp-c-font-dark);
-}
-
-p {
-  padding: 0;
-}
-
-// Margin
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: calc(2 * $spacing) 0 0 0;
-}
-p {
-  margin-top: $spacing;
-}
-
-// Padding
-ul,
-ol {
-  padding-left: 1rem;
+.mp-typography,
+.mp-content {
+  // Color
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  b,
+  i,
+  u,
+  p {
+    color: var(--mp-c-font-dark);
+  }
 
   p {
     padding: 0;
   }
 
-  li {
-    padding-left: 0.5rem;
+  // Margin
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: calc(2 * $spacing) 0 0 0;
   }
-}
-
-// Font size
-h1 {
-  font-size: 3rem;
-}
-h2 {
-  font-size: 2rem;
-}
-h3 {
-  font-size: 1.25rem;
-}
-h4,
-h5,
-h6 {
-  font-size: 1rem;
-}
-p {
-  font-size: 1rem;
-}
-
-b {
-  font-weight: var(--mp-fw-bold);
-}
-
-u {
-  text-decoration: none;
-  position: relative;
-}
-u::after {
-  content: ' ';
-  position: absolute;
-  left: 0;
-  bottom: -0.25rem;
-  right: 0;
-  height: 2px;
-  background-color: var(--mp-c-font-light);
-}
-
-mark {
-  background: var(--mp-c-mark);
-  padding: 0 0.15rem;
-}
-
-a,
-a:visited,
-a:hover,
-a:active {
-  color: var(--mp-c-link);
-  text-decoration: none;
-}
-
-ul {
-  list-style-type: disc;
-}
-
-ol,
-ul {
-  li::marker {
-    font-size: 0.9rem;
-    font-weight: var(--mp-fw-semi-bold);
-    color: var(--mp-c-font);
+  p {
+    margin-top: $spacing;
   }
-}
 
-li + li {
-  margin-top: 1rem;
+  // Padding
+  ul,
+  ol {
+    padding-left: 1rem;
+
+    p {
+      padding: 0;
+    }
+
+    li {
+      padding-left: 0.5rem;
+    }
+  }
+
+  // Font size
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+  h4,
+  h5,
+  h6 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+
+  b {
+    font-weight: var(--mp-fw-bold);
+  }
+
+  u {
+    text-decoration: none;
+    position: relative;
+  }
+  u::after {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    bottom: -0.25rem;
+    right: 0;
+    height: 2px;
+    background-color: var(--mp-c-font-light);
+  }
+
+  mark {
+    background: var(--mp-c-mark);
+    color: inherit;
+    padding: 0 0.15rem;
+  }
+
+  a,
+  a:visited,
+  a:hover,
+  a:active {
+    color: var(--mp-c-link);
+    text-decoration: none;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  ol,
+  ul {
+    li::marker {
+      font-size: 0.9rem;
+      font-weight: var(--mp-fw-semi-bold);
+      color: var(--mp-c-font);
+    }
+  }
+
+  li + li {
+    margin-top: 1rem;
+  }
 }
 
 .mp-content {
@@ -129,7 +133,7 @@ li + li {
     margin: calc(3 * $spacing) 0;
   }
 
-  .mp-tabler,
+  .mp-table,
   .table {
     margin: calc(2 * $spacing) 0;
   }

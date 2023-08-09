@@ -5,7 +5,7 @@ export default function Main() {
     <div className={s.footer}>
       Developed by{' '}
       <a href='https://github.com/neilveil' target='_blank'>
-        @neilveil
+        NeilVeil
       </a>
     </div>
   )

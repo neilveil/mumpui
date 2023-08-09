@@ -1,8 +1,6 @@
-import s from './styles.module.scss'
-
 export const info = (
   <svg viewBox='0 0 128 128' fill='none' xmlns='http://www.w3.org/2000/svg'>
-    <rect x='128' y='128' width='128' height='128' rx='64' transform='rotate(-180 128 128)' fill='var(--mp-c-info)' />
+    <rect x='128' y='128' width='128' height='128' rx='64' transform='rotate(-180 128 128)' fill='#1ea6ff' />
     <rect x='64.3137' y='48.6274' width='16' height='16' rx='8' transform='rotate(-135 64.3137 48.6274)' fill='white' />
     <rect x='72' y='99' width='16' height='42' rx='8' transform='rotate(-180 72 99)' fill='white' />
   </svg>
@@ -10,7 +8,7 @@ export const info = (
 
 export const error = (
   <svg viewBox='0 0 128 128' fill='none' xmlns='http://www.w3.org/2000/svg'>
-    <rect width='128' height='128' rx='64' fill='var(--mp-c-error)' />
+    <rect width='128' height='128' rx='64' fill='#e83e0a' />
     <rect
       x='85.5649'
       y='27'
@@ -34,7 +32,7 @@ export const error = (
 
 export const success = (
   <svg viewBox='0 0 128 128' fill='none' xmlns='http://www.w3.org/2000/svg'>
-    <rect width='128' height='128' rx='64' fill='var(--mp-c-success)' />
+    <rect width='128' height='128' rx='64' fill='#55c610' />
     <rect
       x='22'
       y='66.8414'
@@ -58,7 +56,7 @@ export const success = (
 
 export const warn = (
   <svg viewBox='0 0 128 128' fill='none' xmlns='http://www.w3.org/2000/svg'>
-    <rect width='128' height='128' rx='64' fill='var(--mp-c-warning)' />
+    <rect width='128' height='128' rx='64' fill='#ffd93b' />
     <rect x='64.3137' y='78' width='16' height='16' rx='8' transform='rotate(45 64.3137 78)' fill='white' />
     <rect x='56' y='28' width='16' height='42' rx='8' fill='white' />
   </svg>
