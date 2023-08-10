@@ -56,10 +56,10 @@
       border: solid var(--mp-c-font);
       border-width: 0 2px 2px 0;
       transform: rotate(45deg);
-      animation: check 100ms ease forwards;
+      animation: mp-check 100ms ease forwards;
     }
 
-    @keyframes check {
+    @keyframes mp-check {
       0% {
         transform: rotate(45deg) scale(0) translate(-1rem, -1rem);
       }
@@ -80,10 +80,10 @@
       height: 0.5rem;
       background-color: var(--mp-c-font);
       border-radius: 50%;
-      animation: radio 200ms ease forwards;
+      animation: mp-radio 200ms ease forwards;
     }
 
-    @keyframes radio {
+    @keyframes mp-radio {
       0% {
         transform: scale(0);
       }

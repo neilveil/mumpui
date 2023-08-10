@@ -74,10 +74,10 @@ input:disabled,
   max-height: 30vh;
   overflow: auto;
   margin-top: 0.5rem;
-  animation: appear 300ms ease forwards;
+  animation: mp-input-expanded-area-appear 300ms ease forwards;
   user-select: none;
 
-  @keyframes appear {
+  @keyframes mp-input-expanded-area-appear {
     0% {
       margin-top: 2rem;
       opacity: 0;

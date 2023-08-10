@@ -11,7 +11,7 @@
   svg {
     width: 2.5rem;
     transform-origin: center;
-    animation: rotate 2s linear infinite;
+    animation: mp-loader-rotate 2s linear infinite;
 
     circle {
       fill: none;
@@ -20,17 +20,17 @@
       stroke-dasharray: 1, 200;
       stroke-dashoffset: 0;
       stroke-linecap: round;
-      animation: dash 1.5s ease-in-out infinite;
+      animation: mp-loader-dash 1.5s ease-in-out infinite;
     }
   }
 
-  @keyframes rotate {
+  @keyframes mp-loader-rotate {
     100% {
       transform: rotate(360deg);
     }
   }
 
-  @keyframes dash {
+  @keyframes mp-loader-dash {
     0% {
       stroke-dasharray: 1, 200;
       stroke-dashoffset: 0;

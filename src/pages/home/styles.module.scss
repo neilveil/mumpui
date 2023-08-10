@@ -19,10 +19,10 @@
   }
 
   .left {
-    animation: breathe 2s ease infinite;
+    animation: logo-breathe 2s ease infinite;
     transform-origin: center center;
 
-    @keyframes breathe {
+    @keyframes logo-breathe {
       50% {
         transform: scale(1.05);
       }
@@ -180,7 +180,7 @@
   flex-direction: column;
   border-color: var(--mp-c-stroke);
   opacity: 0;
-  animation: appear 300ms ease forwards;
+  animation: component-appear 300ms ease forwards;
   background-color: var(--mp-c-bg);
 
   &:hover {
@@ -193,7 +193,7 @@
     }
   }
 
-  @keyframes appear {
+  @keyframes component-appear {
     0% {
       opacity: 0;
     }

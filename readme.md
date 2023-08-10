@@ -6,8 +6,8 @@ default theme
 optimize scss with variables like padding & border
 z-index standard
 fix translucent color
-
 make animations unique
+
 color field padding
 selection color
 

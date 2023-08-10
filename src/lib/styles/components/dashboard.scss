@@ -40,9 +40,9 @@
     background-color: var(--mp-c-bg);
     min-height: 100%;
     translate: -100%;
-    animation: slide-in 300ms forwards;
+    animation: mp-dashboard-expandable-slide-in 300ms forwards;
   }
-  @keyframes slide-in {
+  @keyframes mp-dashboard-expandable-slide-in {
     100% {
       translate: 0%;
     }

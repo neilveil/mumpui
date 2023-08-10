@@ -38,10 +38,10 @@
   }
 
   .mp-message-loader {
-    animation: rotate 700ms linear infinite;
+    animation: mp-message-loader 700ms linear infinite;
   }
 
-  @keyframes rotate {
+  @keyframes mp-message-loader {
     100% {
       transform: rotate(360deg);
     }

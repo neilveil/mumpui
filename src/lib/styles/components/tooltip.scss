@@ -2,7 +2,7 @@
   position: relative;
 
   &:hover .mp-tooltip-text {
-    animation: appear 300ms ease 300ms forwards;
+    animation: mp-tooltip-appear 300ms ease 300ms forwards;
   }
   .mp-tooltip-text {
     white-space: pre;
@@ -17,7 +17,7 @@
     z-index: 100;
   }
 
-  @keyframes appear {
+  @keyframes mp-tooltip-appear {
     0% {
       opacity: 0;
     }
