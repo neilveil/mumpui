@@ -7,6 +7,7 @@
 .mp-search {
   @include input();
   display: flex;
+  flex-direction: row;
   align-items: center;
 
   input,
@@ -26,7 +27,7 @@
   }
 
   input[type='color'] {
-    height: 2rem;
+    padding: 0 calc(var(--mp-input-padding-left) / 2);
   }
 
   &:hover {

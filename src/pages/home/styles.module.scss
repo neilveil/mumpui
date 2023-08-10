@@ -3,6 +3,10 @@
   color: #ffffff;
   padding: 4rem 0;
 
+  *::selection {
+    background-color: #fff2 !important;
+  }
+
   .content {
     width: 100%;
     max-width: 800px;

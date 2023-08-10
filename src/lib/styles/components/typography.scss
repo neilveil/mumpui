@@ -128,10 +128,6 @@ $image-spacing: calc(2 * $spacing);
   color: var(--mp-c-font-dark);
   padding: 0 1rem;
 
-  *::selection {
-    background-color: var(--mp-c-selection);
-  }
-
   .mp-code {
     margin: calc(3 * $spacing) 0;
   }

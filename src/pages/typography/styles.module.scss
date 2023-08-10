@@ -1,9 +1,5 @@
 .main {
   .header {
-    *::selection {
-      background-color: #fff2;
-    }
-
     text-align: center;
     font-size: 1.5rem;
     background-color: var(--mp-c-primary);

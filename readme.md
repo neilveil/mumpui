@@ -7,27 +7,27 @@ optimize scss with variables like padding & border
 z-index standard
 fix translucent color
 make animations unique
-
 color field padding
 selection color
 
-countries object
-disabled field
 index to key-label migration
-config
 tooltip timer
 remove dropdown.search
 fix dashboard with z-index & form
 pending components
 fuse & axios dynamic
+config
 
 review all components
+  - disabled field
+  - data objects
   - fix type of interface according to comp
   - remove unused imports
   - set required fields
   - add simplified docs, no ts, no arrow functions
   - related components & blogs
 
+set search from query
 version
 changelog
 version snapshots

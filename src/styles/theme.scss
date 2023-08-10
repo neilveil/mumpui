@@ -10,6 +10,17 @@ html {
   scroll-behavior: smooth;
 }
 
+body[data-theme='light'] {
+  *::selection {
+    background-color: #0002;
+  }
+}
+body[data-theme='dark'] {
+  *::selection {
+    background-color: #fff2;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 0.5rem;
   height: 0.5rem;
