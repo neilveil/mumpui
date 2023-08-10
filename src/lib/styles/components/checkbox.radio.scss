@@ -2,7 +2,7 @@
 .mp-radio {
   user-select: none;
   display: inline-block;
-  padding: $input-top-padding 0;
+  padding: var(--mp-input-padding-top) 0;
   // padding: 1rem 0;
 
   label {
@@ -37,7 +37,7 @@
     height: 1rem;
     width: 1rem;
     border-radius: calc(var(--mp-border-radius) / 2);
-    border: var(--mp-stroke-width) solid var(--mp-c-stroke);
+    border: var(--mp-border-solid);
   }
 
   .mp-radio-icon {

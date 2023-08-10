@@ -16,7 +16,7 @@
     border: none;
     outline: none;
     padding: 0;
-    padding: $input-padding;
+    padding: var(--mp-input-padding);
     border-radius: var(--mp-border-radius);
     color: inherit;
 
@@ -43,7 +43,7 @@
     font-weight: var(--mp-fw-bold);
     color: var(--mp-c-font);
     background-color: var(--mp-c-hover);
-    padding: $input-top-padding $input-left-padding;
+    padding: var(--mp-input-padding-top) var(--mp-input-padding-left);
     user-select: none;
   }
   .mp-prefix {
@@ -65,7 +65,7 @@ input:disabled,
 
 .mp-input-expanded-area {
   background-color: var(--mp-c-bg);
-  border: var(--mp-stroke-width) solid var(--mp-c-stroke);
+  border: var(--mp-border-solid);
   border-radius: var(--mp-border-radius);
   position: absolute;
   width: 100%;

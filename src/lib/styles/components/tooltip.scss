@@ -7,7 +7,7 @@
   .mp-tooltip-text {
     white-space: pre;
     background-color: var(--mp-c-bg);
-    border: $border;
+    border: var(--mp-border-solid);
     border-radius: var(--mp-border-radius);
     text-align: center;
     padding: 0.25rem 0.5rem;

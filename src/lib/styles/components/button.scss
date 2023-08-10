@@ -6,8 +6,8 @@
   border: var(--mp-stroke-width) solid;
   font-weight: var(--mp-fw-bold);
 
-  padding: $input-top-padding $input-left-padding;
-  font-size: 0.65rem;
+  padding: var(--mp-input-padding-top) var(--mp-input-padding-left);
+  font-size: var(--mp-input-font-size);
   background-color: transparent;
   color: var(--mp-c-font);
 
@@ -22,10 +22,10 @@
     background-color: var(--mp-c-primary);
   }
   &.mp-button-default {
-    border: var(--mp-stroke-width) solid var(--mp-c-stroke);
+    border: var(--mp-border-solid);
   }
   &.mp-button-dashed {
-    border: var(--mp-stroke-width) dashed var(--mp-c-stroke);
+    border: var(--mp-border-dashed);
   }
   &.mp-button-danger {
     color: var(--mp-c-error);

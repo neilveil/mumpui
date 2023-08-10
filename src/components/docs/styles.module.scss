@@ -29,7 +29,7 @@
 }
 
 .header {
-  border-bottom: var(--border);
+  border-bottom: var(--mp-border-solid);
   margin-bottom: 2rem;
 
   .back {
@@ -57,7 +57,7 @@
 
 .showcase {
   .element {
-    border: var(--border);
+    border: var(--mp-border-solid);
     padding: 1rem;
   }
 

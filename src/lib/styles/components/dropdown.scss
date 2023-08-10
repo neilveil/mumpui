@@ -3,7 +3,7 @@
 
   .mp-dropdown-single-select,
   .mp-dropdown-multi-select {
-    padding: $input-padding;
+    padding: var(--mp-input-padding);
     border-radius: var(--mp-border-radius);
 
     &::placeholder {
@@ -17,7 +17,7 @@
 
   .mp-dropdown-multi-select {
     display: flex;
-    gap: calc($input-left-padding / 2);
+    gap: calc(var(--mp-input-padding-left) / 2);
     flex-wrap: wrap;
   }
 }
@@ -25,7 +25,7 @@
 .mp-input-chip {
   padding-left: 0.5rem;
   background-color: var(--mp-c-hover);
-  border-radius: var(--mp-border-radius);
+  border-radius: calc(var(--mp-border-radius) / 2);
   display: flex;
   align-items: center;
   user-select: none;
@@ -42,12 +42,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: var(--mp-stroke-width) solid var(--mp-c-stroke);
+  border-bottom: var(--mp-border-solid);
 
   .mp-dropdown-search {
     border: none;
     outline: none;
-    padding: $input-padding;
+    padding: var(--mp-input-padding);
     width: 100%;
     border-radius: 0;
     color: var(--mp-c-font-light);
@@ -59,15 +59,15 @@
 
   .mp-dropdown-clear {
     cursor: pointer;
-    padding: 0 $input-left-padding;
-    font-size: $input-font-size;
+    padding: 0 var(--mp-input-padding-left);
+    font-size: var(--mp-input-font-size);
     color: var(--mp-c-font-light);
   }
 }
 
 .mp-dropdown-option {
   padding: 0.5rem 1rem;
-  border-bottom: var(--mp-stroke-width) solid var(--mp-c-stroke);
+  border-bottom: var(--mp-border-solid);
 
   &:hover,
   &:focus {

@@ -1,7 +1,7 @@
 .mp-fields {
   display: flex;
   gap: 1rem;
-  margin: $field-margin 0;
+  margin: var(--mp-field-margin) 0;
 
   &::-webkit-scrollbar {
     display: none;

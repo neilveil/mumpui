@@ -1,7 +1,7 @@
 .mp-file {
-  padding: $input-padding;
-  font-size: $input-font-size;
-  border: var(--mp-stroke-width) dashed var(--mp-c-stroke);
+  padding: var(--mp-input-padding);
+  font-size: var(--mp-input-font-size);
+  border: var(--mp-border-dashed);
   border-radius: var(--mp-border-radius);
   cursor: pointer;
 

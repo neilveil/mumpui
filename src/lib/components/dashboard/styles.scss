@@ -78,7 +78,7 @@
 .mp-dashboard-header {
   position: sticky;
   top: 0;
-  border-bottom: var(--mp-stroke-width) solid var(--mp-c-stroke);
+  border-bottom: var(--mp-border-solid);
   background-color: var(--mp-c-bg);
   z-index: 1;
   padding: 2rem 1rem;
@@ -130,7 +130,7 @@
 .mp-dashboard-footer {
   position: sticky;
   bottom: 0;
-  border-top: var(--mp-stroke-width) solid var(--mp-c-stroke);
+  border-top: var(--mp-border-solid);
   display: flex;
   flex-direction: column;
   justify-content: space-between;

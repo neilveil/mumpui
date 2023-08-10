@@ -1,12 +1,12 @@
-$input-font-size: 0.7rem;
-
-$input-top-padding: 0.3rem;
-$input-left-padding: $input-top-padding * 2;
-$input-padding: $input-top-padding $input-left-padding;
-
-$field-margin: 1rem;
-
-$border: var(--mp-stroke-width) solid var(--mp-c-stroke);
+body {
+  --mp-input-font-size: 0.7rem;
+  --mp-field-margin: 1rem;
+  --mp-input-padding-left: 0.6rem;
+  --mp-input-padding-top: 0.3rem;
+  --mp-input-padding: var(--mp-input-padding-top) var(--mp-input-padding-left);
+  --mp-border-solid: var(--mp-stroke-width) solid var(--mp-c-stroke);
+  --mp-border-dashed: var(--mp-stroke-width) dashed var(--mp-c-stroke);
+}
 
 @mixin center {
   display: flex;
@@ -15,12 +15,12 @@ $border: var(--mp-stroke-width) solid var(--mp-c-stroke);
 }
 
 @mixin input {
-  border: $border;
+  border: var(--mp-border-solid);
   border-radius: var(--mp-border-radius);
   color: var(--mp-c-font-dark);
   background: var(--mp-c-bg);
   transition: var(--mp-transition);
-  font-size: $input-font-size;
+  font-size: var(--mp-input-font-size);
   position: relative;
 
   input[type='time'],
@@ -37,16 +37,10 @@ $border: var(--mp-stroke-width) solid var(--mp-c-stroke);
 
   input[type='color']::-webkit-color-swatch {
     border-radius: calc(var(--mp-border-radius) / 2);
-    border: $border;
+    border: var(--mp-border-solid);
   }
 
   input[type='color'] + input {
     padding-left: 0;
   }
 }
-
-// input[type='time']::-webkit-calendar-picker-indicator {
-//   // filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
-//   color: red;
-//   background-color: red;
-// }

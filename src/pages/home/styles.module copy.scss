@@ -72,12 +72,12 @@
   .showcase {
     margin: 2rem 0;
     padding: 1rem;
-    border: var(--border);
+    border: var(--mp-border-solid);
 
     .title {
       padding-bottom: 1rem;
       margin-bottom: 1rem;
-      border-bottom: var(--border);
+      border-bottom: var(--mp-border-solid);
     }
 
     .info {
