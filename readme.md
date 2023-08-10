@@ -3,24 +3,30 @@
 remove bold font
 fix colors
 default theme
-
 optimize scss with variables like padding & border
-remove unused imports
 z-index standard
 fix translucent color
+
 make animations unique
-fix type of interface according to comp
+color field padding
+selection color
+
 countries object
 disabled field
+index to key-label migration
+config
 tooltip timer
 remove dropdown.search
-set required fields
-index to key-label migration
+fix dashboard with z-index & form
+pending components
 fuse & axios dynamic
-add simplified docs, no ts, no arrow functions
-config
-related components & blogs
-color field padding
+
+review all components
+  - fix type of interface according to comp
+  - remove unused imports
+  - set required fields
+  - add simplified docs, no ts, no arrow functions
+  - related components & blogs
 
 version
 changelog

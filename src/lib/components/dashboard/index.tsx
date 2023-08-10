@@ -3,7 +3,6 @@ import Menu from '../menu'
 import Button from '../button'
 import Input from '../input'
 import Pagination from '../pagination'
-import './styles.scss'
 
 declare global {
   interface Window {

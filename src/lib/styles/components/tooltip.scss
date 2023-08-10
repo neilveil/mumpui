@@ -13,9 +13,8 @@
     padding: 0.25rem 0.5rem;
     font-size: 0.7rem;
     position: absolute;
-    z-index: 1;
     opacity: 0;
-    z-index: 1000;
+    z-index: 100;
   }
 
   @keyframes appear {

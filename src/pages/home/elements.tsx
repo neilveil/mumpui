@@ -239,7 +239,7 @@ export default {
     )
   },
   message: {
-    name: 'Tooltip',
+    name: 'Message',
     docs: '/component/message',
     tags: [],
     component: () => (
@@ -249,7 +249,7 @@ export default {
     )
   },
   confirm: {
-    name: 'Tooltip',
+    name: 'Confirm',
     docs: '/component/confirm',
     tags: [],
     component: () => (
@@ -259,7 +259,7 @@ export default {
     )
   },
   modal: {
-    name: 'Tooltip',
+    name: 'Modal',
     docs: '/component/modal',
     tags: [],
     component: () => (
@@ -269,7 +269,7 @@ export default {
     )
   },
   note: {
-    name: 'Tooltip',
+    name: 'Note',
     docs: '/component/note',
     tags: [],
     component: () => (
@@ -279,7 +279,7 @@ export default {
     )
   },
   tabs: {
-    name: 'Tooltip',
+    name: 'Tabs',
     docs: '/component/tabs',
     tags: [],
     component: () => (
@@ -289,7 +289,7 @@ export default {
     )
   },
   menu: {
-    name: 'Tooltip',
+    name: 'Menu',
     docs: '/component/menu',
     tags: [],
     component: () => (
@@ -299,7 +299,7 @@ export default {
     )
   },
   pagination: {
-    name: 'Tooltip',
+    name: 'Pagination',
     docs: '/component/pagination',
     tags: [],
     component: () => (
@@ -309,7 +309,7 @@ export default {
     )
   },
   breadcrumb: {
-    name: 'Tooltip',
+    name: 'Breadcrumb',
     docs: '/component/breadcrumb',
     tags: [],
     component: () => (
@@ -319,85 +319,85 @@ export default {
     )
   },
   theme: {
-    name: 'Tooltip',
+    name: 'Theme',
     docs: '/component/theme',
     tags: [],
     component: () => <div></div>
   },
   responsive: {
-    name: 'Tooltip',
+    name: 'Responsive',
     docs: '/component/responsive',
     tags: [],
     component: () => <div></div>
   },
   classes: {
-    name: 'Tooltip',
+    name: 'Classes',
     docs: '/component/classes',
     tags: [],
     component: () => <div></div>
   },
   request: {
-    name: 'Tooltip',
+    name: 'Request',
     docs: '/component/request',
     tags: [],
     component: () => <div></div>
   },
   storage: {
-    name: 'Tooltip',
+    name: 'Storage',
     docs: '/component/storage',
     tags: [],
     component: () => <div></div>
   },
   utils: {
-    name: 'Tooltip',
+    name: 'Utils',
     docs: '/component/utils',
     tags: [],
     component: () => <div></div>
   },
   uh: {
-    name: 'Tooltip',
+    name: 'URL Handler',
     docs: '/component/uh',
     tags: [],
     component: () => <div></div>
   },
   sh: {
-    name: 'Tooltip',
+    name: 'Scroll Handler',
     docs: '/component/sh',
     tags: [],
     component: () => <div></div>
   },
   dh: {
-    name: 'Tooltip',
+    name: 'Depth Handler',
     docs: '/component/dh',
     tags: [],
     component: () => <div></div>
   },
   wrapper: {
-    name: 'Tooltip',
+    name: 'Wrapper',
     docs: '/component/wrapper',
     tags: [],
     component: () => <div></div>
   },
   dashboard: {
-    name: 'Tooltip',
+    name: 'Dashboard',
     docs: '/component/dashboard',
     tags: [],
     component: () => <div></div>
   },
   typography: {
-    name: 'Tooltip',
+    name: 'Typography',
     docs: '/component/typography',
     tags: [],
     component: () => <div></div>
   },
   code: {
-    name: 'Tooltip',
+    name: 'Code',
     docs: '/component/code',
     tags: [],
     component: () => <div></div>
   },
   md: {
-    name: 'Tooltip',
+    name: 'Markdown',
     docs: '/component/md',
     tags: [],
     component: () => <div></div>

@@ -12,9 +12,49 @@
   display: flex;
   flex-direction: column;
   padding: 1rem;
+  padding-top: 0;
+  height: 100vh;
+  overflow: auto;
+
+  & > div {
+    overflow: visible;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.mp-dashboard-expandable {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--mp-c-translucent);
+  z-index: 100000;
+  height: 100vh;
+  overflow: auto;
+
+  & > div {
+    overflow: visible;
+    max-width: 70vw;
+    background-color: var(--mp-c-bg);
+    min-height: 100%;
+    translate: -100%;
+    animation: slide-in 300ms forwards;
+  }
+  @keyframes slide-in {
+    100% {
+      translate: 0%;
+    }
+  }
 }
 .mp-dashboard-sidebar-icon {
   padding: 2rem;
+  position: sticky;
+  top: 0;
+  background-color: var(--mp-c-bg);
+  z-index: 2;
+  margin-bottom: 1rem;
 
   img {
     width: 100%;
@@ -41,6 +81,7 @@
   border-bottom: var(--mp-border-solid);
   background-color: var(--mp-c-bg);
   z-index: 1;
+  padding: 2rem 1rem;
 }
 .mp-dashboard-header-row {
   display: flex;
@@ -55,6 +96,14 @@
   color: var(--mp-c-font-light);
   margin-right: 0.5rem;
   font-size: 1.2rem;
+}
+.mp-dashboard-expandable-icon {
+  display: none;
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.5rem;
+  }
 }
 .mp-dashboard-title {
   color: var(--mp-c-font-dark);
@@ -83,9 +132,21 @@
   bottom: 0;
   border-top: var(--mp-border-solid);
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   background-color: var(--mp-c-bg);
   z-index: 1;
+}
+
+.mp-dashboard-pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.mp-dashboard-footer-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 @media (max-width: 1199px) {
@@ -93,11 +154,27 @@
     display: none;
   }
 
+  .mp-dashboard-expandable {
+    display: block;
+  }
+
+  .mp-dashboard-expandable-icon {
+    display: block;
+  }
+  .mp-dashboard-icon {
+    display: none;
+  }
+
+  .mp-dashboard-header {
+    padding: 1rem;
+  }
+
   .mp-dashboard-content {
     width: 100%;
   }
 
   .mp-dashboard-info {
-    // display: block;
+    display: block;
+    margin-left: 0;
   }
 }
