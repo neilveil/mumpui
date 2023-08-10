@@ -20,6 +20,7 @@ fuse & axios dynamic
 add simplified docs, no ts, no arrow functions
 config
 related components & blogs
+color field padding
 
 version
 changelog
@@ -66,16 +67,13 @@ import 'mumpui/lib/styles/index.scss'
 - Range
 - File
 
-## Data
+## Display
 
 - List
 - Table
 - Loader
 - Placeholder
 - Divider
-
-## Elements
-
 - Chain
 - Tooltip
 
@@ -109,13 +107,11 @@ import 'mumpui/lib/styles/index.scss'
 - Depth Handler
 - Wrapper
 
-## More
+## Advanced
 
 - Dashboard
 - Typography
 - Code
 - MD
-
-
 
 npx sass src/lib/styles/components.scss mumpui.css --style=compressed --no-source-map --fatal-deprecation=0.0.0

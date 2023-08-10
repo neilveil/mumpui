@@ -29,6 +29,7 @@ export { default as Table } from './components/table'
 export { default as Tooltip } from './components/tooltip'
 export { default as Embed } from './components/embed'
 export { default as Modal } from './components/modal'
+export { default as List } from './components/list'
 
 const MumpUI = () => {
   return (

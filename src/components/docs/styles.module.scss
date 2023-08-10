@@ -52,6 +52,7 @@
     font-size: 1.5rem;
     font-weight: var(--mp-fw-bold);
     cursor: pointer;
+    padding-bottom: 1rem;
   }
 }
 
@@ -68,7 +69,7 @@
     user-select: none;
 
     div {
-      background-color: var(--mp-c-light);
+      background-color: var(--mp-c-hover);
       display: inline-flex;
       align-items: center;
       padding: 0.25rem 0.5rem;

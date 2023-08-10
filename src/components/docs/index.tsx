@@ -17,9 +17,13 @@ export default function Main(props: main) {
     <div className={s.main}>
       <div>
         <div className={s.header}>
-          <Link to='/'>
-            <div className={s.back}>
-              <span className='icon'>west</span> Home
+          <div className={s.back} onClick={() => window.history.back()}>
+            <span className='icon'>west</span> Back
+          </div>
+
+          <Link to='/home'>
+            <div className={s.back} style={{ marginLeft: '1.5rem' }}>
+              <span className='icon'>home</span> Home
             </div>
           </Link>
 

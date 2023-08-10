@@ -6,6 +6,7 @@ import Fuse from 'fuse.js'
 import showcase from './showcase'
 import { Footer } from 'components'
 import { theme } from 'lib/helpers/utils'
+import elements from './elements'
 
 export default class Main extends React.Component {
   state = {
@@ -14,7 +15,7 @@ export default class Main extends React.Component {
   }
   logoRotation = 0
   render = () => {
-    const fuse = new Fuse(Object.values(showcase), { keys: ['name', 'docs', 'tags'] })
+    const fuse = new Fuse(Object.values(elements), { keys: ['name', 'docs', 'tags'] })
     const searchResults = this.state.search ? fuse.search(this.state.search).map(({ item }) => item) : []
 
     return (
@@ -100,23 +101,9 @@ export default class Main extends React.Component {
               <div>{searchResults.length ? <Components data={searchResults} expanded={true} /> : <Placeholder />}</div>
             ) : (
               <>
-                <Showcase
-                  title='Data Input'
-                  components={[
-                    showcase.input,
-                    showcase.form,
-                    showcase.dropdown,
-                    showcase.multiselect,
-                    showcase.checkbox,
-                    showcase.radio,
-                    showcase.range,
-                    showcase.file,
-                    showcase.button
-                  ]}
-                  expanded={this.state.expanded}
-                />
-
-                <Showcase title='Elements' components={[showcase.divider]} expanded={this.state.expanded} />
+                {showcase.map(({ name, elements }, i) => (
+                  <Showcase key={i} title={name} elements={elements} expanded={this.state.expanded} />
+                ))}
               </>
             )}
           </div>
@@ -128,7 +115,7 @@ export default class Main extends React.Component {
   }
 }
 
-type component = {
+type element = {
   name: string
   component: any
   docs?: string
@@ -136,14 +123,14 @@ type component = {
 
 interface showcase {
   title: string
-  components: component[]
+  elements: element[]
   expanded: boolean
 }
 
-const Components = ({ data, expanded }: { data: component[]; expanded: boolean }) => {
-  const pairs: component[][] = []
+const Components = ({ data, expanded }: { data: element[]; expanded: boolean }) => {
+  const pairs: element[][] = []
 
-  var pair: component[] = []
+  var pair: element[] = []
 
   for (const x of data) {
     pair.push(x)
@@ -200,7 +187,7 @@ const Showcase = (props: showcase) => {
       <div className={s.title} onClick={() => setLocalExpanded(!localExpanded)}>
         <div>
           {props.title}
-          <span className={s.count}>{props.components.length} components</span>
+          <span className={s.count}>{props.elements.length} components</span>
         </div>
         <div className='icon' style={{ color: 'var(--mp-c-font-light)' }}>
           {localExpanded ? 'expand_more' : 'chevron_right'}
@@ -210,7 +197,7 @@ const Showcase = (props: showcase) => {
       {/* {!!localExpanded && (
           )} */}
       <>
-        <Components data={props.components} expanded={localExpanded} />
+        <Components data={props.elements} expanded={localExpanded} />
       </>
     </div>
   )
