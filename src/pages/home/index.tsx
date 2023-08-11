@@ -5,8 +5,8 @@ import { Placeholder } from 'lib'
 import Fuse from 'fuse.js'
 import showcase from './showcase'
 import { Footer } from 'components'
-import { theme } from 'lib/helpers/utils'
 import elements from './elements'
+import mutils from 'lib/mutils'
 
 export default class Main extends React.Component {
   state = {
@@ -55,7 +55,7 @@ export default class Main extends React.Component {
                   onClick={(e: any) => {
                     this.logoRotation += 360
                     e.target.style.transform = `rotate(${this.logoRotation}deg)`
-                    theme.toggle(true)
+                    mutils.theme.toggle(true)
                   }}
                 />
               </div>

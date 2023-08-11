@@ -16,6 +16,7 @@ export const theme = {
   }
 }
 
+// theme
 // setMeta
 // pixel-to-rem
 // copyText

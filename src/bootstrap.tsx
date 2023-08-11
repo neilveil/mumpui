@@ -1,12 +1,12 @@
 import { MumpUI } from 'lib'
-import { theme } from 'lib/helpers/utils'
+import mutils from 'lib/mutils'
 
 export default function Main() {
-  theme.init()
+  mutils.theme.init()
 
   return (
     <>
-      <MumpUI tooltipDelay={0} />
+      <MumpUI />
     </>
   )
 }

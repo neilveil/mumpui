@@ -154,7 +154,7 @@ export default function Main(props: props) {
               {!!props.paginationTotal && (
                 <Pagination
                   pageSize={props.paginationPageSize || 0}
-                  total={props.paginationTotal}
+                  totalItems={props.paginationTotal}
                   offset={props.paginationOffset || 0}
                   onChange={props.paginationOnChange || (() => {})}
                 />

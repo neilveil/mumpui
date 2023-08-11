@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-type props = React.HTMLAttributes<HTMLDivElement> & {
+type props = Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> & {
   pageSize: number
   totalItems: number
   offset: number

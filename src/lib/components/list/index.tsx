@@ -1,17 +1,25 @@
 import React from 'react'
 
-type props = React.InputHTMLAttributes<HTMLDivElement> & {
+type data = string | data[]
+
+type props = React.HTMLAttributes<HTMLDivElement> & {
+  data: data
+  type?: 'ol' | 'ul'
   className?: string
-  label?: string
 }
 
-export default function Main({ className, label, ...props }: props) {
-  className = 'mp-field ' + (className || '')
+const wrapInLI: any = (data: data, type: 'ol' | 'ul' = 'ul') => {
+  if (typeof data === 'string') return <li>{data}</li>
+  else return data.map(x => (type === 'ol' ? <ol>{wrapInLI(x, type)}</ol> : <ul>{wrapInLI(x, type)}</ul>))
+}
+
+export default function Main({ data, type, className, ...props }: props) {
+  className = 'mp-list ' + (className || '')
+  data = wrapInLI(data, type)
 
   return (
     <div className={className} {...props}>
-      <div className='mp-label'>{label ? label : <>&nbsp;</>}</div>
-      {props.children}
+      {data}
     </div>
   )
 }

@@ -202,7 +202,7 @@ export default {
     name: 'List',
     docs: '/component/list',
     tags: [],
-    component: () => <List />
+    component: () => <List data={[]} />
   },
   table: {
     name: 'Table',
@@ -380,7 +380,7 @@ export default {
   },
   dashboard: {
     name: 'Dashboard',
-    docs: '/component/dashboard',
+    docs: '/dashboard',
     tags: [],
     component: () => <div></div>
   },
@@ -393,12 +393,6 @@ export default {
   code: {
     name: 'Code',
     docs: '/component/code',
-    tags: [],
-    component: () => <div></div>
-  },
-  md: {
-    name: 'Markdown',
-    docs: '/component/md',
     tags: [],
     component: () => <div></div>
   }

@@ -2,7 +2,7 @@ import Message from './components/message'
 import Confirm from './components/confirm'
 import Tooltip from './components/tooltip'
 
-export * as helpers from './helpers'
+export * as mutils from './mutils'
 
 export { default as Input } from './components/input'
 export { default as Field } from './components/field'

@@ -10,13 +10,20 @@ make animations unique
 color field padding
 selection color
 tooltip timer
-
-fix dashboard with z-index & form
-pending components
-index to key-label migration
 config
   - tooltip delay
   - message settings
+
+fix dashboard with z-index & form
+- General / Responsive
+- Data
+- Create
+- Update
+- User access
+- Nested
+
+pending components
+index to key-label migration
 
 review all components
   - disabled field
@@ -126,5 +133,8 @@ import 'mumpui/lib/styles/index.scss'
 - Dashboard
 - Typography
 - Code
+
+- md
+- embed
 
 npx sass src/lib/styles/components.scss mumpui.css --style=compressed --no-source-map --fatal-deprecation=0.0.0

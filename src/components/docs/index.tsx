@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
 import s from './styles.module.scss'
 import { Code, Message } from 'lib'
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import Footer from '../footer'
-import { theme } from 'lib/helpers/utils'
+import mutils from 'lib/mutils'
 
 interface main {
   children?: any
@@ -27,7 +27,7 @@ export default function Main(props: main) {
             </div>
           </Link>
 
-          <div onClick={() => theme.toggle(true)} className={s.title}>
+          <div onClick={() => mutils.theme.toggle(true)} className={s.title}>
             {['MumpUI', props.type, props.name].join(' / ')}
           </div>
         </div>

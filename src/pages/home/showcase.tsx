@@ -58,6 +58,6 @@ export default [
   },
   {
     name: 'Advanced',
-    elements: [elements.dashboard, elements.typography, elements.code, elements.md]
+    elements: [elements.dashboard, elements.typography, elements.code]
   }
 ]
