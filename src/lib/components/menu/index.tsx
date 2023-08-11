@@ -7,21 +7,23 @@ type item = {
   name: string
   icon?: React.ReactNode
   next?: item[]
+  access?: string[]
 }
 
 type props = React.HTMLAttributes<HTMLDivElement> & {
   selected: key
   onSelect: (key: key) => void
   items: item[]
+  access?: string[]
 }
 
-export default function Main({ selected, onSelect, items = [], className, ...props }: props) {
+export default function Main({ selected, onSelect, items = [], className, access, ...props }: props) {
   className = 'mp-menu ' + (className || '')
 
   return (
     <div className={className} {...props}>
       {items.map((item, i) => (
-        <MenuItem key={i} selected={selected} onSelect={onSelect} item={item} />
+        <MenuItem key={i} selected={selected} onSelect={onSelect} item={item} access={access} />
       ))}
     </div>
   )
@@ -34,10 +36,27 @@ const isExpanded = (next: item[] = [], selected: key): boolean => {
   return false
 }
 
-function MenuItem({ selected, onSelect, item }: { selected: key; onSelect: (key: key) => void; item: item }) {
+function MenuItem({
+  selected,
+  onSelect,
+  item,
+  access = []
+}: {
+  selected: key
+  onSelect: (key: key) => void
+  item: item
+  access?: string[]
+}) {
   const [expanded, setExpanded] = useState(isExpanded(item.next, selected))
 
   const isExpandable = !!item.next?.length
+
+  if (item.access && item.access.length) {
+    var allowed = false
+    for (const _access of access) if (!allowed && item.access.includes(_access)) allowed = true
+
+    if (!allowed) return null
+  }
 
   return (
     <>
