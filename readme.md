@@ -10,13 +10,15 @@ make animations unique
 color field padding
 selection color
 
-index to key-label migration
 tooltip timer
 remove dropdown.search
 fix dashboard with z-index & form
-pending components
 fuse & axios dynamic
+pending components
+index to key-label migration
 config
+  - tooltip delay
+  - message settings
 
 review all components
   - disabled field

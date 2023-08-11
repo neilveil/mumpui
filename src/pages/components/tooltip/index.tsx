@@ -27,7 +27,7 @@ export default function Main() {
 
       <Docs.Props
         title='Tooltip'
-        type='props'
+        type='component'
         fields={[
           { name: '..', usage: 'All div element props' },
           { name: 'label', type: 'string', usage: 'Tooltip text' },

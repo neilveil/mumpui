@@ -11,9 +11,35 @@ import elements from './elements'
 export default class Main extends React.Component {
   state = {
     expanded: true,
-    search: ''
+    search: '',
+    isSearchFocused: false
   }
   logoRotation = 0
+  componentDidMount(): void {
+    window.addEventListener('keyup', this.focusSearch)
+  }
+  componentWillUnmount(): void {
+    window.removeEventListener('keyup', this.focusSearch)
+  }
+  focusSearch = (e: any) => {
+    if (e.key === '/' && !this.state.isSearchFocused) {
+      const searchEl: any = document.querySelector('#search')
+      if (!searchEl) return
+      searchEl.focus()
+      this.scrollToSearch()
+    }
+  }
+  scrollToSearch = () => {
+    const searchEl = document.querySelector('#search')
+    if (!searchEl) return
+
+    window.scrollTo(
+      0,
+      window.scrollY +
+        searchEl.getBoundingClientRect().top -
+        parseFloat(getComputedStyle(document.documentElement).fontSize)
+    )
+  }
   render = () => {
     const fuse = new Fuse(Object.values(elements), { keys: ['name', 'docs', 'tags'] })
     const searchResults = this.state.search ? fuse.search(this.state.search).map(({ item }) => item) : []
@@ -66,26 +92,26 @@ export default class Main extends React.Component {
 
         <div className={s.container}>
           <div className={s.content}>
-            <div
-              className={s.search}
-              onClick={() => {
-                const searchEl = document.querySelector('#search')
-                if (!searchEl) return
+            <div className={s.search} onClick={this.scrollToSearch}>
+              <div className={s.searchInput}>
+                <input
+                  id='search'
+                  onFocus={() => this.setState({ search: '', isSearchFocused: true })}
+                  onKeyUp={(e: any) => {
+                    if (e.key === 'Escape') {
+                      window.scrollTo(0, 0)
+                      e.target.blur()
+                      this.setState({ search: '' })
+                    } else this.scrollToSearch()
+                  }}
+                  onBlur={() => this.setState({ isSearchFocused: false })}
+                  value={this.state.search}
+                  onChange={e => this.setState({ search: e.target.value })}
+                  placeholder='Lightning search..'
+                />
 
-                window.scrollTo(
-                  0,
-                  window.scrollY +
-                    searchEl.getBoundingClientRect().top -
-                    parseFloat(getComputedStyle(document.documentElement).fontSize)
-                )
-              }}
-            >
-              <input
-                id='search'
-                value={this.state.search}
-                onChange={e => this.setState({ search: e.target.value })}
-                placeholder='Lightning search..'
-              />
+                <div className={s.searchShortcut}>{this.state.isSearchFocused ? 'Esc' : '/'}</div>
+              </div>
 
               {!this.state.search && (
                 <span
@@ -165,7 +191,13 @@ const Components = ({ data, expanded }: { data: element[]; expanded: boolean }) 
               >
                 {!!expanded && <div className={s.element}>{<x.component />}</div>}
 
-                {x.docs ? <Link to={x.docs}>{name(x.name)}</Link> : name(x.name)}
+                {x.docs ? (
+                  <Link to={x.docs} className={s.nameLink}>
+                    {name(x.name)}
+                  </Link>
+                ) : (
+                  name(x.name)
+                )}
               </div>
             ))}
           </div>

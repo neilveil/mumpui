@@ -1,5 +1,6 @@
 import Message from './components/message'
 import Confirm from './components/confirm'
+import Tooltip from './components/tooltip'
 
 export * as helpers from './helpers'
 
@@ -26,12 +27,17 @@ export { default as Note } from './components/note'
 export { default as Tabs } from './components/tabs'
 export { default as Chain } from './components/chain'
 export { default as Table } from './components/table'
-export { default as Tooltip } from './components/tooltip'
 export { default as Embed } from './components/embed'
 export { default as Modal } from './components/modal'
 export { default as List } from './components/list'
 
-const MumpUI = () => {
+interface props {
+  tooltipDelay?: number
+}
+
+const MumpUI = ({ tooltipDelay }: props) => {
+  if (tooltipDelay) Tooltip.delay = tooltipDelay
+
   return (
     <>
       <Message />
@@ -40,4 +46,4 @@ const MumpUI = () => {
   )
 }
 
-export { MumpUI, Message, Confirm }
+export { MumpUI, Message, Confirm, Tooltip }

@@ -117,10 +117,26 @@
     }
   }
 
+  .searchInput {
+    width: 60%;
+    position: relative;
+  }
+  .searchShortcut {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1rem;
+    font-size: 0.8rem;
+    color: var(--mp-c-font-light);
+    background-color: var(--mp-c-hover);
+    padding: 0 0.25rem;
+    border-radius: 4px;
+  }
+
   input {
     outline: none;
     border: var(--mp-border-solid);
-    width: 60%;
+    width: 100%;
     color: var(--mp-c-font-dark);
     padding: 0.5rem 1.5rem;
     border-radius: 10rem;
@@ -187,6 +203,7 @@
   animation: component-appear 300ms ease forwards;
   background-color: var(--mp-c-bg);
 
+  .nameLink:focus,
   &:hover {
     .name {
       color: var(--mp-c-font-dark);
