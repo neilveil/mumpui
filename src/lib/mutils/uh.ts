@@ -6,7 +6,7 @@ const main = {
   // () -> {a: 1, b: 2}
   // ('a') -> 1
   // (null, '?eyJhIjoxLCJiIjoyfQ==') -> {a: 1, b: 2}
-  get: (key, from = window.location.search) => {
+  get: (key: string, from = window.location.search) => {
     try {
       const obj = JSON.parse(window.atob(from.slice('?'.length)))
 
@@ -23,5 +23,3 @@ const main = {
 }
 
 export default main
-
-if (process.env.NODE_ENV === 'development') window.uh = main

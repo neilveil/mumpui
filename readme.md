@@ -29,10 +29,12 @@ review all components
   - related components & blogs
 
 prism
-marked
 axios
 fuse
+
+marked
 jinie
+
 validator
 
 set search from query
