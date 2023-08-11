@@ -31,12 +31,25 @@ export { default as Embed } from './components/embed'
 export { default as Modal } from './components/modal'
 export { default as List } from './components/list'
 
-interface props {
-  tooltipDelay?: number
+interface tooltip {
+  delay?: number
 }
 
-const MumpUI = ({ tooltipDelay }: props) => {
-  if (tooltipDelay) Tooltip.delay = tooltipDelay
+interface message {
+  duration?: number
+  max?: number
+}
+
+interface props {
+  tooltip?: tooltip
+  message?: message
+}
+
+const MumpUI = ({ tooltip, message }: props) => {
+  if (tooltip && tooltip.delay !== undefined) Tooltip.delay = tooltip.delay
+
+  if (message && message.max !== undefined) Message.max = message.max
+  if (message && message.duration !== undefined) Message.duration = message.duration
 
   return (
     <>

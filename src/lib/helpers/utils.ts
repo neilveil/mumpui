@@ -26,6 +26,8 @@ export const theme = {
 // round
 // download
 // csv
+// arrayToggle
+// unique
 
 // import Fuse from 'fuse.js'
 // import wrapper from './wrapper'

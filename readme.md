@@ -9,11 +9,9 @@ fix translucent color
 make animations unique
 color field padding
 selection color
-
 tooltip timer
-remove dropdown.search
+
 fix dashboard with z-index & form
-fuse & axios dynamic
 pending components
 index to key-label migration
 config
@@ -25,14 +23,22 @@ review all components
   - data objects
   - fix type of interface according to comp
   - remove unused imports
-  - set required fields
+  - set required fields & default values
   - add simplified docs, no ts, no arrow functions
   - related components & blogs
+
+prism
+marked
+axios
+fuse
+jinie
+validator
 
 set search from query
 version
 changelog
 version snapshots
+validations
 
 ## Discord
 
@@ -120,6 +126,5 @@ import 'mumpui/lib/styles/index.scss'
 - Dashboard
 - Typography
 - Code
-- MD
 
 npx sass src/lib/styles/components.scss mumpui.css --style=compressed --no-source-map --fatal-deprecation=0.0.0

@@ -6,7 +6,7 @@ export default function Main() {
 
   return (
     <>
-      <MumpUI />
+      <MumpUI tooltipDelay={0} />
     </>
   )
 }

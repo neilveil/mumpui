@@ -2,6 +2,8 @@ tooltip
 dropdown
 100
 
+header/footer
+10000
 
 dashboard
 100000

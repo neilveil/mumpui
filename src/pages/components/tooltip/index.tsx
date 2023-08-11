@@ -11,16 +11,31 @@ export default function Main() {
       >
         <div className='flex-wrap'>
           <Tooltip label='Left tooltip' position='left'>
-            <div style={{ background: '#f8f8f8', padding: '1rem' }}>Left</div>
+            <div style={{ background: 'var(--mp-c-hover)', padding: '1rem' }}>Left</div>
           </Tooltip>
           <Tooltip label='Top tooltip' position='top'>
-            <div style={{ background: '#f8f8f8', padding: '1rem' }}>Top</div>
+            <div style={{ background: 'var(--mp-c-hover)', padding: '1rem' }}>Top</div>
           </Tooltip>
           <Tooltip label='Bottom tooltip' position='bottom'>
-            <div style={{ background: '#f8f8f8', padding: '1rem' }}>Bottom</div>
+            <div style={{ background: 'var(--mp-c-hover)', padding: '1rem' }}>Bottom</div>
           </Tooltip>
           <Tooltip label='Right tooltip' position='right'>
-            <div style={{ background: '#f8f8f8', padding: '1rem' }}>Right</div>
+            <div style={{ background: 'var(--mp-c-hover)', padding: '1rem' }}>Right</div>
+          </Tooltip>
+        </div>
+      </Docs.Showcase>
+
+      <Docs.Showcase
+        info={<span>Custom delay</span>}
+        code={`
+`}
+      >
+        <div className='flex-wrap'>
+          <Tooltip label='Left tooltip' position='left' delay={0}>
+            <div style={{ background: 'var(--mp-c-hover)', padding: '1rem' }}>0</div>
+          </Tooltip>
+          <Tooltip label='Top tooltip' position='top' delay={2000}>
+            <div style={{ background: 'var(--mp-c-hover)', padding: '1rem' }}>2000</div>
           </Tooltip>
         </div>
       </Docs.Showcase>

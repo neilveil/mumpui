@@ -2,7 +2,7 @@
   position: relative;
 
   &:hover .mp-tooltip-text {
-    animation: mp-tooltip-appear 300ms ease 300ms forwards;
+    animation: mp-tooltip-appear 300ms ease forwards;
   }
 
   .mp-tooltip-text {

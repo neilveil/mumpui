@@ -23,7 +23,7 @@ export default class Main extends React.Component {
   static _this: InstanceType<typeof Main>
 
   static max = 3
-  static duration = 3
+  static duration = 3000
 
   static info = (text = '', duration?: duration) => Main.pushMessage({ icon: icons.info, text, duration })
   static warning = (text = '', duration?: duration) => Main.pushMessage({ icon: icons.warn, text, duration })
@@ -37,8 +37,6 @@ export default class Main extends React.Component {
     if (duration === 0) duration = 5000000000000
 
     if (!duration) duration = Main.duration
-
-    duration = duration * 1000
 
     const message: message = {
       id: Symbol(),
