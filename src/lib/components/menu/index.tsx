@@ -45,13 +45,15 @@ function MenuItem({
   selected: key
   onSelect: (key: key) => void
   item: item
-  access?: string[]
+  access?: string | string[]
 }) {
   const [expanded, setExpanded] = useState(isExpanded(item.next, selected))
 
   const isExpandable = !!item.next?.length
 
   if (item.access && item.access.length) {
+    if (typeof item.access === 'string') item.access = [item.access]
+
     var allowed = false
     for (const _access of access) if (!allowed && item.access.includes(_access)) allowed = true
 
@@ -77,7 +79,7 @@ function MenuItem({
       {!!(isExpandable && expanded) &&
         item.next?.map((item, i) => (
           <div key={i} className='mp-menu-item-group'>
-            <MenuItem selected={selected} onSelect={onSelect} item={item} />
+            <MenuItem selected={selected} onSelect={onSelect} item={item} access={access} />
           </div>
         ))}
     </>

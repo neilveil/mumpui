@@ -15,16 +15,9 @@ config
   - message settings
 pending components
 menu access
-
 fix dashboard with z-index & form
-- General / Responsive
-- Data
-- Create
-- Update
-- User access
-- Nested
 
-- mutils
+mutils
 
 review all components
   - disabled field
@@ -46,7 +39,6 @@ set search from query
 version
 changelog
 version snapshots
-validations
 
 ## Discord
 

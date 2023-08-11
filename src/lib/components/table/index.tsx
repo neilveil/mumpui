@@ -1,7 +1,7 @@
 import React from 'react'
 
 interface col {
-  name: string
+  name?: string
   key?: string
   width?: number | string
   align?: 'left' | 'center' | 'right'

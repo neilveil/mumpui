@@ -33,7 +33,13 @@ export default function Main({ pageSize, totalItems, offset, onChange, disabled,
     <div className={className} {...props}>
       <div
         className={'mp-pagination-left-arrow ' + (pageNumber <= 1 ? 'mp-pagination-disabled' : '')}
-        onClick={() => (pageNumber > 1 ? setPageNumber(pageNumber - 1) : null)}
+        onClick={() => {
+          if (pageNumber > 1) {
+            const _pageNumber = pageNumber - 1
+            setPageNumber(_pageNumber)
+            _onChange(_pageNumber)
+          }
+        }}
       >
         {arrow(true)}
       </div>
@@ -58,7 +64,13 @@ export default function Main({ pageSize, totalItems, offset, onChange, disabled,
       <div className='mp-pagination-pages'>{pages}</div>
       <div
         className={'mp-pagination-right-arrow ' + (pageNumber >= pages ? 'mp-pagination-disabled' : '')}
-        onClick={() => (pageNumber < pages ? setPageNumber(pageNumber + 1) : null)}
+        onClick={() => {
+          if (pageNumber < pages) {
+            const _pageNumber = pageNumber + 1
+            setPageNumber(_pageNumber)
+            _onChange(_pageNumber)
+          }
+        }}
       >
         {arrow()}
       </div>

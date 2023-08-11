@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Menu from '../menu'
 import Button from '../button'
 import Input from '../input'
@@ -15,6 +15,7 @@ interface sidebarItem {
   name: any
   path?: string
   next?: sidebarItem[]
+  access?: string | string[]
 }
 
 interface props {
@@ -22,6 +23,7 @@ interface props {
   sidebar?: any
   sidebarIcon?: string
   sidebarItems: sidebarItem[]
+  sidebarAccess?: string[]
   onSidebarClick?: (key: string) => void
   // header
   header?: any
@@ -46,7 +48,7 @@ interface props {
   onCancel?: () => void
   // pagination
   paginationPageSize?: number
-  paginationTotal?: number
+  paginationTotalItems?: number
   paginationOffset?: number
   paginationOnChange?: (offset: number) => void
 }
@@ -59,6 +61,21 @@ export default function Main(props: props) {
   window.toggleSidebar = toggleSidebar
 
   const sidebarItems = sidebarItemsGenerator(props.sidebarItems)
+
+  const focusSearch = (e: any) => {
+    const isSearchFocused = window.document.activeElement?.id === 'mp-dashboard-search'
+
+    const searchEl: any = document.querySelector('#mp-dashboard-search')
+    if (!searchEl) return
+
+    if (e.key === '/' && !isSearchFocused) searchEl.focus()
+    else if (e.key === 'Escape' && isSearchFocused) searchEl.blur()
+  }
+
+  useEffect(() => {
+    window.addEventListener('keyup', focusSearch)
+    return () => window.removeEventListener('keyup', focusSearch)
+  }, [])
 
   const sidebar = (
     <>
@@ -77,6 +94,7 @@ export default function Main(props: props) {
           setMenuItemSelected(selected.toString())
         }}
         items={sidebarItems}
+        access={props.sidebarAccess}
       />
     </>
   )
@@ -131,6 +149,7 @@ export default function Main(props: props) {
                   <div>
                     {!!props.onSearch && (
                       <Input
+                        id='mp-dashboard-search'
                         value={props.search}
                         onChange={e => props.onSearch && props.onSearch(e.target.value)}
                         placeholder='Search..'
@@ -146,15 +165,19 @@ export default function Main(props: props) {
           )}
         </div>
 
-        {(!!props.footer || !!props.paginationTotal || !!props.onDelete || !!props.onCreate || !!props.onUpdate) && (
+        {(!!props.footer ||
+          !!props.paginationTotalItems ||
+          !!props.onDelete ||
+          !!props.onCreate ||
+          !!props.onUpdate) && (
           <div className='mp-dashboard-footer'>
             {!!props.footer && props.footer}
 
             <div className='mp-dashboard-pagination'>
-              {!!props.paginationTotal && (
+              {!!props.paginationTotalItems && (
                 <Pagination
                   pageSize={props.paginationPageSize || 0}
-                  totalItems={props.paginationTotal}
+                  totalItems={props.paginationTotalItems}
                   offset={props.paginationOffset || 0}
                   onChange={props.paginationOnChange || (() => {})}
                 />
@@ -201,11 +224,12 @@ export default function Main(props: props) {
 }
 
 const sidebarItemsGenerator: any = (sidebar: sidebarItem[] = []) =>
-  sidebar.map(({ name, icon, path, next }: sidebarItem) => ({
+  sidebar.map(({ name, icon, path, next, access }: sidebarItem) => ({
     key: path || Math.random(),
     name,
     icon,
-    next: next ? sidebarItemsGenerator(next) : []
+    next: next ? sidebarItemsGenerator(next) : [],
+    access
   }))
 
 const menuIcon = (

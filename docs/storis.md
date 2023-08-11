@@ -21,3 +21,4 @@
 - When to use CSS variables
 - Why to have less dependency on primary color
 - Packages to use with MumpUI
+- Font size

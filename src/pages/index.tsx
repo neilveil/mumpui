@@ -4,7 +4,14 @@ import story from './story'
 import setup from './setup'
 
 import typography from './typography'
+
 import dashboard from './dashboard'
+import dashboard_access from './dashboard/access'
+import dashboard_blog from './dashboard/blog'
+import dashboard_profile from './dashboard/profile'
+import dashboard_users from './dashboard/users'
+import dashboard_users_create from './dashboard/users/create'
+import dashboard_users_update from './dashboard/users/update'
 
 import component_input from './components/input'
 import component_color from './components/color'
@@ -51,14 +58,14 @@ const routes: route[] = [
   { path: '/setup', component: setup },
   { path: '/stories', component: stories },
   { path: '/story/*', component: story },
-  { path: '/dashboard', component: dashboard },
-  { path: '/dashboard-1', component: dashboard },
-  { path: '/dashboard-2', component: dashboard },
-  { path: '/dashboard-3', component: dashboard },
-  { path: '/dashboard-4', component: dashboard },
-  { path: '/dashboard-5', component: dashboard },
-  { path: '/dashboard-6', component: dashboard },
-  { path: '/dashboard-7', component: dashboard },
+
+  { path: '/dashboard/', component: dashboard },
+  { path: '/dashboard/access', component: dashboard_access },
+  { path: '/dashboard/blog/*', component: dashboard_blog },
+  { path: '/dashboard/profile', component: dashboard_profile },
+  { path: '/dashboard/users', component: dashboard_users },
+  { path: '/dashboard/users/create', component: dashboard_users_create },
+  { path: '/dashboard/users/udpate', component: dashboard_users_update },
 
   // Components
   { path: '/component/input', component: component_input },
