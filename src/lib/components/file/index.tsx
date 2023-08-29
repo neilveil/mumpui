@@ -1,12 +1,12 @@
 import React, { useRef } from 'react'
 
 type props = React.InputHTMLAttributes<HTMLInputElement> & {
-  label: string
+  children?: any
   className?: string
   style?: React.CSSProperties
 }
 
-export default function Main({ label, className, style, ...props }: props) {
+export default function Main({ children, className, style, ...props }: props) {
   className = 'mp-file ' + (className || '')
   style = Object.assign({}, style)
 
@@ -16,7 +16,7 @@ export default function Main({ label, className, style, ...props }: props) {
 
   return (
     <div className={className} style={style} onClick={() => ref.current.click()}>
-      {label}
+      {children}
       <input ref={ref} {...props} />
     </div>
   )

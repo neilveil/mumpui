@@ -1,3 +1,11 @@
+[![Coverage Status](https://img.shields.io/codecov/c/github/fengyuanchen/compressorjs.svg)](https://codecov.io/gh/fengyuanchen/compressorjs)
+
+[![Downloads](https://img.shields.io/npm/dm/compressorjs.svg)](https://www.npmjs.com/package/compressorjs)
+
+[![Version](https://img.shields.io/npm/v/compressorjs.svg)](https://www.npmjs.com/package/compressorjs)
+
+[![Gzip Size](https://img.shields.io/bundlephobia/minzip/compressorjs.svg)](https://unpkg.com/compressorjs/dist/compressor.common.js)
+
 # MumpUI
 
 remove bold font
@@ -11,22 +19,29 @@ color field padding
 selection color
 tooltip timer
 config
-  - tooltip delay
-  - message settings
-pending components
-menu access
-fix dashboard with z-index & form
 
-mutils
+- tooltip delay
+- message settings
+  pending components
+  menu access
+  fix dashboard with z-index & form
+  mutils
+
+file upload
+bacground-color to background
 
 review all components
-  - disabled field
-  - data objects
-  - fix type of interface according to comp
-  - remove unused imports
-  - set required fields & default values
-  - add simplified docs, no ts, no arrow functions
-  - related components & blogs
+
+- disabled field
+- data objects
+- fix type of interface according to comp
+- remove unused imports
+- set required fields & default values
+- add simplified docs, no ts, no arrow functions
+- related components & blogs
+- type or interface, use only one thing in components
+
+hide esc & / from mobile
 
 prism
 axios

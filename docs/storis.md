@@ -22,3 +22,4 @@
 - Why to have less dependency on primary color
 - Packages to use with MumpUI
 - Font size
+- Why ref is better than query selector

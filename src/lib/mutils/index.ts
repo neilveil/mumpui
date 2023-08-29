@@ -1,9 +1,12 @@
+import compress from './compress'
 import DepthHandler from './depthHandler'
 import ScrollHandler from './scrollHandler'
 import request from './request'
 import search from './search'
 import theme from './theme'
 import uh from './uh'
+
+var _URL = window.URL || window.webkitURL
 
 const dispatch = (event: string, data: any) => window.dispatchEvent(new CustomEvent(event, { detail: data }))
 const listen = (event: string, cb: any) => window.addEventListener(event, cb)
@@ -49,18 +52,61 @@ const copyText = async (text: string) => {
   navigator.clipboard.writeText(el.value)
 }
 
+const blobToObjectURL = (blob: Blob) => URL.createObjectURL(blob)
+const revokeObjectURL = (url: string) => URL.revokeObjectURL(url)
+
+const blobToDataURL = (file: Blob) =>
+  new Promise<string>((resolve, reject) => {
+    const reader = new FileReader()
+    reader.onloadend = () => resolve((reader.result || '').toString())
+    reader.onerror = error => reject(error)
+    reader.readAsDataURL(file)
+  })
+
+const dataURLToBlob = (uri: string) =>
+  new Promise<Blob>(async (resolve, reject) => {
+    try {
+      const res = await fetch(uri)
+      const blob = await res.blob()
+      resolve(blob)
+    } catch (error) {
+      reject(error)
+    }
+  })
+
+const getImageWidthHeight = (file: Blob) =>
+  new Promise<{ width: number; height: number }>((resolve, reject) => {
+    const img = new Image()
+    var objectUrl = _URL.createObjectURL(file)
+    img.onload = () => {
+      resolve({
+        width: img.width,
+        height: img.height
+      })
+      _URL.revokeObjectURL(objectUrl)
+    }
+    img.onerror = error => reject(error)
+    img.src = objectUrl
+  })
+
 export default {
   DepthHandler,
   IS,
   NEW,
   ONCE,
   ScrollHandler,
+  blobToDataURL,
+  blobToObjectURL,
+  compress,
   copyText,
+  dataURLToBlob,
   delay,
   dispatch,
+  getImageWidthHeight,
   listen,
   plural,
   request,
+  revokeObjectURL,
   round,
   search,
   sortObjects,

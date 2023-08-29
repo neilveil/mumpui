@@ -1,7 +1,4 @@
-.mp-input-template {
-  @include input();
-}
-
+.mp-input-template,
 .mp-input,
 .mp-textarea,
 .mp-search {
@@ -12,7 +9,7 @@
 
   input,
   textarea,
-  .mp-value {
+  .mp-input-value {
     width: 100%;
     border: none;
     outline: none;
