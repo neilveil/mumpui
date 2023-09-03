@@ -68,12 +68,12 @@ export default class Main extends React.Component {
                   A Lightweight & Flexible
                   <br />
                   Design System for Developers.
-                  <br />& It's clean!
+                  <br />& It&apos;s clean!
                 </div>
 
                 {/* <div className={s.inspired}>
                   Inspired by&nbsp;
-                  <a href='https://www.joahquin.com' target='_blank'>
+                  <a href='https://www.joahquin.com' target='_blank' rel='noreferrer'>
                     <span>Upasana</span>
                   </a>
                 </div> */}
@@ -143,7 +143,7 @@ export default class Main extends React.Component {
 
 type element = {
   name: string
-  component: any
+  Component: any
   docs?: string
 }
 
@@ -156,7 +156,7 @@ interface showcase {
 const Components = ({ data, expanded }: { data: element[]; expanded: boolean }) => {
   const pairs: element[][] = []
 
-  var pair: element[] = []
+  let pair: element[] = []
 
   for (const x of data) {
     pair.push(x)
@@ -189,7 +189,7 @@ const Components = ({ data, expanded }: { data: element[]; expanded: boolean }) 
                   zIndex: data.length - (i + j)
                 }}
               >
-                {!!expanded && <div className={s.element}>{<x.component />}</div>}
+                {!!expanded && <div className={s.element}>{<x.Component />}</div>}
 
                 {x.docs ? (
                   <Link to={x.docs} className={s.nameLink}>

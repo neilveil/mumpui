@@ -1,12 +1,7 @@
 import { Docs } from 'components'
 import { Button, Field, Fields, Form, Input } from 'lib'
-import { useState } from 'react'
 
 export default function Main() {
-  const [input, setInput] = useState('')
-  const [inputType, setInputType] = useState('password')
-  const [color, setColor] = useState('#000000')
-
   return (
     <Docs type='Component' name='Form'>
       <Docs.Showcase

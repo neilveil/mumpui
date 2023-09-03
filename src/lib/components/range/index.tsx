@@ -1,6 +1,6 @@
 import React from 'react'
 
-type props = React.InputHTMLAttributes<HTMLInputElement> & {}
+type props = React.InputHTMLAttributes<HTMLInputElement>
 
 export default function Main({ className, style, ...props }: props) {
   className = 'mp-range ' + (className || '')

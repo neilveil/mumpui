@@ -1,6 +1,5 @@
 import { Docs } from 'components'
 import { Chain } from 'lib'
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Main() {
@@ -65,7 +64,7 @@ export default function Main() {
 
       <Docs.Props
         title='Chain'
-        type='props'
+        type='component'
         fields={[
           { name: '..', usage: 'All div element props' },
           { name: 'elements', type: 'array', usage: 'Array of elements' },
@@ -75,7 +74,7 @@ export default function Main() {
 
       <Docs.Props
         title='Element'
-        type='object keys'
+        type='object'
         fields={[
           { name: 'key', customType: 'string|number' },
           { name: 'label', type: 'string' }

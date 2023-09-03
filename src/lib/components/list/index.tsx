@@ -10,7 +10,10 @@ type props = React.HTMLAttributes<HTMLDivElement> & {
 
 const wrapInLI: any = (data: data, type: 'ol' | 'ul' = 'ul') => {
   if (typeof data === 'string') return <li>{data}</li>
-  else return data.map(x => (type === 'ol' ? <ol>{wrapInLI(x, type)}</ol> : <ul>{wrapInLI(x, type)}</ul>))
+  else
+    return data.map((x, i) =>
+      type === 'ol' ? <ol key={i}>{wrapInLI(x, type)}</ol> : <ul key={i}>{wrapInLI(x, type)}</ul>
+    )
 }
 
 export default function Main({ data, type, className, ...props }: props) {

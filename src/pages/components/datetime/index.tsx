@@ -144,7 +144,7 @@ const [input, setInput] = useState('')
       </p>
 
       <p>
-        <b>Note:</b> Input prefix & suffix doesn't work with color type input field.
+        <b>Note:</b> Input prefix & suffix doesn&apos;t work with color type input field.
       </p>
 
       <Docs.Showcase

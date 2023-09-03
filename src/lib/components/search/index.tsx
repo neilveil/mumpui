@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-type props = React.InputHTMLAttributes<HTMLInputElement> & {}
+type props = React.InputHTMLAttributes<HTMLInputElement>
 
 export default function Main({ children, className, style, disabled, onClick, ...props }: props) {
   const [optionsVisible, setOptionsVisible] = useState(false)

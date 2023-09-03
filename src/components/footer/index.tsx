@@ -4,7 +4,7 @@ export default function Main() {
   return (
     <div className={s.footer}>
       Developed by{' '}
-      <a href='https://github.com/neilveil' target='_blank'>
+      <a href='https://github.com/neilveil' target='_blank' rel='noreferrer'>
         NeilVeil
       </a>
     </div>

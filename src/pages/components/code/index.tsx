@@ -6,11 +6,11 @@ export default function Main() {
     <Docs type='Component' name='Code'>
       <p style={{ color: 'var(--mp-c-font-dark)', padding: '2rem 1rem' }}>
         Add code snippets like below with{' '}
-        <a href='https://prismjs.com' target='_blank'>
+        <a href='https://prismjs.com' target='_blank' rel='noreferrer'>
           PrismJS
         </a>
         . Create your custom theme{' '}
-        <a href='https://prismjs.com/download.html#themes=prism-tomorrow' target='_blank'>
+        <a href='https://prismjs.com/download.html#themes=prism-tomorrow' target='_blank' rel='noreferrer'>
           here
         </a>{' '}
         & import the <code>JS</code> & <code>CSS</code> provided at the bottom of the page in the{' '}
@@ -35,7 +35,7 @@ export default function Main() {
             usage: (
               <>
                 Check all available languages{' '}
-                <a href='https://prismjs.com/index.html#supported-languages' target='_blank'>
+                <a href='https://prismjs.com/index.html#supported-languages' target='_blank' rel='noreferrer'>
                   here
                 </a>
               </>

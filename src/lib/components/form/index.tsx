@@ -1,12 +1,15 @@
 import React, { useCallback } from 'react'
 
-type props = React.FormHTMLAttributes<HTMLFormElement> & {}
+type props = React.FormHTMLAttributes<HTMLFormElement>
 
 export default function Main({ className, onSubmit, ...props }: props) {
-  const _onSubmit = useCallback((e: any) => {
-    e.preventDefault()
-    if (onSubmit) onSubmit(e)
-  }, [])
+  const _onSubmit = useCallback(
+    (e: any) => {
+      e.preventDefault()
+      if (onSubmit) onSubmit(e)
+    },
+    [onSubmit]
+  )
 
   className = 'mp-form ' + (className || '')
 

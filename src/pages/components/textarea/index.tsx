@@ -1,5 +1,5 @@
 import { Docs } from 'components'
-import { Code, Field, Fields, Textarea } from 'lib'
+import { Field, Fields, Textarea } from 'lib'
 import { useState } from 'react'
 
 export default function Main() {

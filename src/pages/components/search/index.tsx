@@ -52,20 +52,20 @@ const [value, setValue] = useState('')
         title='Textarea'
         fields={[
           { name: '..', usage: 'All input element props' },
-          { name: 'children', type: 'JSX', usage: 'Dropdown content' }
+          { name: 'children', type: 'jsx', usage: 'Dropdown content' }
         ]}
       />
     </Docs>
   )
 }
 
-const snippet = `
-const snippet = \`
-function fun () {
-  return (
-    <div>Hello there!</div>
-  )
-}\`
+// const snippet = `
+// const snippet = \`
+// function fun () {
+//   return (
+//     <div>Hello there!</div>
+//   )
+// }\`
 
-<Code snippet={snippet} lang='jsx' />
-`
+// <Code snippet={snippet} lang='jsx' />
+// `

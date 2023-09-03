@@ -31,8 +31,7 @@ export default function Main({
   disabled = false,
   status,
   className,
-  style,
-  ...props
+  style
 }: props) {
   const [optionsVisible, setOptionsVisible] = useState(false)
 
@@ -45,7 +44,7 @@ export default function Main({
 
   if (status) style.borderColor = 'var(--mp-c-' + status + ')'
 
-  var valueEl: string | React.ReactNode[] = ''
+  let valueEl: string | React.ReactNode[] = ''
 
   placeholder = <span style={{ color: 'var(--mp-c-placeholder)' }}>{placeholder || <>&nbsp;</>}</span>
 
@@ -123,7 +122,7 @@ export default function Main({
                 e.stopPropagation()
               }}
             >
-              {!!onSearch ? (
+              {onSearch ? (
                 <input
                   placeholder='Search..'
                   onChange={e => onSearch && onSearch(e.target.value)}

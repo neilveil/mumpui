@@ -1,14 +1,16 @@
 import React from 'react'
 
+type key = number | string | symbol
+
 type element = {
-  key: number | string | symbol
+  key: key
   label: any
 }
 
 type props = React.HTMLAttributes<HTMLDivElement> & {
   elements?: element[]
   seperator?: any
-  onClick?: (key: string) => void
+  onClick?: (key: key) => void
   className?: string
 }
 
@@ -21,7 +23,7 @@ export default function Main({ className, elements = [], seperator = '/', onClic
         <div
           key={'l' + i}
           className='mp-chain-label'
-          onClick={(e: any) => {
+          onClick={() => {
             if (onClick) onClick(key)
           }}
         >

@@ -24,7 +24,7 @@ export default function Main() {
 
       <Docs.Props
         title='Chain'
-        type='props'
+        type='component'
         fields={[
           { name: '..', usage: 'All div element props' },
           { name: 'elements', type: 'array', usage: 'Array of elements' },

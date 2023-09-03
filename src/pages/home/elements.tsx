@@ -25,13 +25,15 @@ export default {
     name: 'Input',
     docs: '/component/input',
     tags: [],
-    component: () => <Input placeholder='Type something..' />
+    Component() {
+      return <Input placeholder='Type something..' />
+    }
   },
   textarea: {
     name: 'Textarea',
     docs: '/component/textarea',
     tags: [],
-    component: () => {
+    Component() {
       const [value, setValue] = useState('')
 
       return (
@@ -43,7 +45,7 @@ export default {
     name: 'Dropdown',
     docs: '/component/dropdown',
     tags: [],
-    component: () => {
+    Component() {
       const [value, setValue] = useState(countries[0])
       return (
         <div>
@@ -56,7 +58,7 @@ export default {
     name: 'Dropdown / Multi-Select',
     docs: '/component/dropdown',
     tags: [],
-    component: () => {
+    Component() {
       const [value, setValue] = useState([countries[0]])
       const [search, setSearch] = useState('')
 
@@ -82,7 +84,7 @@ export default {
     name: 'Checkbox',
     docs: '/component/checkbox',
     tags: [],
-    component: () => {
+    Component() {
       const [value, setValue] = useState([])
 
       return (
@@ -96,7 +98,7 @@ export default {
     name: 'Radio',
     docs: '/component/radio',
     tags: [],
-    component: () => {
+    Component() {
       const [value, setValue] = useState('sweden')
 
       return (
@@ -110,7 +112,7 @@ export default {
     name: 'Range',
     docs: '/component/range',
     tags: [],
-    component: () => {
+    Component() {
       return <Range />
     }
   },
@@ -118,7 +120,7 @@ export default {
     name: 'File',
     docs: '/component/file',
     tags: [],
-    component: () => {
+    Component() {
       return <File>Upload Image</File>
     }
   },
@@ -126,277 +128,345 @@ export default {
     name: 'Field',
     docs: '/component/field',
     tags: [],
-    component: () => (
-      <Form>
-        <Field label='Name'>
-          <Input placeholder='Enter name..' />
-        </Field>
-      </Form>
-    )
+    Component() {
+      return (
+        <Form>
+          <Field label='Name'>
+            <Input placeholder='Enter name..' />
+          </Field>
+        </Form>
+      )
+    }
   },
   form: {
     name: 'Form',
     docs: '/component/form',
     tags: [],
-    component: () => (
-      <Form>
-        <Field label='Username'>
-          <Input placeholder='Enter name..' />
-        </Field>
-        <Field label='Passowrd'>
-          <Input placeholder='Enter password..' />
-        </Field>
-        <Button>Submit</Button>
-      </Form>
-    )
+    Component() {
+      return (
+        <Form>
+          <Field label='Username'>
+            <Input placeholder='Enter name..' />
+          </Field>
+          <Field label='Passowrd'>
+            <Input placeholder='Enter password..' />
+          </Field>
+          <Button>Submit</Button>
+        </Form>
+      )
+    }
   },
   divider: {
     name: 'Divider',
     docs: '/component/Button',
     tags: [],
-    component: () => (
-      <div>
-        <Divider align='left'>More</Divider>
-        <Divider align='center'>More</Divider>
-        <Divider align='right'>More</Divider>
-      </div>
-    )
+    Component() {
+      return (
+        <div>
+          <Divider align='left'>More</Divider>
+          <Divider align='center'>More</Divider>
+          <Divider align='right'>More</Divider>
+        </div>
+      )
+    }
   },
   button: {
     name: 'Button',
     docs: '/component/Button',
     tags: [],
-    component: () => (
-      <div className='flex-start'>
-        <Button type='dashed'>Update</Button>
-        <Button type='danger'>Delete</Button>
-        <Button>Cancel</Button>
-      </div>
-    )
+    Component() {
+      return (
+        <div className='flex-start'>
+          <Button type='dashed'>Update</Button>
+          <Button type='danger'>Delete</Button>
+          <Button>Cancel</Button>
+        </div>
+      )
+    }
   },
   search: {
     name: 'Search',
     docs: '/component/search',
     tags: [],
-    component: () => <Search placeholder='Search..'>Anything..</Search>
+    Component() {
+      return <Search placeholder='Search..'>Anything..</Search>
+    }
   },
   datetime: {
     name: 'Date / Time',
     docs: '/component/search',
     tags: [],
-    component: () => (
-      <div>
-        <Input type='date' defaultValue='01-01-2020' />
-        <br />
-        <Input type='month' defaultValue='01-01-2020' />
-        <br />
-        <Input type='time' defaultValue='18:00' />
-      </div>
-    )
+    Component() {
+      return (
+        <div>
+          <Input type='date' defaultValue='01-01-2020' />
+          <br />
+          <Input type='month' defaultValue='01-01-2020' />
+          <br />
+          <Input type='time' defaultValue='18:00' />
+        </div>
+      )
+    }
   },
   color: {
     name: 'Color',
     docs: '/component/color',
     tags: [],
-    component: () => <Input type='color' placeholder='Pick..' />
+    Component() {
+      return <Input type='color' placeholder='Pick..' />
+    }
   },
   list: {
     name: 'List',
     docs: '/component/list',
     tags: [],
-    component: () => <List data={[]} />
+    Component() {
+      return <List data={[]} />
+    }
   },
   table: {
     name: 'Table',
     docs: '/component/table',
     tags: [],
-    component: () => <Table data={[]} cols={[]} />
+    Component() {
+      return <Table data={[]} cols={[]} />
+    }
   },
   loader: {
     name: 'Loader',
     docs: '/component/loader',
     tags: [],
-    component: () => <Loader />
+    Component() {
+      return <Loader />
+    }
   },
   placeholder: {
     name: 'Placeholder',
     docs: '/component/placeholder',
     tags: [],
-    component: () => <Placeholder />
+    Component() {
+      return <Placeholder />
+    }
   },
   chain: {
     name: 'Chain',
     docs: '/component/chain',
     tags: [],
-    component: () => <Chain />
+    Component() {
+      return <Chain />
+    }
   },
   tooltip: {
     name: 'Tooltip',
     docs: '/component/tooltip',
     tags: [],
-    component: () => (
-      <Tooltip label='Hello div!'>
-        <div>Hello!</div>
-      </Tooltip>
-    )
+    Component() {
+      return (
+        <Tooltip label='Hello div!'>
+          <div>Hello!</div>
+        </Tooltip>
+      )
+    }
   },
   message: {
     name: 'Message',
     docs: '/component/message',
     tags: [],
-    component: () => (
-      <Tooltip label='Hello div!'>
-        <div>Hello!</div>
-      </Tooltip>
-    )
+    Component() {
+      return (
+        <Tooltip label='Hello div!'>
+          <div>Hello!</div>
+        </Tooltip>
+      )
+    }
   },
   confirm: {
     name: 'Confirm',
     docs: '/component/confirm',
     tags: [],
-    component: () => (
-      <Tooltip label='Hello div!'>
-        <div>Hello!</div>
-      </Tooltip>
-    )
+    Component() {
+      return (
+        <Tooltip label='Hello div!'>
+          <div>Hello!</div>
+        </Tooltip>
+      )
+    }
   },
   modal: {
     name: 'Modal',
     docs: '/component/modal',
     tags: [],
-    component: () => (
-      <Tooltip label='Hello div!'>
-        <div>Hello!</div>
-      </Tooltip>
-    )
+    Component() {
+      return (
+        <Tooltip label='Hello div!'>
+          <div>Hello!</div>
+        </Tooltip>
+      )
+    }
   },
   note: {
     name: 'Note',
     docs: '/component/note',
     tags: [],
-    component: () => (
-      <Tooltip label='Hello div!'>
-        <div>Hello!</div>
-      </Tooltip>
-    )
+    Component() {
+      return (
+        <Tooltip label='Hello div!'>
+          <div>Hello!</div>
+        </Tooltip>
+      )
+    }
   },
   tabs: {
     name: 'Tabs',
     docs: '/component/tabs',
     tags: [],
-    component: () => (
-      <Tooltip label='Hello div!'>
-        <div>Hello!</div>
-      </Tooltip>
-    )
+    Component() {
+      return (
+        <Tooltip label='Hello div!'>
+          <div>Hello!</div>
+        </Tooltip>
+      )
+    }
   },
   menu: {
     name: 'Menu',
     docs: '/component/menu',
     tags: [],
-    component: () => (
-      <Tooltip label='Hello div!'>
-        <div>Hello!</div>
-      </Tooltip>
-    )
+    Component() {
+      return (
+        <Tooltip label='Hello div!'>
+          <div>Hello!</div>
+        </Tooltip>
+      )
+    }
   },
   pagination: {
     name: 'Pagination',
     docs: '/component/pagination',
     tags: [],
-    component: () => (
-      <Tooltip label='Hello div!'>
-        <div>Hello!</div>
-      </Tooltip>
-    )
+    Component() {
+      return (
+        <Tooltip label='Hello div!'>
+          <div>Hello!</div>
+        </Tooltip>
+      )
+    }
   },
   breadcrumb: {
     name: 'Breadcrumb',
     docs: '/component/breadcrumb',
     tags: [],
-    component: () => (
-      <Tooltip label='Hello div!'>
-        <div>Hello!</div>
-      </Tooltip>
-    )
+    Component() {
+      return (
+        <Tooltip label='Hello div!'>
+          <div>Hello!</div>
+        </Tooltip>
+      )
+    }
   },
   theme: {
     name: 'Theme',
     docs: '/component/theme',
     tags: [],
-    component: () => <div></div>
+    Component() {
+      return <div></div>
+    }
   },
   responsive: {
     name: 'Responsive',
     docs: '/component/responsive',
     tags: [],
-    component: () => <div></div>
+    Component() {
+      return <div></div>
+    }
   },
   classes: {
     name: 'Classes',
     docs: '/component/classes',
     tags: [],
-    component: () => <div></div>
+    Component() {
+      return <div></div>
+    }
   },
   request: {
     name: 'Request',
     docs: '/component/request',
     tags: [],
-    component: () => <div></div>
+    Component() {
+      return <div></div>
+    }
   },
   storage: {
     name: 'Storage',
     docs: '/component/storage',
     tags: [],
-    component: () => <div></div>
+    Component() {
+      return <div></div>
+    }
   },
   utils: {
     name: 'Utils',
     docs: '/component/utils',
     tags: [],
-    component: () => <div></div>
+    Component() {
+      return <div></div>
+    }
   },
   uh: {
     name: 'URL Handler',
     docs: '/component/uh',
     tags: [],
-    component: () => <div></div>
+    Component() {
+      return <div></div>
+    }
   },
   sh: {
     name: 'Scroll Handler',
     docs: '/component/sh',
     tags: [],
-    component: () => <div></div>
+    Component() {
+      return <div></div>
+    }
   },
   dh: {
     name: 'Depth Handler',
     docs: '/component/dh',
     tags: [],
-    component: () => <div></div>
+    Component() {
+      return <div></div>
+    }
   },
   wrapper: {
     name: 'Wrapper',
     docs: '/component/wrapper',
     tags: [],
-    component: () => <div></div>
+    Component() {
+      return <div></div>
+    }
   },
   dashboard: {
     name: 'Dashboard',
     docs: '/dashboard',
     tags: [],
-    component: () => <div></div>
+    Component() {
+      return <div></div>
+    }
   },
   typography: {
     name: 'Typography',
     docs: '/component/typography',
     tags: [],
-    component: () => <div></div>
+    Component() {
+      return <div></div>
+    }
   },
   code: {
     name: 'Code',
     docs: '/component/code',
     tags: [],
-    component: () => <div></div>
+    Component() {
+      return <div></div>
+    }
   }
 }
 

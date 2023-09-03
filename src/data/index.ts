@@ -119,7 +119,7 @@ const users: object[] = []
 const firstNames: string[] = []
 const lastNames: string[] = []
 
-var id = 1
+let id = 1
 for (const name of names) {
   const [firstName, lastName] = name.split(' ')
   firstNames.push(firstName)

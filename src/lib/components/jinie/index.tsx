@@ -121,7 +121,7 @@ export default class Main extends React.Component {
 
     Main.processing = true
 
-    var mimeType = 'image/png'
+    let mimeType = 'image/png'
 
     const config: any = {}
 
@@ -132,7 +132,7 @@ export default class Main extends React.Component {
       else config.fillColor = '#ffffff'
     }
 
-    var img = this.cropper.getCroppedCanvas(config).toDataURL(mimeType)
+    let img = this.cropper.getCroppedCanvas(config).toDataURL(mimeType)
 
     img = await mutils.dataURLToBlob(img)
 

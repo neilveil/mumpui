@@ -54,7 +54,7 @@ function MenuItem({
   if (item.access && item.access.length) {
     if (typeof item.access === 'string') item.access = [item.access]
 
-    var allowed = false
+    let allowed = false
     for (const _access of access) if (!allowed && item.access.includes(_access)) allowed = true
 
     if (!allowed) return null

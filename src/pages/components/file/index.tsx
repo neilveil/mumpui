@@ -1,5 +1,5 @@
 import { Docs } from 'components'
-import { Button, Field, File, Range } from 'lib'
+import { Button, File } from 'lib'
 import { useState } from 'react'
 
 export default function Main() {
@@ -37,8 +37,8 @@ const [files, setFiles] = useState([])
         </File>
 
         <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem' }}>
-          {files.map((file: any) => (
-            <div>
+          {files.map((file: any, i: number) => (
+            <div key={i}>
               <img width='100%' src={URL.createObjectURL(file)} alt='' />
             </div>
           ))}

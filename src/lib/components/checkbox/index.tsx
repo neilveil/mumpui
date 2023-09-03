@@ -48,7 +48,7 @@ export function Checkbox(props: checkbox) {
   return (
     <div className='mp-checkbox'>
       <label>
-        <input type='checkbox' checked={props.checked} onChange={e => props.onChange(props._key)} />
+        <input type='checkbox' checked={props.checked} onChange={() => props.onChange(props._key)} />
         <span className='mp-checkbox-icon' />
         <span className='mp-checkbox-label'>{props.label}</span>
       </label>

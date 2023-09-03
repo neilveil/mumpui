@@ -1,4 +1,3 @@
-import compress from './compress'
 import DepthHandler from './depthHandler'
 import ScrollHandler from './scrollHandler'
 import request from './request'
@@ -6,7 +5,7 @@ import search from './search'
 import theme from './theme'
 import uh from './uh'
 
-var _URL = window.URL || window.webkitURL
+const _URL = window.URL || window.webkitURL
 
 const dispatch = (event: string, data: any) => window.dispatchEvent(new CustomEvent(event, { detail: data }))
 const listen = (event: string, cb: any) => window.addEventListener(event, cb)
@@ -64,11 +63,9 @@ const blobToDataURL = (file: Blob) =>
   })
 
 const dataURLToBlob = (uri: string) =>
-  new Promise<Blob>(async (resolve, reject) => {
+  new Promise<Blob>((resolve, reject) => {
     try {
-      const res = await fetch(uri)
-      const blob = await res.blob()
-      resolve(blob)
+      fetch(uri).then(res => res.blob().then(blob => resolve(blob)))
     } catch (error) {
       reject(error)
     }
@@ -77,7 +74,7 @@ const dataURLToBlob = (uri: string) =>
 const getImageWidthHeight = (file: Blob) =>
   new Promise<{ width: number; height: number }>((resolve, reject) => {
     const img = new Image()
-    var objectUrl = _URL.createObjectURL(file)
+    const objectUrl = _URL.createObjectURL(file)
     img.onload = () => {
       resolve({
         width: img.width,
@@ -97,7 +94,6 @@ export default {
   ScrollHandler,
   blobToDataURL,
   blobToObjectURL,
-  compress,
   copyText,
   dataURLToBlob,
   delay,

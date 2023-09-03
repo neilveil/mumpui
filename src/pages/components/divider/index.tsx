@@ -1,5 +1,5 @@
 import { Docs } from 'components'
-import { Divider, Tooltip } from 'lib'
+import { Divider } from 'lib'
 
 export default function Main() {
   return (

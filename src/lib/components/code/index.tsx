@@ -11,7 +11,7 @@ export default function Main({ snippet, lang, className, ...props }: props) {
   useEffect(() => {
     if (ref.current && snippet && lang)
       ref.current.innerHTML = window.Prism.highlight(snippet.trim(), window.Prism.languages[lang], lang)
-  }, [])
+  }, [lang, snippet])
 
   className = 'mp-code ' + (className || '')
 

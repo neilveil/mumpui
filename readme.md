@@ -25,6 +25,7 @@ input datetime icons
 
 ---
 
+Fix textarea component
 
 review all components
 

@@ -1,10 +1,9 @@
-import { Button, Field, Fields, File, Form, Input, Jinie, mutils } from 'lib'
-import { useState } from 'react'
+import { Button, Field, Fields, File, Form, Input, Jinie } from 'lib'
 import s from './styles.module.scss'
 
 export default function Main() {
-  const [img1, setImg1] = useState('')
-  const [img1Cropped, setImg1Cropped] = useState('')
+  // const [img1, setImg1] = useState('')
+  // const [img1Cropped, setImg1Cropped] = useState('')
 
   return (
     <div style={{ width: '100%', maxWidth: 600, margin: 'auto', padding: '1rem' }}>
@@ -69,9 +68,9 @@ export default function Main() {
         <Field label='Files'>
           <div className={s.images}>
             <File
-              onChange={(e: any) => {
-                setImg1(URL.createObjectURL(e.target.files[0]))
-              }}
+            // onChange={(e: any) => {
+            // setImg1(URL.createObjectURL(e.target.files[0]))
+            // }}
             >
               <div className={s.box}>Add</div>
             </File>
@@ -86,9 +85,7 @@ export default function Main() {
         </Fields>
       </Form>
 
-      <div style={{ marginTop: '2rem' }}>
-        <img width='100%' src={img1Cropped} />
-      </div>
+      <div style={{ marginTop: '2rem' }}>{/* <img width='100%' src={img1Cropped} /> */}</div>
     </div>
   )
 }

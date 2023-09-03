@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom'
-import s from './styles.module.scss'
 import { Code, Message } from 'lib'
-import { useRef, useState } from 'react'
-import Footer from '../footer'
 import mutils from 'lib/mutils'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import Footer from '../footer'
+import s from './styles.module.scss'
 
 interface main {
   children?: any
@@ -42,11 +42,14 @@ export default function Main(props: main) {
   )
 }
 
-Main.Info = ({ children }: { children?: any }) => <div className={s.info}>{children}</div>
+Main.Info = Info
+function Info({ children }: { children?: any }) {
+  return <div className={s.info}>{children}</div>
+}
 
-Main.Showcase = ({ children, info, code }: { children?: any; info?: any; code?: string }) => {
+Main.Showcase = Showcase
+function Showcase({ children, info, code }: { children?: any; info?: any; code?: string }) {
   const [viewCode, setViewCode] = useState(false)
-  const ref: any = useRef()
 
   code = (code || '').trim()
 
@@ -104,41 +107,44 @@ const typeMap = {
   object: 'object keys'
 }
 
-Main.Props = (props: props) => (
-  <div>
-    <div className={s.props}>
-      {props.title} {props.type ? typeMap[props.type] : null}
-    </div>
+Main.Props = Props
+function Props(props: props) {
+  return (
+    <div>
+      <div className={s.props}>
+        {props.title} {props.type ? typeMap[props.type] : null}
+      </div>
 
-    <div className={'mp-table ' + s.table}>
-      <table>
-        <thead>
-          <tr>
-            <th className={s.required}></th>
-            <th className={s.name}>Name</th>
-            <th className={s.type}>Type</th>
-            <th className={s.usage}>Usage</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {props.fields?.map((x, i) => (
-            <tr key={i}>
-              <td className={s.required}>{x.required ? '*' : ''}</td>
-
-              <td className={s.name}>
-                <code>{x.name}</code>
-              </td>
-
-              <td className={s.type}>{!!(x.type || x.customType) && <code>{x.type || x.customType}</code>}</td>
-              <td className={s.usage}>{x.usage}</td>
+      <div className={'mp-table ' + s.table}>
+        <table>
+          <thead>
+            <tr>
+              <th className={s.required}></th>
+              <th className={s.name}>Name</th>
+              <th className={s.type}>Type</th>
+              <th className={s.usage}>Usage</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+
+          <tbody>
+            {props.fields?.map((x, i) => (
+              <tr key={i}>
+                <td className={s.required}>{x.required ? '*' : ''}</td>
+
+                <td className={s.name}>
+                  <code>{x.name}</code>
+                </td>
+
+                <td className={s.type}>{!!(x.type || x.customType) && <code>{x.type || x.customType}</code>}</td>
+                <td className={s.usage}>{x.usage}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
-  </div>
-)
+  )
+}
 
 type component = {
   name: string
@@ -149,7 +155,8 @@ interface related {
   components: component[]
 }
 
-Main.Related = ({ components = [] }: related) => {
+Main.Related = Related
+function Related({ components = [] }: related) {
   return (
     <div className={s.related}>
       <div className={s.title}>Related Components</div>

@@ -1,8 +1,7 @@
 import { Docs } from 'components'
 import { Button, Message } from 'lib'
-import { useState } from 'react'
 
-var message: symbol
+let message: symbol
 export default function Main() {
   return (
     <Docs type='Component' name='Message'>
@@ -101,7 +100,7 @@ export default function Main() {
 
       <Docs.Props
         title='Message.(succcess | error | warning | info)'
-        type='args'
+        type='function'
         fields={[
           { required: true, name: 'text', type: 'string', usage: 'Message content' },
           { name: 'duration', type: 'number', usage: 'Duration in ms' }

@@ -11,7 +11,7 @@ export default function Main() {
       >
         <Table
           cols={[
-            { name: '#', align: 'center', width: '1rem', render: (value, x, [row, col]) => row + 1 },
+            { name: '#', align: 'center', width: '1rem', render: (value, x, [row]) => row + 1 },
             { key: 'id', name: 'ID', align: 'center', width: '1rem' },
             { name: 'Name', align: 'left', width: '100%', render: (value, x: any) => x.firstName + ' ' + x.lastName },
             { key: 'salary', name: 'Salary', align: 'right' }
@@ -28,7 +28,6 @@ export default function Main() {
 
       <Docs.Props
         title='Table'
-        type='props'
         fields={[
           { name: '..', usage: 'All table element props' },
           { name: 'cols', type: 'array', usage: 'Table columns setup data' },
@@ -38,7 +37,7 @@ export default function Main() {
 
       <Docs.Props
         title='Col'
-        type='object keys'
+        type='object'
         fields={[
           { name: 'name', type: 'string', usage: 'Column name' },
           { name: 'key', type: 'string', usage: "Table data object's key to be rendered" },
@@ -50,7 +49,6 @@ export default function Main() {
 
       <Docs.Props
         title='Col render'
-        type='args'
         fields={[
           { name: 'value', usage: 'Key value' },
           { name: 'data', type: 'object', usage: "Table data object's key to be rendered" },

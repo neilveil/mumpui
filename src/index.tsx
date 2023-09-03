@@ -21,7 +21,7 @@ pages.push({ path: '*', component: Redirect })
 
 class Main extends React.Component {
   render() {
-    var router = pages.map(({ path, component }, i) => (
+    const router = pages.map(({ path, component }, i) => (
       <Route key={i} path={path} Component={() => <ScrollToTop Component={component} />} />
     ))
 
