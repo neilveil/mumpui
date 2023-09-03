@@ -19,7 +19,7 @@ body {
   z-index: 1000000;
   display: flex;
   flex-direction: column;
-  background-color: var(--jinie-bg);
+  background: var(--jinie-bg);
 
   .jinie-image-box {
     padding: 1rem;
@@ -49,12 +49,12 @@ body {
       input {
         appearance: none;
         width: 100%;
-        background-color: var(--jinie-rotation-bg);
+        background: var(--jinie-rotation-bg);
         height: 0.25rem;
 
         &::-webkit-slider-thumb {
           appearance: none;
-          background-color: var(--jinie-rotation-fg);
+          background: var(--jinie-rotation-fg);
           border-radius: 50%;
           width: 1rem;
           height: 1rem;
@@ -103,7 +103,7 @@ body {
   transform: translate(-50%, -50%);
   height: 8px;
   border-radius: 4px;
-  background-color: var(--jinie-progress-bg);
+  background: var(--jinie-progress-bg);
   z-index: 1;
   overflow: hidden;
   pointer-events: none;
@@ -111,14 +111,14 @@ body {
   .jinie-progress-filled {
     width: 0%;
     height: 100%;
-    background-color: var(--jinie-progress-fg);
+    background: var(--jinie-progress-fg);
     transition: all 300ms ease;
   }
 }
 
 // Cropper
 // .cropper-modal {
-//   background-color: red;
+//   background: red;
 // }
 // .cropper-view-box {
 //   outline-color: red;
@@ -128,17 +128,17 @@ body {
 // }
 // .cropper-center:after,
 // .cropper-center:before {
-//   background-color: red;
+//   background: red;
 // }
 // .cropper-face {
-//   background-color: red;
+//   background: red;
 // }
 // .cropper-line {
-//   background-color: red;
+//   background: red;
 // }
 // .cropper-point {
-//   background-color: red;
+//   background: red;
 // }
 // .cropper-point.point-se:before {
-//   background-color: red;
+//   background: red;
 // }

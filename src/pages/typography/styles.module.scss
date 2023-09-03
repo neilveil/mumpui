@@ -2,7 +2,7 @@
   .header {
     text-align: center;
     font-size: 1.5rem;
-    background-color: var(--mp-c-primary);
+    background: var(--mp-c-primary);
     color: var(--mp-c-bg);
     padding: 4rem 2rem;
 
@@ -36,7 +36,7 @@
       font-size: 0.8rem;
       margin-top: 1rem;
       padding: 0.25rem 1rem;
-      background-color: #282828;
+      background: #282828;
       color: #e8e8e8;
       display: inline-block;
       font-family: monospace;

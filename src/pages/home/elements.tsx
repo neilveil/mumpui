@@ -119,7 +119,7 @@ export default {
     docs: '/component/file',
     tags: [],
     component: () => {
-      return <File label='Upload Image' />
+      return <File>Upload Image</File>
     }
   },
   field: {
@@ -187,6 +187,8 @@ export default {
     component: () => (
       <div>
         <Input type='date' defaultValue='01-01-2020' />
+        <br />
+        <Input type='month' defaultValue='01-01-2020' />
         <br />
         <Input type='time' defaultValue='18:00' />
       </div>

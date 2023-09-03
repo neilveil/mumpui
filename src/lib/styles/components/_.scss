@@ -29,9 +29,26 @@ body {
     padding-right: 0.25rem !important;
 
     &::-webkit-calendar-picker-indicator {
-      background-color: #f0f0f0;
       font-size: 0.8rem;
       border-radius: 4px;
+    }
+  }
+
+  input[type='date'] {
+    &::-webkit-calendar-picker-indicator {
+      background-image: url('data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjI0cHgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0cHgiIGZpbGw9IiM4ODg4ODgiPjxwYXRoIGQ9Ik0wIDBoMjR2MjRIMFYweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0xOSAzaC0xVjFoLTJ2Mkg4VjFINnYySDVjLTEuMTEgMC0yIC45LTIgMnYxNGMwIDEuMS44OSAyIDIgMmgxNGMxLjEgMCAyLS45IDItMlY1YzAtMS4xLS45LTItMi0yem0wIDE2SDVWOWgxNHYxMHptMC0xMkg1VjVoMTR2MnpNNyAxMWg1djVIN3oiLz48L3N2Zz4=');
+    }
+  }
+
+  input[type='month'] {
+    &::-webkit-calendar-picker-indicator {
+      background-image: url('data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAyNCAyNCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNHB4IiBmaWxsPSIjODg4ODg4Ij48Zz48cmVjdCBmaWxsPSJub25lIiBoZWlnaHQ9IjI0IiB3aWR0aD0iMjQiLz48L2c+PGc+PHBhdGggZD0iTTE5LDRoLTFWMmgtMnYySDhWMkg2djJINUMzLjg5LDQsMy4wMSw0LjksMy4wMSw2TDMsMjBjMCwxLjEsMC44OSwyLDIsMmgxNGMxLjEsMCwyLTAuOSwyLTJWNkMyMSw0LjksMjAuMSw0LDE5LDR6IE0xOSwyMCBINVYxMGgxNFYyMHogTTE5LDhINVY2aDE0Vjh6IE05LDE0SDd2LTJoMlYxNHogTTEzLDE0aC0ydi0yaDJWMTR6IE0xNywxNGgtMnYtMmgyVjE0eiBNOSwxOEg3di0yaDJWMTh6IE0xMywxOGgtMnYtMmgyVjE4eiBNMTcsMTggaC0ydi0yaDJWMTh6Ii8+PC9nPjwvc3ZnPg==');
+    }
+  }
+
+  input[type='time'] {
+    &::-webkit-calendar-picker-indicator {
+      background-image: url('data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjI0cHgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0cHgiIGZpbGw9IiM4ODg4ODgiPjxwYXRoIGQ9Ik0wIDBoMjR2MjRIMFYweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0xMS45OSAyQzYuNDcgMiAyIDYuNDggMiAxMnM0LjQ3IDEwIDkuOTkgMTBDMTcuNTIgMjIgMjIgMTcuNTIgMjIgMTJTMTcuNTIgMiAxMS45OSAyek0xMiAyMGMtNC40MiAwLTgtMy41OC04LThzMy41OC04IDgtOCA4IDMuNTggOCA4LTMuNTggOC04IDh6bS41LTEzSDExdjZsNS4yNSAzLjE1Ljc1LTEuMjMtNC41LTIuNjd6Ii8+PC9zdmc+');
     }
   }
 

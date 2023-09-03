@@ -5,11 +5,11 @@
   top: 0;
   left: 0;
   overflow: auto;
-  background-color: var(--mp-c-translucent);
+  background: var(--mp-c-translucent);
   z-index: 100000;
 
   .mp-modal-box {
-    background-color: var(--mp-c-bg);
+    background: var(--mp-c-bg);
     width: calc(100% - 2rem);
     border-radius: var(--mp-border-radius);
     max-width: 600px;

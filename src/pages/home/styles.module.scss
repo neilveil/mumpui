@@ -1,10 +1,10 @@
 .header {
-  background-color: #000000;
+  background: #000000;
   color: #ffffff;
   padding: 4rem 0;
 
   *::selection {
-    background-color: #fff2 !important;
+    background: #fff2 !important;
   }
 
   .content {
@@ -89,7 +89,7 @@
 .container {
   min-height: 100vh;
   width: 100%;
-  background-color: var(--mp-c-hover);
+  background: var(--mp-c-hover);
   padding: 1rem 0;
 
   .content {
@@ -128,7 +128,7 @@
     right: 1rem;
     font-size: 0.8rem;
     color: var(--mp-c-font-light);
-    background-color: var(--mp-c-hover);
+    background: var(--mp-c-hover);
     padding: 0 0.25rem;
     border-radius: 4px;
   }
@@ -141,7 +141,7 @@
     padding: 0.5rem 1.5rem;
     border-radius: 10rem;
     font-size: 0.8rem;
-    background-color: var(--mp-c-bg);
+    background: var(--mp-c-bg);
 
     &::placeholder {
       color: var(--mp-c-font-light);
@@ -201,7 +201,7 @@
   border-color: var(--mp-c-stroke);
   opacity: 0;
   animation: component-appear 300ms ease forwards;
-  background-color: var(--mp-c-bg);
+  background: var(--mp-c-bg);
 
   .nameLink:focus,
   &:hover {

@@ -12,12 +12,12 @@ html {
 
 body[data-theme='light'] {
   *::selection {
-    background-color: #0002;
+    background: #0002;
   }
 }
 body[data-theme='dark'] {
   *::selection {
-    background-color: #fff2;
+    background: #fff2;
   }
 }
 

@@ -1,11 +1,3 @@
-[![Coverage Status](https://img.shields.io/codecov/c/github/fengyuanchen/compressorjs.svg)](https://codecov.io/gh/fengyuanchen/compressorjs)
-
-[![Downloads](https://img.shields.io/npm/dm/compressorjs.svg)](https://www.npmjs.com/package/compressorjs)
-
-[![Version](https://img.shields.io/npm/v/compressorjs.svg)](https://www.npmjs.com/package/compressorjs)
-
-[![Gzip Size](https://img.shields.io/bundlephobia/minzip/compressorjs.svg)](https://unpkg.com/compressorjs/dist/compressor.common.js)
-
 # MumpUI
 
 remove bold font
@@ -28,6 +20,9 @@ config
   mutils
 
 file upload
+
+---
+
 bacground-color to background
 
 review all components

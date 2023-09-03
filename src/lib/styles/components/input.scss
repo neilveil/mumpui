@@ -40,7 +40,7 @@
     @include center();
     font-weight: var(--mp-fw-bold);
     color: var(--mp-c-font);
-    background-color: var(--mp-c-hover);
+    background: var(--mp-c-hover);
     padding: var(--mp-input-padding-top) var(--mp-input-padding-left);
     user-select: none;
   }
@@ -54,7 +54,7 @@
 
 input:disabled,
 .mp-disabled {
-  background-color: var(--mp-c-hover) !important;
+  background: var(--mp-c-hover) !important;
   &,
   * {
     cursor: not-allowed !important;
@@ -62,7 +62,7 @@ input:disabled,
 }
 
 .mp-input-expanded-area {
-  background-color: var(--mp-c-bg);
+  background: var(--mp-c-bg);
   border: var(--mp-border-solid);
   border-radius: var(--mp-border-radius);
   position: absolute;

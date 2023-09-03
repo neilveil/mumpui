@@ -11,7 +11,7 @@
     }
 
     &:disabled {
-      background-color: var(--mp-c-hover);
+      background: var(--mp-c-hover);
     }
   }
 
@@ -24,7 +24,7 @@
 
 .mp-input-chip {
   padding-left: 0.5rem;
-  background-color: var(--mp-c-hover);
+  background: var(--mp-c-hover);
   border-radius: calc(var(--mp-border-radius) / 2);
   display: flex;
   align-items: center;
@@ -71,6 +71,6 @@
 
   &:hover,
   &:focus {
-    background-color: var(--mp-c-hover);
+    background: var(--mp-c-hover);
   }
 }

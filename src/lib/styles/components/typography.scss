@@ -81,7 +81,7 @@ $image-spacing: calc(2 * $spacing);
     bottom: -0.25rem;
     right: 0;
     height: 2px;
-    background-color: var(--mp-c-font-light);
+    background: var(--mp-c-font-light);
   }
 
   mark {
@@ -117,7 +117,7 @@ $image-spacing: calc(2 * $spacing);
 
   code {
     color: var(--mp-c-code);
-    background-color: var(--mp-c-hover);
+    background: var(--mp-c-hover);
     padding: 0 0.25rem;
     user-select: all;
   }

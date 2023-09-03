@@ -15,7 +15,7 @@
     color: var(--mp-c-font);
 
     &:hover {
-      background-color: var(--mp-c-hover);
+      background: var(--mp-c-hover);
     }
 
     .mp-menu-item-icon {
@@ -40,7 +40,7 @@
   }
 
   .mp-menu-item-selected {
-    background-color: var(--mp-c-hover);
+    background: var(--mp-c-hover);
 
     .mp-menu-item-name {
       color: var(--mp-c-primary);

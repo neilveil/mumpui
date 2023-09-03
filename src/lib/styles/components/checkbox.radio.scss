@@ -12,7 +12,7 @@
 
     &:hover > .mp-checkbox-icon,
     &:hover > .mp-radio-icon {
-      background-color: var(--mp-c-hover);
+      background: var(--mp-c-hover);
     }
   }
 
@@ -78,7 +78,7 @@
       top: 0.2rem;
       width: 0.5rem;
       height: 0.5rem;
-      background-color: var(--mp-c-font);
+      background: var(--mp-c-font);
       border-radius: 50%;
       animation: mp-radio 200ms ease forwards;
     }

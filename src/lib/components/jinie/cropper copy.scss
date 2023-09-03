@@ -48,11 +48,11 @@
   overflow: hidden;
 }
 .cropper-drag-box {
-  background-color: #fff;
+  background: #fff;
   opacity: 0;
 }
 .cropper-modal {
-  background-color: var(--mp-c-hover);
+  background: var(--mp-c-hover);
   opacity: 0.5;
 }
 .cropper-view-box {
@@ -96,7 +96,7 @@
 }
 .cropper-center:after,
 .cropper-center:before {
-  background-color: var(--mp-c-font-dark);
+  background: var(--mp-c-font-dark);
   content: ' ';
   display: block;
   position: absolute;
@@ -123,12 +123,12 @@
   width: 100%;
 }
 .cropper-face {
-  background-color: var(--mp-c-hover);
+  background: var(--mp-c-hover);
   left: 0;
   top: 0;
 }
 .cropper-line {
-  background-color: var(--mp-c-primary);
+  background: var(--mp-c-primary);
 }
 .cropper-line.line-e {
   cursor: ew-resize;
@@ -155,7 +155,7 @@
   left: 0;
 }
 .cropper-point {
-  background-color: var(--mp-c-primary);
+  background: var(--mp-c-primary);
   height: 5px;
   opacity: 0.75;
   width: 5px;
@@ -227,7 +227,7 @@
 //   }
 // }
 .cropper-point.point-se:before {
-  background-color: var(--mp-c-primary);
+  background: var(--mp-c-primary);
   bottom: -50%;
   content: ' ';
   display: block;

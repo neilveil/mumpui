@@ -47,11 +47,11 @@
   overflow: hidden;
 }
 .cropper-drag-box {
-  background-color: #fff;
+  background: #fff;
   opacity: 0;
 }
 .cropper-modal {
-  background-color: #000;
+  background: #000;
   opacity: 0.5;
 }
 .cropper-view-box {
@@ -95,7 +95,7 @@
 }
 .cropper-center:after,
 .cropper-center:before {
-  background-color: #eee;
+  background: #eee;
   content: ' ';
   display: block;
   position: absolute;
@@ -122,12 +122,12 @@
   width: 100%;
 }
 .cropper-face {
-  background-color: #fff;
+  background: #fff;
   left: 0;
   top: 0;
 }
 .cropper-line {
-  background-color: #39f;
+  background: #39f;
 }
 .cropper-line.line-e {
   cursor: ew-resize;
@@ -154,7 +154,7 @@
   left: 0;
 }
 .cropper-point {
-  background-color: #39f;
+  background: #39f;
   height: 5px;
   opacity: 0.75;
   width: 5px;
@@ -226,7 +226,7 @@
   }
 }
 .cropper-point.point-se:before {
-  background-color: #39f;
+  background: #39f;
   bottom: -50%;
   content: ' ';
   display: block;

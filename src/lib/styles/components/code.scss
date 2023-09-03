@@ -3,16 +3,16 @@
 
 .mp-code {
   overflow: auto;
-  background-color: #101010;
+  background: #101010;
   margin: 1rem 0;
 
   *::selection {
-    background-color: #fff2 !important;
+    background: #fff2 !important;
   }
 
   pre {
     overflow: visible;
-    background-color: #101010;
+    background: #101010;
     cursor: text;
     margin: 0;
     padding: 1rem;
@@ -20,7 +20,7 @@
     code {
       color: #e8e8e8;
       margin: 0;
-      background-color: transparent;
+      background: transparent;
       user-select: unset;
 
       &,

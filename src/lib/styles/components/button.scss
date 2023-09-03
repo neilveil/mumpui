@@ -8,7 +8,7 @@
 
   padding: var(--mp-input-padding-top) var(--mp-input-padding-left);
   font-size: var(--mp-input-font-size);
-  background-color: transparent;
+  background: transparent;
   color: var(--mp-c-font);
 
   &:hover {
@@ -19,7 +19,7 @@
   // &.default {}
   &.mp-button-primary {
     color: var(--mp-c-bg);
-    background-color: var(--mp-c-primary);
+    background: var(--mp-c-primary);
   }
   &.mp-button-default {
     border: var(--mp-border-solid);

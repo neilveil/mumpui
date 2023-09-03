@@ -1,5 +1,5 @@
 import { Docs } from 'components'
-import { Field, File, Range } from 'lib'
+import { Button, Field, File, Range } from 'lib'
 import { useState } from 'react'
 
 export default function Main() {
@@ -32,16 +32,11 @@ const [files, setFiles] = useState([])
 </div>
 `}
       >
-        <Field label='Upload image'>
-          <File
-            label='Select images'
-            accept='image/jpeg'
-            onChange={(e: any) => setFiles(Array.from(e.target.files))}
-            multiple
-          />
-        </Field>
+        <File accept='image/jpeg' onChange={(e: any) => setFiles(Array.from(e.target.files))} multiple>
+          <Button>Upload</Button>
+        </File>
 
-        <div style={{ display: 'flex', gap: '1rem' }}>
+        <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem' }}>
           {files.map((file: any) => (
             <div>
               <img width='100%' src={URL.createObjectURL(file)} alt='' />

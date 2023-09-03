@@ -2,12 +2,12 @@
   input {
     appearance: none;
     width: 100%;
-    background-color: var(--mp-c-stroke);
+    background: var(--mp-c-stroke);
     height: 4px;
 
     &::-webkit-slider-thumb {
       appearance: none;
-      background-color: var(--mp-c-font-dark);
+      background: var(--mp-c-font-dark);
       border-radius: 50%;
       width: 0.75rem;
       height: 0.75rem;
