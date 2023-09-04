@@ -4,21 +4,9 @@ import { Placeholder } from 'lib'
 import mutils from 'lib/mutils'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import elements from './elements'
-import showcase from './showcase'
+import showcases from './showcases'
+import groups from './groups'
 import s from './styles.module.scss'
-
-// - Header
-// - Container
-//   - Content
-//     - if search then Elements
-//       - ComponentPair
-//         - Component
-//     - else Showcase
-//       - Elements
-//         - ComponentPair
-//           - Component
-// - Footer
 
 export default class Main extends React.Component {
   state = {
@@ -53,7 +41,7 @@ export default class Main extends React.Component {
     )
   }
   render = () => {
-    const fuse = new Fuse(Object.values(elements), { keys: ['name', 'docs', 'tags'] })
+    const fuse = new Fuse(Object.values(showcases), { keys: ['name', 'docs', 'tags'] })
     const searchResults = this.state.search ? fuse.search(this.state.search).map(({ item }) => item) : []
 
     return (
@@ -135,13 +123,11 @@ export default class Main extends React.Component {
             </div>
 
             {this.state.search ? (
-              <div>
-                {searchResults.length ? <ComponentPair data={searchResults} expanded={true} /> : <Placeholder />}
-              </div>
+              <div>{searchResults.length ? <Showcases data={searchResults} expanded={true} /> : <Placeholder />}</div>
             ) : (
               <>
-                {showcase.map(({ name, elements }, i) => (
-                  <Showcase key={i} title={name} elements={elements} expanded={this.state.expanded} />
+                {groups.map(({ name, showcases }, i) => (
+                  <Group key={i} title={name} showcases={showcases} expanded={this.state.expanded} />
                 ))}
               </>
             )}
@@ -154,73 +140,13 @@ export default class Main extends React.Component {
   }
 }
 
-type element = {
-  name: string
-  Component: any
-  docs?: string
-}
-
-interface showcase {
+interface groups {
   title: string
-  elements: element[]
+  showcases: element[]
   expanded: boolean
 }
 
-const ComponentPair = ({ data, expanded }: { data: element[]; expanded: boolean }) => {
-  const pairs: element[][] = []
-
-  let pair: element[] = []
-
-  for (const x of data) {
-    pair.push(x)
-    if (pair.length === 2) {
-      pairs.push(pair)
-      pair = []
-    }
-  }
-
-  if (pair.length) pairs.push(pair)
-
-  const name = (name: any) => (
-    <div className={s.name} style={{ borderTop: expanded ? '' : 'none' }}>
-      {name}
-      <span className={'icon ' + s.icon}>east</span>
-    </div>
-  )
-
-  return (
-    <div className={s.components}>
-      {pairs
-        .map((pair, i) => (
-          <div key={i} className={s.componentPair}>
-            {pair.map((x, j) => (
-              <div
-                key={j}
-                className={s.component}
-                style={{
-                  animationDelay: (i + j) * 200 + 'ms',
-                  zIndex: data.length - (i + j)
-                }}
-              >
-                {!!expanded && <div className={s.element}>{<x.Component />}</div>}
-
-                {x.docs ? (
-                  <Link to={x.docs} className={s.nameLink}>
-                    {name(x.name)}
-                  </Link>
-                ) : (
-                  name(x.name)
-                )}
-              </div>
-            ))}
-          </div>
-        ))
-        .flat()}
-    </div>
-  )
-}
-
-const Showcase = (props: showcase) => {
+const Group = (props: groups) => {
   const [localExpanded, setLocalExpanded] = useState(props.expanded)
 
   useEffect(() => {
@@ -228,22 +154,52 @@ const Showcase = (props: showcase) => {
   }, [props.expanded])
 
   return (
-    <div className={s.showcase}>
+    <div className={s.groups}>
       <div className={s.title} onClick={() => setLocalExpanded(!localExpanded)}>
         <div>
           {props.title}
-          <span className={s.count}>{props.elements.length} components</span>
+          <span className={s.count}>{props.showcases.length} components</span>
         </div>
         <div className='icon' style={{ color: 'var(--mp-c-font-light)' }}>
           {localExpanded ? 'expand_more' : 'chevron_right'}
         </div>
       </div>
 
-      {/* {!!localExpanded && (
-          )} */}
       <>
-        <ComponentPair data={props.elements} expanded={localExpanded} />
+        <Showcases data={props.showcases} expanded={localExpanded} />
       </>
+    </div>
+  )
+}
+
+type element = {
+  name: string
+  Component: any
+  docs: string
+}
+
+const Showcases = ({ data, expanded }: { data: element[]; expanded: boolean }) => {
+  return (
+    <div className={s.showcases}>
+      {data.map((x, i) => (
+        <div
+          key={i}
+          className={s.showcase}
+          style={{
+            animationDelay: i * 200 + 'ms',
+            zIndex: data.length - i
+          }}
+        >
+          {!!expanded && <div className={s.component}>{<x.Component />}</div>}
+
+          <Link to={x.docs} className={s.nameLink}>
+            <div className={s.name} style={{ borderTop: expanded ? '' : 'none' }}>
+              {x.name}
+              <span className={'icon ' + s.icon}>east</span>
+            </div>
+          </Link>
+        </div>
+      ))}
     </div>
   )
 }
