@@ -1,6 +1,5 @@
-import DepthHandler from './depthHandler'
-import ScrollHandler from './scrollHandler'
 import request from './request'
+import ScrollBack from './scrollBack'
 import search from './search'
 import theme from './theme'
 import uh from './uh'
@@ -71,7 +70,7 @@ const dataURLToBlob = (uri: string) =>
     }
   })
 
-const getImageWidthHeight = (file: Blob) =>
+const getImageStats = (file: Blob) =>
   new Promise<{ width: number; height: number }>((resolve, reject) => {
     const img = new Image()
     const objectUrl = _URL.createObjectURL(file)
@@ -87,18 +86,17 @@ const getImageWidthHeight = (file: Blob) =>
   })
 
 export default {
-  DepthHandler,
   IS,
   NEW,
   ONCE,
-  ScrollHandler,
+  ScrollBack,
   blobToDataURL,
   blobToObjectURL,
   copyText,
   dataURLToBlob,
   delay,
   dispatch,
-  getImageWidthHeight,
+  getImageStats,
   listen,
   plural,
   request,

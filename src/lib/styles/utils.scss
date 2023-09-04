@@ -69,6 +69,6 @@
   text-overflow: ellipsis;
   display: block;
   display: -webkit-box;
-  -webkit-line-clamp: 1;
+  -webkit-line-clamp: var(--line-clamp);
   -webkit-box-orient: vertical;
 }
