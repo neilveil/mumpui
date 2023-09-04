@@ -1,4 +1,4 @@
-# MumpUI - A clean & elegant design system
+# MumpUI - A light-weight Flexible & Elegant Design System for Developers
 
 Welcome to MumpUI, where creativity meets simplicity in the world of ReactJS development! 🌟
 
@@ -117,6 +117,8 @@ In addition to components, MumpUI offers helper functions and utilities to strea
 - URL Handler: Read & write data in URL, unlike props, this data will persist as it is binded with the URL.
 
 ### Dashboard
+
+MumpUI offers a robust dashboard component, designed to effortlessly handle data management and provide a comprehensive view of CRUD operations. Seamlessly integrated with in-built user role functionalities, it ensures secure access control. The dashboard is fully responsive, guaranteeing a consistent user experience across all devices, and its integration is elegantly straightforward.
 
 ## Installation
 

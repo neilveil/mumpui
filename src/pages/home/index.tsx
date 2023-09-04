@@ -1,12 +1,24 @@
-import React, { useEffect, useState } from 'react'
-import s from './styles.module.scss'
-import { Link } from 'react-router-dom'
-import { Placeholder } from 'lib'
-import Fuse from 'fuse.js'
-import showcase from './showcase'
 import { Footer } from 'components'
-import elements from './elements'
+import Fuse from 'fuse.js'
+import { Placeholder } from 'lib'
 import mutils from 'lib/mutils'
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import elements from './elements'
+import showcase from './showcase'
+import s from './styles.module.scss'
+
+// - Header
+// - Container
+//   - Content
+//     - if search then Elements
+//       - ComponentPair
+//         - Component
+//     - else Showcase
+//       - Elements
+//         - ComponentPair
+//           - Component
+// - Footer
 
 export default class Main extends React.Component {
   state = {
@@ -65,10 +77,9 @@ export default class Main extends React.Component {
 
                 <div className={s.name}>MumpUI</div>
                 <div className={s.info}>
-                  A Lightweight & Flexible
+                  A light-weight Flexible & Elegant
                   <br />
                   Design System for Developers.
-                  <br />& It&apos;s clean!
                 </div>
 
                 {/* <div className={s.inspired}>
@@ -124,7 +135,9 @@ export default class Main extends React.Component {
             </div>
 
             {this.state.search ? (
-              <div>{searchResults.length ? <Components data={searchResults} expanded={true} /> : <Placeholder />}</div>
+              <div>
+                {searchResults.length ? <ComponentPair data={searchResults} expanded={true} /> : <Placeholder />}
+              </div>
             ) : (
               <>
                 {showcase.map(({ name, elements }, i) => (
@@ -153,7 +166,7 @@ interface showcase {
   expanded: boolean
 }
 
-const Components = ({ data, expanded }: { data: element[]; expanded: boolean }) => {
+const ComponentPair = ({ data, expanded }: { data: element[]; expanded: boolean }) => {
   const pairs: element[][] = []
 
   let pair: element[] = []
@@ -229,7 +242,7 @@ const Showcase = (props: showcase) => {
       {/* {!!localExpanded && (
           )} */}
       <>
-        <Components data={props.elements} expanded={localExpanded} />
+        <ComponentPair data={props.elements} expanded={localExpanded} />
       </>
     </div>
   )

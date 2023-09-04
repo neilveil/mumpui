@@ -153,6 +153,12 @@
   }
 }
 
+@media (max-width: 1080px) {
+  .searchShortcut {
+    display: none;
+  }
+}
+
 .showcase {
   .title {
     padding: 1rem;
