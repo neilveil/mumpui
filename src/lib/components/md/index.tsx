@@ -1,5 +1,4 @@
 import React from 'react'
-import s from './styles.module.scss'
 
 declare global {
   interface Window {
@@ -51,7 +50,7 @@ export default class Main extends React.Component {
 
   render = () => {
     return (
-      <div className={s.main}>
+      <div>
         <div id='content' className='mp-container'></div>
       </div>
     )
