@@ -45,4 +45,9 @@ function ScrollToTop({ Component }: { Component?: any }) {
 }
 
 if (import.meta.env.DEV) main()
-else window.addEventListener('SW_READY', main)
+else {
+  const scriptEl = document.createElement('script')
+  scriptEl.src = '/service-worker-handler.js'
+  document.body.appendChild(scriptEl)
+  window.addEventListener('SW_READY', main)
+}
