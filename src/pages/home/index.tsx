@@ -1,4 +1,4 @@
-import { Footer } from 'components'
+import { Footer, SwitchTheme } from 'components'
 import Fuse from 'fuse.js'
 import { Placeholder } from 'lib'
 import React, { useEffect, useState } from 'react'
@@ -85,6 +85,8 @@ export default class Main extends React.Component {
                       <div>{x}</div>
                     </Link>
                   ))}
+
+                  <SwitchTheme />
                 </div>
               </div>
             </div>
@@ -93,8 +95,8 @@ export default class Main extends React.Component {
 
         <div className={s.container}>
           <div className={s.content}>
-            <div className={s.search} onClick={this.scrollToSearch}>
-              <div className={s.searchInput}>
+            <div className={s.search}>
+              <div className={s.searchInput} onClick={this.scrollToSearch}>
                 <input
                   id='search'
                   onFocus={() => this.setState({ search: '', isSearchFocused: true })}

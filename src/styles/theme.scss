@@ -2,9 +2,8 @@
 @import '../lib/fonts/mono.scss';
 @import '../lib/fonts/icons.scss';
 
-// @import 'mumpui/lib/styles.css';
 @import '../lib/styles/index.scss';
-@import '../lib/styles/theme.scss';
+@import '../lib/styles/themes/default.scss';
 
 html {
   scroll-behavior: smooth;
@@ -22,11 +21,11 @@ body[data-theme='dark'] {
 }
 
 ::-webkit-scrollbar {
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 0.4rem;
+  height: 0.4rem;
 }
 ::-webkit-scrollbar-track {
-  background: var(--c-light);
+  background: var(--mp-c-stroke);
 }
 ::-webkit-scrollbar-thumb {
   background: var(--mp-c-font-light);

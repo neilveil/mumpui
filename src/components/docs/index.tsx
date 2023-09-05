@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Footer from '../footer'
 import s from './styles.module.scss'
+import { SwitchTheme } from 'components'
 
 interface main {
   children?: any
@@ -26,19 +27,9 @@ export default function Main(props: main) {
             </div>
           </Link>
 
-          <div
-            className={s.back}
-            style={{ marginLeft: '1.5rem' }}
-            onClick={() => {
-              const theme = window.localStorage.getItem('MP_THEME') === 'light' ? 'dark' : 'light'
-              window.localStorage.setItem('MP_THEME', theme)
-              document.body.setAttribute('data-theme', theme)
-            }}
-          >
-            <span className='icon' style={{ color: 'var(--c-black)' }}>
-              light_mode
-            </span>
-          </div>
+          <span>
+            <SwitchTheme style={{ marginLeft: '1.5rem' }} />
+          </span>
 
           <div className={s.title}>{['MumpUI', props.type, props.name].join(' / ')}</div>
         </div>
