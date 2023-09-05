@@ -1,9 +1,6 @@
 import Message from './components/message'
 import Confirm from './components/confirm'
 import Tooltip from './components/tooltip'
-import Jinie from './components/jinie'
-
-export { default as mutils } from './mutils'
 
 export { default as Input } from './components/input'
 export { default as Field } from './components/field'
@@ -56,9 +53,8 @@ const MumpUI = ({ tooltip, message }: props) => {
     <>
       <Message />
       <Confirm />
-      <Jinie />
     </>
   )
 }
 
-export { MumpUI, Message, Confirm, Tooltip, Jinie }
+export { MumpUI, Message, Confirm, Tooltip }

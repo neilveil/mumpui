@@ -17,7 +17,6 @@ config
   pending components
   menu access
   fix dashboard with z-index & form
-  mutils
 
 file upload
 bacground-color to background
@@ -45,7 +44,7 @@ axios
 fuse
 
 marked
-jinie
+embed
 
 validator
 
@@ -65,81 +64,6 @@ version snapshots
 ```jsx
 import 'mumpui/lib/styles/index.scss'
 ```
-
-# Landing Page
-
-## Setup
-
-## Stories
-
-## Input
-
-- Input
-- Textarea
-
-- Field
-- Form
-
-- Checkbox
-- Radio
-
-- Dropdown
-- Multi-Select
-
-- Search
-- Button
-
-- Date / Time
-- Color
-
-- Range
-- File
-
-## Display
-
-- List
-- Table
-- Loader
-- Placeholder
-- Divider
-- Chain
-- Tooltip
-
-## Feedback
-
-- Message
-- Confirm
-- Modal
-- Note
-
-## Navigation
-
-- Tabs
-- Menu
-- Pagination
-- Breadcrumbs
-
-## Styling
-
-- Theme
-- Responsive
-- Utils
-
-## Helpers
-
-- Request
-- Storage
-- Utils
-- URL Handler
-- Scroll Handler
-- Depth Handler
-- Wrapper
-
-## Advanced
-
-- Dashboard
-- Typography
-- Code
 
 - md
 - embed

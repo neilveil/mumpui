@@ -1,7 +1,6 @@
 import { Footer } from 'components'
 import Fuse from 'fuse.js'
 import { Placeholder } from 'lib'
-import mutils from 'lib/mutils'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import showcases from './showcases'
@@ -55,7 +54,10 @@ export default class Main extends React.Component {
                   onClick={(e: any) => {
                     this.logoRotation += 360
                     e.target.style.transform = `rotate(${this.logoRotation}deg)`
-                    mutils.theme.toggle(true)
+
+                    const theme = window.localStorage.getItem('MP_THEME') === 'light' ? 'dark' : 'light'
+                    window.localStorage.setItem('MP_THEME', theme)
+                    document.body.setAttribute('data-theme', theme)
                   }}
                 />
               </div>

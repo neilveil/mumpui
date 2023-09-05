@@ -1,4 +1,4 @@
-import { Button, Field, Fields, File, Form, Input, Jinie } from 'lib'
+import { Button, Field, Fields, File, Form, Input } from 'lib'
 import s from './styles.module.scss'
 
 export default function Main() {
@@ -11,25 +11,21 @@ export default function Main() {
         <Field label='Logo'>
           <File
             accept='image/*'
-            onChange={async (e: any) => {
-              const file = e.target.files[0]
-
+            onChange={async () => {
+              // const file = e.target.files[0]
               // const widthHeightBefore = await mutils.getImageWidthHeight(file)
               // const dataURL = await mutils.blobToDataURL(file)
-
-              Jinie.init({
-                img: file,
-                minWidth: 100,
-                minHeight: 100,
-                aspectRatio: 1,
-                maxSize: 1000000,
-                onReady: img => console.log(img)
-              })
-
+              // Jinie.init({
+              //   img: file,
+              //   minWidth: 100,
+              //   minHeight: 100,
+              //   aspectRatio: 1,
+              //   maxSize: 1000000,
+              //   onReady: img => console.log(img)
+              // })
               // const blob = await mutils.dataURLToBlob(dataURL)
               // const objectURL = await mutils.blobToObjectURL(blob)
               // const widthHeightAfter = await mutils.getImageWidthHeight(blob)
-
               // console.log(file, dataURL, blob, objectURL, widthHeightBefore, widthHeightAfter)
             }}
           >

@@ -1,8 +1,8 @@
 import { MumpUI } from 'lib'
-import mutils from 'lib/mutils'
 
 export default function Main() {
-  mutils.theme.init()
+  const savedTheme = window.localStorage.getItem('MP_THEME') || 'light'
+  if (['light', 'dark'].includes(savedTheme)) document.body.setAttribute('data-theme', savedTheme)
 
   return (
     <>
