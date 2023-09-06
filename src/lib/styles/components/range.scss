@@ -2,7 +2,7 @@
   input {
     appearance: none;
     width: 100%;
-    background: var(--mp-c-stroke);
+    background: var(--mp-c-input-border);
     height: 4px;
 
     &::-webkit-slider-thumb {

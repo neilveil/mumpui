@@ -24,7 +24,7 @@
 }
 
 .header {
-  border-bottom: var(--mp-border-solid);
+  border-bottom: var(--mp-border);
   margin-bottom: 2rem;
 
   .row {
@@ -61,7 +61,7 @@
   }
 
   .element {
-    border: var(--mp-border-solid);
+    border: var(--mp-border);
     padding: 1rem;
     margin-bottom: 2rem;
   }
@@ -80,7 +80,7 @@
       cursor: pointer;
 
       &:hover {
-        background: var(--mp-c-stroke);
+        background: var(--mp-c-input-border);
       }
     }
   }

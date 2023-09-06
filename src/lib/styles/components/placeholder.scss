@@ -5,12 +5,14 @@
   svg {
     width: 100%;
     max-width: 8rem;
-    fill: var(--mp-c-stroke-hover);
+    fill: var(--mp-c-font-light);
+    opacity: 0.3;
   }
 
   .mp-placeholder-text {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     color: var(--mp-c-font-light);
     user-select: none;
+    margin-top: 0.5rem;
   }
 }

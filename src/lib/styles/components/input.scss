@@ -1,6 +1,5 @@
 @import './_.scss';
 
-.mp-input-template,
 .mp-input,
 .mp-textarea,
 .mp-search {
@@ -25,16 +24,14 @@
     }
   }
 
-  input[type='color'] {
-    padding: 0 calc(var(--mp-input-padding-left) / 2);
-  }
-
   &:hover {
-    border-color: var(--mp-c-stroke-hover);
+    border-color: var(--mp-c-input-border-hover);
+    box-shadow: var(--mp-input-box-shadow-hover);
   }
 
   &:focus-within {
-    border-color: var(--mp-c-stroke-active);
+    border-color: var(--mp-c-input-border-active);
+    box-shadow: var(--mp-input-box-shadow-active);
   }
 
   .mp-prefix,
@@ -43,7 +40,7 @@
     font-weight: var(--mp-fw-bold);
     color: var(--mp-c-font);
     background: var(--mp-c-hover);
-    padding: var(--mp-input-padding-top) var(--mp-input-padding-left);
+    padding: var(--mp-input-padding);
     user-select: none;
   }
   .mp-prefix {
@@ -65,7 +62,7 @@ input:disabled,
 
 .mp-input-expanded-area {
   background: var(--mp-c-bg);
-  border: var(--mp-border-solid);
+  border: var(--mp-border-width) solid var(--mp-border-color);
   border-radius: var(--mp-border-radius);
   position: absolute;
   width: 100%;

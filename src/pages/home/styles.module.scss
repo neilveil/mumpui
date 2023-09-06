@@ -135,7 +135,7 @@
 
   input {
     outline: none;
-    border: var(--mp-border-solid);
+    border: var(--mp-border);
     width: 100%;
     color: var(--mp-c-font-dark);
     padding: 0.5rem 1.5rem;
@@ -163,7 +163,7 @@
   .title {
     padding: 1rem;
     margin-bottom: 1rem;
-    border-bottom: var(--mp-border-solid);
+    border-bottom: var(--mp-border);
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -192,10 +192,10 @@
 }
 
 .showcase {
-  border: var(--mp-border-solid);
+  border: var(--mp-border);
   display: flex;
   flex-direction: column;
-  border-color: var(--mp-c-stroke);
+  border-color: var(--mp-c-input-border);
   opacity: 0;
   animation: showcase-appear 300ms ease forwards;
   background: var(--mp-c-bg);
@@ -238,7 +238,7 @@
     text-align: center;
     font-size: 0.7rem;
     padding: 1rem;
-    border-top: var(--mp-border-solid);
+    border-top: var(--mp-border);
     color: var(--mp-c-font);
     font-weight: var(--mp-fw-bold);
     cursor: pointer;

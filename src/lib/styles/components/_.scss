@@ -5,12 +5,13 @@
 }
 
 @mixin input {
-  border: var(--mp-border-solid);
+  border: var(--mp-input-border-width) solid var(--mp-c-input-border);
+  box-shadow: var(--mp-input-box-shadow);
   border-radius: var(--mp-border-radius);
   color: var(--mp-c-font-dark);
   background: var(--mp-c-bg);
-  transition: var(--mp-transition);
   font-size: var(--mp-input-font-size);
+  transition: all 300ms ease;
   position: relative;
 
   input[type='time'],
@@ -44,7 +45,11 @@
 
   input[type='color']::-webkit-color-swatch {
     border-radius: calc(var(--mp-border-radius) / 2);
-    border: var(--mp-border-solid);
+    border: var(--mp-border-width) solid var(--mp-border-color);
+  }
+
+  input[type='color'] {
+    padding: 0 calc(var(--mp-input-padding-left) / 2);
   }
 
   input[type='color'] + input {

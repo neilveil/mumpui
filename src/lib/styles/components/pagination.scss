@@ -8,7 +8,7 @@
     padding: 0 0.5rem;
     margin: 0 1rem;
     cursor: pointer;
-    border: var(--mp-border-solid);
+    border: var(--mp-border-width) solid var(--mp-border-color);
     border-radius: var(--mp-border-radius);
     user-select: none;
 
@@ -26,7 +26,7 @@
       margin: 0;
       text-align: center;
       color: var(--mp-c-font);
-      border-bottom: 2px solid var(--mp-c-stroke);
+      border-bottom: var(--mp-input-border-width) solid var(--mp-input-border-color);
 
       &::placeholder {
         color: var(--mp-c-placeholder);

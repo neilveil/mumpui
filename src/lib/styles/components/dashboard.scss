@@ -29,7 +29,7 @@
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background: var(--mp-c-translucent);
+  background: var(--mp-c-overlay-bg);
   z-index: 100000;
   height: 100vh;
   overflow: auto;
@@ -78,7 +78,7 @@
 .mp-dashboard-header {
   position: sticky;
   top: 0;
-  border-bottom: var(--mp-border-solid);
+  border-bottom: var(--mp-border-width) solid var(--mp-border-color);
   background: var(--mp-c-bg);
   z-index: 10000;
   padding: 2rem 1rem;
@@ -130,7 +130,7 @@
 .mp-dashboard-footer {
   position: sticky;
   bottom: 0;
-  border-top: var(--mp-border-solid);
+  border-top: var(--mp-border-width) solid var(--mp-border-color);
   display: flex;
   flex-direction: column;
   justify-content: space-between;

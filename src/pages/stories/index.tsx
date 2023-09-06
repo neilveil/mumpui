@@ -29,7 +29,7 @@ export default function Main() {
               // console.log(file, dataURL, blob, objectURL, widthHeightBefore, widthHeightAfter)
             }}
           >
-            <div className='mp-input-template'>
+            <div className='mp-input'>
               <div className='mp-input-value'>Upload file 1</div>
             </div>
           </File>
