@@ -1,46 +1,51 @@
 import { Code, Message } from 'lib'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Footer from '../footer'
 import s from './styles.module.scss'
 import { SwitchTheme } from 'components'
 
 interface main {
   children?: any
-  type: 'Component' | 'Helper' | 'Style'
   name: string
   test?: any
 }
 
 export default function Main(props: main) {
+  const navigate = useNavigate()
+
   return (
-    <div className={s.main}>
-      <div>
-        <div className={s.header}>
-          <div className={s.back} onClick={() => window.history.back()}>
-            <span className='icon'>west</span> Back
+    <>
+      <div className={s.main}>
+        <div>
+          <div className={s.header}>
+            <div className={s.row}>
+              <div className={s.icon} onClick={() => window.history.back()}>
+                <span className='icon'>west</span> Back
+              </div>
+
+              <div className={s.icon} onClick={() => navigate('/home')}>
+                <span className='icon'>home</span> Home
+              </div>
+
+              <div className={s.icon}>
+                <SwitchTheme />
+              </div>
+            </div>
+
+            <div className={s.row}>
+              <div className={s.title}>{['MumpUI', props.name].join(' / ')}</div>
+            </div>
           </div>
 
-          <Link to='/home'>
-            <div className={s.back} style={{ marginLeft: '1.5rem' }}>
-              <span className='icon'>home</span> Home
-            </div>
-          </Link>
+          {props.children}
 
-          <span>
-            <SwitchTheme style={{ marginLeft: '1.5rem' }} />
-          </span>
-
-          <div className={s.title}>{['MumpUI', props.type, props.name].join(' / ')}</div>
+          <div style={{ height: '2rem' }} />
         </div>
-
-        {props.children}
-
-        <div style={{ height: '2rem' }} />
       </div>
 
       <Footer />
-    </div>
+    </>
   )
 }
 
@@ -50,14 +55,14 @@ function Info({ children }: { children?: any }) {
 }
 
 Main.Showcase = Showcase
-function Showcase({ children, info, code }: { children?: any; info?: any; code?: string }) {
+function Showcase({ children, title, code }: { children?: any; title?: any; code?: string }) {
   const [viewCode, setViewCode] = useState(false)
 
   code = (code || '').trim()
 
   return (
     <div className={s.showcase}>
-      {!!info && <Main.Info>{info}</Main.Info>}
+      {<div className={s.showcaseTitle}>{title}</div>}
 
       {!!code && (
         <div className={s.switch}>

@@ -13,7 +13,7 @@ export default function Main({ style = {}, className = '' }: { style?: React.CSS
   const altTheme = theme === 'light' ? 'dark' : 'light'
 
   return (
-    <div
+    <span
       onClick={() => {
         window.localStorage.setItem('MP_THEME', altTheme)
         document.body.setAttribute('data-theme', altTheme)
@@ -21,7 +21,6 @@ export default function Main({ style = {}, className = '' }: { style?: React.CSS
       }}
       style={{
         cursor: 'pointer',
-        color: 'var(--mp-c-font-light)',
         display: 'inline-block',
         userSelect: 'none',
         ...style
@@ -29,6 +28,6 @@ export default function Main({ style = {}, className = '' }: { style?: React.CSS
       className={'icon' + className}
     >
       {altTheme}_mode
-    </div>
+    </span>
   )
 }

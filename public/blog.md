@@ -22,9 +22,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ## Inline components
 
-Lorem ipsum dolor **volutpat** tempus aliqua. _Nulla facilisi_ amet, consectetur adipiscing elit, morbi tempus **_Posuere_** iaculis sed do morbi <u>tempus iaculis</u> urna id lacus laoreet ac ut consequat semper viverra nam libero justo laoreet. Lorem ipsum dolor sit amet.
+Lorem ipsum dolor **volutpat** tempus aliqua. _Nulla facilisi_ amet, consectetur adipiscing elit, morbi tempus **_Posuere_** iaculis sed do morbi urna id lacus laoreet ac ut consequat semper viverra nam libero justo laoreet. Lorem ipsum dolor sit amet.
 
-Ultrices dui enim sed. Turpis phasellus <mark>fermentum egestas</mark> erat imperdiet elementum tempus. Placerat in `diam` vestibulum sed euismod. Pellentesque pulvinar. Magna iaculis eu non lorem sed. pellentesque habitant morbi tristique senectus et.
+Ultrices dui enim sed. Turpis phasellus erat imperdiet elementum tempus. Placerat in `diam` vestibulum sed euismod. Pellentesque pulvinar. Magna iaculis eu non lorem sed. pellentesque habitant morbi tristique senectus et.
+
+Dui enim sed. Turpis phasellus erat imperdiet elementum tempus. Placerat in `diam` vestibulum sed euismod. Pellentesque pulvinar. Magna iaculis eu non lorem sed. pellentesque habitant morbi tristique senectus et.
 
 ## List
 
@@ -52,100 +54,7 @@ Ultrices dui enim sed. Turpis phasellus <mark>fermentum egestas</mark> erat impe
 
 Ultrices dui enim sed. Turpis phasellus fermentum egestas erat imperdiet elementum tempus. Placerat in `diam` vestibulum sed euismod. Pellentesque pulvinar. Magna iaculis eu non lorem sed. pellentesque habitant morbi tristique senectus et.
 
-<img
-  src='https://www.adorama.com/alc/wp-content/uploads/2018/11/landscape-photography-tips-yosemite-valley-feature.jpg'
-  class='max-width'
-/>
-
-<div class='caption'>
-  You can create a new file by clicking the New file button in the file explorer. You can also create
-  folders by clicking the New folder button.
-</div>
-
-## This is a table
-
-| Company                    |     Contact     |     Contact     | Country |
-| :------------------------- | :-------------: | :-------------: | ------: |
-| Alfreds Futterkiste        |  Maria Anders   |  Maria Anders   | Germany |
-| Centro comercial Moctezuma | Francisco Chang | Francisco Chang |  Mexico |
-
-<img
-  src='https://www.adorama.com/alc/wp-content/uploads/2018/11/landscape-photography-tips-yosemite-valley-feature.jpg'
-/>
-
-<div class='note red'>
-  You can create a new file by clicking the New file button in the file explorer. You can also create
-  folders by clicking the New folder button.
-</div>
-
-<div class='note blue'>
-  You can create a new file by clicking the New file button in the file explorer. You can also create
-  folders by clicking the New folder button.
-</div>
-
-<div class='note green'>
-  You can create a new file by clicking the New file button in the file explorer. You can also create
-  folders by clicking the New folder button.
-</div>
-
-<div class='note yellow'>
-  You can create a new file by clicking the New file button in the file explorer. You can also create
-  folders by clicking the New folder button.
-</div>
-
-<div class='note default'>
-  You can create a new file by clicking the New file button in the file explorer. You can also create
-  folders by clicking the New folder button.
-</div>
-
-<div class='note quote'>
-  You can create a new file by clicking the New file button in the file explorer. You can also create
-  folders by clicking the New folder button.
-</div>
-
-<div class='slider slider-1x'>
-  <img src='https://static.vecteezy.com/system/resources/thumbnails/010/226/933/small_2x/dramatic-sunset-wildlife-landscape-illustration-free-vector.jpg' alt='' />
-  <img src='https://i1.adis.ws/i/canon/get-inspired-landscape-photography-tips-1-16.9_e7ae10efb78c4526801d6037f80ab177' alt='' />
-  <img src='https://images.pexels.com/photos/1619317/pexels-photo-1619317.jpeg?cs=srgb&dl=pexels-james-wheeler-1619317.jpg&fm=jpg' alt='' />
-  <img src='https://w0.peakpx.com/wallpaper/181/986/HD-wallpaper-sunrise-landscape.jpg' alt='' />
-  <img src='https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?w=2000' alt='' />
-</div>
-
-<div class='slider x2'>
-  <img src='https://static.vecteezy.com/system/resources/thumbnails/010/226/933/small_2x/dramatic-sunset-wildlife-landscape-illustration-free-vector.jpg' alt='' />
-  <img src='https://i1.adis.ws/i/canon/get-inspired-landscape-photography-tips-1-16.9_e7ae10efb78c4526801d6037f80ab177' alt='' />
-  <img src='https://images.pexels.com/photos/1619317/pexels-photo-1619317.jpeg?cs=srgb&dl=pexels-james-wheeler-1619317.jpg&fm=jpg' alt='' />
-  <img src='https://w0.peakpx.com/wallpaper/181/986/HD-wallpaper-sunrise-landscape.jpg' alt='' />
-  <img src='https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?w=2000' alt='' />
-</div>
-
-<div class='slider x3'>
-  <img src='https://static.vecteezy.com/system/resources/thumbnails/010/226/933/small_2x/dramatic-sunset-wildlife-landscape-illustration-free-vector.jpg' alt='' />
-  <img src='https://i1.adis.ws/i/canon/get-inspired-landscape-photography-tips-1-16.9_e7ae10efb78c4526801d6037f80ab177' alt='' />
-  <img src='https://images.pexels.com/photos/1619317/pexels-photo-1619317.jpeg?cs=srgb&dl=pexels-james-wheeler-1619317.jpg&fm=jpg' alt='' />
-  <img src='https://w0.peakpx.com/wallpaper/181/986/HD-wallpaper-sunrise-landscape.jpg' alt='' />
-  <img src='https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?w=2000' alt='' />
-</div>
-
 <p>
   You can create a new file by <code>clicking</code> the New file button in the file explorer. You can also
   create folders by clicking the New folder button.
 </p>
-
-```jsx
-<div>
-  <h1>Typography by MumpUI</h1>
-
-  <p>
-    <b>MumpUI</b> comes with typographical styling which help in rendering beautiful content on your website.
-  </p>
-
-  <h2>Inline styling</h2>
-
-  <p>
-    This paragraph is an example of how inline styling in <b>MumpUI</b> works.
-  </p>
-</div>
-```
-
-<div class='break'>*****</div>

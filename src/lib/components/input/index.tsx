@@ -17,13 +17,13 @@ export default function Main({
   onPrefixClick,
   suffix,
   onSuffixClick,
-  className,
-  style,
+  className = '',
+  style = {},
   onValue,
   onChange,
   ...props
 }: props) {
-  className = 'mp-input ' + (className || '')
+  className = 'mp-input ' + className
   style = Object.assign({}, style)
 
   if (status) style.borderColor = 'var(--mp-c-' + status + ')'
@@ -34,12 +34,13 @@ export default function Main({
   }
 
   if (props.type === 'color') {
-    delete props.type
+    const propsExceptType: any = {}
+    Object.entries(props).forEach(([key, value]) => (key === 'type' ? null : (propsExceptType[key] = value)))
 
     return (
       <div className={className} style={style}>
-        <input type='color' style={{ width: '4rem' }} {...props} onChange={_onChange} />
-        <input type='text' onChange={_onChange} {...props} />
+        <input style={{ width: '4rem' }} {...props} onChange={_onChange} />
+        <input type='text' onChange={_onChange} {...propsExceptType} />
       </div>
     )
   }

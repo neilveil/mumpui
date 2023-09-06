@@ -1,0 +1,53 @@
+.content-page {
+  width: 100%;
+  max-width: 1024px;
+  margin: auto;
+
+  h1,
+  h2,
+  h3 {
+    margin-top: 1rem;
+    font-weight: var(--mp-fw-bold);
+    margin: 1.5rem 0;
+    padding: 0 1rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin-top: 1rem;
+    border-bottom: 1px solid var(--mp-c-stroke);
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    padding: 1rem;
+  }
+
+  a,
+  a:visited,
+  a:hover,
+  a:active {
+    color: var(--mp-c-link);
+    text-decoration: none;
+  }
+
+  pre {
+    padding: 1rem;
+
+    code {
+      padding: 0.5rem 1rem;
+      background-color: var(--mp-c-hover);
+      user-select: all;
+      font-size: 0.9rem;
+    }
+  }
+}

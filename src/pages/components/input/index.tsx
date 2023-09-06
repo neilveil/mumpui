@@ -1,93 +1,21 @@
 import { Docs } from 'components'
 import { Field, Fields, Input } from 'lib'
 import { useState } from 'react'
+import * as snippets from './snippets'
 
 export default function Main() {
   const [input, setInput] = useState('')
   const [inputType, setInputType] = useState('password')
-  const [color, setColor] = useState('#000000')
 
   return (
     <Docs type='Component' name='Input'>
-      <Docs.Showcase
-        code={`
-const [input, setInput] = useState('')
-
-..
-
-<Input
-  value={input}
-  onChange={e => setInput(e.target.value)}
-  placeholder='Type something..'
-/>
-
-// or
-
-<Input
-  value={input}
-  onValue={value => setInput(value)} // Added prop for simplicity
-  placeholder='Type something..'
-/>
-`}
-      >
+      <Docs.Showcase code={snippets.main}>
         <div className='flex-center'>
           <Input value={input} onChange={e => setInput(e.target.value)} placeholder='Type something..' />
         </div>
       </Docs.Showcase>
 
-      <Docs.Showcase
-        info={<span>Field types</span>}
-        code={`
-<Fields>
-  <Field label='Text'>
-    <Input type='text' placeholder='Enter mobile..' />
-  </Field>
-
-  <Field label='Mobile'>
-    <Input type='tel' placeholder='Enter mobile..' />
-  </Field>
-</Fields>
-
-<Fields>
-  <Field label='Email'>
-    <Input type='email' placeholder='Enter email..' />
-  </Field>
-  <Field label='URL'>
-    <Input type='url' placeholder='Enter url..' />
-  </Field>
-</Fields>
-
-<Fields>
-  <Field label='Number'>
-    <Input type='number' placeholder='Enter number..' />
-  </Field>
-
-  <Field label='Password'>
-    <Input type='password' placeholder='Enter password..' />
-  </Field>
-</Fields>
-
-<Fields>
-  <Field label='Time'>
-    <Input type='time' defaultValue='18:00' placeholder='Enter time..' />
-  </Field>
-
-  <Field label='Date'>
-    <Input type='date' defaultValue='2020-01-01' placeholder='Enter month..' />
-  </Field>
-</Fields>
-
-<Fields>
-  <Field label='Month'>
-    <Input type='month' defaultValue='2020-01' placeholder='Enter month..' />
-  </Field>
-
-  <Field label='Color'>
-    <Input type='color' placeholder='Select color..' value={color} onValue={value => setColor(value)} />
-  </Field>
-</Fields>
-`}
-      >
+      <Docs.Showcase title={<span>Different input type fields</span>} code={snippets.main}>
         <Fields>
           <Field label='Text'>
             <Input type='text' placeholder='Enter mobile..' />
@@ -116,39 +44,15 @@ const [input, setInput] = useState('')
             <Input type='password' placeholder='Enter password..' />
           </Field>
         </Fields>
-
-        <Fields>
-          <Field label='Time'>
-            <Input type='time' defaultValue='18:00' placeholder='Enter time..' />
-          </Field>
-
-          <Field label='Date'>
-            <Input type='date' defaultValue='2020-01-01' placeholder='Enter month..' />
-          </Field>
-        </Fields>
-
-        <Fields>
-          <Field label='Month'>
-            <Input type='month' defaultValue='2020-01' placeholder='Enter month..' />
-          </Field>
-
-          <Field label='Color'>
-            <Input type='color' placeholder='Select color..' value={color} onValue={value => setColor(value)} />
-          </Field>
-        </Fields>
       </Docs.Showcase>
 
-      <p>
+      <Docs.Info>
         Setting the type of input field helps in automatically setting the dedicated keyboard suitable for that type of
         field in mobile devices.
-      </p>
-
-      <p>
-        <b>Note:</b> Input prefix & suffix doesn&apos;t work with color type input field.
-      </p>
+      </Docs.Info>
 
       <Docs.Showcase
-        info={<span>Prefix & Suffix</span>}
+        title='Prefix & suffix'
         code={`
 const [inputType, setInputType] = useState('password')
 

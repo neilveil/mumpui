@@ -11,16 +11,11 @@
     padding: 1rem;
   }
 
-  p {
-    padding: 0 1rem;
-    color: var(--mp-c-font);
-  }
-
-  .info,
-  p {
+  .info {
     font-size: 0.8rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-bottom: 2rem;
+    color: var(--mp-c-font-light);
 
     a {
       color: var(--mp-c-link);
@@ -32,34 +27,43 @@
   border-bottom: var(--mp-border-solid);
   margin-bottom: 2rem;
 
-  .back {
-    color: var(--mp-c-font-dark);
-
-    cursor: pointer;
-    font-size: 0.8rem;
-    user-select: nono;
-    font-weight: var(--fw-regular);
-    display: inline-flex;
+  .row {
+    display: flex;
     align-items: center;
-    margin-bottom: 0.5rem;
+    gap: 1rem;
 
-    span {
-      margin-right: 0.5rem;
+    .icon {
+      display: flex;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--mp-c-font);
+      cursor: pointer;
+
+      &:hover {
+        color: var(--mp-c-font-dark);
+      }
     }
   }
 
   .title {
     font-size: 1.5rem;
     font-weight: var(--mp-fw-bold);
-    cursor: pointer;
     padding-bottom: 1rem;
+    margin-top: 1rem;
+    color: var(--mp-c-font-dark);
   }
 }
 
 .showcase {
+  .showcaseTitle {
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+  }
+
   .element {
     border: var(--mp-border-solid);
     padding: 1rem;
+    margin-bottom: 2rem;
   }
 
   .switch {

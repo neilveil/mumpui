@@ -19,6 +19,10 @@ export default function Main() {
         </div>
       </Docs.Showcase>
 
+      <Docs.Info>
+        <b>Note:</b> Input prefix & suffix doesn&apos;t work with color type input field.
+      </Docs.Info>
+
       <Docs.Props
         title='Input'
         fields={[

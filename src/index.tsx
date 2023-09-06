@@ -4,7 +4,6 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements, u
 import pages from './pages'
 import Bootstrap from './bootstrap'
 
-import './lib/styles/index.scss'
 import './styles/index.scss'
 
 function Redirect() {

@@ -52,7 +52,16 @@ export default class Main extends React.Component {
   render = () => {
     return (
       <div className={s.main}>
-        <div id='content' className='mp-container'></div>
+        <div className='content-page'>
+          <p>Welcome to MumpUI, where creativity meets simplicity in the world of ReactJS development! 🌟</p>
+
+          <p style={{ fontSize: '.9rem' }}>This is 90% font size</p>
+          <p style={{ fontSize: '.8rem' }}>This is 80% font size</p>
+          <p style={{ fontSize: '.7rem' }}>This is 70% font size</p>
+          <p style={{ fontSize: '.6rem' }}>This is 60% font size</p>
+          <p style={{ fontSize: '.5rem' }}>This is 50% font size</p>
+        </div>
+        <div id='content' className='content-page'></div>
       </div>
     )
   }

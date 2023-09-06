@@ -1,9 +1,9 @@
-@import '../lib/fonts/roboto.scss';
-@import '../lib/fonts/mono.scss';
-@import '../lib/fonts/icons.scss';
+@import '../lib/styles/fonts/roboto.scss';
+@import '../lib/styles/fonts/mono.scss';
+@import '../lib/styles/fonts/icons.scss';
 
 @import '../lib/styles/index.scss';
-@import '../lib/styles/themes/default.scss';
+@import '../lib/styles/themes.scss';
 
 html {
   scroll-behavior: smooth;
