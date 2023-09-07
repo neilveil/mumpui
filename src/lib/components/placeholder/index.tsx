@@ -5,7 +5,7 @@ type props = React.HTMLAttributes<HTMLDivElement> & {
 }
 
 export default function Main({ children, className, ...props }: props) {
-  className = `mp-placeholder ${className || ''})`
+  className = `mumpui mp-placeholder ${className || ''})`
 
   return (
     <div className={className} {...props}>

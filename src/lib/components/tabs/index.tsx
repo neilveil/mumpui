@@ -8,7 +8,7 @@ type props = React.HTMLAttributes<HTMLDivElement> & {
 }
 
 export default function Main({ className, options = [], active = 0, onClick, ...props }: props) {
-  className = 'mp-tabs ' + (className || '')
+  className = 'mumpui mp-tabs ' + (className || '')
 
   return (
     <div className={className} {...props}>

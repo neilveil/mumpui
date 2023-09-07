@@ -60,7 +60,7 @@ export default class Main extends React.Component {
 
   render = () => {
     return (
-      <div className='mp-message'>
+      <div className='mumpui mp-message'>
         {this.state.messages.slice(-Main.max).map((x, i) => (
           <Message key={i} {...x} />
         ))}

@@ -18,7 +18,7 @@ type props = {
 }
 
 export default function Main({ options, checked, onChange, className, style }: props) {
-  className = 'mp-checkboxes ' + className
+  className = 'mumpui mp-checkboxes ' + className
 
   return (
     <div className={className} style={style}>

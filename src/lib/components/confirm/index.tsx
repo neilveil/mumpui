@@ -45,7 +45,7 @@ export default class Main extends React.Component {
     return this.state.data.map((x, i) => (
       <div
         key={i}
-        className='mp-confirm'
+        className='mumpui mp-confirm'
         onClick={e => {
           e.stopPropagation()
           this.close(x.id)

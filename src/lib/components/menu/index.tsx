@@ -18,7 +18,7 @@ type props = React.HTMLAttributes<HTMLDivElement> & {
 }
 
 export default function Main({ selected, onSelect, items = [], className, access, ...props }: props) {
-  className = 'mp-menu ' + (className || '')
+  className = 'mumpui mp-menu ' + (className || '')
 
   return (
     <div className={className} {...props}>

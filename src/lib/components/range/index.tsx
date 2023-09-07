@@ -3,7 +3,7 @@ import React from 'react'
 type props = React.InputHTMLAttributes<HTMLInputElement>
 
 export default function Main({ className, style, ...props }: props) {
-  className = 'mp-range ' + (className || '')
+  className = 'mumpui mp-range ' + (className || '')
   style = Object.assign({}, style)
 
   return (

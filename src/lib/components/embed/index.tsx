@@ -22,7 +22,7 @@ const Youtube = ({ source, className, style }: Partial<props>) => (
 )
 
 export default function Main({ source, platform, aspectRatio, className, style = {} }: props) {
-  className = 'mp-embed ' + (className || '')
+  className = 'mumpui mp-embed ' + (className || '')
   if (aspectRatio) style = Object.assign({ aspectRatio }, style)
 
   if (platform === 'youtube') return <Youtube {...{ source, className, style }} />

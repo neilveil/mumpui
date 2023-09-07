@@ -7,7 +7,7 @@ type props = React.InputHTMLAttributes<HTMLInputElement> & {
 }
 
 export default function Main({ children, className, style, ...props }: props) {
-  className = 'mp-file ' + (className || '')
+  className = 'mumpui mp-file ' + (className || '')
   style = Object.assign({}, style)
 
   const ref: React.Ref<any> = useRef()

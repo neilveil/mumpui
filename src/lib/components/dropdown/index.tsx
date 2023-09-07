@@ -35,7 +35,7 @@ export default function Main({
 }: props) {
   const [optionsVisible, setOptionsVisible] = useState(false)
 
-  className = 'mp-dropdown ' + (disabled ? 'mp-disabled ' : '') + (className || '')
+  className = 'mumpui mp-dropdown ' + (disabled ? 'mp-disabled ' : '') + (className || '')
   style = Object.assign({}, style)
 
   const ref: React.Ref<any> = useRef(null)

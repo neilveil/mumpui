@@ -13,7 +13,7 @@ export default function Main({ snippet, lang, className, ...props }: props) {
       ref.current.innerHTML = window.Prism.highlight(snippet.trim(), window.Prism.languages[lang], lang)
   }, [lang, snippet])
 
-  className = 'mp-code ' + (className || '')
+  className = 'mumpui mp-code ' + (className || '')
 
   return (
     <div className={className} {...props}>

@@ -28,6 +28,8 @@ Fix textarea component
 
 review all components
 
+check top level class on radio
+
 - disabled field
 - data objects
 - fix type of interface according to comp

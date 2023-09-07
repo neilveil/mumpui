@@ -11,7 +11,7 @@ export default function Main({ className, onSubmit, ...props }: props) {
     [onSubmit]
   )
 
-  className = 'mp-form ' + (className || '')
+  className = 'mumpui mp-form ' + (className || '')
 
   return (
     <form className={className} onSubmit={_onSubmit} {...props}>

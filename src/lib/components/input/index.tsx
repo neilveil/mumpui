@@ -23,7 +23,7 @@ export default function Main({
   onChange,
   ...props
 }: props) {
-  className = 'mp-input ' + className
+  className = 'mumpui mp-input ' + className
   style = Object.assign({}, style)
 
   if (status) style.borderColor = 'var(--mp-c-' + status + ')'

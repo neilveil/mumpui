@@ -15,7 +15,7 @@ type props = React.TableHTMLAttributes<HTMLTableElement> & {
 }
 
 export default function Main({ cols, data, className, ...props }: props) {
-  className = 'mp-table ' + (className || '')
+  className = 'mumpui mp-table ' + (className || '')
 
   return (
     <div className={className} {...props}>

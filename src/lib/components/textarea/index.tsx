@@ -8,7 +8,7 @@ type props = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
 }
 
 export default function Main({ autoRows, status, className, style, ...props }: props) {
-  className = 'mp-textarea ' + (className || '')
+  className = 'mumpui mp-textarea ' + (className || '')
   style = Object.assign({}, style)
 
   if (status) style.borderColor = 'var(--mp-c-' + status + ')'

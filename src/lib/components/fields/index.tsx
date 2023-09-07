@@ -5,7 +5,7 @@ type props = React.HTMLAttributes<HTMLDivElement> & {
 }
 
 export default function Main({ className, ...props }: props) {
-  className = 'mp-fields ' + (className || '')
+  className = 'mumpui mp-fields ' + (className || '')
 
   return <div className={className}>{props.children}</div>
 }

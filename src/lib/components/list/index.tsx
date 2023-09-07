@@ -17,7 +17,7 @@ const wrapInLI: any = (data: data, type: 'ol' | 'ul' = 'ul') => {
 }
 
 export default function Main({ data, type, className, ...props }: props) {
-  className = 'mp-list ' + (className || '')
+  className = 'mumpui mp-list ' + (className || '')
   data = wrapInLI(data, type)
 
   return (

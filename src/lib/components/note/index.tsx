@@ -6,7 +6,7 @@ type props = React.InputHTMLAttributes<HTMLDivElement> & {
 }
 
 export default function Main({ className, type, ...props }: props) {
-  className = `mp-note ${type ? type : ''} ${className || ''})`
+  className = `mumpui mp-note ${type ? type : ''} ${className || ''})`
 
   return (
     <div className={className} {...props}>

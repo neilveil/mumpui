@@ -8,7 +8,7 @@ type props = React.InputHTMLAttributes<HTMLDivElement> & {
 }
 
 export default function Main({ className, label, position = 'top', delay, ...props }: props) {
-  className = 'mp-tooltip ' + (className || '')
+  className = 'mumpui mp-tooltip ' + (className || '')
 
   delay = delay !== undefined ? delay : Main.delay
 

@@ -100,7 +100,7 @@ export default function Main(props: props) {
   )
 
   return (
-    <div className='mp-dashboard'>
+    <div className='mumpui mp-dashboard'>
       <div className='mp-dashboard-sidebar'>{sidebar}</div>
 
       {!!expandable && (

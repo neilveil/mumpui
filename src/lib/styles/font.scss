@@ -10,28 +10,7 @@
   --base-font-size: 16px; // Base font size for font scaling style sheet
 }
 
-.mp-button,
-.mp-chain,
-.mp-checkbox,
-.mp-radio,
-.mp-confirm,
-.mp-dashboard,
-.mp-divider,
-.mp-dropdown,
-.mp-input,
-.mp-textarea,
-.mp-search,
-.mp-label,
-.mp-loader,
-.mp-menu,
-.mp-message,
-.mp-modal,
-.mp-note,
-.mp-pagination,
-.mp-placeholder,
-.mp-table,
-.mp-tabs,
-.mp-tooltip {
+.mumpui {
   font-family: var(--mp-ff);
   line-height: 1.5;
 }

@@ -9,7 +9,7 @@ type props = React.HTMLAttributes<HTMLDivElement> & {
 export default function Main({ children, align = 'center', className, ...props }: props) {
   const isEmpty = children === undefined
 
-  className = `mp-divider ${isEmpty ? 'mp-divider-empty' : ''} ${className || ''}`
+  className = `mumpui mp-divider ${isEmpty ? 'mp-divider-empty' : ''} ${className || ''}`
 
   return (
     <div className={className} {...props}>

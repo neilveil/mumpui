@@ -15,7 +15,7 @@ type props = React.HTMLAttributes<HTMLDivElement> & {
 }
 
 export default function Main({ className, elements = [], seperator = '/', onClick, ...props }: props) {
-  className = 'mp-chain ' + (className || '')
+  className = 'mumpui mp-chain ' + (className || '')
 
   return (
     <div className={className} {...props}>

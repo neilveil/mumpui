@@ -5,7 +5,7 @@ type props = React.InputHTMLAttributes<HTMLInputElement>
 export default function Main({ children, className, style, disabled, onClick, ...props }: props) {
   const [optionsVisible, setOptionsVisible] = useState(false)
 
-  className = 'mp-search ' + (disabled ? 'mp-disabled ' : '') + (className || '')
+  className = 'mumpui mp-search ' + (disabled ? 'mp-disabled ' : '') + (className || '')
   style = Object.assign({}, style)
 
   const ref: any = useRef()

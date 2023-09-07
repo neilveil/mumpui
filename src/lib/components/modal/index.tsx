@@ -7,7 +7,7 @@ type props = React.HTMLAttributes<HTMLDivElement> & {
 }
 
 export default function Main({ children, visible = true, onClose, className, ...props }: props) {
-  className = 'mp-modal ' + (className || '')
+  className = 'mumpui mp-modal ' + (className || '')
 
   return visible ? (
     <div
