@@ -37,7 +37,7 @@ export default {
       const [value, setValue] = useState('')
 
       return (
-        <Textarea value={value} onChange={e => setValue(e.target.value)} placeholder='Type something..' autoRows={2} />
+        <Textarea value={value} onChange={e => setValue(e.target.value)} placeholder='Type something..' autoHeight />
       )
     }
   },

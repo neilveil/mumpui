@@ -12,7 +12,7 @@ export default function Main() {
   return (
     <Docs type='Component' name='Chain'>
       <Docs.Showcase
-        info={<span></span>}
+        title={<span></span>}
         code={`
 <Chain
   elements={[
@@ -27,7 +27,7 @@ export default function Main() {
       </Docs.Showcase>
 
       <Docs.Showcase
-        info={
+        title={
           <span>
             Use chain as <b>Breadcrumb</b> component
           </span>
@@ -51,7 +51,7 @@ export default function Main() {
       </Docs.Showcase>
 
       <Docs.Showcase
-        info={<span>Different seperators</span>}
+        title={<span>Different seperators</span>}
         code={`
 `}
       >

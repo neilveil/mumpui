@@ -8,7 +8,7 @@ export default function Main() {
   return (
     <Docs type='Component' name='Search'>
       <Docs.Showcase
-        info={<span>Customizable search</span>}
+        title={<span>Customizable search</span>}
         code={`
 const [value, setValue] = useState('')
 

@@ -10,7 +10,7 @@ export default function Main() {
   return (
     <Docs type='Component' name='Dropdown'>
       <Docs.Showcase
-        info={<span>Dropdown & Searchable Dropdown</span>}
+        title={<span>Dropdown & Searchable Dropdown</span>}
         code={`
 `}
       >
@@ -37,7 +37,7 @@ export default function Main() {
       </Docs.Showcase>
 
       <Docs.Showcase
-        info={<span>Multi-Select & Searchable Multi-Select</span>}
+        title={<span>Multi-Select & Searchable Multi-Select</span>}
         code={`
 `}
       >
@@ -64,7 +64,7 @@ export default function Main() {
       </Docs.Showcase>
 
       <Docs.Showcase
-        info={<span>Clearable</span>}
+        title={<span>Clearable</span>}
         code={`
 `}
       >
@@ -93,7 +93,7 @@ export default function Main() {
       </Docs.Showcase>
 
       <Docs.Showcase
-        info={<span>Disabled</span>}
+        title={<span>Disabled</span>}
         code={`
 `}
       >

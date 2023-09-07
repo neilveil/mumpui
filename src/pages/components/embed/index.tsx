@@ -5,7 +5,7 @@ export default function Main() {
   return (
     <Docs type='Component' name='Embed'>
       <Docs.Showcase
-        info={<span>Embed youtube</span>}
+        title={<span>Embed youtube</span>}
         code={`
 `}
       >

@@ -6,7 +6,7 @@ export default function Main() {
   return (
     <Docs type='Component' name='Message'>
       <Docs.Showcase
-        info={<span>Success, Info, Warning & Error message</span>}
+        title={<span>Success, Info, Warning & Error message</span>}
         code={`
 <div className='flex-wrap'>
   <Button onClick={() => Message.success('Success message!')}>Success</Button>
@@ -25,7 +25,7 @@ export default function Main() {
       </Docs.Showcase>
 
       <Docs.Showcase
-        info={<span>Loading message</span>}
+        title={<span>Loading message</span>}
         code={`
 <div className='flex-wrap'>
   <Button onClick={() => Message.loading('Loading..')}>Loading</Button>
@@ -46,7 +46,7 @@ export default function Main() {
       </Docs.Showcase>
 
       <Docs.Showcase
-        info={<span>Clear particular message for custom sequence</span>}
+        title={<span>Clear particular message for custom sequence</span>}
         code={`
 <div className='flex-wrap'>
   <Button

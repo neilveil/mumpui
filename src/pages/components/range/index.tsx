@@ -8,7 +8,7 @@ export default function Main() {
   return (
     <Docs type='Component' name='Range'>
       <Docs.Showcase
-        info={<span></span>}
+        title={<span></span>}
         code={`
 const [value, setValue] = useState('0')
 

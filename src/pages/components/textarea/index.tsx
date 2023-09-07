@@ -6,9 +6,9 @@ export default function Main() {
   const [value, setValue] = useState('Hello there,\nHow are you?\nThis is the 3rd row.')
 
   return (
-    <Docs type='Component' name='Textarea'>
+    <Docs name='Textarea'>
       <Docs.Showcase
-        info={<span>Textarea type input field</span>}
+        title={<span>Textarea type input field</span>}
         code={`
 `}
       >
@@ -17,8 +17,8 @@ export default function Main() {
             <Textarea value={value} onChange={e => setValue(e.target.value)} placeholder='Type here..' />
           </Field>
 
-          <Field label='Textarea with 2 auto rows'>
-            <Textarea value={value} onChange={e => setValue(e.target.value)} placeholder='Type here..' autoRows={2} />
+          <Field label='Textarea with auto height'>
+            <Textarea value={value} onChange={e => setValue(e.target.value)} placeholder='Type here..' autoHeight />
           </Field>
         </Fields>
       </Docs.Showcase>
@@ -28,11 +28,10 @@ export default function Main() {
         fields={[
           { name: '..', usage: 'All input element props' },
           {
-            name: 'autoRows',
-            type: 'number',
-            usage: 'Default rows in textarea after which automatically increase the size'
-          },
-          { name: 'status', type: 'string', usage: "'success' | 'error' | 'warning' | 'info'" }
+            name: 'autoHeight',
+            type: 'boolean',
+            usage: 'To automatically increase height with content'
+          }
         ]}
       />
     </Docs>

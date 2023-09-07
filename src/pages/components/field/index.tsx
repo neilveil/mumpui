@@ -5,7 +5,7 @@ export default function Main() {
   return (
     <Docs type='Component' name='Form'>
       <Docs.Showcase
-        info={
+        title={
           <span>
             Form components using <code>Form</code>, <code>Fields</code> & <code>Field</code>
           </span>

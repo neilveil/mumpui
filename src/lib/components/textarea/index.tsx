@@ -1,23 +1,43 @@
-import React from 'react'
+import React, { useCallback, useEffect, useRef } from 'react'
 
 type props = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
   autoRows?: number
-  status?: 'success' | 'error' | 'warning' | 'info'
   className?: string
   style?: React.CSSProperties
+  autoHeight?: boolean
 }
 
-export default function Main({ autoRows, status, className, style, ...props }: props) {
-  className = 'mumpui mp-textarea ' + (className || '')
-  style = Object.assign({}, style)
+export default function Main({ className = '', style = {}, autoHeight, onChange, ...props }: props) {
+  className = 'mumpui mp-textarea ' + className
 
-  if (status) style.borderColor = 'var(--mp-c-' + status + ')'
+  const ref: any = useRef()
 
-  if (autoRows) props.rows = Math.max(autoRows, (props.value || '').toString().split('\n').length)
+  const setHeight = useCallback(
+    (e: any) => (e && autoHeight ? (e.style.height = e.scrollHeight + 'px') : null),
+    [autoHeight]
+  )
+
+  useEffect(() => {
+    setTimeout(() => {
+      setHeight(ref)
+    })
+  }, [setHeight])
+
+  useEffect(() => {
+    setHeight(ref.current)
+  }, [props.value, setHeight])
 
   return (
     <div className={className} style={style}>
-      <textarea {...props} />
+      <textarea
+        ref={ref}
+        onChange={e => {
+          if (!e.target.value) e.target.style.height = ''
+          else setHeight(ref.current)
+          if (onChange) onChange(e)
+        }}
+        {...props}
+      />
     </div>
   )
 }

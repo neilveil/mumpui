@@ -5,7 +5,7 @@ export default function Main() {
   return (
     <Docs type='Component' name='Table'>
       <Docs.Showcase
-        info={<span></span>}
+        title={<span></span>}
         code={`
 `}
       >

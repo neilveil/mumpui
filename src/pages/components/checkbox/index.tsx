@@ -8,7 +8,7 @@ export default function Main() {
   return (
     <Docs type='Component' name='Checkbox'>
       <Docs.Showcase
-        info={<span></span>}
+        title={<span></span>}
         code={`
 <Checkbox checked={value} options={countries} onChange={(value: any) => setValue(value)} />
 `}
@@ -17,7 +17,7 @@ export default function Main() {
       </Docs.Showcase>
 
       <Docs.Showcase
-        info={<span>Evenly distributed</span>}
+        title={<span>Evenly distributed</span>}
         code={`
 <Checkbox
   style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}

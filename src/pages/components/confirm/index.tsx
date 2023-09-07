@@ -5,7 +5,7 @@ export default function Main() {
   return (
     <Docs type='Component' name='Confirm'>
       <Docs.Showcase
-        info={<span>Confirm before taking a critical action</span>}
+        title={<span>Confirm before taking a critical action</span>}
         code={`
 <Button
   onClick={() =>
@@ -38,7 +38,7 @@ export default function Main() {
       </Docs.Showcase>
 
       <Docs.Showcase
-        info={<span>Nested confirm</span>}
+        title={<span>Nested confirm</span>}
         code={`
 <Button
   onClick={() =>

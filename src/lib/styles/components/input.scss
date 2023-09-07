@@ -54,6 +54,7 @@
 }
 
 input:disabled,
+textarea:disabled,
 .mp-disabled {
   background: var(--mp-c-hover) !important;
   &,

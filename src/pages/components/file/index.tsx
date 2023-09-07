@@ -8,7 +8,7 @@ export default function Main() {
   return (
     <Docs type='Component' name='File'>
       <Docs.Showcase
-        info={<span></span>}
+        title={<span></span>}
         code={`
 const [files, setFiles] = useState([])
 

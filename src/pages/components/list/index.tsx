@@ -7,7 +7,7 @@ export default function Main() {
   return (
     <Docs type='Component' name='List'>
       <Docs.Showcase
-        info={<span></span>}
+        title={<span></span>}
         code={`
 `}
       >
@@ -15,7 +15,7 @@ export default function Main() {
       </Docs.Showcase>
 
       <Docs.Showcase
-        info={<span></span>}
+        title={<span></span>}
         code={`
 `}
       >

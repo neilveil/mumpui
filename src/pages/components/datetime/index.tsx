@@ -36,7 +36,7 @@ const [input, setInput] = useState('')
       </Docs.Showcase>
 
       <Docs.Showcase
-        info={<span>Field types</span>}
+        title={<span>Field types</span>}
         code={`
 <Fields>
   <Field label='Text'>
@@ -148,7 +148,7 @@ const [input, setInput] = useState('')
       </p>
 
       <Docs.Showcase
-        info={<span>Prefix & Suffix</span>}
+        title={<span>Prefix & Suffix</span>}
         code={`
 const [inputType, setInputType] = useState('password')
 
@@ -177,7 +177,7 @@ const [inputType, setInputType] = useState('password')
       </Docs.Showcase>
 
       <Docs.Showcase
-        info={<span>Success, Error, Warning & Info</span>}
+        title={<span>Success, Error, Warning & Info</span>}
         code={`
 <Input placeholder='Type here..' status='success' />
 <Input placeholder='Type here..' status='error' />
@@ -194,7 +194,7 @@ const [inputType, setInputType] = useState('password')
       </Docs.Showcase>
 
       <Docs.Showcase
-        info={<span>Use input field styles</span>}
+        title={<span>Use input field styles</span>}
         code={`
 <Fields>
   <div className='mp-input'>
