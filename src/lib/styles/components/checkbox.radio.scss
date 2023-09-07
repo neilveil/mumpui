@@ -53,7 +53,7 @@
       top: 1px;
       width: 6px;
       height: 10px;
-      border: solid var(--mp-c-font);
+      border: solid var(--mp-c-primary);
       border-width: 0 2px 2px 0;
       transform: rotate(45deg);
       animation: mp-check 300ms ease forwards;
@@ -78,7 +78,7 @@
       top: 3px;
       width: 8px;
       height: 8px;
-      background: var(--mp-c-font);
+      background: var(--mp-c-primary);
       border-radius: 50%;
       animation: mp-radio 300ms ease forwards;
     }

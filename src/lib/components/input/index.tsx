@@ -1,7 +1,8 @@
 import React from 'react'
 
-type props = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'prefix'> & {
-  status?: 'success' | 'error' | 'warning' | 'info'
+type element = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'prefix'>
+
+type props = element & {
   prefix?: any
   onPrefixClick?: () => void
   suffix?: any
@@ -12,7 +13,6 @@ type props = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'prefix'> & {
 }
 
 export default function Main({
-  status,
   prefix,
   onPrefixClick,
   suffix,
@@ -25,8 +25,6 @@ export default function Main({
 }: props) {
   className = 'mumpui mp-input ' + className
   style = Object.assign({}, style)
-
-  if (status) style.borderColor = 'var(--mp-c-' + status + ')'
 
   const _onChange = (e: any) => {
     if (onChange) onChange(e)

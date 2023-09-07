@@ -9,13 +9,18 @@ export default function Main() {
 
   return (
     <Docs name='Input field'>
-      <Docs.Showcase code={snippets.main}>
+      <Docs.Showcase code={snippets.s1}>
         <div className='flex-center'>
-          <Input value={input} onChange={e => setInput(e.target.value)} placeholder='Type something..' />
+          <Input
+            value={input}
+            onChange={e => setInput(e.target.value)}
+            placeholder='Type something..'
+            style={{ maxWidth: '15rem', margin: 'auto' }}
+          />
         </div>
       </Docs.Showcase>
 
-      <Docs.Showcase title={<span>Different input type fields</span>} code={snippets.main}>
+      <Docs.Showcase title={<span>Different input type fields</span>} code={snippets.s2}>
         <Fields>
           <Field label='Text'>
             <Input type='text' placeholder='Enter mobile..' />
@@ -30,6 +35,7 @@ export default function Main() {
           <Field label='Email'>
             <Input type='email' placeholder='Enter email..' />
           </Field>
+
           <Field label='URL'>
             <Input type='url' placeholder='Enter url..' />
           </Field>
@@ -47,8 +53,7 @@ export default function Main() {
       </Docs.Showcase>
 
       <Docs.Info>
-        Setting the type of input field helps in automatically setting the dedicated keyboard suitable for that type of
-        field in mobile devices.
+        Setting the input field type auto-selects the right mobile keyboard, improving user experience.
       </Docs.Info>
 
       <Docs.Showcase title='Prefix & suffix' code={``}>
@@ -66,9 +71,9 @@ export default function Main() {
 
       <Docs.Props
         title='Input'
+        type='component'
         fields={[
           { name: '..', usage: 'All input element props' },
-          { name: 'status', type: 'string', usage: '"error" | "info" | "success" | "warning"' },
           { name: 'prefix', type: 'string', usage: '' },
           { name: 'onPrefixClick', type: 'function', usage: '' },
           { name: 'suffix', type: 'string' },
@@ -88,8 +93,8 @@ export default function Main() {
 
       <Docs.Related
         components={[
-          { name: 'Form', link: '/component/form' },
-          { name: 'Dropdown', link: '/component/dropdown' }
+          { name: 'Field', link: '/component/field' },
+          { name: 'Form', link: '/component/form' }
         ]}
       />
     </Docs>

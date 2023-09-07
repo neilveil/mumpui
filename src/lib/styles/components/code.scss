@@ -1,23 +1,19 @@
 .mp-code {
-  overflow: auto;
-  background: #101010;
   margin: 1rem 0;
-
-  *::selection {
-    background: #fff2 !important;
-  }
+  background: var(--mp-c-hover);
 
   pre {
-    overflow: visible;
-    background: #101010;
+    overflow: auto;
+    background: var(--mp-c-hover);
     cursor: text;
     margin: 0;
     padding: 1rem;
 
     code {
-      color: #e8e8e8;
+      background: transparent !important;
+      color: var(--mp-c-font);
       margin: 0;
-      background: transparent;
+      padding: 0;
       user-select: unset;
 
       &,

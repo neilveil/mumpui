@@ -47,7 +47,7 @@
 
   .title {
     font-size: 1.5rem;
-    font-weight: var(--mp-fw-bold);
+    font-weight: var(--fw-bold);
     padding-bottom: 1rem;
     margin-top: 1rem;
     color: var(--mp-c-font-dark);
@@ -62,7 +62,7 @@
 
   .element {
     border: var(--mp-border);
-    padding: 1rem 1.5rem;
+    padding: 1.5rem;
   }
 
   .switch {
@@ -90,8 +90,8 @@
 }
 
 .props {
-  font-size: 1rem;
-  margin-top: 1rem;
+  font-size: 1.25rem;
+  margin-top: 4rem;
   margin-bottom: 1rem;
 }
 
@@ -136,5 +136,6 @@
     margin-top: 1rem;
     font-size: 0.8rem;
     color: var(--c-link);
+    line-height: 2;
   }
 }

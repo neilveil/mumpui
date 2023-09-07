@@ -39,15 +39,4 @@
     color: var(--mp-c-link);
     text-decoration: none;
   }
-
-  pre {
-    padding: 1rem;
-
-    code {
-      padding: 0.5rem 1rem;
-      background-color: var(--mp-c-hover);
-      user-select: all;
-      font-size: 0.9rem;
-    }
-  }
 }

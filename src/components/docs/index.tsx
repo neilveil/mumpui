@@ -1,4 +1,4 @@
-import { Code, Message } from 'lib'
+import { Code, Message, Table } from 'lib'
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Footer from '../footer'
@@ -67,7 +67,17 @@ function Info({
 }
 
 Main.Showcase = Showcase
-function Showcase({ children, title, code }: { children?: any; title?: any; code?: string }) {
+function Showcase({
+  children,
+  title,
+  code,
+  lang = 'jsx'
+}: {
+  children?: any
+  title?: any
+  code?: string
+  lang?: string
+}) {
   const [viewCode, setViewCode] = useState(false)
 
   code = (code || '').trim()
@@ -101,7 +111,7 @@ function Showcase({ children, title, code }: { children?: any; title?: any; code
 
       <div className={s.element}>{children}</div>
 
-      {!!viewCode && <Code snippet={code} lang='jsx' />}
+      {!!viewCode && <Code snippet={code} lang={lang} style={{ margin: 0 }} />}
     </div>
   )
 }
@@ -134,33 +144,15 @@ function Props(props: props) {
         {props.title} {props.type ? typeMap[props.type] : null}
       </div>
 
-      <div className={'mp-table ' + s.table}>
-        <table>
-          <thead>
-            <tr>
-              <th className={s.required}></th>
-              <th className={s.name}>Name</th>
-              <th className={s.type}>Type</th>
-              <th className={s.usage}>Usage</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            {props.fields?.map((x, i) => (
-              <tr key={i}>
-                <td className={s.required}>{x.required ? '*' : ''}</td>
-
-                <td className={s.name}>
-                  <code>{x.name}</code>
-                </td>
-
-                <td className={s.type}>{!!(x.type || x.customType) && <code>{x.type || x.customType}</code>}</td>
-                <td className={s.usage}>{x.usage}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <Table
+        cols={[
+          { key: 'required', render: value => (value ? '*' : '') },
+          { name: 'Name', key: 'name', render: value => (value ? <code>{value}</code> : null) },
+          { name: 'Type', key: 'type', render: value => (value ? <code>{value}</code> : null) },
+          { name: 'Usage', key: 'usage', width: '100%' }
+        ]}
+        data={props.fields || []}
+      />
     </div>
   )
 }

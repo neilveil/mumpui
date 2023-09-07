@@ -21,25 +21,22 @@ config
 file upload
 bacground-color to background
 input datetime icons
+hide esc & / from mobile
 
 ---
 
 Fix textarea component
-
-review all components
-
 check top level class on radio
 
 - disabled field
-- data objects
 - fix type of interface according to comp
-- remove unused imports
 - set required fields & default values
-- add simplified docs, no ts, no arrow functions
-- related components & blogs
-- type or interface, use only one thing in components
+- remove unused imports
 
-hide esc & / from mobile
+- related components & blogs
+- add simplified docs, no ts, no arrow functions
+
+---
 
 prism
 axios
