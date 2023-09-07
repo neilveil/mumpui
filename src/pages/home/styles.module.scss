@@ -70,7 +70,7 @@
 
 .links {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   margin-top: 2rem;
   font-size: 0.8rem;
   color: #ffffff;
@@ -79,6 +79,10 @@
     &:hover {
       opacity: 0.9;
     }
+  }
+
+  span {
+    cursor: pointer;
   }
 }
 

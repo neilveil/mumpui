@@ -87,6 +87,8 @@ export default class Main extends React.Component {
                   ))}
 
                   <SwitchTheme />
+
+                  {/* <span className='icon'>brush</span> */}
                 </div>
               </div>
             </div>
