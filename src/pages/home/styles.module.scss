@@ -34,7 +34,7 @@
 
     img {
       cursor: pointer;
-      width: 8rem;
+      width: 6rem;
       transition: all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
       &:hover {
@@ -44,31 +44,27 @@
   }
 
   .right {
-    .welcome {
-      font-size: 0.8rem;
-    }
-
     .name {
-      font-size: 2rem;
+      font-size: 1.75rem;
       color: #ffffff;
     }
 
     .info {
-      font-size: 0.8rem;
       color: #888888;
       margin-top: 0.5rem;
-    }
-
-    .inspired {
-      color: var(--mp-c-font-light);
       font-size: 0.8rem;
-      margin-top: 1rem;
-
-      span {
-        font-weight: var(--mp-fw-bold);
-        color: #ffffff;
-      }
     }
+
+    // .inspired {
+    //   color: #888888;
+    //   font-size: 0.8rem;
+    //   margin-top: 1rem;
+
+    //   span {
+    //     font-weight: var(--fw-bold);
+    //     color: #ffffff;
+    //   }
+    // }
   }
 }
 
@@ -135,7 +131,7 @@
 
   input {
     outline: none;
-    border: var(--mp-border);
+    border: 2px solid var(--mp-c-border);
     width: 100%;
     color: var(--mp-c-font-dark);
     padding: 0.5rem 1.5rem;
@@ -144,11 +140,7 @@
     background: var(--mp-c-bg);
 
     &::placeholder {
-      color: var(--mp-c-font-light);
-    }
-
-    &:focus {
-      border-color: var(--mp-c-font-light);
+      color: var(--mp-c-placeholder);
     }
   }
 }
@@ -162,6 +154,7 @@
 .groups {
   .title {
     padding: 1rem;
+    margin-top: 1rem;
     margin-bottom: 1rem;
     border-bottom: var(--mp-border);
     cursor: pointer;
@@ -169,18 +162,13 @@
     justify-content: space-between;
     align-items: center;
     color: var(--mp-c-font-dark);
+    font-size: 1.25rem;
 
     .count {
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       color: var(--mp-c-font-light);
       margin-left: 0.5rem;
     }
-  }
-
-  .info {
-    padding: 1rem;
-    color: var(--mp-c-font);
-    font-size: 0.8rem;
   }
 }
 
@@ -195,7 +183,6 @@
   border: var(--mp-border);
   display: flex;
   flex-direction: column;
-  border-color: var(--mp-c-input-border);
   opacity: 0;
   animation: showcase-appear 300ms ease forwards;
   background: var(--mp-c-bg);
@@ -239,8 +226,8 @@
     font-size: 0.7rem;
     padding: 1rem;
     border-top: var(--mp-border);
-    color: var(--mp-c-font);
-    font-weight: var(--mp-fw-bold);
+    color: var(--mp-c-font-light);
+    font-weight: var(--fw-bold);
     cursor: pointer;
     width: 100%;
 
@@ -275,5 +262,11 @@
 
   .showcase {
     width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .logoAndInfo > .left {
+    animation: none !important;
   }
 }

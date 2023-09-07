@@ -97,25 +97,6 @@ MumpUI offers navigation-related components like tabs, menus, pagination, and br
 - Pagination
 - Breadcrumbs
 
-### Styling
-
-MumpUI provides tools for theming and making your application responsive. Learn how to customize the look and feel of your application in the Styling section of the documentation.
-
-- Theme
-- Scaling
-- Responsive
-- Utils
-
-### Helpers
-
-In addition to components, MumpUI offers helper functions and utilities to streamline your development process. Explore the Helpers section in the documentation for a comprehensive list of available helpers.
-
-- Mutils: Tiny collection of commonly used utility functions.
-- Request module: To make API requests.
-- Scroll Back helper: Scroll back to last position on back while navigating through multiple overlays in mobile devices.
-- Storage manager: Properly manage local storage usage.
-- URL Handler: Read & write data in URL, unlike props, this data will persist as it is binded with the URL.
-
 ### Dashboard
 
 MumpUI offers a robust dashboard component, designed to effortlessly handle data management and provide a comprehensive view of CRUD operations. Seamlessly integrated with in-built user role functionalities, it ensures secure access control. The dashboard is fully responsive, guaranteeing a consistent user experience across all devices, and its integration is elegantly straightforward.

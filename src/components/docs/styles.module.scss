@@ -62,8 +62,7 @@
 
   .element {
     border: var(--mp-border);
-    padding: 1rem;
-    margin-bottom: 2rem;
+    padding: 1rem 1.5rem;
   }
 
   .switch {
@@ -129,13 +128,13 @@
 
 .related {
   .title {
-    font-size: 1rem;
-    margin-top: 2rem;
+    font-size: 1.25rem;
+    margin-top: 4rem;
   }
 
   ul {
     margin-top: 1rem;
     font-size: 0.8rem;
-    color: var(--mp-c-link);
+    color: var(--c-link);
   }
 }

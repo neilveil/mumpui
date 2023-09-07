@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+  --mp-ff: Roboto, sans-serif; // Primary font
+
+  --mp-fw-light: 300; // Font weight light
+  --mp-fw-regular: 400; // Font weight regular
+  --mp-fw-bold: 500; // Font weight bold
+
+  --base-font-size: 16px; // Base font size for font scaling style sheet
+}
+
+.mp-button,
+.mp-chain,
+.mp-checkbox,
+.mp-radio,
+.mp-confirm,
+.mp-dashboard,
+.mp-divider,
+.mp-dropdown,
+.mp-input,
+.mp-textarea,
+.mp-search,
+.mp-label,
+.mp-loader,
+.mp-menu,
+.mp-message,
+.mp-modal,
+.mp-note,
+.mp-pagination,
+.mp-placeholder,
+.mp-table,
+.mp-tabs,
+.mp-tooltip {
+  font-family: var(--mp-ff);
+  line-height: 1.5;
+}

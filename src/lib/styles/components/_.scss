@@ -1,9 +1,3 @@
-@mixin center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 @mixin input {
   border: var(--mp-input-border-width) solid var(--mp-c-input-border);
   box-shadow: var(--mp-input-box-shadow);
@@ -45,7 +39,7 @@
 
   input[type='color']::-webkit-color-swatch {
     border-radius: calc(var(--mp-border-radius) / 2);
-    border: var(--mp-border-width) solid var(--mp-border-color);
+    border: var(--mp-border-width) solid var(--mp-c-border);
   }
 
   input[type='color'] {

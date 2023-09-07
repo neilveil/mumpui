@@ -50,8 +50,20 @@ export default function Main(props: main) {
 }
 
 Main.Info = Info
-function Info({ children }: { children?: any }) {
-  return <div className={s.info}>{children}</div>
+function Info({
+  children,
+  style = {},
+  className = ''
+}: {
+  children?: any
+  style?: React.CSSProperties
+  className?: string
+}) {
+  return (
+    <div className={className + ' ' + s.info} style={style}>
+      {children}
+    </div>
+  )
 }
 
 Main.Showcase = Showcase

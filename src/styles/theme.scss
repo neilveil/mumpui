@@ -3,7 +3,17 @@
 @import '../lib/styles/fonts/icons.scss';
 
 @import '../lib/styles/index.scss';
-@import '../lib/styles/themes/default.scss';
+@import '../lib/styles/theme.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+body {
+  font-family: Inter, sans-serif;
+  --fw-bold: 600;
+  --c-link: #1ea6ff;
+}
 
 html {
   scroll-behavior: smooth;
@@ -33,8 +43,4 @@ body[data-theme='dark'] {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--mp-c-font);
-}
-
-.mumpui {
-  --c-link: #1ea6ff;
 }

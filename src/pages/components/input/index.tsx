@@ -8,7 +8,7 @@ export default function Main() {
   const [inputType, setInputType] = useState('password')
 
   return (
-    <Docs type='Component' name='Input'>
+    <Docs name='Input field'>
       <Docs.Showcase code={snippets.main}>
         <div className='flex-center'>
           <Input value={input} onChange={e => setInput(e.target.value)} placeholder='Type something..' />
@@ -51,23 +51,7 @@ export default function Main() {
         field in mobile devices.
       </Docs.Info>
 
-      <Docs.Showcase
-        title='Prefix & suffix'
-        code={`
-const [inputType, setInputType] = useState('password')
-
-..
-
-<Input placeholder='Enter number..' prefix={'91'} />
-
-<Input
-  type={inputType}
-  placeholder='Enter password..'
-  suffix={<span className='icon'>{inputType === 'password' ? 'visibility' : 'visibility_off'}</span>}
-  onSuffixClick={() => setInputType(inputType === 'password' ? 'text' : 'password')}
-/>
-`}
-      >
+      <Docs.Showcase title='Prefix & suffix' code={``}>
         <Fields>
           <Input placeholder='Enter number..' prefix={'91'} />
 
@@ -77,48 +61,6 @@ const [inputType, setInputType] = useState('password')
             suffix={<span className='icon'>{inputType === 'password' ? 'visibility' : 'visibility_off'}</span>}
             onSuffixClick={() => setInputType(inputType === 'password' ? 'text' : 'password')}
           />
-        </Fields>
-      </Docs.Showcase>
-
-      <Docs.Showcase
-        info={<span>Success, Error, Warning & Info</span>}
-        code={`
-<Input placeholder='Type here..' status='success' />
-<Input placeholder='Type here..' status='error' />
-<Input placeholder='Type here..' status='warning' />
-<Input placeholder='Type here..' status='info' />
-`}
-      >
-        <Fields>
-          <Input placeholder='Type here..' status='success' />
-          <Input placeholder='Type here..' status='error' />
-          <Input placeholder='Type here..' status='warning' />
-          <Input placeholder='Type here..' status='info' />
-        </Fields>
-      </Docs.Showcase>
-
-      <Docs.Showcase
-        info={<span>Use input field styles</span>}
-        code={`
-<Fields>
-  <div className='mp-input'>
-    <div className='mp-value'>Hello there!</div>
-  </div>
-
-  <div className='mp-input'>
-    <input placeholder='Type..' />
-  </div>
-</Fields>
-`}
-      >
-        <Fields>
-          <div className='mp-input'>
-            <div className='mp-value'>Hello there!</div>
-          </div>
-
-          <div className='mp-input'>
-            <input placeholder='Type..' />
-          </div>
         </Fields>
       </Docs.Showcase>
 
