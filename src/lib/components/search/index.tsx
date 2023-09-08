@@ -1,12 +1,24 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-type props = React.InputHTMLAttributes<HTMLInputElement>
+type props = Omit<React.InputHTMLAttributes<HTMLDivElement>, 'onChange'> & {
+  onChange?: (value: string) => void
+  closeOnClick?: boolean
+}
 
-export default function Main({ children, className, style, disabled, onClick, ...props }: props) {
+export default function Main({
+  closeOnClick = true,
+  disabled,
+  value = '',
+  onChange,
+  children,
+  className,
+  onClick,
+  placeholder,
+  ...props
+}: props) {
   const [optionsVisible, setOptionsVisible] = useState(false)
 
   className = 'mumpui mp-search ' + (disabled ? 'mp-disabled ' : '') + (className || '')
-  style = Object.assign({}, style)
 
   const ref: any = useRef()
 
@@ -20,16 +32,25 @@ export default function Main({ children, className, style, disabled, onClick, ..
   }, [])
 
   return (
-    <div ref={ref} className={className} style={style}>
+    <div ref={ref} className={className} {...props}>
       <input
+        onChange={e => {
+          if (onChange) onChange(e.target.value)
+        }}
         onClick={e => {
           if (onClick) onClick(e)
-          setOptionsVisible(!optionsVisible)
+          if (!disabled) setOptionsVisible(!optionsVisible)
         }}
-        {...props}
+        value={value}
+        disabled={disabled}
+        placeholder={placeholder}
       />
 
-      {!!optionsVisible && <div className='mp-input-expanded-area'>{children}</div>}
+      {!!optionsVisible && (
+        <div onClick={() => closeOnClick && setOptionsVisible(!optionsVisible)} className='mp-input-expanded-area'>
+          {children}
+        </div>
+      )}
     </div>
   )
 }
