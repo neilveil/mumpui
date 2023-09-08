@@ -1,5 +1,5 @@
 import { Docs } from 'components'
-import { Button, Field, Fields, Form, Input, Message } from 'lib'
+import { Button, Checkbox, Field, Fields, Form, Input, Message } from 'lib'
 import * as snippets from './snippets'
 import related from '../related'
 
@@ -44,6 +44,10 @@ export default function Main() {
               <Input type='number' placeholder='Height..' />
             </Field>
           </Fields>
+
+          <Field label='Status'>
+            <Checkbox label='Active' />
+          </Field>
 
           <Fields style={{ justifyContent: 'flex-end' }}>
             <Button onClick={() => Message.info('Cancel!')}>Cancel</Button>

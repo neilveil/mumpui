@@ -7,7 +7,7 @@
   width: 100%;
 
   .mp-divider-line {
-    border-bottom: var(--mp-border-width) solid var(--mp-c-border);
+    border-bottom: calc(var(--mp-border-width) * 2) solid var(--mp-c-border);
     width: 100vw;
   }
 

@@ -3,6 +3,7 @@ import {
   Button,
   Chain,
   Checkbox,
+  Checkboxes,
   Divider,
   Dropdown,
   Field,
@@ -71,6 +72,34 @@ export default {
       )
     }
   },
+  checkbox: {
+    name: 'Checkbox',
+    docs: '/component/checkbox',
+    tags: [],
+    Component() {
+      const [value, setValue] = useState<string[]>(['india'])
+
+      return (
+        <div>
+          <Checkboxes options={countries.slice(0, 3)} checked={value} onChange={value => setValue(value)} />
+        </div>
+      )
+    }
+  },
+  radio: {
+    name: 'Radio',
+    docs: '/component/radio',
+    tags: [],
+    Component() {
+      const [value, setValue] = useState('india')
+
+      return (
+        <div>
+          <Radio options={countries.slice(0, 3)} checked={value} onChange={(value: any) => setValue(value)} />
+        </div>
+      )
+    }
+  },
   dropdown: {
     name: 'Dropdown',
     docs: '/component/dropdown',
@@ -106,34 +135,6 @@ export default {
             placeholder='Empty'
             clearable
           />
-        </div>
-      )
-    }
-  },
-  checkbox: {
-    name: 'Checkbox',
-    docs: '/component/checkbox',
-    tags: [],
-    Component() {
-      const [value, setValue] = useState([])
-
-      return (
-        <div>
-          <Checkbox options={countries.slice(0, 3)} checked={value} onChange={(value: any) => setValue(value)} />
-        </div>
-      )
-    }
-  },
-  radio: {
-    name: 'Radio',
-    docs: '/component/radio',
-    tags: [],
-    Component() {
-      const [value, setValue] = useState('sweden')
-
-      return (
-        <div>
-          <Radio options={countries.slice(0, 3)} checked={value} onChange={(value: any) => setValue(value)} />
         </div>
       )
     }
@@ -469,6 +470,7 @@ export default {
 }
 
 const countries = [
+  { key: 'india', label: 'India' },
   { key: 'sweden', label: 'Sweden' },
   { key: 'germany', label: 'Germany' },
   { key: 'switzerland', label: 'Switzerland' },

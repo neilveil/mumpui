@@ -8,26 +8,11 @@ export default function Main() {
 
   return (
     <Docs name='Radio'>
-      <Docs.Showcase
-        title={<span></span>}
-        code={`
-<Checkbox checked={value} options={countries} onChange={(value: any) => setValue(value)} />
-`}
-      >
+      <Docs.Showcase title={<span></span>} code={snippets.s1}>
         <Radio checked={value} options={countries} onChange={(value: any) => setValue(value)} />
       </Docs.Showcase>
 
-      <Docs.Showcase
-        title={<span>Evenly distributed</span>}
-        code={`
-<Checkbox
-  style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}
-  checked={value}
-  options={countries}
-  onChange={(value: any) => setValue(value)}
-/>
-`}
-      >
+      <Docs.Showcase title={<span>Evenly distributed</span>} code={snippets.s1}>
         <Radio
           style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}
           checked={value}

@@ -9,19 +9,17 @@ type option = {
   [key: key]: any
 }
 
-type props = {
+type props = React.HTMLAttributes<HTMLDivElement> & {
   options: option[]
   checked: key
   onChange: (keys: key) => void
-  className?: string
-  style?: React.CSSProperties
 }
 
-export default function Main({ options, checked, onChange, className, style }: props) {
+export default function Main({ options, checked, onChange, className = '', style = {}, ...props }: props) {
   className = 'mumpui mp-checkboxes ' + className
 
   return (
-    <div className={'mp-radios ' + className} style={style}>
+    <div className={'mp-radios ' + className} style={style} {...props}>
       {options.map(({ key, label }, i) => (
         <Radio key={i} checked={checked === key} _key={key} label={label} onChange={(key: key) => onChange(key)} />
       ))}

@@ -28,12 +28,13 @@ Fix textarea component
 
 check top level class on radio
 
-- disabled field
-- fix type of interface according to comp
-- set required fields & default values
+- Fix type of interface according to comp
+- Set required fields & default values
+- Showcase on home
+- Disabled field
 
-- related components & blogs
-- add simplified docs, no ts, no arrow functions
+- Add simplified docs, no ts, no arrow functions
+- Related components & blogs
 
 ---
 

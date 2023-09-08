@@ -131,12 +131,6 @@ interface props {
   type?: 'component' | 'function' | 'object'
 }
 
-const typeMap = {
-  component: 'component props',
-  function: 'function arguments',
-  object: 'object keys'
-}
-
 Main.Props = Props
 function Props(props: props) {
   return (
@@ -149,7 +143,12 @@ function Props(props: props) {
         cols={[
           { key: 'required', render: value => (value ? '*' : '') },
           { name: 'Name', key: 'name', render: value => (value ? <code>{value}</code> : null) },
-          { name: 'Type', key: 'type', render: value => (value ? <code>{value}</code> : null) },
+          {
+            name: 'Type',
+            key: 'type',
+            render: (value: any) =>
+              value ? <code style={{ color: typeColorMap[value], backgroundColor: 'transparent' }}>{value}</code> : null
+          },
           {
             name: 'Usage',
             key: 'usage',
@@ -194,4 +193,21 @@ function Related({ components = [] }: related) {
       </ul>
     </div>
   )
+}
+
+const typeMap = {
+  component: 'component props',
+  function: 'function arguments',
+  object: 'object keys'
+}
+
+const typeColorMap: any = {
+  string: '#6a9955',
+  number: '#1976d2',
+  boolean: '#d32f2f',
+  object: '#fbc02d',
+  array: '#f57c00',
+  function: '#1976d2',
+  jsx: '#795548',
+  any: '#9e9e9e'
 }
