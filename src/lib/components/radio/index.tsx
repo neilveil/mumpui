@@ -1,27 +1,24 @@
 import React from 'react'
 
-type key = number | string
-type label = string
-
 type option = {
-  key: key
+  key: string
   label: string
-  [key: key]: any
+  [key: string]: any
 }
 
-type props = React.HTMLAttributes<HTMLDivElement> & {
+type props = Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> & {
   options: option[]
-  checked: key
-  onChange: (keys: key) => void
+  checked: string
+  onChange: (keys: string) => void
 }
 
 export default function Main({ options, checked, onChange, className = '', style = {}, ...props }: props) {
-  className = 'mumpui mp-checkboxes ' + className
+  className = 'mumpui mp-radio ' + className
 
   return (
     <div className={'mp-radios ' + className} style={style} {...props}>
       {options.map(({ key, label }, i) => (
-        <Radio key={i} checked={checked === key} _key={key} label={label} onChange={(key: key) => onChange(key)} />
+        <Radio key={i} checked={checked === key} _key={key} label={label} onChange={key => onChange(key)} />
       ))}
     </div>
   )
@@ -29,9 +26,9 @@ export default function Main({ options, checked, onChange, className = '', style
 
 type radio = {
   checked: boolean
-  _key: key
-  label: label
-  onChange: (key: key) => void
+  _key: string
+  label: string
+  onChange: (key: string) => void
 }
 
 export function Radio(props: radio) {

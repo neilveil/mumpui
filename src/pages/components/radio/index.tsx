@@ -1,66 +1,51 @@
 import { Docs } from 'components'
-import { Radio, Code } from 'lib'
+import { Radio } from 'lib'
 import { useState } from 'react'
 import * as snippets from './snippets'
+import related from '../related'
 
 export default function Main() {
-  const [value, setValue] = useState('sweden')
+  const [value, setValue] = useState('india')
 
   return (
     <Docs name='Radio'>
-      <Docs.Showcase title={<span></span>} code={snippets.s1}>
-        <Radio checked={value} options={countries} onChange={(value: any) => setValue(value)} />
+      <Docs.Showcase code={snippets.s1}>
+        <Radio checked={value} options={countries} onChange={value => setValue(value)} />
       </Docs.Showcase>
 
-      <Docs.Showcase title={<span>Evenly distributed</span>} code={snippets.s1}>
+      <Docs.Showcase title='Evenly distributed' code={snippets.s2}>
         <Radio
           style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}
           checked={value}
           options={countries}
-          onChange={(value: any) => setValue(value)}
+          onChange={value => setValue(value)}
         />
       </Docs.Showcase>
 
       <Docs.Props
         title='Radio'
+        type='component'
         fields={[
-          { required: true, name: 'options', type: 'array' },
-          { required: true, name: 'checked', customType: 'number | string' },
-          { required: true, name: 'onChange', type: 'function' },
-          { name: 'className', type: 'string' },
-          { name: 'style', type: 'object' }
+          { name: 'options', type: 'array', usage: 'Array of objects of key & label' },
+          { name: 'checked', type: 'string', usage: 'Selected option key' },
+          { name: 'onChange', type: 'function' }
         ]}
       />
 
-      <br />
-
-      <Code snippet={schema} lang='jsx'></Code>
+      <Docs.Related components={[related.field, related.input, related.button]} />
     </Docs>
   )
 }
 
-const schema = `
-const options = [
-  { key: 'a', label: 'A' },
-  { key: 'b', label: 'B' },
-  { key: 'c', label: 'C' }
-]
-// Key can be a number | string
-
-const checked = 'a'
-
-// e.g. key => 'a'
-const onChange = (key) => {}
-`
-
 const countries = [
-  { key: 'sweden', label: 'Sweden' },
-  { key: 'germany', label: 'Germany' },
-  { key: 'switzerland', label: 'Switzerland' },
-  { key: 'United kingdom', label: 'United Kingdom' },
-  { key: 'japan', label: 'Japan' },
-  { key: 'United states', label: 'United States' },
   { key: 'canada', label: 'Canada' },
+  { key: 'denmark', label: 'Denmark' },
+  { key: 'germany', label: 'Germany' },
+  { key: 'india', label: 'India' },
+  { key: 'japan', label: 'Japan' },
   { key: 'netherlands', label: 'Netherlands' },
-  { key: 'denmark', label: 'Denmark' }
+  { key: 'sweden', label: 'Sweden' },
+  { key: 'switzerland', label: 'Switzerland' },
+  { key: 'united-kingdom', label: 'United Kingdom' },
+  { key: 'united-states', label: 'United States' }
 ]
