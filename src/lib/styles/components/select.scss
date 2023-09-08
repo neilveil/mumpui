@@ -1,10 +1,16 @@
 @import './_.scss';
 
-.mp-dropdown {
+.mp-select {
   @include input();
 
-  .mp-dropdown-single-select,
-  .mp-dropdown-multi-select {
+  select {
+    @include input();
+    border: none;
+    box-shadow: none;
+  }
+
+  .mp-select-single,
+  .mp-select-multi {
     padding: var(--mp-input-padding);
     border-radius: var(--mp-border-radius);
 
@@ -17,7 +23,7 @@
     }
   }
 
-  .mp-dropdown-multi-select {
+  .mp-select-multi {
     display: flex;
     gap: calc(var(--mp-input-padding-left) / 2);
     flex-wrap: wrap;
@@ -40,13 +46,13 @@
   }
 }
 
-.mp-dropdown-area {
+.mp-select-area {
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: var(--mp-border-width) solid var(--mp-c-border);
 
-  .mp-dropdown-search {
+  .mp-select-search {
     border: none;
     outline: none;
     padding: var(--mp-input-padding);
@@ -59,7 +65,7 @@
     }
   }
 
-  .mp-dropdown-clear {
+  .mp-select-clear {
     cursor: pointer;
     padding: 0 var(--mp-input-padding-left);
     font-size: var(--mp-input-font-size);
@@ -67,7 +73,7 @@
   }
 }
 
-.mp-dropdown-option {
+.mp-select-option {
   padding: 0.5rem 1rem;
   border-bottom: var(--mp-border-width) solid var(--mp-c-border);
 

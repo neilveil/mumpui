@@ -67,9 +67,9 @@ export default class Main extends React.Component {
 
                 <div className={s.name}>MumpUI</div>
                 <div className={s.info}>
-                  A light-weight Flexible & Elegant
+                  A light-weight flexible & elegant
                   <br />
-                  Design System for Developers.
+                  design system for developers.
                 </div>
 
                 {/* <div className={s.inspired}>

@@ -21,6 +21,14 @@ type props = {
   style?: React.CSSProperties
 }
 
+export function Select() {
+  return <div></div>
+}
+
+export function MultiSelect() {
+  return <div></div>
+}
+
 export default function Main({
   value,
   options = [],

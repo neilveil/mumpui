@@ -23,11 +23,11 @@ bacground-color to background
 input datetime icons
 hide esc & / from mobile
 Fix textarea component
+check top level class on radio
 
 ---
 
-check top level class on radio
-
+- Pass ...props at the top
 - Fix type of interface according to comp
 - Set required fields & default values
 - Showcase on home
@@ -35,6 +35,8 @@ check top level class on radio
 
 - Add simplified docs, no ts, no arrow functions
 - Related components & blogs
+
+- pop up shadow
 
 ---
 

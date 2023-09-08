@@ -5,24 +5,27 @@ import * as snippets from './snippets'
 
 export default function Main() {
   const [select, setSelect] = useState(countries[0])
-  const [search, setSearch] = useState('')
   const [multiSelect, setMultiSelect] = useState([countries[0], countries[1]])
+  const [search, setSearch] = useState('')
 
   return (
-    <Docs name='Dropdown'>
-      <Docs.Showcase
-        title={<span>Dropdown & Searchable Dropdown</span>}
-        code={`
-`}
-      >
+    <Docs name='Dropdown & Multi-Select'>
+      <Docs.Showcase title={<span>Dropdown & Searchable Dropdown</span>} code={snippets.s1}>
         <Fields>
           <Field label='Select'>
-            <Dropdown
+            <div className='mp-input'>
+              <select className='mp-input-value'>
+                <option>India</option>
+                <option>Canada</option>
+              </select>
+            </div>
+
+            {/* <Dropdown
               value={select}
               onSelect={(select: any) => setSelect(select)}
               options={countries}
               placeholder='Search..'
-            />
+            /> */}
           </Field>
 
           <Field label='Select with Search'>
@@ -37,11 +40,7 @@ export default function Main() {
         </Fields>
       </Docs.Showcase>
 
-      <Docs.Showcase
-        title={<span>Multi-Select & Searchable Multi-Select</span>}
-        code={`
-`}
-      >
+      <Docs.Showcase title={<span>Multi-Select & Searchable Multi-Select</span>} code={snippets.s1}>
         <Fields>
           <Field label='Select'>
             <Dropdown
@@ -64,11 +63,7 @@ export default function Main() {
         </Fields>
       </Docs.Showcase>
 
-      <Docs.Showcase
-        title={<span>Clearable</span>}
-        code={`
-`}
-      >
+      <Docs.Showcase title={<span>Clearable</span>} code={snippets.s1}>
         <Fields>
           <Field label='Select'>
             <Dropdown
@@ -93,11 +88,7 @@ export default function Main() {
         </Fields>
       </Docs.Showcase>
 
-      <Docs.Showcase
-        title={<span>Disabled</span>}
-        code={`
-`}
-      >
+      <Docs.Showcase title={<span>Disabled</span>} code={snippets.s1}>
         <Fields>
           <Field label='Select'>
             <Dropdown
@@ -153,13 +144,14 @@ const Search = (search: string, options: any, caseSensitive: boolean = false) =>
 }
 
 const countries = [
-  { key: 'sweden', label: 'Sweden' },
-  { key: 'germany', label: 'Germany' },
-  { key: 'switzerland', label: 'Switzerland' },
-  { key: 'United kingdom', label: 'United Kingdom' },
-  { key: 'japan', label: 'Japan' },
-  { key: 'United states', label: 'United States' },
+  { key: 'india', label: 'India' },
   { key: 'canada', label: 'Canada' },
+  { key: 'denmark', label: 'Denmark' },
+  { key: 'germany', label: 'Germany' },
+  { key: 'japan', label: 'Japan' },
   { key: 'netherlands', label: 'Netherlands' },
-  { key: 'denmark', label: 'Denmark' }
+  { key: 'sweden', label: 'Sweden' },
+  { key: 'switzerland', label: 'Switzerland' },
+  { key: 'united-kingdom', label: 'United Kingdom' },
+  { key: 'united-states', label: 'United States' }
 ]

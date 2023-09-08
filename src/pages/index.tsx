@@ -44,6 +44,7 @@ import component_md from './components/md'
 import component_placeholder from './components/placeholder'
 import component_modal from './components/modal'
 import component_list from './components/list'
+import component_select from './components/select'
 
 interface route {
   path: string
@@ -98,7 +99,8 @@ const routes: route[] = [
   { path: '/component/modal', component: component_modal },
   { path: '/component/color', component: component_color },
   { path: '/component/datetime', component: component_datetime },
-  { path: '/component/list', component: component_list }
+  { path: '/component/list', component: component_list },
+  { path: '/component/select', component: component_select }
 ]
 
 export default routes
