@@ -11,9 +11,10 @@ type props = Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> & {
   options?: option[]
   checked?: string[]
   onChange?: (keys: string[]) => void
+  disabled?: boolean
 }
 
-export default function Main({ options = [], checked = [], onChange, className = '', ...props }: props) {
+export default function Main({ options = [], checked = [], onChange, disabled, className = '', ...props }: props) {
   className = 'mumpui mp-checkbox ' + className
 
   return (
@@ -23,7 +24,10 @@ export default function Main({ options = [], checked = [], onChange, className =
           key={i}
           checked={checked.includes(key)}
           label={label}
-          onChange={_checked => !!onChange && onChange(_checked ? checked.concat(key) : checked.filter(x => x !== key))}
+          onChange={_checked =>
+            !!onChange && !disabled && onChange(_checked ? checked.concat(key) : checked.filter(x => x !== key))
+          }
+          disabled={disabled}
         />
       ))}
     </div>

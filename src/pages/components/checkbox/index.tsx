@@ -34,7 +34,8 @@ export default function Main() {
           { name: '..', usage: 'All div element props' },
           { name: 'label', type: 'string' },
           { name: 'checked', type: 'boolean' },
-          { name: 'onChange', type: 'function' }
+          { name: 'onChange', type: 'function' },
+          { name: 'disabled', type: 'boolean' }
         ]}
       />
 
@@ -43,9 +44,10 @@ export default function Main() {
         type='component'
         fields={[
           { name: '..', usage: 'All div element props' },
-          { required: true, name: 'options', type: 'array', usage: 'Array of objects of key & label' },
-          { required: true, name: 'checked', type: 'array', usage: 'Array of selected options keys' },
-          { required: true, name: 'onChange', type: 'function' }
+          { name: 'options', type: 'array', usage: 'Array of objects of key & label' },
+          { name: 'checked', type: 'array', usage: 'Array of selected options keys' },
+          { name: 'onChange', type: 'function' },
+          { name: 'disabled', type: 'boolean' }
         ]}
       />
 

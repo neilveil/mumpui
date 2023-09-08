@@ -28,7 +28,8 @@ export default function Main() {
         fields={[
           { name: 'options', type: 'array', usage: 'Array of objects of key & label' },
           { name: 'checked', type: 'string', usage: 'Selected option key' },
-          { name: 'onChange', type: 'function' }
+          { name: 'onChange', type: 'function' },
+          { name: 'disabled', type: 'boolean' }
         ]}
       />
 
