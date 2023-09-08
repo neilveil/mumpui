@@ -45,6 +45,7 @@ import component_placeholder from './components/placeholder'
 import component_modal from './components/modal'
 import component_list from './components/list'
 import component_select from './components/select'
+import component_multiSelect from './components/multiSelect'
 
 interface route {
   path: string
@@ -100,7 +101,8 @@ const routes: route[] = [
   { path: '/component/color', component: component_color },
   { path: '/component/datetime', component: component_datetime },
   { path: '/component/list', component: component_list },
-  { path: '/component/select', component: component_select }
+  { path: '/component/select', component: component_select },
+  { path: '/component/multiSelect', component: component_multiSelect }
 ]
 
 export default routes

@@ -10,7 +10,7 @@ export default [
       showcases.form,
       showcases.checkbox,
       showcases.radio,
-      showcases.dropdown,
+      showcases.select,
       showcases.multiselect,
       showcases.search,
       showcases.button,

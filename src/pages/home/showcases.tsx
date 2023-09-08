@@ -1,8 +1,7 @@
-import { useState } from 'react'
+import data from 'data'
 import {
   Button,
   Chain,
-  Checkbox,
   Checkboxes,
   Divider,
   Dropdown,
@@ -16,10 +15,12 @@ import {
   Radio,
   Range,
   Search,
+  Select,
   Table,
   Textarea,
   Tooltip
 } from 'lib'
+import { useState } from 'react'
 
 export default {
   input: {
@@ -100,43 +101,24 @@ export default {
       )
     }
   },
-  dropdown: {
-    name: 'Dropdown',
-    docs: '/component/dropdown',
+  select: {
+    name: 'Select',
+    docs: '/component/select',
     tags: [],
     Component() {
-      const [value, setValue] = useState(countries[0])
-      return (
-        <div>
-          <Dropdown options={countries} value={value} onSelect={(country: any) => setValue(country)} />
-        </div>
-      )
+      const [value, setValue] = useState<(typeof data.countries)[0] | undefined>(data.countries[0])
+
+      return <Select options={data.countries} value={value} onSelect={value => setValue(value)} />
     }
   },
   multiselect: {
-    name: 'Dropdown / Multi-Select',
-    docs: '/component/dropdown',
+    name: 'Multi-Select',
+    docs: '/component/multiSelect',
     tags: [],
     Component() {
-      const [value, setValue] = useState([countries[0]])
-      const [search, setSearch] = useState('')
+      const [value, setValue] = useState<typeof data.countries>([data.countries[0]])
 
-      const options = search
-        ? countries.filter(x => x.label.toLocaleLowerCase().includes(search.toLocaleLowerCase()))
-        : countries
-
-      return (
-        <div>
-          <Dropdown
-            options={options}
-            value={value}
-            onSelect={(country: any) => setValue(country)}
-            onSearch={search => setSearch(search)}
-            placeholder='Empty'
-            clearable
-          />
-        </div>
-      )
+      return <Select.Multiple options={data.countries} value={value} onSelect={value => setValue(value)} />
     }
   },
   range: {

@@ -6,19 +6,18 @@ import data from 'data'
 
 export default function Main() {
   const [options, setOptions] = useState(data.countries)
-  const [value, setValue] = useState<(typeof data.countries)[0] | undefined>(data.countries[0])
-  const [valueNative, setValueNative] = useState('India')
+  const [value, setValue] = useState<typeof data.countries>([])
 
   return (
-    <Docs name='Select input field'>
-      <Docs.Showcase title='Select component' code={snippets.s1}>
+    <Docs name='Multi-Select input field'>
+      <Docs.Showcase code={snippets.s1}>
         <Fields>
-          <Field label='Select'>
-            <Select options={data.countries} value={value} onSelect={value => setValue(value)} />
+          <Field label='Multi-Select'>
+            <Select.Multiple options={data.countries} value={value} onSelect={value => setValue(value)} />
           </Field>
 
-          <Field label='Select with search & clear'>
-            <Select
+          <Field label='Multi-Select with search & clear'>
+            <Select.Multiple
               value={value}
               onSelect={value => setValue(value)}
               options={options}
@@ -30,10 +29,10 @@ export default function Main() {
         </Fields>
       </Docs.Showcase>
 
-      <Docs.Showcase title='Select component with search or clear only' code={snippets.s1}>
+      <Docs.Showcase title='Multi-Select component with search or clear only' code={snippets.s1}>
         <Fields>
-          <Field label='Select with search'>
-            <Select
+          <Field label='Multi-Select with search'>
+            <Select.Multiple
               value={value}
               onSelect={value => setValue(value)}
               options={options}
@@ -41,8 +40,8 @@ export default function Main() {
             />
           </Field>
 
-          <Field label='Select with clear'>
-            <Select
+          <Field label='Multi-Select with clear'>
+            <Select.Multiple
               value={value}
               onSelect={value => setValue(value)}
               options={options}
@@ -52,23 +51,6 @@ export default function Main() {
           </Field>
         </Fields>
       </Docs.Showcase>
-
-      <Docs.Showcase title='Native select component' code={snippets.s1}>
-        <Fields>
-          <Field label='Select'>
-            <Select.Native
-              options={data.countries.map(x => x.label)}
-              value={valueNative}
-              onSelect={valueNative => setValueNative(valueNative)}
-              style={{ maxWidth: '15rem' }}
-            />
-          </Field>
-        </Fields>
-      </Docs.Showcase>
-
-      <Docs.Info>
-        Native select component is better for mobile devices as it open a native modal for selection.
-      </Docs.Info>
 
       <Docs.Props
         title='Select'
