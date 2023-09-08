@@ -1,9 +1,10 @@
 import { Docs } from 'components'
 import { Button, Confirm, Message } from 'lib'
+import * as snippets from './snippets'
 
 export default function Main() {
   return (
-    <Docs type='Component' name='Confirm'>
+    <Docs name='Confirm'>
       <Docs.Showcase
         title={<span>Confirm before taking a critical action</span>}
         code={`

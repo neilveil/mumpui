@@ -1,11 +1,12 @@
 import { Docs } from 'components'
 import { List } from 'lib'
+import * as snippets from './snippets'
 
 export default function Main() {
   const data = ['Item 1', 'Item 2', ['Item 3', 'Item 4', ['Item 5', 'Item 6']], 'Item 7', 'Item 8']
 
   return (
-    <Docs type='Component' name='List'>
+    <Docs name='List'>
       <Docs.Showcase
         title={<span></span>}
         code={`

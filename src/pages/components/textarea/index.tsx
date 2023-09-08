@@ -1,18 +1,15 @@
 import { Docs } from 'components'
 import { Field, Fields, Textarea } from 'lib'
 import { useState } from 'react'
+import * as snippets from './snippets'
 
 export default function Main() {
   const [value, setValue] = useState('Hello there,\nHow are you?\nThis is the 3rd row.')
 
   return (
     <Docs name='Textarea'>
-      <Docs.Showcase
-        title={<span>Textarea type input field</span>}
-        code={`
-`}
-      >
-        <Fields>
+      <Docs.Showcase code={snippets.s1}>
+        <Fields className='col-in-mob'>
           <Field label='Textarea'>
             <Textarea value={value} onChange={e => setValue(e.target.value)} placeholder='Type here..' />
           </Field>
@@ -26,7 +23,7 @@ export default function Main() {
       <Docs.Props
         title='Textarea'
         fields={[
-          { name: '..', usage: 'All input element props' },
+          { name: '..', usage: 'All textarea element props' },
           {
             name: 'autoHeight',
             type: 'boolean',

@@ -1,10 +1,11 @@
 import { Docs } from 'components'
 import { Button, Message } from 'lib'
+import * as snippets from './snippets'
 
 let message: symbol
 export default function Main() {
   return (
-    <Docs type='Component' name='Message'>
+    <Docs name='Message'>
       <Docs.Showcase
         title={<span>Success, Info, Warning & Error message</span>}
         code={`

@@ -1,9 +1,10 @@
 import { Docs } from 'components'
 import { Code } from 'lib'
+import * as snippets from './snippets'
 
 export default function Main() {
   return (
-    <Docs type='Component' name='Code'>
+    <Docs name='Code'>
       <p style={{ color: 'var(--mp-c-font-dark)', padding: '2rem 1rem' }}>
         Add code snippets like below with{' '}
         <a href='https://prismjs.com' target='_blank' rel='noreferrer'>

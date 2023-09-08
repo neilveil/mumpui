@@ -121,6 +121,7 @@ type field = {
   type?: 'string' | 'number' | 'boolean' | 'object' | 'array' | 'function' | 'jsx' | 'any'
   customType?: string
   usage?: any
+  defaultValue?: string
   required?: boolean
 }
 
@@ -149,7 +150,19 @@ function Props(props: props) {
           { key: 'required', render: value => (value ? '*' : '') },
           { name: 'Name', key: 'name', render: value => (value ? <code>{value}</code> : null) },
           { name: 'Type', key: 'type', render: value => (value ? <code>{value}</code> : null) },
-          { name: 'Usage', key: 'usage', width: '100%' }
+          {
+            name: 'Usage',
+            key: 'usage',
+            width: '100%',
+            render: (value, x: field) =>
+              x.defaultValue ? (
+                <span>
+                  {value} (Default: <code>{x.defaultValue}</code>)
+                </span>
+              ) : (
+                value
+              )
+          }
         ]}
         data={props.fields || []}
       />

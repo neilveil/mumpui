@@ -1,12 +1,13 @@
 import { Docs } from 'components'
 import { Button, Modal } from 'lib'
 import { useState } from 'react'
+import * as snippets from './snippets'
 
 export default function Main() {
   const [visible, setVisible] = useState(false)
 
   return (
-    <Docs type='Component' name='Modal'>
+    <Docs name='Modal'>
       <Docs.Showcase
         title={<span></span>}
         code={`

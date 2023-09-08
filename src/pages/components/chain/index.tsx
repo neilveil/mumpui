@@ -1,6 +1,7 @@
 import { Docs } from 'components'
 import { Chain } from 'lib'
 import { Link } from 'react-router-dom'
+import * as snippets from './snippets'
 
 export default function Main() {
   const elements = [
@@ -10,7 +11,7 @@ export default function Main() {
   ]
 
   return (
-    <Docs type='Component' name='Chain'>
+    <Docs name='Chain'>
       <Docs.Showcase
         title={<span></span>}
         code={`

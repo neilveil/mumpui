@@ -40,3 +40,13 @@
     text-decoration: none;
   }
 }
+
+.col-in-mob {
+  display: flex;
+  flex-direction: row;
+}
+@media (max-width: 1080px) {
+  .col-in-mob {
+    flex-direction: column;
+  }
+}

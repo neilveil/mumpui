@@ -1,9 +1,10 @@
 import { Docs } from 'components'
 import { Embed } from 'lib'
+import * as snippets from './snippets'
 
 export default function Main() {
   return (
-    <Docs type='Component' name='Embed'>
+    <Docs name='Embed'>
       <Docs.Showcase
         title={<span>Embed youtube</span>}
         code={`

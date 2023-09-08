@@ -1,6 +1,7 @@
 import { Docs } from 'components'
 import { Pagination } from 'lib'
 import { useState } from 'react'
+import * as snippets from './snippets'
 
 export default function Main() {
   const [offset, setOffset] = useState(0)
@@ -8,7 +9,7 @@ export default function Main() {
   const pageSize = 10
 
   return (
-    <Docs type='Component' name='Pagination'>
+    <Docs name='Pagination'>
       <Docs.Showcase
         title={<span></span>}
         code={`

@@ -1,14 +1,10 @@
-import React from 'react'
-
-type element = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'prefix'>
-
-type props = element & {
+type props = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'prefix'> & {
   prefix?: any
   onPrefixClick?: () => void
   suffix?: any
   onSuffixClick?: () => void
-  className?: string
   onValue?: (value: string) => void
+  className?: string
   style?: React.CSSProperties
 }
 

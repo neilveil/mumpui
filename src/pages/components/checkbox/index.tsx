@@ -1,12 +1,13 @@
 import { Docs } from 'components'
 import { Checkbox, Code } from 'lib'
 import { useState } from 'react'
+import * as snippets from './snippets'
 
 export default function Main() {
   const [value, setValue] = useState([])
 
   return (
-    <Docs type='Component' name='Checkbox'>
+    <Docs name='Checkbox'>
       <Docs.Showcase
         title={<span></span>}
         code={`

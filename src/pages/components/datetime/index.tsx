@@ -1,6 +1,7 @@
 import { Docs } from 'components'
 import { Field, Fields, Input } from 'lib'
 import { useState } from 'react'
+import * as snippets from './snippets'
 
 export default function Main() {
   const [input, setInput] = useState('')
@@ -8,7 +9,7 @@ export default function Main() {
   const [color, setColor] = useState('#000000')
 
   return (
-    <Docs type='Component' name='Input'>
+    <Docs name='Input'>
       <Docs.Showcase
         code={`
 const [input, setInput] = useState('')

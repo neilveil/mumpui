@@ -1,9 +1,10 @@
 import { Docs } from 'components'
 import { Note } from 'lib'
+import * as snippets from './snippets'
 
 export default function Main() {
   return (
-    <Docs type='Component' name='Note'>
+    <Docs name='Note'>
       <Docs.Showcase
         title={<span></span>}
         code={`

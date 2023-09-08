@@ -1,12 +1,13 @@
 import { Docs } from 'components'
 import { Radio, Code } from 'lib'
 import { useState } from 'react'
+import * as snippets from './snippets'
 
 export default function Main() {
   const [value, setValue] = useState('sweden')
 
   return (
-    <Docs type='Component' name='Radio'>
+    <Docs name='Radio'>
       <Docs.Showcase
         title={<span></span>}
         code={`

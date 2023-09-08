@@ -22,16 +22,15 @@ file upload
 bacground-color to background
 input datetime icons
 hide esc & / from mobile
+Fix textarea component
 
 ---
 
-Fix textarea component
 check top level class on radio
 
 - disabled field
 - fix type of interface according to comp
 - set required fields & default values
-- remove unused imports
 
 - related components & blogs
 - add simplified docs, no ts, no arrow functions

@@ -1,6 +1,7 @@
 import { Docs } from 'components'
 import { Dropdown, Field, Fields } from 'lib'
 import { useState } from 'react'
+import * as snippets from './snippets'
 
 export default function Main() {
   const [select, setSelect] = useState(countries[0])
@@ -8,7 +9,7 @@ export default function Main() {
   const [multiSelect, setMultiSelect] = useState([countries[0], countries[1]])
 
   return (
-    <Docs type='Component' name='Dropdown'>
+    <Docs name='Dropdown'>
       <Docs.Showcase
         title={<span>Dropdown & Searchable Dropdown</span>}
         code={`

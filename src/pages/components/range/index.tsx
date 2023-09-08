@@ -1,12 +1,13 @@
 import { Docs } from 'components'
 import { Field, Range } from 'lib'
 import { useState } from 'react'
+import * as snippets from './snippets'
 
 export default function Main() {
   const [value, setValue] = useState('0')
 
   return (
-    <Docs type='Component' name='Range'>
+    <Docs name='Range'>
       <Docs.Showcase
         title={<span></span>}
         code={`

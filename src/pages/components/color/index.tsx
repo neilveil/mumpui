@@ -1,12 +1,13 @@
 import { Docs } from 'components'
 import { Field, Input } from 'lib'
 import { useState } from 'react'
+import * as snippets from './snippets'
 
 export default function Main() {
   const [color, setColor] = useState('#000000')
 
   return (
-    <Docs type='Component' name='Input'>
+    <Docs name='Input'>
       <Docs.Showcase
         code={`
 <Input type='color' placeholder='Select color..' value={color} onValue={value => setColor(value)} />

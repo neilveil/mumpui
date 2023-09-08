@@ -1,8 +1,9 @@
 import { Docs } from 'components'
+import * as snippets from './snippets'
 
 export default function Main() {
   return (
-    <Docs type='Component' name='Typography'>
+    <Docs name='Typography'>
       <Docs.Showcase
         title={<span></span>}
         code={`

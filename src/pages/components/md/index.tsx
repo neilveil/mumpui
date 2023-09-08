@@ -1,9 +1,10 @@
 import { Docs } from 'components'
 import { Tooltip } from 'lib'
+import * as snippets from './snippets'
 
 export default function Main() {
   return (
-    <Docs type='Component' name='Tooltip'>
+    <Docs name='Tooltip'>
       <Docs.Showcase
         title={<span></span>}
         code={`

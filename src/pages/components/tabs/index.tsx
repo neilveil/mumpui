@@ -1,12 +1,13 @@
 import { Docs } from 'components'
 import { Tabs } from 'lib'
 import { useState } from 'react'
+import * as snippets from './snippets'
 
 export default function Main() {
   const [active, setActive] = useState(0)
 
   return (
-    <Docs type='Component' name='Tabs'>
+    <Docs name='Tabs'>
       <Docs.Showcase
         title={<span></span>}
         code={`

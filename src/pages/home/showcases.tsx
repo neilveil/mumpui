@@ -41,6 +41,36 @@ export default {
       )
     }
   },
+  field: {
+    name: 'Field',
+    docs: '/component/field',
+    tags: [],
+    Component() {
+      return (
+        <Field label='Name'>
+          <Input placeholder='Enter name..' />
+        </Field>
+      )
+    }
+  },
+  form: {
+    name: 'Form',
+    docs: '/component/form',
+    tags: [],
+    Component() {
+      return (
+        <Form>
+          <Field label='Username'>
+            <Input placeholder='Enter name..' />
+          </Field>
+          <Field label='Passowrd'>
+            <Input placeholder='Enter password..' />
+          </Field>
+          <Button>Submit</Button>
+        </Form>
+      )
+    }
+  },
   dropdown: {
     name: 'Dropdown',
     docs: '/component/dropdown',
@@ -122,38 +152,6 @@ export default {
     tags: [],
     Component() {
       return <File>Upload Image</File>
-    }
-  },
-  field: {
-    name: 'Field',
-    docs: '/component/field',
-    tags: [],
-    Component() {
-      return (
-        <Form>
-          <Field label='Name'>
-            <Input placeholder='Enter name..' />
-          </Field>
-        </Form>
-      )
-    }
-  },
-  form: {
-    name: 'Form',
-    docs: '/component/form',
-    tags: [],
-    Component() {
-      return (
-        <Form>
-          <Field label='Username'>
-            <Input placeholder='Enter name..' />
-          </Field>
-          <Field label='Passowrd'>
-            <Input placeholder='Enter password..' />
-          </Field>
-          <Button>Submit</Button>
-        </Form>
-      )
     }
   },
   divider: {

@@ -1,9 +1,10 @@
 import { Docs } from 'components'
 import { Button, Fields } from 'lib'
+import * as snippets from './snippets'
 
 export default function Main() {
   return (
-    <Docs type='Component' name='Button'>
+    <Docs name='Button'>
       <Docs.Showcase
         title={<span></span>}
         code={`

@@ -10,7 +10,7 @@ export default function Main({ children, type, className, ...props }: props) {
   className = `mumpui mp-button mp-button-${type || 'default'} ${className || ''}`
 
   return (
-    <button className={className} disabled={props.disabled} onClick={props.onClick} {...props}>
+    <button type='button' className={className} disabled={props.disabled} onClick={props.onClick} {...props}>
       {children}
     </button>
   )

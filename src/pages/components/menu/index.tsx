@@ -1,12 +1,13 @@
 import { Docs } from 'components'
 import { Menu } from 'lib'
 import { useState } from 'react'
+import * as snippets from './snippets'
 
 export default function Main() {
   const [selected, setSelected] = useState(0)
 
   return (
-    <Docs type='Component' name='Menu'>
+    <Docs name='Menu'>
       <Docs.Showcase
         title={<span></span>}
         code={`

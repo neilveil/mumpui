@@ -1,12 +1,13 @@
 import { Docs } from 'components'
 import { Search } from 'lib'
 import { useState } from 'react'
+import * as snippets from './snippets'
 
 export default function Main() {
   const [value, setValue] = useState('')
 
   return (
-    <Docs type='Component' name='Search'>
+    <Docs name='Search'>
       <Docs.Showcase
         title={<span>Customizable search</span>}
         code={`

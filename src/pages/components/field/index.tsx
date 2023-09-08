@@ -1,95 +1,90 @@
 import { Docs } from 'components'
-import { Button, Field, Fields, Form, Input } from 'lib'
+import { Field, Fields, Input } from 'lib'
+import * as snippets from './snippets'
+import related from '../related'
 
 export default function Main() {
   return (
-    <Docs type='Component' name='Form'>
-      <Docs.Showcase
-        title={
-          <span>
-            Form components using <code>Form</code>, <code>Fields</code> & <code>Field</code>
-          </span>
-        }
-        code={`
-<Form onSubmit={() => console.log('Submit!')}>
-  <Field label='Name'>
-    <Input placeholder='Enter name..' />
-  </Field>
+    <Docs name='Field & Fields'>
+      <Docs.Showcase title='Field' code={snippets.s1}>
+        <Field label='Name'>
+          <Input placeholder='Enter name..' style={{ maxWidth: '20rem' }} />
+        </Field>
+      </Docs.Showcase>
 
-  <Fields>
-    <Field label='Mobile'>
-      <Input type='tel' placeholder='Enter mobile..' />
-    </Field>
-
-    <Field label='Password'>
-      <Input type='password' placeholder='Enter password..' />
-    </Field>
-  </Fields>
-
-  <Fields>
-    <Field label='Length'>
-      <Input type='number' placeholder='Length..' />
-    </Field>
-    <Field label='Width'>
-      <Input type='number' placeholder='Width..' />
-    </Field>
-    <Field label='Height'>
-      <Input type='number' placeholder='Height..' />
-    </Field>
-  </Fields>
-</Form>
-`}
-      >
-        <Form onSubmit={() => console.log('Submit!')}>
+      <Docs.Showcase title='Fields' code={snippets.s2}>
+        <Fields>
           <Field label='Name'>
             <Input placeholder='Enter name..' />
           </Field>
 
-          <Fields>
-            <Field label='Mobile'>
-              <Input type='tel' placeholder='Enter mobile..' />
-            </Field>
+          <Field label='Location'>
+            <Input placeholder='Enter location..' />
+          </Field>
+        </Fields>
 
-            <Field label='Password'>
-              <Input type='password' placeholder='Enter password..' />
-            </Field>
-          </Fields>
+        <Fields autoCol>
+          <Field label='Phone'>
+            <Input placeholder='Enter phone..' />
+          </Field>
 
-          <Fields>
-            <Field label='Length'>
-              <Input type='number' placeholder='Length..' />
-            </Field>
-            <Field label='Width'>
-              <Input type='number' placeholder='Width..' />
-            </Field>
-            <Field label='Height'>
-              <Input type='number' placeholder='Height..' />
-            </Field>
-          </Fields>
+          <Field label='Mobile'>
+            <Input placeholder='Enter mobile..' />
+          </Field>
 
-          <Fields>
-            <Button>Cancel</Button>
-            <Button type='primary'>Submit</Button>
-          </Fields>
-        </Form>
+          <Field label='Email'>
+            <Input placeholder='Enter email..' />
+          </Field>
+        </Fields>
       </Docs.Showcase>
 
-      <Docs.Props title='Form' fields={[{ name: '..', usage: 'All div element props' }]} />
+      <Docs.Info>
+        <code>autoCol</code> in the second row is set to <code>true</code> which means if rendered in a device with
+        screen width less than or equal to <code>1080px</code> i.e. mobile devices, then the elements inside will be
+        rendered in a column.
+      </Docs.Info>
 
-      <Docs.Props title='Fields' fields={[{ name: '..', usage: 'All div element props' }]} />
-
-      <p>
-        <code>Fields</code> component is used to equally divide the row in multiple input fields with proper gap in
-        between.
-      </p>
+      <Docs.Info>
+        To debug <code>autoCol</code>, do not forget to refresh after opening the developer tools in the browser.
+      </Docs.Info>
 
       <Docs.Props
         title='Field'
+        type='component'
         fields={[
           { name: '..', usage: 'All div element props' },
           { name: 'label', type: 'string' }
         ]}
       />
+
+      <Docs.Props
+        title='Fields'
+        type='component'
+        fields={[
+          { name: '..', usage: 'All div element props' },
+          {
+            name: 'autoCol',
+            type: 'boolean',
+            usage: (
+              <span>
+                To render elements inside in a column if screen width is less than <code>colBreakPoint</code>
+              </span>
+            )
+          },
+          {
+            name: 'colBreakPoint',
+            type: 'number',
+            usage: (
+              <span>
+                To change default break point used in <code>autoCol</code>
+              </span>
+            ),
+            defaultValue: '1080'
+          }
+        ]}
+      />
+
+      <Docs.Related components={[related.form, related.input]} />
     </Docs>
   )
 }

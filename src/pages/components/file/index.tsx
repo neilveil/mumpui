@@ -1,12 +1,13 @@
 import { Docs } from 'components'
 import { Button, File } from 'lib'
 import { useState } from 'react'
+import * as snippets from './snippets'
 
 export default function Main() {
   const [files, setFiles] = useState<any>([])
 
   return (
-    <Docs type='Component' name='File'>
+    <Docs name='File'>
       <Docs.Showcase
         title={<span></span>}
         code={`

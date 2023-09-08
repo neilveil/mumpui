@@ -13,7 +13,11 @@ html {
   scroll-behavior: smooth;
 }
 
-body[data-theme='light'] {
+body {
+  --c-scrollbar-bg: #f8f8f8;
+  --c-scrollbar-thumb: #d8d8d8;
+  --c-scrollbar-thumb-hover: #b8b8b8;
+
   *::selection {
     background: #0002;
   }
@@ -23,6 +27,10 @@ body[data-theme='light'] {
   }
 }
 body[data-theme='dark'] {
+  --c-scrollbar-bg: #181818;
+  --c-scrollbar-thumb: #282828;
+  --c-scrollbar-thumb-hover: #484848;
+
   *::selection {
     background: #fff2;
   }
@@ -52,14 +60,14 @@ code {
   height: 0.4rem;
 }
 ::-webkit-scrollbar-track {
-  background: var(--mp-c-input-border);
+  background: var(--c-scrollbar-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--mp-c-font-light);
+  background: var(--c-scrollbar-thumb);
   border-radius: var(--mp-border-radius);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--mp-c-font);
+  background: var(--c-scrollbar-thumb-hover);
 }
 
 @media (max-width: 1080px) {
