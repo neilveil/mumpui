@@ -1,16 +1,17 @@
 import React from 'react'
 
-type props = Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'type'> & {
+type props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   children?: any
-  type?: 'default' | 'primary' | 'stroke' | 'dashed' | 'danger' | 'text'
+  primary?: boolean
   className?: string
+  disabled?: boolean
 }
 
-export default function Main({ children, type, className, ...props }: props) {
-  className = `mumpui mp-button mp-button-${type || 'default'} ${className || ''}`
+export default function Main({ children, primary, className = '', type = 'button', ...props }: props) {
+  className = `mumpui mp-button mp-button-${primary ? 'primary' : 'default'} ${className}`
 
   return (
-    <button type='button' className={className} disabled={props.disabled} onClick={props.onClick} {...props}>
+    <button {...props} type={type} className={className} disabled={props.disabled} onClick={props.onClick}>
       {children}
     </button>
   )

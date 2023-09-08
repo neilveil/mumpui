@@ -6,6 +6,7 @@ import {
   Divider,
   Dropdown,
   Field,
+  Fields,
   File,
   Form,
   Input,
@@ -121,50 +122,6 @@ export default {
       return <Select.Multi options={data.countries} value={value} onSelect={value => setValue(value)} />
     }
   },
-  range: {
-    name: 'Range',
-    docs: '/component/range',
-    tags: [],
-    Component() {
-      return <Range />
-    }
-  },
-  file: {
-    name: 'File',
-    docs: '/component/file',
-    tags: [],
-    Component() {
-      return <File>Upload Image</File>
-    }
-  },
-  divider: {
-    name: 'Divider',
-    docs: '/component/Button',
-    tags: [],
-    Component() {
-      return (
-        <div>
-          <Divider align='left'>More</Divider>
-          <Divider align='center'>More</Divider>
-          <Divider align='right'>More</Divider>
-        </div>
-      )
-    }
-  },
-  button: {
-    name: 'Button',
-    docs: '/component/Button',
-    tags: [],
-    Component() {
-      return (
-        <div className='flex-start'>
-          <Button type='dashed'>Update</Button>
-          <Button type='danger'>Delete</Button>
-          <Button>Cancel</Button>
-        </div>
-      )
-    }
-  },
   search: {
     name: 'Search',
     docs: '/component/search',
@@ -206,6 +163,50 @@ export default {
             )}
           </div>
         </Search>
+      )
+    }
+  },
+  button: {
+    name: 'Button',
+    docs: '/component/Button',
+    tags: [],
+    Component() {
+      return (
+        <Fields>
+          <Button>Default</Button>
+          <Button primary>Primary</Button>
+          <Button style={{ borderStyle: 'dashed', color: '#f5222d', borderColor: '#f5222d' }}>Delete</Button>
+        </Fields>
+      )
+    }
+  },
+  range: {
+    name: 'Range',
+    docs: '/component/range',
+    tags: [],
+    Component() {
+      return <Range />
+    }
+  },
+  file: {
+    name: 'File',
+    docs: '/component/file',
+    tags: [],
+    Component() {
+      return <File>Upload Image</File>
+    }
+  },
+  divider: {
+    name: 'Divider',
+    docs: '/component/Button',
+    tags: [],
+    Component() {
+      return (
+        <div>
+          <Divider align='left'>More</Divider>
+          <Divider align='center'>More</Divider>
+          <Divider align='right'>More</Divider>
+        </div>
       )
     }
   },
