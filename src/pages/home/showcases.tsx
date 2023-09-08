@@ -118,7 +118,7 @@ export default {
     Component() {
       const [value, setValue] = useState<typeof data.countries>([data.countries[0]])
 
-      return <Select.Multiple options={data.countries} value={value} onSelect={value => setValue(value)} />
+      return <Select.Multi options={data.countries} value={value} onSelect={value => setValue(value)} />
     }
   },
   range: {

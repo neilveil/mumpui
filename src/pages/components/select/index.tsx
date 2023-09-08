@@ -74,15 +74,47 @@ export default function Main() {
         title='Select'
         type='component'
         fields={[
-          { required: true, name: 'value', type: 'string' },
-          { required: true, name: 'options', type: 'array', usage: '' },
-          { required: true, name: 'onSelect', type: 'function', usage: '' },
+          { name: '..', usage: 'All div element props' },
+          { name: 'options', type: 'array', usage: 'Array of option objects containing key & label' },
+          { name: 'value', type: 'object', usage: 'Object of key & label' },
+          { name: 'onSelect', type: 'function', usage: '' },
           { name: 'placeholder', type: 'string' },
-          { name: 'onSearch', type: 'function', usage: '' },
-          { name: 'clearable', type: 'function', usage: '' },
-          { name: 'disabled', type: 'function', usage: '' }
+          { name: 'onSearch', type: 'function', usage: 'Shows search box only if search function is passed' },
+          { name: 'clearable', type: 'boolean', usage: '' },
+          { name: 'disabled', type: 'boolean', usage: '' },
+          { name: 'valueHOC', type: 'function', usage: 'Selected value HOC to customize selected option' },
+          { name: 'optionHOC', type: 'function', usage: 'Option HOC to customize option' }
         ]}
       />
+
+      <Docs.Props
+        title='Select.Native'
+        type='component'
+        fields={[
+          { name: '..', usage: 'All div element props' },
+          { name: 'options', type: 'array', usage: 'Array of options of strings' },
+          { name: 'value', type: 'string', usage: 'Selected option' },
+          { name: 'onSelect', type: 'function' },
+          { name: 'disabled', type: 'boolean' }
+        ]}
+      />
+
+      {/* All the changes belows also need to be done in multi-select docs */}
+
+      <Docs.Props
+        title='Select.search'
+        type='function'
+        fields={[
+          { name: 'search', type: 'string', usage: 'Searched text' },
+          { name: 'options', type: 'array', usage: 'Select input field options' },
+          { name: 'caseSensitive', type: 'boolean' }
+        ]}
+      />
+
+      <Docs.Info>
+        A basic text based <code>Search</code> method is provied with <code>Select</code> component. For calling API or
+        any other functionality, search method need to be implemented.
+      </Docs.Info>
     </Docs>
   )
 }

@@ -13,11 +13,11 @@ export default function Main() {
       <Docs.Showcase code={snippets.s1}>
         <Fields>
           <Field label='Multi-Select'>
-            <Select.Multiple options={data.countries} value={value} onSelect={value => setValue(value)} />
+            <Select.Multi options={data.countries} value={value} onSelect={value => setValue(value)} />
           </Field>
 
           <Field label='Multi-Select with search & clear'>
-            <Select.Multiple
+            <Select.Multi
               value={value}
               onSelect={value => setValue(value)}
               options={options}
@@ -32,7 +32,7 @@ export default function Main() {
       <Docs.Showcase title='Multi-Select component with search or clear only' code={snippets.s1}>
         <Fields>
           <Field label='Multi-Select with search'>
-            <Select.Multiple
+            <Select.Multi
               value={value}
               onSelect={value => setValue(value)}
               options={options}
@@ -41,7 +41,7 @@ export default function Main() {
           </Field>
 
           <Field label='Multi-Select with clear'>
-            <Select.Multiple
+            <Select.Multi
               value={value}
               onSelect={value => setValue(value)}
               options={options}
@@ -56,15 +56,33 @@ export default function Main() {
         title='Select'
         type='component'
         fields={[
-          { required: true, name: 'value', type: 'string' },
-          { required: true, name: 'options', type: 'array', usage: '' },
-          { required: true, name: 'onSelect', type: 'function', usage: '' },
+          { name: '..', usage: 'All div element props' },
+          { name: 'options', type: 'array', usage: 'Array of option objects containing key & label' },
+          { name: 'value', type: 'array', usage: 'Array of option objects containing key & label' },
+          { name: 'onSelect', type: 'function', usage: '' },
           { name: 'placeholder', type: 'string' },
-          { name: 'onSearch', type: 'function', usage: '' },
-          { name: 'clearable', type: 'function', usage: '' },
-          { name: 'disabled', type: 'function', usage: '' }
+          { name: 'onSearch', type: 'function', usage: 'Shows search box only if search function is passed' },
+          { name: 'clearable', type: 'boolean', usage: '' },
+          { name: 'disabled', type: 'boolean', usage: '' }
         ]}
       />
+
+      {/* All the changes belows also need to be done in select docs */}
+
+      <Docs.Props
+        title='Select.search'
+        type='function'
+        fields={[
+          { name: 'search', type: 'string', usage: 'Searched text' },
+          { name: 'options', type: 'array', usage: 'Select input field options' },
+          { name: 'caseSensitive', type: 'boolean' }
+        ]}
+      />
+
+      <Docs.Info>
+        A basic text based <code>Search</code> method is provied with <code>Select</code> component. For calling API or
+        any other functionality, search method need to be implemented.
+      </Docs.Info>
     </Docs>
   )
 }
