@@ -1,14 +1,22 @@
 import React from 'react'
 
-type props = React.InputHTMLAttributes<HTMLInputElement>
+type props = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> & {
+  onValue?: (value: number) => void
+}
 
-export default function Main({ className, style, ...props }: props) {
-  className = 'mumpui mp-range ' + (className || '')
-  style = Object.assign({}, style)
+export default function Main({ onChange, onValue, className = '', style = {}, ...props }: props) {
+  className = 'mumpui mp-range ' + className
 
   return (
     <div className={className} style={style}>
-      <input type='range' {...props} />
+      <input
+        {...props}
+        type='range'
+        onChange={e => {
+          if (onChange) onChange(e)
+          if (onValue) onValue(Number(e.target.value))
+        }}
+      />
     </div>
   )
 }

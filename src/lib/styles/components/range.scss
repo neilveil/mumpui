@@ -8,7 +8,7 @@
     &::-webkit-slider-thumb {
       appearance: none;
       background: var(--mp-c-font-dark);
-      border-radius: 50%;
+      border-radius: var(--mp-border-radius);
       width: 0.75rem;
       height: 0.75rem;
       cursor: pointer;

@@ -4,24 +4,13 @@ import { useState } from 'react'
 import * as snippets from './snippets'
 
 export default function Main() {
-  const [value, setValue] = useState('0')
+  const [value, setValue] = useState(10)
 
   return (
     <Docs name='Range'>
-      <Docs.Showcase
-        title={<span></span>}
-        code={`
-const [value, setValue] = useState('0')
-
-..
-
-<Field label={'Range (' + value + ')'}>
-  <Range type='range' value={value} onChange={e => setValue(e.target.value)} step={5} />
-</Field>
-`}
-      >
+      <Docs.Showcase code={snippets.s1}>
         <Field label={'Range (' + value + ')'}>
-          <Range type='range' value={value} onChange={e => setValue(e.target.value)} step={5} />
+          <Range value={value} onValue={value => setValue(value)} step={5} />
         </Field>
       </Docs.Showcase>
 
