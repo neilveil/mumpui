@@ -3,6 +3,7 @@ import {
   Button,
   Chain,
   Checkboxes,
+  ColorPicker,
   Divider,
   Dropdown,
   Field,
@@ -180,6 +181,39 @@ export default {
       )
     }
   },
+  datetime: {
+    name: 'Date / Time',
+    docs: '/component/datetime',
+    tags: [],
+    Component() {
+      return (
+        <div>
+          <Input type='date' defaultValue='2020-01-01' />
+          <br />
+          <Input type='month' defaultValue='2020-01' />
+          <br />
+          <Input type='time' defaultValue='18:00' />
+        </div>
+      )
+    }
+  },
+  color: {
+    name: 'Color Picker',
+    docs: '/component/colorPicker',
+    tags: [],
+    Component() {
+      const [color, setColor] = useState('#0A94FF')
+
+      return (
+        <ColorPicker
+          placeholder='Select color..'
+          value={color}
+          onValue={value => setColor(value)}
+          style={{ maxWidth: '15rem' }}
+        />
+      )
+    }
+  },
   range: {
     name: 'Range',
     docs: '/component/range',
@@ -208,30 +242,6 @@ export default {
           <Divider align='right'>More</Divider>
         </div>
       )
-    }
-  },
-  datetime: {
-    name: 'Date / Time',
-    docs: '/component/search',
-    tags: [],
-    Component() {
-      return (
-        <div>
-          <Input type='date' defaultValue='01-01-2020' />
-          <br />
-          <Input type='month' defaultValue='01-01-2020' />
-          <br />
-          <Input type='time' defaultValue='18:00' />
-        </div>
-      )
-    }
-  },
-  color: {
-    name: 'Color',
-    docs: '/component/color',
-    tags: [],
-    Component() {
-      return <Input type='color' placeholder='Pick..' />
     }
   },
   list: {

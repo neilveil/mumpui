@@ -27,18 +27,6 @@ export default function Main({
     if (onValue) onValue(e.target.value)
   }
 
-  if (props.type === 'color') {
-    const propsExceptType: any = {}
-    Object.entries(props).forEach(([key, value]) => (key === 'type' ? null : (propsExceptType[key] = value)))
-
-    return (
-      <div className={className} style={style}>
-        <input style={{ width: '4rem' }} {...props} onChange={_onChange} />
-        <input type='text' onChange={_onChange} {...propsExceptType} />
-      </div>
-    )
-  }
-
   return (
     <div className={className} style={style}>
       {prefix && (

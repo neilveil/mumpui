@@ -14,7 +14,7 @@ import dashboard_users_create from './dashboard/users/create'
 import dashboard_users_update from './dashboard/users/update'
 
 import component_input from './components/input'
-import component_color from './components/color'
+import colorPicker from './components/colorPicker'
 import component_datetime from './components/datetime'
 import component_form from './components/form'
 import component_field from './components/field'
@@ -98,7 +98,7 @@ const routes: route[] = [
   { path: '/component/md', component: component_md },
   { path: '/component/placeholder', component: component_placeholder },
   { path: '/component/modal', component: component_modal },
-  { path: '/component/color', component: component_color },
+  { path: '/component/colorPicker', component: colorPicker },
   { path: '/component/datetime', component: component_datetime },
   { path: '/component/list', component: component_list },
   { path: '/component/select', component: component_select },

@@ -2,7 +2,8 @@
 
 .mp-input,
 .mp-textarea,
-.mp-search {
+.mp-search,
+.mp-color-picker {
   @include input();
   display: flex;
   flex-direction: row;
