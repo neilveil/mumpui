@@ -1,28 +1,35 @@
 import React from 'react'
 
 type data = string | data[]
+type type = 'ul' | 'ol'
 
-type props = React.HTMLAttributes<HTMLDivElement> & {
-  data: data
-  type?: 'ol' | 'ul'
-  className?: string
+type props = React.HTMLAttributes<HTMLUListElement> & {
+  data?: data[]
+  type?: 'ul' | 'ol'
 }
 
-const wrapInLI: any = (data: data, type: 'ol' | 'ul' = 'ul') => {
-  if (typeof data === 'string') return <li>{data}</li>
-  else
-    return data.map((x, i) =>
-      type === 'ol' ? <ol key={i}>{wrapInLI(x, type)}</ol> : <ul key={i}>{wrapInLI(x, type)}</ul>
-    )
+function ListMaker({ data = [], type = 'ul', isTop = false }: { data: data[]; type: type; isTop: boolean }) {
+  const list = data.map((x: data, i: number) =>
+    typeof x === 'string' ? <li key={i}>{x}</li> : <ListMaker key={i} data={x} type={type} isTop={false} />
+  )
+
+  if (isTop) return list
+
+  return type === 'ul' ? <ul>{list}</ul> : <ol>{list}</ol>
 }
 
-export default function Main({ data, type, className, ...props }: props) {
-  className = 'mumpui mp-list ' + (className || '')
-  data = wrapInLI(data, type)
+export default function Main({ data = [], type = 'ul', className = '', ...props }: props) {
+  className = `mumpui mp-list ${className}`
 
-  return (
-    <div className={className} {...props}>
-      {data}
-    </div>
+  const list = <ListMaker data={data} type={type} isTop={true} />
+
+  return type === 'ul' ? (
+    <ul className={className} {...props}>
+      {list}
+    </ul>
+  ) : (
+    <ol className={className} {...props}>
+      {list}
+    </ol>
   )
 }

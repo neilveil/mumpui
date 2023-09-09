@@ -136,4 +136,12 @@ for (const name of names) {
   })
 }
 
-export default { countries, firstNames, lastNames, users }
+const list = [
+  'Lorem ipsum',
+  'dolor sit amet',
+  ['consectetur adipiscing', 'sed do eiusmod tempor', ['ut labore et dolore', 'magna aliqua']],
+  'Ut enim ',
+  'ad minim veniam'
+]
+
+export default { countries, firstNames, lastNames, users, list }

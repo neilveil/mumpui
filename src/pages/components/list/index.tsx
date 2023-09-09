@@ -1,35 +1,50 @@
 import { Docs } from 'components'
 import { List } from 'lib'
 import * as snippets from './snippets'
+import data from 'data'
 
 export default function Main() {
-  const data = ['Item 1', 'Item 2', ['Item 3', 'Item 4', ['Item 5', 'Item 6']], 'Item 7', 'Item 8']
-
   return (
     <Docs name='List'>
-      <Docs.Showcase
-        title={<span></span>}
-        code={`
-`}
-      >
-        <List data={data} />
+      <Docs.Showcase title='Unordered list' code={snippets.s1}>
+        <List data={data.list} />
       </Docs.Showcase>
 
-      <Docs.Showcase
-        title={<span></span>}
-        code={`
-`}
-      >
-        <List type='ol' data={data} />
+      <Docs.Showcase title='Ordered list' code={snippets.s2}>
+        <List type='ol' data={data.list} />
       </Docs.Showcase>
 
       <Docs.Props
-        title='Chain'
+        title='List'
         type='component'
         fields={[
-          { name: '..', usage: 'All div element props' },
-          { name: 'elements', type: 'array', usage: 'Array of elements' },
-          { name: 'seperator', customType: 'string|jsx', usage: 'Default "/"' }
+          {
+            name: '..',
+            usage: (
+              <span>
+                All <code>ul</code> & <code>ol</code> element props
+              </span>
+            )
+          },
+          {
+            name: 'data',
+            type: 'array',
+            usage: (
+              <span>
+                Array of <code>string</code> & <code>string[]</code>
+              </span>
+            )
+          },
+          {
+            name: 'type',
+            type: 'string',
+            usage: (
+              <span>
+                <code>ul</code> | <code>ol</code>
+              </span>
+            ),
+            defaultValue: 'ul'
+          }
         ]}
       />
     </Docs>

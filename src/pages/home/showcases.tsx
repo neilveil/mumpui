@@ -271,7 +271,7 @@ export default {
     docs: '/component/list',
     tags: [],
     Component() {
-      return <List data={[]} />
+      return <List style={{ fontSize: '.8rem', paddingLeft: '2rem' }} data={data.list} />
     }
   },
   table: {
