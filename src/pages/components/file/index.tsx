@@ -1,5 +1,5 @@
 import { Docs } from 'components'
-import { Button, File } from 'lib'
+import { Button, Field, File } from 'lib'
 import { useState } from 'react'
 import * as snippets from './snippets'
 
@@ -7,43 +7,23 @@ export default function Main() {
   const [files, setFiles] = useState<any>([])
 
   return (
-    <Docs name='File'>
-      <Docs.Showcase
-        title={<span></span>}
-        code={`
-const [files, setFiles] = useState([])
+    <Docs name='File upload'>
+      <Docs.Showcase title={<span></span>} code={snippets.s1}>
+        <Field label='Upload images'>
+          <File accept='image/jpeg' onChange={(e: any) => setFiles(Array.from(e.target.files))} multiple>
+            <Button>Upload</Button>
+          </File>
+        </Field>
 
-..
-
-<Field label='Upload image'>
-  <File
-    label='Select images'
-    accept='image/jpeg'
-    onChange={(e) => setFiles(Array.from(e.target.files))}
-    multiple
-  />
-</Field>
-
-<div style={{ display: 'flex', gap: '1rem' }}>
-  {files.map((file) => (
-    <div>
-      <img width='100%' src={URL.createObjectURL(file)} alt='' />
-    </div>
-  ))}
-</div>
-`}
-      >
-        <File accept='image/jpeg' onChange={(e: any) => setFiles(Array.from(e.target.files))} multiple>
-          <Button>Upload</Button>
-        </File>
-
-        <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem' }}>
-          {files.map((file: any, i: number) => (
-            <div key={i}>
-              <img width='100%' src={URL.createObjectURL(file)} alt='' />
-            </div>
-          ))}
-        </div>
+        {!!files.length && (
+          <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem' }}>
+            {files.map((file: any, i: number) => (
+              <div key={i}>
+                <img src={URL.createObjectURL(file)} style={{ width: '100%', maxHeight: '10rem' }} />
+              </div>
+            ))}
+          </div>
+        )}
       </Docs.Showcase>
 
       <Docs.Props title='Button' fields={[{ name: '..', usage: 'All input element props' }]} />

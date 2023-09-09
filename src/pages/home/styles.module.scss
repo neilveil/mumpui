@@ -2,6 +2,20 @@
   background: #000000;
   color: #ffffff;
   padding: 4rem 0;
+  position: relative;
+
+  &::before {
+    background-image: url('/texture.jpeg');
+    background-position: center center;
+    content: '';
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.5;
+  }
 
   *::selection {
     background: #fff2 !important;
@@ -11,6 +25,7 @@
     width: 100%;
     max-width: 800px;
     margin: auto;
+    position: inherit;
   }
 }
 

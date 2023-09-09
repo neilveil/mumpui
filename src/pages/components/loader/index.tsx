@@ -15,8 +15,8 @@ export default function Main() {
       </Docs.Showcase>
 
       <Note type='red'>
-        Please note that the above shown component is a loader component itself, it&apos;s not like something is about
-        to load there.
+        Kindly take note that the displayed component itself is a loader, rather than indicating that something is in
+        the process of loading.
       </Note>
     </Docs>
   )

@@ -215,7 +215,7 @@ export default {
     }
   },
   range: {
-    name: 'Range',
+    name: 'Number Range',
     docs: '/component/range',
     tags: [],
     Component() {
@@ -223,11 +223,33 @@ export default {
     }
   },
   file: {
-    name: 'File',
+    name: 'File Upload',
     docs: '/component/file',
     tags: [],
     Component() {
-      return <File>Upload Image</File>
+      const [files, setFiles] = useState<any>([])
+
+      return (
+        <div>
+          <Field label='Upload images'>
+            <File accept='image/jpeg' onChange={(e: any) => setFiles(Array.from(e.target.files))} multiple>
+              <Button>Upload</Button>
+            </File>
+          </Field>
+
+          <div>
+            {!!files.length && (
+              <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem' }}>
+                {files.map((file: any, i: number) => (
+                  <div key={i}>
+                    <img src={URL.createObjectURL(file)} style={{ width: '100%', maxHeight: '10rem' }} />
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )
     }
   },
   divider: {
