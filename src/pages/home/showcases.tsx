@@ -5,7 +5,6 @@ import {
   Checkboxes,
   ColorPicker,
   Divider,
-  Dropdown,
   Field,
   Fields,
   File,
@@ -279,7 +278,7 @@ export default {
     docs: '/component/table',
     tags: [],
     Component() {
-      return <Table data={[]} cols={[]} />
+      return <Table cols={data.table.cols} data={data.table.data.slice(0, 3)} />
     }
   },
   loader: {
@@ -303,7 +302,7 @@ export default {
     docs: '/component/chain',
     tags: [],
     Component() {
-      return <Chain />
+      return <Chain data={['Home', 'Products', 'Price']} />
     }
   },
   tooltip: {
@@ -312,8 +311,8 @@ export default {
     tags: [],
     Component() {
       return (
-        <Tooltip label='Hello div!'>
-          <div>Hello!</div>
+        <Tooltip label='Hello there!' position='right' style={{ maxWidth: '4rem' }}>
+          <div style={{ background: 'var(--mp-c-hover)', padding: '.5rem', textAlign: 'center' }}>Hover</div>
         </Tooltip>
       )
     }

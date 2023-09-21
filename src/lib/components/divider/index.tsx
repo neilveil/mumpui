@@ -6,10 +6,10 @@ type props = React.HTMLAttributes<HTMLDivElement> & {
   className?: string
 }
 
-export default function Main({ children, align = 'center', className, ...props }: props) {
+export default function Main({ children, align = 'center', className = '', ...props }: props) {
   const isEmpty = children === undefined
 
-  className = `mumpui mp-divider ${isEmpty ? 'mp-divider-empty' : ''} ${className || ''}`
+  className = `mumpui mp-divider ${isEmpty ? 'mp-divider-empty' : ''} ${className}`
 
   return (
     <div className={className} {...props}>

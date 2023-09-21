@@ -1,66 +1,41 @@
 import { Docs } from 'components'
 import { Chain } from 'lib'
-import { Link } from 'react-router-dom'
 import * as snippets from './snippets'
+import { Link } from 'react-router-dom'
 
 export default function Main() {
-  const elements = [
-    { key: 0, label: 'Home' },
-    { key: 1, label: 'Products' },
-    { key: 2, label: 'Price' }
-  ]
+  const data = ['Decors', 'Lamps', 'Table Lamp']
 
   return (
     <Docs name='Chain'>
-      <Docs.Showcase
-        title={<span></span>}
-        code={`
-<Chain
-  elements={[
-    { key: 0, label: 'Home' },
-    { key: 1, label: 'Products' },
-    { key: 2, label: 'Price' }
-  ]}
-/>
-`}
-      >
-        <Chain elements={elements} />
+      <Docs.Showcase title={<span></span>} code={snippets.s1}>
+        <Chain data={data} />
       </Docs.Showcase>
 
-      <Docs.Showcase
-        title={
-          <span>
-            Use chain as <b>Breadcrumb</b> component
-          </span>
-        }
-        code={`
-`}
-      >
+      <Docs.Showcase title='Examples' code={snippets.s1}>
+        <Chain data={data} seperator='•' />
         <Chain
-          style={{ color: '#1677ff' }}
-          elements={[
-            {
-              key: 0,
-              label: <Link to='/'>Home</Link>
-            },
-            {
-              key: 1,
-              label: <Link to='/setup'>Setup</Link>
-            }
-          ]}
+          data={data}
+          seperator={
+            <div
+              style={{
+                width: '.25rem',
+                height: '.25rem',
+                backgroundColor: '#888',
+                margin: '0 .25rem',
+                borderRadius: '50%'
+              }}
+            ></div>
+          }
         />
-      </Docs.Showcase>
 
-      <Docs.Showcase
-        title={<span>Different seperators</span>}
-        code={`
-`}
-      >
-        <Chain elements={elements} seperator='•' />
-        <hr />
-        <Chain elements={elements} seperator='◦' />
-        <hr />
-        <Chain elements={elements} seperator='‣' />
+        <Chain
+          data={data.map(x => (
+            <Link key={x} to={x} style={{ color: 'var(--c-link)' }}>
+              {x}
+            </Link>
+          ))}
+        />
       </Docs.Showcase>
 
       <Docs.Props
@@ -68,17 +43,25 @@ export default function Main() {
         type='component'
         fields={[
           { name: '..', usage: 'All div element props' },
-          { name: 'elements', type: 'array', usage: 'Array of elements' },
-          { name: 'seperator', customType: 'string|jsx', usage: 'Default "/"' }
-        ]}
-      />
-
-      <Docs.Props
-        title='Element'
-        type='object'
-        fields={[
-          { name: 'key', customType: 'string|number' },
-          { name: 'label', type: 'string' }
+          {
+            name: 'data',
+            type: 'array',
+            usage: (
+              <span>
+                Array of <code>string</code> or <code>jsx</code>
+              </span>
+            )
+          },
+          {
+            name: 'seperator',
+            type: 'array',
+            usage: (
+              <span>
+                Array of <code>string</code> or <code>jsx</code>
+              </span>
+            ),
+            defaultValue: '/'
+          }
         ]}
       />
     </Docs>

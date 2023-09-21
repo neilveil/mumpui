@@ -10,7 +10,7 @@ function Redirect() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    navigate(pages[0].path)
+    navigate(pages[0].path, { replace: true })
   }, [navigate])
 
   return <></>

@@ -144,4 +144,25 @@ const list = [
   'ad minim veniam'
 ]
 
-export default { countries, firstNames, lastNames, users, list }
+const table: any = {
+  cols: [
+    { name: '#', align: 'center', width: '1rem', render: (value: any, x: any, [row]: any) => row + 1 },
+    { key: 'id', name: 'ID', align: 'center', width: '1rem' },
+    { name: 'Name', align: 'left', width: '100%', render: (value: any, x: any) => x.firstName + ' ' + x.lastName },
+    {
+      key: 'salary',
+      name: 'Salary',
+      align: 'right',
+      render: (value: any) => <span style={{ color: 'green' }}>${value}</span>
+    }
+  ],
+  data: [
+    { id: 24, firstName: 'Saige', lastName: 'Fuentes', salary: 1000 },
+    { id: 25, firstName: 'Bowen', lastName: 'Higgins', salary: 2000 },
+    { id: 31, firstName: 'Leighton', lastName: 'Kramer', salary: 3000 },
+    { id: 46, firstName: 'Kylan', lastName: 'Gentry', salary: 4000 },
+    { id: 57, firstName: 'Amelie', lastName: 'Griffith', salary: 2000 }
+  ]
+}
+
+export default { countries, firstNames, lastNames, users, list, table }

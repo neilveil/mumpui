@@ -1,6 +1,6 @@
 import { Footer, SwitchTheme } from 'components'
 import Fuse from 'fuse.js'
-import { Placeholder } from 'lib'
+import { Loader, Placeholder } from 'lib'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import showcases from './showcases'

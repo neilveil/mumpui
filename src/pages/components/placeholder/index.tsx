@@ -1,19 +1,15 @@
 import { Docs } from 'components'
-import { Divider, Placeholder } from 'lib'
+import { Placeholder } from 'lib'
 import * as snippets from './snippets'
 
 export default function Main() {
   return (
     <Docs name='Placeholder'>
-      <Docs.Showcase
-        title={<span></span>}
-        code={`
-`}
-      >
+      <Docs.Showcase title='Default placeholder' code={snippets.s1}>
         <Placeholder />
+      </Docs.Showcase>
 
-        <Divider />
-
+      <Docs.Showcase title='Custom text' code={snippets.s2}>
         <Placeholder>No data yet!</Placeholder>
       </Docs.Showcase>
     </Docs>

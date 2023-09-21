@@ -34,11 +34,17 @@ check top level class on radio
 - Showcase on home
 - Disabled field
 
+- Docs prop types
+
 - Add simplified docs, no ts, no arrow functions
+
 - Related components & blogs
 
 - pop up shadow
+
 - Remove react
+
+- Full width dashboard
 
 ---
 

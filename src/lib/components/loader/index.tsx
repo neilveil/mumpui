@@ -1,10 +1,11 @@
 import React from 'react'
 
 type props = React.HTMLAttributes<HTMLDivElement> & {
+  empty?: boolean
   className?: string
 }
 
-export default function Main({ children, className, ...props }: props) {
+export default function Main({ empty, children, className = '', ...props }: props) {
   className = `mumpui mp-loader ${className || ''})`
 
   return (
@@ -13,7 +14,7 @@ export default function Main({ children, className, ...props }: props) {
         <circle cx='50' cy='50' r='20'></circle>
       </svg>
 
-      <div className='mp-loader-text'>{children === undefined ? 'Loading..' : children}</div>
+      {!empty && <div className='mp-loader-text'>{children === undefined ? 'Loading..' : children}</div>}
     </div>
   )
 }

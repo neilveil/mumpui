@@ -8,14 +8,14 @@ interface col {
   render?: (value: string, x: object, index: [row: number, col: number]) => void
 }
 
-type props = React.TableHTMLAttributes<HTMLTableElement> & {
+type props = React.HTMLAttributes<HTMLDivElement> & {
   cols: col[]
   data: object[]
   className?: string
 }
 
-export default function Main({ cols, data, className, ...props }: props) {
-  className = 'mumpui mp-table ' + (className || '')
+export default function Main({ cols, data, className = '', ...props }: props) {
+  className = 'mumpui mp-table ' + className
 
   return (
     <div className={className} {...props}>

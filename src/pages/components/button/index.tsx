@@ -28,6 +28,7 @@ export default function Main() {
 
       <Docs.Props
         title='Button'
+        type='component'
         fields={[
           { name: '..', usage: 'All button element props' },
           { name: 'primary', type: 'boolean', usage: 'To set the primary button' }

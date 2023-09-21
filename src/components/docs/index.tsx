@@ -147,7 +147,11 @@ function Props(props: props) {
             name: 'Type',
             key: 'type',
             render: (value: any) =>
-              value ? <code style={{ color: typeColorMap[value], backgroundColor: 'transparent' }}>{value}</code> : null
+              value ? (
+                <code style={{ color: typeColorMap[value], backgroundColor: 'transparent', padding: 0, margin: 0 }}>
+                  {value}
+                </code>
+              ) : null
           },
           {
             name: 'Usage',
