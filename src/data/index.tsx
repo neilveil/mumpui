@@ -165,4 +165,6 @@ const table: any = {
   ]
 }
 
-export default { countries, firstNames, lastNames, users, list, table }
+const chain = ['Decors', 'Lamps', 'Table Lamp']
+
+export default { countries, firstNames, lastNames, users, list, table, chain }

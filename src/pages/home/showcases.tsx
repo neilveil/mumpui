@@ -147,7 +147,7 @@ export default {
                     display: 'inline-block',
                     padding: '1rem',
                     margin: '1rem 1rem 0 0',
-                    backgroundColor: 'var(--mp-c-hover)',
+                    backgroundColor: '#88888818',
                     cursor: 'pointer'
                   }}
                   onClick={() => setValue(x)}
@@ -168,7 +168,7 @@ export default {
   },
   button: {
     name: 'Button',
-    docs: '/component/Button',
+    docs: '/component/button',
     tags: [],
     Component() {
       return (
@@ -253,16 +253,10 @@ export default {
   },
   divider: {
     name: 'Divider',
-    docs: '/component/Button',
+    docs: '/component/divider',
     tags: [],
     Component() {
-      return (
-        <div>
-          <Divider align='left'>More</Divider>
-          <Divider align='center'>More</Divider>
-          <Divider align='right'>More</Divider>
-        </div>
-      )
+      return <Divider align='left'>More</Divider>
     }
   },
   list: {
@@ -312,7 +306,7 @@ export default {
     Component() {
       return (
         <Tooltip label='Hello there!' position='right' style={{ maxWidth: '4rem' }}>
-          <div style={{ background: 'var(--mp-c-hover)', padding: '.5rem', textAlign: 'center' }}>Hover</div>
+          <div style={{ background: '#88888818', padding: '.5rem', textAlign: 'center' }}>Hover</div>
         </Tooltip>
       )
     }

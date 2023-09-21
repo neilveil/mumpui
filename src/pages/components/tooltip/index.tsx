@@ -8,30 +8,31 @@ export default function Main() {
       <Docs.Showcase title={<span></span>} code={snippets.s1}>
         <div style={{ display: 'flex', gap: '1rem' }}>
           <Tooltip label='Left tooltip' position='left'>
-            <div style={{ background: 'var(--mp-c-hover)', padding: '1rem' }}>Left</div>
+            <div style={{ background: '#88888818', padding: '1rem' }}>Left</div>
           </Tooltip>
 
           <Tooltip label='Top tooltip' position='top'>
-            <div style={{ background: 'var(--mp-c-hover)', padding: '1rem' }}>Top</div>
+            <div style={{ background: '#88888818', padding: '1rem' }}>Top</div>
           </Tooltip>
 
           <Tooltip label='Bottom tooltip' position='bottom'>
-            <div style={{ background: 'var(--mp-c-hover)', padding: '1rem' }}>Bottom</div>
+            <div style={{ background: '#88888818', padding: '1rem' }}>Bottom</div>
           </Tooltip>
 
           <Tooltip label='Right tooltip' position='right'>
-            <div style={{ background: 'var(--mp-c-hover)', padding: '1rem' }}>Right</div>
+            <div style={{ background: '#88888818', padding: '1rem' }}>Right</div>
           </Tooltip>
         </div>
       </Docs.Showcase>
 
-      <Docs.Showcase title={<span>Custom delay</span>} code={snippets.s1}>
+      <Docs.Showcase title={<span>Custom delay</span>} code={snippets.s2}>
         <div style={{ display: 'flex', gap: '1rem' }}>
-          <Tooltip label='Left tooltip' position='left' delay={0}>
-            <div style={{ background: 'var(--mp-c-hover)', padding: '1rem' }}>0</div>
+          <Tooltip label='No delay tooltip' delay={0}>
+            <div style={{ background: '#88888818', padding: '1rem' }}>0</div>
           </Tooltip>
-          <Tooltip label='Top tooltip' position='top' delay={2000}>
-            <div style={{ background: 'var(--mp-c-hover)', padding: '1rem' }}>2000</div>
+
+          <Tooltip label='2 seconds wait tooltip' position='top' delay={2000}>
+            <div style={{ background: '#88888818', padding: '1rem' }}>2000</div>
           </Tooltip>
         </div>
       </Docs.Showcase>
@@ -52,7 +53,8 @@ export default function Main() {
                 <code>bottom</code>
                 <code>left</code>
               </span>
-            )
+            ),
+            defaultValue: 'top'
           },
           { name: 'delay', type: 'number', usage: 'Tooltip delay in milliseconds', defaultValue: '300' }
         ]}

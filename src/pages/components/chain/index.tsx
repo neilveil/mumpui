@@ -2,20 +2,20 @@ import { Docs } from 'components'
 import { Chain } from 'lib'
 import * as snippets from './snippets'
 import { Link } from 'react-router-dom'
+import data from 'data'
 
 export default function Main() {
-  const data = ['Decors', 'Lamps', 'Table Lamp']
-
   return (
     <Docs name='Chain'>
-      <Docs.Showcase title={<span></span>} code={snippets.s1}>
-        <Chain data={data} />
+      <Docs.Showcase title='Chain component' code={snippets.s1}>
+        <Chain data={data.chain} />
       </Docs.Showcase>
 
-      <Docs.Showcase title='Examples' code={snippets.s1}>
-        <Chain data={data} seperator='•' />
+      <Docs.Showcase title='Usage examples' code={snippets.s2}>
+        <Chain data={data.chain} seperator='•' />
+
         <Chain
-          data={data}
+          data={data.chain}
           seperator={
             <div
               style={{
@@ -30,7 +30,7 @@ export default function Main() {
         />
 
         <Chain
-          data={data.map(x => (
+          data={data.chain.map(x => (
             <Link key={x} to={x} style={{ color: 'var(--c-link)' }}>
               {x}
             </Link>

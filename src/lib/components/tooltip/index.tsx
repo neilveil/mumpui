@@ -1,10 +1,10 @@
 import React from 'react'
 
-type props = React.InputHTMLAttributes<HTMLDivElement> & {
-  className?: string
+type props = React.HTMLAttributes<HTMLDivElement> & {
   label?: any
   position?: 'top' | 'right' | 'bottom' | 'left'
   delay?: number
+  className?: string
 }
 
 export default function Main({ className = '', label, position = 'top', delay, ...props }: props) {

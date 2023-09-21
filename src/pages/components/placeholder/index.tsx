@@ -12,6 +12,8 @@ export default function Main() {
       <Docs.Showcase title='Custom text' code={snippets.s2}>
         <Placeholder>No data yet!</Placeholder>
       </Docs.Showcase>
+
+      <Docs.Props title='Placeholder' type='component' fields={[{ name: '..', usage: 'All div element props' }]} />
     </Docs>
   )
 }

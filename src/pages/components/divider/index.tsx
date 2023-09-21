@@ -4,23 +4,29 @@ import * as snippets from './snippets'
 
 export default function Main() {
   return (
-    <Docs name='Tooltip'>
-      <Docs.Showcase
-        title={<span></span>}
-        code={`
-`}
-      >
+    <Docs name='Divider'>
+      <Docs.Showcase title={<span></span>} code={snippets.s1}>
         <Divider align='left'>More</Divider>
-        <Divider align='center'>More</Divider>
+        <Divider>More</Divider>
         <Divider align='right'>More</Divider>
       </Docs.Showcase>
 
       <Docs.Props
         title='Tooltip'
-        type='props'
+        type='component'
         fields={[
           { name: '..', usage: 'All div element props' },
-          { name: 'align', type: 'string', usage: 'left | right | center' }
+          {
+            name: 'align',
+            type: 'string',
+            usage: (
+              <span>
+                <code>left</code>
+                <code>right</code>
+                <code>center</code>
+              </span>
+            )
+          }
         ]}
       />
     </Docs>
