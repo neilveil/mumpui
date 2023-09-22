@@ -12,7 +12,7 @@ export default function Main({ children, align = 'center', className = '', ...pr
   className = `mumpui mp-divider ${isEmpty ? 'mp-divider-empty' : ''} ${className}`
 
   return (
-    <div className={className} {...props}>
+    <div {...props} className={className}>
       <div style={align === 'left' ? { width: '10vw' } : {}} className='mp-divider-line'></div>
       {!isEmpty && <div className='mp-divider-text'>{children}</div>}
       <div style={align === 'right' ? { width: '10vw' } : {}} className='mp-divider-line'></div>

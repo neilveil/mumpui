@@ -30,7 +30,7 @@ export default function Main({ pageSize, totalItems, offset, onChange, disabled,
   const pages = Math.ceil(totalItems / pageSize)
 
   return (
-    <div className={className} {...props}>
+    <div {...props} className={className}>
       <div
         className={'mp-pagination-left-arrow ' + (pageNumber <= 1 ? 'mp-pagination-disabled' : '')}
         onClick={() => {

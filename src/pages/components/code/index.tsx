@@ -1,6 +1,6 @@
 import { Docs } from 'components'
 import { Code } from 'lib'
-import * as snippets from './snippets'
+// import * as snippets from './snippets'
 
 export default function Main() {
   return (

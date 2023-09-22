@@ -37,7 +37,7 @@ export default function Main({ className = '', style = {}, autoHeight, onValue, 
 
   return (
     <div className={className} style={style}>
-      <textarea ref={ref} onChange={_onChange} {...props} />
+      <textarea {...props} ref={ref} onChange={_onChange} />
     </div>
   )
 }

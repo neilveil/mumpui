@@ -35,7 +35,7 @@ export default function Main({
         </div>
       )}
 
-      <input onChange={_onChange} {...props} />
+      <input {...props} onChange={_onChange} />
 
       {suffix && (
         <div className='mp-suffix' onClick={onSuffixClick} style={{ cursor: onSuffixClick ? 'pointer' : '' }}>

@@ -11,8 +11,8 @@ export default function Main({ children, visible = true, onClose, className = ''
 
   return visible ? (
     <div
-      className={className}
       {...props}
+      className={className}
       onClick={e => {
         if (props.onClick) props.onClick(e)
         if (onClose) onClose()

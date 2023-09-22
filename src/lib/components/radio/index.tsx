@@ -25,7 +25,7 @@ export default function Main({
   className = 'mumpui mp-radio ' + className
 
   return (
-    <div className={'mp-radios ' + className} style={style} {...props}>
+    <div {...props} className={'mp-radios ' + className} style={style}>
       {options.map(({ key, label }, i) => (
         <Radio
           key={i}

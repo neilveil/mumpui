@@ -12,7 +12,7 @@ export default function Main({ autoCol = false, colBreakPoint = 1080, className 
   if (autoCol && window.innerWidth <= colBreakPoint) style.flexDirection = 'column'
 
   return (
-    <div className={className} style={style} {...props}>
+    <div {...props} className={className} style={style}>
       {props.children}
     </div>
   )

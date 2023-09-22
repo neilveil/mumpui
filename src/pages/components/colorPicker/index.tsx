@@ -34,12 +34,7 @@ export default function Main() {
         ]}
       />
 
-      <Docs.Related
-        components={[
-          { name: 'Form', link: '/component/form' },
-          { name: 'Dropdown', link: '/component/dropdown' }
-        ]}
-      />
+      <Docs.Related components={[{ name: 'Form', link: '/component/form' }]} />
     </Docs>
   )
 }

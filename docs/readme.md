@@ -24,21 +24,20 @@ input datetime icons
 hide esc & / from mobile
 Fix textarea component
 check top level class on radio
+- Pass ...props at the top
+- Showcase on home
+- Disabled field
+- Docs prop types
 
 ---
 
-
-- Pass ...props at the top
-- Fix type of interface according to comp
-- Set required fields & default values
-- Showcase on home
-- Disabled field
-
 - Items & options check
-- Omit onClick props
 - Use onSelect not onChange
 
-- Docs prop types
+- Fix type of interface according to comp
+- Omit onClick props
+
+- Set required fields & default values
 
 - Add simplified docs, no ts, no arrow functions
 

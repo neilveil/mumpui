@@ -16,7 +16,7 @@ export default function Main({ options = [], active, onClick, className = '', ..
   className = 'mumpui mp-tabs ' + className
 
   return (
-    <div className={className} {...props}>
+    <div {...props} className={className}>
       {options.map(({ key, label }, i) => (
         <div
           key={i}

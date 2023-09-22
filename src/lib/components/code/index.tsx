@@ -1,5 +1,11 @@
 import React, { useEffect, useRef } from 'react'
 
+declare global {
+  interface Window {
+    Prism: any
+  }
+}
+
 type props = React.HTMLAttributes<HTMLDivElement> & {
   snippet: string
   lang: string
@@ -16,7 +22,7 @@ export default function Main({ snippet, lang, className, ...props }: props) {
   className = 'mumpui mp-code ' + (className || '')
 
   return (
-    <div className={className} {...props}>
+    <div {...props} className={className}>
       <pre>
         <code ref={ref}></code>
       </pre>

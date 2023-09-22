@@ -18,7 +18,7 @@ export default function Main({ cols, data, className = '', ...props }: props) {
   className = 'mumpui mp-table ' + className
 
   return (
-    <div className={className} {...props}>
+    <div {...props} className={className}>
       <table>
         <thead>
           <tr>

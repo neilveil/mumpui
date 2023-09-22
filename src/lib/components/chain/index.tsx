@@ -12,7 +12,7 @@ export default function Main({ className = '', data = [], seperator = '/', ...pr
   className = 'mumpui mp-chain ' + className
 
   return (
-    <div className={className} {...props}>
+    <div {...props} className={className}>
       {data.map((x, i) => [
         <div key={'l' + i} className='mp-chain-element'>
           {x}

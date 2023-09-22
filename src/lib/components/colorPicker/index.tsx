@@ -26,7 +26,7 @@ export default function Main({ value = '', className = '', onValue, ...props }: 
   value = value.toLocaleLowerCase()
 
   return (
-    <div className={className} {...props}>
+    <div {...props} className={className}>
       <input
         className='mp-color-picker-swatch'
         style={{ width: '4rem' }}

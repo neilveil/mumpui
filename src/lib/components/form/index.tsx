@@ -1,12 +1,12 @@
 import React, { useCallback } from 'react'
 
 type props = React.FormHTMLAttributes<HTMLFormElement> & {
-  noHelp?: boolean
+  clean?: boolean
   className?: string
   style?: React.CSSProperties
 }
 
-export default function Main({ noHelp = false, className = '', style = {}, onSubmit, ...props }: props) {
+export default function Main({ clean = false, className = '', style = {}, onSubmit, ...props }: props) {
   const _onSubmit = useCallback(
     (e: any) => {
       e.preventDefault()
@@ -18,14 +18,14 @@ export default function Main({ noHelp = false, className = '', style = {}, onSub
   className = 'mumpui mp-form ' + className
 
   return (
-    <form className={className} style={style} onSubmit={_onSubmit} {...(noHelp ? noHelpConfig : {})} {...props}>
+    <form {...props} className={className} style={style} onSubmit={_onSubmit} {...(clean ? cleanConfig : {})}>
       {props.children}
       <button style={{ display: 'none' }} type='submit' onClick={e => _onSubmit(e)}></button>
     </form>
   )
 }
 
-const noHelpConfig = {
+const cleanConfig = {
   autoComplete: 'off',
   autoCorrect: 'off',
   autoCapitalize: 'off',

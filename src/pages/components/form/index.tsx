@@ -63,7 +63,7 @@ export default function Main() {
         fields={[
           { name: '..', usage: 'All form element props' },
           {
-            name: 'noHelp',
+            name: 'clean',
             type: 'boolean',
             usage: 'Turn off auto complete, auto correct, auto capitalize & spell check',
             defaultValue: 'false'

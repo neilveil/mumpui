@@ -18,7 +18,7 @@ export default function Main({ options = [], checked = [], onChange, disabled, c
   className = 'mumpui mp-checkbox ' + className
 
   return (
-    <div className={className} {...props}>
+    <div {...props} className={className}>
       {options.map(({ key, label }, i) => (
         <Checkbox
           key={i}

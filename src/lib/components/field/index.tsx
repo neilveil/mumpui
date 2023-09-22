@@ -10,7 +10,7 @@ export default function Main({ className = '', style = {}, label, ...props }: pr
   className = 'mumpui mp-field ' + className
 
   return (
-    <div className={className} style={style} {...props}>
+    <div {...props} className={className} style={style}>
       <div className='mp-label'>{label ? label : <>&nbsp;</>}</div>
       {props.children}
     </div>

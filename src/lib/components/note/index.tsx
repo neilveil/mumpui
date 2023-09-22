@@ -9,7 +9,7 @@ export default function Main({ className = '', type, ...props }: props) {
   className = `mumpui mp-note ${type ? type : ''} ${className})`
 
   return (
-    <div className={className} {...props}>
+    <div {...props} className={className}>
       {props.children}
     </div>
   )

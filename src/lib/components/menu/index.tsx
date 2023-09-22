@@ -19,7 +19,7 @@ export default function Main({ selected, onSelect, items = [], access, className
   className = 'mumpui mp-menu ' + className
 
   return (
-    <div className={className} {...props}>
+    <div {...props} className={className}>
       {items.map((item, i) => (
         <MenuItem key={i} selected={selected} onSelect={onSelect} item={item} access={access} />
       ))}

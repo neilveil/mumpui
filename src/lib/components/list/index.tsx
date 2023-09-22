@@ -24,11 +24,11 @@ export default function Main({ data = [], type = 'ul', className = '', ...props 
   const list = <ListMaker data={data} type={type} isTop={true} />
 
   return type === 'ul' ? (
-    <ul className={className} {...props}>
+    <ul {...props} className={className}>
       {list}
     </ul>
   ) : (
-    <ol className={className} {...props}>
+    <ol {...props} className={className}>
       {list}
     </ol>
   )

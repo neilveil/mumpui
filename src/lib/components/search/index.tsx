@@ -32,7 +32,7 @@ export default function Main({
   }, [])
 
   return (
-    <div ref={ref} className={className} {...props}>
+    <div {...props} ref={ref} className={className}>
       <input
         onChange={e => {
           if (onChange) onChange(e.target.value)

@@ -9,7 +9,7 @@ export default function Main({ empty, children, className = '', ...props }: prop
   className = `mumpui mp-loader ${className || ''})`
 
   return (
-    <div className={className} {...props}>
+    <div {...props} className={className}>
       <svg viewBox='25 25 50 50'>
         <circle cx='50' cy='50' r='20'></circle>
       </svg>

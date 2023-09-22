@@ -13,7 +13,7 @@ export default function Main({ className = '', label, position = 'top', delay, .
   delay = delay !== undefined ? delay : Main.delay
 
   return (
-    <div className={className} {...props}>
+    <div {...props} className={className}>
       {props.children}
       <div style={{ animationDelay: delay.toString() + 'ms' }} className={'mp-tooltip-text mp-tooltip-' + position}>
         {label}
