@@ -167,4 +167,62 @@ const table: any = {
 
 const chain = ['Decors', 'Lamps', 'Table Lamp']
 
-export default { countries, firstNames, lastNames, users, list, table, chain }
+const tabs = [
+  { key: 'apple', label: 'Apple' },
+  { key: 'banana', label: 'Banana' },
+  { key: 'orange', label: 'Orange' },
+  { key: 'grape', label: 'Grape' },
+  { key: 'strawberry', label: 'Strawberry' },
+  { key: 'kiwi', label: 'Kiwi' },
+  { key: 'mango', label: 'Mango' },
+  { key: 'pear', label: 'Pear' },
+  { key: 'cherry', label: 'Cherry' },
+  { key: 'pineapple', label: 'Pineapple' },
+  { key: 'plum', label: 'Plum' },
+  { key: 'blueberry', label: 'Blueberry' }
+]
+
+const menu = [
+  {
+    key: 'home',
+    label: 'Home',
+    icon: <span className='icon'>home</span>,
+    next: []
+  },
+  {
+    key: 'products',
+    label: 'Products',
+    icon: <span className='icon'>widgets</span>,
+    next: []
+  },
+  {
+    key: 'settings',
+    label: 'Settings',
+    icon: <span className='icon'>settings</span>,
+    next: [
+      {
+        key: 'profile',
+        label: 'Profile',
+        icon: <span className='icon'>person</span>,
+        next: []
+      },
+      {
+        key: 'blogs',
+        label: 'Blogs',
+        icon: <span className='icon'>rss_feed</span>,
+        next: [
+          {
+            key: 'blog-1',
+            label: 'Blog 1'
+          },
+          {
+            key: 'blog-2',
+            label: 'Blog 2'
+          }
+        ]
+      }
+    ]
+  }
+]
+
+export default { countries, firstNames, lastNames, users, list, table, chain, tabs, menu }

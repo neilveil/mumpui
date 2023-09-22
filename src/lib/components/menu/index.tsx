@@ -1,24 +1,22 @@
 import React, { useState } from 'react'
 
-type key = number | string
-
 type item = {
-  key: key
-  name: string
+  key: string
+  label: string
   icon?: React.ReactNode
   next?: item[]
   access?: string[]
 }
 
 type props = React.HTMLAttributes<HTMLDivElement> & {
-  selected: key
-  onSelect: (key: key) => void
+  selected: string
+  onSelect: (key: string) => void
   items: item[]
   access?: string[]
 }
 
-export default function Main({ selected, onSelect, items = [], className, access, ...props }: props) {
-  className = 'mumpui mp-menu ' + (className || '')
+export default function Main({ selected, onSelect, items = [], access, className = '', ...props }: props) {
+  className = 'mumpui mp-menu ' + className
 
   return (
     <div className={className} {...props}>
@@ -29,7 +27,7 @@ export default function Main({ selected, onSelect, items = [], className, access
   )
 }
 
-const isExpanded = (next: item[] = [], selected: key): boolean => {
+const isExpanded = (next: item[] = [], selected: string): boolean => {
   for (const x of next)
     if (x.key === selected) return true
     else if (x.next?.length) return isExpanded(x.next, selected)
@@ -42,8 +40,8 @@ function MenuItem({
   item,
   access = []
 }: {
-  selected: key
-  onSelect: (key: key) => void
+  selected: string
+  onSelect: (key: string) => void
   item: item
   access?: string | string[]
 }) {
@@ -69,8 +67,8 @@ function MenuItem({
         onClick={() => (isExpandable ? setExpanded(!expanded) : onSelect(item.key))}
       >
         <div>
-          <span className='mp-menu-item-icon'>{!!item.icon && item.icon}</span>
-          <span className='mp-menu-item-name'>{item.name}</span>
+          {!!item.icon && <span className='mp-menu-item-icon'>{item.icon}</span>}
+          <span className='mp-menu-item-name'>{item.label}</span>
         </div>
 
         {isExpandable && (expanded ? arrow(true) : arrow())}
@@ -92,7 +90,8 @@ const arrow = (rotate?: boolean) => (
     viewBox='0 0 128 128'
     fill='none'
     style={{
-      transform: rotate ? 'rotate(90deg)' : ''
+      transform: rotate ? 'rotate(90deg)' : '',
+      transition: 'all 200ms ease'
     }}
     className='mp-menu-item-expand-icon'
   >

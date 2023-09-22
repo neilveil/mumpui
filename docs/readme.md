@@ -34,6 +34,10 @@ check top level class on radio
 - Showcase on home
 - Disabled field
 
+- Items & options check
+- Omit onClick props
+- Use onSelect not onChange
+
 - Docs prop types
 
 - Add simplified docs, no ts, no arrow functions

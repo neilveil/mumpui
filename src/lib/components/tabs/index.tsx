@@ -1,27 +1,32 @@
 import React from 'react'
 
-type props = React.HTMLAttributes<HTMLDivElement> & {
-  options: string[]
-  active: number
-  onClick: (active: number) => void
+type option = {
+  key: string
+  label: string
+}
+
+type props = Omit<React.HTMLAttributes<HTMLDivElement>, 'onClick'> & {
+  options?: option[]
+  active?: string
+  onClick?: (active: string) => void
   className?: string
 }
 
-export default function Main({ className, options = [], active = 0, onClick, ...props }: props) {
-  className = 'mumpui mp-tabs ' + (className || '')
+export default function Main({ options = [], active, onClick, className = '', ...props }: props) {
+  className = 'mumpui mp-tabs ' + className
 
   return (
     <div className={className} {...props}>
-      {options.map((x, i) => (
+      {options.map(({ key, label }, i) => (
         <div
           key={i}
-          className={active === i ? 'mp-tab-active' : ''}
+          className={active === key ? 'mp-tab-active' : ''}
           onClick={(e: any) => {
             e.target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
-            if (onClick) onClick(i)
+            if (onClick) onClick(key)
           }}
         >
-          {x}
+          {label}
         </div>
       ))}
     </div>

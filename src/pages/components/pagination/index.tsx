@@ -10,12 +10,8 @@ export default function Main() {
 
   return (
     <Docs name='Pagination'>
-      <Docs.Showcase
-        title={<span></span>}
-        code={`
-`}
-      >
-        <div className='flex-center'>
+      <Docs.Showcase code={snippets.s1}>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
           <Pagination
             pageSize={pageSize}
             totalItems={totalItems}
@@ -27,15 +23,21 @@ export default function Main() {
 
       <Docs.Props
         title='Pagination'
-        type='props'
+        type='component'
         fields={[
           { name: '..', usage: 'All div element props' },
           { name: 'pageSize', type: 'number', usage: 'Number of items on the page' },
           { name: 'totalItems', type: 'number', usage: 'Total number of items' },
           { name: 'offset', type: 'number', usage: 'Number of items to be skipped' },
-          { name: 'onChange', type: 'function', usage: <code>{'(offset: number) => {}'}</code> },
+          { name: 'onChange', type: 'function', usage: 'To update the offset' },
           { name: 'disabled', type: 'boolean', usage: 'Useful when pulling the data through API' }
         ]}
+      />
+
+      <Docs.Props
+        title='onChange'
+        type='function'
+        fields={[{ name: 'offset', type: 'number', usage: 'Number of items to be skipped' }]}
       />
     </Docs>
   )

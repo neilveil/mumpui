@@ -2,89 +2,45 @@ import { Docs } from 'components'
 import { Menu } from 'lib'
 import { useState } from 'react'
 import * as snippets from './snippets'
+import data from 'data'
 
 export default function Main() {
-  const [selected, setSelected] = useState(0)
+  const [selected, setSelected] = useState('home')
 
   return (
     <Docs name='Menu'>
-      <Docs.Showcase
-        title={<span></span>}
-        code={`
-`}
-      >
+      <Docs.Showcase title={<span></span>} code={snippets.s1}>
         <Menu
           selected={selected}
           onSelect={(selected: any) => setSelected(selected)}
-          items={[
-            {
-              key: 0,
-              name: 'Home',
-              icon: <span className='icon'>home</span>,
-              next: []
-            },
-            {
-              key: 1,
-              name: 'Products',
-              icon: <span className='icon'>widgets</span>,
-              next: []
-            },
-            {
-              key: 2,
-              name: 'Settings',
-              icon: <span className='icon'>settings</span>,
-              next: [
-                {
-                  key: 3,
-                  name: 'Profile',
-                  icon: <span className='icon'>person</span>,
-                  next: []
-                },
-                {
-                  key: 4,
-                  name: 'Blogs',
-                  icon: <span className='icon'>rss_feed</span>,
-                  next: [
-                    {
-                      key: 5,
-                      name: 'Blog 1',
-                      icon: <span className='icon'>rss_feed</span>,
-                      next: []
-                    },
-                    {
-                      key: 6,
-                      name: 'Blog 2',
-                      icon: <span className='icon'>rss_feed</span>,
-                      next: []
-                    }
-                  ]
-                }
-              ]
-            }
-          ]}
+          items={data.menu}
           style={{ width: '100%', maxWidth: '12rem' }}
         />
       </Docs.Showcase>
 
+      <Docs.Info>
+        Please note, icon are not packed with <b>MumpUI</b>.
+      </Docs.Info>
+
       <Docs.Props
         title='Menu'
-        type='props'
+        type='component'
         fields={[
           { name: '..', usage: 'All div element props' },
-          { required: true, name: 'selected', customType: 'number|string' },
+          { required: true, name: 'selected', type: 'string' },
           { required: true, name: 'onSelect', type: 'function' },
-          { required: true, name: 'items', customType: 'array', usage: 'Array of menu items' }
+          { required: true, name: 'items', customType: 'array', usage: 'Array of menu item objects' }
         ]}
       />
 
       <Docs.Props
-        title='Item'
-        type='object keys'
+        title='item'
+        type='object'
         fields={[
           { required: true, name: 'key', customType: 'number|string' },
-          { required: true, name: 'name', type: 'string' },
+          { required: true, name: 'label', type: 'string' },
           { name: 'icon', type: 'jsx' },
-          { name: 'next', customType: 'array', usage: 'Array of menu items under this item' }
+          { name: 'next', customType: 'array', usage: 'Array of menu item object under this item' }
         ]}
       />
     </Docs>

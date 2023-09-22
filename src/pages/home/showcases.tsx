@@ -13,19 +13,23 @@ import {
   Input,
   List,
   Loader,
+  Menu,
   Message,
   Modal,
   Note,
+  Pagination,
   Placeholder,
   Radio,
   Range,
   Search,
   Select,
   Table,
+  Tabs,
   Textarea,
   Tooltip
 } from 'lib'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export default {
   input: {
@@ -392,11 +396,9 @@ export default {
     docs: '/component/tabs',
     tags: [],
     Component() {
-      return (
-        <Tooltip label='Hello div!'>
-          <div>Hello!</div>
-        </Tooltip>
-      )
+      const [active, setActive] = useState(data.tabs[0].key)
+
+      return <Tabs options={data.tabs} active={active} onClick={(active: string) => setActive(active)} />
     }
   },
   menu: {
@@ -404,10 +406,15 @@ export default {
     docs: '/component/menu',
     tags: [],
     Component() {
+      const [selected, setSelected] = useState('home')
+
       return (
-        <Tooltip label='Hello div!'>
-          <div>Hello!</div>
-        </Tooltip>
+        <Menu
+          selected={selected}
+          onSelect={(selected: any) => setSelected(selected)}
+          items={data.menu}
+          style={{ width: '100%', maxWidth: '12rem' }}
+        />
       )
     }
   },
@@ -416,22 +423,35 @@ export default {
     docs: '/component/pagination',
     tags: [],
     Component() {
+      const [offset, setOffset] = useState(0)
+      const totalItems = 956
+      const pageSize = 10
+
       return (
-        <Tooltip label='Hello div!'>
-          <div>Hello!</div>
-        </Tooltip>
+        <div style={{ textAlign: 'center' }}>
+          <Pagination
+            pageSize={pageSize}
+            totalItems={totalItems}
+            offset={offset}
+            onChange={(offset: any) => setOffset(offset)}
+          />
+        </div>
       )
     }
   },
   breadcrumb: {
     name: 'Breadcrumb',
-    docs: '/component/breadcrumb',
+    docs: '/component/chain',
     tags: [],
     Component() {
       return (
-        <Tooltip label='Hello div!'>
-          <div>Hello!</div>
-        </Tooltip>
+        <Chain
+          data={data.chain.map(x => (
+            <Link key={x} to={x} style={{ color: 'var(--c-link)' }}>
+              {x}
+            </Link>
+          ))}
+        />
       )
     }
   },

@@ -24,7 +24,7 @@ export const s2 = `
   }
 />
 
-// Custom renderer
+// Using chain as breadcrumb component
 <Chain
   data={${JSON.stringify(data.chain, null, 2)}.map(x => (
     <Link key={x} to={x} style={{ color: 'var(--c-link)' }}>

@@ -9,8 +9,8 @@ type props = Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> & {
   className?: string
 }
 
-export default function Main({ pageSize, totalItems, offset, onChange, disabled, className, ...props }: props) {
-  className = 'mumpui mp-pagination ' + (className || '')
+export default function Main({ pageSize, totalItems, offset, onChange, disabled, className = '', ...props }: props) {
+  className = 'mumpui mp-pagination ' + className
 
   const _onChange = (pageNumber: number) => {
     if (disabled) return

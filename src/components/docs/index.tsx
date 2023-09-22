@@ -211,7 +211,7 @@ const typeColorMap: any = {
   boolean: '#d32f2f',
   object: '#fbc02d',
   array: '#f57c00',
-  function: '#1976d2',
+  function: '#762ad6',
   jsx: '#795548',
   symbol: '#9c27b0',
   any: '#9e9e9e'
