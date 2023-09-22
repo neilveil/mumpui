@@ -6,6 +6,7 @@ type item = {
   icon?: React.ReactNode
   next?: item[]
   access?: string[]
+  [key: string]: any
 }
 
 type props = React.HTMLAttributes<HTMLDivElement> & {

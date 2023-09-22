@@ -30,15 +30,11 @@ check top level class on radio
 - Docs prop types
 - Items & options check
 - Fix type of interface according to comp
+- Omit onClick props
+- Allow unknown keys
 
 ---
 
-
-- Omit onClick props
-
-- Fix buttons
-
-- Allow unknown keys
 
 - Remove data from snippets
 

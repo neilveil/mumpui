@@ -3,6 +3,7 @@ import React from 'react'
 type item = {
   key: string
   label: string
+  [key: string]: any
 }
 
 type props = Omit<React.HTMLAttributes<HTMLDivElement>, 'onClick'> & {
