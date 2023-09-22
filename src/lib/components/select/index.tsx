@@ -10,10 +10,10 @@ export type option = {
   [key: string]: string
 }
 
-type props = Omit<React.InputHTMLAttributes<HTMLDivElement>, 'onSelect' | 'value' | 'placeholder'> & {
+type props = Omit<React.InputHTMLAttributes<HTMLDivElement>, 'onChange' | 'value'> & {
   options?: option[]
   value?: option
-  onSelect?: (value?: option) => void
+  onChange?: (value?: option) => void
   onSearch?: (search: string) => void
   placeholder?: any
   clearable?: boolean
@@ -25,7 +25,7 @@ type props = Omit<React.InputHTMLAttributes<HTMLDivElement>, 'onSelect' | 'value
 export default function Main({
   value,
   options = [],
-  onSelect,
+  onChange,
   onSearch,
   placeholder,
   clearable = false,
@@ -54,7 +54,7 @@ export default function Main({
 
   const _onSelect = (selected: option) => {
     if (onSearch) onSearch('')
-    if (onSelect) onSelect(selected)
+    if (onChange) onChange(selected)
     setOptionsVisible(false)
   }
 
@@ -97,7 +97,7 @@ export default function Main({
               )}
 
               {!!clearable && (
-                <div className='mp-select-clear' onClick={() => !!onSelect && onSelect()}>
+                <div className='mp-select-clear' onClick={() => !!onChange && onChange()}>
                   Clear
                 </div>
               )}

@@ -22,6 +22,10 @@
     &:disabled {
       background: var(--mp-c-hover);
     }
+
+    option {
+      background-color: var(--mp-c-bg);
+    }
   }
 
   .mp-select-multi {

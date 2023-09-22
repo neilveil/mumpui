@@ -206,13 +206,13 @@ const typeMap = {
 }
 
 const typeColorMap: any = {
-  string: '#6a9955',
-  number: '#1976d2',
-  boolean: '#d32f2f',
-  object: '#fbc02d',
-  array: '#f57c00',
-  function: '#762ad6',
-  jsx: '#795548',
-  symbol: '#9c27b0',
-  any: '#9e9e9e'
+  string: '#6a9955b8',
+  number: '#1976d2b8',
+  boolean: '#d32f2fb8',
+  object: '#fbc02db8',
+  array: '#f57c00b8',
+  function: '#762ad6b8',
+  jsx: '#795548b8',
+  symbol: '#9c27b0b8',
+  any: '#9e9e9eb8'
 }

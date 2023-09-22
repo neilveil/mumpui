@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { type option } from '.'
 
-type multiple = Omit<React.InputHTMLAttributes<HTMLDivElement>, 'onSelect' | 'value' | 'placeholder'> & {
+type multiple = Omit<React.InputHTMLAttributes<HTMLDivElement>, 'onChange' | 'value'> & {
   options?: option[]
   value?: option[]
-  onSelect?: (value: option[]) => void
+  onChange?: (value: option[]) => void
   onSearch?: (search: string) => void
   placeholder?: any
   clearable?: boolean
@@ -16,7 +16,7 @@ type multiple = Omit<React.InputHTMLAttributes<HTMLDivElement>, 'onSelect' | 'va
 export default function Main({
   value = [],
   options = [],
-  onSelect,
+  onChange,
   onSearch,
   placeholder,
   clearable = false,
@@ -42,9 +42,9 @@ export default function Main({
     return () => window.removeEventListener('click', clickListener)
   }, [])
 
-  const _onSelect = (selected: option) => {
+  const _onChange = (selected: option) => {
     if (onSearch) onSearch('')
-    if (onSelect) onSelect(value.concat(selected))
+    if (onChange) onChange(value.concat(selected))
 
     const inputEl = ref.current.querySelector('input')
     if (inputEl) {
@@ -63,7 +63,7 @@ export default function Main({
         onClick={e => {
           if (disabled) return
           e.stopPropagation()
-          if (onSelect) onSelect(value.filter(y => y.key !== x.key))
+          if (onChange) onChange(value.filter(y => y.key !== x.key))
         }}
       />
     </div>
@@ -97,7 +97,7 @@ export default function Main({
                   onChange={e => onSearch && onSearch(e.target.value)}
                   onKeyUp={e => {
                     if (e.key === 'Enter') {
-                      if (options.length) _onSelect(options[0])
+                      if (options.length) _onChange(options[0])
                     }
                   }}
                   className='mp-select-search'
@@ -108,7 +108,7 @@ export default function Main({
               )}
 
               {!!clearable && (
-                <div className='mp-select-clear' onClick={() => !!onSelect && onSelect([])}>
+                <div className='mp-select-clear' onClick={() => !!onChange && onChange([])}>
                   Clear
                 </div>
               )}
@@ -121,7 +121,7 @@ export default function Main({
               className='mp-select-option'
               onClick={e => {
                 e.stopPropagation()
-                _onSelect(x)
+                _onChange(x)
               }}
             >
               {optionHOC(x)}

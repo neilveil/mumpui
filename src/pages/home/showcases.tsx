@@ -91,7 +91,7 @@ export default {
 
       return (
         <div>
-          <Checkboxes options={countries.slice(0, 3)} checked={value} onChange={value => setValue(value)} />
+          <Checkboxes options={data.countries.slice(0, 3)} checked={value} onChange={value => setValue(value)} />
         </div>
       )
     }
@@ -105,7 +105,7 @@ export default {
 
       return (
         <div>
-          <Radio options={countries.slice(0, 3)} checked={value} onChange={(value: any) => setValue(value)} />
+          <Radio options={data.countries.slice(0, 3)} checked={value} onChange={(value: any) => setValue(value)} />
         </div>
       )
     }
@@ -117,7 +117,7 @@ export default {
     Component() {
       const [value, setValue] = useState<(typeof data.countries)[0] | undefined>(data.countries[0])
 
-      return <Select options={data.countries} value={value} onSelect={value => setValue(value)} />
+      return <Select options={data.countries} value={value} onChange={value => setValue(value)} />
     }
   },
   multiselect: {
@@ -127,7 +127,7 @@ export default {
     Component() {
       const [value, setValue] = useState<typeof data.countries>([data.countries[0]])
 
-      return <Select.Multi options={data.countries} value={value} onSelect={value => setValue(value)} />
+      return <Select.Multi options={data.countries} value={value} onChange={value => setValue(value)} />
     }
   },
   search: {
@@ -468,16 +468,3 @@ export default {
     }
   }
 }
-
-const countries = [
-  { key: 'india', label: 'India' },
-  { key: 'sweden', label: 'Sweden' },
-  { key: 'germany', label: 'Germany' },
-  { key: 'switzerland', label: 'Switzerland' },
-  { key: 'United kingdom', label: 'United Kingdom' },
-  { key: 'japan', label: 'Japan' },
-  { key: 'United states', label: 'United States' },
-  { key: 'canada', label: 'Canada' },
-  { key: 'netherlands', label: 'Netherlands' },
-  { key: 'denmark', label: 'Denmark' }
-]

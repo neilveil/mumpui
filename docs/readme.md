@@ -32,10 +32,13 @@ check top level class on radio
 ---
 
 - Items & options check
-- Use onSelect not onChange
 
 - Fix type of interface according to comp
 - Omit onClick props
+
+- Allow unknown keys
+
+- Remove data from snippets
 
 - Set required fields & default values
 
@@ -43,7 +46,7 @@ check top level class on radio
 
 - Related components & blogs
 
-- pop up shadow
+- Pop up shadow
 
 - Remove react
 

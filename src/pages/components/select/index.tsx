@@ -1,5 +1,5 @@
 import { Docs } from 'components'
-import { Field, Fields, Select } from 'lib'
+import { Field, Select } from 'lib'
 import { useState } from 'react'
 import * as snippets from './snippets'
 import data from 'data'
@@ -11,59 +11,33 @@ export default function Main() {
 
   return (
     <Docs name='Select input field'>
-      <Docs.Showcase title='Select component' code={snippets.s1}>
-        <Fields>
-          <Field label='Select'>
-            <Select options={data.countries} value={value} onSelect={value => setValue(value)} />
-          </Field>
-
-          <Field label='Select with search & clear'>
-            <Select
-              value={value}
-              onSelect={value => setValue(value)}
-              options={options}
-              onSearch={search => setOptions(Select.search(search, data.countries))}
-              clearable
-              placeholder='Select..'
-            />
-          </Field>
-        </Fields>
+      <Docs.Showcase code={snippets.s1}>
+        <Field label='Select' style={{ maxWidth: '15rem' }}>
+          <Select options={data.countries} value={value} onChange={value => setValue(value)} />
+        </Field>
       </Docs.Showcase>
 
-      <Docs.Showcase title='Select component with search or clear only' code={snippets.s1}>
-        <Fields>
-          <Field label='Select with search'>
-            <Select
-              value={value}
-              onSelect={value => setValue(value)}
-              options={options}
-              onSearch={search => setOptions(Select.search(search, data.countries))}
-            />
-          </Field>
-
-          <Field label='Select with clear'>
-            <Select
-              value={value}
-              onSelect={value => setValue(value)}
-              options={options}
-              clearable
-              placeholder='Select..'
-            />
-          </Field>
-        </Fields>
+      <Docs.Showcase title='Select component with search or clear only' code={snippets.s2}>
+        <Field label='Select with search & clear' style={{ maxWidth: '15rem' }}>
+          <Select
+            value={value}
+            onChange={value => setValue(value)}
+            options={options}
+            onSearch={search => setOptions(Select.search(search, data.countries))}
+            clearable
+            placeholder='Select..'
+          />
+        </Field>
       </Docs.Showcase>
 
-      <Docs.Showcase title='Native select component' code={snippets.s1}>
-        <Fields>
-          <Field label='Select'>
-            <Select.Native
-              options={data.countries.map(x => x.label)}
-              value={valueNative}
-              onSelect={valueNative => setValueNative(valueNative)}
-              style={{ maxWidth: '15rem' }}
-            />
-          </Field>
-        </Fields>
+      <Docs.Showcase title='Native select component' code={snippets.s3}>
+        <Field label='Native Select' style={{ maxWidth: '15rem' }}>
+          <Select.Native
+            options={data.countries.map(x => x.label)}
+            value={valueNative}
+            onChange={valueNative => setValueNative(valueNative)}
+          />
+        </Field>
       </Docs.Showcase>
 
       <Docs.Info>
@@ -77,13 +51,13 @@ export default function Main() {
           { name: '..', usage: 'All div element props' },
           { name: 'options', type: 'array', usage: 'Array of option objects containing key & label' },
           { name: 'value', type: 'object', usage: 'Object of key & label' },
-          { name: 'onSelect', type: 'function', usage: '' },
+          { name: 'onChange', type: 'function', usage: '' },
           { name: 'placeholder', type: 'string' },
           { name: 'onSearch', type: 'function', usage: 'Shows search box only if search function is passed' },
           { name: 'clearable', type: 'boolean', usage: '' },
           { name: 'disabled', type: 'boolean', usage: '' },
           { name: 'valueHOC', type: 'function', usage: 'Selected value HOC to customize selected option' },
-          { name: 'optionHOC', type: 'function', usage: 'Option HOC to customize option' }
+          { name: 'optionHOC', type: 'function', usage: 'Option HOC to customize option in list' }
         ]}
       />
 
@@ -94,7 +68,7 @@ export default function Main() {
           { name: '..', usage: 'All div element props' },
           { name: 'options', type: 'array', usage: 'Array of options of strings' },
           { name: 'value', type: 'string', usage: 'Selected option' },
-          { name: 'onSelect', type: 'function' },
+          { name: 'onChange', type: 'function' },
           { name: 'disabled', type: 'boolean' }
         ]}
       />
@@ -107,7 +81,7 @@ export default function Main() {
         fields={[
           { name: 'search', type: 'string', usage: 'Searched text' },
           { name: 'options', type: 'array', usage: 'Select input field options' },
-          { name: 'caseSensitive', type: 'boolean' }
+          { name: 'caseSensitive', type: 'boolean', defaultValue: 'false' }
         ]}
       />
 
