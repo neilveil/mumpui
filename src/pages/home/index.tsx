@@ -1,6 +1,6 @@
 import { Footer, SwitchTheme } from 'components'
 import Fuse from 'fuse.js'
-import { Loader, Placeholder } from 'lib'
+import { Placeholder } from 'lib'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import showcases from './showcases'
@@ -193,7 +193,7 @@ const Showcases = ({ data, expanded }: { data: element[]; expanded: boolean }) =
           className={s.showcase}
           style={{
             animationDelay: i * 200 + 'ms',
-            zIndex: data.length - i
+            zIndex: x.name === 'Modal' ? 1000 : data.length - i
           }}
         >
           {!!expanded && <div className={s.component}>{<x.Component />}</div>}

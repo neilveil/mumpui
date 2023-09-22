@@ -1,64 +1,32 @@
 export const info = (
-  <svg viewBox='0 0 128 128' fill='none' xmlns='http://www.w3.org/2000/svg'>
-    <rect x='128' y='128' width='128' height='128' rx='64' transform='rotate(-180 128 128)' fill='#1ea6ff' />
-    <rect x='64.3137' y='48.6274' width='16' height='16' rx='8' transform='rotate(-135 64.3137 48.6274)' fill='white' />
-    <rect x='72' y='99' width='16' height='42' rx='8' transform='rotate(-180 72 99)' fill='white' />
+  <svg width='128' height='128' viewBox='0 0 128 128' fill='none' xmlns='http://www.w3.org/2000/svg'>
+    <rect x='128' y='128' width='128' height='128' rx='64' transform='rotate(-180 128 128)' fill='#1EA6FF' />
+    <rect x='52' y='27' width='24' height='24' rx='12' fill='white' />
+    <rect x='76' y='101' width='24' height='42' rx='12' transform='rotate(-180 76 101)' fill='white' />
   </svg>
 )
 
 export const error = (
-  <svg viewBox='0 0 128 128' fill='none' xmlns='http://www.w3.org/2000/svg'>
-    <rect width='128' height='128' rx='64' fill='#e83e0a' />
-    <rect
-      x='85.5649'
-      y='27'
-      width='19.4419'
-      height='81.4091'
-      rx='9.72096'
-      transform='rotate(45 85.5649 27)'
-      fill='white'
-    />
-    <rect
-      x='28'
-      y='40.7475'
-      width='19.4419'
-      height='81.4091'
-      rx='9.72096'
-      transform='rotate(-45 28 40.7475)'
-      fill='white'
-    />
+  <svg width='128' height='128' viewBox='0 0 128 128' fill='none' xmlns='http://www.w3.org/2000/svg'>
+    <rect width='128' height='128' rx='64' fill='#E83E0A' />
+    <rect x='86.5685' y='30' width='16' height='80' rx='8' transform='rotate(45 86.5685 30)' fill='white' />
+    <rect x='30' y='41.3137' width='16' height='80' rx='8' transform='rotate(-45 30 41.3137)' fill='white' />
   </svg>
 )
 
 export const success = (
-  <svg viewBox='0 0 128 128' fill='none' xmlns='http://www.w3.org/2000/svg'>
-    <rect width='128' height='128' rx='64' fill='#55c610' />
-    <rect
-      x='22'
-      y='66.8414'
-      width='18.1604'
-      height='45.401'
-      rx='9.08021'
-      transform='rotate(-45 22 66.8414)'
-      fill='white'
-    />
-    <rect
-      x='92.1844'
-      y='35.2867'
-      width='18.1604'
-      height='71.3987'
-      rx='9.08021'
-      transform='rotate(45 92.1844 35.2867)'
-      fill='white'
-    />
+  <svg width='128' height='128' viewBox='0 0 128 128' fill='none' xmlns='http://www.w3.org/2000/svg'>
+    <rect width='128' height='128' rx='64' fill='#55C610' />
+    <rect x='23' y='65.8414' width='16' height='45.401' rx='8' transform='rotate(-45 23 65.8414)' fill='white' />
+    <rect x='94.4865' y='36' width='16' height='71.3987' rx='8' transform='rotate(45 94.4865 36)' fill='white' />
   </svg>
 )
 
 export const warn = (
-  <svg viewBox='0 0 128 128' fill='none' xmlns='http://www.w3.org/2000/svg'>
-    <rect width='128' height='128' rx='64' fill='#ffd93b' />
-    <rect x='64.3137' y='78' width='16' height='16' rx='8' transform='rotate(45 64.3137 78)' fill='white' />
-    <rect x='56' y='28' width='16' height='42' rx='8' fill='white' />
+  <svg width='128' height='128' viewBox='0 0 128 128' fill='none' xmlns='http://www.w3.org/2000/svg'>
+    <rect width='128' height='128' rx='64' fill='#FFD93B' />
+    <rect x='52' y='77' width='24' height='24' rx='12' fill='white' />
+    <rect x='52' y='27' width='24' height='42' rx='12' fill='white' />
   </svg>
 )
 

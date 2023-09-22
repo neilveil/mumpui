@@ -11,14 +11,13 @@
   .mp-modal-box {
     background: var(--mp-c-bg);
     width: calc(100% - 2rem);
-    border-radius: var(--mp-border-radius);
     max-width: 600px;
+    border-radius: var(--mp-border-radius);
+    padding: 1.5rem;
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
-    padding: 1rem;
-    // top: 4rem;
-    animation: mp-modal-slide-in 300ms ease forwards;
+    animation: mp-modal-slide-in 200ms ease forwards;
   }
 
   @keyframes mp-modal-slide-in {

@@ -118,7 +118,7 @@ function Showcase({
 
 type field = {
   name?: string
-  type?: 'string' | 'number' | 'boolean' | 'object' | 'array' | 'function' | 'jsx' | 'any'
+  type?: 'string' | 'number' | 'boolean' | 'object' | 'array' | 'function' | 'jsx' | 'symbol' | 'any'
   customType?: string
   usage?: any
   defaultValue?: string
@@ -213,5 +213,6 @@ const typeColorMap: any = {
   array: '#f57c00',
   function: '#1976d2',
   jsx: '#795548',
+  symbol: '#9c27b0',
   any: '#9e9e9e'
 }

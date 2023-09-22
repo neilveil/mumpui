@@ -4,6 +4,7 @@ import {
   Chain,
   Checkboxes,
   ColorPicker,
+  Confirm,
   Divider,
   Field,
   Fields,
@@ -12,6 +13,9 @@ import {
   Input,
   List,
   Loader,
+  Message,
+  Modal,
+  Note,
   Placeholder,
   Radio,
   Range,
@@ -317,9 +321,9 @@ export default {
     tags: [],
     Component() {
       return (
-        <Tooltip label='Hello div!'>
-          <div>Hello!</div>
-        </Tooltip>
+        <div style={{ textAlign: 'center' }}>
+          <Button onClick={() => Message.info('Hello there!')}>Message</Button>
+        </div>
       )
     }
   },
@@ -329,9 +333,19 @@ export default {
     tags: [],
     Component() {
       return (
-        <Tooltip label='Hello div!'>
-          <div>Hello!</div>
-        </Tooltip>
+        <div style={{ textAlign: 'center' }}>
+          <Button
+            onClick={() =>
+              Confirm.init({
+                title: 'Are you sure you want to continue?',
+                description: 'You are about to continue',
+                onConfirm: () => Message.success('Nice!')
+              })
+            }
+          >
+            Confirm
+          </Button>
+        </div>
       )
     }
   },
@@ -340,10 +354,24 @@ export default {
     docs: '/component/modal',
     tags: [],
     Component() {
+      const [visible, setVisible] = useState(false)
+
       return (
-        <Tooltip label='Hello div!'>
-          <div>Hello!</div>
-        </Tooltip>
+        <div style={{ textAlign: 'center' }}>
+          <Button onClick={() => setVisible(true)}>Modal</Button>
+
+          <Modal visible={visible} onClose={() => setVisible(false)} style={{ textAlign: 'left' }}>
+            <div style={{ fontSize: '1.25rem' }}>Demo Modal</div>
+
+            <div style={{ fontSize: '.8rem', marginTop: '.5rem' }}>
+              This is dummy modal. You can render anything inside.
+            </div>
+
+            <div className='flex-end' style={{ marginTop: '1.5rem' }}>
+              <Button onClick={() => setVisible(false)}>Close</Button>
+            </div>
+          </Modal>
+        </div>
       )
     }
   },
@@ -353,9 +381,9 @@ export default {
     tags: [],
     Component() {
       return (
-        <Tooltip label='Hello div!'>
-          <div>Hello!</div>
-        </Tooltip>
+        <Note type='blue' style={{ fontSize: '.8rem' }}>
+          Hello there!
+        </Note>
       )
     }
   },

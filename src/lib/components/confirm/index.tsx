@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from '../button'
+import * as icons from '../message/icons'
 
 interface data {
   id: number
@@ -9,9 +10,7 @@ interface data {
   confirmText?: string
   cancelText?: string
   onCancel?: () => void
-  confirmFG?: string
-  confirmBG?: string
-  type?: 'default' | 'primary' | 'danger'
+  type?: 'info' | 'error' | 'success' | 'warn'
 }
 
 interface state {
@@ -33,7 +32,7 @@ export default class Main extends React.Component {
         cancelText: cancelText || 'Cancel',
         onConfirm,
         onCancel,
-        type: type || 'default'
+        type
       })
     })
   }
@@ -52,7 +51,10 @@ export default class Main extends React.Component {
         }}
       >
         <div className='mp-confirm-dialog' onClick={e => e.stopPropagation()}>
-          <div className='mp-confirm-title'>{x.title}</div>
+          <div className='mp-confirm-title'>
+            {!!x.type && icons[x.type]}
+            {x.title}
+          </div>
           <div className='mp-confirm-description'>{x.description}</div>
 
           <div className='mp-confirm-buttons'>
@@ -61,6 +63,7 @@ export default class Main extends React.Component {
                 this.close(x.id)
                 if (x.onCancel) x.onCancel()
               }}
+              style={{ border: 'none' }}
             >
               {x.cancelText || ''}
             </Button>
@@ -71,7 +74,7 @@ export default class Main extends React.Component {
                 if (x.onConfirm) x.onConfirm()
               }}
               style={{ marginLeft: '1rem' }}
-              type={x.type}
+              primary
             >
               {x.confirmText || ''}
             </Button>

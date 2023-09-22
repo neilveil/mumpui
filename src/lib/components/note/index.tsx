@@ -1,12 +1,12 @@
 import React from 'react'
 
-type props = React.InputHTMLAttributes<HTMLDivElement> & {
+type props = React.HTMLAttributes<HTMLDivElement> & {
+  type?: 'red' | 'blue' | 'green' | 'yellow' | 'quote'
   className?: string
-  type?: 'default' | 'red' | 'blue' | 'green' | 'yellow' | 'quote'
 }
 
-export default function Main({ className, type, ...props }: props) {
-  className = `mumpui mp-note ${type ? type : ''} ${className || ''})`
+export default function Main({ className = '', type, ...props }: props) {
+  className = `mumpui mp-note ${type ? type : ''} ${className})`
 
   return (
     <div className={className} {...props}>
