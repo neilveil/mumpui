@@ -14,6 +14,7 @@ export default function Main() {
       onSidebarClick={key => navigate(key)}
     >
       <h3>Welcome to MumpUI Dashboard.</h3>
+
       <Link to='/'>
         <u style={{ marginTop: '2rem', fontSize: '.9rem' }}>Go back to home</u>
       </Link>

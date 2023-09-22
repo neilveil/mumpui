@@ -455,108 +455,16 @@ export default {
       )
     }
   },
-  theme: {
-    name: 'Theme',
-    docs: '/component/theme',
-    tags: [],
-    Component() {
-      return <div></div>
-    }
-  },
-  responsive: {
-    name: 'Responsive',
-    docs: '/component/responsive',
-    tags: [],
-    Component() {
-      return <div></div>
-    }
-  },
-  classes: {
-    name: 'Classes',
-    docs: '/component/classes',
-    tags: [],
-    Component() {
-      return <div></div>
-    }
-  },
-  request: {
-    name: 'Request',
-    docs: '/component/request',
-    tags: [],
-    Component() {
-      return <div></div>
-    }
-  },
-  storage: {
-    name: 'Storage',
-    docs: '/component/storage',
-    tags: [],
-    Component() {
-      return <div></div>
-    }
-  },
-  utils: {
-    name: 'Utils',
-    docs: '/component/utils',
-    tags: [],
-    Component() {
-      return <div></div>
-    }
-  },
-  uh: {
-    name: 'URL Handler',
-    docs: '/component/uh',
-    tags: [],
-    Component() {
-      return <div></div>
-    }
-  },
-  sh: {
-    name: 'Scroll Handler',
-    docs: '/component/sh',
-    tags: [],
-    Component() {
-      return <div></div>
-    }
-  },
-  dh: {
-    name: 'Depth Handler',
-    docs: '/component/dh',
-    tags: [],
-    Component() {
-      return <div></div>
-    }
-  },
-  wrapper: {
-    name: 'Wrapper',
-    docs: '/component/wrapper',
-    tags: [],
-    Component() {
-      return <div></div>
-    }
-  },
   dashboard: {
     name: 'Dashboard',
-    docs: '/dashboard',
+    docs: '/component/dashboard',
     tags: [],
     Component() {
-      return <div></div>
-    }
-  },
-  typography: {
-    name: 'Typography',
-    docs: '/component/typography',
-    tags: [],
-    Component() {
-      return <div></div>
-    }
-  },
-  code: {
-    name: 'Code',
-    docs: '/component/code',
-    tags: [],
-    Component() {
-      return <div></div>
+      return (
+        <Link to='/dashboard' target='_blank' style={{ textAlign: 'center' }}>
+          <Button>Demo</Button>
+        </Link>
+      )
     }
   }
 }

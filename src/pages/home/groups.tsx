@@ -41,23 +41,7 @@ export default [
     showcases: [showcases.tabs, showcases.menu, showcases.pagination, showcases.breadcrumb]
   },
   {
-    name: 'Styling',
-    showcases: [showcases.theme, showcases.responsive, showcases.classes]
-  },
-  {
-    name: 'Helpers',
-    showcases: [
-      showcases.request,
-      showcases.storage,
-      showcases.utils,
-      showcases.uh,
-      showcases.sh,
-      showcases.dh,
-      showcases.wrapper
-    ]
-  },
-  {
     name: 'Advanced',
-    showcases: [showcases.dashboard, showcases.typography, showcases.code]
+    showcases: [showcases.dashboard]
   }
 ]

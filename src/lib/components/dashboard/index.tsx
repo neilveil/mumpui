@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Menu from '../menu'
 import Button from '../button'
 import Input from '../input'
@@ -116,7 +116,7 @@ export default function Main(props: props) {
 
             <div className='mp-dashboard-header-row'>
               <div className='mp-dashboard-header-left'>
-                <div className='mp-dashboard-icon'>{props.icon}</div>
+                {!!props.icon && <div className='mp-dashboard-icon'>{props.icon}</div>}
                 <div className='mp-dashboard-expandable-icon' onClick={toggleSidebar}>
                   {menuIcon}
                 </div>
@@ -128,7 +128,7 @@ export default function Main(props: props) {
               </div>
 
               {!!props.onAdd && (
-                <Button type='primary' onClick={props.onAdd}>
+                <Button primary onClick={props.onAdd}>
                   +&nbsp;&nbsp;Add
                 </Button>
               )}
@@ -226,7 +226,7 @@ export default function Main(props: props) {
 const sidebarItemsGenerator: any = (sidebar: sidebarItem[] = []) =>
   sidebar.map(({ name, icon, path, next, access }: sidebarItem) => ({
     key: path || Math.random(),
-    name,
+    label: name,
     icon,
     next: next ? sidebarItemsGenerator(next) : [],
     access
