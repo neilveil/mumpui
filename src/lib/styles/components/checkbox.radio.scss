@@ -1,14 +1,14 @@
+// .mp-checkboxes {}
+
 .mp-checkbox,
 .mp-radio {
   user-select: none;
   display: inline-block;
   padding: var(--mp-input-padding-top) 0;
-  // padding: 1rem 0;
+  position: relative;
 
   label {
-    position: relative;
-    display: flex;
-    align-items: center;
+    margin-right: 2rem;
 
     &:hover > .mp-checkbox-icon,
     &:hover > .mp-radio-icon {
@@ -32,7 +32,8 @@
   .mp-checkbox-icon,
   .mp-radio-icon {
     position: absolute;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
     left: 0;
     height: 18px;
     width: 18px;
@@ -97,7 +98,6 @@
   .mp-radio-label {
     font-size: 0.8rem;
     color: var(--mp-c-font);
-    padding-right: 1rem;
     margin-left: 1.5rem;
   }
 }

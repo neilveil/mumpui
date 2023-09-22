@@ -15,7 +15,7 @@ type props = Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> & {
 }
 
 export default function Main({ options = [], checked = [], onChange, disabled, className = '', ...props }: props) {
-  className = 'mumpui mp-checkbox ' + className
+  className = 'mumpui mp-checkboxes ' + className
 
   return (
     <div {...props} className={className}>
