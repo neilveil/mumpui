@@ -8,14 +8,14 @@ export default function Main() {
   return (
     <Docs name='Chain'>
       <Docs.Showcase title='Chain component' code={snippets.s1}>
-        <Chain data={data.chain} />
+        <Chain items={data.chain} />
       </Docs.Showcase>
 
       <Docs.Showcase title='Usage examples' code={snippets.s2}>
-        <Chain data={data.chain} seperator='•' />
+        <Chain items={data.chain} seperator='•' />
 
         <Chain
-          data={data.chain}
+          items={data.chain}
           seperator={
             <div
               style={{
@@ -30,7 +30,7 @@ export default function Main() {
         />
 
         <Chain
-          data={data.chain.map(x => (
+          items={data.chain.map(x => (
             <Link key={x} to={x} style={{ color: 'var(--c-link)' }}>
               {x}
             </Link>
@@ -44,7 +44,7 @@ export default function Main() {
         fields={[
           { name: '..', usage: 'All div element props' },
           {
-            name: 'data',
+            name: 'items',
             type: 'array',
             usage: (
               <span>

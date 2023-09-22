@@ -6,7 +6,7 @@ const [active, setActive] = useState("${data.tabs[0].key}")
 ..
 
 <Tabs
-  options={${JSON.stringify(data.tabs, null, 2)}}
+  items={${JSON.stringify(data.tabs, null, 2)}}
   active={active}
   onClick={(active) => setActive(active)}
 />

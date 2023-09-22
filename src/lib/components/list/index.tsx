@@ -1,16 +1,16 @@
 import React from 'react'
 
-type data = string | data[]
+type items = string | items[]
 type type = 'ul' | 'ol'
 
 type props = React.HTMLAttributes<HTMLUListElement> & {
-  data?: data[]
+  items?: items[]
   type?: 'ul' | 'ol'
 }
 
-function ListMaker({ data = [], type = 'ul', isTop = false }: { data: data[]; type: type; isTop: boolean }) {
-  const list = data.map((x: data, i: number) =>
-    typeof x === 'string' ? <li key={i}>{x}</li> : <ListMaker key={i} data={x} type={type} isTop={false} />
+function ListMaker({ items = [], type = 'ul', isTop = false }: { items: items[]; type: type; isTop: boolean }) {
+  const list = items.map((x: items, i: number) =>
+    typeof x === 'string' ? <li key={i}>{x}</li> : <ListMaker key={i} items={x} type={type} isTop={false} />
   )
 
   if (isTop) return list
@@ -18,10 +18,10 @@ function ListMaker({ data = [], type = 'ul', isTop = false }: { data: data[]; ty
   return type === 'ul' ? <ul>{list}</ul> : <ol>{list}</ol>
 }
 
-export default function Main({ data = [], type = 'ul', className = '', ...props }: props) {
+export default function Main({ items = [], type = 'ul', className = '', ...props }: props) {
   className = `mumpui mp-list ${className}`
 
-  const list = <ListMaker data={data} type={type} isTop={true} />
+  const list = <ListMaker items={items} type={type} isTop={true} />
 
   return type === 'ul' ? (
     <ul {...props} className={className}>

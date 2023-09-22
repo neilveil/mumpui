@@ -9,43 +9,43 @@ type item = {
 }
 
 type props = React.HTMLAttributes<HTMLDivElement> & {
-  selected: string
-  onSelect: (key: string) => void
+  active: string
+  onClick: (key: string) => void
   items: item[]
   access?: string[]
 }
 
-export default function Main({ selected, onSelect, items = [], access, className = '', ...props }: props) {
+export default function Main({ active, onClick, items = [], access, className = '', ...props }: props) {
   className = 'mumpui mp-menu ' + className
 
   return (
     <div {...props} className={className}>
       {items.map((item, i) => (
-        <MenuItem key={i} selected={selected} onSelect={onSelect} item={item} access={access} />
+        <MenuItem key={i} active={active} onClick={onClick} item={item} access={access} />
       ))}
     </div>
   )
 }
 
-const isExpanded = (next: item[] = [], selected: string): boolean => {
+const isExpanded = (next: item[] = [], active: string): boolean => {
   for (const x of next)
-    if (x.key === selected) return true
-    else if (x.next?.length) return isExpanded(x.next, selected)
+    if (x.key === active) return true
+    else if (x.next?.length) return isExpanded(x.next, active)
   return false
 }
 
 function MenuItem({
-  selected,
-  onSelect,
+  active,
+  onClick,
   item,
   access = []
 }: {
-  selected: string
-  onSelect: (key: string) => void
+  active: string
+  onClick: (key: string) => void
   item: item
   access?: string | string[]
 }) {
-  const [expanded, setExpanded] = useState(isExpanded(item.next, selected))
+  const [expanded, setExpanded] = useState(isExpanded(item.next, active))
 
   const isExpandable = !!item.next?.length
 
@@ -61,10 +61,10 @@ function MenuItem({
   return (
     <>
       <div
-        className={`mp-menu-item ${selected === item.key ? 'mp-menu-item-selected' : ''} ${
+        className={`mp-menu-item ${active === item.key ? 'mp-menu-item-active' : ''} ${
           isExpandable ? 'mp-menu-item-expandable' : ''
         }`}
-        onClick={() => (isExpandable ? setExpanded(!expanded) : onSelect(item.key))}
+        onClick={() => (isExpandable ? setExpanded(!expanded) : onClick(item.key))}
       >
         <div>
           {!!item.icon && <span className='mp-menu-item-icon'>{item.icon}</span>}
@@ -77,7 +77,7 @@ function MenuItem({
       {!!(isExpandable && expanded) &&
         item.next?.map((item, i) => (
           <div key={i} className='mp-menu-item-group'>
-            <MenuItem selected={selected} onSelect={onSelect} item={item} access={access} />
+            <MenuItem active={active} onClick={onClick} item={item} access={access} />
           </div>
         ))}
     </>

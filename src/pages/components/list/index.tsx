@@ -7,11 +7,11 @@ export default function Main() {
   return (
     <Docs name='List'>
       <Docs.Showcase title='Unordered list' code={snippets.s1}>
-        <List data={data.list} />
+        <List items={data.list} />
       </Docs.Showcase>
 
       <Docs.Showcase title='Ordered list' code={snippets.s2}>
-        <List type='ol' data={data.list} />
+        <List type='ol' items={data.list} />
       </Docs.Showcase>
 
       <Docs.Props
@@ -27,7 +27,7 @@ export default function Main() {
             )
           },
           {
-            name: 'data',
+            name: 'items',
             type: 'array',
             usage: (
               <span>

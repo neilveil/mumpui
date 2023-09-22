@@ -28,13 +28,15 @@ check top level class on radio
 - Showcase on home
 - Disabled field
 - Docs prop types
+- Items & options check
+- Fix type of interface according to comp
 
 ---
 
-- Items & options check
 
-- Fix type of interface according to comp
 - Omit onClick props
+
+- Fix buttons
 
 - Allow unknown keys
 

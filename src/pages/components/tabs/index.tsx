@@ -10,7 +10,7 @@ export default function Main() {
   return (
     <Docs name='Tabs'>
       <Docs.Showcase title={<span></span>} code={snippets.s1}>
-        <Tabs options={data.tabs} active={active} onClick={(active: any) => setActive(active)} />
+        <Tabs items={data.tabs} active={active} onClick={(active: any) => setActive(active)} />
       </Docs.Showcase>
 
       <Docs.Props
@@ -18,14 +18,14 @@ export default function Main() {
         type='component'
         fields={[
           { name: '..', usage: 'All div element props' },
-          { name: 'options', type: 'array', usage: 'Array of options' },
+          { name: 'items', type: 'array', usage: 'Array of items' },
           { name: 'active', type: 'string', usage: 'Active tab key' },
           { name: 'onClick', type: 'function', usage: 'To set active tab' }
         ]}
       />
 
       <Docs.Props
-        title='option'
+        title='item'
         type='object'
         fields={[
           { name: 'key', type: 'string', usage: 'Unique string key' },

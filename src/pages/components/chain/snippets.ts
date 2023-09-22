@@ -1,16 +1,16 @@
 import data from 'data'
 
 export const s1 = `
-<Chain data={${JSON.stringify(data.chain, null, 2)}} />
+<Chain items={${JSON.stringify(data.chain, null, 2)}} />
 `
 
 export const s2 = `
 // Different seperator
-<Chain data={${JSON.stringify(data.chain, null, 2)}} seperator='•' />
+<Chain items={${JSON.stringify(data.chain, null, 2)}} seperator='•' />
 
 // Customized seperator
 <Chain
-  data={${JSON.stringify(data.chain, null, 2)}}
+  items={${JSON.stringify(data.chain, null, 2)}}
   seperator={
     <div
       style={{
@@ -26,7 +26,7 @@ export const s2 = `
 
 // Using chain as breadcrumb component
 <Chain
-  data={${JSON.stringify(data.chain, null, 2)}.map(x => (
+  items={${JSON.stringify(data.chain, null, 2)}.map(x => (
     <Link key={x} to={x} style={{ color: 'var(--c-link)' }}>
       {x}
     </Link>

@@ -11,8 +11,8 @@ export default function Main() {
     <Docs name='Menu'>
       <Docs.Showcase title={<span></span>} code={snippets.s1}>
         <Menu
-          selected={selected}
-          onSelect={(selected: any) => setSelected(selected)}
+          active={selected}
+          onClick={(selected: any) => setSelected(selected)}
           items={data.menu}
           style={{ width: '100%', maxWidth: '12rem' }}
         />
@@ -27,8 +27,8 @@ export default function Main() {
         type='component'
         fields={[
           { name: '..', usage: 'All div element props' },
-          { required: true, name: 'selected', type: 'string' },
-          { required: true, name: 'onSelect', type: 'function' },
+          { required: true, name: 'active', type: 'string' },
+          { required: true, name: 'onClick', type: 'function' },
           { required: true, name: 'items', customType: 'array', usage: 'Array of menu item objects' }
         ]}
       />

@@ -1,23 +1,23 @@
 import React from 'react'
 
-type option = {
+type item = {
   key: string
   label: string
 }
 
 type props = Omit<React.HTMLAttributes<HTMLDivElement>, 'onClick'> & {
-  options?: option[]
+  items?: item[]
   active?: string
   onClick?: (active: string) => void
   className?: string
 }
 
-export default function Main({ options = [], active, onClick, className = '', ...props }: props) {
+export default function Main({ items = [], active, onClick, className = '', ...props }: props) {
   className = 'mumpui mp-tabs ' + className
 
   return (
     <div {...props} className={className}>
-      {options.map(({ key, label }, i) => (
+      {items.map(({ key, label }, i) => (
         <div
           key={i}
           className={active === key ? 'mp-tab-active' : ''}

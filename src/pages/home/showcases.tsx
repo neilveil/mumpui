@@ -272,7 +272,7 @@ export default {
     docs: '/component/list',
     tags: [],
     Component() {
-      return <List style={{ fontSize: '.8rem', paddingLeft: '2rem' }} data={data.list} />
+      return <List style={{ fontSize: '.8rem', paddingLeft: '2rem' }} items={data.list} />
     }
   },
   table: {
@@ -304,7 +304,7 @@ export default {
     docs: '/component/chain',
     tags: [],
     Component() {
-      return <Chain data={['Home', 'Products', 'Price']} />
+      return <Chain items={['Home', 'Products', 'Price']} />
     }
   },
   tooltip: {
@@ -398,7 +398,7 @@ export default {
     Component() {
       const [active, setActive] = useState(data.tabs[0].key)
 
-      return <Tabs options={data.tabs} active={active} onClick={(active: string) => setActive(active)} />
+      return <Tabs items={data.tabs} active={active} onClick={(active: string) => setActive(active)} />
     }
   },
   menu: {
@@ -410,8 +410,8 @@ export default {
 
       return (
         <Menu
-          selected={selected}
-          onSelect={(selected: any) => setSelected(selected)}
+          active={selected}
+          onClick={(selected: any) => setSelected(selected)}
           items={data.menu}
           style={{ width: '100%', maxWidth: '12rem' }}
         />
@@ -446,7 +446,7 @@ export default {
     Component() {
       return (
         <Chain
-          data={data.chain.map(x => (
+          items={data.chain.map(x => (
             <Link key={x} to={x} style={{ color: 'var(--c-link)' }}>
               {x}
             </Link>
