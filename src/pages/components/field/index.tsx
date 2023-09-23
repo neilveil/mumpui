@@ -6,13 +6,7 @@ import related from '../related'
 export default function Main() {
   return (
     <Docs name='Field & Fields'>
-      <Docs.Showcase title='Field' code={snippets.s1}>
-        <Field label='Name'>
-          <Input placeholder='Enter name..' style={{ maxWidth: '20rem' }} />
-        </Field>
-      </Docs.Showcase>
-
-      <Docs.Showcase title='Fields' code={snippets.s2}>
+      <Docs.Showcase code={snippets.s1}>
         <Fields>
           <Field label='Name'>
             <Input placeholder='Enter name..' />
@@ -42,10 +36,6 @@ export default function Main() {
         <code>autoCol</code> in the second row is set to <code>true</code> which means if rendered in a device with
         screen width less than or equal to <code>1080px</code> i.e. mobile devices, then the elements inside will be
         rendered in a column.
-      </Docs.Info>
-
-      <Docs.Info>
-        To debug <code>autoCol</code>, do not forget to refresh after opening the developer tools in the browser.
       </Docs.Info>
 
       <Docs.Props
@@ -83,6 +73,10 @@ export default function Main() {
           }
         ]}
       />
+
+      <Docs.Info>
+        To debug <code>autoCol</code>, do not forget to refresh after opening the developer tools in the browser.
+      </Docs.Info>
 
       <Docs.Related components={[related.form, related.input]} />
     </Docs>

@@ -17,7 +17,7 @@ const [value, setValue] = useState(['india'])
 
 ..
 
-<Checkbox
+<Checkboxes
   checked={value}
   options={countries}
   onChange={value => setValue(value)}
@@ -29,7 +29,7 @@ const countries = ${JSON.stringify(data.countries, null, 2)}
 `
 
 export const s3 = `
-<Checkbox
+<Checkboxes
   style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}
   checked={value}
   options={countries}

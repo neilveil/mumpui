@@ -30,12 +30,12 @@ export default function Main() {
       </Docs.Showcase>
 
       <Docs.Props
-        title='Select'
+        title='Select.Multi'
         type='component'
         fields={[
           { name: '..', usage: 'All div element props' },
           { name: 'options', type: 'array', usage: 'Array of option objects containing key & label' },
-          { name: 'value', type: 'array', usage: 'Array of option objects containing key & label' },
+          { name: 'value', type: 'array', usage: 'Array of selected option objects containing key & label' },
           { name: 'onChange', type: 'function', usage: '' },
           { name: 'placeholder', type: 'string' },
           { name: 'onSearch', type: 'function', usage: 'Shows search box only if search function is passed' },

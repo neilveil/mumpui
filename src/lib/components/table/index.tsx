@@ -8,18 +8,19 @@ interface col {
   render?: (value: string, x: object, index: [row: number, col: number]) => void
 }
 
-type props = React.HTMLAttributes<HTMLDivElement> & {
+type props = React.TableHTMLAttributes<HTMLTableElement> & {
   cols: col[]
   data: object[]
   className?: string
+  style?: React.CSSProperties
 }
 
-export default function Main({ cols, data, className = '', ...props }: props) {
+export default function Main({ cols, data, className = '', style = {}, ...props }: props) {
   className = 'mumpui mp-table ' + className
 
   return (
-    <div {...props} className={className}>
-      <table>
+    <div className={className} style={style}>
+      <table {...props}>
         <thead>
           <tr>
             {cols.map((x, i) => (

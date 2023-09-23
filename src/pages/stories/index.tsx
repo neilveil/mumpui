@@ -77,7 +77,7 @@ export default function Main() {
 
         <Fields>
           <Button>Cancel</Button>
-          <Button type='primary'>Submit</Button>
+          <Button primary>Submit</Button>
         </Fields>
       </Form>
 

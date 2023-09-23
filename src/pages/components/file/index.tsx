@@ -26,7 +26,7 @@ export default function Main() {
         )}
       </Docs.Showcase>
 
-      <Docs.Props title='Button' fields={[{ name: '..', usage: 'All input element props' }]} />
+      <Docs.Props title='File' type='component' fields={[{ name: '..', usage: 'All input element props' }]} />
     </Docs>
   )
 }

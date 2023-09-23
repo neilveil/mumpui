@@ -189,7 +189,7 @@ export default {
     }
   },
   datetime: {
-    name: 'Date / Time',
+    name: 'Date / Month / Time',
     docs: '/component/datetime',
     tags: [],
     Component() {

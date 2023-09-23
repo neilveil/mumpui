@@ -23,7 +23,7 @@ export default function Main() {
 
       <Docs.Info>
         <b>MumpUI</b> uses default input field as using any 3rd party package always compromises with the user
-        experience in mobile experience.
+        experience in mobile devices.
       </Docs.Info>
 
       <Docs.Props

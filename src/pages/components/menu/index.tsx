@@ -43,6 +43,12 @@ export default function Main() {
           { name: 'next', customType: 'array', usage: 'Array of menu item object under this item' }
         ]}
       />
+
+      <Docs.Props
+        title='onClick'
+        type='function'
+        fields={[{ name: 'key', type: 'string', usage: 'Clicked tab key' }]}
+      />
     </Docs>
   )
 }

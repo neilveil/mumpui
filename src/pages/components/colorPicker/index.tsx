@@ -27,10 +27,20 @@ export default function Main() {
       </Docs.Info>
 
       <Docs.Props
-        title='Input'
+        title='ColorPicker'
+        type='component'
         fields={[
           { name: '..', usage: 'All div element props' },
-          { name: 'onValue', type: 'function' }
+          {
+            name: 'onValue',
+            type: 'function',
+            usage: (
+              <span>
+                Better alternative of <code>onChange</code> listener <code>{`(value) => void`}</code>. No need to do{' '}
+                <code>e.target.value</code>
+              </span>
+            )
+          }
         ]}
       />
 

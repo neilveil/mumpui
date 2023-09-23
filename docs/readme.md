@@ -32,13 +32,14 @@ check top level class on radio
 - Fix type of interface according to comp
 - Omit onClick props
 - Allow unknown keys
+- Fix native select
+- Remove data from snippets
+- Add simplified docs, no ts, no arrow functions
+- Remove TS
 
 ---
 
-- Remove data from snippets
-- Add simplified docs, no ts, no arrow functions
-
-- Fix native select
+- Check type in props
 
 - Set required fields & default values
 

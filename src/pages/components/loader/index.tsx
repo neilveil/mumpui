@@ -5,7 +5,12 @@ import * as snippets from './snippets'
 export default function Main() {
   return (
     <Docs name='Loader'>
-      <Docs.Showcase title='Default loader' code={snippets.s1}>
+      <Note type='red' style={{ fontSize: '.8rem' }}>
+        Kindly take note that the displayed component itself is a loader, rather than indicating that something is in
+        the process of loading.
+      </Note>
+
+      <Docs.Showcase code={snippets.s1}>
         <Loader />
       </Docs.Showcase>
 
@@ -16,11 +21,6 @@ export default function Main() {
       <Docs.Showcase title='Empty' code={snippets.s3}>
         <Loader empty />
       </Docs.Showcase>
-
-      <Note type='red'>
-        Kindly take note that the displayed component itself is a loader, rather than indicating that something is in
-        the process of loading.
-      </Note>
 
       <Docs.Props
         title='Loader'

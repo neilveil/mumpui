@@ -1,9 +1,4 @@
 export const s1 = `
-<Field label='Name'>
-  <Input placeholder='Enter name..' style={{ maxWidth: '20rem' }} />
-</Field>
-`
-export const s2 = `
 <Fields>
   <Field label='Name'>
     <Input placeholder='Enter name..' />

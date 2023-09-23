@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react'
+import { type option } from '.'
 
 type native = Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> & {
-  options?: string[]
+  options?: option[]
   value?: string
   onChange?: (value: string) => void
   disabled?: boolean
@@ -25,11 +26,13 @@ export default function Main({ value, options = [], onChange, disabled = false, 
       <select
         className='mp-select-single'
         value={value}
-        onChange={e => !!onChange && !disabled && onChange(options[e.target.selectedIndex] || '')}
+        onChange={e => !!onChange && !disabled && onChange(e.target.value)}
         disabled={disabled}
       >
         {options.map((x, i) => (
-          <option key={i}>{x}</option>
+          <option key={i} value={x.key}>
+            {x.label}
+          </option>
         ))}
       </select>
     </div>

@@ -41,3 +41,20 @@ export const s2 = `
   </Field>
 </Fields>
 `
+
+export const s3 = `
+const [inputType, setInputType] = useState('password')
+
+..
+
+<Fields>
+  <Input placeholder='Enter number..' prefix={'91'} />
+
+  <Input
+    type={inputType}
+    placeholder='Enter password..'
+    suffix={<span className='icon'>{inputType === 'password' ? 'visibility' : 'visibility_off'}</span>}
+    onSuffixClick={() => setInputType(inputType === 'password' ? 'text' : 'password')}
+  />
+</Fields>
+`

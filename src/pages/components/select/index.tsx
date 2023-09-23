@@ -7,7 +7,7 @@ import data from 'data'
 export default function Main() {
   const [options, setOptions] = useState(data.countries)
   const [value, setValue] = useState<(typeof data.countries)[0] | undefined>(data.countries[0])
-  const [valueNative, setValueNative] = useState('India')
+  const [valueNative, setValueNative] = useState('india')
 
   return (
     <Docs name='Select input field'>
@@ -30,10 +30,10 @@ export default function Main() {
         </Field>
       </Docs.Showcase>
 
-      <Docs.Showcase title='Native select component' code={snippets.s3}>
+      <Docs.Showcase title='⭐ Native select component' code={snippets.s3}>
         <Field label='Native Select' style={{ maxWidth: '15rem' }}>
           <Select.Native
-            options={data.countries.map(x => x.label)}
+            options={data.countries}
             value={valueNative}
             onChange={valueNative => setValueNative(valueNative)}
           />
@@ -65,9 +65,9 @@ export default function Main() {
         title='Select.Native'
         type='component'
         fields={[
-          { name: '..', usage: 'All div element props' },
-          { name: 'options', type: 'array', usage: 'Array of options of strings' },
-          { name: 'value', type: 'string', usage: 'Selected option' },
+          { name: '..', usage: 'All input element props' },
+          { name: 'options', type: 'array', usage: 'Array of option objects containing key & label' },
+          { name: 'value', type: 'string', usage: 'Selected option key' },
           { name: 'onChange', type: 'function' },
           { name: 'disabled', type: 'boolean' }
         ]}

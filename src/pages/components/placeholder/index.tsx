@@ -13,7 +13,18 @@ export default function Main() {
         <Placeholder>No data yet!</Placeholder>
       </Docs.Showcase>
 
-      <Docs.Props title='Placeholder' type='component' fields={[{ name: '..', usage: 'All div element props' }]} />
+      <Docs.Showcase title='Empty' code={snippets.s3}>
+        <Placeholder empty />
+      </Docs.Showcase>
+
+      <Docs.Props
+        title='Placeholder'
+        type='component'
+        fields={[
+          { name: '..', usage: 'All div element props' },
+          { name: 'empty', type: 'boolean', defaultValue: 'false' }
+        ]}
+      />
     </Docs>
   )
 }

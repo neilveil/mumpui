@@ -51,7 +51,8 @@ export default function Main() {
 
           <Fields style={{ justifyContent: 'flex-end' }}>
             <Button onClick={() => Message.info('Cancel!')}>Cancel</Button>
-            <Button type='primary' onClick={onSubmit}>
+
+            <Button primary onClick={onSubmit}>
               Submit
             </Button>
           </Fields>
@@ -60,6 +61,7 @@ export default function Main() {
 
       <Docs.Props
         title='Form'
+        type='component'
         fields={[
           { name: '..', usage: 'All form element props' },
           {

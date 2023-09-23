@@ -34,7 +34,7 @@ const onSubmit = () => {
 
   <Fields style={{ justifyContent: 'flex-end' }}>
     <Button onClick={() => Message.info('Cancel!')}>Cancel</Button>
-    <Button type='primary' onClick={onSubmit}>
+    <Button primary onClick={onSubmit}>
       Submit
     </Button>
   </Fields>

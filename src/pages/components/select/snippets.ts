@@ -39,13 +39,13 @@ const countries = ${JSON.stringify(data.countries, null, 2)}
 `
 
 export const s3 = `
-const [valueNative, setValueNative] = useState('India')
+const [valueNative, setValueNative] = useState('india')
 
 ..
 
 <Field label='Native Select' style={{ maxWidth: '15rem' }}>
   <Select.Native
-    options={countries.map(x => x.label)}
+    options={data.countries}
     value={valueNative}
     onChange={valueNative => setValueNative(valueNative)}
   />

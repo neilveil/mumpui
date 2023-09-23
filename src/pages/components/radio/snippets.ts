@@ -1,18 +1,7 @@
+import data from 'data'
+
 export const s1 = `
 const [value, setValue] = useState('india')
-
-const countries = [
-  { key: 'canada', label: 'Canada' },
-  { key: 'denmark', label: 'Denmark' },
-  { key: 'germany', label: 'Germany' },
-  { key: 'india', label: 'India' },
-  { key: 'japan', label: 'Japan' },
-  { key: 'netherlands', label: 'Netherlands' },
-  { key: 'sweden', label: 'Sweden' },
-  { key: 'switzerland', label: 'Switzerland' },
-  { key: 'united-kingdom', label: 'United Kingdom' },
-  { key: 'united-states', label: 'United States' }
-]
 
 ..
 
@@ -21,23 +10,14 @@ const countries = [
   options={countries}
   onChange={value => setValue(value)}
 />
+
+..
+
+const countries = ${JSON.stringify(data.countries, null, 2)}
 `
 
 export const s2 = `
 const [value, setValue] = useState('india')
-
-const countries = [
-  { key: 'canada', label: 'Canada' },
-  { key: 'denmark', label: 'Denmark' },
-  { key: 'germany', label: 'Germany' },
-  { key: 'india', label: 'India' },
-  { key: 'japan', label: 'Japan' },
-  { key: 'netherlands', label: 'Netherlands' },
-  { key: 'sweden', label: 'Sweden' },
-  { key: 'switzerland', label: 'Switzerland' },
-  { key: 'united-kingdom', label: 'United Kingdom' },
-  { key: 'united-states', label: 'United States' }
-]
 
 ..
 
@@ -47,4 +27,8 @@ const countries = [
   options={countries}
   onChange={value => setValue(value)}
 />
+
+..
+
+const countries = ${JSON.stringify(data.countries, null, 2)}
 `

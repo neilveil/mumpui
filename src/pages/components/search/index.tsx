@@ -45,14 +45,16 @@ export default function Main() {
       </Docs.Showcase>
 
       <Docs.Props
-        title='Textarea'
+        title='Search'
+        type='component'
         fields={[
           { name: '..', usage: 'All div element props' },
-          { name: 'value', type: 'string', usage: '' },
-          { name: 'onChange', type: 'function', usage: '' },
+          { name: 'value', type: 'string', usage: 'Search field value' },
+          { name: 'onChange', type: 'function', usage: 'Called when when something is typed' },
+          { name: 'onClick', type: 'function', usage: 'Called on search field click' },
           { name: 'placeholder', type: 'string', usage: '' },
-          { name: 'closeOnClick', type: 'boolean', usage: '' },
-          { name: 'disabled', type: 'boolean', usage: '' }
+          { name: 'closeOnClick', type: 'boolean' },
+          { name: 'disabled', type: 'boolean' }
         ]}
       />
     </Docs>

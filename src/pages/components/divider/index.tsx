@@ -12,7 +12,7 @@ export default function Main() {
       </Docs.Showcase>
 
       <Docs.Props
-        title='Tooltip'
+        title='Divider'
         type='component'
         fields={[
           { name: '..', usage: 'All div element props' },

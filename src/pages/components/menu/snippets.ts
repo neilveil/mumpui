@@ -23,7 +23,11 @@ const [selected, setSelected] = useState('home')
 <Menu
   active={selected}
   onClick={(selected: any) => setSelected(selected)}
-  items={${JSON.stringify(menu, null, 2).replaceAll('"--', '').replaceAll('--"', '')}}
+  items={items}
   style={{ width: '100%', maxWidth: '12rem' }}
 />
+
+..
+
+const items = ${JSON.stringify(menu, null, 2).replaceAll('"--', '').replaceAll('--"', '')}
 `

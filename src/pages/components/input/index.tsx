@@ -53,10 +53,11 @@ export default function Main() {
       </Docs.Showcase>
 
       <Docs.Info>
-        Setting the input field type auto-selects the right mobile keyboard, improving user experience.
+        Setting the input field &ldquo;type&rdquo; auto-selects the suitable keyboard in mobile devices, improving user
+        experience.
       </Docs.Info>
 
-      <Docs.Showcase title='Prefix & suffix' code={``}>
+      <Docs.Showcase title='Prefix & suffix' code={snippets.s3}>
         <Fields>
           <Input placeholder='Enter number..' prefix={'91'} />
 
@@ -80,7 +81,7 @@ export default function Main() {
           { name: 'onSuffixClick', type: 'function', usage: '' },
           {
             name: 'onValue',
-            type: 'string',
+            type: 'function',
             usage: (
               <span>
                 Better alternative of <code>onChange</code> listener <code>{`(value) => void`}</code>. No need to do{' '}

@@ -1,6 +1,6 @@
 import React from 'react'
 
-type props = Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> & {
+type props = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange'> & {
   label?: string
   checked?: boolean
   onChange?: (checked: boolean) => void
@@ -11,9 +11,14 @@ export default function Checkbox({ checked, label, onChange, disabled, className
   className = `mumpui mp-checkbox ${className}`
 
   return (
-    <div {...props} className={className}>
+    <div className={className}>
       <label>
-        <input type='checkbox' checked={checked} onChange={() => !!onChange && !disabled && onChange(!checked)} />
+        <input
+          {...props}
+          type='checkbox'
+          checked={checked}
+          onChange={() => !!onChange && !disabled && onChange(!checked)}
+        />
         <span className={`mp-checkbox-icon ${disabled ? 'mp-disabled' : ''}`} />
         <span className='mp-checkbox-label'>{label}</span>
       </label>

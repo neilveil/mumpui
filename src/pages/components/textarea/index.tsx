@@ -22,6 +22,7 @@ export default function Main() {
 
       <Docs.Props
         title='Textarea'
+        type='component'
         fields={[
           { name: '..', usage: 'All textarea element props' },
           {
