@@ -43,6 +43,9 @@
     "/dashboard/profile",
     "/dashboard/users",
     "/dashboard/users/create",
-    "/dashboard/users/udpate"
+    "/dashboard/users/udpate",
+    "/dashboard/maxWidth",
+    "/dashboard/loader",
+    "/dashboard/empty"
   ]
 }

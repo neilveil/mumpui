@@ -52,8 +52,6 @@ interface route {
 
 const routes: route[] = [
   { path: '/', component: home },
-  { path: '/components', component: home },
-  { path: '/helpers', component: home },
   { path: '/setup', component: setup },
   { path: '/stories', component: stories },
   { path: '/story/*', component: story },
