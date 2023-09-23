@@ -1,6 +1,8 @@
 {
   "pages": [
     "/",
+    "/setup",
+    "/stories",
     "/component/button",
     "/component/chain",
     "/component/checkbox",
@@ -33,7 +35,12 @@
     "/component/tooltip",
     "/dashboard/",
     "/dashboard/access",
-    "/dashboard/blog/*",
+    "/dashboard/blog/1",
+    "/dashboard/blog/2",
+    "/dashboard/blog/3",
+    "/dashboard/empty",
+    "/dashboard/loader",
+    "/dashboard/maxWidth",
     "/dashboard/profile",
     "/dashboard/users",
     "/dashboard/users/create",

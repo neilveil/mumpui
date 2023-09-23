@@ -1,6 +1,7 @@
 import { Docs } from 'components'
 import * as snippets from './snippets'
 import { Link } from 'react-router-dom'
+import { Code } from 'lib'
 
 export default function Main() {
   return (
@@ -8,6 +9,8 @@ export default function Main() {
       <Docs.Showcase code={snippets.s1}>
         <LinkRenderer title='Basic dashboard' path='/dashboard' />
       </Docs.Showcase>
+
+      <Docs.Info title>Data management examples</Docs.Info>
 
       <Docs.Showcase code={snippets.s2}>
         <LinkRenderer title='Data layout' path='/dashboard/users' />
@@ -21,13 +24,20 @@ export default function Main() {
         <LinkRenderer title='Form layout - update/delete' path='/dashboard/users/udpate' />
       </Docs.Showcase>
 
+      <Docs.Info title>Customizations</Docs.Info>
+
       <Docs.Showcase code={snippets.s5}>
         <LinkRenderer title='Dashboard with user acceess' path='/dashboard/access' />
       </Docs.Showcase>
 
       <Docs.Showcase code={snippets.s6}>
-        <LinkRenderer title='Max width restricted' path='/dashboard/maxWidth' />
+        <LinkRenderer title='Full width' path='/dashboard/maxWidth' />
       </Docs.Showcase>
+      <Docs.Info>
+        <b>MumpUI</b> dashboard has default max-width of <code>1366px</code> which can be customized.
+      </Docs.Info>
+
+      <Docs.Info title>Loader & placeholder</Docs.Info>
 
       <Docs.Showcase code={snippets.s7}>
         <LinkRenderer title='Data loading' path='/dashboard/loader' />

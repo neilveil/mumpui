@@ -66,14 +66,19 @@ Main.Info = Info
 function Info({
   children,
   style = {},
-  className = ''
+  className = '',
+  title = false
 }: {
   children?: any
   style?: React.CSSProperties
   className?: string
+  title?: boolean
 }) {
   return (
-    <div className={className + ' ' + s.info} style={style}>
+    <div
+      className={className + ' ' + s.info}
+      style={Object.assign(style, title ? { marginTop: '4rem', fontSize: '1rem', color: 'var(--mp-font-dark)' } : {})}
+    >
       {children}
     </div>
   )

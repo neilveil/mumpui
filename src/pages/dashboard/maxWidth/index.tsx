@@ -12,9 +12,9 @@ export default function Main() {
       sidebarImg='/logo.png'
       sidebarItems={data.dashboardSidebarItems}
       onSidebarClick={path => navigate(path)}
-      style={{ maxWidth: 1366 }}
+      style={{ maxWidth: '100%' }}
     >
-      <h3>Max width restricted</h3>
+      <h3>Welcome to MumpUI Dashboard.</h3>
     </Dashboard>
   )
 }

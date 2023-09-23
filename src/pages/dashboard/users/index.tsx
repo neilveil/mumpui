@@ -3,6 +3,8 @@ import { Dashboard, Message, Table } from 'lib'
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
+const pageSize = 5
+
 export default function Main() {
   const [search, setSearch] = useState('')
   const [offset, setOffset] = useState(0)
@@ -34,7 +36,7 @@ export default function Main() {
       // onCreate={() => {}}
       // onDelete={() => {}}
       //
-      paginationPageSize={10}
+      paginationPageSize={pageSize}
       paginationTotalItems={users.length}
       paginationOffset={offset}
       paginationOnChange={offset => setOffset(offset)}
@@ -57,7 +59,7 @@ export default function Main() {
             )
           }
         ]}
-        data={users.slice(offset, offset + 10)}
+        data={users.slice(offset, offset + pageSize)}
       />
     </Dashboard>
   )

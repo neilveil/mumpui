@@ -1,37 +1,29 @@
+import { Code } from 'lib'
+import * as snippets from './snippets'
+import { Footer } from 'components'
+
 export default function Main() {
   return (
-    <div className='content-page'>
-      <h1>MumpUI setup</h1>
+    <>
+      <div className='content-page'>
+        <h1>MumpUI setup</h1>
 
-      <p>Welcome to MumpUI, where creativity meets simplicity in the world of ReactJS development! 🌟</p>
+        <h2>Step I - Installation</h2>
 
-      <p style={{ fontSize: '.9rem' }}>This is 90% font size</p>
-      <p style={{ fontSize: '.8rem' }}>This is 80% font size</p>
-      <p style={{ fontSize: '.7rem' }}>This is 70% font size</p>
-      <p style={{ fontSize: '.6rem' }}>This is 60% font size</p>
-      <p style={{ fontSize: '.5rem' }}>This is 50% font size</p>
+        <Code snippet='npm i mumpui' lang='bash' />
 
-      <h2>Installation</h2>
+        <h2>Step II - Initialize</h2>
 
-      <pre>
-        <code>npm i mumpui</code>
-      </pre>
+        <p>MumpUI need to be initialized only once at the top.</p>
 
-      <h2>Initialize</h2>
+        <Code snippet={snippets.init} lang='jsx' />
 
-      <h3>Setp I</h3>
+        <h2>Setp III - Setup theme</h2>
 
-      <p>MumpUI need to be initialized only once at the top.</p>
+        <Code snippet={snippets.theme} lang='jsx' />
+      </div>
 
-      <pre>
-        <code>npm i mumpui</code>
-      </pre>
-
-      <h2>Setup theme</h2>
-
-      <pre>
-        <code>.body {}</code>
-      </pre>
-    </div>
+      <Footer />
+    </>
   )
 }

@@ -152,8 +152,8 @@ const dashboardSidebarItems = [
         access: 'blogs',
         next: [
           { name: 'Blog 1', path: '/dashboard/blog/1' },
-          { name: 'Blog 1', path: '/dashboard/blog/2' },
-          { name: 'Blog 1', path: '/dashboard/blog/3' }
+          { name: 'Blog 2', path: '/dashboard/blog/2' },
+          { name: 'Blog 3', path: '/dashboard/blog/3' }
         ]
       }
     ]

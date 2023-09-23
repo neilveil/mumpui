@@ -1,15 +1,16 @@
 .content-page {
   width: 100%;
-  max-width: 1024px;
+  max-width: 800px;
   margin: auto;
+  padding: 0 2rem;
+  padding-bottom: 4rem;
 
   h1,
   h2,
   h3 {
-    margin-top: 1rem;
     font-weight: var(--mp-fw-bold);
     margin: 1.5rem 0;
-    padding: 0 1rem;
+    margin-top: 3rem;
   }
 
   h1 {
@@ -28,26 +29,12 @@
     font-size: 1.25rem;
   }
 
-  p {
-    padding: 1rem;
-  }
-
   a,
   a:visited,
   a:hover,
   a:active {
     color: var(--c-link);
     text-decoration: none;
-  }
-}
-
-.col-in-mob {
-  display: flex;
-  flex-direction: row;
-}
-@media (max-width: 1080px) {
-  .col-in-mob {
-    flex-direction: column;
   }
 }
 

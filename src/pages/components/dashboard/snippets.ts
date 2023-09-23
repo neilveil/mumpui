@@ -155,7 +155,7 @@ export const s6 = `
   sidebarImg='/logo.png'
   sidebarItems={sidebarItems}
   onSidebarClick={path => navigate(path)}
-  style={{ maxWidth: 1366 }}
+  style={{ maxWidth: '100%' }}
 >
   <h3>Max width restricted</h3>
 </Dashboard>
@@ -197,4 +197,16 @@ export const s8 = `
 ..
 
 const sidebarItems = ${helpers.iconCleaner(data.dashboardSidebarItems)}
+`
+
+export const buttons = `
+import "mumpui/styles/dashboard-buttons.scss"
+`
+
+export const buttonsCSS = `
+.mp-dashboard-button-cancel {}
+.mp-dashboard-button-create {}
+.mp-dashboard-button-update {}
+.mp-dashboard-button-delete {}
+.mp-dashboard-button-add {}
 `
