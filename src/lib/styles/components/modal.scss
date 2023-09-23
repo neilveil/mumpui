@@ -4,7 +4,6 @@
   position: fixed;
   top: 0;
   left: 0;
-  overflow: auto;
   background: var(--mp-c-overlay-bg);
   z-index: 100000;
 
@@ -18,6 +17,8 @@
     left: 50%;
     transform: translateX(-50%);
     animation: mp-modal-slide-in 200ms ease forwards;
+    overflow: auto;
+    max-height: calc(100vh - 8rem);
   }
 
   @keyframes mp-modal-slide-in {

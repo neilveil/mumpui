@@ -77,6 +77,7 @@ textarea:disabled,
   margin-top: 0.5rem;
   animation: mp-input-expanded-area-appear 300ms ease forwards;
   user-select: none;
+  box-shadow: var(--mp-pop-up-shadow);
 
   @keyframes mp-input-expanded-area-appear {
     0% {

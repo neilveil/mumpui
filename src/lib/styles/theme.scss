@@ -8,6 +8,7 @@ body {
   --mp-border-radius: 8px; // Elements border radius
   --mp-border-width: 1px; // Elements border width
   --mp-c-overlay-bg: #0004; // Popup elements background color
+  --mp-pop-up-shadow: 0 8px 16px 8px #00000018; // Tooltip, select dropdown & search dropdown components shadow
 
   --mp-input-border-width: 1px; // Input fields border width
   --mp-c-input-border: #e8e8e8; // Input fields border color
@@ -32,6 +33,7 @@ body[data-theme='dark'] {
   --mp-border-radius: 8px; // Elements border radius
   --mp-border-width: 1px; // Elements border width
   --mp-c-overlay-bg: #000b; // Popup elements background color
+  --mp-pop-up-shadow: 0 8px 16px 8px #00000088; // Tooltip, select dropdown & search dropdown components shadow
 
   --mp-input-border-width: 1px; // Input fields border width
   --mp-c-input-border: #282828; // Input fields border color

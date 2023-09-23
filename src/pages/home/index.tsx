@@ -1,17 +1,19 @@
 import { Footer, SwitchTheme } from 'components'
 import Fuse from 'fuse.js'
-import { Placeholder } from 'lib'
+import { Modal, Placeholder } from 'lib'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import showcases from './showcases'
 import groups from './groups'
 import s from './styles.module.scss'
+import themes from './themes'
 
 export default class Main extends React.Component {
   state = {
     expanded: true,
     search: '',
-    isSearchFocused: false
+    isSearchFocused: false,
+    customize: true
   }
   logoRotation = 0
   componentDidMount(): void {
@@ -80,7 +82,7 @@ export default class Main extends React.Component {
                 </div> */}
 
                 <div className={s.links}>
-                  {['Setup', 'Stories'].map(x => (
+                  {['Setup'].map(x => (
                     <Link key={x} to={'/' + x.toLowerCase()}>
                       <div>{x}</div>
                     </Link>
@@ -88,12 +90,24 @@ export default class Main extends React.Component {
 
                   <SwitchTheme />
 
+                  <span onClick={() => this.setState({ customize: !this.state.customize })} className='icon'>
+                    brush
+                  </span>
+
                   {/* <span className='icon'>brush</span> */}
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        <Modal
+          style={{ padding: 0, maxWidth: 800 }}
+          visible={this.state.customize}
+          onClose={() => this.setState({ customize: false })}
+        >
+          <Customize />
+        </Modal>
 
         <div className={s.container}>
           <div className={s.content}>
@@ -208,4 +222,77 @@ const Showcases = ({ data, expanded }: { data: element[]; expanded: boolean }) =
       ))}
     </div>
   )
+}
+
+function Customize() {
+  return (
+    <div className={s.customizeTheme}>
+      <div className={s.themes}>
+        {Object.entries(themes).map(([key, x]: any) => (
+          <div
+            style={{ color: x['--mp-c-primary'], background: x['--mp-c-primary'] + '18' }}
+            key={key}
+            onClick={() => {
+              Object.keys(x).forEach(style => document.body.style.setProperty(style, x[style]))
+            }}
+          >
+            {x['--theme-name']}
+          </div>
+        ))}
+      </div>
+
+      <div className={s.body}>
+        <div className={s.title}>
+          Customize theme <span className='icon'>copy</span> <span className='icon'>refresh</span>
+        </div>
+
+        <div className={s.editor}>
+          {Object.entries(config).map(([key, { value, usage }]) => (
+            <div key={key}>
+              <div className={s.usage}>{usage}</div>
+
+              <div className={s.keyValue}>
+                <div className={s.key}>{key}</div>
+
+                <input
+                  defaultValue={value}
+                  onChange={e => {
+                    document.body.style.setProperty(key, e.target.value)
+                  }}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const config = {
+  '--mp-c-primary': { value: '#000000', usage: 'Primary color' },
+  '--mp-c-bg': { value: '#ffffff', usage: 'Background color' },
+
+  '--mp-c-hover': { value: '#f8f8f8', usage: 'Elements color on hover before selection' },
+  '--mp-c-border': { value: '#e8e8e8', usage: 'Elements border color' },
+  '--mp-border-radius': { value: '8px', usage: 'Elements border radius' },
+  '--mp-border-width': { value: '1px', usage: 'Elements border width' },
+  '--mp-c-overlay-bg': { value: '#0004', usage: 'Popup elements background color' },
+  '--mp-pop-up-shadow': {
+    value: '0 8px 16px 8px #00000018',
+    usage: 'Tooltip, select dropdown & search dropdown components shadow'
+  },
+
+  '--mp-input-border-width': { value: '1px', usage: 'Input fields border width' },
+  '--mp-c-input-border': { value: '#e8e8e8', usage: 'Input fields border color' },
+  '--mp-c-input-border-hover': { value: '#d8d8d8', usage: 'Input fields border color on hover' },
+  '--mp-c-input-border-active': { value: '#b8b8b8', usage: 'Input fields border color on active' },
+  '--mp-input-box-shadow': { value: '0 0 2px 0px #0001', usage: 'Input fields box shadow' },
+  '--mp-input-box-shadow-hover': { value: '0 0 4px 0px #0001', usage: 'Input fields box shadow on hover' },
+  '--mp-input-box-shadow-active': { value: '0 0 4px 0px #0002', usage: 'Input fields box shadow on active' },
+
+  '--mp-c-font-dark': { value: '#282828', usage: 'Font color dark' },
+  '--mp-c-font': { value: '#484848', usage: 'Font color default' },
+  '--mp-c-font-light': { value: '#888888', usage: 'Font color light' },
+  '--mp-c-placeholder': { value: '#b8b8b8', usage: 'Font color of input field placeholder' }
 }

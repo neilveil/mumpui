@@ -39,11 +39,10 @@ check top level class on radio
 - Check type in props
 - Set required fields & default values
 - Remove react
-
----
-
 - Dashboard
 - Full width dashboard
+
+---
 
 - Pop up shadow
 
