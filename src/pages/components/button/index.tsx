@@ -8,7 +8,12 @@ export default function Main() {
       <Docs.Showcase title='Default buttons' code={snippets.s1}>
         <Fields>
           <Button>Default</Button>
-          <Button primary onClick={() => Message.success('Clicked!')}>
+          <Button
+            primary
+            onClick={() => {
+              Message.success('Clicked!')
+            }}
+          >
             Primary
           </Button>
         </Fields>
@@ -25,6 +30,22 @@ export default function Main() {
           <Button style={{ border: 'none' }}>Clear</Button>
         </Fields>
       </Docs.Showcase>
+
+      <Docs.Info>
+        Do not forget to install some icons pack like{' '}
+        <a href='https://fonts.google.com/icons?icon.set=Material+Icons' target='_blank' rel='noreferrer'>
+          Google Fonts
+        </a>{' '}
+        (Free) ,{' '}
+        <a href='https://fontawesome.com/search' target='_blank' rel='noreferrer'>
+          Font Awesome
+        </a>
+        ,{' '}
+        <a href='https://www.streamlinehq.com/icons' target='_blank' rel='noreferrer'>
+          Stream Line
+        </a>{' '}
+        etc to use icons.
+      </Docs.Info>
 
       <Docs.Props
         title='Button'

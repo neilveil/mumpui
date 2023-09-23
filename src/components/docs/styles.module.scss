@@ -18,8 +18,16 @@
     color: var(--mp-c-font-light);
 
     a {
-      color: var(--mp-c-link);
+      color: var(--c-link);
     }
+  }
+
+  .issue {
+    margin: 4rem 0;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #ff0000b8;
+    font-weight: var(--fw-bold);
   }
 }
 

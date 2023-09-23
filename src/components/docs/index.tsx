@@ -8,7 +8,6 @@ import { SwitchTheme } from 'components'
 interface main {
   children?: any
   name: string
-  test?: any
 }
 
 export default function Main(props: main) {
@@ -37,10 +36,17 @@ export default function Main(props: main) {
               <div className={s.title}>{['MumpUI', props.name].join(' / ')}</div>
             </div>
           </div>
-
           {props.children}
 
-          <div style={{ height: '2rem' }} />
+          <div className={s.issue}>
+            <a
+              href={`https://github.com/neilveil/mumpui/issues/new?title=${encodeURIComponent(props.name)}&body=`}
+              target='_blank'
+              rel='noreferrer'
+            >
+              Report an issue&nbsp;&nbsp;<span className='icon'>east</span>
+            </a>
+          </div>
         </div>
       </div>
 

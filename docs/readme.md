@@ -35,12 +35,12 @@ check top level class on radio
 
 ---
 
-
 - Remove data from snippets
+- Add simplified docs, no ts, no arrow functions
+
+- Fix native select
 
 - Set required fields & default values
-
-- Add simplified docs, no ts, no arrow functions
 
 - Related components & blogs
 

@@ -18,7 +18,7 @@ export default function Main() {
         <Checkboxes checked={value} options={countries} onChange={value => setValue(value)} />
       </Docs.Showcase>
 
-      <Docs.Showcase title='Evenly distributed' code={snippets.s2}>
+      <Docs.Showcase title='Evenly distributed' code={snippets.s3}>
         <Checkboxes
           style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}
           checked={value}

@@ -118,6 +118,8 @@ npm install mumpui
 
 MumpUI is open-source and released under the MIT License. You are free to use, modify, and distribute this library in your projects. Contributions and feedback are welcome!
 
-For detailed usage instructions, examples, and API documentation, please visit the MumpUI GitHub repository.
+## More
 
-Happy coding with **MumpUI**!
+For detailed usage instructions, examples, and API documentation, please visit the [MumpUI](https://github.com/neilveil/mumpui) repository.
+
+❤️ Happy coding with **MumpUI**!
