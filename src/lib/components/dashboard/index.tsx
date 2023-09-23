@@ -3,7 +3,8 @@ import Menu from '../menu'
 import Button from '../button'
 import Input from '../input'
 import Pagination from '../pagination'
-import { Loader, Placeholder } from 'lib'
+import Loader from '../loader'
+import Placeholder from '../placeholder'
 
 declare global {
   interface Window {

@@ -13,7 +13,7 @@ function ListMaker({ items = [], type = 'ul', isTop = false }: { items: items[];
     typeof x === 'string' ? <li key={i}>{x}</li> : <ListMaker key={i} items={x} type={type} isTop={false} />
   )
 
-  if (isTop) return list
+  if (isTop) return <>{list}</>
 
   return type === 'ul' ? <ul>{list}</ul> : <ol>{list}</ol>
 }

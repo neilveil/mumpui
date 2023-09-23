@@ -1,7 +1,6 @@
 import { Docs } from 'components'
 import * as snippets from './snippets'
 import { Link } from 'react-router-dom'
-import { Code } from 'lib'
 
 export default function Main() {
   return (
