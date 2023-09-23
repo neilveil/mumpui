@@ -125,10 +125,8 @@ function Showcase({
 type field = {
   name?: string
   type?: 'string' | 'number' | 'boolean' | 'object' | 'array' | 'function' | 'jsx' | 'symbol' | 'any'
-  customType?: string
   usage?: any
   defaultValue?: string
-  required?: boolean
 }
 
 interface props {
@@ -147,7 +145,7 @@ function Props(props: props) {
 
       <Table
         cols={[
-          { key: 'required', render: value => (value ? '*' : '') },
+          // { key: 'required', render: value => (value ? '*' : '') },
           { name: 'Name', key: 'name', render: value => (value ? <code>{value}</code> : null) },
           {
             name: 'Type',

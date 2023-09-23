@@ -44,7 +44,7 @@ export default function Main() {
         title='Message.success(text, duration)'
         type='function'
         fields={[
-          { required: true, name: 'text', type: 'string', usage: 'Message text' },
+          { name: 'text', type: 'string', usage: 'Message text' },
           { name: 'duration', type: 'number', usage: 'Duration in milliseconds' }
         ]}
       />

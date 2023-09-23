@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
 declare global {
   interface Window {
@@ -7,11 +7,11 @@ declare global {
 }
 
 type props = React.HTMLAttributes<HTMLDivElement> & {
-  snippet: string
-  lang: string
+  snippet?: string
+  lang?: string
 }
 
-export default function Main({ snippet, lang, className, ...props }: props) {
+export default function Main({ snippet = '', lang = 'text', className, ...props }: props) {
   const ref: any = useRef()
 
   useEffect(() => {

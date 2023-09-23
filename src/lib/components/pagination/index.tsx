@@ -1,15 +1,23 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 type props = Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> & {
   pageSize: number
   totalItems: number
   offset: number
-  onChange: (offset: number) => void
+  onChange?: (offset: number) => void
   disabled?: boolean
   className?: string
 }
 
-export default function Main({ pageSize, totalItems, offset, onChange, disabled, className = '', ...props }: props) {
+export default function Main({
+  pageSize = 10,
+  totalItems = 0,
+  offset = 0,
+  onChange,
+  disabled,
+  className = '',
+  ...props
+}: props) {
   className = 'mumpui mp-pagination ' + className
 
   const _onChange = (pageNumber: number) => {
@@ -17,13 +25,13 @@ export default function Main({ pageSize, totalItems, offset, onChange, disabled,
 
     if (pageNumber.toString() === 'NaN' || pageNumber < 1 || pageNumber > Math.ceil(totalItems / pageSize)) {
       setPageNumber(1)
-      onChange(0)
+      if (onChange) onChange(0)
       return
     }
 
     const offset = (pageNumber - 1) * pageSize
 
-    onChange(offset)
+    if (onChange) onChange(offset)
   }
 
   const [pageNumber, setPageNumber] = useState(Math.ceil(offset / pageSize) + 1)

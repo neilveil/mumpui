@@ -73,9 +73,9 @@ export default function Main() {
         }
         type='function'
         fields={[
-          { required: true, name: 'title', type: 'string', usage: '' },
+          { name: 'title', type: 'string', usage: '' },
           { name: 'description', type: 'string', usage: '' },
-          { required: true, name: 'onConfirm', type: 'function', usage: '' },
+          { name: 'onConfirm', type: 'function', usage: '' },
           { name: 'onCancel', type: 'function', usage: '' },
           { name: 'confirmText', type: 'string', usage: 'Confirm button text' },
           { name: 'cancelText', type: 'string', usage: 'Cancel button text' },

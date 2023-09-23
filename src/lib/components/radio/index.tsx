@@ -1,5 +1,3 @@
-import React from 'react'
-
 type option = {
   key: string
   label: string

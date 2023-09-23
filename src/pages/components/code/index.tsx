@@ -28,9 +28,8 @@ export default function Main() {
         title='Code'
         fields={[
           { name: '..', usage: 'All div element props' },
-          { required: true, name: 'snippet', type: 'string' },
+          { name: 'snippet', type: 'string' },
           {
-            required: true,
             name: 'lang',
             type: 'string',
             usage: (

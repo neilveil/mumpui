@@ -1,5 +1,3 @@
-import React from 'react'
-
 type props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   children?: any
   primary?: boolean

@@ -1,5 +1,3 @@
-import React from 'react'
-
 type items = string | items[]
 type type = 'ul' | 'ol'
 

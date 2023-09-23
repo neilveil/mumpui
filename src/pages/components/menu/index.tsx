@@ -27,9 +27,9 @@ export default function Main() {
         type='component'
         fields={[
           { name: '..', usage: 'All div element props' },
-          { required: true, name: 'active', type: 'string' },
-          { required: true, name: 'onClick', type: 'function' },
-          { required: true, name: 'items', customType: 'array', usage: 'Array of menu item objects' }
+          { name: 'active', type: 'string' },
+          { name: 'onClick', type: 'function' },
+          { name: 'items', type: 'array', usage: 'Array of menu item objects' }
         ]}
       />
 
@@ -37,10 +37,10 @@ export default function Main() {
         title='item'
         type='object'
         fields={[
-          { required: true, name: 'key', customType: 'number|string' },
-          { required: true, name: 'label', type: 'string' },
+          { name: 'key', type: 'string' },
+          { name: 'label', type: 'string' },
           { name: 'icon', type: 'jsx' },
-          { name: 'next', customType: 'array', usage: 'Array of menu item object under this item' }
+          { name: 'next', type: 'array', usage: 'Array of menu item object under this item' }
         ]}
       />
 

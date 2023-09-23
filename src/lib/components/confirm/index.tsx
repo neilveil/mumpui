@@ -1,11 +1,10 @@
-import React from 'react'
 import Button from '../button'
 import * as icons from '../message/icons'
 
 interface data {
   id: number
-  title: string
-  onConfirm: () => void
+  title?: string
+  onConfirm?: () => void
   description?: string
   confirmText?: string
   cancelText?: string
@@ -22,7 +21,7 @@ export default class Main extends React.Component {
     data: []
   }
   static _this: InstanceType<typeof Main>
-  static init = ({ title, description, confirmText, cancelText, onConfirm, onCancel, type }: Omit<data, 'id'>) => {
+  static init = ({ title = '', description, confirmText, cancelText, onConfirm, onCancel, type }: Omit<data, 'id'>) => {
     Main._this.setState({
       data: Main._this.state.data.concat({
         id: Math.random(),

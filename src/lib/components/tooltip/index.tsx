@@ -1,5 +1,3 @@
-import React from 'react'
-
 type props = React.HTMLAttributes<HTMLDivElement> & {
   label?: any
   position?: 'top' | 'right' | 'bottom' | 'left'

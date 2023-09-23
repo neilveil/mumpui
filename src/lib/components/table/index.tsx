@@ -1,5 +1,3 @@
-import React from 'react'
-
 interface col {
   name?: string
   key?: string

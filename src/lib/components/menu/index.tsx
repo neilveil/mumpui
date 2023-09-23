@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 type item = {
   key: string
@@ -10,9 +10,9 @@ type item = {
 }
 
 type props = React.HTMLAttributes<HTMLDivElement> & {
-  active: string
-  onClick: (key: string) => void
-  items: item[]
+  active?: string
+  onClick?: (key: string) => void
+  items?: item[]
   access?: string[]
 }
 
@@ -28,7 +28,7 @@ export default function Main({ active, onClick, items = [], access, className = 
   )
 }
 
-const isExpanded = (next: item[] = [], active: string): boolean => {
+const isExpanded = (next: item[] = [], active?: string): boolean => {
   for (const x of next)
     if (x.key === active) return true
     else if (x.next?.length) return isExpanded(x.next, active)
@@ -37,12 +37,12 @@ const isExpanded = (next: item[] = [], active: string): boolean => {
 
 function MenuItem({
   active,
-  onClick,
+  onClick = () => {},
   item,
   access = []
 }: {
-  active: string
-  onClick: (key: string) => void
+  active?: string
+  onClick?: (key: string) => void
   item: item
   access?: string | string[]
 }) {

@@ -1,5 +1,3 @@
-import React from 'react'
-
 type x = string | number | JSX.Element
 
 type props = React.HTMLAttributes<HTMLDivElement> & {

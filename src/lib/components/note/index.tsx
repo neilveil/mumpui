@@ -1,5 +1,3 @@
-import React from 'react'
-
 type props = React.HTMLAttributes<HTMLDivElement> & {
   type?: 'red' | 'blue' | 'green' | 'yellow' | 'quote'
   className?: string

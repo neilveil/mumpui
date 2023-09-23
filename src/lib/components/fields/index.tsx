@@ -1,5 +1,3 @@
-import React from 'react'
-
 type props = React.HTMLAttributes<HTMLDivElement> & {
   autoCol?: boolean
   colBreakPoint?: number

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 
 type props = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> & {
   children?: any

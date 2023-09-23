@@ -36,20 +36,18 @@ check top level class on radio
 - Remove data from snippets
 - Add simplified docs, no ts, no arrow functions
 - Remove TS
-
----
-
 - Check type in props
-
 - Set required fields & default values
 
-- Related components & blogs
+---
 
 - Pop up shadow
 
 - Remove react
 
 - Full width dashboard
+
+- Related components & blogs
 
 ---
 

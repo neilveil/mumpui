@@ -46,7 +46,7 @@ export default function Main() {
         fields={[
           { name: 'value', usage: "Row data object's key value" },
           { name: 'data', type: 'object', usage: 'Row data object' },
-          { name: 'index', customType: 'array', usage: <code>[$row, $col]</code> }
+          { name: 'index', type: 'array', usage: <code>[$row, $col]</code> }
         ]}
       />
     </Docs>

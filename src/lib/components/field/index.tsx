@@ -1,5 +1,3 @@
-import React from 'react'
-
 type props = React.InputHTMLAttributes<HTMLDivElement> & {
   label?: string
   className?: string
