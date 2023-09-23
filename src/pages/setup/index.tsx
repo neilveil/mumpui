@@ -8,19 +8,23 @@ export default function Main() {
       <div className='content-page'>
         <h1>MumpUI setup</h1>
 
-        <h2>Step I - Installation</h2>
+        <h2>Step I - Install</h2>
 
         <Code snippet='npm i mumpui' lang='bash' />
 
-        <h2>Step II - Initialize</h2>
+        <h2>Step II - Initialize MumpUI</h2>
 
         <p>MumpUI need to be initialized only once at the top.</p>
 
         <Code snippet={snippets.init} lang='jsx' />
 
-        <h2>Setp III - Setup theme</h2>
+        <h2>Setp III - Import theme</h2>
 
         <Code snippet={snippets.theme} lang='jsx' />
+
+        <br />
+
+        <p>🎉 Voila, good to go! 🚀</p>
       </div>
 
       <Footer />

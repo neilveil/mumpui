@@ -1,4 +1,6 @@
 export const init = `
+import MumpUI from 'mumpui'
+
 function App() {
   return (<div>
     {/* Initialize MumpUI */}
@@ -19,6 +21,5 @@ createRoot(document.getElementById('root') as HTMLElement).render(<App />)
 `
 
 export const theme = `
-// Import base theme
 import 'mumpui/styles/index.scss'
 `

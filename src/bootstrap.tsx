@@ -1,4 +1,4 @@
-import { MumpUI } from 'lib'
+import MumpUI from 'lib'
 
 export default function Main() {
   const savedTheme = window.localStorage.getItem('MP_THEME') || 'light'

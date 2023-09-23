@@ -58,4 +58,5 @@ const MumpUI = ({ tooltip, message }: props) => {
   )
 }
 
+export default MumpUI
 export { MumpUI, Message, Confirm, Tooltip }
