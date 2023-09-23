@@ -7,6 +7,11 @@
   min-height: 100vh;
   justify-content: space-between;
 
+  h2 {
+    font-weight: 400;
+    margin-top: 3rem;
+  }
+
   & > div {
     padding: 1rem;
   }

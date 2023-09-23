@@ -15,5 +15,6 @@ Main.blogs = {
   whyMumpUIDoesNotProvideMoreButtons: 'whyMumpUIDoesNotProvideMoreButtons',
   bestMultiSelectUX: 'bestMultiSelectUX',
   whyToUseRem: 'whyToUseRem',
-  whyMumpUIUsesNativeComponents: 'whyMumpUIUsesNativeComponents'
+  whyMumpUIUsesNativeComponents: 'whyMumpUIUsesNativeComponents',
+  howToManageLightAndDarkThemes: 'howToManageLightAndDarkThemes'
 }
