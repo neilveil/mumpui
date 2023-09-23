@@ -94,6 +94,12 @@ export default class Main extends React.Component {
                     brush
                   </span>
 
+                  <a href='https://github.com/neilveil/mumpui' target='_blank' rel='noreferrer'>
+                    <div className={s.github}>
+                      <img src='/github.png' alt='' />
+                    </div>
+                  </a>
+
                   {/* <span className='icon'>brush</span> */}
                 </div>
               </div>
