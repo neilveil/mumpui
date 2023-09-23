@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 type props = Omit<React.InputHTMLAttributes<HTMLDivElement>, 'onChange'> & {
   onChange?: (value: string) => void

@@ -1,3 +1,5 @@
+import React from 'react'
+
 type props = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'prefix'> & {
   prefix?: any
   onPrefixClick?: () => void

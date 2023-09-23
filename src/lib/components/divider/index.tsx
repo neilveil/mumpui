@@ -1,3 +1,5 @@
+import React from 'react'
+
 type props = React.HTMLAttributes<HTMLDivElement> & {
   children?: any
   align?: 'left' | 'center' | 'right'

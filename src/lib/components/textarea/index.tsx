@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from 'react'
+import React, { useCallback, useEffect, useRef } from 'react'
 
 type props = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
   autoHeight?: boolean

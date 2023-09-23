@@ -1,3 +1,5 @@
+import React from 'react'
+
 type props = React.HTMLAttributes<HTMLDivElement> & {
   visible?: boolean
   onClose?: () => void

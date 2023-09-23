@@ -1,8 +1,8 @@
+import React, { useEffect, useRef, useState } from 'react'
+
 import { default as Multi } from './multi'
 import { default as Native } from './native'
 import { default as search } from './search'
-
-import { useEffect, useRef, useState } from 'react'
 
 export type option = {
   key: string
