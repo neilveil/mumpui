@@ -2,7 +2,6 @@
   "pages": [
     "/",
     "/setup",
-    "/stories",
     "/component/button",
     "/component/chain",
     "/component/checkbox",
