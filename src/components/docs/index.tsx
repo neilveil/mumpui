@@ -1,5 +1,5 @@
 import { Code, Message, Table } from 'lib'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Footer from '../footer'
 import s from './styles.module.scss'
@@ -12,6 +12,13 @@ interface main {
 
 export default function Main(props: main) {
   const navigate = useNavigate()
+
+  const title = ['MumpUI', props.name].join(' / ')
+
+  useEffect(() => {
+    const titleEl = document.querySelector('title')
+    if (titleEl) titleEl.innerText = title
+  }, [title])
 
   return (
     <>
@@ -33,7 +40,7 @@ export default function Main(props: main) {
             </div>
 
             <div className={s.row}>
-              <div className={s.title}>{['MumpUI', props.name].join(' / ')}</div>
+              <div className={s.title}>{title}</div>
             </div>
           </div>
           {props.children}

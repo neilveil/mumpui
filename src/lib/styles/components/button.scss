@@ -7,6 +7,10 @@
   padding: var(--mp-input-padding);
   font-size: var(--mp-input-font-size);
 
+  border: var(--mp-border-width) solid var(--mp-c-border);
+  color: var(--mp-c-font);
+  background: transparent;
+
   &:hover {
     opacity: 0.7;
   }
@@ -18,10 +22,5 @@
   &.mp-button-primary {
     color: var(--mp-c-bg);
     background: var(--mp-c-primary);
-  }
-  &.mp-button-default {
-    border: var(--mp-border-width) solid var(--mp-c-border);
-    color: var(--mp-c-font);
-    background: transparent;
   }
 }

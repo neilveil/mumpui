@@ -39,7 +39,7 @@ function MenuItem({
   active,
   onClick = () => {},
   item,
-  access = []
+  access
 }: {
   active?: string
   onClick?: (key: string) => void
@@ -50,7 +50,9 @@ function MenuItem({
 
   const isExpandable = !!item.next?.length
 
-  if (item.access && item.access.length) {
+  if (access && item.access && item.access.length) {
+    if (!access.length) return null
+
     if (typeof item.access === 'string') item.access = [item.access]
 
     let allowed = false

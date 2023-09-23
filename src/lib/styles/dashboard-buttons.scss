@@ -1,0 +1,19 @@
+.mp-dashboard-button-cancel {
+  border: none;
+}
+.mp-dashboard-button-create {
+  background-color: var(--mp-c-primary);
+  color: var(--mp-c-bg);
+}
+.mp-dashboard-button-update {
+  color: var(--mp-c-primary);
+}
+.mp-dashboard-button-delete {
+  border-style: dashed;
+  border-color: #f5222da8;
+  color: #f5222da8;
+}
+.mp-dashboard-button-add {
+  background-color: var(--mp-c-primary);
+  color: var(--mp-c-bg);
+}

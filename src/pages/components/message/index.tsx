@@ -6,11 +6,11 @@ let message: symbol
 export default function Main() {
   return (
     <Docs name='Message'>
-      <Docs.Showcase title={<span>Success, Info, Warning & Error message</span>} code={snippets.s1}>
+      <Docs.Showcase title={<span>Success, Info, Warn & Error message</span>} code={snippets.s1}>
         <div style={{ display: 'flex', gap: '1rem' }}>
           <Button onClick={() => Message.success('Success message!')}>Success</Button>
           <Button onClick={() => Message.error('Error message!')}>Error</Button>
-          <Button onClick={() => Message.warning('Warning message!')}>Warning</Button>
+          <Button onClick={() => Message.warn('Warn message!')}>Warn</Button>
           <Button onClick={() => Message.info('Info message')}>Info</Button>
         </div>
       </Docs.Showcase>

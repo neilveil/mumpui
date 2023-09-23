@@ -3,7 +3,7 @@ export const s1 = `
 
 <Button onClick={() => Message.error('Error message!')}>Error</Button>
 
-<Button onClick={() => Message.warning('Warning message!')}>Warning</Button>
+<Button onClick={() => Message.warn('Warn message!')}>Warn</Button>
 
 <Button onClick={() => Message.info('Info message')}>Info</Button>
 `

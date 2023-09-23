@@ -1,6 +1,14 @@
 import { useState } from 'react'
 
-export default function Main({ style = {}, className = '' }: { style?: React.CSSProperties; className?: string }) {
+export default function Main({
+  style = {},
+  className = '',
+  text = ''
+}: {
+  style?: React.CSSProperties
+  className?: string
+  text?: string
+}) {
   const [_, rerender] = useState(true)
 
   const storedTheme = window.localStorage.getItem('MP_THEME')
@@ -19,15 +27,20 @@ export default function Main({ style = {}, className = '' }: { style?: React.CSS
         document.body.setAttribute('data-theme', altTheme)
         rerender(!_)
       }}
-      style={{
-        cursor: 'pointer',
-        display: 'inline-block',
-        userSelect: 'none',
-        ...style
-      }}
-      className={'icon' + className}
+      style={{ cursor: 'pointer' }}
     >
-      {altTheme}_mode
+      <span
+        style={{
+          cursor: 'pointer',
+          display: 'inline-block',
+          userSelect: 'none',
+          ...style
+        }}
+        className={'icon' + className}
+      >
+        {altTheme}_mode
+      </span>{' '}
+      {text}
     </span>
   )
 }

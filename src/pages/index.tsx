@@ -10,6 +10,9 @@ import dashboard_profile from './dashboard/profile'
 import dashboard_users from './dashboard/users'
 import dashboard_users_create from './dashboard/users/create'
 import dashboard_users_update from './dashboard/users/update'
+import dashboard_maxWidth from './dashboard/maxWidth'
+import dashboard_loader from './dashboard/loader'
+import dashboard_empty from './dashboard/empty'
 
 import component_input from './components/input'
 import component_dashboard from './components/dashboard'
@@ -62,6 +65,9 @@ const routes: route[] = [
   { path: '/dashboard/users', component: dashboard_users },
   { path: '/dashboard/users/create', component: dashboard_users_create },
   { path: '/dashboard/users/udpate', component: dashboard_users_update },
+  { path: '/dashboard/maxWidth', component: dashboard_maxWidth },
+  { path: '/dashboard/loader', component: dashboard_loader },
+  { path: '/dashboard/empty', component: dashboard_empty },
 
   // Components
   { path: '/component/input', component: component_input },

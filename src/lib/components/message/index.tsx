@@ -26,7 +26,7 @@ export default class Main extends React.Component {
   static duration = 3000
 
   static info = (text = '', duration?: duration) => Main.pushMessage({ icon: icons.info, text, duration })
-  static warning = (text = '', duration?: duration) => Main.pushMessage({ icon: icons.warn, text, duration })
+  static warn = (text = '', duration?: duration) => Main.pushMessage({ icon: icons.warn, text, duration })
   static success = (text = '', duration?: duration) => Main.pushMessage({ icon: icons.success, text, duration })
   static error = (text = '', duration?: duration) => Main.pushMessage({ icon: icons.error, text, duration })
   static loading = (text = '', duration?: duration) => Main.pushMessage({ icon: icons.loading, text, duration })

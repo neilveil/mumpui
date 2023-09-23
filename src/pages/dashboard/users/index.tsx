@@ -1,8 +1,7 @@
 import data from 'data'
-import { Dashboard, Table } from 'lib'
+import { Dashboard, Message, Table } from 'lib'
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { sidebarIcon, sidebarItems } from '../shared'
 
 export default function Main() {
   const [search, setSearch] = useState('')
@@ -10,31 +9,26 @@ export default function Main() {
 
   const navigate = useNavigate()
 
-  const users = data.users.slice(0, 96)
+  const users = data.users
 
   return (
     <Dashboard
       icon={<span className='icon'>person</span>}
       title='Users'
       info={users.length + ' users'}
-      onAdd={() => {
-        navigate('/dashboard/users/create')
-      }}
+      onAdd={() => navigate('/dashboard/users/create')}
       //
       search={search}
       onSearch={search => setSearch(search)}
       filter={
-        <Link
-          to='/dashboard/access'
-          style={{
-            fontSize: '.8rem',
-            color: 'var(--mp-c-font-light)',
-            cursor: 'pointer',
-            userSelect: 'none'
-          }}
-        >
-          Manage access
-        </Link>
+        <div style={{ display: 'flex', fontSize: '.8rem', gap: '1rem' }}>
+          <div style={{ cursor: 'pointer' }} onClick={() => Message.info('F1 clicked!')}>
+            F1
+          </div>
+          <div style={{ cursor: 'pointer' }} onClick={() => Message.warn('F2 clicked!')}>
+            F2
+          </div>
+        </div>
       }
       //
       // onCreate={() => {}}
@@ -45,8 +39,8 @@ export default function Main() {
       paginationOffset={offset}
       paginationOnChange={offset => setOffset(offset)}
       //
-      sidebarIcon={sidebarIcon}
-      sidebarItems={sidebarItems}
+      sidebarImg='/logo.png'
+      sidebarItems={data.dashboardSidebarItems}
       onSidebarClick={key => navigate(key)}
     >
       <Table

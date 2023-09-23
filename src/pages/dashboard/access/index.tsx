@@ -1,7 +1,7 @@
-import { Checkbox, Dashboard } from 'lib'
+import data from 'data'
+import { Checkboxes, Dashboard } from 'lib'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { sidebarIcon, sidebarItems } from '../shared'
 
 const allAccess = [
   { key: 'users', label: 'Users' },
@@ -15,28 +15,18 @@ export default function Main() {
 
   const navigate = useNavigate()
 
-  const sidebarItem = sidebarItems.find(x => x.name === 'Access')
-
-  const _sidebarItems = sidebarItems.map(x => {
-    return {
-      ...x,
-      access: x._access,
-      next: x.next ? x.next.map(y => ({ ...y, access: y._access })) : []
-    }
-  })
-
   return (
     <Dashboard
-      icon={sidebarItem?.icon}
-      title={sidebarItem?.name}
-      sidebarIcon={sidebarIcon}
-      sidebarItems={_sidebarItems}
+      icon={<span className='icon'>task_alt</span>}
+      title='Access'
+      sidebarImg='/logo.png'
+      sidebarItems={data.dashboardSidebarItems}
       onSidebarClick={key => navigate(key)}
       sidebarAccess={access}
     >
       <br />
 
-      <Checkbox options={allAccess} checked={access} onChange={(access: any) => setAccess(access)} />
+      <Checkboxes options={allAccess} checked={access} onChange={(access: any) => setAccess(access)} />
     </Dashboard>
   )
 }

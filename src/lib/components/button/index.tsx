@@ -8,7 +8,7 @@ type props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 }
 
 export default function Main({ children, primary, className = '', type = 'button', ...props }: props) {
-  className = `mumpui mp-button mp-button-${primary ? 'primary' : 'default'} ${className}`
+  className = `mumpui mp-button ${primary ? 'mp-button-primary' : ''}  ${className}`
 
   return (
     <button {...props} type={type} className={className} disabled={props.disabled} onClick={props.onClick}>

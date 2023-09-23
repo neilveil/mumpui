@@ -10,7 +10,8 @@ export default defineConfig({
     alias: {
       lib: __dirname + '/src/lib',
       components: __dirname + '/src/components',
-      data: __dirname + '/src/data'
+      data: __dirname + '/src/data',
+      helpers: __dirname + '/src/helpers.tsx'
     }
   },
   build: { outDir: 'build' },

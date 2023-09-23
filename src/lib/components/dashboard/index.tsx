@@ -3,6 +3,7 @@ import Menu from '../menu'
 import Button from '../button'
 import Input from '../input'
 import Pagination from '../pagination'
+import { Loader, Placeholder } from 'lib'
 
 declare global {
   interface Window {
@@ -19,12 +20,15 @@ interface sidebarItem {
 }
 
 interface props {
+  className?: string
+  style?: React.CSSProperties
   // sidebar
-  sidebar?: any
-  sidebarIcon?: string
-  sidebarItems: sidebarItem[]
+  sidebarImg?: string
+  sidebarItems?: sidebarItem[]
   sidebarAccess?: string[]
-  onSidebarClick?: (key: string) => void
+  onSidebarClick?: (path: string) => void
+  sidebarClassName?: string
+  sidebarStyle?: React.CSSProperties
   // header
   header?: any
   title?: any
@@ -32,20 +36,25 @@ interface props {
   info?: any
   onAdd?: () => void
   headerSuffix?: any
+  headerClassName?: string
+  headerStyle?: React.CSSProperties
   // body
   children?: any
   loading?: boolean
   empty?: boolean
-  placeholder?: any
   search?: string
   onSearch?: (search: string) => void
   filter?: any
+  bodyClassName?: string
+  bodyStyle?: React.CSSProperties
   // footer
   footer?: any
   onDelete?: () => void
   onCreate?: () => void
   onUpdate?: () => void
   onCancel?: () => void
+  footerClassName?: string
+  footerStyle?: React.CSSProperties
   // pagination
   paginationPageSize?: number
   paginationTotalItems?: number
@@ -54,7 +63,7 @@ interface props {
 }
 
 export default function Main(props: props) {
-  const [menuItemSelected, setMenuItemSelected] = useState(window.location.pathname)
+  const [menuItemActive, setMenuItemSelected] = useState(window.location.pathname)
   const [expandable, setExpandable] = useState(false)
 
   const toggleSidebar = () => setExpandable(!expandable)
@@ -78,29 +87,27 @@ export default function Main(props: props) {
   }, [])
 
   const sidebar = (
-    <>
-      {!!props.sidebar && props.sidebar}
-
-      {!!props.sidebarIcon && (
+    <div className={props.sidebarClassName || ''} style={props.sidebarStyle || {}}>
+      {!!props.sidebarImg && (
         <div className='mp-dashboard-sidebar-icon'>
-          <img src={props.sidebarIcon} alt='' />
+          <img src={props.sidebarImg} alt='' />
         </div>
       )}
 
       <Menu
-        selected={menuItemSelected}
-        onSelect={selected => {
+        active={menuItemActive}
+        onClick={selected => {
           if (props.onSidebarClick) props.onSidebarClick(selected.toString())
           setMenuItemSelected(selected.toString())
         }}
         items={sidebarItems}
         access={props.sidebarAccess}
       />
-    </>
+    </div>
   )
 
   return (
-    <div className='mumpui mp-dashboard'>
+    <div className={'mumpui mp-dashboard ' + (props.className || '')} style={props.style || {}}>
       <div className='mp-dashboard-sidebar'>{sidebar}</div>
 
       {!!expandable && (
@@ -111,7 +118,7 @@ export default function Main(props: props) {
 
       <div className='mp-dashboard-content'>
         {!!(props.header || props.title) && (
-          <div className='mp-dashboard-header'>
+          <div className={'mp-dashboard-header ' + (props.headerClassName || '')} style={props.headerStyle || {}}>
             {!!props.header && props.header}
 
             <div className='mp-dashboard-header-row'>
@@ -128,22 +135,23 @@ export default function Main(props: props) {
               </div>
 
               {!!props.onAdd && (
-                <Button primary onClick={props.onAdd}>
+                <Button className='mp-dashboard-button-add' onClick={props.onAdd}>
                   +&nbsp;&nbsp;Add
                 </Button>
               )}
             </div>
+
             {!!props.headerSuffix && props.headerSuffix}
           </div>
         )}
 
         <div className='mp-dashboard-body'>
           {props.loading ? (
-            'Loading..'
+            <Loader />
           ) : props.empty ? (
-            'Empty'
+            <Placeholder />
           ) : (
-            <>
+            <div className={props.bodyClassName || ''} style={props.bodyStyle || {}}>
               {!!(props.onSearch || props.filter) && (
                 <div className='mp-dashboard-body-search-and-filter'>
                   <div>
@@ -161,7 +169,7 @@ export default function Main(props: props) {
                 </div>
               )}
               {!!props.children && props.children}
-            </>
+            </div>
           )}
         </div>
 
@@ -170,7 +178,7 @@ export default function Main(props: props) {
           !!props.onDelete ||
           !!props.onCreate ||
           !!props.onUpdate) && (
-          <div className='mp-dashboard-footer'>
+          <div className={'mp-dashboard-footer ' + (props.footerClassName || '')} style={props.footerStyle || {}}>
             {!!props.footer && props.footer}
 
             <div className='mp-dashboard-pagination'>
@@ -187,7 +195,7 @@ export default function Main(props: props) {
             <div className='mp-dashboard-footer-buttons'>
               <div>
                 {!!props.onDelete && (
-                  <Button type='dashed' onClick={props.onDelete}>
+                  <Button className='mp-dashboard-button-delete' onClick={props.onDelete}>
                     Delete
                   </Button>
                 )}
@@ -197,18 +205,18 @@ export default function Main(props: props) {
                 {(!!props.onCreate || !!props.onUpdate) && (
                   <>
                     <Button
-                      type='dashed'
+                      className='mp-dashboard-button-cancel'
                       style={{ marginRight: '1rem' }}
                       onClick={() => (props.onCancel ? props.onCancel() : window.history.back())}
                     >
                       Cancel
                     </Button>
                     {props.onCreate ? (
-                      <Button type='primary' onClick={props.onCreate}>
+                      <Button className='mp-dashboard-button-create' onClick={props.onCreate}>
                         Create
                       </Button>
                     ) : (
-                      <Button type='primary' onClick={props.onUpdate}>
+                      <Button className='mp-dashboard-button-update' onClick={props.onUpdate}>
                         Update
                       </Button>
                     )}

@@ -38,14 +38,14 @@ check top level class on radio
 - Remove TS
 - Check type in props
 - Set required fields & default values
+- Remove react
 
 ---
 
-- Pop up shadow
-
-- Remove react
-
+- Dashboard
 - Full width dashboard
+
+- Pop up shadow
 
 - Related components & blogs
 
