@@ -1,0 +1,15 @@
+.husky
+build
+public
+src
+tmp
+
+index.html
+pages.json
+tsconfig.dist.json
+tsconfig.json
+vite.config.js
+
+.eslintrc.cjs
+.prettierignore
+.prettierrc.json

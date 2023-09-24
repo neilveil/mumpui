@@ -3,10 +3,14 @@
   "description": "A light-weight flexible & elegant design system for developers.",
   "version": "0.2.0",
   "main": "dist/index.js",
-  "types": "types/index.d.ts",
+  "author": "neilveil",
+  "repository": "neilveil/mumpui",
+  "license": "MIT",
+  "homepage": "https://neilveil.github.com/mumpui",
+  "dependencies": {},
   "scripts": {
     "start": "vite --host",
-    "build": "vite build && build-plus && appsw",
+    "build": "vite build && appsw && build-plus",
     "dist:clean": "rimraf dist",
     "dist:scripts": "rimraf dist && tsc --project tsconfig.dist.json",
     "dist:styles": "sass src/lib/styles:dist/styles --no-source-map",
@@ -39,5 +43,15 @@
     "typescript": "^4.9.5",
     "vite": "^4.4.5",
     "vite-plugin-eslint": "^1.8.1"
-  }
+  },
+  "keywords": [
+    "design-library",
+    "design-system",
+    "flat-design",
+    "lightweight-ui-design",
+    "mumpui",
+    "react",
+    "react-library",
+    "ui-library"
+  ]
 }

@@ -31,21 +31,6 @@
     "/component/table",
     "/component/tabs",
     "/component/textarea",
-    "/component/tooltip",
-    "/dashboard/",
-    "/dashboard/access",
-    "/dashboard/blog/1",
-    "/dashboard/blog/2",
-    "/dashboard/blog/3",
-    "/dashboard/empty",
-    "/dashboard/loader",
-    "/dashboard/maxWidth",
-    "/dashboard/profile",
-    "/dashboard/users",
-    "/dashboard/users/create",
-    "/dashboard/users/udpate",
-    "/dashboard/maxWidth",
-    "/dashboard/loader",
-    "/dashboard/empty"
+    "/component/tooltip"
   ]
 }
