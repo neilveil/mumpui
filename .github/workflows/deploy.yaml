@@ -29,17 +29,14 @@ jobs:
           ref: gh-pages
           clean: false
 
-      - name: Remove node modules
-        run: rm -rf node_modules
-
       - name: Remove everything from root
         run: git reset --hard
 
       - name: Move all assets from tmp to root
         run: cp -rf tmp/* .
 
-      - name: Remove tmp directory
-        run: rm -rf tmp
+      - name: Remove unused directory
+        run: rm -rf node_modules build tmp
 
       - name: Commit
         run: git add .
