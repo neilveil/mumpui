@@ -18,8 +18,8 @@ jobs:
       - name: Build assets
         run: npm run build
 
-      # - name: Build pages
-      #   run: npm run build-plus
+      - name: Build pages
+        run: npm run build-plus
 
       - name: Move assets to tmp
         run: cp -r build tmp
