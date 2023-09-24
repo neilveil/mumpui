@@ -1,0 +1,14 @@
+@import 'mumpui/dist/styles/index.css';
+
+// To import material icons
+@import 'mumpui/dist/styles/icons.scss'; // Outlined icons
+@import 'mumpui/dist/styles/icons-filled.scss'; // Filled icons
+
+// For mobile apps
+@import 'mumpui/dist/styles/mobile.scss';
+
+// MumpUI scrollbar
+@import 'mumpui/dist/styles/scrollbar.scss';
+
+// For code component & highlighting
+@import 'mumpui/dist/styles/code.scss';

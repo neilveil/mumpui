@@ -1,0 +1,52 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="icon" href="/mumpui/logo.png">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="theme-color" content="#000000">
+    <meta name="robots" content="index, follow">
+    <title>MumpUI / Component / Code</title>
+    <meta name="description" content="The Code component is designed for displaying and formatting code snippets, making it easier for developers to share and understand code.">
+    <meta name="keywords" content="code,programming,syntax-highlighting,code-snippet">
+    <link rel="canonical" href="https://neilveil.github.io/mumpui/docs/code">
+    <meta name="author" content="Neil Arya">
+    <meta property="og:title" content="MumpUI / Component / Code">
+    <meta property="og:description" content="The Code component is designed for displaying and formatting code snippets, making it easier for developers to share and understand code.">
+    <meta property="og:image" content="https://neilveil.github.io/mumpui/logo.png">
+    <script type="module" crossorigin="" src="/mumpui/assets/index-7433f5e8.js"></script>
+    <link rel="stylesheet" href="/mumpui/assets/index-78fd7cc2.css">
+  </head>
+  <body class="mumpui" data-theme="light">
+    <div id="root"><div class="mumpui mp-message"></div><div class="_main_1nl3e_1"><div><div class="_header_1nl3e_28"><div class="_row_1nl3e_32"><a href="/mumpui"><div class="_icon_1nl3e_37"><span class="icon">west</span> Home</div></a><div class="_icon_1nl3e_37"><span style="cursor: pointer;"><span class="icon" style="cursor: pointer; display: inline-block; user-select: none;">light_mode</span> </span></div></div><div class="_row_1nl3e_32"><div class="_title_1nl3e_47">MumpUI / Component / Code</div></div></div><p class=" _info_1nl3e_13"><a href="https://prismjs.com">PrismJS</a> is required for code highlighting. Select the required languages from <a href="https://prismjs.com/download.html#themes=prism-tomorrow&amp;languages=markup" target="_blank" rel="noreferrer">here</a> and import the script as shown below</p><div class="mumpui mp-code "><pre><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    ..
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    ..
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/prism.js<span class="token punctuation">"</span></span> <span class="token attr-name">data-manual</span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span></code></pre></div><p class=" _info_1nl3e_13">Import code styling from <b>MumpUI</b></p><div class="mumpui mp-code "><pre><code>import <span class="token string">'mumpui/dist/styles/code.css'</span></code></pre></div><p class=" _info_1nl3e_13">Usage example</p><div class="mumpui mp-code "><pre><code><span class="token keyword">const</span> snippet <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+function fun () {
+  return (
+    &lt;div&gt;Hello there!&lt;/div&gt;
+  )
+}</span><span class="token template-punctuation string">`</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Code</span></span> <span class="token attr-name">snippet</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>snippet<span class="token punctuation">}</span></span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>jsx<span class="token punctuation">'</span></span> <span class="token punctuation">/&gt;</span></span></code></pre></div><br><b>Note</b><ul style="font-size: 0.8rem;"><li>Do not import the CSS provided by <b>PrismJS</b> as styling is already setup in <b>MumpUI</b>.</li><li>Only import <b>PrismJS</b> languages that are actually used in your application as every language imported increases the build size.</li></ul><div><div class="_props_1nl3e_84"><code style="font-size: 1rem;">Code</code>&nbsp;component props</div><div class="mumpui mp-table-wrapper "><table class="mumpui mp-table "><thead><tr><th class="">Name</th><th class="">Type</th><th class="" style="width: 100%; white-space: normal;">Usage</th></tr></thead><tbody><tr><td class=""><code style="white-space: pre;">..</code></td><td class=""></td><td class="" style="width: 100%; white-space: normal;">All div element props</td></tr><tr><td class=""><code style="white-space: pre;">snippet</code></td><td class=""><code style="color: rgba(106, 153, 85, 0.72); background-color: transparent; padding: 0px; margin: 0px;">string</code></td><td class="" style="width: 100%; white-space: normal;">Code to be rendered</td></tr><tr><td class=""><code style="white-space: pre;">lang</code></td><td class=""><code style="color: rgba(106, 153, 85, 0.72); background-color: transparent; padding: 0px; margin: 0px;">string</code></td><td class="" style="width: 100%; white-space: normal;">Check all available languages <a href="https://prismjs.com/index.html#supported-languages" target="_blank" rel="noreferrer">here</a></td></tr></tbody></table></div></div><div class="_issue_1nl3e_20"><a href="https://github.com/neilveil/mumpui/issues/new?title=code&amp;body=" target="_blank" rel="noreferrer">Report an issue&nbsp;&nbsp;<span class="icon">east</span></a></div><div class="_related_1nl3e_112"><div class="_title_1nl3e_47">Related content</div><ul><li><a href="/mumpui/docs/md">Markdown</a></li><li><a href="/mumpui/typography">Typography</a></li></ul></div></div></div><div class="_footer_bcr5d_2">Developed by <a href="https://github.com/neilveil" target="_blank" rel="noreferrer">NeilVeil</a></div></div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/lib/marked.umd.min.js"></script>
+    <script src="/mumpui/prism.js" data-manual=""></script>
+    <!-- Google tag (gtag.js) -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-PX5R7EM6C1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', 'G-PX5R7EM6C1')
+    </script>
+  
+
+</body></html>
