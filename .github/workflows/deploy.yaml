@@ -45,5 +45,5 @@ jobs:
         run: git add .
       - run: git config --global user.name "${GITHUB_ACTOR}"
       - run: git config --global user.email "${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com"
-      - run: git commit -m "${{ github.ref_name }}"
+      - run: git commit --amend --no-edit
       - run: git push origin -f gh-pages
