@@ -282,7 +282,7 @@ export default {
     description: '',
     link: '',
     keywords: [],
-    related: '',
+    related: [],
     img: ''
   },
   treeShaking: {
@@ -290,7 +290,7 @@ export default {
     description: '',
     link: '',
     keywords: [],
-    related: '',
+    related: [],
     img: ''
   },
   noMoreColorfulButtons: {
@@ -298,7 +298,7 @@ export default {
     description: '',
     link: '',
     keywords: [],
-    related: '',
+    related: [],
     img: ''
   },
   bestMultiSelectComponent: {
@@ -306,7 +306,7 @@ export default {
     description: '',
     link: '',
     keywords: [],
-    related: '',
+    related: [],
     img: ''
   },
   whyToUseRem: {
@@ -314,7 +314,7 @@ export default {
     description: '',
     link: '',
     keywords: [],
-    related: '',
+    related: [],
     img: ''
   },
   nativeComponents: {
@@ -322,7 +322,7 @@ export default {
     description: '',
     link: '',
     keywords: [],
-    related: '',
+    related: [],
     img: ''
   },
   themeManagement: {
@@ -330,7 +330,7 @@ export default {
     description: '',
     link: '',
     keywords: [],
-    related: '',
+    related: [],
     img: ''
   },
   customize: {
@@ -338,7 +338,7 @@ export default {
     description: '',
     link: '',
     keywords: [],
-    related: '',
+    related: [],
     img: ''
   },
   responsive: {
@@ -346,7 +346,7 @@ export default {
     description: '',
     link: '',
     keywords: [],
-    related: '',
+    related: [],
     img: ''
   }
 }

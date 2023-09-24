@@ -15,13 +15,16 @@ interface main {
 export default function Main(props: main) {
   const navigate = useNavigate()
 
-  const { name, description, keywords, related, link, img } = graph[props.name]
+  const { name, description, keywords, related, img } = graph[props.name]
 
   const title = ['MumpUI', name].join(' / ')
 
+  const _graph: any = graph
+  const _related: any = related.map(x => ({ name: _graph[x].name, link: _graph[x].link }))
+
   useEffect(() => {
     SetMeta({ title, description, keywords, img })
-  }, [title, description, keywords, img])
+  }, [title, description, keywords, img, related])
 
   return (
     <>
@@ -57,6 +60,8 @@ export default function Main(props: main) {
               Report an issue&nbsp;&nbsp;<span className='icon'>east</span>
             </a>
           </div>
+
+          {!!_related.length && <Related components={_related} />}
         </div>
       </div>
 
@@ -204,7 +209,7 @@ interface related {
 function Related({ components = [] }: related) {
   return (
     <div className={s.related}>
-      <div className={s.title}>Related Components</div>
+      <div className={s.title}>Related content</div>
 
       <ul>
         {components.map((x, i) => (
