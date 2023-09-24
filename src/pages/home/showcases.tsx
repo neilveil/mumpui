@@ -30,20 +30,17 @@ import {
 } from 'lib'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import metagraph from 'metagraph'
 
 export default {
   input: {
-    name: 'Input',
-    docs: '/component/input',
-    tags: [],
+    ...metagraph.input,
     Component() {
       return <Input placeholder='Type something..' />
     }
   },
   textarea: {
-    name: 'Textarea',
-    docs: '/component/textarea',
-    tags: [],
+    ...metagraph.textarea,
     Component() {
       const [value, setValue] = useState('')
 
@@ -53,9 +50,7 @@ export default {
     }
   },
   field: {
-    name: 'Field',
-    docs: '/component/field',
-    tags: [],
+    ...metagraph.field,
     Component() {
       return (
         <Field label='Name'>
@@ -65,9 +60,7 @@ export default {
     }
   },
   form: {
-    name: 'Form',
-    docs: '/component/form',
-    tags: [],
+    ...metagraph.form,
     Component() {
       return (
         <Form>
@@ -83,9 +76,7 @@ export default {
     }
   },
   checkbox: {
-    name: 'Checkbox',
-    docs: '/component/checkbox',
-    tags: [],
+    ...metagraph.checkbox,
     Component() {
       const [value, setValue] = useState<string[]>(['india'])
 
@@ -97,9 +88,7 @@ export default {
     }
   },
   radio: {
-    name: 'Radio',
-    docs: '/component/radio',
-    tags: [],
+    ...metagraph.radio,
     Component() {
       const [value, setValue] = useState('india')
 
@@ -111,19 +100,15 @@ export default {
     }
   },
   select: {
-    name: 'Select',
-    docs: '/component/select',
-    tags: [],
+    ...metagraph.select,
     Component() {
       const [value, setValue] = useState<(typeof data.countries)[0] | undefined>(data.countries[0])
 
       return <Select options={data.countries} value={value} onChange={value => setValue(value)} />
     }
   },
-  multiselect: {
-    name: 'Multi-Select',
-    docs: '/component/multiSelect',
-    tags: [],
+  multiSelect: {
+    ...metagraph.multiSelect,
     Component() {
       const [value, setValue] = useState<typeof data.countries>([data.countries[0]])
 
@@ -131,9 +116,7 @@ export default {
     }
   },
   search: {
-    name: 'Search',
-    docs: '/component/search',
-    tags: [],
+    ...metagraph.search,
     Component() {
       const [value, setValue] = useState('')
 
@@ -175,9 +158,7 @@ export default {
     }
   },
   button: {
-    name: 'Button',
-    docs: '/component/button',
-    tags: [],
+    ...metagraph.button,
     Component() {
       return (
         <Fields>
@@ -189,9 +170,7 @@ export default {
     }
   },
   datetime: {
-    name: 'Date / Month / Time',
-    docs: '/component/datetime',
-    tags: [],
+    ...metagraph.datetime,
     Component() {
       return (
         <div>
@@ -204,10 +183,8 @@ export default {
       )
     }
   },
-  color: {
-    name: 'Color Picker',
-    docs: '/component/colorPicker',
-    tags: [],
+  colorPicker: {
+    ...metagraph.colorPicker,
     Component() {
       const [color, setColor] = useState('#0A94FF')
 
@@ -222,17 +199,13 @@ export default {
     }
   },
   range: {
-    name: 'Range',
-    docs: '/component/range',
-    tags: [],
+    ...metagraph.range,
     Component() {
       return <Range />
     }
   },
   file: {
-    name: 'File',
-    docs: '/component/file',
-    tags: [],
+    ...metagraph.file,
     Component() {
       const [files, setFiles] = useState<any>([])
 
@@ -260,57 +233,43 @@ export default {
     }
   },
   list: {
-    name: 'List',
-    docs: '/component/list',
-    tags: [],
+    ...metagraph.list,
     Component() {
       return <List style={{ fontSize: '.8rem', paddingLeft: '2rem' }} items={data.list} />
     }
   },
   table: {
-    name: 'Table',
-    docs: '/component/table',
-    tags: [],
+    ...metagraph.table,
     Component() {
       return <Table cols={data.table.cols} data={data.table.data.slice(0, 3)} />
     }
   },
   loader: {
-    name: 'Loader',
-    docs: '/component/loader',
-    tags: [],
+    ...metagraph.loader,
     Component() {
       return <Loader />
     }
   },
   placeholder: {
-    name: 'Placeholder',
-    docs: '/component/placeholder',
-    tags: [],
+    ...metagraph.placeholder,
     Component() {
       return <Placeholder />
     }
   },
   divider: {
-    name: 'Divider',
-    docs: '/component/divider',
-    tags: [],
+    ...metagraph.divider,
     Component() {
       return <Divider align='left'>More</Divider>
     }
   },
   chain: {
-    name: 'Chain',
-    docs: '/component/chain',
-    tags: [],
+    ...metagraph.chain,
     Component() {
       return <Chain items={['Home', 'Products', 'Price']} />
     }
   },
   tooltip: {
-    name: 'Tooltip',
-    docs: '/component/tooltip',
-    tags: [],
+    ...metagraph.tooltip,
     Component() {
       return (
         <Tooltip label='Hello there!' position='right' style={{ maxWidth: '4rem' }}>
@@ -320,9 +279,7 @@ export default {
     }
   },
   message: {
-    name: 'Message',
-    docs: '/component/message',
-    tags: [],
+    ...metagraph.message,
     Component() {
       return (
         <div style={{ textAlign: 'center' }}>
@@ -332,9 +289,7 @@ export default {
     }
   },
   confirm: {
-    name: 'Confirm',
-    docs: '/component/confirm',
-    tags: [],
+    ...metagraph.confirm,
     Component() {
       return (
         <div style={{ textAlign: 'center' }}>
@@ -354,9 +309,7 @@ export default {
     }
   },
   modal: {
-    name: 'Modal',
-    docs: '/component/modal',
-    tags: [],
+    ...metagraph.modal,
     Component() {
       const [visible, setVisible] = useState(false)
 
@@ -380,9 +333,7 @@ export default {
     }
   },
   note: {
-    name: 'Note',
-    docs: '/component/note',
-    tags: [],
+    ...metagraph.note,
     Component() {
       return (
         <Note type='blue' style={{ fontSize: '.8rem' }}>
@@ -392,9 +343,7 @@ export default {
     }
   },
   tabs: {
-    name: 'Tabs',
-    docs: '/component/tabs',
-    tags: [],
+    ...metagraph.tabs,
     Component() {
       const [active, setActive] = useState(data.tabs[0].key)
 
@@ -402,9 +351,7 @@ export default {
     }
   },
   menu: {
-    name: 'Menu',
-    docs: '/component/menu',
-    tags: [],
+    ...metagraph.menu,
     Component() {
       const [selected, setSelected] = useState('home')
 
@@ -419,9 +366,7 @@ export default {
     }
   },
   pagination: {
-    name: 'Pagination',
-    docs: '/component/pagination',
-    tags: [],
+    ...metagraph.pagination,
     Component() {
       const [offset, setOffset] = useState(0)
       const totalItems = 956
@@ -440,9 +385,8 @@ export default {
     }
   },
   breadcrumb: {
+    ...metagraph.chain,
     name: 'Breadcrumb',
-    docs: '/component/chain',
-    tags: [],
     Component() {
       return (
         <Chain
@@ -456,9 +400,7 @@ export default {
     }
   },
   dashboard: {
-    name: 'Dashboard',
-    docs: '/component/dashboard',
-    tags: [],
+    ...metagraph.dashboard,
     Component() {
       return (
         <Link to='/dashboard' target='_blank' style={{ textAlign: 'center' }}>

@@ -5,7 +5,7 @@ interface meta {
   keywords?: string[]
 }
 
-export const SetMeta = ({ title = '', description = '', img = '/logo.png', keywords = [] }: meta) => {
+export const SetMeta = ({ title = '', description = '', img, keywords = [] }: meta) => {
   const titleEl = document.querySelector('title')
   const ogTitleEl = document.querySelector('meta[property="og:title"]')
   if (titleEl) titleEl.innerHTML = title
@@ -17,7 +17,7 @@ export const SetMeta = ({ title = '', description = '', img = '/logo.png', keywo
   if (ogDescriptionEl) ogDescriptionEl.setAttribute('content', description)
 
   const ogImgEl = document.querySelector('meta[property="og:image"]')
-  if (ogImgEl) ogImgEl.setAttribute('content', 'https://neilveil.github.io/mumpui' + img)
+  if (ogImgEl) ogImgEl.setAttribute('content', 'https://neilveil.github.io/mumpui' + (img || '/logo.png'))
 
   const canonicalEl = document.querySelector('link[rel="canonical"]')
   if (canonicalEl) canonicalEl.setAttribute('href', 'https://neilveil.github.io/mumpui' + window.location.pathname)

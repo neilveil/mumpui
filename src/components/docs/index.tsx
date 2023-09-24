@@ -4,22 +4,22 @@ import { Link, useNavigate } from 'react-router-dom'
 import Footer from '../footer'
 import s from './styles.module.scss'
 import { SwitchTheme } from 'components'
-import graph from './graph'
 import { SetMeta } from 'helpers'
+import metagraph from 'metagraph'
 
 interface main {
   children?: any
-  name: keyof typeof graph
+  name: keyof typeof metagraph
 }
 
 export default function Main(props: main) {
   const navigate = useNavigate()
 
-  const { name, description, keywords, related, img } = graph[props.name]
+  const { name, description, keywords, related, img, type } = metagraph[props.name]
 
-  const title = ['MumpUI', name].join(' / ')
+  const title = ['MumpUI', type, name].filter(x => x).join(' / ')
 
-  const _graph: any = graph
+  const _graph: any = metagraph
   const _related: any = related.map(x => ({ name: _graph[x].name, link: _graph[x].link }))
 
   useEffect(() => {

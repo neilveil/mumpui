@@ -11,7 +11,8 @@ export default defineConfig({
       lib: __dirname + '/src/lib',
       components: __dirname + '/src/components',
       data: __dirname + '/src/data',
-      helpers: __dirname + '/src/helpers.tsx'
+      helpers: __dirname + '/src/helpers.tsx',
+      metagraph: __dirname + '/src/metagraph.ts'
     }
   },
   build: { outDir: 'build' },

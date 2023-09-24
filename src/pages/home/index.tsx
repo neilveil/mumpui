@@ -70,7 +70,7 @@ export default class Main extends React.Component {
     )
   }
   render = () => {
-    const fuse = new Fuse(Object.values(showcases), { keys: ['name', 'docs', 'tags'] })
+    const fuse = new Fuse(Object.values(showcases), { keys: ['keywords'] })
     const searchResults = this.state.search ? fuse.search(this.state.search).map(({ item }) => item) : []
 
     return (
@@ -229,7 +229,7 @@ const Group = (props: groups) => {
 type element = {
   name: string
   Component: any
-  docs: string
+  link: string
 }
 
 const Showcases = ({ data, expanded }: { data: element[]; expanded: boolean }) => {
@@ -246,7 +246,7 @@ const Showcases = ({ data, expanded }: { data: element[]; expanded: boolean }) =
         >
           {!!expanded && <div className={s.component}>{<x.Component />}</div>}
 
-          <Link to={x.docs} className={s.nameLink}>
+          <Link to={x.link} className={s.nameLink}>
             <div className={s.name} style={{ borderTop: expanded ? '' : 'none' }}>
               {x.name}
               <span className={'icon ' + s.icon}>east</span>

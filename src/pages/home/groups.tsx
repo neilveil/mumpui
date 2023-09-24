@@ -11,11 +11,11 @@ export default [
       showcases.checkbox,
       showcases.radio,
       showcases.select,
-      showcases.multiselect,
+      showcases.multiSelect,
       showcases.search,
       showcases.button,
       showcases.datetime,
-      showcases.color,
+      showcases.colorPicker,
       showcases.range,
       showcases.file
     ]

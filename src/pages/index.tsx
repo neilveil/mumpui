@@ -1,5 +1,4 @@
 import home from './home'
-import stories from './stories'
 import story from './story'
 import setup from './setup'
 
@@ -53,7 +52,6 @@ interface route {
 const routes: route[] = [
   { path: '/', component: home },
   { path: '/setup', component: setup },
-  { path: '/stories', component: stories },
   { path: '/story/*', component: story },
 
   { path: '/dashboard/', component: dashboard },
