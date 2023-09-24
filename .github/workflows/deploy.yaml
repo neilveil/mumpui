@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: gh-pages-master
+          ref: master
 
       - name: Install packages
         run: npm i
