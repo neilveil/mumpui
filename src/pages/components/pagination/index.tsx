@@ -9,7 +9,7 @@ export default function Main() {
   const pageSize = 10
 
   return (
-    <Docs name='Pagination'>
+    <Docs name='pagination'>
       <Docs.Showcase code={snippets.s1}>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <Pagination

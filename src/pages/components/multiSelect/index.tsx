@@ -9,7 +9,7 @@ export default function Main() {
   const [value, setValue] = useState<typeof data.countries>([data.countries[0]])
 
   return (
-    <Docs name='Multi-Select input field'>
+    <Docs name='multiSelect'>
       <Docs.Showcase code={snippets.s1}>
         <Field label='Multi-Select' style={{ maxWidth: '15rem' }}>
           <Select.Multi options={data.countries} value={value} onChange={value => setValue(value)} />

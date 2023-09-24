@@ -5,7 +5,7 @@ import data from 'data'
 
 export default function Main() {
   return (
-    <Docs name='List'>
+    <Docs name='list'>
       <Docs.Showcase title='Unordered list' code={snippets.s1}>
         <List items={data.list} />
       </Docs.Showcase>

@@ -4,21 +4,24 @@ import { Link, useNavigate } from 'react-router-dom'
 import Footer from '../footer'
 import s from './styles.module.scss'
 import { SwitchTheme } from 'components'
+import graph from './graph'
+import { SetMeta } from 'helpers'
 
 interface main {
   children?: any
-  name: string
+  name: keyof typeof graph
 }
 
 export default function Main(props: main) {
   const navigate = useNavigate()
 
-  const title = ['MumpUI', props.name].join(' / ')
+  const { name, description, keywords, related, link, img } = graph[props.name]
+
+  const title = ['MumpUI', name].join(' / ')
 
   useEffect(() => {
-    const titleEl = document.querySelector('title')
-    if (titleEl) titleEl.innerText = title
-  }, [title])
+    SetMeta({ title, description, keywords, img })
+  }, [title, description, keywords, img])
 
   return (
     <>
@@ -198,7 +201,6 @@ interface related {
   components: component[]
 }
 
-Main.Related = Related
 function Related({ components = [] }: related) {
   return (
     <div className={s.related}>

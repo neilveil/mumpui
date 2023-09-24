@@ -4,7 +4,7 @@ import * as snippets from './snippets'
 
 export default function Main() {
   return (
-    <Docs name='Note'>
+    <Docs name='note'>
       <Docs.Showcase code={snippets.s1}>
         <Note>Default note!</Note>
         <Note type='red'>Red note!</Note>

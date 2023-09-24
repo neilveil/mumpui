@@ -4,7 +4,7 @@ import * as snippets from './snippets'
 
 export default function Main() {
   return (
-    <Docs name='Placeholder'>
+    <Docs name='placeholder'>
       <Docs.Showcase title='Default placeholder' code={snippets.s1}>
         <Placeholder />
       </Docs.Showcase>

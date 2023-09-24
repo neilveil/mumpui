@@ -6,7 +6,7 @@ import data from 'data'
 
 export default function Main() {
   return (
-    <Docs name='Chain'>
+    <Docs name='chain'>
       <Docs.Showcase title='Chain component' code={snippets.s1}>
         <Chain items={data.chain} />
       </Docs.Showcase>

@@ -7,7 +7,7 @@ export default function Main() {
   const [value, setValue] = useState('Hello there,\nHow are you?\nThis is the 3rd row.')
 
   return (
-    <Docs name='Textarea'>
+    <Docs name='textarea'>
       <Docs.Showcase code={snippets.s1}>
         <Fields className='col-in-mob'>
           <Field label='Textarea'>

@@ -4,7 +4,7 @@ import * as snippets from './snippets'
 
 export default function Main() {
   return (
-    <Docs name='Divider'>
+    <Docs name='divider'>
       <Docs.Showcase title={<span></span>} code={snippets.s1}>
         <Divider align='left'>More</Divider>
         <Divider>More</Divider>

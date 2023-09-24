@@ -11,7 +11,7 @@ export default function Main() {
   }
 
   return (
-    <Docs name='Search'>
+    <Docs name='search'>
       <Docs.Showcase code={snippets.s1}>
         <Search value={value} onChange={value => setValue(value)} placeholder='Search..'>
           <div style={{ padding: '1rem' }}>

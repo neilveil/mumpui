@@ -7,7 +7,7 @@ export default function Main() {
   const [color, setColor] = useState('#0A94FF')
 
   return (
-    <Docs name='Color Picker'>
+    <Docs name='colorPicker'>
       <Docs.Showcase code={snippets.s1}>
         <div className='flex-center'>
           <Field label='Select color'>
@@ -43,8 +43,6 @@ export default function Main() {
           }
         ]}
       />
-
-      <Docs.Related components={[{ name: 'Form', link: '/component/form' }]} />
     </Docs>
   )
 }

@@ -7,7 +7,7 @@ export default function Main() {
   const [value, setValue] = useState(10)
 
   return (
-    <Docs name='Range'>
+    <Docs name='range'>
       <Docs.Showcase code={snippets.s1}>
         <Field label={'Range (' + value + ')'}>
           <Range value={value} onValue={value => setValue(value)} step={5} />

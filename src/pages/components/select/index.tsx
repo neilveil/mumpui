@@ -10,7 +10,7 @@ export default function Main() {
   const [valueNative, setValueNative] = useState('india')
 
   return (
-    <Docs name='Select input field'>
+    <Docs name='select'>
       <Docs.Showcase code={snippets.s1}>
         <Field label='Select' style={{ maxWidth: '15rem' }}>
           <Select options={data.countries} value={value} onChange={value => setValue(value)} />

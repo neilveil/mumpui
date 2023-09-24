@@ -4,7 +4,7 @@ import { Code } from 'lib'
 
 export default function Main() {
   return (
-    <Docs name='Code'>
+    <Docs name='code'>
       <p style={{ color: 'var(--mp-c-font-dark)', padding: '2rem 1rem' }}>
         Add code snippets like below with{' '}
         <a href='https://prismjs.com' target='_blank' rel='noreferrer'>

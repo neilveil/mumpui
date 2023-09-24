@@ -1,7 +1,6 @@
 import { Docs } from 'components'
 import { Button, Checkbox, Field, Fields, Form, Input, Message } from 'lib'
 import * as snippets from './snippets'
-import related from '../related'
 
 export default function Main() {
   const onSubmit = () => {
@@ -9,7 +8,7 @@ export default function Main() {
   }
 
   return (
-    <Docs name='Form'>
+    <Docs name='form'>
       <Docs.Showcase
         title={
           <span>
@@ -72,8 +71,6 @@ export default function Main() {
           }
         ]}
       />
-
-      <Docs.Related components={[related.field, related.input, related.button]} />
     </Docs>
   )
 }

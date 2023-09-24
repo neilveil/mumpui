@@ -8,7 +8,7 @@ export default function Main() {
   const [active, setActive] = useState(data.tabs[0].key)
 
   return (
-    <Docs name='Tabs'>
+    <Docs name='tabs'>
       <Docs.Showcase title={<span></span>} code={snippets.s1}>
         <Tabs items={data.tabs} active={active} onClick={(active: any) => setActive(active)} />
       </Docs.Showcase>

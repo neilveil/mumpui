@@ -1,11 +1,10 @@
 import { Docs } from 'components'
 import { Field, Fields, Input } from 'lib'
 import * as snippets from './snippets'
-import related from '../related'
 
 export default function Main() {
   return (
-    <Docs name='Field & Fields'>
+    <Docs name='field'>
       <Docs.Showcase code={snippets.s1}>
         <Fields>
           <Field label='Name'>
@@ -77,8 +76,6 @@ export default function Main() {
       <Docs.Info>
         To debug <code>autoCol</code>, do not forget to refresh after opening the developer tools in the browser.
       </Docs.Info>
-
-      <Docs.Related components={[related.form, related.input]} />
     </Docs>
   )
 }

@@ -7,7 +7,7 @@ export default function Main() {
   const [visible, setVisible] = useState(false)
 
   return (
-    <Docs name='Modal'>
+    <Docs name='modal'>
       <Docs.Showcase code={snippets.s1}>
         <Button onClick={() => setVisible(true)}>Open</Button>
 

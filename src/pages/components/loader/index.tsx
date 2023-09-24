@@ -4,7 +4,7 @@ import * as snippets from './snippets'
 
 export default function Main() {
   return (
-    <Docs name='Loader'>
+    <Docs name='loader'>
       <Note type='red' style={{ fontSize: '.8rem' }}>
         Kindly take note that the displayed component itself is a loader, rather than indicating that something is in
         the process of loading.

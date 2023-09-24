@@ -34,73 +34,6 @@ Redefining the Art of User Interface Design. 🚀
 
 Welcome to **MumpUI**! 🌟
 
-## Table of Contents
-
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Components](#components)
-- [Helpers](#helpers)
-- [Advanced Features](#advanced-features)
-- [Styling](#styling)
-- [Feedback](#feedback)
-- [Navigation](#navigation)
-- [Comparison](#navigation)
-- [License](#license)
-
-## Components
-
-MumpUI provides a wide range of components for building your user interface.
-
-### Input
-
-- Input
-- Textarea
-- Field
-- Form
-- Checkbox
-- Radio
-- Dropdown
-- Multi-Select
-- Search
-- Button
-- Date / Month / Time
-- Color Picker
-- Range
-- File Upload
-
-### Display
-
-- List
-- Table
-- Loader
-- Placeholder
-- Divider
-- Chain
-- Tooltip
-
-### Feedback
-
-MumpUI includes components for providing feedback to users, including messages, modals, confirmations, and notes. Learn how to implement these in the Feedback section of the documentation.
-
-- Message
-- Confirm
-- Modal
-- Note
-
-### Navigation
-
-MumpUI offers navigation-related components like tabs, menus, pagination, and breadcrumbs. Find out how to incorporate these into your application in the Navigation section of the documentation.
-
-- Tabs
-- Menu
-- Pagination
-- Breadcrumbs
-
-### Dashboard
-
-MumpUI offers a robust dashboard component, designed to effortlessly handle data management and provide a comprehensive view of CRUD operations. Seamlessly integrated with in-built user role functionalities, it ensures secure access control. The dashboard is fully responsive, guaranteeing a consistent user experience across all devices, and its integration is elegantly straightforward.
-
 ## Installation
 
 You can install MumpUI via npm:
@@ -109,10 +42,81 @@ You can install MumpUI via npm:
 npm install mumpui
 ```
 
-## Setup
+## Usage
 
-```js
+```jsx
+import { Button } from 'mumpui'
+
+function Main() {
+  return (
+    <div>
+      <Button>Click</Button>
+    </div>
+  )
+}
 ```
+
+## Demo
+
+Check out the [MumpUI](https://neilveil.github.io/mumpui) website for demo.
+
+## Components
+
+MumpUI provides a wide range of components for building your user interface.
+
+### Input
+
+- [Input](https://neilveil.github.io/mumpui/component/input)
+- [Textarea](https://neilveil.github.io/mumpui/component/textarea)
+- [Field](https://neilveil.github.io/mumpui/component/field)
+- [Form](https://neilveil.github.io/mumpui/component/form)
+- [Checkbox](https://neilveil.github.io/mumpui/component/checkbox)
+- [Radio](https://neilveil.github.io/mumpui/component/radio)
+- [Select](https://neilveil.github.io/mumpui/component/select)
+- [Multi-Select](https://neilveil.github.io/mumpui/component/multiSelect)
+- [Search](https://neilveil.github.io/mumpui/component/search)
+- [Button](https://neilveil.github.io/mumpui/component/button)
+- [Date / Month / Time](https://neilveil.github.io/mumpui/component/datetime)
+- [Color Picker](https://neilveil.github.io/mumpui/component/colorPicker)
+- [Range](https://neilveil.github.io/mumpui/component/range)
+- [File Upload](https://neilveil.github.io/mumpui/component/file)
+
+### Display
+
+- [List](https://neilveil.github.io/mumpui/component/list)
+- [Table](https://neilveil.github.io/mumpui/component/table)
+- [Loader](https://neilveil.github.io/mumpui/component/loader)
+- [Placeholder](https://neilveil.github.io/mumpui/component/placeholder)
+- [Divider](https://neilveil.github.io/mumpui/component/divider)
+- [Chain](https://neilveil.github.io/mumpui/component/chain)
+- [Tooltip](https://neilveil.github.io/mumpui/component/tooltip)
+
+### Feedback
+
+- [Message](https://neilveil.github.io/mumpui/component/message)
+- [Confirm](https://neilveil.github.io/mumpui/component/confirm)
+- [Modal](https://neilveil.github.io/mumpui/component/modal)
+- [Note](https://neilveil.github.io/mumpui/component/note)
+
+### Navigation
+
+- [Tabs](https://neilveil.github.io/mumpui/component/tabs)
+- [Menu](https://neilveil.github.io/mumpui/component/menu)
+- [Pagination](https://neilveil.github.io/mumpui/component/pagination)
+- [Breadcrumbs](https://neilveil.github.io/mumpui/component/chain)
+
+### Dashboard
+
+MumpUI offers a robust dashboard component, designed to effortlessly handle data management and provide a comprehensive view of CRUD operations. Seamlessly integrated with in-built user role functionalities, it ensures secure access control. The dashboard is fully responsive, guaranteeing a consistent user experience across all devices, and its integration is elegantly straightforward.
+
+- [Basic dashboard](https://neilveil.github.io/mumpui/dashboard)
+- [Data layout](https://neilveil.github.io/mumpui/dashboard/users)
+- [Form layout - Create](https://neilveil.github.io/mumpui/dashboard/users/create)
+- [Form layout - update/delete](https://neilveil.github.io/mumpui/dashboard/users/udpate)
+- [Dashboard with user acceess](https://neilveil.github.io/mumpui/dashboard/access)
+- [Full width](https://neilveil.github.io/mumpui/dashboard/maxWidth)
+- [Data loading](https://neilveil.github.io/mumpui/dashboard/loader)
+- [No data](https://neilveil.github.io/mumpui/dashboard/empty)
 
 ## License
 
@@ -120,6 +124,6 @@ MumpUI is open-source and released under the MIT License. You are free to use, m
 
 ## More
 
-For detailed usage instructions, examples, and API documentation, please visit the [MumpUI](https://github.com/neilveil/mumpui) repository.
+For detailed usage instructions, examples, and API documentation, please visit the [MumpUI](https://neilveil.github.io/mumpui) website.
 
 ❤️ Happy coding with **MumpUI**!

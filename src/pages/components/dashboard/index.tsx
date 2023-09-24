@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 export default function Main() {
   return (
-    <Docs name='Dashboard Layout'>
+    <Docs name='dashboard'>
       <Docs.Showcase code={snippets.s1}>
         <LinkRenderer title='Basic dashboard' path='/dashboard' />
       </Docs.Showcase>

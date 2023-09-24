@@ -222,7 +222,7 @@ export default {
     }
   },
   range: {
-    name: 'Number Range',
+    name: 'Range',
     docs: '/component/range',
     tags: [],
     Component() {
@@ -230,7 +230,7 @@ export default {
     }
   },
   file: {
-    name: 'File Upload',
+    name: 'File',
     docs: '/component/file',
     tags: [],
     Component() {
@@ -257,14 +257,6 @@ export default {
           </div>
         </div>
       )
-    }
-  },
-  divider: {
-    name: 'Divider',
-    docs: '/component/divider',
-    tags: [],
-    Component() {
-      return <Divider align='left'>More</Divider>
     }
   },
   list: {
@@ -297,6 +289,14 @@ export default {
     tags: [],
     Component() {
       return <Placeholder />
+    }
+  },
+  divider: {
+    name: 'Divider',
+    docs: '/component/divider',
+    tags: [],
+    Component() {
+      return <Divider align='left'>More</Divider>
     }
   },
   chain: {

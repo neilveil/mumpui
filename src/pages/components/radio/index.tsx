@@ -2,13 +2,12 @@ import { Docs } from 'components'
 import { Radio } from 'lib'
 import { useState } from 'react'
 import * as snippets from './snippets'
-import related from '../related'
 
 export default function Main() {
   const [value, setValue] = useState('india')
 
   return (
-    <Docs name='Radio'>
+    <Docs name='radio'>
       <Docs.Showcase code={snippets.s1}>
         <Radio checked={value} options={countries} onChange={value => setValue(value)} />
       </Docs.Showcase>
@@ -32,8 +31,6 @@ export default function Main() {
           { name: 'disabled', type: 'boolean' }
         ]}
       />
-
-      <Docs.Related components={[related.field, related.input, related.button]} />
     </Docs>
   )
 }

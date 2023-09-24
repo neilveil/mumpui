@@ -5,7 +5,7 @@ import data from 'data'
 
 export default function Main() {
   return (
-    <Docs name='Table'>
+    <Docs name='table'>
       <Docs.Showcase code={snippets.s1}>
         <Table cols={data.table.cols} data={data.table.data} />
       </Docs.Showcase>

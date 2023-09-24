@@ -4,7 +4,7 @@ import { Docs } from 'components'
 
 export default function Main() {
   return (
-    <Docs name='Setup'>
+    <Docs name='setup'>
       <h2>Step I - Install</h2>
 
       <Code snippet='npm i mumpui' lang='bash' />

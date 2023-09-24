@@ -8,7 +8,7 @@ export default function Main() {
   const [inputType, setInputType] = useState('password')
 
   return (
-    <Docs name='Input field'>
+    <Docs name='input'>
       <Docs.Showcase code={snippets.s1}>
         <div className='flex-center'>
           <Input
@@ -89,13 +89,6 @@ export default function Main() {
               </span>
             )
           }
-        ]}
-      />
-
-      <Docs.Related
-        components={[
-          { name: 'Field', link: '/component/field' },
-          { name: 'Form', link: '/component/form' }
         ]}
       />
     </Docs>

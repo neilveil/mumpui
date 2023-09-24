@@ -4,7 +4,7 @@ import * as snippets from './snippets'
 
 export default function Main() {
   return (
-    <Docs name='Date, Month & Time'>
+    <Docs name='datetime'>
       <Docs.Showcase code={snippets.s1}>
         <Fields autoCol>
           <Field label='Date'>
@@ -43,8 +43,6 @@ export default function Main() {
           }
         ]}
       />
-
-      <Docs.Related components={[{ name: 'Form', link: '/component/form' }]} />
     </Docs>
   )
 }

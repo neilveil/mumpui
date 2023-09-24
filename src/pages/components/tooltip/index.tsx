@@ -4,7 +4,7 @@ import * as snippets from './snippets'
 
 export default function Main() {
   return (
-    <Docs name='Tooltip'>
+    <Docs name='tooltip'>
       <Docs.Showcase title={<span></span>} code={snippets.s1}>
         <div style={{ display: 'flex', gap: '1rem' }}>
           <Tooltip label='Left tooltip' position='left'>

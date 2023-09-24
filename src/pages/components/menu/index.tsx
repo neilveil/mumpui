@@ -8,7 +8,7 @@ export default function Main() {
   const [selected, setSelected] = useState('home')
 
   return (
-    <Docs name='Menu'>
+    <Docs name='menu'>
       <Docs.Showcase title={<span></span>} code={snippets.s1}>
         <Menu
           active={selected}

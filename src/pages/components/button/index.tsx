@@ -4,7 +4,7 @@ import * as snippets from './snippets'
 
 export default function Main() {
   return (
-    <Docs name='Button'>
+    <Docs name='button'>
       <Docs.Showcase title='Default buttons' code={snippets.s1}>
         <Fields>
           <Button>Default</Button>

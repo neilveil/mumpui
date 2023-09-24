@@ -11,7 +11,7 @@ export default function Main() {
   }
 
   return (
-    <Docs name='Confirm'>
+    <Docs name='confirm'>
       <Docs.Showcase title={<span>Confirm modal before taking an action</span>} code={snippets.s1}>
         <Button
           onClick={() =>

@@ -5,7 +5,7 @@ import * as snippets from './snippets'
 let message: symbol
 export default function Main() {
   return (
-    <Docs name='Message'>
+    <Docs name='message'>
       <Docs.Showcase title={<span>Success, Info, Warn & Error message</span>} code={snippets.s1}>
         <div style={{ display: 'flex', gap: '1rem' }}>
           <Button onClick={() => Message.success('Success message!')}>Success</Button>

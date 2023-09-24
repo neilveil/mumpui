@@ -2,14 +2,13 @@ import { Docs } from 'components'
 import { Checkbox, Checkboxes } from 'lib'
 import { useState } from 'react'
 import * as snippets from './snippets'
-import related from '../related'
 
 export default function Main() {
   const [active, setActive] = useState(false)
   const [value, setValue] = useState<string[]>(['india'])
 
   return (
-    <Docs name='Checkbox'>
+    <Docs name='checkbox'>
       <Docs.Showcase title='Single' code={snippets.s1}>
         <Checkbox label='Active' checked={active} onChange={value => setActive(value)} />
       </Docs.Showcase>
@@ -50,8 +49,6 @@ export default function Main() {
           { name: 'disabled', type: 'boolean' }
         ]}
       />
-
-      <Docs.Related components={[related.field, related.input, related.button]} />
     </Docs>
   )
 }

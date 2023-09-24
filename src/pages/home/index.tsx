@@ -7,6 +7,7 @@ import showcases from './showcases'
 import groups from './groups'
 import s from './styles.module.scss'
 import * as snippets from './snippets'
+import { SetMeta } from 'helpers'
 
 export default class Main extends React.Component {
   state = {
@@ -18,6 +19,33 @@ export default class Main extends React.Component {
   logoRotation = 0
   componentDidMount(): void {
     window.addEventListener('keyup', this.focusSearch)
+    SetMeta({
+      title: 'MumpUI - A light-weight Flexible & Elegant Design System for Developers',
+      description:
+        'MumpUI is a powerful ReactJS design system that empowers developers to create captivating and feature-rich web applications effortlessly. With customizable, lightweight components, MumpUI offers a seamless user experience on any device. Say goodbye to mundane UI development and hello to extraordinary interfaces with MumpUI.',
+      keywords: [
+        'library',
+        'ui',
+        'components',
+        'design',
+        'reactjs',
+        'development',
+        'web',
+        'frontend',
+        'customizable',
+        'responsive',
+        'open-source',
+        'elegant',
+        'lightweight',
+        'flexible',
+        'interactive',
+        'mobile-optimized',
+        'user-interface',
+        'creative',
+        'feature-rich',
+        'developer-friendly'
+      ]
+    })
   }
   componentWillUnmount(): void {
     window.removeEventListener('keyup', this.focusSearch)
