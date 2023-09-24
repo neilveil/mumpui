@@ -285,14 +285,6 @@ export default {
     related: '',
     img: ''
   },
-  uiLibraryComparison: {
-    name: 'Story / React UI library comparison - 2023',
-    description: '',
-    link: '',
-    keywords: [],
-    related: '',
-    img: ''
-  },
   treeShaking: {
     name: 'Story / Tree Shaking: Import only selected components, not the complete library',
     description: '',
@@ -343,6 +335,14 @@ export default {
   },
   customize: {
     name: 'Story / How to customize default MumpUI theme?',
+    description: '',
+    link: '',
+    keywords: [],
+    related: '',
+    img: ''
+  },
+  responsive: {
+    name: 'Story / Guide to responsive UI design',
     description: '',
     link: '',
     keywords: [],
