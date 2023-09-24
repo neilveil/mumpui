@@ -2,7 +2,7 @@
 
 [![Downloads](https://img.shields.io/npm/dm/mumpui.svg)](https://www.npmjs.com/package/mumpui) [![Version](https://img.shields.io/npm/v/mumpui.svg)](https://www.npmjs.com/package/mumpui)
 
-Welcome to MumpUI, where creativity meets simplicity in the world of ReactJS development! 🌟
+Welcome to MumpUI, where creativity meets simplicity! 🌟
 
 MumpUI is not just another front-end library; it's your secret weapon for crafting captivating, feature-rich web applications effortlessly. With MumpUI, we've gathered the building blocks you need to supercharge your development journey, all under one roof.
 
