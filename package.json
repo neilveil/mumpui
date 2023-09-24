@@ -7,10 +7,9 @@
   "repository": "neilveil/mumpui",
   "license": "MIT",
   "homepage": "https://neilveil.github.io/mumpui",
-  "dependencies": {},
   "scripts": {
     "start": "vite --host",
-    "build": "vite build",
+    "build": "vite build && node -e \"fs.copyFileSync('build/index.html', 'build/404.html')\"",
     "build-plus": "build-plus",
     "dist:clean": "rimraf dist",
     "dist:scripts": "rimraf dist && tsc --project tsconfig.dist.json",
