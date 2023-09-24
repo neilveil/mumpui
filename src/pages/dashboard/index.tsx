@@ -10,7 +10,7 @@ export default function Main() {
     <Dashboard
       icon={<span className='icon'>home</span>}
       title='Home'
-      sidebarImg='/logo.png'
+      sidebarImg='/mumpui/logo.png'
       sidebarItems={data.dashboardSidebarItems}
       onSidebarClick={path => navigate(path)}
     >

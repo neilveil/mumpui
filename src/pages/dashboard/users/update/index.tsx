@@ -25,7 +25,7 @@ export default function Main() {
           confirmText: 'Delete'
         })
       }}
-      sidebarImg='/logo.png'
+      sidebarImg='/mumpui/logo.png'
       sidebarItems={data.dashboardSidebarItems}
       onSidebarClick={key => navigate(key)}
     >

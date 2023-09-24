@@ -80,7 +80,7 @@ export default class Main extends React.Component {
             <div className={s.logoAndInfo}>
               <div className={s.left}>
                 <img
-                  src='/logo.png'
+                  src='/mumpui/logo.png'
                   onClick={(e: any) => {
                     this.logoRotation += 360
                     e.target.style.transform = `rotate(${this.logoRotation}deg)`

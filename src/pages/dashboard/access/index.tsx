@@ -19,7 +19,7 @@ export default function Main() {
     <Dashboard
       icon={<span className='icon'>task_alt</span>}
       title='Access'
-      sidebarImg='/logo.png'
+      sidebarImg='/mumpui/logo.png'
       sidebarItems={data.dashboardSidebarItems}
       onSidebarClick={key => navigate(key)}
       sidebarAccess={access}

@@ -41,7 +41,7 @@ export default function Main() {
       paginationOffset={offset}
       paginationOnChange={offset => setOffset(offset)}
       //
-      sidebarImg='/logo.png'
+      sidebarImg='/mumpui/logo.png'
       sidebarItems={data.dashboardSidebarItems}
       onSidebarClick={key => navigate(key)}
     >

@@ -9,7 +9,7 @@ export default function Main() {
     <Dashboard
       icon={<span className='icon'>person</span>}
       title='Profile'
-      sidebarImg='/logo.png'
+      sidebarImg='/mumpui/logo.png'
       sidebarItems={data.dashboardSidebarItems}
       onSidebarClick={key => navigate(key)}
     >

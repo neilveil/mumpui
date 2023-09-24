@@ -14,7 +14,7 @@ export default function Main() {
       icon={<span className='icon'>add</span>}
       title='Add users'
       onCreate={submit}
-      sidebarImg='/logo.png'
+      sidebarImg='/mumpui/logo.png'
       sidebarItems={data.dashboardSidebarItems}
       onSidebarClick={key => navigate(key)}
     >

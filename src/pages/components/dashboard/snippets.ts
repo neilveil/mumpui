@@ -5,7 +5,7 @@ export const s1 = `
 <Dashboard
   icon={<span className='icon'>home</span>}
   title='Home'
-  sidebarImg='/logo.png'
+  sidebarImg='/mumpui/logo.png'
   sidebarItems={sidebatItems}
   onSidebarClick={path => navigate(path)}
 >
@@ -43,7 +43,7 @@ export const s2 = `
   paginationTotalItems={users.length}
   paginationOffset={offset}
   paginationOnChange={offset => setOffset(offset)}
-  sidebarImg='/logo.png'
+  sidebarImg='/mumpui/logo.png'
   sidebarItems={sidebarItems}
   onSidebarClick={key => navigate(key)}
 >
@@ -68,7 +68,7 @@ const submit = () => {
   icon={<span className='icon'>add</span>}
   title='Add users'
   onCreate={submit}
-  sidebarImg='/logo.png'
+  sidebarImg='/mumpui/logo.png'
   sidebarItems={sidebarItems}
   onSidebarClick={key => navigate(key)}
 >
@@ -110,7 +110,7 @@ const submit = () => {
       confirmText: 'Delete'
     })
   }}
-  sidebarImg='/logo.png'
+  sidebarImg='/mumpui/logo.png'
   sidebarItems={sidebarItems}
   onSidebarClick={key => navigate(key)}
 >
@@ -134,7 +134,7 @@ export const s5 = `
 <Dashboard
   icon={<span className='icon'>task_alt</span>}
   title='Access'
-  sidebarImg='/logo.png'
+  sidebarImg='/mumpui/logo.png'
   sidebarItems={sidebarItems}
   onSidebarClick={key => navigate(key)}
   // Only the 'users' & 'profile' key will be visible in the sidebar
@@ -152,7 +152,7 @@ export const s6 = `
 <Dashboard
   icon={<span className='icon'>home</span>}
   title='Home'
-  sidebarImg='/logo.png'
+  sidebarImg='/mumpui/logo.png'
   sidebarItems={sidebarItems}
   onSidebarClick={path => navigate(path)}
   style={{ maxWidth: '100%' }}
@@ -169,7 +169,7 @@ export const s7 = `
 <Dashboard
   icon={<span className='icon'>home</span>}
   title='Home'
-  sidebarImg='/logo.png'
+  sidebarImg='/mumpui/logo.png'
   sidebarItems={sidebatItems}
   onSidebarClick={path => navigate(path)}
   loading
@@ -186,7 +186,7 @@ export const s8 = `
 <Dashboard
   icon={<span className='icon'>home</span>}
   title='Home'
-  sidebarImg='/logo.png'
+  sidebarImg='/mumpui/logo.png'
   sidebarItems={sidebatItems}
   onSidebarClick={path => navigate(path)}
   empty
