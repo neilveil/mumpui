@@ -27,13 +27,11 @@ class Main extends React.Component {
     return (
       <>
         <Bootstrap />
-        <RouterProvider router={createBrowserRouter(createRoutesFromElements(router))} />
+        <RouterProvider router={createBrowserRouter(createRoutesFromElements(router), { basename: '/mumpui' })} />
       </>
     )
   }
 }
-
-const main = () => createRoot(document.getElementById('root') as HTMLElement).render(<Main />)
 
 function ScrollToTop({ Component }: { Component?: any }) {
   useEffect(() => {
@@ -43,10 +41,4 @@ function ScrollToTop({ Component }: { Component?: any }) {
   return <Component />
 }
 
-if (import.meta.env.DEV) main()
-else {
-  const scriptEl = document.createElement('script')
-  scriptEl.src = '/service-worker-handler.js'
-  document.body.appendChild(scriptEl)
-  window.addEventListener('SW_READY', main)
-}
+createRoot(document.getElementById('root') as HTMLElement).render(<Main />)

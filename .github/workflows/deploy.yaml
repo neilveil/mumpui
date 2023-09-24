@@ -2,8 +2,8 @@ name: Deploy
 
 on:
   push:
-    tags:
-      - v1.*
+    branches:
+      - gh-pages-master
 
 jobs:
   build:
@@ -28,12 +28,12 @@ jobs:
           ref: gh-pages
           clean: false
 
-      - name: Copy all assets from tmp to root
-        run: cp -rf tmp/* .
+      - name: Move all assets from tmp to root
+        run: mv -rf tmp/* .
 
       - name: Commit
         run: git add .
       - run: git config --global user.name "${GITHUB_ACTOR}"
       - run: git config --global user.email "${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com"
-      - run: git commit -m "${{ github.ref_name }}"
+      - run: git commit --amend --no-edit
       - run: git push origin gh-pages

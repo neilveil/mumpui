@@ -20,7 +20,7 @@ export const SetMeta = ({ title = '', description = '', img, keywords = [] }: me
   if (ogImgEl) ogImgEl.setAttribute('content', 'https://neilveil.github.io/mumpui' + (img || '/logo.png'))
 
   const canonicalEl = document.querySelector('link[rel="canonical"]')
-  if (canonicalEl) canonicalEl.setAttribute('href', 'https://neilveil.github.io/mumpui' + window.location.pathname)
+  if (canonicalEl) canonicalEl.setAttribute('href', 'https://neilveil.github.io' + window.location.pathname)
 
   const keywordsEl = document.querySelector('meta[name="keywords"]')
   if (keywordsEl) keywordsEl.setAttribute('content', keywords.join(','))

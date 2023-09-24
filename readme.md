@@ -1,6 +1,8 @@
-# MumpUI - A light-weight Flexible & Elegant Design System for Developers
+# MumpUI
 
 [![Downloads](https://img.shields.io/npm/dm/mumpui.svg)](https://www.npmjs.com/package/mumpui) [![Version](https://img.shields.io/npm/v/mumpui.svg)](https://www.npmjs.com/package/mumpui)
+
+**A light-weight Flexible & Elegant Design System for Developers**
 
 Welcome to MumpUI, where creativity meets simplicity! 🌟
 

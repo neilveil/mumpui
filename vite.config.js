@@ -16,5 +16,6 @@ export default defineConfig({
     }
   },
   build: { outDir: 'build' },
-  css: { postcss: { plugins: [autoprefixer()] } }
+  css: { postcss: { plugins: [autoprefixer()] } },
+  base: '/mumpui'
 })

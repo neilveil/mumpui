@@ -32,5 +32,6 @@
     "/component/tabs",
     "/component/textarea",
     "/component/tooltip"
-  ]
+  ],
+  "base": "/mumpui"
 }

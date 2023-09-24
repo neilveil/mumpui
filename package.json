@@ -1,7 +1,7 @@
 {
   "name": "mumpui",
   "description": "A light-weight flexible & elegant design system for developers.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "dist/index.js",
   "author": "neilveil",
   "repository": "neilveil/mumpui",
@@ -10,7 +10,7 @@
   "dependencies": {},
   "scripts": {
     "start": "vite --host",
-    "build": "vite build && appsw && build-plus",
+    "build": "vite build && build-plus",
     "dist:clean": "rimraf dist",
     "dist:scripts": "rimraf dist && tsc --project tsconfig.dist.json",
     "dist:styles": "sass src/lib/styles:dist/styles --no-source-map",
@@ -26,9 +26,8 @@
     "@typescript-eslint/eslint-plugin": "^6.4.1",
     "@typescript-eslint/parser": "^6.4.1",
     "@vitejs/plugin-react-swc": "^3.3.2",
-    "appsw": "^2.0.0",
     "autoprefixer": "^10.4.15",
-    "build-plus": "^1.0.0",
+    "build-plus": "^1.1.1",
     "eslint": "^8.47.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
