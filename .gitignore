@@ -1,5 +1,4 @@
-# dist
-# build
-# docs
+dist
+build
 node_modules
 tmp

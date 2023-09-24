@@ -1,6 +1,5 @@
 .husky
 build
-docs
 public
 src
 tmp

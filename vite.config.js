@@ -15,6 +15,6 @@ export default defineConfig({
       metagraph: __dirname + '/src/metagraph.ts'
     }
   },
-  build: { outDir: 'docs' },
+  build: { outDir: 'build' },
   css: { postcss: { plugins: [autoprefixer()] } }
 })

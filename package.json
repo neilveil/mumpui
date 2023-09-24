@@ -6,11 +6,11 @@
   "author": "neilveil",
   "repository": "neilveil/mumpui",
   "license": "MIT",
-  "homepage": "https://neilveil.github.com/mumpui",
+  "homepage": "https://neilveil.github.io/mumpui",
   "dependencies": {},
   "scripts": {
     "start": "vite --host",
-    "build": "vite build && appsw --appsw-root ./docs && build-plus",
+    "build": "vite build && appsw && build-plus",
     "dist:clean": "rimraf dist",
     "dist:scripts": "rimraf dist && tsc --project tsconfig.dist.json",
     "dist:styles": "sass src/lib/styles:dist/styles --no-source-map",

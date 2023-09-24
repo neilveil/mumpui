@@ -1,0 +1,39 @@
+name: Deploy
+
+on:
+  push:
+    tags:
+      - v1.*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: master
+
+      - name: Install packages
+        run: npm i
+
+      - name: Build assets
+        run: npm run build
+
+      - name: Move assets to tmp
+        run: cp -r build tmp
+
+      - uses: actions/checkout@v3
+        with:
+          ref: public
+          clean: false
+
+      - name: Copy all assets from tmp to root
+        run: cp -rf tmp/* .
+
+      - name: Commit
+        run: git add .
+      - run: git config --global user.name "${GITHUB_ACTOR}"
+      - run: git config --global user.email "${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com"
+      - run: git commit -m "${{ github.ref_name }}"
+      - run: git push origin public
