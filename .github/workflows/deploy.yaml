@@ -20,8 +20,8 @@ jobs:
       - name: Build assets
         run: npm run build
 
-      - name: Build pages
-        run: npm run build-plus
+      # - name: Build pages
+      #   run: npm run build-plus
 
       - name: Move assets to tmp
         run: cp -r build tmp
@@ -31,12 +31,21 @@ jobs:
           ref: gh-pages
           clean: false
 
+      - name: Remove node modules
+        run: rm -rf node_modules
+
+      - name: Remove everything from root
+        run: git reset --hard
+
       - name: Move all assets from tmp to root
         run: cp -rf tmp/* .
+
+      - name: Remove tmp directory
+        run: rm -rf tmp
 
       - name: Commit
         run: git add .
       - run: git config --global user.name "${GITHUB_ACTOR}"
       - run: git config --global user.email "${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com"
       - run: git commit -m "${{ github.ref_name }}"
-      - run: git push origin gh-pages
+      - run: git push origin -f gh-pages
