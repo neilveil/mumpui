@@ -10,7 +10,8 @@
   "dependencies": {},
   "scripts": {
     "start": "vite --host",
-    "build": "vite build && build-plus",
+    "build": "vite build",
+    "build-plus": "build-plus",
     "dist:clean": "rimraf dist",
     "dist:scripts": "rimraf dist && tsc --project tsconfig.dist.json",
     "dist:styles": "sass src/lib/styles:dist/styles --no-source-map",
