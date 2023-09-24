@@ -1,0 +1,29 @@
+.mp-note {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: var(--mp-border-radius);
+  border: var(--mp-border-width) solid;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left-width: 4px;
+  border-color: rgba(136, 136, 136, 0.5333333333);
+}
+.mp-note.blue {
+  border-color: rgba(33, 170, 255, 0.5333333333);
+}
+.mp-note.green {
+  border-color: rgba(21, 199, 21, 0.5333333333);
+}
+.mp-note.red {
+  border-color: rgba(255, 0, 0, 0.3450980392);
+}
+.mp-note.yellow {
+  border-color: rgba(255, 196, 0, 0.5333333333);
+}
+.mp-note.quote {
+  background: transparent;
+  background: rgba(136, 136, 136, 0.0941176471);
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+}

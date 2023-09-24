@@ -1,0 +1,43 @@
+body {
+  --mp-c-primary: #000000;
+  --mp-c-bg: #ffffff;
+  --mp-c-hover: #f8f8f8;
+  --mp-c-border: #e8e8e8;
+  --mp-border-radius: 8px;
+  --mp-border-width: 1px;
+  --mp-c-overlay-bg: #0004;
+  --mp-pop-up-shadow: 0 8px 16px 8px #00000018;
+  --mp-input-border-width: 1px;
+  --mp-c-input-border: #e8e8e8;
+  --mp-c-input-border-hover: #d8d8d8;
+  --mp-c-input-border-active: #b8b8b8;
+  --mp-input-box-shadow: 0 0 2px 0px #0001;
+  --mp-input-box-shadow-hover: 0 0 4px 0px #0001;
+  --mp-input-box-shadow-active: 0 0 4px 0px #0002;
+  --mp-c-font-dark: #282828;
+  --mp-c-font: #484848;
+  --mp-c-font-light: #888888;
+  --mp-c-placeholder: #b8b8b8;
+}
+
+body[data-theme=dark] {
+  --mp-c-primary: #e8e8e8;
+  --mp-c-bg: #080808;
+  --mp-c-hover: #101010;
+  --mp-c-border: #282828;
+  --mp-border-radius: 8px;
+  --mp-border-width: 1px;
+  --mp-c-overlay-bg: #000b;
+  --mp-pop-up-shadow: 0 8px 16px 8px #00000088;
+  --mp-input-border-width: 1px;
+  --mp-c-input-border: #282828;
+  --mp-c-input-border-hover: #383838;
+  --mp-c-input-border-active: #585858;
+  --mp-input-box-shadow: 0 0 2px 0px #fff1;
+  --mp-input-box-shadow-hover: 0 0 4px 0px #0001;
+  --mp-input-box-shadow-active: 0 0 4px 0px #fff2;
+  --mp-c-font-dark: #d8d8d8;
+  --mp-c-font: #b8b8b8;
+  --mp-c-font-light: #888888;
+  --mp-c-placeholder: #484848;
+}

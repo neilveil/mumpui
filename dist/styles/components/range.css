@@ -1,0 +1,14 @@
+.mp-range input {
+  appearance: none;
+  width: 100%;
+  background: var(--mp-c-input-border);
+  height: 4px;
+}
+.mp-range input::-webkit-slider-thumb {
+  appearance: none;
+  background: var(--mp-c-font-dark);
+  border-radius: var(--mp-border-radius);
+  width: 0.75rem;
+  height: 0.75rem;
+  cursor: pointer;
+}

@@ -1,0 +1,98 @@
+.mp-checkbox,
+.mp-radio {
+  user-select: none;
+  display: inline-block;
+  padding: var(--mp-input-padding-top) 0;
+  position: relative;
+}
+.mp-checkbox label,
+.mp-radio label {
+  margin-right: 2rem;
+}
+.mp-checkbox label:hover > .mp-checkbox-icon, .mp-checkbox label:hover > .mp-radio-icon,
+.mp-radio label:hover > .mp-checkbox-icon,
+.mp-radio label:hover > .mp-radio-icon {
+  background: var(--mp-c-hover);
+}
+.mp-checkbox input,
+.mp-radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.mp-checkbox input:checked ~ .mp-checkbox-icon:after,
+.mp-checkbox input:checked ~ .mp-radio-icon:after,
+.mp-radio input:checked ~ .mp-checkbox-icon:after,
+.mp-radio input:checked ~ .mp-radio-icon:after {
+  display: block;
+}
+.mp-checkbox .mp-checkbox-icon,
+.mp-checkbox .mp-radio-icon,
+.mp-radio .mp-checkbox-icon,
+.mp-radio .mp-radio-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  height: 18px;
+  width: 18px;
+  border-radius: calc(var(--mp-border-radius) / 2);
+  border: 2px solid var(--mp-c-border);
+}
+.mp-checkbox .mp-radio-icon,
+.mp-radio .mp-radio-icon {
+  border-radius: 50%;
+}
+.mp-checkbox .mp-checkbox-icon::after,
+.mp-radio .mp-checkbox-icon::after {
+  display: none;
+  position: absolute;
+  content: "";
+  left: 4px;
+  top: 1px;
+  width: 6px;
+  height: 10px;
+  border: solid var(--mp-c-primary);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  animation: mp-check 300ms ease forwards;
+}
+@keyframes mp-check {
+  0% {
+    transform: rotate(45deg) scale(0) translate(-1rem, -1rem);
+  }
+  100% {
+    transform: rotate(45deg) scale(1) translate(0, 0);
+  }
+}
+.mp-checkbox .mp-radio-icon::after,
+.mp-radio .mp-radio-icon::after {
+  display: none;
+  position: absolute;
+  content: "";
+  left: 3px;
+  top: 3px;
+  width: 8px;
+  height: 8px;
+  background: var(--mp-c-primary);
+  border-radius: 50%;
+  animation: mp-radio 300ms ease forwards;
+}
+@keyframes mp-radio {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.mp-checkbox .mp-checkbox-label,
+.mp-checkbox .mp-radio-label,
+.mp-radio .mp-checkbox-label,
+.mp-radio .mp-radio-label {
+  font-size: 0.8rem;
+  color: var(--mp-c-font);
+  margin-left: 1.5rem;
+}

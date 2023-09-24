@@ -1,0 +1,47 @@
+.mp-tooltip {
+  position: relative;
+}
+.mp-tooltip:hover .mp-tooltip-text {
+  animation: mp-tooltip-appear 300ms ease forwards;
+}
+.mp-tooltip .mp-tooltip-text {
+  white-space: pre;
+  background: var(--mp-c-bg);
+  border: var(--mp-border-width) solid var(--mp-c-border);
+  border-radius: var(--mp-border-radius);
+  text-align: center;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.7rem;
+  position: absolute;
+  opacity: 0;
+  z-index: 100;
+  box-shadow: var(--mp-pop-up-shadow);
+}
+@keyframes mp-tooltip-appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.mp-tooltip .mp-tooltip-top {
+  bottom: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+}
+.mp-tooltip .mp-tooltip-right {
+  left: calc(100% + 0.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+}
+.mp-tooltip .mp-tooltip-bottom {
+  top: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+}
+.mp-tooltip .mp-tooltip-left {
+  right: calc(100% + 0.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+}

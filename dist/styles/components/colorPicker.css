@@ -1,0 +1,11 @@
+.mp-color-picker .mp-color-picker-swatch {
+  padding: 0 calc(var(--mp-input-padding-left) / 2);
+}
+.mp-color-picker .mp-color-picker-swatch::-webkit-color-swatch {
+  border-radius: calc(var(--mp-border-radius) / 2);
+  border: var(--mp-border-width) solid var(--mp-c-border);
+}
+.mp-color-picker .mp-color-picker-text {
+  letter-spacing: 0.1rem;
+  padding-left: 0;
+}

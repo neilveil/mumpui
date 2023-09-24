@@ -1,0 +1,21 @@
+.mp-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: calc(2 * var(--mp-field-margin)) 0;
+  overflow: hidden;
+  width: 100%;
+}
+.mp-divider .mp-divider-line {
+  border-bottom: calc(var(--mp-border-width) * 2) solid var(--mp-c-border);
+  width: 100vw;
+}
+.mp-divider .mp-divider-text {
+  text-align: center;
+  font-size: 0.7rem;
+  white-space: pre;
+}
+
+.mp-divider-empty {
+  gap: 0;
+}

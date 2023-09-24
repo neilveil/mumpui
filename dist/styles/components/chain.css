@@ -1,0 +1,17 @@
+.mp-chain {
+  display: flex;
+  align-items: center;
+  overflow: auto;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+.mp-chain > div {
+  display: flex;
+  align-items: center;
+}
+.mp-chain .mp-chain-label {
+  white-space: pre;
+}
+.mp-chain .mp-chain-seperator {
+  padding: 0 0.25rem;
+}
