@@ -124,7 +124,7 @@ export default class Main extends React.Component {
 
                   <a href='https://github.com/neilveil/mumpui' target='_blank' rel='noreferrer'>
                     <div className={s.github}>
-                      <img src='/github.png' alt='' />
+                      <img src='/mumpui/github.png' alt='' />
                     </div>
                   </a>
 

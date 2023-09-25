@@ -21,5 +21,5 @@ createRoot(document.getElementById('root') as HTMLElement).render(<App />)
 `
 
 export const theme = `
-import 'mumpui/dist/styles/index.scss'
+import 'mumpui/dist/styles/index.css'
 `
