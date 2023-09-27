@@ -4,7 +4,7 @@ export default {
     name: 'Button',
     description:
       "The Button component is a fundamental element for user interaction, allowing to trigger actions with a simple click. It's highly customizable and can be tailored to fit your design needs.",
-    link: '/component/button',
+    link: '/docs/button',
     keywords: ['button', 'ui-button', 'clickable-element', 'interactive-component'],
     related: ['input', 'form'],
     img: ''
@@ -14,7 +14,7 @@ export default {
     name: 'Chain',
     description:
       'The Chain component offers a flexible alternative to traditional breadcrumbs, providing a dynamic way to preview & navigate through a series of steps or pages.',
-    link: '/component/chain',
+    link: '/docs/chain',
     keywords: ['chain', 'linked-elements', 'sequential-steps', 'navigation'],
     related: ['tabs', 'menu', 'dashboard'],
     img: ''
@@ -24,7 +24,7 @@ export default {
     name: 'Checkbox',
     description:
       "The Checkbox component enables users to make selections or indicate choices from a set of options. It's a versatile input element for forms and settings.",
-    link: '/component/checkbox',
+    link: '/docs/checkbox',
     keywords: ['checkbox', 'selection', 'input', 'multiple-choice'],
     related: ['radio', 'input', 'form'],
     img: ''
@@ -34,7 +34,7 @@ export default {
     name: 'Code',
     description:
       'The Code component is designed for displaying and formatting code snippets, making it easier for developers to share and understand code.',
-    link: '/component/code',
+    link: '/docs/code',
     keywords: ['code', 'programming', 'syntax-highlighting', 'code-snippet'],
     related: [],
     img: ''
@@ -44,7 +44,7 @@ export default {
     name: 'Color Picker',
     description:
       'The Color Picker component allows users to choose and select colors from a palette, facilitating customization and visual preferences.',
-    link: '/component/colorPicker',
+    link: '/docs/colorPicker',
     keywords: ['color-picker', 'color-selection', 'visual-color-choice'],
     related: ['input', 'form'],
     img: ''
@@ -54,7 +54,7 @@ export default {
     name: 'Confirm',
     description:
       'The Confirm component presents a modal dialog to users, asking for confirmation before executing critical actions. It helps prevent accidental or irreversible operations.',
-    link: '/component/confirm',
+    link: '/docs/confirm',
     keywords: ['confirm', 'confirmation-dialog', 'user-action', 'decision'],
     related: ['message', 'modal', 'note'],
     img: ''
@@ -64,7 +64,7 @@ export default {
     name: 'Dashboard',
     description:
       'The Dashboard component provides a structured layout for managing and visualizing data, offering an organized view of key metrics and insights.',
-    link: '/component/dashboard',
+    link: '/docs/dashboard',
     keywords: ['dashboard', 'data-management', 'crud-operations', 'user-roles'],
     related: ['table', 'list', 'pagination', 'chain'],
     img: ''
@@ -74,7 +74,7 @@ export default {
     name: 'Datetime',
     description:
       'The Datetime component facilitates the selection of date and time values, ensuring accuracy and precision in date-related interactions.',
-    link: '/component/datetime',
+    link: '/docs/datetime',
     keywords: ['datetime', 'date-picker', 'time-picker', 'month-picker', 'date-time-selection'],
     related: ['input', 'form'],
     img: ''
@@ -84,7 +84,7 @@ export default {
     name: 'Divider',
     description:
       'The Divider component serves as a visual separator, helping to delineate content and improve the overall layout and readability of the interface.',
-    link: '/component/divider',
+    link: '/docs/divider',
     keywords: ['divider', 'separation', 'visual-division', 'section-separator'],
     related: ['chain', 'tabs'],
     img: ''
@@ -94,7 +94,7 @@ export default {
     name: 'Field',
     description:
       'The Field component is a fundamental building block for form elements, providing a structured way to capture user input or information.',
-    link: '/component/field',
+    link: '/docs/field',
     keywords: ['field', 'fields', 'input-field', 'form-input', 'data-entry'],
     related: ['input', 'checkbox', 'radio', 'datetime', 'select', 'range'],
     img: ''
@@ -104,7 +104,7 @@ export default {
     name: 'File',
     description:
       'The File component allows users to upload files or documents, enhancing the interactivity and functionality of your application.',
-    link: '/component/file',
+    link: '/docs/file',
     keywords: ['file', 'file-upload', 'file-selection', 'document-upload', 'upload', 'upload-image'],
     related: ['input', 'button'],
     img: ''
@@ -114,7 +114,7 @@ export default {
     name: 'Form',
     description:
       'The Form component provides a structured layout for organizing and collecting user input, offering a seamless way to gather information.',
-    link: '/component/form',
+    link: '/docs/form',
     keywords: ['form', 'data-input', 'user-input', 'form-submission', 'submit', 'form-submit'],
     related: ['input', 'button', 'datetime', 'checkbox', 'radio', 'select', 'range', 'colorPicker'],
     img: ''
@@ -124,7 +124,7 @@ export default {
     name: 'Input',
     description:
       "The Input component offers a text input field for users to enter and edit information. It's a foundational element for various types of data input.",
-    link: '/component/input',
+    link: '/docs/input',
     keywords: ['input', 'text-input', 'user-input', 'data-entry'],
     related: ['textarea', 'datetime', 'checkbox', 'radio', 'select', 'range', 'file', 'colorPicker'],
     img: ''
@@ -134,7 +134,7 @@ export default {
     name: 'List',
     description:
       'The List component displays a collection of items in an organized manner, making it easy for users to scan and navigate through content.',
-    link: '/component/list',
+    link: '/docs/list',
     keywords: ['list', 'item-list', 'ordered-list', 'unordered-list'],
     related: ['table', 'dashboard'],
     img: ''
@@ -144,7 +144,7 @@ export default {
     name: 'Loader',
     description:
       'The Loader component visually indicates that a process is in progress, providing feedback to users while data or content is being loaded.',
-    link: '/component/loader',
+    link: '/docs/loader',
     keywords: ['loader', 'loading-indicator', 'progress-indicator', 'loading-animation', 'process'],
     related: ['placeholder', 'dashboard'],
     img: ''
@@ -154,7 +154,7 @@ export default {
     name: 'Menu',
     description:
       'The Menu component offers an expandable list of options, allowing users to navigate through a set of related actions or content categories.',
-    link: '/component/menu',
+    link: '/docs/menu',
     keywords: ['menu', 'navigation-menu', 'site-menu', 'menu-options'],
     related: ['tabs', 'chain'],
     img: ''
@@ -164,7 +164,7 @@ export default {
     name: 'Message',
     description:
       'The Message component displays brief, contextual notifications to users, providing feedback on the outcome of their actions (e.g., success, error, warning, information).',
-    link: '/component/message',
+    link: '/docs/message',
     keywords: [
       'message',
       'notification',
@@ -185,7 +185,7 @@ export default {
     name: 'Modal',
     description:
       'The Modal component presents content in a layered dialog, drawing attention to important information or actions without navigating away from the current context.',
-    link: '/component/modal',
+    link: '/docs/modal',
     keywords: ['modal', 'popup', 'overlay', 'user-interaction'],
     related: ['confirm', 'message', 'note'],
     img: ''
@@ -195,7 +195,7 @@ export default {
     name: 'MultiSelect',
     description:
       'The MultiSelect component is an interactive dropdown that allows users to select multiple options from a list, with the added functionality of a search feature for convenience.',
-    link: '/component/multiSelect',
+    link: '/docs/multiSelect',
     keywords: ['multi-select', 'multiple-selection', 'choice-selection', 'dropdown'],
     related: ['select', 'input', 'form'],
     img: ''
@@ -205,7 +205,7 @@ export default {
     name: 'Note',
     description:
       'The Note component highlights important information or quotes using distinct colors (e.g., red, blue, green, yellow), making key content stand out.',
-    link: '/component/note',
+    link: '/docs/note',
     keywords: ['note', 'informational-note', 'user-information', 'message'],
     related: ['message', 'confirm'],
     img: ''
@@ -215,7 +215,7 @@ export default {
     name: 'Pagination',
     description:
       'The Pagination component divides content into manageable sections, allowing users to navigate through pages of information with ease.',
-    link: '/component/pagination',
+    link: '/docs/pagination',
     keywords: ['pagination', 'page-navigation', 'page-numbers', 'page-control'],
     related: ['table', 'dashboard', 'tabs'],
     img: ''
@@ -225,7 +225,7 @@ export default {
     name: 'Placeholder',
     description:
       'The Placeholder component creates visual space and structure for content that is yet to be populated, ensuring a clean and organized layout.',
-    link: '/component/placeholder',
+    link: '/docs/placeholder',
     keywords: ['placeholder', 'temporary-content', 'filler-content', 'empty', 'no-data'],
     related: ['loader', 'dashboard'],
     img: ''
@@ -235,7 +235,7 @@ export default {
     name: 'Radio',
     description:
       "The Radio component allows users to select a single option from a list of choices. It's particularly useful in scenarios where users need to make mutually exclusive selections.",
-    link: '/component/radio',
+    link: '/docs/radio',
     keywords: ['radio', 'radio-button', 'single-choice', 'selection'],
     related: ['checkbox', 'input', 'form'],
     img: ''
@@ -245,7 +245,7 @@ export default {
     name: 'Range',
     description:
       'The Range component enables users to select a value within a specified range, providing a visual representation of the selected range.',
-    link: '/component/range',
+    link: '/docs/range',
     keywords: ['range', 'range-slider', 'value-range', 'adjustable-range'],
     related: ['input', 'form'],
     img: ''
@@ -255,7 +255,7 @@ export default {
     name: 'Search',
     description:
       'The Search component offers a customizable dropdown interface with search functionality, allowing users to efficiently locate and select options.',
-    link: '/component/search',
+    link: '/docs/search',
     keywords: ['search', 'search-bar', 'search-input', 'query-input'],
     related: ['select', 'multiSelect', 'input'],
     img: ''
@@ -265,7 +265,7 @@ export default {
     name: 'Select',
     description:
       'The Select component provides a dropdown menu with a searchable interface, making it easy for users to choose from a list of options.',
-    link: '/component/select',
+    link: '/docs/select',
     keywords: ['select', 'dropdown', 'option-selection', 'choice', 'dropdown'],
     related: ['multiSelect', 'search', 'input', 'form'],
     img: ''
@@ -275,7 +275,7 @@ export default {
     name: 'Table',
     description:
       'The Table component organizes and presents data in a structured format, making it easy for users to scan, analyze, and interact with tabular information.',
-    link: '/component/table',
+    link: '/docs/table',
     keywords: ['table', 'data-table', 'tabular-data', 'grid'],
     related: ['list', 'pagination', 'dashboard'],
     img: ''
@@ -285,7 +285,7 @@ export default {
     name: 'Tabs',
     description:
       'The Tabs component allows users to navigate between different sections of content, providing an organized and intuitive way to access information.',
-    link: '/component/tabs',
+    link: '/docs/tabs',
     keywords: ['tabs', 'tabbed-interface', 'tab-navigation', 'tab-selection', 'groups'],
     related: ['menu', 'chain', 'divider'],
     img: ''
@@ -295,7 +295,7 @@ export default {
     name: 'Textarea',
     description:
       'The Textarea component offers a multi-line text input field, suitable for longer-form content such as comments, messages, or descriptions.',
-    link: '/component/textarea',
+    link: '/docs/textarea',
     keywords: ['textarea', 'text-input-area', 'multi-line-input', 'user-input'],
     related: ['input', 'form'],
     img: ''
@@ -304,7 +304,7 @@ export default {
     type: '',
     name: 'Theme',
     description: '',
-    link: '/component/textarea',
+    link: '/docs/textarea',
     keywords: [],
     related: ['setup'],
     img: ''
@@ -314,7 +314,7 @@ export default {
     name: 'Tooltip',
     description:
       'The Tooltip component provides additional contextual information when users hover over an element, enhancing user understanding and interaction.',
-    link: '/component/tooltip',
+    link: '/docs/tooltip',
     keywords: ['tooltip', 'information-tooltip', 'hover-text', 'contextual-help', 'help'],
     related: ['message', 'modal', 'note'],
     img: ''

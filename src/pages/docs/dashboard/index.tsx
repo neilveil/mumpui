@@ -114,7 +114,7 @@ export default function Main() {
       />
 
       <Docs.Info>
-        Usage similar to <Link to='/component/pagination'>Pagination</Link> component.
+        Usage similar to <Link to='/docs/pagination'>Pagination</Link> component.
       </Docs.Info>
     </Docs>
   )

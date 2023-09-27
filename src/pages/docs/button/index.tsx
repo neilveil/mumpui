@@ -49,7 +49,7 @@ export default function Main() {
       </Docs.Info>
 
       <Docs.Info>
-        <Link to='/component/theme'>MumpUI Color classed usage →</Link>
+        <Link to='/docs/theme'>MumpUI Color classed usage →</Link>
       </Docs.Info>
 
       <Docs.Props

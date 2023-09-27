@@ -71,44 +71,44 @@ MumpUI provides a wide range of components for building your user interface.
 
 ### Input
 
-- [Input](https://neilveil.github.io/mumpui/component/input)
-- [Textarea](https://neilveil.github.io/mumpui/component/textarea)
-- [Field](https://neilveil.github.io/mumpui/component/field)
-- [Form](https://neilveil.github.io/mumpui/component/form)
-- [Checkbox](https://neilveil.github.io/mumpui/component/checkbox)
-- [Radio](https://neilveil.github.io/mumpui/component/radio)
-- [Select](https://neilveil.github.io/mumpui/component/select)
-- [Multi-Select](https://neilveil.github.io/mumpui/component/multiSelect)
-- [Search](https://neilveil.github.io/mumpui/component/search)
-- [Button](https://neilveil.github.io/mumpui/component/button)
-- [Date / Month / Time](https://neilveil.github.io/mumpui/component/datetime)
-- [Color Picker](https://neilveil.github.io/mumpui/component/colorPicker)
-- [Range](https://neilveil.github.io/mumpui/component/range)
-- [File Upload](https://neilveil.github.io/mumpui/component/file)
+- [Input](https://neilveil.github.io/mumpui/docs/input)
+- [Textarea](https://neilveil.github.io/mumpui/docs/textarea)
+- [Field](https://neilveil.github.io/mumpui/docs/field)
+- [Form](https://neilveil.github.io/mumpui/docs/form)
+- [Checkbox](https://neilveil.github.io/mumpui/docs/checkbox)
+- [Radio](https://neilveil.github.io/mumpui/docs/radio)
+- [Select](https://neilveil.github.io/mumpui/docs/select)
+- [Multi-Select](https://neilveil.github.io/mumpui/docs/multiSelect)
+- [Search](https://neilveil.github.io/mumpui/docs/search)
+- [Button](https://neilveil.github.io/mumpui/docs/button)
+- [Date / Month / Time](https://neilveil.github.io/mumpui/docs/datetime)
+- [Color Picker](https://neilveil.github.io/mumpui/docs/colorPicker)
+- [Range](https://neilveil.github.io/mumpui/docs/range)
+- [File Upload](https://neilveil.github.io/mumpui/docs/file)
 
 ### Display
 
-- [List](https://neilveil.github.io/mumpui/component/list)
-- [Table](https://neilveil.github.io/mumpui/component/table)
-- [Loader](https://neilveil.github.io/mumpui/component/loader)
-- [Placeholder](https://neilveil.github.io/mumpui/component/placeholder)
-- [Divider](https://neilveil.github.io/mumpui/component/divider)
-- [Chain](https://neilveil.github.io/mumpui/component/chain)
-- [Tooltip](https://neilveil.github.io/mumpui/component/tooltip)
+- [List](https://neilveil.github.io/mumpui/docs/list)
+- [Table](https://neilveil.github.io/mumpui/docs/table)
+- [Loader](https://neilveil.github.io/mumpui/docs/loader)
+- [Placeholder](https://neilveil.github.io/mumpui/docs/placeholder)
+- [Divider](https://neilveil.github.io/mumpui/docs/divider)
+- [Chain](https://neilveil.github.io/mumpui/docs/chain)
+- [Tooltip](https://neilveil.github.io/mumpui/docs/tooltip)
 
 ### Feedback
 
-- [Message](https://neilveil.github.io/mumpui/component/message)
-- [Confirm](https://neilveil.github.io/mumpui/component/confirm)
-- [Modal](https://neilveil.github.io/mumpui/component/modal)
-- [Note](https://neilveil.github.io/mumpui/component/note)
+- [Message](https://neilveil.github.io/mumpui/docs/message)
+- [Confirm](https://neilveil.github.io/mumpui/docs/confirm)
+- [Modal](https://neilveil.github.io/mumpui/docs/modal)
+- [Note](https://neilveil.github.io/mumpui/docs/note)
 
 ### Navigation
 
-- [Tabs](https://neilveil.github.io/mumpui/component/tabs)
-- [Menu](https://neilveil.github.io/mumpui/component/menu)
-- [Pagination](https://neilveil.github.io/mumpui/component/pagination)
-- [Breadcrumbs](https://neilveil.github.io/mumpui/component/chain)
+- [Tabs](https://neilveil.github.io/mumpui/docs/tabs)
+- [Menu](https://neilveil.github.io/mumpui/docs/menu)
+- [Pagination](https://neilveil.github.io/mumpui/docs/pagination)
+- [Breadcrumbs](https://neilveil.github.io/mumpui/docs/chain)
 
 ### Dashboard
 

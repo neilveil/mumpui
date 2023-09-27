@@ -117,7 +117,7 @@ export default class Main extends React.Component {
 
                   <SwitchTheme />
 
-                  <Link to='/component/theme'>
+                  <Link to='/docs/theme'>
                     <span className='icon'>brush</span>
                   </Link>
 
