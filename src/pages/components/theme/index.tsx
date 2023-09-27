@@ -113,7 +113,7 @@ export default function Main() {
           { name: 'c-{color}', usage: 'Set text color (color)' },
           { name: 'f-{color}', usage: 'Set background color (fill)' },
           { name: 'b-{color}', usage: 'Set border color (border)' },
-          { name: 'd-{color}', usage: 'Set dashed border color (border)' }
+          { name: 'd-{color}', usage: 'Set dashed border color (dashed)' }
         ]}
       />
 

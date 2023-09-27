@@ -21,6 +21,7 @@ export default function Main() {
       title='Access'
       sidebarImg='/mumpui/logo.png'
       sidebarItems={data.dashboardSidebarItems}
+      sidebarBasePath='/mumpui'
       onSidebarClick={key => navigate(key)}
       sidebarAccess={access}
     >

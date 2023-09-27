@@ -163,7 +163,7 @@ function Props(props: props) {
   return (
     <div>
       <div className={s.props}>
-        {props.type === 'table' ? props.title : <code style={{ fontSize: '1rem' }}>{props.title}</code>}
+        {props.type === 'table' ? props.title : <code style={{ fontSize: '1rem' }}>{props.title}</code>}&nbsp;
         {props.type ? typeMap[props.type] : null}
       </div>
 

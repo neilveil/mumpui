@@ -126,8 +126,6 @@ export default class Main extends React.Component {
                       <img src='/mumpui/github.png' alt='' />
                     </div>
                   </a>
-
-                  {/* <span className='icon'>brush</span> */}
                 </div>
               </div>
             </div>

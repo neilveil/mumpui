@@ -87,7 +87,7 @@ const routes: route[] = [
   { path: '/component/tooltip', component: component_tooltip },
 
   // Dashboard
-  { path: '/dashboard/', component: dashboard },
+  { path: '/dashboard', component: dashboard },
   { path: '/dashboard/access', component: dashboard_access },
   { path: '/dashboard/blog/*', component: dashboard_blog },
   { path: '/dashboard/profile', component: dashboard_profile },

@@ -41,7 +41,7 @@ export default function Main() {
       </Docs.Showcase>
 
       <Docs.Props
-        title='Message.success(text, duration)'
+        title='Message.success'
         type='function'
         fields={[
           { name: 'text', type: 'string', usage: 'Message text' },
@@ -55,7 +55,7 @@ export default function Main() {
       </span>
 
       <Docs.Props
-        title='Message.clear(message)'
+        title='Message.clear'
         type='function'
         fields={[
           {

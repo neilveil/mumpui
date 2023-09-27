@@ -30,6 +30,7 @@ interface props {
   onSidebarClick?: (path: string) => void
   sidebarClassName?: string
   sidebarStyle?: React.CSSProperties
+  sidebarBasePath?: string
   // header
   header?: any
   title?: any
@@ -64,7 +65,9 @@ interface props {
 }
 
 export default function Main(props: props) {
-  const [menuItemActive, setMenuItemSelected] = useState(window.location.pathname)
+  const [menuItemActive, setMenuItemSelected] = useState(
+    window.location.pathname.slice(props.sidebarBasePath?.length || 0)
+  )
   const [expandable, setExpandable] = useState(false)
 
   const toggleSidebar = () => setExpandable(!expandable)
@@ -136,7 +139,7 @@ export default function Main(props: props) {
               </div>
 
               {!!props.onAdd && (
-                <Button className='mp-dashboard-button-add' onClick={props.onAdd}>
+                <Button primary onClick={props.onAdd}>
                   +&nbsp;&nbsp;Add
                 </Button>
               )}
@@ -196,7 +199,7 @@ export default function Main(props: props) {
             <div className='mp-dashboard-footer-buttons'>
               <div>
                 {!!props.onDelete && (
-                  <Button className='mp-dashboard-button-delete' onClick={props.onDelete}>
+                  <Button className='d-red c-red' onClick={props.onDelete}>
                     Delete
                   </Button>
                 )}
@@ -206,18 +209,17 @@ export default function Main(props: props) {
                 {(!!props.onCreate || !!props.onUpdate) && (
                   <>
                     <Button
-                      className='mp-dashboard-button-cancel'
                       style={{ marginRight: '1rem' }}
                       onClick={() => (props.onCancel ? props.onCancel() : window.history.back())}
                     >
                       Cancel
                     </Button>
                     {props.onCreate ? (
-                      <Button className='mp-dashboard-button-create' onClick={props.onCreate}>
+                      <Button primary onClick={props.onCreate}>
                         Create
                       </Button>
                     ) : (
-                      <Button className='mp-dashboard-button-update' onClick={props.onUpdate}>
+                      <Button className='b-blue c-blue' onClick={props.onUpdate}>
                         Update
                       </Button>
                     )}

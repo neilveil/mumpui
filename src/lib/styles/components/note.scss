@@ -6,23 +6,29 @@
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   border-left-width: 4px;
-  border-color: #88888888;
+  // border-color: #88888888;
+  border-color: var(--mp-c-border);
 
   &.blue {
-    border-color: #21aaff88;
+    // border-color: #21aaff88;
+    border-color: var(--mp-c-blue);
   }
   &.green {
-    border-color: #15c71588;
+    // border-color: #15c71588;
+    border-color: var(--mp-c-green);
   }
   &.red {
-    border-color: #ff000058;
+    // border-color: #ff000058;
+    border-color: var(--mp-c-red);
   }
   &.yellow {
     border-color: #ffc40088;
+    border-color: var(--mp-c-yellow);
   }
   &.quote {
     background: transparent;
     background: #88888818;
+    background: var(--mp-c-light);
     border-top: none;
     border-right: none;
     border-bottom: none;

@@ -27,6 +27,7 @@ export default function Main() {
       }}
       sidebarImg='/mumpui/logo.png'
       sidebarItems={data.dashboardSidebarItems}
+      sidebarBasePath='/mumpui'
       onSidebarClick={key => navigate(key)}
     >
       <Form style={{ width: '100%', maxWidth: 400 }} onSubmit={submit}>

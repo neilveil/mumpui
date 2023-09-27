@@ -1,6 +1,7 @@
 import { Docs } from 'components'
 import { Button, Fields, Message } from 'lib'
 import * as snippets from './snippets'
+import { Link } from 'react-router-dom'
 
 export default function Main() {
   return (
@@ -21,13 +22,13 @@ export default function Main() {
 
       <Docs.Showcase title='Customization' code={snippets.s2}>
         <Fields>
-          <Button style={{ borderColor: '#0A94FF', color: '#0A94FF' }}>Update</Button>
-          <Button style={{ backgroundColor: '#0A94FF', color: 'white', border: 'none' }}>Edit</Button>
-          <Button style={{ color: '#f5222d', borderColor: '#f5222d', borderStyle: 'dashed' }}>Delete</Button>
-          <Button style={{ backgroundColor: '#52c41a', color: 'white', border: 'none' }}>
+          <Button className='f-blue c-white'>Update</Button>
+          <Button className='c-blue b-blue'>Edit</Button>
+          <Button className='c-red d-red'>Delete</Button>
+          <Button className='f-green c-white'>
             <span className='icon'>brush</span>
           </Button>
-          <Button style={{ border: 'none' }}>Clear</Button>
+          <Button className='b-transparent'>Clear</Button>
         </Fields>
       </Docs.Showcase>
 
@@ -45,6 +46,10 @@ export default function Main() {
           Stream Line
         </a>{' '}
         etc to use icons.
+      </Docs.Info>
+
+      <Docs.Info>
+        <Link to='/component/theme'>MumpUI Color classed usage →</Link>
       </Docs.Info>
 
       <Docs.Props

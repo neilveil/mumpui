@@ -11,6 +11,7 @@ export default function Main() {
       title='Blog'
       sidebarImg='/mumpui/logo.png'
       sidebarItems={data.dashboardSidebarItems}
+      sidebarBasePath='/mumpui'
       onSidebarClick={key => navigate(key)}
     >
       <h3>Blog: {window.location.pathname.split('/').pop()}</h3>

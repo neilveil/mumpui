@@ -31,11 +31,14 @@ body[data-theme='dark'] {
 
 $light-colors: (
   'primary': #282828,
+
   'bg': #ffffff,
   'border': #e8e8e8,
+
   'font-dark': #181818,
   'font': #686868,
   'font-light': #b8b8b8,
+
   'red': #f53b3b,
   'blue': #0095f8,
   'green': #68bf32,
@@ -46,31 +49,40 @@ $light-colors: (
   'violet': #722ed1,
   'indigo': #284eee,
   'light': #f8f8f8,
+
   'black': #000000,
   'white': #ffffff,
-  'transparent': #00000000
+  'transparent': #00000000,
+
+  'test': red
 );
 
 $dark-colors: (
   'primary': #d8d8d8,
+
   'bg': #080808,
   'border': #282828,
+
   'font-dark': #b8b8b8,
   'font': #888888,
   'font-light': #484848,
-  'red': #5c0909,
-  'blue': #00609f,
-  'green': #224e08,
-  'yellow': #695500,
-  'orange': #7b3b00,
-  'pink': #7c0b49,
-  'purple': #6c0075,
-  'violet': #4b0f9f,
-  'indigo': #001d96,
-  'light': #101010,
+
+  'red': #7e0606,
+  'blue': #006aaf,
+  'green': #2c6709,
+  'yellow': #8e7300,
+  'orange': #994900,
+  'pink': #810b4b,
+  'purple': #7d0087,
+  'violet': #5711b8,
+  'indigo': #0d32ce,
+  'light': #181818,
+
   'black': #ffffff,
   'white': #000000,
-  'transparent': #00000000
+  'transparent': #00000000,
+
+  'test': green
 );
 
 body {
@@ -124,5 +136,16 @@ body[data-theme='dark'] {
     .d-#{$key} {
       border: var(--mp-border-width) dashed #{$value};
     }
+  }
+}
+
+body {
+  color: var(--mp-c-font);
+  background-color: var(--mp-c-bg);
+}
+
+body.mumpui {
+  @each $key, $value in $light-colors {
+    --c-#{$key}: var(--mp-c-#{$key});
   }
 }

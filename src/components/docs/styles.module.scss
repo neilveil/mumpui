@@ -23,7 +23,7 @@
     color: var(--mp-c-font-light);
 
     a {
-      color: var(--c-link);
+      color: var(--mp-c-blue);
     }
   }
 
@@ -31,7 +31,7 @@
     margin: 4rem 0;
     text-align: center;
     font-size: 0.8rem;
-    color: #ff0000b8;
+    color: var(--mp-c-red);
     font-weight: var(--fw-bold);
   }
 }
@@ -148,7 +148,7 @@
   ul {
     margin-top: 1rem;
     font-size: 0.8rem;
-    color: var(--c-link);
+    color: var(--mp-c-blue);
     line-height: 2;
   }
 }

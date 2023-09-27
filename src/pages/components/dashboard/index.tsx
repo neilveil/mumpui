@@ -121,7 +121,7 @@ export default function Main() {
 }
 
 const LinkRenderer = ({ title = '', path = '' }) => (
-  <Link to={path} style={{ color: 'var(--c-link)', display: 'flex', alignItems: 'center' }} target='_blank'>
+  <Link to={path} style={{ color: 'var(--mp-c-blue)', display: 'flex', alignItems: 'center' }} target='_blank'>
     {title}&nbsp;&nbsp;<span className='icon'>east</span>
   </Link>
 )

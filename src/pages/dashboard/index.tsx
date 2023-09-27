@@ -12,6 +12,7 @@ export default function Main() {
       title='Home'
       sidebarImg='/mumpui/logo.png'
       sidebarItems={data.dashboardSidebarItems}
+      sidebarBasePath='/mumpui'
       onSidebarClick={path => navigate(path)}
     >
       <h3>Welcome to MumpUI Dashboard.</h3>

@@ -27,7 +27,7 @@ export const s2 = `
 // Using chain as breadcrumb component
 <Chain
   items={${JSON.stringify(data.chain, null, 2)}.map(x => (
-    <Link key={x} to={x} style={{ color: 'var(--c-link)' }}>
+    <Link key={x} to={x} style={{ color: 'var(--mp-c-blue)' }}>
       {x}
     </Link>
   ))}

@@ -15,17 +15,12 @@ export const s1 = `
 
 export const s2 = `
 <Fields>
-  // Stroke button
-  <Button style={{ borderColor: '#0A94FF', color: '#0A94FF' }}>Update</Button>
-  // Solid button
-  <Button style={{ backgroundColor: '#0A94FF', color: 'white', border: 'none' }}>Edit</Button>
-  // Dashed button
-  <Button style={{ color: '#f5222d', borderColor: '#f5222d', borderStyle: 'dashed' }}>Delete</Button>
-  // Icon button
-  <Button style={{ backgroundColor: '#52c41a', color: 'white', border: 'none' }}>
+  <Button className='f-blue c-white'>Update</Button>
+  <Button className='c-blue b-blue'>Edit</Button>
+  <Button className='c-red d-red'>Delete</Button>
+  <Button className='f-green c-white'>
     <span className='icon'>brush</span>
   </Button>
-  // Text button
-  <Button style={{ border: 'none' }}>Clear</Button>
+  <Button className='b-transparent'>Clear</Button>
 </Fields>
 `

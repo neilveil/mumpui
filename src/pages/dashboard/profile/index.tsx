@@ -11,6 +11,7 @@ export default function Main() {
       title='Profile'
       sidebarImg='/mumpui/logo.png'
       sidebarItems={data.dashboardSidebarItems}
+      sidebarBasePath='/mumpui'
       onSidebarClick={key => navigate(key)}
     >
       <div style={{ fontSize: '.8rem' }}>
