@@ -11,7 +11,7 @@ MumpUI is not just another front-end library; it's your secret weapon for crafti
 
 Are you tired of reinventing the wheel with every new project? Say goodbye to the mundane and say hello to the extraordinary. Our library is your trusted companion, a treasure trove of pre-built components and clever helpers that will turbocharge your ReactJS applications. Whether you're a seasoned developer or just starting your coding adventure, MumpUI empowers you to build dazzling interfaces and deliver polished user experiences like a pro.
 
-[Live demo →](https://neilveil.github.io/mumpui/)
+[Live demo →](https://neilveil.github.io/mumpui)
 
 ## Why MumpUI?
 
