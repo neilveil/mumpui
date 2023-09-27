@@ -8,7 +8,7 @@ export default function Main() {
 
   return (
     <Docs name='file'>
-      <Docs.Showcase title={<span></span>} code={snippets.s1}>
+      <Docs.Showcase code={snippets.s1}>
         <Field label='Upload images'>
           <File accept='image/jpeg' onChange={(e: any) => setFiles(Array.from(e.target.files))} multiple>
             <Button>Upload</Button>

@@ -16,11 +16,11 @@
     border-radius: var(--mp-border-radius);
 
     &::placeholder {
-      color: var(--mp-c-placeholder);
+      color: var(--mp-c-font-light);
     }
 
     &:disabled {
-      background: var(--mp-c-hover);
+      background: var(--mp-c-light);
     }
 
     option {
@@ -37,7 +37,7 @@
 
 .mp-select-chip {
   padding-left: 0.5rem;
-  background: var(--mp-c-hover);
+  background: var(--mp-c-light);
   border-radius: calc(var(--mp-border-radius) / 2);
   display: flex;
   align-items: center;
@@ -66,7 +66,7 @@
     color: var(--mp-c-font-light);
 
     &::placeholder {
-      color: var(--mp-c-placeholder);
+      color: var(--mp-c-font-light);
     }
   }
 
@@ -84,6 +84,6 @@
 
   &:hover,
   &:focus {
-    background: var(--mp-c-hover);
+    background: var(--mp-c-light);
   }
 }

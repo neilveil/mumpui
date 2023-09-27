@@ -2,6 +2,7 @@
 
 [![Downloads](https://img.shields.io/npm/dm/mumpui.svg)](https://www.npmjs.com/package/mumpui) [![Version](https://img.shields.io/npm/v/mumpui.svg)](https://www.npmjs.com/package/mumpui)
 
+
 **A light-weight Flexible & Elegant Design System for Developers**
 
 Welcome to MumpUI, where creativity meets simplicity! 🌟
@@ -9,6 +10,8 @@ Welcome to MumpUI, where creativity meets simplicity! 🌟
 MumpUI is not just another front-end library; it's your secret weapon for crafting captivating, feature-rich web applications effortlessly. With MumpUI, we've gathered the building blocks you need to supercharge your development journey, all under one roof.
 
 Are you tired of reinventing the wheel with every new project? Say goodbye to the mundane and say hello to the extraordinary. Our library is your trusted companion, a treasure trove of pre-built components and clever helpers that will turbocharge your ReactJS applications. Whether you're a seasoned developer or just starting your coding adventure, MumpUI empowers you to build dazzling interfaces and deliver polished user experiences like a pro.
+
+[Live demo →](https://neilveil.github.io/mumpui/)
 
 ## Why MumpUI?
 

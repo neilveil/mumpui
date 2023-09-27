@@ -152,36 +152,46 @@ type field = {
 interface props {
   title?: any
   fields?: field[]
-  type?: 'component' | 'function' | 'object'
+  type?: 'component' | 'function' | 'object' | 'table'
 }
 
 Main.Props = Props
+
 function Props(props: props) {
+  const hasType = props.fields?.filter(x => x.type).length
+
   return (
     <div>
       <div className={s.props}>
-        <code style={{ fontSize: '1rem' }}>{props.title}</code> {props.type ? typeMap[props.type] : null}
+        {props.type === 'table' ? props.title : <code style={{ fontSize: '1rem' }}>{props.title}</code>}
+        {props.type ? typeMap[props.type] : null}
       </div>
 
       <Table
         cols={[
           // { key: 'required', render: value => (value ? '*' : '') },
-          { name: 'Name', key: 'name', render: value => (value ? <code>{value}</code> : null) },
           {
-            name: 'Type',
-            key: 'type',
-            render: (value: any) =>
-              value ? (
-                <code style={{ color: typeColorMap[value], backgroundColor: 'transparent', padding: 0, margin: 0 }}>
-                  {value}
-                </code>
-              ) : null
+            name: 'Name',
+            key: 'name',
+            render: (value: any) => (value ? <code style={{ whiteSpace: 'pre' }}>{value}</code> : null)
           },
+          !hasType
+            ? {}
+            : {
+                name: 'Type',
+                key: 'type',
+                render: (value: any) =>
+                  value ? (
+                    <code style={{ color: typeColorMap[value], backgroundColor: 'transparent', padding: 0, margin: 0 }}>
+                      {value}
+                    </code>
+                  ) : null
+              },
           {
             name: 'Usage',
             key: 'usage',
             width: '100%',
-            render: (value, x: field) =>
+            render: (value: any, x: field) =>
               x.defaultValue ? (
                 <span>
                   {value} (Default: <code>{x.defaultValue}</code>)
@@ -190,7 +200,7 @@ function Props(props: props) {
                 value
               )
           }
-        ]}
+        ].filter(x => Object.keys(x).length)}
         data={props.fields || []}
       />
     </div>
@@ -225,7 +235,8 @@ function Related({ components = [] }: related) {
 const typeMap = {
   component: 'component props',
   function: 'function arguments',
-  object: 'object keys'
+  object: 'object keys',
+  table: ''
 }
 
 const typeColorMap: any = {

@@ -60,7 +60,6 @@
 
   .title {
     font-size: 1.5rem;
-    font-weight: var(--fw-bold);
     padding-bottom: 1rem;
     margin-top: 1rem;
     color: var(--mp-c-font-dark);
@@ -85,7 +84,7 @@
     user-select: none;
 
     div {
-      background: var(--mp-c-hover);
+      background: var(--mp-c-light);
       display: inline-flex;
       align-items: center;
       padding: 0.25rem 0.5rem;

@@ -3,7 +3,7 @@ body {
   --mp-c-primary: #000000; // Primary color
   --mp-c-bg: #ffffff; // Background color
 
-  --mp-c-hover: #f8f8f8; // Elements color on hover before selection
+  --mp-c-light: #f8f8f8; // Elements color on hover before selection
   --mp-c-border: #e8e8e8; // Elements border color
   --mp-border-radius: 8px; // Elements border radius
   --mp-border-width: 1px; // Elements border width
@@ -21,14 +21,14 @@ body {
   --mp-c-font-dark: #282828; // Font color dark
   --mp-c-font: #484848; // Font color default
   --mp-c-font-light: #888888; // Font color light
-  --mp-c-placeholder: #b8b8b8; // Font color of input field placeholder
+  --mp-c-font-light: #b8b8b8; // Font color of input field placeholder
 }
 
 body[data-theme='dark'] {
   --mp-c-primary: #e8e8e8; // Primary color
   --mp-c-bg: #080808; // Background color
 
-  --mp-c-hover: #101010; // Elements color on hover before selection
+  --mp-c-light: #101010; // Elements color on hover before selection
   --mp-c-border: #282828; // Elements border color
   --mp-border-radius: 8px; // Elements border radius
   --mp-border-width: 1px; // Elements border width
@@ -46,6 +46,6 @@ body[data-theme='dark'] {
   --mp-c-font-dark: #d8d8d8; // Font color dark
   --mp-c-font: #b8b8b8; // Font color default
   --mp-c-font-light: #888888; // Font color light
-  --mp-c-placeholder: #484848; // Font color of input field placeholder
+  --mp-c-font-light: #484848; // Font color of input field placeholder
 }
 `

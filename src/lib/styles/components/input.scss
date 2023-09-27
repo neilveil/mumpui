@@ -21,7 +21,7 @@
     color: inherit;
 
     &::placeholder {
-      color: var(--mp-c-placeholder);
+      color: var(--mp-c-font-light);
     }
   }
 
@@ -42,7 +42,7 @@
     align-items: center;
     font-weight: var(--mp-fw-bold);
     color: var(--mp-c-font);
-    background: var(--mp-c-hover);
+    background: var(--mp-c-light);
     padding: var(--mp-input-padding);
     user-select: none;
   }
@@ -57,7 +57,7 @@
 input:disabled,
 textarea:disabled,
 .mp-disabled {
-  background: var(--mp-c-hover) !important;
+  background: var(--mp-c-light) !important;
   &,
   * {
     cursor: not-allowed !important;

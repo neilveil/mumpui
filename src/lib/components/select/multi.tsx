@@ -31,7 +31,7 @@ export default function Main({
 
   const ref: React.Ref<any> = useRef(null)
 
-  placeholder = <div style={{ color: 'var(--mp-c-placeholder)' }}>{placeholder || <>&nbsp;</>}</div>
+  placeholder = <div style={{ color: 'var(--mp-c-font-light)' }}>{placeholder || <>&nbsp;</>}</div>
 
   const clickListener: EventListener = e => {
     if (ref.current && !ref.current.contains(e.target)) setOptionsVisible(false)

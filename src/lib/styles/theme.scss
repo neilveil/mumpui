@@ -1,14 +1,9 @@
 // Theme
 body {
-  --mp-c-primary: #000000; // Primary color
-  --mp-c-bg: #ffffff; // Background color
-
-  --mp-c-hover: #f8f8f8; // Elements color on hover before selection
-  --mp-c-border: #e8e8e8; // Elements border color
   --mp-border-radius: 8px; // Elements border radius
   --mp-border-width: 1px; // Elements border width
-  --mp-c-overlay-bg: #0004; // Popup elements background color
-  --mp-pop-up-shadow: 0 8px 16px 8px #00000018; // Tooltip, select dropdown & search dropdown components shadow
+  --mp-c-overlay-bg: #0004; // Modal & confirm dialog background color
+  --mp-pop-up-shadow: 0 8px 16px 0px #00000010; // Tooltip, select dropdown & search dropdown components shadow
 
   --mp-input-border-width: 1px; // Input fields border width
   --mp-c-input-border: #e8e8e8; // Input fields border color
@@ -17,22 +12,12 @@ body {
   --mp-input-box-shadow: 0 0 2px 0px #0001; // Input fields box shadow
   --mp-input-box-shadow-hover: 0 0 4px 0px #0001; // Input fields box shadow on hover
   --mp-input-box-shadow-active: 0 0 4px 0px #0002; // Input fields box shadow on active
-
-  --mp-c-font-dark: #282828; // Font color dark
-  --mp-c-font: #484848; // Font color default
-  --mp-c-font-light: #888888; // Font color light
-  --mp-c-placeholder: #b8b8b8; // Font color of input field placeholder
 }
 
 body[data-theme='dark'] {
-  --mp-c-primary: #e8e8e8; // Primary color
-  --mp-c-bg: #080808; // Background color
-
-  --mp-c-hover: #101010; // Elements color on hover before selection
-  --mp-c-border: #282828; // Elements border color
   --mp-border-radius: 8px; // Elements border radius
   --mp-border-width: 1px; // Elements border width
-  --mp-c-overlay-bg: #000b; // Popup elements background color
+  --mp-c-overlay-bg: #000b; // Modal & confirm dialog background color
   --mp-pop-up-shadow: 0 8px 16px 8px #00000088; // Tooltip, select dropdown & search dropdown components shadow
 
   --mp-input-border-width: 1px; // Input fields border width
@@ -42,9 +27,102 @@ body[data-theme='dark'] {
   --mp-input-box-shadow: 0 0 2px 0px #fff1; // Input fields box shadow
   --mp-input-box-shadow-hover: 0 0 4px 0px #0001; // Input fields box shadow on hover
   --mp-input-box-shadow-active: 0 0 4px 0px #fff2; // Input fields box shadow on active
+}
 
-  --mp-c-font-dark: #d8d8d8; // Font color dark
-  --mp-c-font: #b8b8b8; // Font color default
-  --mp-c-font-light: #888888; // Font color light
-  --mp-c-placeholder: #484848; // Font color of input field placeholder
+$light-colors: (
+  'primary': #282828,
+  'bg': #ffffff,
+  'border': #e8e8e8,
+  'font-dark': #181818,
+  'font': #686868,
+  'font-light': #b8b8b8,
+  'red': #f53b3b,
+  'blue': #0095f8,
+  'green': #68bf32,
+  'yellow': #f9c900,
+  'orange': #ff8a1f,
+  'pink': #ff41a9,
+  'purple': #b932c5,
+  'violet': #722ed1,
+  'indigo': #284eee,
+  'light': #f8f8f8,
+  'black': #000000,
+  'white': #ffffff,
+  'transparent': #00000000
+);
+
+$dark-colors: (
+  'primary': #d8d8d8,
+  'bg': #080808,
+  'border': #282828,
+  'font-dark': #b8b8b8,
+  'font': #888888,
+  'font-light': #484848,
+  'red': #5c0909,
+  'blue': #00609f,
+  'green': #224e08,
+  'yellow': #695500,
+  'orange': #7b3b00,
+  'pink': #7c0b49,
+  'purple': #6c0075,
+  'violet': #4b0f9f,
+  'indigo': #001d96,
+  'light': #101010,
+  'black': #ffffff,
+  'white': #000000,
+  'transparent': #00000000
+);
+
+body {
+  @each $key, $value in $light-colors {
+    // Define color
+    --mp-c-#{$key}: #{$value};
+
+    // Font color class
+    .c-#{$key} {
+      color: #{$value};
+    }
+
+    // Backgroun color class
+    .f-#{$key} {
+      background-color: #{$value};
+    }
+
+    // Solid border class
+    .b-#{$key} {
+      border: var(--mp-border-width) solid #{$value};
+    }
+
+    // Dashed border class
+    .d-#{$key} {
+      border: var(--mp-border-width) dashed #{$value};
+    }
+  }
+}
+
+body[data-theme='dark'] {
+  @each $key, $value in $dark-colors {
+    // Define color
+    --mp-c-#{$key}: #{$value};
+
+    // Font color class
+    .c-#{$key} {
+      color: #{$value};
+    }
+
+    // Backgroun color class
+    .f-#{$key} {
+      background-color: #{$value};
+    }
+
+    // Solid border class
+    .b-#{$key} {
+      border: var(--mp-border-width) solid #{$value};
+    }
+
+    // Dashed border class
+    .d-#{$key} {
+      border: var(--mp-border-width) dashed #{$value};
+    }
+  }
 }

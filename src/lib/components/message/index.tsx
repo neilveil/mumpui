@@ -2,7 +2,7 @@ import React from 'react'
 import * as icons from './icons'
 
 type icon = React.ReactNode
-type text = string
+type text = string | JSX.Element
 type duration = number
 
 type message = {
@@ -25,11 +25,11 @@ export default class Main extends React.Component {
   static max = 3
   static duration = 3000
 
-  static info = (text = '', duration?: duration) => Main.pushMessage({ icon: icons.info, text, duration })
-  static warn = (text = '', duration?: duration) => Main.pushMessage({ icon: icons.warn, text, duration })
-  static success = (text = '', duration?: duration) => Main.pushMessage({ icon: icons.success, text, duration })
-  static error = (text = '', duration?: duration) => Main.pushMessage({ icon: icons.error, text, duration })
-  static loading = (text = '', duration?: duration) => Main.pushMessage({ icon: icons.loading, text, duration })
+  static info = (text: text = '', duration?: duration) => Main.pushMessage({ icon: icons.info, text, duration })
+  static warn = (text: text = '', duration?: duration) => Main.pushMessage({ icon: icons.warn, text, duration })
+  static success = (text: text = '', duration?: duration) => Main.pushMessage({ icon: icons.success, text, duration })
+  static error = (text: text = '', duration?: duration) => Main.pushMessage({ icon: icons.error, text, duration })
+  static loading = (text: text = '', duration?: duration) => Main.pushMessage({ icon: icons.loading, text, duration })
   static clear = (id?: symbol) =>
     Main._this.setState({ messages: id ? Main._this.state.messages.filter(x => x.id !== id) : [] })
 

@@ -26,7 +26,7 @@ export default function Main() {
                     display: 'inline-block',
                     padding: '1rem',
                     margin: '1rem 1rem 0 0',
-                    backgroundColor: 'var(--mp-c-hover)',
+                    backgroundColor: 'var(--mp-c-light)',
                     cursor: 'pointer'
                   }}
                   onClick={() => setValue(x)}

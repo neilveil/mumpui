@@ -1,13 +1,12 @@
 import { Footer, SwitchTheme } from 'components'
 import Fuse from 'fuse.js'
-import { Code, Modal, Placeholder } from 'lib'
+import { SetMeta } from 'helpers'
+import { Placeholder } from 'lib'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import showcases from './showcases'
 import groups from './groups'
+import showcases from './showcases'
 import s from './styles.module.scss'
-import * as snippets from './snippets'
-import { SetMeta } from 'helpers'
 
 export default class Main extends React.Component {
   state = {
@@ -118,9 +117,9 @@ export default class Main extends React.Component {
 
                   <SwitchTheme />
 
-                  <span onClick={() => this.setState({ customize: !this.state.customize })} className='icon'>
-                    brush
-                  </span>
+                  <Link to='/component/theme'>
+                    <span className='icon'>brush</span>
+                  </Link>
 
                   <a href='https://github.com/neilveil/mumpui' target='_blank' rel='noreferrer'>
                     <div className={s.github}>
@@ -134,14 +133,6 @@ export default class Main extends React.Component {
             </div>
           </div>
         </div>
-
-        <Modal
-          style={{ padding: 0, maxWidth: 1080 }}
-          visible={this.state.customize}
-          onClose={() => this.setState({ customize: false })}
-        >
-          <Customize />
-        </Modal>
 
         <div className={s.container}>
           <div className={s.content}>
@@ -254,15 +245,6 @@ const Showcases = ({ data, expanded }: { data: element[]; expanded: boolean }) =
           </Link>
         </div>
       ))}
-    </div>
-  )
-}
-
-function Customize() {
-  return (
-    <div className={s.customizeTheme}>
-      <div className={s.title}>Customize theme</div>
-      <Code snippet={snippets.theme} lang='css' style={{ width: '100%', margin: 0 }} />
     </div>
   )
 }

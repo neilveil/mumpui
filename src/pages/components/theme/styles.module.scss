@@ -1,0 +1,36 @@
+.palette {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.palette > div,
+.color {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 200ms ease;
+  display: inline-flex;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.complexity {
+  text-align: center;
+  margin: 4rem 0;
+  background-color: var(--mp-c-light);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    color: var(--mp-c-font-dark);
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+  }
+}

@@ -300,6 +300,15 @@ export default {
     related: ['input', 'form'],
     img: ''
   },
+  theme: {
+    type: '',
+    name: 'Theme',
+    description: '',
+    link: '/component/textarea',
+    keywords: [],
+    related: ['setup'],
+    img: ''
+  },
   tooltip: {
     type: 'Component',
     name: 'Tooltip',

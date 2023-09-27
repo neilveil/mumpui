@@ -9,7 +9,7 @@ export default function Main() {
 
   return (
     <Docs name='menu'>
-      <Docs.Showcase title={<span></span>} code={snippets.s1}>
+      <Docs.Showcase code={snippets.s1}>
         <Menu
           active={selected}
           onClick={(selected: any) => setSelected(selected)}

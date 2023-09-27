@@ -9,7 +9,7 @@ export default function Main() {
 
   return (
     <Docs name='tabs'>
-      <Docs.Showcase title={<span></span>} code={snippets.s1}>
+      <Docs.Showcase code={snippets.s1}>
         <Tabs items={data.tabs} active={active} onClick={(active: any) => setActive(active)} />
       </Docs.Showcase>
 
