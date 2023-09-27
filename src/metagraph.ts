@@ -6,7 +6,7 @@ export default {
       "The Button component is a fundamental element for user interaction, allowing to trigger actions with a simple click. It's highly customizable and can be tailored to fit your design needs.",
     link: '/docs/button',
     keywords: ['button', 'ui-button', 'clickable-element', 'interactive-component'],
-    related: ['input', 'form'],
+    related: ['input', 'form', 'theme'],
     img: ''
   },
   chain: {
@@ -16,7 +16,7 @@ export default {
       'The Chain component offers a flexible alternative to traditional breadcrumbs, providing a dynamic way to preview & navigate through a series of steps or pages.',
     link: '/docs/chain',
     keywords: ['chain', 'linked-elements', 'sequential-steps', 'navigation'],
-    related: ['tabs', 'menu', 'dashboard'],
+    related: ['tabs', 'menu', 'dashboard', 'theme'],
     img: ''
   },
   checkbox: {
@@ -66,7 +66,7 @@ export default {
       'The Dashboard component provides a structured layout for managing and visualizing data, offering an organized view of key metrics and insights.',
     link: '/docs/dashboard',
     keywords: ['dashboard', 'data-management', 'crud-operations', 'user-roles'],
-    related: ['table', 'list', 'pagination', 'chain'],
+    related: ['table', 'list', 'pagination', 'chain', 'theme'],
     img: ''
   },
   datetime: {
@@ -207,7 +207,7 @@ export default {
       'The Note component highlights important information or quotes using distinct colors (e.g., red, blue, green, yellow), making key content stand out.',
     link: '/docs/note',
     keywords: ['note', 'informational-note', 'user-information', 'message'],
-    related: ['message', 'confirm'],
+    related: ['message', 'confirm', 'theme'],
     img: ''
   },
   pagination: {
@@ -303,9 +303,19 @@ export default {
   theme: {
     type: '',
     name: 'Theme',
-    description: '',
-    link: '/docs/textarea',
-    keywords: [],
+    description:
+      "MumpUI's theme is highly customizable, offering a rich selection of CSS color variables and classes. Additionally, it seamlessly integrates both light and dark themes.",
+    link: '/docs/theme',
+    keywords: [
+      'color-classes',
+      'color-variables',
+      'css',
+      'customizable',
+      'dark-theme',
+      'light-theme',
+      'styling',
+      'theme'
+    ],
     related: ['setup'],
     img: ''
   },
@@ -325,7 +335,7 @@ export default {
     description: 'Get started with MumpUI in 3 steps. Just Install, Initialize & setup theme, and you are good to go.',
     link: '/setup',
     keywords: ['install', 'initialize', 'theme', 'configure', 'integrate', 'environment', 'setup'],
-    related: [],
+    related: ['theme'],
     img: ''
   },
   theStoryOfMumpUI: {
