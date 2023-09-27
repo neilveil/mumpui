@@ -105,7 +105,7 @@
 .container {
   min-height: 100vh;
   width: 100%;
-  background: var(--mp-c-light);
+  background: var(--c-light);
   padding: 1rem 0;
 
   .content {
@@ -125,11 +125,11 @@
   .foldUnfold {
     padding: 0.25rem;
     cursor: pointer;
-    color: var(--mp-c-font);
+    color: var(--c-font);
     user-select: none;
 
     &:hover {
-      color: var(--mp-c-font-dark);
+      color: var(--c-font-dark);
     }
   }
 
@@ -143,24 +143,24 @@
     transform: translateY(-50%);
     right: 1rem;
     font-size: 0.8rem;
-    color: var(--mp-c-font-light);
-    background: var(--mp-c-light);
+    color: var(--c-font-light);
+    background: var(--c-light);
     padding: 0 0.25rem;
     border-radius: 4px;
   }
 
   input {
     outline: none;
-    border: 2px solid var(--mp-c-border);
+    border: 2px solid var(--c-border);
     width: 100%;
-    color: var(--mp-c-font-dark);
+    color: var(--c-font-dark);
     padding: 0.5rem 1.5rem;
     border-radius: 10rem;
     font-size: 0.8rem;
-    background: var(--mp-c-bg);
+    background: var(--c-bg);
 
     &::placeholder {
-      color: var(--mp-c-font-light);
+      color: var(--c-font-light);
     }
   }
 }
@@ -181,12 +181,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: var(--mp-c-font-dark);
+    color: var(--c-font-dark);
     font-size: 1.25rem;
 
     .count {
       font-size: 0.7rem;
-      color: var(--mp-c-font-light);
+      color: var(--c-font-light);
       margin-left: 0.5rem;
     }
   }
@@ -204,7 +204,7 @@
   display: flex;
   flex-direction: column;
   opacity: 0;
-  background-color: var(--mp-c-bg);
+  background-color: var(--c-bg);
   animation: showcase-appear 300ms ease forwards;
   width: calc(50% - 1rem);
   border-radius: 8px;
@@ -213,7 +213,7 @@
   .nameLink:focus,
   &:hover {
     .name {
-      color: var(--mp-c-font-dark);
+      color: var(--c-font-dark);
 
       .icon {
         opacity: 1;
@@ -247,7 +247,7 @@
     font-size: 0.7rem;
     padding: 1rem;
     border-top: var(--mp-border);
-    color: var(--mp-c-font-light);
+    color: var(--c-font-light);
     font-weight: var(--fw-bold);
     cursor: pointer;
     width: 100%;

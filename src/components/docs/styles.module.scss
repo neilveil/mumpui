@@ -20,10 +20,10 @@
     font-size: 0.8rem;
     margin-top: 1rem;
     margin-bottom: 2rem;
-    color: var(--mp-c-font-light);
+    color: var(--c-font-light);
 
     a {
-      color: var(--mp-c-blue);
+      color: var(--c-blue);
     }
   }
 
@@ -31,7 +31,7 @@
     margin: 4rem 0;
     text-align: center;
     font-size: 0.8rem;
-    color: var(--mp-c-red);
+    color: var(--c-red);
     font-weight: var(--fw-bold);
   }
 }
@@ -49,11 +49,11 @@
       display: flex;
       gap: 0.5rem;
       font-size: 0.9rem;
-      color: var(--mp-c-font);
+      color: var(--c-font);
       cursor: pointer;
 
       &:hover {
-        color: var(--mp-c-font-dark);
+        color: var(--c-font-dark);
       }
     }
   }
@@ -62,7 +62,7 @@
     font-size: 1.5rem;
     padding-bottom: 1rem;
     margin-top: 1rem;
-    color: var(--mp-c-font-dark);
+    color: var(--c-font-dark);
   }
 }
 
@@ -79,19 +79,19 @@
 
   .switch {
     font-size: 0.7rem;
-    color: var(--mp-c-font-dark);
+    color: var(--c-font-dark);
     text-align: right;
     user-select: none;
 
     div {
-      background: var(--mp-c-light);
+      background: var(--c-light);
       display: inline-flex;
       align-items: center;
       padding: 0.25rem 0.5rem;
       cursor: pointer;
 
       &:hover {
-        background: var(--mp-c-input-border);
+        background: var(--c-input-border);
       }
     }
   }
@@ -113,18 +113,18 @@
   tbody {
     .name {
       code {
-        color: var(--mp-c-font-dark);
+        color: var(--c-font-dark);
       }
     }
 
     .type {
       code {
-        color: var(--mp-c-code);
+        color: var(--c-code);
         font-weight: var(--mp-fw-code);
       }
     }
     .usage {
-      color: var(--mp-c-font);
+      color: var(--c-font);
     }
   }
 
@@ -148,7 +148,7 @@
   ul {
     margin-top: 1rem;
     font-size: 0.8rem;
-    color: var(--mp-c-blue);
+    color: var(--c-blue);
     line-height: 2;
   }
 }

@@ -120,6 +120,18 @@ export default function Main() {
       <Docs.Showcase title='More customizations' code={snippets.s6} lang='css'>
         Elements border radius, border width, dialogs background color, etc.
       </Docs.Showcase>
+
+      <Docs.Showcase
+        title={
+          <span>
+            Remove<code>--mp-</code> prefix from css variables
+          </span>
+        }
+        code={snippets.s7}
+        lang='html'
+      >
+        Add <code>mumpui</code> class in body tag.
+      </Docs.Showcase>
     </Docs>
   )
 }

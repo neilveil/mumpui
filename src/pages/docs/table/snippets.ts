@@ -30,7 +30,7 @@ export const s1 = `
         name: 'Salary',
         align: 'right',
         // Custom renderer example to modify value
-        render: (value: any) => <span style={{ color: 'green' }}>\${value}</span>
+        render: (value: any) => <span style={{ color: 'var(--mp-c-green)' }}>\${value}</span>
       }
     ]
   }

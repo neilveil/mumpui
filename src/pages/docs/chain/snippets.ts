@@ -16,7 +16,7 @@ export const s2 = `
       style={{
         width: '.25rem',
         height: '.25rem',
-        backgroundColor: '#888',
+        backgroundColor: 'var(--mp-c-font)',
         margin: '0 .25rem',
         borderRadius: '50%'
       }}
@@ -27,7 +27,7 @@ export const s2 = `
 // Using chain as breadcrumb component
 <Chain
   items={${JSON.stringify(data.chain, null, 2)}.map(x => (
-    <Link key={x} to={x} style={{ color: 'var(--mp-c-blue)' }}>
+    <Link key={x} to={x} className='c-blue'>
       {x}
     </Link>
   ))}

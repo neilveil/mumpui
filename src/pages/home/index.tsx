@@ -203,7 +203,7 @@ const Group = (props: groups) => {
           {props.title}
           <span className={s.count}>{props.showcases.length} components</span>
         </div>
-        <div className='icon' style={{ color: 'var(--mp-c-font-light)' }}>
+        <div className='icon' style={{ color: 'var(--c-font-light)' }}>
           {localExpanded ? 'expand_more' : 'chevron_right'}
         </div>
       </div>

@@ -17,6 +17,7 @@
     "dist": "npm run dist:clean && npm run dist:scripts && npm run dist:styles",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "pretty": "prettier --write ./src/**/*",
+    "clean": "npm run lint && npm run pretty",
     "precommit": "",
     "prepare": "husky install"
   },

@@ -64,7 +64,7 @@ const table: any = {
       key: 'salary',
       name: 'Salary',
       align: 'right',
-      render: (value: any) => <span style={{ color: 'green' }}>${value}</span>
+      render: (value: any) => <span style={{ color: 'var(--mp-c-green)' }}>${value}</span>
     }
   ],
   data: [

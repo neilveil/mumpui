@@ -117,3 +117,14 @@ body[data-theme='dark'] {
   --mp-input-box-shadow-active: 0 0 4px 0px #fff2; // Input fields box shadow on active
 }
 `
+
+export const s7 = `
+<html>
+  <head>
+    ..
+  </head>
+  <body class="mumpui">
+    <div style={{color: 'var(--c-green)'}}>CSS variable example usage</div>
+  </body>
+</html>
+`

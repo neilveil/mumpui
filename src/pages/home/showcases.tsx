@@ -391,7 +391,7 @@ export default {
       return (
         <Chain
           items={data.chain.map(x => (
-            <Link key={x} to={x} style={{ color: 'var(--mp-c-blue)' }}>
+            <Link key={x} to={x} style={{ color: 'var(--c-blue)' }}>
               {x}
             </Link>
           ))}
