@@ -1,11 +1,11 @@
-import { Code, Message, Table } from 'lib'
-import { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import Footer from '../footer'
-import s from './styles.module.scss'
 import { SwitchTheme } from 'components'
 import { SetMeta } from 'helpers'
+import { Code, Message, Table } from 'lib'
 import metagraph from 'metagraph'
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import Footer from '../footer'
+import s from './styles.module.scss'
 
 interface main {
   children?: any
@@ -13,8 +13,6 @@ interface main {
 }
 
 export default function Main(props: main) {
-  const navigate = useNavigate()
-
   const { name, description, keywords, related, img, type } = metagraph[props.name]
 
   const title = ['MumpUI', type, name].filter(x => x).join(' / ')
@@ -32,13 +30,11 @@ export default function Main(props: main) {
         <div>
           <div className={s.header}>
             <div className={s.row}>
-              <div className={s.icon} onClick={() => window.history.back()}>
-                <span className='icon'>west</span> Back
-              </div>
-
-              <div className={s.icon} onClick={() => navigate('/home')}>
-                <span className='icon'>home</span> Home
-              </div>
+              <Link to='/'>
+                <div className={s.icon}>
+                  <span className='icon'>west</span> Home
+                </div>
+              </Link>
 
               <div className={s.icon}>
                 <SwitchTheme />

@@ -1,9 +1,14 @@
 import { Docs } from 'components'
-import { Message } from 'lib'
+import { Message, Radio } from 'lib'
+import { useState } from 'react'
 import * as snippets from './snippets'
 import s from './styles.module.scss'
 
 export default function Main() {
+  const [theme, setTheme] = useState(
+    document.querySelector('body')?.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'
+  )
+
   return (
     <Docs name='theme'>
       <div className={s.complexity}>
@@ -116,6 +121,20 @@ export default function Main() {
           { name: 'd-{color}', usage: 'Set dashed border color (dashed)' }
         ]}
       />
+
+      <Docs.Showcase title='Switch theme' code={snippets.s8}>
+        <Radio
+          checked={theme}
+          options={[
+            { key: 'light', label: 'Light' },
+            { key: 'dark', label: 'Dark' }
+          ]}
+          onChange={key => {
+            document.querySelector('body')?.setAttribute('data-theme', key)
+            setTheme(key)
+          }}
+        />
+      </Docs.Showcase>
 
       <Docs.Showcase title='More customizations' code={snippets.s6} lang='css'>
         Elements border radius, border width, dialogs background color, etc.

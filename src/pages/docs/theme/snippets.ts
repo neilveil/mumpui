@@ -123,8 +123,31 @@ export const s7 = `
   <head>
     ..
   </head>
+
   <body class="mumpui">
-    <div style={{color: 'var(--c-green)'}}>CSS variable example usage</div>
+    <div style={{color: 'var(--c-green)'}}>
+      CSS variable example usage without "mp" prefix.
+    </div>
   </body>
 </html>
+`
+
+export const s8 = `
+const [theme, setTheme] = useState(
+  document.querySelector('body')?.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'
+)
+
+..
+
+<Radio
+  checked={theme}
+  options={[
+    { key: 'light', label: 'Light' },
+    { key: 'dark', label: 'Dark' }
+  ]}
+  onChange={key => {
+    document.querySelector('body')?.setAttribute('data-theme', key)
+    setTheme(key)
+  }}
+/>
 `
