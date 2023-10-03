@@ -14,6 +14,7 @@
   transition: all 200ms ease;
   display: inline-flex;
   flex-shrink: 0;
+  box-shadow: 0 0 0.25rem var(--c-border);
 
   &:hover {
     transform: scale(1.1);

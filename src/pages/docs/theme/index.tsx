@@ -17,10 +17,7 @@ export default function Main() {
 
       <Docs.Showcase title='Primary color' code={snippets.s1} lang='css'>
         <div className={s.palette}>
-          <div
-            onClick={() => Message.info(<code>{'--mp-c-primary'}</code>)}
-            style={{ background: 'var(--mp-c-primary)' }}
-          ></div>
+          <ColorPatch name='Primary' color='--mp-c-primary' />
         </div>
       </Docs.Showcase>
 
@@ -32,18 +29,8 @@ export default function Main() {
         <div className={s.palette}>
           {colors
             .filter(x => x.type === 'font')
-            .map(({ name, color }) => (
-              <div
-                key={color}
-                onClick={() =>
-                  Message.info(
-                    <span>
-                      {name}: <code>{color}</code>
-                    </span>
-                  )
-                }
-                style={{ background: `var(${color})` }}
-              />
+            .map(({ name, color }, i) => (
+              <ColorPatch key={i} name={name} color={color} />
             ))}
         </div>
 
@@ -66,45 +53,34 @@ export default function Main() {
         <div className={s.palette}>
           {colors
             .filter(x => x.type === 'palette')
-            .map(({ name, color }) => (
-              <div
-                key={color}
-                onClick={() =>
-                  Message.info(
-                    <span>
-                      {name}: <code>{color}</code>
-                    </span>
-                  )
-                }
-                style={{ background: `var(${color})` }}
-              />
+            .map(({ name, color }, i) => (
+              <ColorPatch key={i} name={name} color={color} />
             ))}
         </div>
       </Docs.Showcase>
 
-      <Docs.Showcase title='Background & border color' code={snippets.s4} lang='css'></Docs.Showcase>
+      <Docs.Showcase title='Background & border color' code={snippets.s4} lang='css'>
+        <div className={s.palette}>
+          <ColorPatch name='Background' color='--mp-c-bg' />
+          <ColorPatch name='Border' color='--mp-c-border' />
+        </div>
+      </Docs.Showcase>
 
       <Docs.Showcase title='Black & white' code={snippets.s5} lang='css'>
         <div className={s.palette}>
-          <div
-            onClick={() => Message.info(<code>{'--mp-c-black'}</code>)}
-            style={{ background: 'var(--mp-c-black)' }}
-          />
-          <div
-            onClick={() => Message.info(<code>{'--mp-c-white'}</code>)}
-            style={{ background: 'var(--mp-c-white)' }}
-          />
+          <ColorPatch name='Black' color='--mp-c-black' />
+          <ColorPatch name='White' color='--mp-c-white' />
         </div>
       </Docs.Showcase>
 
       <Docs.Props
         title='Color usage chart'
         type='table'
-        fields={colors.map(({ color, usage }) => ({
+        fields={colors.map(({ name, color, usage }) => ({
           name: color,
           usage: (
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-              <span className={s.color} style={{ backgroundColor: `var(${color})` }} />
+              <ColorPatch name={name} color={color} />
               {usage}
             </div>
           )
@@ -259,3 +235,18 @@ const colors = [
     type: 'more'
   }
 ]
+
+const ColorPatch = ({ color, name }: { color: string; name: string }) => (
+  <div
+    className={s.color}
+    key={color}
+    onClick={() =>
+      Message.info(
+        <span>
+          {name}: <code>{color}</code>
+        </span>
+      )
+    }
+    style={{ background: `var(${color})` }}
+  />
+)

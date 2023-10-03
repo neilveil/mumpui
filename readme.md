@@ -61,6 +61,8 @@ function Main() {
 }
 ```
 
+[Setup →](https://neilveil.github.io/mumpui/setup)
+
 ## Demo
 
 Check out the [MumpUI](https://neilveil.github.io/mumpui) website for demo.
