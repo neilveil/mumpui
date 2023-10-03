@@ -6,18 +6,3 @@ body {
   color: var(--c-font);
   background-color: var(--c-bg);
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
-:root {
-  --mp-ff-code: Roboto Mono, monospace;
-  --mp-fs-code: 0.75rem;
-  --mp-fw-code: 500;
-}
-code {
-  font-family: var(--mp-ff-code);
-  font-size: var(--mp-fs-code);
-  font-weight: var(--mp-fw-code);
-  padding: 0 0.25rem;
-  margin: 0 0.1rem;
-  border-radius: calc(var(--mp-border-radius) / 2);
-}
