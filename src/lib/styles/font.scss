@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
 :root {
-  --mp-ff: Roboto, sans-serif; // Primary font
+  --mp-ff-primary: Roboto, sans-serif; // Primary font
 
   --mp-fw-light: 300; // Font weight light
   --mp-fw-regular: 400; // Font weight regular
@@ -12,6 +12,13 @@
 
 body,
 .mumpui {
-  font-family: var(--mp-ff);
+  font-family: var(--mp-ff-primary);
   line-height: 1.5;
+}
+
+.mumpui {
+  --ff-primary: var(--mp-ff-primary);
+  --fw-light: var(--mp-fw-light);
+  --fw-regular: var(--mp-fw-regular);
+  --fw-bold: var(--mp-fw-bold);
 }
