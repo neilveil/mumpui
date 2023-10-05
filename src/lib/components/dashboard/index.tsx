@@ -110,14 +110,20 @@ export default function Main(props: props) {
     </div>
   )
 
+  const hasSidebar = props.sidebarItems || props.sidebarImg
+
   return (
     <div className={'mumpui mp-dashboard ' + (props.className || '')} style={props.style || {}}>
-      <div className='mp-dashboard-sidebar'>{sidebar}</div>
+      {!!hasSidebar && (
+        <>
+          <div className='mp-dashboard-sidebar'>{sidebar}</div>
 
-      {!!expandable && (
-        <div className='mp-dashboard-expandable' onClick={() => toggleSidebar()}>
-          <div onClick={e => e.stopPropagation()}>{sidebar}</div>
-        </div>
+          {!!expandable && (
+            <div className='mp-dashboard-expandable' onClick={() => toggleSidebar()}>
+              <div onClick={e => e.stopPropagation()}>{sidebar}</div>
+            </div>
+          )}
+        </>
       )}
 
       <div className='mp-dashboard-content'>

@@ -5,7 +5,7 @@ interface col {
   key?: string
   width?: number | string
   align?: 'left' | 'center' | 'right'
-  render?: (value: string, x: object, index: [row: number, col: number]) => void
+  render?: (value: any, x: object, index: [row: number, col: number]) => void
 }
 
 type props = React.TableHTMLAttributes<HTMLTableElement> & {

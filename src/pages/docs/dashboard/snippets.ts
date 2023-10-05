@@ -152,6 +152,16 @@ export const s6 = `
 <Dashboard
   icon={<span className='icon'>home</span>}
   title='Home'
+  style={{ maxWidth: 1000 }}
+>
+  <h3>Welcome to MumpUI Dashboard.</h3>
+</Dashboard>
+`
+
+export const s7 = `
+<Dashboard
+  icon={<span className='icon'>home</span>}
+  title='Home'
   sidebarImg='/mumpui/logo.png'
   sidebarItems={sidebarItems}
   onSidebarClick={path => navigate(path)}
@@ -165,7 +175,7 @@ export const s6 = `
 const sidebarItems = ${helpers.iconCleaner(data.dashboardSidebarItems)}
 `
 
-export const s7 = `
+export const s8 = `
 <Dashboard
   icon={<span className='icon'>home</span>}
   title='Home'
@@ -182,7 +192,7 @@ export const s7 = `
 const sidebarItems = ${helpers.iconCleaner(data.dashboardSidebarItems)}
 `
 
-export const s8 = `
+export const s9 = `
 <Dashboard
   icon={<span className='icon'>home</span>}
   title='Home'

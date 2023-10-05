@@ -30,19 +30,24 @@ export default function Main() {
       </Docs.Showcase>
 
       <Docs.Showcase code={snippets.s6}>
+        <LinkRenderer title='No sidebar' path='/dashboard/noSidebar' />
+      </Docs.Showcase>
+
+      <Docs.Showcase code={snippets.s7}>
         <LinkRenderer title='Full width' path='/dashboard/maxWidth' />
       </Docs.Showcase>
+
       <Docs.Info>
         <b>MumpUI</b> dashboard has default max-width of <code>1366px</code> which can be customized.
       </Docs.Info>
 
       <Docs.Info title>Loader & placeholder</Docs.Info>
 
-      <Docs.Showcase code={snippets.s7}>
+      <Docs.Showcase code={snippets.s8}>
         <LinkRenderer title='Data loading' path='/dashboard/loader' />
       </Docs.Showcase>
 
-      <Docs.Showcase code={snippets.s8}>
+      <Docs.Showcase code={snippets.s9}>
         <LinkRenderer title='No data' path='/dashboard/empty' />
       </Docs.Showcase>
 
