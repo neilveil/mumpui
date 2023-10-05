@@ -29,3 +29,8 @@ export const s2 = `
   </Tooltip>
 </div>
 `
+
+export const s3 = `
+// Default 300
+<MumpUI message={{ delay: 500 }} />
+`

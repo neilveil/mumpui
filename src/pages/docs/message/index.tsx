@@ -1,4 +1,4 @@
-import { Docs } from 'components'
+import { Docs, InitWarn } from 'components'
 import { Button, Message } from 'lib'
 import * as snippets from './snippets'
 
@@ -40,6 +40,8 @@ export default function Main() {
         </div>
       </Docs.Showcase>
 
+      <InitWarn />
+
       <Docs.Props
         title='Message.success'
         type='function'
@@ -65,6 +67,9 @@ export default function Main() {
           }
         ]}
       />
+
+      <Docs.Showcase title='Update default duration & max messages count' code={snippets.s4} onlyCode />
+      <Docs.Setup />
     </Docs>
   )
 }

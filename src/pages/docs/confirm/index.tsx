@@ -1,4 +1,4 @@
-import { Docs } from 'components'
+import { Docs, InitWarn } from 'components'
 import { Button, Confirm, Message } from 'lib'
 import * as snippets from './snippets'
 
@@ -64,6 +64,8 @@ export default function Main() {
           Confirm
         </Button>
       </Docs.Showcase>
+
+      <InitWarn />
 
       <Docs.Props
         title={

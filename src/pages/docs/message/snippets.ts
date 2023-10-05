@@ -31,3 +31,9 @@ export const s3 = `
 
 <Button onClick={() => Message.clear()}>Clear all</Button>
 `
+
+export const s4 = `
+// Default duration: 3000ms
+// Default max count: 3
+<MumpUI message={{ duration: 2000, max: 1 }} />
+`

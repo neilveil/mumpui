@@ -1,6 +1,7 @@
 import { Docs } from 'components'
 import { Tooltip } from 'lib'
 import * as snippets from './snippets'
+import { Link } from 'react-router-dom'
 
 export default function Main() {
   return (
@@ -59,6 +60,9 @@ export default function Main() {
           { name: 'delay', type: 'number', usage: 'Tooltip delay in milliseconds', defaultValue: '300' }
         ]}
       />
+
+      <Docs.Showcase title='Update default tooltip delay' code={snippets.s3} onlyCode />
+      <Docs.Setup />
     </Docs>
   )
 }

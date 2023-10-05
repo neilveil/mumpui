@@ -121,6 +121,9 @@ export default function Main() {
       <Docs.Info>
         Usage similar to <Link to='/docs/pagination'>Pagination</Link> component.
       </Docs.Info>
+
+      <Docs.Showcase title='Update default dashboard width' code={snippets.defaultWidth} onlyCode />
+      <Docs.Setup />
     </Docs>
   )
 }

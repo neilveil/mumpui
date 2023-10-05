@@ -110,11 +110,11 @@ export default function Main(props: props) {
     </div>
   )
 
-  const hasSidebar = props.sidebarItems || props.sidebarImg
+  const hasSidebar = !!(props.sidebarItems || props.sidebarImg)
 
   return (
     <div className={'mumpui mp-dashboard ' + (props.className || '')} style={props.style || {}}>
-      {!!hasSidebar && (
+      {hasSidebar && (
         <>
           <div className='mp-dashboard-sidebar'>{sidebar}</div>
 
@@ -134,9 +134,12 @@ export default function Main(props: props) {
             <div className='mp-dashboard-header-row'>
               <div className='mp-dashboard-header-left'>
                 {!!props.icon && <div className='mp-dashboard-icon'>{props.icon}</div>}
-                <div className='mp-dashboard-expandable-icon' onClick={toggleSidebar}>
-                  {menuIcon}
-                </div>
+
+                {hasSidebar && (
+                  <div className='mp-dashboard-expandable-icon' onClick={toggleSidebar}>
+                    {menuIcon}
+                  </div>
+                )}
 
                 <div className='mp-dashboard-title'>
                   {props.title}
@@ -239,6 +242,8 @@ export default function Main(props: props) {
     </div>
   )
 }
+
+Main.width = '100%'
 
 const sidebarItemsGenerator: any = (sidebar: sidebarItem[] = []) =>
   sidebar.map(({ name, icon, path, next, access }: sidebarItem) => ({

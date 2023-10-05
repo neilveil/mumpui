@@ -93,12 +93,14 @@ function Showcase({
   children,
   title,
   code,
-  lang = 'jsx'
+  lang = 'jsx',
+  onlyCode = false
 }: {
   children?: any
   title?: any
   code?: string
   lang?: string
+  onlyCode?: boolean
 }) {
   const [viewCode, setViewCode] = useState(false)
 
@@ -119,21 +121,25 @@ function Showcase({
             <span className='icon'>copy</span>
           </div>
 
-          {viewCode ? (
-            <div onClick={() => setViewCode(!viewCode)}>
-              <span className='icon'>code_off</span>&nbsp;&nbsp;Hide code
-            </div>
-          ) : (
-            <div onClick={() => setViewCode(!viewCode)}>
-              <span className='icon'>code</span>&nbsp;&nbsp;Show code
-            </div>
+          {!onlyCode && (
+            <>
+              {viewCode ? (
+                <div onClick={() => setViewCode(!viewCode)}>
+                  <span className='icon'>code_off</span>&nbsp;&nbsp;Hide code
+                </div>
+              ) : (
+                <div onClick={() => setViewCode(!viewCode)}>
+                  <span className='icon'>code</span>&nbsp;&nbsp;Show code
+                </div>
+              )}
+            </>
           )}
         </div>
       )}
 
-      <div className={s.element}>{children}</div>
+      {!onlyCode && <div className={s.element}>{children}</div>}
 
-      {!!viewCode && <Code snippet={code} lang={lang} style={{ margin: 0 }} />}
+      {(!!viewCode || onlyCode) && <Code snippet={code} lang={lang} style={{ margin: 0 }} />}
     </div>
   )
 }
@@ -225,6 +231,22 @@ function Related({ components = [] }: related) {
         ))}
       </ul>
     </div>
+  )
+}
+
+Main.Setup = Setup
+function Setup() {
+  return (
+    <Info>
+      <Link to='/setup'>
+        <div
+          className='c-blue'
+          style={{ marginTop: '.5rem', display: 'inline-block', fontWeight: 'var(--mp-fw-bold)' }}
+        >
+          MumpUI Setup →
+        </div>
+      </Link>
+    </Info>
   )
 }
 

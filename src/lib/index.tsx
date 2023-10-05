@@ -1,4 +1,5 @@
 import Confirm from './components/confirm'
+import Dashboard from './components/dashboard'
 import Message from './components/message'
 import Tooltip from './components/tooltip'
 
@@ -8,7 +9,6 @@ export { default as Checkbox } from './components/checkbox'
 export { default as Checkboxes } from './components/checkboxes'
 export { default as Code } from './components/code'
 export { default as ColorPicker } from './components/colorPicker'
-export { default as Dashboard } from './components/dashboard'
 export { default as Divider } from './components/divider'
 export { default as Field } from './components/field'
 export { default as Fields } from './components/fields'
@@ -39,16 +39,23 @@ interface message {
   max?: number
 }
 
+interface dashboard {
+  width?: string
+}
+
 interface props {
   tooltip?: tooltip
   message?: message
+  dashboard?: dashboard
 }
 
-const MumpUI = ({ tooltip, message }: props) => {
+const MumpUI = ({ tooltip, message, dashboard }: props) => {
   if (tooltip && tooltip.delay !== undefined) Tooltip.delay = tooltip.delay
 
   if (message && message.max !== undefined) Message.max = message.max
   if (message && message.duration !== undefined) Message.duration = message.duration
+
+  if (dashboard && dashboard.width !== undefined) Dashboard.width = dashboard.width
 
   return (
     <>
@@ -59,4 +66,4 @@ const MumpUI = ({ tooltip, message }: props) => {
 }
 
 export default MumpUI
-export { MumpUI, Message, Confirm, Tooltip }
+export { MumpUI, Confirm, Dashboard, Message, Tooltip }

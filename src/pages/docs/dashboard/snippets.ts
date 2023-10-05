@@ -220,3 +220,8 @@ export const buttonsCSS = `
 .mp-dashboard-button-delete {}
 .mp-dashboard-button-add {}
 `
+
+export const defaultWidth = `
+// Default width: 100%
+<MumpUI message={{ width: '1000px' }} />
+`
