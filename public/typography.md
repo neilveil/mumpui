@@ -11,7 +11,7 @@ MumpUI comes prepacked with typography styling perfect for rendering content, bl
   - Code `<code></code>`
   - Link `<a></a>`
 - Block elements
-  - Headers `h1` `h2` `h3` `h4` `h5` `h6`
+  - Headers `h1` `h2` `h3` `h4`
   - List
     - Ordered list `<ol></ol>`
     - Unordered list `<ul></ul>`
@@ -39,9 +39,7 @@ Pulvinar pellentesque habitant morbi tristique. Sapien <i>pellentesque habitant<
 
 #### H4
 
-##### H5
-
-##### H6
+---
 
 ### List
 

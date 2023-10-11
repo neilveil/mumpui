@@ -200,9 +200,10 @@ function Props(props: props) {
                 </span>
               ) : (
                 value
-              )
+              ),
+            wrap: true
           }
-        ].filter(x => Object.keys(x).length)}
+        ]}
         data={props.fields || []}
       />
     </div>

@@ -62,6 +62,7 @@ export default function Main({ children = '', className = '', ...props }: props)
 
     setTimeout(() => {
       const scrollToTitleId = new URL(window.location.href).hash
+      if (!scrollToTitleId) return
       const el = document.querySelector(scrollToTitleId)
       if (scrollToTitleId && el) el.scrollIntoView()
     }, 100)

@@ -10,6 +10,7 @@ h3,
 h4,
 h5,
 h6,
+p,
 b,
 i,
 strong,
@@ -25,6 +26,14 @@ h5,
 h6 {
   margin: $spacing 0;
   padding-top: 1rem;
+  font-weight: normal;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--mp-fw-bold);
 }
 
 h1 {
@@ -73,26 +82,16 @@ u::after {
 }
 
 mark {
-  background: var(--mp-c-mark);
-  padding: 0 0.15rem;
-}
-
-code {
-  background-color: var(--mp-c-stroke);
   color: var(--mp-c-font-dark);
-  padding: 0 0.25rem;
-  border-radius: 4px;
-  user-select: all;
-  font-size: 0.8rem;
-  font-weight: var(--mp-fw-mono);
-  font-family: var(--mp-f-mono);
+  background-color: var(--mp-c-mark);
+  padding: 0 0.15rem;
 }
 
 a,
 a:visited,
 a:hover,
 a:active {
-  color: var(--mp-c-blue);
+  color: inherit;
   text-decoration: none;
 }
 
@@ -100,6 +99,7 @@ ul,
 ol {
   margin: $spacing 0 2 * $spacing 0;
   padding-left: 1rem;
+  color: var(--mp-c-font-dark);
 }
 
 ul {
@@ -111,7 +111,6 @@ ul {
   li::marker {
     font-size: 0.9rem;
     font-weight: 700;
-    color: var(--mp-c-font-dark);
   }
 }
 
@@ -184,14 +183,4 @@ del {
 em {
   color: var(--c-font-dark);
   font-style: normal;
-}
-
-mark {
-  background-color: #fef4d5;
-}
-
-body[data-theme='dark'] {
-  mark {
-    background-color: #635b37;
-  }
 }

@@ -5,7 +5,10 @@ interface col {
   key?: string
   width?: number | string
   align?: 'left' | 'center' | 'right'
-  render?: (value: any, x: object, index: [row: number, col: number]) => void
+  wrap?: boolean
+  render?: (value: any, x: any, index: [row: number, col: number]) => void
+  style?: React.CSSProperties
+  className?: string
 }
 
 type props = React.TableHTMLAttributes<HTMLTableElement> & {
@@ -24,7 +27,16 @@ export default function Main({ cols, data, className = '', style = {}, ...props 
         <thead>
           <tr>
             {cols.map((x, i) => (
-              <th align={x.align || 'left'} style={{ width: x.width }} key={i}>
+              <th
+                key={i}
+                align={x.align || 'left'}
+                style={Object.assign(
+                  x.style ? x.style : {},
+                  x.width ? { width: x.width } : {},
+                  x.wrap ? { whiteSpace: 'normal' } : {}
+                )}
+                className={x.className || ''}
+              >
                 {x.name}
               </th>
             ))}
@@ -35,7 +47,16 @@ export default function Main({ cols, data, className = '', style = {}, ...props 
           {data.map((x: any, i) => (
             <tr key={i}>
               {cols.map((y: any, j) => (
-                <td style={{ width: y.width, textAlign: y.align }} key={j}>
+                <td
+                  key={j}
+                  style={Object.assign(
+                    y.style ? y.style : {},
+                    y.width ? { width: y.width } : {},
+                    y.align ? { textAlign: y.align } : {},
+                    y.wrap ? { whiteSpace: 'normal' } : {}
+                  )}
+                  className={x.className || ''}
+                >
                   {y.render ? y.render(x[y.key], x, [i, j]) : x[y.key]}
                 </td>
               ))}

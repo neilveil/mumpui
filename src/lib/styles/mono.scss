@@ -4,11 +4,20 @@
   --mp-fs-code: 0.75rem;
   --mp-fw-code: 500;
 }
+
 code {
   font-family: var(--mp-ff-code);
   font-size: var(--mp-fs-code);
   font-weight: var(--mp-fw-code);
+  color: var(--mp-c-font-dark);
+  border-radius: calc(var(--mp-border-radius) / 2);
   padding: 0 0.25rem;
   margin: 0 0.1rem;
-  border-radius: calc(var(--mp-border-radius) / 2);
+  background-color: #f0f0f0;
+}
+
+body[data-theme='dark'] {
+  code {
+    background-color: #282828;
+  }
 }

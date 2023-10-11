@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400&display=swap');
 
 :root {
   --mp-ff-primary: Roboto, sans-serif; // Primary font
@@ -21,4 +21,20 @@ body,
   --fw-light: var(--mp-fw-light);
   --fw-regular: var(--mp-fw-regular);
   --fw-bold: var(--mp-fw-bold);
+}
+
+.ff-primary {
+  font-family: var(--mp-ff-primary);
+}
+
+.fw-light {
+  font-weight: var(--mp-fw-light);
+}
+
+.fw-regular {
+  font-weight: var(--mp-fw-regular);
+}
+
+.fw-bold {
+  font-weight: var(--mp-fw-bold);
 }

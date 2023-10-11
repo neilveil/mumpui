@@ -5,7 +5,10 @@ $spacing: 1rem;
   max-width: 800px;
   margin: auto;
   padding: 1rem;
-  color: var(--mp-c-font-dark);
+
+  a {
+    color: var(--mp-c-indigo);
+  }
 
   img {
     width: 100%;

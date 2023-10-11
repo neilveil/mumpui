@@ -10,18 +10,11 @@
     padding: 1rem;
 
     code {
-      background: transparent !important;
+      background: transparent;
       color: var(--mp-c-font);
       margin: 0;
       padding: 0;
       user-select: unset;
-
-      &,
-      * {
-        font-family: var(--mp-ff-code) !important;
-        font-size: var(--mp-fs-code) !important;
-        font-weight: var(--mp-fw-code) !important;
-      }
     }
   }
 }

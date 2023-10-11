@@ -229,6 +229,12 @@ const colors = [
     type: 'palette'
   },
   {
+    name: 'Mark',
+    color: '--mp-c-mark',
+    usage: 'Highlight',
+    type: 'more'
+  },
+  {
     name: 'Transparent',
     color: '--mp-c-transparent',
     usage: 'Transparent',
