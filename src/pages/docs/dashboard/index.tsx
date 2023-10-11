@@ -59,6 +59,7 @@ export default function Main() {
           { name: 'sidebarItems', type: 'array', usage: 'Sidebar items list, check example above' },
           { name: 'onSidebarClick', type: 'function', usage: 'Sidebar item click callback' },
           { name: 'sidebarAccess', type: 'array', usage: 'Array of strings of sidebar keys to be visible' },
+          { name: 'sidebarPrefix', type: 'any', usage: 'Content to be rendered at the top in the sidebar' },
           { name: 'sidebarClassName', type: 'string' },
           { name: 'sidebarStyle', type: 'object' }
         ]}

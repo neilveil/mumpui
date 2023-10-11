@@ -25,6 +25,7 @@ interface props {
   style?: React.CSSProperties
   // sidebar
   sidebarImg?: string
+  sidebarPrefix?: any
   sidebarItems?: sidebarItem[]
   sidebarAccess?: string[]
   onSidebarClick?: (path: string) => void
@@ -92,6 +93,8 @@ export default function Main(props: props) {
 
   const sidebar = (
     <div className={props.sidebarClassName || ''} style={props.sidebarStyle || {}}>
+      {!!props.sidebarPrefix && props.sidebarPrefix}
+
       {!!props.sidebarImg && (
         <div className='mp-dashboard-sidebar-icon'>
           <img src={props.sidebarImg} alt='' />
