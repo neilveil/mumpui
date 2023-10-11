@@ -1,0 +1,197 @@
+$spacing: 1rem;
+
+*::selection {
+  background-color: var(--mp-c-selection);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+i,
+strong,
+em {
+  color: var(--mp-c-font-dark);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: $spacing 0;
+  padding-top: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4,
+h5,
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 1rem;
+  margin: $spacing 0;
+}
+blockquote p {
+  margin: 0;
+}
+
+blockquote {
+  margin: calc(2 * $spacing) 0;
+}
+
+b {
+  font-weight: var(--mp-fw-bold);
+}
+
+u {
+  text-decoration: none;
+  position: relative;
+}
+u::after {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  bottom: -0.25rem;
+  right: 0;
+  height: 2px;
+  background-color: var(--mp-c-font-light);
+}
+
+mark {
+  background: var(--mp-c-mark);
+  padding: 0 0.15rem;
+}
+
+code {
+  background-color: var(--mp-c-stroke);
+  color: var(--mp-c-font-dark);
+  padding: 0 0.25rem;
+  border-radius: 4px;
+  user-select: all;
+  font-size: 0.8rem;
+  font-weight: var(--mp-fw-mono);
+  font-family: var(--mp-f-mono);
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  color: var(--mp-c-blue);
+  text-decoration: none;
+}
+
+ul,
+ol {
+  margin: $spacing 0 2 * $spacing 0;
+  padding-left: 1rem;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol,
+ul {
+  li::marker {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--mp-c-font-dark);
+  }
+}
+
+li + li {
+  margin-top: 1rem;
+}
+
+ul,
+ol {
+  & + ul,
+  & + ol {
+    margin-top: 3 * $spacing;
+  }
+}
+
+table {
+  margin: 2 * $spacing 0;
+
+  * {
+    border: 1px solid var(--mp-c-stroke);
+  }
+
+  th {
+    text-align: left;
+    font-weight: var(--mp-fw-bold);
+    color: var(--mp-c-font-dark);
+  }
+
+  th,
+  td {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  td {
+    color: var(--mp-c-font);
+  }
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: var(--mp-c-font-light);
+  margin: calc(2 * $spacing) 0;
+}
+
+strike,
+del {
+  text-decoration: none;
+  position: relative;
+
+  &::after {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--mp-c-font-dark);
+  }
+}
+
+del {
+  &::after {
+    background-color: var(--mp-c-red);
+  }
+}
+
+em {
+  color: var(--c-font-dark);
+  font-style: normal;
+}
+
+mark {
+  background-color: #fef4d5;
+}
+
+body[data-theme='dark'] {
+  mark {
+    background-color: #635b37;
+  }
+}

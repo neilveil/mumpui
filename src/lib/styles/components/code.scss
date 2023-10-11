@@ -1,5 +1,5 @@
 .mp-code {
-  margin: 1rem 0;
+  margin: 2rem 0;
   background: var(--mp-c-light);
 
   pre {
@@ -18,9 +18,9 @@
 
       &,
       * {
-        font-family: var(--mp-ff-code);
-        font-size: var(--mp-fs-code);
-        font-weight: var(--mp-fw-code);
+        font-family: var(--mp-ff-code) !important;
+        font-size: var(--mp-fs-code) !important;
+        font-weight: var(--mp-fw-code) !important;
       }
     }
   }

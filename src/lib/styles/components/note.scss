@@ -1,5 +1,6 @@
+blockquote,
 .mp-note {
-  margin: 1rem 0;
+  margin: 2rem 0;
   padding: 1rem;
   border-radius: var(--mp-border-radius);
   border: var(--mp-border-width) solid;
@@ -8,6 +9,11 @@
   border-left-width: 4px;
   // border-color: #88888888;
   border-color: var(--mp-c-border);
+
+  &,
+  & > p {
+    font-size: 0.9rem;
+  }
 
   &.blue {
     // border-color: #21aaff88;

@@ -1,7 +1,6 @@
 import { Docs } from 'components'
 import { Tooltip } from 'lib'
 import * as snippets from './snippets'
-import { Link } from 'react-router-dom'
 
 export default function Main() {
   return (

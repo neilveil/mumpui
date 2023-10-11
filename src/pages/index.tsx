@@ -1,5 +1,6 @@
 import home from './home'
 import setup from './setup'
+import typography from './typography'
 
 import colorPicker from './docs/colorPicker'
 import component_button from './docs/button'
@@ -53,6 +54,7 @@ interface route {
 const routes: route[] = [
   { path: '/', component: home },
   { path: '/setup', component: setup },
+  { path: '/typography', component: typography },
 
   // Components
   { path: '/docs/button', component: component_button },
