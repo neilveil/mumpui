@@ -1,15 +1,6 @@
+import { Docs } from 'components'
 import { MD } from 'lib'
 import { useCallback, useEffect, useState } from 'react'
-
-declare global {
-  interface Window {
-    marked: any
-    Prism: any
-  }
-}
-
-window.marked.Renderer.prototype.paragraph = (text: string) =>
-  text.startsWith('<img') ? text + '\n' : '<p>' + text + '</p>'
 
 export default function Main() {
   const [content, setContent] = useState('')
@@ -28,5 +19,11 @@ export default function Main() {
     init()
   }, [init])
 
-  return <MD>{content}</MD>
+  return (
+    <Docs name='typography'>
+      <Docs.Showcase>
+        <MD>{content}</MD>
+      </Docs.Showcase>
+    </Docs>
+  )
 }

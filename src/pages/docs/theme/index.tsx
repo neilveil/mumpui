@@ -229,9 +229,15 @@ const colors = [
     type: 'palette'
   },
   {
+    name: 'Code',
+    color: '--mp-c-code',
+    usage: 'Code tag',
+    type: 'more'
+  },
+  {
     name: 'Mark',
     color: '--mp-c-mark',
-    usage: 'Highlight',
+    usage: 'Mark tag',
     type: 'more'
   },
   {

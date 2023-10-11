@@ -1,5 +1,12 @@
 import React, { useEffect, useRef } from 'react'
 
+declare global {
+  interface Window {
+    Prism: any
+    marked: any
+  }
+}
+
 type props = React.HTMLAttributes<HTMLDivElement> & {
   className?: string
 }
@@ -55,10 +62,9 @@ export default function Main({ children = '', className = '', ...props }: props)
 
       const langClean = lang.split('language-')[1]
 
-      codeEl.innerHTML = window.Prism.highlight(codeEl.innerText, window.Prism.languages[langClean], langClean)
+      if (window.Prism)
+        codeEl.innerHTML = window.Prism.highlight(codeEl.innerText, window.Prism.languages[langClean], langClean)
     }, [])
-
-    window.Prism.highlightAll()
 
     setTimeout(() => {
       const scrollToTitleId = new URL(window.location.href).hash
@@ -91,3 +97,7 @@ const wrap = (root: any, tag: any, className: string | string[]) => {
     el.replaceWith(divEl)
   })
 }
+
+if (window.marked)
+  window.marked.Renderer.prototype.paragraph = (text: string) =>
+    text.startsWith('<img') ? text + '\n' : '<p>' + text + '</p>'

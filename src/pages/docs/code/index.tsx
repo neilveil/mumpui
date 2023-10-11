@@ -1,34 +1,54 @@
 import { Docs } from 'components'
 import { Code } from 'lib'
-// import * as snippets from './snippets'
+import * as snippets from './snippets'
 
 export default function Main() {
   return (
     <Docs name='code'>
-      <p className='c-blue' style={{ padding: '2rem 1rem' }}>
-        Add code snippets like below with{' '}
-        <a href='https://prismjs.com' target='_blank' rel='noreferrer'>
-          PrismJS
-        </a>
-        . Create your custom theme{' '}
-        <a href='https://prismjs.com/download.html#themes=prism-tomorrow' target='_blank' rel='noreferrer'>
+      <Docs.Info>
+        Add code snippets like below with <a href='https://prismjs.com'>PrismJS</a>. Selected the required languages
+        from{' '}
+        <a
+          href='https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup'
+          target='_blank'
+          rel='noreferrer'
+        >
           here
         </a>{' '}
-        & import the <code>JS</code> & <code>CSS</code> provided at the bottom of the page in the{' '}
-        <code>index.html</code> file.
-        <br />
-        <br />
-        <b>Note</b>: Only import languages that are actually used in your application as every language imported
-        increases the size of the application.
-      </p>
+        and import the JS as shown below, provided at the bottom of the setup page.
+      </Docs.Info>
 
-      <Code snippet={snippet} lang='jsx' />
+      <Code snippet={snippets.s1} lang='html' />
+
+      <Docs.Info>
+        Import code styling from <b>MumpUI</b>
+      </Docs.Info>
+
+      <Code snippet={snippets.s2} lang='css' />
+
+      <Docs.Info>Usage example</Docs.Info>
+
+      <Code snippet={snippets.s3} lang='jsx' />
+
+      <Docs.Info>
+        <b>Note</b>
+        <ul>
+          <li>
+            Do not import the CSS provided by <b>PrismJS</b> as styling is already setup in <b>MumpUI</b>.
+          </li>
+          <li>
+            Only import <b>PrismJS</b> languages that are actually used in your application as every language imported
+            increases the build size.
+          </li>
+        </ul>
+      </Docs.Info>
 
       <Docs.Props
         title='Code'
+        type='component'
         fields={[
           { name: '..', usage: 'All div element props' },
-          { name: 'snippet', type: 'string' },
+          { name: 'snippet', type: 'string', usage: 'Code to be rendered' },
           {
             name: 'lang',
             type: 'string',
@@ -46,14 +66,3 @@ export default function Main() {
     </Docs>
   )
 }
-
-const snippet = `
-const snippet = \`
-function fun () {
-  return (
-    <div>Hello there!</div>
-  )
-}\`
-
-<Code snippet={snippet} lang='jsx' />
-`

@@ -3,36 +3,38 @@ import setup from './setup'
 import typography from './typography'
 
 import colorPicker from './docs/colorPicker'
-import component_button from './docs/button'
-import component_chain from './docs/chain'
-import component_checkbox from './docs/checkbox'
-import component_code from './docs/code'
-import component_confirm from './docs/confirm'
-import component_dashboard from './docs/dashboard'
-import component_datetime from './docs/datetime'
-import component_divider from './docs/divider'
-import component_field from './docs/field'
-import component_file from './docs/file'
-import component_form from './docs/form'
-import component_input from './docs/input'
-import component_list from './docs/list'
-import component_loader from './docs/loader'
-import component_menu from './docs/menu'
-import component_message from './docs/message'
-import component_modal from './docs/modal'
-import component_multiSelect from './docs/multiSelect'
-import component_note from './docs/note'
-import component_pagination from './docs/pagination'
-import component_placeholder from './docs/placeholder'
-import component_radio from './docs/radio'
-import component_range from './docs/range'
-import component_search from './docs/search'
-import component_select from './docs/select'
-import component_table from './docs/table'
-import component_tabs from './docs/tabs'
-import component_textarea from './docs/textarea'
-import component_theme from './docs/theme'
-import component_tooltip from './docs/tooltip'
+import docs_button from './docs/button'
+import docs_chain from './docs/chain'
+import docs_checkbox from './docs/checkbox'
+import docs_code from './docs/code'
+import docs_confirm from './docs/confirm'
+import docs_dashboard from './docs/dashboard'
+import docs_datetime from './docs/datetime'
+import docs_divider from './docs/divider'
+import docs_field from './docs/field'
+import docs_file from './docs/file'
+import docs_form from './docs/form'
+import docs_icons from './docs/icons'
+import docs_input from './docs/input'
+import docs_list from './docs/list'
+import docs_loader from './docs/loader'
+import docs_md from './docs/md'
+import docs_menu from './docs/menu'
+import docs_message from './docs/message'
+import docs_modal from './docs/modal'
+import docs_multiSelect from './docs/multiSelect'
+import docs_note from './docs/note'
+import docs_pagination from './docs/pagination'
+import docs_placeholder from './docs/placeholder'
+import docs_radio from './docs/radio'
+import docs_range from './docs/range'
+import docs_search from './docs/search'
+import docs_select from './docs/select'
+import docs_table from './docs/table'
+import docs_tabs from './docs/tabs'
+import docs_textarea from './docs/textarea'
+import docs_theme from './docs/theme'
+import docs_tooltip from './docs/tooltip'
 
 import dashboard from './dashboard'
 import dashboard_access from './dashboard/access'
@@ -57,37 +59,39 @@ const routes: route[] = [
   { path: '/typography', component: typography },
 
   // Components
-  { path: '/docs/button', component: component_button },
-  { path: '/docs/chain', component: component_chain },
-  { path: '/docs/checkbox', component: component_checkbox },
-  { path: '/docs/code', component: component_code },
+  { path: '/docs/button', component: docs_button },
+  { path: '/docs/chain', component: docs_chain },
+  { path: '/docs/checkbox', component: docs_checkbox },
+  { path: '/docs/code', component: docs_code },
   { path: '/docs/colorPicker', component: colorPicker },
-  { path: '/docs/confirm', component: component_confirm },
-  { path: '/docs/dashboard', component: component_dashboard },
-  { path: '/docs/datetime', component: component_datetime },
-  { path: '/docs/divider', component: component_divider },
-  { path: '/docs/field', component: component_field },
-  { path: '/docs/file', component: component_file },
-  { path: '/docs/form', component: component_form },
-  { path: '/docs/input', component: component_input },
-  { path: '/docs/list', component: component_list },
-  { path: '/docs/loader', component: component_loader },
-  { path: '/docs/menu', component: component_menu },
-  { path: '/docs/message', component: component_message },
-  { path: '/docs/modal', component: component_modal },
-  { path: '/docs/multiSelect', component: component_multiSelect },
-  { path: '/docs/note', component: component_note },
-  { path: '/docs/pagination', component: component_pagination },
-  { path: '/docs/placeholder', component: component_placeholder },
-  { path: '/docs/radio', component: component_radio },
-  { path: '/docs/range', component: component_range },
-  { path: '/docs/search', component: component_search },
-  { path: '/docs/select', component: component_select },
-  { path: '/docs/table', component: component_table },
-  { path: '/docs/tabs', component: component_tabs },
-  { path: '/docs/textarea', component: component_textarea },
-  { path: '/docs/theme', component: component_theme },
-  { path: '/docs/tooltip', component: component_tooltip },
+  { path: '/docs/confirm', component: docs_confirm },
+  { path: '/docs/dashboard', component: docs_dashboard },
+  { path: '/docs/datetime', component: docs_datetime },
+  { path: '/docs/divider', component: docs_divider },
+  { path: '/docs/field', component: docs_field },
+  { path: '/docs/file', component: docs_file },
+  { path: '/docs/form', component: docs_form },
+  { path: '/docs/icons', component: docs_icons },
+  { path: '/docs/input', component: docs_input },
+  { path: '/docs/list', component: docs_list },
+  { path: '/docs/loader', component: docs_loader },
+  { path: '/docs/md', component: docs_md },
+  { path: '/docs/menu', component: docs_menu },
+  { path: '/docs/message', component: docs_message },
+  { path: '/docs/modal', component: docs_modal },
+  { path: '/docs/multiSelect', component: docs_multiSelect },
+  { path: '/docs/note', component: docs_note },
+  { path: '/docs/pagination', component: docs_pagination },
+  { path: '/docs/placeholder', component: docs_placeholder },
+  { path: '/docs/radio', component: docs_radio },
+  { path: '/docs/range', component: docs_range },
+  { path: '/docs/search', component: docs_search },
+  { path: '/docs/select', component: docs_select },
+  { path: '/docs/table', component: docs_table },
+  { path: '/docs/tabs', component: docs_tabs },
+  { path: '/docs/textarea', component: docs_textarea },
+  { path: '/docs/theme', component: docs_theme },
+  { path: '/docs/tooltip', component: docs_tooltip },
 
   // Dashboard
   { path: '/dashboard', component: dashboard },

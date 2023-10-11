@@ -53,9 +53,12 @@ table {
   width: 100%;
   border-collapse: collapse;
 }
-a {
-  text-decoration: none;
+a,
+a:visited,
+a:hover,
+a:active {
   color: inherit;
+  text-decoration: none;
 }
 select::-ms-expand {
   display: none !important;

@@ -6,7 +6,7 @@ export default {
       "The Button component is a fundamental element for user interaction, allowing to trigger actions with a simple click. It's highly customizable and can be tailored to fit your design needs.",
     link: '/docs/button',
     keywords: ['button', 'ui-button', 'clickable-element', 'interactive-component'],
-    related: ['input', 'form', 'theme'],
+    related: ['input', 'form', 'theme', 'icons'],
     img: ''
   },
   chain: {
@@ -27,16 +27,6 @@ export default {
     link: '/docs/checkbox',
     keywords: ['checkbox', 'selection', 'input', 'multiple-choice'],
     related: ['radio', 'input', 'form'],
-    img: ''
-  },
-  code: {
-    type: 'Component',
-    name: 'Code',
-    description:
-      'The Code component is designed for displaying and formatting code snippets, making it easier for developers to share and understand code.',
-    link: '/docs/code',
-    keywords: ['code', 'programming', 'syntax-highlighting', 'code-snippet'],
-    related: [],
     img: ''
   },
   colorPicker: {
@@ -67,6 +57,46 @@ export default {
     link: '/docs/dashboard',
     keywords: ['dashboard', 'data-management', 'crud-operations', 'user-roles'],
     related: ['table', 'list', 'pagination', 'chain', 'theme'],
+    img: ''
+  },
+  typography: {
+    type: '',
+    name: 'Typography',
+    description:
+      'Pre-styled HTML attributes for stylized text, ensuring a consistent and appealing look across your application.',
+    link: '/typography',
+    keywords: ['typography', 'html', 'html-attributes', 'consistent', 'styling'],
+    related: ['icons', 'markdown', 'theme'],
+    img: ''
+  },
+  markdown: {
+    type: 'Component',
+    name: 'Markdown',
+    description:
+      'Effortlessly render Markdown content as HTML, complete with proper typographic styling, enabling seamless integration of rich text elements.',
+    link: '/docs/md',
+    keywords: ['markdown', 'rendering', 'md-to-html', 'rich-text'],
+    related: ['typography', 'code', 'theme'],
+    img: ''
+  },
+  code: {
+    type: 'Component',
+    name: 'Code',
+    description:
+      'The Code component is designed for displaying and formatting code snippets, making it easier for developers to share and understand code.',
+    link: '/docs/code',
+    keywords: ['code', 'programming', 'syntax-highlighting', 'code-snippet'],
+    related: ['markdown', 'typography'],
+    img: ''
+  },
+  icons: {
+    type: '',
+    name: 'Icons',
+    description:
+      "Access a comprehensive stylesheet of icons, providing a diverse range of visual elements to enhance your application's user interface.",
+    link: '/docs/icons',
+    keywords: ['icons', 'iconography', 'visual-elements', 'ui-enhancement'],
+    related: ['typography', 'dashboard', 'theme'],
     img: ''
   },
   datetime: {

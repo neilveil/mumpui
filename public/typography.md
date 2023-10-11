@@ -1,6 +1,6 @@
 # MumpUI / Typography
 
-MumpUI comes prepacked with typography styling perfect for rendering content, blogs, stories etc. Typography elements are of two types:
+MumpUI comes prepacked with typography styling, making it ideal for rendering content, blogs, stories and more. Typography elements are of two types:
 
 - Inline elements
   - Bold `<b></b>`

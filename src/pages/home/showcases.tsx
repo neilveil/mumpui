@@ -3,6 +3,7 @@ import {
   Button,
   Chain,
   Checkboxes,
+  Code,
   ColorPicker,
   Confirm,
   Divider,
@@ -404,9 +405,37 @@ export default {
     Component() {
       return (
         <Link to='/dashboard' target='_blank' style={{ textAlign: 'center' }}>
-          <Button>Demo</Button>
+          <Button>Dashboard Demo</Button>
         </Link>
       )
+    }
+  },
+  icons: {
+    ...metagraph.icons,
+    Component() {
+      return (
+        <span className='icon' style={{ fontSize: '1.5rem', textAlign: 'center' }}>
+          home
+        </span>
+      )
+    }
+  },
+  typography: {
+    ...metagraph.typography,
+    Component() {
+      return <h3 style={{ textAlign: 'center' }}>Typography</h3>
+    }
+  },
+  markdown: {
+    ...metagraph.markdown,
+    Component() {
+      return <Code snippet={'# Header'} />
+    }
+  },
+  code: {
+    ...metagraph.code,
+    Component() {
+      return <Code lang='jsx' snippet={"import react from 'react'"} />
     }
   }
 }

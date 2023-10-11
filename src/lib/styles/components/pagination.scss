@@ -26,7 +26,7 @@
       margin: 0;
       text-align: center;
       color: var(--mp-c-font);
-      border-bottom: var(--mp-input-border-width) solid var(--mp-input-border-color);
+      border-bottom: var(--mp-input-border-width) solid var(--mp-c-input-border);
 
       &::placeholder {
         color: var(--mp-c-font-light);

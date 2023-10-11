@@ -42,6 +42,6 @@ export default [
   },
   {
     name: 'Advanced',
-    showcases: [showcases.dashboard]
+    showcases: [showcases.dashboard, showcases.icons, showcases.typography, showcases.markdown, showcases.code]
   }
 ]

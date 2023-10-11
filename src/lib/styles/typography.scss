@@ -63,8 +63,14 @@ blockquote {
   margin: calc(2 * $spacing) 0;
 }
 
-b {
+b,
+strong {
   font-weight: var(--mp-fw-bold);
+}
+
+i,
+em {
+  font-style: italic;
 }
 
 u {
@@ -85,14 +91,6 @@ mark {
   color: var(--mp-c-font-dark);
   background-color: var(--mp-c-mark);
   padding: 0 0.15rem;
-}
-
-a,
-a:visited,
-a:hover,
-a:active {
-  color: inherit;
-  text-decoration: none;
 }
 
 ul,
@@ -157,8 +155,8 @@ hr {
   margin: calc(2 * $spacing) 0;
 }
 
-strike,
-del {
+del,
+strike {
   text-decoration: none;
   position: relative;
 
@@ -167,20 +165,10 @@ del {
     position: absolute;
     left: 0;
     right: 0;
-    height: 1px;
+    height: 2px;
     top: 50%;
     transform: translateY(-50%);
-    background-color: var(--mp-c-font-dark);
-  }
-}
-
-del {
-  &::after {
     background-color: var(--mp-c-red);
+    z-index: -1;
   }
-}
-
-em {
-  color: var(--c-font-dark);
-  font-style: normal;
 }

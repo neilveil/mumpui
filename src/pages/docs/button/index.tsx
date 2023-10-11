@@ -35,7 +35,7 @@ export default function Main() {
       <Docs.Info>
         Do not forget to install some icons pack like{' '}
         <a href='https://fonts.google.com/icons?icon.set=Material+Icons' target='_blank' rel='noreferrer'>
-          Google Fonts
+          Google Icons
         </a>{' '}
         (Free) ,{' '}
         <a href='https://fontawesome.com/search' target='_blank' rel='noreferrer'>
@@ -49,7 +49,7 @@ export default function Main() {
       </Docs.Info>
 
       <Docs.Info>
-        <Link to='/docs/theme'>MumpUI Color classed usage →</Link>
+        <Link to='/docs/theme'>MumpUI Color classes usage →</Link>
       </Docs.Info>
 
       <Docs.Props
