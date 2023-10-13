@@ -1,5 +1,6 @@
 import Confirm from './components/confirm'
-import Dashboard from './components/dashboard'
+import Dashboard, { sidebarItem } from './components/dashboard'
+import Form from './components/form'
 import Message from './components/message'
 import Tooltip from './components/tooltip'
 
@@ -13,7 +14,6 @@ export { default as Divider } from './components/divider'
 export { default as Field } from './components/field'
 export { default as Fields } from './components/fields'
 export { default as File } from './components/file'
-export { default as Form } from './components/form'
 export { default as Input } from './components/input'
 export { default as List } from './components/list'
 export { default as Loader } from './components/loader'
@@ -31,31 +31,50 @@ export { default as Table } from './components/table'
 export { default as Tabs } from './components/tabs'
 export { default as Textarea } from './components/textarea'
 
-interface tooltip {
+type tooltip = {
   delay?: number
 }
 
-interface message {
+type form = {
+  clean?: boolean
+}
+
+type message = {
   duration?: number
   max?: number
 }
 
-interface dashboard {
+type dashboard = {
+  sidebarImg?: string
+  sidebarPrefix?: any
+  sidebarBasePath?: string
+  sidebarItems?: sidebarItem[]
+  onSidebarClick?: (path: string) => void
+  minBackNavWidth?: number
   width?: string
 }
 
-interface props {
+type props = {
   tooltip?: tooltip
+  form?: form
   message?: message
   dashboard?: dashboard
 }
 
-const MumpUI = ({ tooltip, message, dashboard }: props) => {
+const MumpUI = ({ tooltip, form, message, dashboard }: props) => {
   if (tooltip && tooltip.delay !== undefined) Tooltip.delay = tooltip.delay
+
+  if (form && form.clean !== undefined) Form.clean = form.clean
 
   if (message && message.max !== undefined) Message.max = message.max
   if (message && message.duration !== undefined) Message.duration = message.duration
 
+  if (dashboard && dashboard.sidebarImg !== undefined) Dashboard.sidebarImg = dashboard.sidebarImg
+  if (dashboard && dashboard.sidebarPrefix !== undefined) Dashboard.sidebarPrefix = dashboard.sidebarPrefix
+  if (dashboard && dashboard.sidebarBasePath !== undefined) Dashboard.sidebarBasePath = dashboard.sidebarBasePath
+  if (dashboard && dashboard.sidebarItems !== undefined) Dashboard.sidebarItems = dashboard.sidebarItems
+  if (dashboard && dashboard.onSidebarClick !== undefined) Dashboard.onSidebarClick = dashboard.onSidebarClick
+  if (dashboard && dashboard.minBackNavWidth !== undefined) Dashboard.minBackNavWidth = dashboard.minBackNavWidth
   if (dashboard && dashboard.width !== undefined) Dashboard.width = dashboard.width
 
   return (
@@ -67,4 +86,4 @@ const MumpUI = ({ tooltip, message, dashboard }: props) => {
 }
 
 export default MumpUI
-export { MumpUI, Confirm, Dashboard, Message, Tooltip }
+export { Confirm, Dashboard, Form, Message, MumpUI, Tooltip }

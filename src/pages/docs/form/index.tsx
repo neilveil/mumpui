@@ -67,7 +67,7 @@ export default function Main() {
             name: 'clean',
             type: 'boolean',
             usage: 'Turn off auto complete, auto correct, auto capitalize & spell check',
-            defaultValue: 'false'
+            defaultValue: 'true'
           }
         ]}
       />

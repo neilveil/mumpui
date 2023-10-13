@@ -6,6 +6,8 @@ type props = React.FormHTMLAttributes<HTMLFormElement> & {
   style?: React.CSSProperties
 }
 
+Main.clean = true
+
 export default function Main({ clean = false, className = '', style = {}, onSubmit, ...props }: props) {
   const _onSubmit = useCallback(
     (e: any) => {
@@ -18,7 +20,13 @@ export default function Main({ clean = false, className = '', style = {}, onSubm
   className = 'mumpui mp-form ' + className
 
   return (
-    <form {...props} className={className} style={style} onSubmit={_onSubmit} {...(clean ? cleanConfig : {})}>
+    <form
+      {...props}
+      className={className}
+      style={style}
+      onSubmit={_onSubmit}
+      {...(clean || Main.clean ? cleanConfig : {})}
+    >
       {props.children}
       <button style={{ display: 'none' }} type='submit' onClick={e => _onSubmit(e)}></button>
     </form>

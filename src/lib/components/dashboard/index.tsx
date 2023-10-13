@@ -12,7 +12,7 @@ declare global {
   }
 }
 
-interface sidebarItem {
+export interface sidebarItem {
   icon?: any
   name: any
   path?: string
@@ -63,18 +63,35 @@ interface props {
   paginationTotalItems?: number
   paginationOffset?: number
   paginationOnChange?: (offset: number) => void
+  // Backward navigation arrow
+  minBackNavWidth?: number
 }
 
+Main.sidebarImg = ''
+Main.sidebarPrefix = ''
+Main.sidebarBasePath = ''
+const SidebarItems: sidebarItem[] = []
+Main.sidebarItems = SidebarItems
+const OnSidebarClick: (path: string) => void = () => {}
+Main.onSidebarClick = OnSidebarClick
+Main.minBackNavWidth = 0
+Main.width = '1366px'
+
 export default function Main(props: props) {
-  const [menuItemActive, setMenuItemSelected] = useState(
-    window.location.pathname.slice(props.sidebarBasePath?.length || 0)
-  )
+  const sidebarImg = props.sidebarImg || Main.sidebarImg
+  const sidebarPrefix = props.sidebarPrefix || Main.sidebarPrefix
+  const sidebarBasePath = props.sidebarBasePath || Main.sidebarBasePath
+  const sidebarItems = props.sidebarItems || Main.sidebarItems
+  const onSidebarClick = props.onSidebarClick || Main.onSidebarClick
+  const minBackNavWidth = props.minBackNavWidth || Main.minBackNavWidth
+
+  const hasSidebar = !!(sidebarItems || props.sidebarImg)
+
+  const [menuItemActive, setMenuItemSelected] = useState(window.location.pathname.slice(sidebarBasePath?.length || 0))
   const [expandable, setExpandable] = useState(false)
 
   const toggleSidebar = () => setExpandable(!expandable)
   window.toggleSidebar = toggleSidebar
-
-  const sidebarItems = sidebarItemsGenerator(props.sidebarItems)
 
   const focusSearch = (e: any) => {
     const isSearchFocused = window.document.activeElement?.id === 'mp-dashboard-search'
@@ -91,32 +108,41 @@ export default function Main(props: props) {
     return () => window.removeEventListener('keyup', focusSearch)
   }, [])
 
+  const parsedSidebarItems = parsedSidebarItemsGenerator(sidebarItems)
+
   const sidebar = (
     <div className={props.sidebarClassName || ''} style={props.sidebarStyle || {}}>
-      {!!props.sidebarPrefix && props.sidebarPrefix}
+      {!!sidebarPrefix && sidebarPrefix}
 
-      {!!props.sidebarImg && (
+      {!!sidebarImg && (
         <div className='mp-dashboard-sidebar-icon'>
-          <img src={props.sidebarImg} alt='' />
+          <img src={sidebarImg} alt='' />
         </div>
       )}
 
       <Menu
         active={menuItemActive}
         onClick={selected => {
-          if (props.onSidebarClick) props.onSidebarClick(selected.toString())
+          if (onSidebarClick) onSidebarClick(selected.toString())
           setMenuItemSelected(selected.toString())
         }}
-        items={sidebarItems}
+        items={parsedSidebarItems}
         access={props.sidebarAccess}
       />
     </div>
   )
 
-  const hasSidebar = !!(props.sidebarItems || props.sidebarImg)
-
   return (
-    <div className={'mumpui mp-dashboard ' + (props.className || '')} style={props.style || {}}>
+    <div
+      className={'mumpui mp-dashboard ' + (props.className || '')}
+      style={Object.assign({ maxWidth: Main.width }, props.style || {})}
+    >
+      {!!minBackNavWidth && window.innerWidth >= minBackNavWidth && (
+        <div className='mp-dashboard-back' onClick={() => window.history.back()}>
+          🡐
+        </div>
+      )}
+
       {hasSidebar && (
         <>
           <div className='mp-dashboard-sidebar'>{sidebar}</div>
@@ -246,14 +272,12 @@ export default function Main(props: props) {
   )
 }
 
-Main.width = '100%'
-
-const sidebarItemsGenerator: any = (sidebar: sidebarItem[] = []) =>
+const parsedSidebarItemsGenerator: any = (sidebar: sidebarItem[] = []) =>
   sidebar.map(({ name, icon, path, next, access }: sidebarItem) => ({
     key: path || Math.random(),
     label: name,
     icon,
-    next: next ? sidebarItemsGenerator(next) : [],
+    next: next ? parsedSidebarItemsGenerator(next) : [],
     access
   }))
 

@@ -221,7 +221,15 @@ export const buttonsCSS = `
 .mp-dashboard-button-add {}
 `
 
-export const defaultWidth = `
-// Default width: 100%
-<MumpUI message={{ width: '1000px' }} />
+export const globalConfig = `
+<MumpUI
+  dashboard={{
+    // Usage same as props
+    sidebarImg: '',
+    sidebarPrefix: '',
+    sidebarBasePath: '',
+    sidebarItems: [],
+    onSidebarClick: (key) => {}
+  }}
+/>
 `
