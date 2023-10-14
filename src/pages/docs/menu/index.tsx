@@ -5,14 +5,14 @@ import * as snippets from './snippets'
 import data from 'data'
 
 export default function Main() {
-  const [selected, setSelected] = useState('home')
+  const [selected, setSelected] = useState<string | undefined>('home')
 
   return (
     <Docs name='menu'>
-      <Docs.Showcase code={snippets.s1}>
+      <Docs.Showcase title='Menu usage for selection' code={snippets.s1}>
         <Menu
           active={selected}
-          onClick={(selected: any) => setSelected(selected)}
+          onClick={item => setSelected(item.key)}
           items={data.menu}
           style={{ width: '100%', maxWidth: '12rem' }}
         />
@@ -22,6 +22,18 @@ export default function Main() {
         Please note, icon are not packed with <b>MumpUI</b>.
       </Docs.Info>
 
+      <Docs.Showcase title='Menu usage for navigation' code={snippets.s2}>
+        <Menu
+          items={[
+            { label: 'Menu', path: '/docs/menu', icon: <span className='icon'>menu</span> },
+            { label: 'Home', path: '/home', icon: <span className='icon'>home</span> },
+            { label: 'Setup', path: '/setup', icon: <span className='icon'>settings</span> }
+          ]}
+          style={{ width: '100%', maxWidth: '12rem' }}
+          basePath='/mumpui'
+        />
+      </Docs.Showcase>
+
       <Docs.Props
         title='Menu'
         type='component'
@@ -29,7 +41,8 @@ export default function Main() {
           { name: '..', usage: 'All div element props' },
           { name: 'active', type: 'string' },
           { name: 'onClick', type: 'function' },
-          { name: 'items', type: 'array', usage: 'Array of menu item objects' }
+          { name: 'items', type: 'array', usage: 'Array of menu item objects' },
+          { name: 'basePath', type: 'string', usage: 'Application base path which is also set in the router' }
         ]}
       />
 
@@ -39,15 +52,10 @@ export default function Main() {
         fields={[
           { name: 'key', type: 'string' },
           { name: 'label', type: 'string' },
+          { name: 'path', type: 'string', usage: 'Navigate to path on click' },
           { name: 'icon', type: 'jsx' },
           { name: 'next', type: 'array', usage: 'Array of menu item object under this item' }
         ]}
-      />
-
-      <Docs.Props
-        title='onClick'
-        type='function'
-        fields={[{ name: 'key', type: 'string', usage: 'Clicked tab key' }]}
       />
     </Docs>
   )

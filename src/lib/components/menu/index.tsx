@@ -1,28 +1,31 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 type item = {
-  key: string
   label: string
-  icon?: React.ReactNode
+  key?: string
+  path?: string
+  icon?: JSX.Element
   next?: item[]
   access?: string[]
   [key: string]: any
 }
 
-type props = React.HTMLAttributes<HTMLDivElement> & {
+type props = Omit<React.HTMLAttributes<HTMLDivElement>, 'onClick'> & {
   active?: string
-  onClick?: (key: string) => void
+  onClick?: (item: item) => void
   items?: item[]
   access?: string[]
+  basePath?: string
 }
 
-export default function Main({ active, onClick, items = [], access, className = '', ...props }: props) {
+export default function Main({ active, onClick, items = [], access, basePath = '', className = '', ...props }: props) {
   className = 'mumpui mp-menu ' + className
 
   return (
     <div {...props} className={className}>
       {items.map((item, i) => (
-        <MenuItem key={i} active={active} onClick={onClick} item={item} access={access} />
+        <MenuItem key={i} active={active} onClick={onClick} item={item} access={access} basePath={basePath} />
       ))}
     </div>
   )
@@ -39,12 +42,14 @@ function MenuItem({
   active,
   onClick = () => {},
   item,
-  access
+  access,
+  basePath
 }: {
   active?: string
-  onClick?: (key: string) => void
+  onClick?: (key: item) => void
   item: item
   access?: string | string[]
+  basePath: string
 }) {
   const [expanded, setExpanded] = useState(isExpanded(item.next, active))
 
@@ -61,26 +66,32 @@ function MenuItem({
     if (!allowed) return null
   }
 
+  const isActive = (active && active === item.key) || window.location.pathname === basePath + item.path
+
+  const itemEl = (
+    <div
+      className={`mp-menu-item ${isActive ? 'mp-menu-item-active' : ''} ${
+        isExpandable ? 'mp-menu-item-expandable' : ''
+      }`}
+      onClick={() => (isExpandable ? setExpanded(!expanded) : onClick(item))}
+    >
+      <div>
+        {!!item.icon && <span className='mp-menu-item-icon'>{item.icon}</span>}
+        <span className='mp-menu-item-name'>{item.label}</span>
+      </div>
+
+      {isExpandable && (expanded ? arrow(true) : arrow())}
+    </div>
+  )
+
   return (
     <>
-      <div
-        className={`mp-menu-item ${active === item.key ? 'mp-menu-item-active' : ''} ${
-          isExpandable ? 'mp-menu-item-expandable' : ''
-        }`}
-        onClick={() => (isExpandable ? setExpanded(!expanded) : onClick(item.key))}
-      >
-        <div>
-          {!!item.icon && <span className='mp-menu-item-icon'>{item.icon}</span>}
-          <span className='mp-menu-item-name'>{item.label}</span>
-        </div>
-
-        {isExpandable && (expanded ? arrow(true) : arrow())}
-      </div>
+      {item.path ? <Link to={item.path}>{itemEl}</Link> : itemEl}
 
       {!!(isExpandable && expanded) &&
         item.next?.map((item, i) => (
           <div key={i} className='mp-menu-item-group'>
-            <MenuItem active={active} onClick={onClick} item={item} access={access} />
+            <MenuItem active={active} onClick={onClick} item={item} access={access} basePath={basePath} />
           </div>
         ))}
     </>

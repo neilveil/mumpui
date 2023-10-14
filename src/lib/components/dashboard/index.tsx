@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Menu from '../menu'
 import Button from '../button'
 import Input from '../input'
 import Pagination from '../pagination'
@@ -24,14 +23,7 @@ interface props {
   className?: string
   style?: React.CSSProperties
   // sidebar
-  sidebarImg?: string
-  sidebarPrefix?: any
-  sidebarItems?: sidebarItem[]
-  sidebarAccess?: string[]
-  onSidebarClick?: (path: string) => void
-  sidebarClassName?: string
-  sidebarStyle?: React.CSSProperties
-  sidebarBasePath?: string
+  sidebar?: any
   // header
   header?: any
   title?: any
@@ -78,16 +70,8 @@ Main.minBackNavWidth = 0
 Main.width = '1366px'
 
 export default function Main(props: props) {
-  const sidebarImg = props.sidebarImg || Main.sidebarImg
-  const sidebarPrefix = props.sidebarPrefix || Main.sidebarPrefix
-  const sidebarBasePath = props.sidebarBasePath || Main.sidebarBasePath
-  const sidebarItems = props.sidebarItems || Main.sidebarItems
-  const onSidebarClick = props.onSidebarClick || Main.onSidebarClick
   const minBackNavWidth = props.minBackNavWidth || Main.minBackNavWidth
 
-  const hasSidebar = !!(sidebarItems || props.sidebarImg)
-
-  const [menuItemActive, setMenuItemSelected] = useState(window.location.pathname.slice(sidebarBasePath?.length || 0))
   const [expandable, setExpandable] = useState(false)
 
   const toggleSidebar = () => setExpandable(!expandable)
@@ -108,30 +92,6 @@ export default function Main(props: props) {
     return () => window.removeEventListener('keyup', focusSearch)
   }, [])
 
-  const parsedSidebarItems = parsedSidebarItemsGenerator(sidebarItems)
-
-  const sidebar = (
-    <div className={props.sidebarClassName || ''} style={props.sidebarStyle || {}}>
-      {!!sidebarPrefix && sidebarPrefix}
-
-      {!!sidebarImg && (
-        <div className='mp-dashboard-sidebar-icon'>
-          <img src={sidebarImg} alt='' />
-        </div>
-      )}
-
-      <Menu
-        active={menuItemActive}
-        onClick={selected => {
-          if (onSidebarClick) onSidebarClick(selected.toString())
-          setMenuItemSelected(selected.toString())
-        }}
-        items={parsedSidebarItems}
-        access={props.sidebarAccess}
-      />
-    </div>
-  )
-
   return (
     <div
       className={'mumpui mp-dashboard ' + (props.className || '')}
@@ -143,13 +103,13 @@ export default function Main(props: props) {
         </div>
       )}
 
-      {hasSidebar && (
+      {!!props.sidebar && (
         <>
-          <div className='mp-dashboard-sidebar'>{sidebar}</div>
+          <div className='mp-dashboard-sidebar'>{props.sidebar}</div>
 
           {!!expandable && (
             <div className='mp-dashboard-expandable' onClick={() => toggleSidebar()}>
-              <div onClick={e => e.stopPropagation()}>{sidebar}</div>
+              <div onClick={e => e.stopPropagation()}>{props.sidebar}</div>
             </div>
           )}
         </>
@@ -164,7 +124,7 @@ export default function Main(props: props) {
               <div className='mp-dashboard-header-left'>
                 {!!props.icon && <div className='mp-dashboard-icon'>{props.icon}</div>}
 
-                {hasSidebar && (
+                {!!props.sidebar && (
                   <div className='mp-dashboard-expandable-icon' onClick={toggleSidebar}>
                     {menuIcon}
                   </div>
@@ -271,15 +231,6 @@ export default function Main(props: props) {
     </div>
   )
 }
-
-const parsedSidebarItemsGenerator: any = (sidebar: sidebarItem[] = []) =>
-  sidebar.map(({ name, icon, path, next, access }: sidebarItem) => ({
-    key: path || Math.random(),
-    label: name,
-    icon,
-    next: next ? parsedSidebarItemsGenerator(next) : [],
-    access
-  }))
 
 const menuIcon = (
   <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='var(--mp-c-font)'>

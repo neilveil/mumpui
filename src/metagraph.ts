@@ -186,7 +186,7 @@ export default {
       'The Menu component offers an expandable list of options, allowing users to navigate through a set of related actions or content categories.',
     link: '/docs/menu',
     keywords: ['menu', 'navigation-menu', 'site-menu', 'menu-options'],
-    related: ['tabs', 'chain'],
+    related: ['icons', 'tabs', 'chain'],
     img: ''
   },
   message: {
