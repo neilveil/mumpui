@@ -2,6 +2,7 @@
   "pages": [
     "/",
     "/setup",
+    "/typography",
     "/docs/button",
     "/docs/chain",
     "/docs/checkbox",
@@ -17,6 +18,7 @@
     "/docs/input",
     "/docs/list",
     "/docs/loader",
+    "/docs/md",
     "/docs/menu",
     "/docs/message",
     "/docs/modal",
