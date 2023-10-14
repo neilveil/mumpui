@@ -15,6 +15,7 @@ type props = Omit<React.InputHTMLAttributes<HTMLDivElement>, 'onChange' | 'value
   value?: option
   onChange?: (value?: option) => void
   onSearch?: (search: string) => void
+  simpleSearch?: boolean
   placeholder?: any
   clearable?: boolean
   disabled?: boolean
@@ -27,6 +28,7 @@ export default function Main({
   options = [],
   onChange,
   onSearch,
+  simpleSearch,
   placeholder,
   clearable = false,
   disabled = false,
@@ -36,6 +38,7 @@ export default function Main({
   ...props
 }: props) {
   const [optionsVisible, setOptionsVisible] = useState(false)
+  const [_search, _setSearch] = useState('')
 
   className = 'mumpui mp-select ' + (disabled ? 'mp-disabled ' : '') + (className || '')
 
@@ -56,9 +59,17 @@ export default function Main({
     if (onSearch) onSearch('')
     if (onChange) onChange(selected)
     setOptionsVisible(false)
+    _setSearch('')
+  }
+
+  const _onSearch = (search: string = '') => {
+    if (onSearch) onSearch(search)
+    if (simpleSearch) _setSearch(search)
   }
 
   if (value) options = options.filter(x => value.key !== x.key)
+
+  if (_search) options = search(_search, options)
 
   return (
     <div
@@ -70,9 +81,9 @@ export default function Main({
     >
       <div className='mp-select-single'>{value ? valueHOC(value) : placeholder}</div>
 
-      {optionsVisible && !!(options.length || onSearch) && (
+      {optionsVisible && !!(options.length || onSearch || simpleSearch) && (
         <div className='mp-input-expanded-area'>
-          {!!(onSearch || clearable) && (
+          {!!(onSearch || simpleSearch || clearable) && (
             <div
               className='mp-select-area'
               onClick={e => {
@@ -80,16 +91,17 @@ export default function Main({
                 e.stopPropagation()
               }}
             >
-              {onSearch ? (
+              {onSearch || simpleSearch ? (
                 <input
                   placeholder='Search..'
-                  onChange={e => onSearch && onSearch(e.target.value)}
+                  onChange={e => _onSearch(e.target.value)}
                   onKeyUp={e => {
                     if (e.key === 'Enter') {
                       if (options.length) _onSelect(options[0])
                     }
                   }}
                   className='mp-select-search'
+                  onBlur={() => _setSearch('')}
                   autoFocus
                 />
               ) : (

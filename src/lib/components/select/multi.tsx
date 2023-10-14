@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { type option } from '.'
+import search from './search'
 
 type multiple = Omit<React.InputHTMLAttributes<HTMLDivElement>, 'onChange' | 'value'> & {
   options?: option[]
   value?: option[]
   onChange?: (value: option[]) => void
   onSearch?: (search: string) => void
+  simpleSearch?: boolean
   placeholder?: any
   clearable?: boolean
   disabled?: boolean
@@ -18,6 +20,7 @@ export default function Main({
   options = [],
   onChange,
   onSearch,
+  simpleSearch,
   placeholder,
   clearable = false,
   disabled = false,
@@ -26,6 +29,7 @@ export default function Main({
   ...props
 }: multiple) {
   const [optionsVisible, setOptionsVisible] = useState(false)
+  const [_search, _setSearch] = useState('')
 
   className = 'mumpui mp-select ' + (disabled ? 'mp-disabled ' : '') + (className || '')
 
@@ -45,12 +49,18 @@ export default function Main({
   const _onChange = (selected: option) => {
     if (onSearch) onSearch('')
     if (onChange) onChange(value.concat(selected))
+    _setSearch('')
 
     const inputEl = ref.current.querySelector('input')
     if (inputEl) {
       inputEl.value = ''
       inputEl.focus()
     }
+  }
+
+  const _onSearch = (search: string = '') => {
+    if (onSearch) onSearch(search)
+    if (simpleSearch) _setSearch(search)
   }
 
   const selectedKey = value.map(x => x.key)
@@ -71,6 +81,8 @@ export default function Main({
 
   options = options.filter(x => !selectedKey.includes(x.key))
 
+  if (_search) options = search(_search, options)
+
   return (
     <div
       {...props}
@@ -81,9 +93,9 @@ export default function Main({
     >
       <div className='mp-select-multi'>{value.length ? valueEl : placeholder}</div>
 
-      {optionsVisible && !!(options.length || onSearch) && (
+      {optionsVisible && !!(options.length || onSearch || simpleSearch) && (
         <div className='mp-input-expanded-area'>
-          {!!(onSearch || clearable) && (
+          {!!(onSearch || simpleSearch || clearable) && (
             <div
               className='mp-select-area'
               onClick={e => {
@@ -91,15 +103,16 @@ export default function Main({
                 e.stopPropagation()
               }}
             >
-              {onSearch ? (
+              {onSearch || simpleSearch ? (
                 <input
                   placeholder='Search..'
-                  onChange={e => onSearch && onSearch(e.target.value)}
+                  onChange={e => _onSearch(e.target.value)}
                   onKeyUp={e => {
                     if (e.key === 'Enter') {
                       if (options.length) _onChange(options[0])
                     }
                   }}
+                  onBlur={() => _setSearch('')}
                   className='mp-select-search'
                   autoFocus
                 />

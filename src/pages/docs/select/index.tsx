@@ -1,36 +1,57 @@
 import { Docs } from 'components'
-import { Field, Select } from 'lib'
+import { Field, Fields, Select } from 'lib'
 import { useState } from 'react'
 import * as snippets from './snippets'
 import data from 'data'
 
 export default function Main() {
-  const [options, setOptions] = useState(data.countries)
   const [value, setValue] = useState<(typeof data.countries)[0] | undefined>(data.countries[0])
   const [valueNative, setValueNative] = useState('india')
 
   return (
     <Docs name='select'>
       <Docs.Showcase code={snippets.s1}>
-        <Field label='Select' style={{ maxWidth: '15rem' }}>
-          <Select options={data.countries} value={value} onChange={value => setValue(value)} />
-        </Field>
+        <Fields autoCol>
+          <Field label='Select'>
+            <Select value={value} onChange={value => setValue(value)} options={data.countries} placeholder='Select..' />
+          </Field>
+
+          <Field label='Select with search'>
+            <Select
+              value={value}
+              onChange={value => setValue(value)}
+              options={data.countries}
+              simpleSearch
+              placeholder='Select..'
+            />
+          </Field>
+        </Fields>
+
+        <Fields autoCol>
+          <Field label='Select with clear'>
+            <Select
+              value={value}
+              onChange={value => setValue(value)}
+              options={data.countries}
+              simpleSearch
+              placeholder='Select..'
+            />
+          </Field>
+
+          <Field label='Select with search & clear'>
+            <Select
+              value={value}
+              onChange={value => setValue(value)}
+              options={data.countries}
+              simpleSearch
+              clearable
+              placeholder='Select..'
+            />
+          </Field>
+        </Fields>
       </Docs.Showcase>
 
-      <Docs.Showcase title='Select component with search or clear only' code={snippets.s2}>
-        <Field label='Select with search & clear' style={{ maxWidth: '15rem' }}>
-          <Select
-            value={value}
-            onChange={value => setValue(value)}
-            options={options}
-            onSearch={search => setOptions(Select.search(search, data.countries))}
-            clearable
-            placeholder='Select..'
-          />
-        </Field>
-      </Docs.Showcase>
-
-      <Docs.Showcase title='⭐ Native select component' code={snippets.s3}>
+      <Docs.Showcase title='⭐ Native select component' code={snippets.s2}>
         <Field label='Native Select' style={{ maxWidth: '15rem' }}>
           <Select.Native
             options={data.countries}
@@ -53,7 +74,8 @@ export default function Main() {
           { name: 'value', type: 'object', usage: 'Object of key & label' },
           { name: 'onChange', type: 'function', usage: '' },
           { name: 'placeholder', type: 'string' },
-          { name: 'onSearch', type: 'function', usage: 'Shows search box only if search function is passed' },
+          { name: 'simpleSearch', type: 'function', usage: 'Show search box in dropdown' },
+          { name: 'onSearch', type: 'function', usage: 'For advanced search implementation' },
           { name: 'clearable', type: 'boolean', usage: '' },
           { name: 'disabled', type: 'boolean', usage: '' },
           { name: 'valueHOC', type: 'function', usage: 'Selected value HOC to customize selected option' },
@@ -73,21 +95,9 @@ export default function Main() {
         ]}
       />
 
-      {/* All the changes belows also need to be done in multi-select docs */}
-
-      <Docs.Props
-        title='Select.search'
-        type='function'
-        fields={[
-          { name: 'search', type: 'string', usage: 'Searched text' },
-          { name: 'options', type: 'array', usage: 'Select input field options' },
-          { name: 'caseSensitive', type: 'boolean', defaultValue: 'false' }
-        ]}
-      />
-
       <Docs.Info>
         A basic text based <code>Search</code> method is provied with <code>Select</code> component. For calling API or
-        any other functionality, search method need to be implemented.
+        any other functionality, search method need to be implemented with <code>onSearch</code>.
       </Docs.Info>
     </Docs>
   )

@@ -5,13 +5,49 @@ const [value, setValue] = useState(${JSON.stringify(data.countries[0])})
 
 ..
 
-<Field label='Select' style={{ maxWidth: '15rem' }}>
-  <Select
-    options={countries}
-    value={value}
-    onChange={value => setValue(value)}
-  />
-</Field>
+<Fields autoCol>
+  <Field label='Select'>
+    <Select
+      value={value}
+      onChange={value => setValue(value)}
+      options={countries}
+      placeholder='Select..'
+    />
+  </Field>
+
+  <Field label='Select with search'>
+    <Select
+      value={value}
+      onChange={value => setValue(value)}
+      options={countries}
+      simpleSearch
+      placeholder='Select..'
+    />
+  </Field>
+</Fields>
+
+<Fields autoCol>
+  <Field label='Select with clear'>
+    <Select
+      value={value}
+      onChange={value => setValue(value)}
+      options={countries}
+      simpleSearch
+      placeholder='Select..'
+    />
+  </Field>
+
+  <Field label='Select with search & clear'>
+    <Select
+      value={value}
+      onChange={value => setValue(value)}
+      options={countries}
+      simpleSearch
+      clearable
+      placeholder='Select..'
+    />
+  </Field>
+</Fields>
 
 ..
 
@@ -19,26 +55,6 @@ const countries = ${JSON.stringify(data.countries, null, 2)}
 `
 
 export const s2 = `
-const [options, setOptions] = useState(countries)
-const [value, setValue] = useState(${JSON.stringify(data.countries[0])})
-
-<Field label='Select with search & clear' style={{ maxWidth: '15rem' }}>
-  <Select
-    value={value}
-    onChange={value => setValue(value)}
-    options={options}
-    onSearch={search => setOptions(Select.search(search, countries))}
-    clearable
-    placeholder='Select..'
-  />
-</Field>
-
-..
-
-const countries = ${JSON.stringify(data.countries, null, 2)}
-`
-
-export const s3 = `
 const [valueNative, setValueNative] = useState('india')
 
 ..

@@ -8,6 +8,8 @@ import groups from './groups'
 import showcases from './showcases'
 import s from './styles.module.scss'
 
+const version = 'v1.3.0'
+
 export default class Main extends React.Component {
   state = {
     expanded: true,
@@ -95,7 +97,8 @@ export default class Main extends React.Component {
                 <div className={s.info}>Welcome to</div>
 
                 <div className={s.name}>
-                  MumpUI <span style={{ fontSize: '.7rem', color: '#888', fontWeight: 'var(--fw-bold)' }}>v1.2.1</span>
+                  MumpUI{' '}
+                  <span style={{ fontSize: '.7rem', color: '#888', fontWeight: 'var(--fw-bold)' }}>{version}</span>
                 </div>
                 <div className={s.info}>
                   A light-weight flexible & elegant

@@ -1,32 +1,58 @@
 import { Docs } from 'components'
-import { Field, Select } from 'lib'
+import { Field, Fields, Select } from 'lib'
 import { useState } from 'react'
 import * as snippets from './snippets'
 import data from 'data'
 
 export default function Main() {
-  const [options, setOptions] = useState(data.countries)
   const [value, setValue] = useState<typeof data.countries>([data.countries[0]])
 
   return (
     <Docs name='multiSelect'>
       <Docs.Showcase code={snippets.s1}>
-        <Field label='Multi-Select' style={{ maxWidth: '15rem' }}>
-          <Select.Multi options={data.countries} value={value} onChange={value => setValue(value)} />
-        </Field>
-      </Docs.Showcase>
+        <Fields autoCol>
+          <Field label='Multi-Select'>
+            <Select.Multi
+              value={value}
+              onChange={value => setValue(value)}
+              options={data.countries}
+              placeholder='Select..'
+            />
+          </Field>
 
-      <Docs.Showcase title='Multi-Select component with search or clear only' code={snippets.s2}>
-        <Field label='Multi-Select with search & clear' style={{ maxWidth: '15rem' }}>
-          <Select.Multi
-            value={value}
-            onChange={value => setValue(value)}
-            options={options}
-            onSearch={search => setOptions(Select.search(search, data.countries))}
-            clearable
-            placeholder='Select..'
-          />
-        </Field>
+          <Field label='Multi-Select with search'>
+            <Select.Multi
+              value={value}
+              onChange={value => setValue(value)}
+              options={data.countries}
+              simpleSearch
+              placeholder='Select..'
+            />
+          </Field>
+        </Fields>
+
+        <Fields autoCol>
+          <Field label='Multi-Select with clear'>
+            <Select.Multi
+              value={value}
+              onChange={value => setValue(value)}
+              options={data.countries}
+              clearable
+              placeholder='Select..'
+            />
+          </Field>
+
+          <Field label='Multi-Select with search & clear'>
+            <Select.Multi
+              value={value}
+              onChange={value => setValue(value)}
+              options={data.countries}
+              simpleSearch
+              clearable
+              placeholder='Select..'
+            />
+          </Field>
+        </Fields>
       </Docs.Showcase>
 
       <Docs.Props
@@ -38,27 +64,16 @@ export default function Main() {
           { name: 'value', type: 'array', usage: 'Array of selected option objects containing key & label' },
           { name: 'onChange', type: 'function', usage: '' },
           { name: 'placeholder', type: 'string' },
-          { name: 'onSearch', type: 'function', usage: 'Shows search box only if search function is passed' },
+          { name: 'simpleSearch', type: 'function', usage: 'Show search box in dropdown' },
+          { name: 'onSearch', type: 'function', usage: 'For advanced search implementation' },
           { name: 'clearable', type: 'boolean', usage: '' },
           { name: 'disabled', type: 'boolean', usage: '' }
         ]}
       />
 
-      {/* All the changes belows also need to be done in select docs */}
-
-      <Docs.Props
-        title='Select.search'
-        type='function'
-        fields={[
-          { name: 'search', type: 'string', usage: 'Searched text' },
-          { name: 'options', type: 'array', usage: 'Select input field options' },
-          { name: 'caseSensitive', type: 'boolean', defaultValue: 'false' }
-        ]}
-      />
-
       <Docs.Info>
         A basic text based <code>Search</code> method is provied with <code>Select</code> component. For calling API or
-        any other functionality, search method need to be implemented.
+        any other functionality, search method need to be implemented with <code>onSearch</code>.
       </Docs.Info>
     </Docs>
   )
