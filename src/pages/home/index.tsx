@@ -94,7 +94,9 @@ export default class Main extends React.Component {
               <div className={s.right}>
                 <div className={s.info}>Welcome to</div>
 
-                <div className={s.name}>MumpUI</div>
+                <div className={s.name}>
+                  MumpUI <span style={{ fontSize: '.7rem', color: '#888', fontWeight: 'var(--fw-bold)' }}>v1.2.1</span>
+                </div>
                 <div className={s.info}>
                   A light-weight flexible & elegant
                   <br />
