@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 
 type props = React.HTMLAttributes<HTMLDivElement> & {
   title?: string | JSX.Element
@@ -16,19 +16,19 @@ export default function Main({
   className = '',
   ...props
 }: props) {
-  className = 'mumpui mp-modal'
+  const ref: React.Ref<any> = useRef(null)
 
   const _buttons = Array.isArray(buttons) ? buttons : [buttons]
 
   return visible ? (
     <div
-      className={className}
-      onClick={e => {
-        if (props.onClick) props.onClick(e)
-        if (onClose) onClose()
+      className='mumpui mp-modal'
+      ref={ref}
+      onClick={(e: any) => {
+        if (e.target.contains(ref.current) && onClose) onClose()
       }}
     >
-      <div {...props} className='mp-modal-box' onClick={e => e.stopPropagation()}>
+      <div {...props} className={'mp-modal-box ' + className}>
         {!!title && <div className='mp-modal-title'>{title}</div>}
         {children}
         {!!_buttons.length && <div className='mp-modal-buttons'>{_buttons}</div>}
