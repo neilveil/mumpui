@@ -11,15 +11,14 @@ export default function Main() {
       <Docs.Showcase code={snippets.s1}>
         <Button onClick={() => setVisible(true)}>Open</Button>
 
-        <Modal visible={visible} onClose={() => setVisible(false)}>
-          <div style={{ fontSize: '1.25rem' }}>Demo Modal</div>
-
+        <Modal
+          title='Demo Modal'
+          buttons={<Button onClick={() => setVisible(false)}>Close</Button>}
+          visible={visible}
+          onClose={() => setVisible(false)}
+        >
           <div style={{ fontSize: '.8rem', marginTop: '.5rem' }}>
             This is dummy modal. You can render anything inside.
-          </div>
-
-          <div className='flex-end' style={{ marginTop: '1.5rem' }}>
-            <Button onClick={() => setVisible(false)}>Close</Button>
           </div>
         </Modal>
       </Docs.Showcase>
@@ -29,6 +28,8 @@ export default function Main() {
         type='component'
         fields={[
           { name: '..', usage: 'All div element props' },
+          { name: 'title', type: 'jsx', usage: 'Modal title' },
+          { name: 'buttons', type: 'jsx', usage: 'Modal action buttons' },
           { name: 'visible', type: 'boolean', usage: 'To set the modal visibility' },
           { name: 'onClose', type: 'function', usage: 'To close modal on background click' }
         ]}

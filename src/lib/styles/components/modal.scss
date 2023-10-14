@@ -19,6 +19,19 @@
     animation: mp-modal-slide-in 200ms ease forwards;
     overflow: auto;
     max-height: calc(100vh - 8rem);
+
+    .mp-modal-title {
+      font-size: 1.125rem;
+      margin-bottom: 1rem;
+      color: var(--c-font-dark);
+    }
+
+    .mp-modal-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-top: 1rem;
+    }
   }
 
   @keyframes mp-modal-slide-in {
