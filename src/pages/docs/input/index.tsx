@@ -10,7 +10,7 @@ export default function Main() {
   return (
     <Docs name='input'>
       <Docs.Showcase code={snippets.s1}>
-        <div className='flex-center'>
+        <div>
           <Input
             value={input}
             onChange={e => setInput(e.target.value)}

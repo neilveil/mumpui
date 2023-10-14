@@ -9,7 +9,7 @@ export default function Main() {
   return (
     <Docs name='colorPicker'>
       <Docs.Showcase code={snippets.s1}>
-        <div className='flex-center'>
+        <div>
           <Field label='Select color'>
             <ColorPicker
               placeholder='Select color..'
