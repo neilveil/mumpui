@@ -1,14 +1,6 @@
-```
-{
-  "name": "markdown"
-}
-```
+# Extended Markdown
 
-<!-- meta-break -->
-
-# MumpUI / Markdown
-
-## Image & caption
+## Image & Caption
 
 ![](https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=1000&q=80)
 
@@ -61,18 +53,6 @@
 
 <div class="break">*****</div>
 
-## Spacing
-
-<div class="spacing">
-  Hello there!
-</div>
-
-## Line break
-
-<br />
-<br />
-<br />
-
 ## Code block
 
 ```jsx
@@ -87,9 +67,3 @@ export default function Main() {
     overflow: auto;
   }
 </style>
-
-## Comment
-
-<!-- Hello there! -->
-
-[Source code →](/mumpui/markdown.md)

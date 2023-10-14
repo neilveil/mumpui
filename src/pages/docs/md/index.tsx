@@ -1,6 +1,6 @@
 import { Docs } from 'components'
-import * as snippets from './snippets'
 import { MD } from 'lib'
+import * as snippets from './snippets'
 
 export default function Main() {
   const content = '# Title\n\nHello there!'

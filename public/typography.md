@@ -62,6 +62,8 @@ Pulvinar pellentesque habitant morbi tristique. Sapien <i>pellentesque habitant<
 | Header    | Title       |
 | Paragraph | Text        |
 
+> Wrap in `.mp-table` class to create scrollable tables.
+
 ### Divider
 
 ---

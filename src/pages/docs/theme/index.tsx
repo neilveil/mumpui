@@ -193,15 +193,15 @@ const colors = [
     type: 'palette'
   },
   {
-    name: 'Indigo',
-    color: '--mp-c-indigo',
-    usage: 'Link / Clickable',
-    type: 'palette'
-  },
-  {
     name: 'Light',
     color: '--mp-c-light',
     usage: 'Hover / Card',
+    type: 'palette'
+  },
+  {
+    name: 'Indigo',
+    color: '--mp-c-indigo',
+    usage: 'Status / Label',
     type: 'palette'
   },
   {
@@ -229,15 +229,21 @@ const colors = [
     type: 'palette'
   },
   {
-    name: 'Code',
-    color: '--mp-c-code',
-    usage: 'Code tag',
-    type: 'more'
+    name: 'Link',
+    color: '--mp-c-link',
+    usage: 'Anchor tag',
+    type: 'Links'
   },
   {
     name: 'Mark',
     color: '--mp-c-mark',
     usage: 'Mark tag',
+    type: 'more'
+  },
+  {
+    name: 'Code',
+    color: '--mp-c-code',
+    usage: 'Code tag',
     type: 'more'
   },
   {

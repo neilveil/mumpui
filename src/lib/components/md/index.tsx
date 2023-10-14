@@ -12,7 +12,7 @@ type props = React.HTMLAttributes<HTMLDivElement> & {
 }
 
 export default function Main({ children = '', className = '', ...props }: props) {
-  className = `mumpui mp-md ${className || ''})`
+  className = `mumpui mp-md ${className || ''}`
 
   const ref: any = useRef()
 
@@ -38,17 +38,12 @@ export default function Main({ children = '', className = '', ...props }: props)
       el.id = el.innerHTML.toString().replaceAll(' ', '-').toLowerCase().trim()
     })
 
-    ref.current.querySelectorAll('ul,ol').forEach((el: any) => {
-      el.classList.add('mumpui')
-      el.classList.add('mp-list')
-    })
-
     ref.current.querySelectorAll('a').forEach((el: any) => {
       el.target = '_blank'
       el.rel = 'noreferrer'
     })
 
-    wrap(ref.current, 'table', ['mumpui', 'mp-table'])
+    wrap(ref.current, 'table', ['mumpui', 'mp-table-wrapper'])
     wrap(ref.current, 'pre', ['mumpui', 'mp-code'])
 
     document.querySelectorAll('.mp-code').forEach(el => {

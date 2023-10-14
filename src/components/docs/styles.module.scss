@@ -7,11 +7,6 @@
   min-height: 100vh;
   justify-content: space-between;
 
-  h2 {
-    font-weight: 400;
-    margin-top: 3rem;
-  }
-
   & > div {
     padding: 1rem;
   }
@@ -20,10 +15,6 @@
     font-size: 0.8rem;
     margin-top: 1rem;
     margin-bottom: 2rem;
-
-    a {
-      color: var(--c-blue);
-    }
   }
 
   .issue {
@@ -147,6 +138,6 @@
   ul {
     margin-top: 1rem;
     font-size: 0.9rem;
-    color: var(--c-indigo);
+    color: var(--c-link);
   }
 }

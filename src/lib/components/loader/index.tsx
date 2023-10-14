@@ -6,7 +6,7 @@ type props = React.HTMLAttributes<HTMLDivElement> & {
 }
 
 export default function Main({ empty, children, className = '', ...props }: props) {
-  className = `mumpui mp-loader ${className || ''})`
+  className = `mumpui mp-loader ${className || ''}`
 
   return (
     <div {...props} className={className}>

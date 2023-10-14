@@ -89,16 +89,13 @@
   gap: 1.5rem;
   margin-top: 2rem;
   font-size: 0.8rem;
-  color: #ffffff;
+  color: #fff;
 
-  div {
-    &:hover {
-      opacity: 0.9;
-    }
-  }
-
+  a,
   span {
-    cursor: pointer;
+    &:hover {
+      opacity: 0.7;
+    }
   }
 }
 

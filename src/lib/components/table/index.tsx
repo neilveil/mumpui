@@ -22,8 +22,8 @@ export default function Main({ cols, data, className = '', style = {}, ...props 
   className = 'mumpui mp-table ' + className
 
   return (
-    <div className={className} style={style}>
-      <table {...props}>
+    <div className='mumpui mp-table-wrapper'>
+      <table className={className} style={style} {...props}>
         <thead>
           <tr>
             {cols.map((x, i) => (
