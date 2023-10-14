@@ -7,8 +7,7 @@ import { Link } from 'react-router-dom'
 import groups from './groups'
 import showcases from './showcases'
 import s from './styles.module.scss'
-
-const version = 'v1.3.0'
+import version from '../../version'
 
 export default class Main extends React.Component {
   state = {
