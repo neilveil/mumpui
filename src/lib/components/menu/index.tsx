@@ -7,7 +7,7 @@ type item = {
   path?: string
   icon?: JSX.Element
   next?: item[]
-  access?: string[]
+  access?: string | string[]
   [key: string]: any
 }
 
@@ -15,26 +15,37 @@ type props = Omit<React.HTMLAttributes<HTMLDivElement>, 'onClick'> & {
   active?: string
   onClick?: (item: item) => void
   items?: item[]
-  access?: string[]
+  access?: string | string[]
   basePath?: string
 }
 
 export default function Main({ active, onClick, items = [], access, basePath = '', className = '', ...props }: props) {
   className = 'mumpui mp-menu ' + className
 
+  const rerender = useState(false)
+
   return (
     <div {...props} className={className}>
       {items.map((item, i) => (
-        <MenuItem key={i} active={active} onClick={onClick} item={item} access={access} basePath={basePath} />
+        <MenuItem
+          key={i}
+          active={active}
+          onClick={onClick}
+          item={item}
+          access={access}
+          basePath={basePath}
+          rerender={rerender}
+        />
       ))}
     </div>
   )
 }
 
-const isExpanded = (next: item[] = [], active?: string): boolean => {
+const isExpanded = (next: item[] = [], active?: string, basePath = ''): boolean => {
   for (const x of next)
-    if (x.key === active) return true
-    else if (x.next?.length) return isExpanded(x.next, active)
+    if (active && x.key === active) return true
+    else if (x.path && basePath + x.path === window.location.pathname) return true
+    else if (x.next?.length) return isExpanded(x.next, active, basePath)
   return false
 }
 
@@ -43,15 +54,17 @@ function MenuItem({
   onClick = () => {},
   item,
   access,
-  basePath
+  basePath,
+  rerender
 }: {
   active?: string
   onClick?: (key: item) => void
   item: item
   access?: string | string[]
   basePath: string
+  rerender: any
 }) {
-  const [expanded, setExpanded] = useState(isExpanded(item.next, active))
+  const [expanded, setExpanded] = useState(isExpanded(item.next, active, basePath))
 
   const isExpandable = !!item.next?.length
 
@@ -68,12 +81,20 @@ function MenuItem({
 
   const isActive = (active && active === item.key) || window.location.pathname === basePath + item.path
 
+  const _onClick = () => {
+    if (isExpandable) setExpanded(!expanded)
+    else onClick(item)
+
+    // To fix: If parent component is not updated while using menu for navigation, then the selected item in the menu doesn't update
+    rerender[1](!rerender[0])
+  }
+
   const itemEl = (
     <div
       className={`mp-menu-item ${isActive ? 'mp-menu-item-active' : ''} ${
         isExpandable ? 'mp-menu-item-expandable' : ''
       }`}
-      onClick={() => (isExpandable ? setExpanded(!expanded) : onClick(item))}
+      onClick={_onClick}
     >
       <div>
         {!!item.icon && <span className='mp-menu-item-icon'>{item.icon}</span>}
@@ -91,7 +112,14 @@ function MenuItem({
       {!!(isExpandable && expanded) &&
         item.next?.map((item, i) => (
           <div key={i} className='mp-menu-item-group'>
-            <MenuItem active={active} onClick={onClick} item={item} access={access} basePath={basePath} />
+            <MenuItem
+              active={active}
+              onClick={onClick}
+              item={item}
+              access={access}
+              basePath={basePath}
+              rerender={rerender}
+            />
           </div>
         ))}
     </>

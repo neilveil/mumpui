@@ -1,7 +1,6 @@
 import data from 'data'
 import { Checkboxes, Dashboard } from 'lib'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 
 const allAccess = [
   { key: 'users', label: 'Users' },
@@ -13,18 +12,8 @@ const allAccess = [
 export default function Main() {
   const [access, setAccess] = useState([])
 
-  const navigate = useNavigate()
-
   return (
-    <Dashboard
-      icon={<span className='icon'>task_alt</span>}
-      title='Access'
-      sidebarImg='/mumpui/logo.png'
-      sidebarItems={data.dashboardSidebarItems}
-      sidebarBasePath='/mumpui'
-      onSidebarClick={key => navigate(key)}
-      sidebarAccess={access}
-    >
+    <Dashboard icon={<span className='icon'>task_alt</span>} title='Access' sidebar={data.DashboardSidebar({ access })}>
       <br />
 
       <Checkboxes options={allAccess} checked={access} onChange={(access: any) => setAccess(access)} />

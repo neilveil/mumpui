@@ -24,13 +24,12 @@ const [selected, setSelected] = useState('home')
 ..
 
 <Menu
-  active={selected}
-  onClick={(selected: any) => setSelected(selected)}
-  items={items}
+  items={[
+    { label: 'Menu', path: '/docs/menu', icon: <span className='icon'>menu</span> },
+    { label: 'Home', path: '/home', icon: <span className='icon'>home</span> },
+    { label: 'Setup', path: '/setup', icon: <span className='icon'>settings</span> }
+  ]}
   style={{ width: '100%', maxWidth: '12rem' }}
+  basePath='/mumpui'
 />
-
-..
-
-const items = ${helpers.iconCleaner(data.menu)}
 `

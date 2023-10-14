@@ -1,13 +1,8 @@
-import data from 'data'
-import * as helpers from 'helpers'
-
 export const s1 = `
 <Dashboard
   icon={<span className='icon'>home</span>}
   title='Home'
-  sidebarImg='/mumpui/logo.png'
-  sidebarItems={sidebatItems}
-  onSidebarClick={path => navigate(path)}
+  sidebar={<div> .. </div>}
 >
   <h3>Welcome to MumpUI Dashboard.</h3>
 
@@ -15,10 +10,6 @@ export const s1 = `
     <u style={{ marginTop: '2rem', fontSize: '.9rem' }}>Go back to home</u>
   </Link>
 </Dashboard>
-
-..
-
-const sidebarItems = ${helpers.iconCleaner(data.dashboardSidebarItems)}
 `
 
 export const s2 = `
@@ -43,18 +34,12 @@ export const s2 = `
   paginationTotalItems={users.length}
   paginationOffset={offset}
   paginationOnChange={offset => setOffset(offset)}
-  sidebarImg='/mumpui/logo.png'
-  sidebarItems={sidebarItems}
-  onSidebarClick={key => navigate(key)}
+  sidebar={<div> .. </div>}
 >
   <Table
     ..
   />
 </Dashboard>
-
-..
-
-const sidebarItems = ${helpers.iconCleaner(data.dashboardSidebarItems)}
 `
 
 export const s3 = `
@@ -68,9 +53,7 @@ const submit = () => {
   icon={<span className='icon'>add</span>}
   title='Add users'
   onCreate={submit}
-  sidebarImg='/mumpui/logo.png'
-  sidebarItems={sidebarItems}
-  onSidebarClick={key => navigate(key)}
+  sidebar={<div> .. </div>}
 >
   <Form style={{ width: '100%', maxWidth: 400 }} onSubmit={submit}>
     <Field label='Name'>
@@ -82,10 +65,6 @@ const submit = () => {
     </Field>
   </Form>
 </Dashboard>
-
-..
-
-const sidebarItems = ${helpers.iconCleaner(data.dashboardSidebarItems)}
 `
 
 export const s4 = `
@@ -110,9 +89,7 @@ const submit = () => {
       confirmText: 'Delete'
     })
   }}
-  sidebarImg='/mumpui/logo.png'
-  sidebarItems={sidebarItems}
-  onSidebarClick={key => navigate(key)}
+  sidebar={<div> .. </div>}
 >
   <Form style={{ width: '100%', maxWidth: 400 }} onSubmit={submit}>
     <Field label='Name'>
@@ -124,28 +101,18 @@ const submit = () => {
     </Field>
   </Form>
 </Dashboard>
-
-..
-
-const sidebarItems = ${helpers.iconCleaner(data.dashboardSidebarItems)}
 `
 
 export const s5 = `
 <Dashboard
   icon={<span className='icon'>task_alt</span>}
   title='Access'
-  sidebarImg='/mumpui/logo.png'
-  sidebarItems={sidebarItems}
-  onSidebarClick={key => navigate(key)}
+  sidebar={<div> .. </div>}
   // Only the 'users' & 'profile' key will be visible in the sidebar
   sidebarAccess={['users', 'profile']}
 >
   <div></div>
 </Dashboard>
-
-..
-
-const sidebarItems = ${helpers.iconCleaner(data.dashboardSidebarItems)}
 `
 
 export const s6 = `
@@ -162,63 +129,37 @@ export const s7 = `
 <Dashboard
   icon={<span className='icon'>home</span>}
   title='Home'
-  sidebarImg='/mumpui/logo.png'
-  sidebarItems={sidebarItems}
-  onSidebarClick={path => navigate(path)}
+  sidebar={<div> .. </div>}
   style={{ maxWidth: '100%' }}
 >
   <h3>Max width restricted</h3>
 </Dashboard>
-
-..
-
-const sidebarItems = ${helpers.iconCleaner(data.dashboardSidebarItems)}
 `
 
 export const s8 = `
 <Dashboard
   icon={<span className='icon'>home</span>}
   title='Home'
-  sidebarImg='/mumpui/logo.png'
-  sidebarItems={sidebatItems}
-  onSidebarClick={path => navigate(path)}
+  sidebar={<div> .. </div>}
   loading
 >
   <h3>Welcome to MumpUI Dashboard.</h3>
 </Dashboard>
-
-..
-
-const sidebarItems = ${helpers.iconCleaner(data.dashboardSidebarItems)}
 `
 
 export const s9 = `
 <Dashboard
   icon={<span className='icon'>home</span>}
   title='Home'
-  sidebarImg='/mumpui/logo.png'
-  sidebarItems={sidebatItems}
-  onSidebarClick={path => navigate(path)}
+  sidebar={<div> .. </div>}
   empty
 >
   <h3>Welcome to MumpUI Dashboard.</h3>
 </Dashboard>
-
-..
-
-const sidebarItems = ${helpers.iconCleaner(data.dashboardSidebarItems)}
 `
 
 export const buttons = `
 import "mumpui/styles/dashboard-buttons.scss"
-`
-
-export const buttonsCSS = `
-.mp-dashboard-button-cancel {}
-.mp-dashboard-button-create {}
-.mp-dashboard-button-update {}
-.mp-dashboard-button-delete {}
-.mp-dashboard-button-add {}
 `
 
 export const globalConfig = `

@@ -41,10 +41,7 @@ export default function Main() {
       paginationOffset={offset}
       paginationOnChange={offset => setOffset(offset)}
       //
-      sidebarImg='/mumpui/logo.png'
-      sidebarItems={data.dashboardSidebarItems}
-      sidebarBasePath='/mumpui'
-      onSidebarClick={key => navigate(key)}
+      sidebar={data.DashboardSidebar({})}
     >
       <Table
         cols={[

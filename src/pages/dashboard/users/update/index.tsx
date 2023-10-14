@@ -1,10 +1,7 @@
 import data from 'data'
 import { Confirm, Dashboard, Field, Form, Input, Message } from 'lib'
-import { useNavigate } from 'react-router-dom'
 
 export default function Main() {
-  const navigate = useNavigate()
-
   const submit = () => {
     Message.success('User updated!')
   }
@@ -25,10 +22,7 @@ export default function Main() {
           confirmText: 'Delete'
         })
       }}
-      sidebarImg='/mumpui/logo.png'
-      sidebarItems={data.dashboardSidebarItems}
-      sidebarBasePath='/mumpui'
-      onSidebarClick={key => navigate(key)}
+      sidebar={data.DashboardSidebar({})}
     >
       <Form style={{ width: '100%', maxWidth: 400 }} onSubmit={submit}>
         <Field label='Name'>

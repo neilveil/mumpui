@@ -1,3 +1,5 @@
+import { Menu } from 'lib'
+
 const selectRandom = (array: any[] = []) => array[Math.floor(Math.random() * array.length)]
 
 const countries = [
@@ -136,28 +138,51 @@ const menu = [
   }
 ]
 
-const dashboardSidebarItems = [
-  { name: 'Home', icon: <span className='icon'>home</span>, path: '/dashboard' },
-  { name: 'Users', icon: <span className='icon'>people</span>, path: '/dashboard/users', access: 'users' },
-  { name: 'Access', icon: <span className='icon'>task_alt</span>, path: '/dashboard/access', access: 'access' },
-  {
-    name: 'Settings',
-    icon: <span className='icon'>settings</span>,
-    access: ['profile', 'blogs'],
-    next: [
-      { name: 'Profile', icon: <span className='icon'>person</span>, path: '/dashboard/profile', access: 'profile' },
-      {
-        name: 'Blogs',
-        icon: <span className='icon'>rss_feed</span>,
-        access: 'blogs',
-        next: [
-          { name: 'Blog 1', path: '/dashboard/blog/1' },
-          { name: 'Blog 2', path: '/dashboard/blog/2' },
-          { name: 'Blog 3', path: '/dashboard/blog/3' }
-        ]
-      }
-    ]
-  }
-]
+export function DashboardSidebar({ access }: { access?: string[] }) {
+  return (
+    <div>
+      <div>
+        <img src='/logo.png' style={{ width: '100%', padding: '3rem', opacity: 0.7 }} />
+      </div>
+      <Menu
+        items={[
+          { label: 'Home', icon: <span className='icon'>home</span>, path: '/dashboard' },
+          { label: 'Users', icon: <span className='icon'>people</span>, path: '/dashboard/users', access: 'users' },
+          {
+            label: 'Access',
+            icon: <span className='icon'>task_alt</span>,
+            path: '/dashboard/access',
+            access: 'access'
+          },
+          {
+            label: 'Settings',
+            icon: <span className='icon'>settings</span>,
+            access: ['profile', 'blogs'],
+            next: [
+              {
+                label: 'Profile',
+                icon: <span className='icon'>person</span>,
+                path: '/dashboard/profile',
+                access: 'profile'
+              },
+              {
+                label: 'Blogs',
+                icon: <span className='icon'>rss_feed</span>,
+                access: 'blogs',
+                next: [
+                  { label: 'Blog 1', path: '/dashboard/blog/1' },
+                  { label: 'Blog 2', path: '/dashboard/blog/2' },
+                  { label: 'Blog 3', path: '/dashboard/blog/3' }
+                ]
+              }
+            ]
+          }
+        ]}
+        access={access}
+        basePath='/mumpui'
+      />
+    </div>
+  )
+}
 
-export default { countries, firstNames, lastNames, users, list, table, chain, tabs, menu, dashboardSidebarItems }
+export default { countries, firstNames, lastNames, users, list, table, chain, tabs, menu, DashboardSidebar }
