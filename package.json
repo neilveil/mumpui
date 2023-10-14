@@ -1,7 +1,7 @@
 {
   "name": "mumpui",
   "description": "A light-weight flexible & elegant design system for developers.",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "main": "dist/index.js",
   "author": "neilveil",
   "repository": "neilveil/mumpui",
@@ -9,12 +9,13 @@
   "homepage": "https://neilveil.github.io/mumpui",
   "scripts": {
     "start": "vite --host",
-    "build": "vite build && node -e \"fs.copyFileSync('build/index.html', 'build/404.html')\"",
+    "build": "npm run inject-version && vite build && node -e \"fs.copyFileSync('build/index.html', 'build/404.html')\"",
     "build-plus": "build-plus",
     "dist:clean": "rimraf dist",
     "dist:scripts": "rimraf dist && tsc --project tsconfig.dist.json",
     "dist:styles": "sass src/lib/styles:dist/styles --no-source-map",
     "dist": "npm run dist:clean && npm run dist:scripts && npm run dist:styles",
+    "inject-version": "node version.js",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "pretty": "prettier --write ./src/**/*",
     "clean": "npm run lint && npm run pretty",

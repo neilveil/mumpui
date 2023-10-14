@@ -2,10 +2,6 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import eslint from 'vite-plugin-eslint'
 import autoprefixer from 'autoprefixer'
-import packageJSON from './package.json'
-import fs from 'fs'
-
-fs.writeFileSync('src/version.ts', `export default '${packageJSON.version}'`)
 
 export default defineConfig({
   plugins: [react(), eslint()],
