@@ -103,7 +103,7 @@ export default {
   select: {
     ...metagraph.select,
     Component() {
-      const [value, setValue] = useState<(typeof data.countries)[0] | undefined>(data.countries[0])
+      const [value, setValue] = useState(data.countries[0].key)
 
       return <Select options={data.countries} value={value} onChange={value => setValue(value)} />
     }
@@ -111,7 +111,7 @@ export default {
   multiSelect: {
     ...metagraph.multiSelect,
     Component() {
-      const [value, setValue] = useState<typeof data.countries>([data.countries[0]])
+      const [value, setValue] = useState([data.countries[0].key])
 
       return <Select.Multi options={data.countries} value={value} onChange={value => setValue(value)} />
     }

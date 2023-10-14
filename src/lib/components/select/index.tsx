@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { default as Multi } from './multi'
 import { default as Native } from './native'
 import { default as search } from './search'
+import Placeholder from '../placeholder'
 
 export type option = {
   key: string
@@ -12,8 +13,8 @@ export type option = {
 
 type props = Omit<React.InputHTMLAttributes<HTMLDivElement>, 'onChange' | 'value'> & {
   options?: option[]
-  value?: option
-  onChange?: (value?: option) => void
+  value?: string
+  onChange?: (value: string) => void
   onSearch?: (search: string) => void
   simpleSearch?: boolean
   placeholder?: any
@@ -50,14 +51,22 @@ export default function Main({
     if (ref.current && !ref.current.contains(e.target)) setOptionsVisible(false)
   }
 
+  const keyListener = (e: any) => {
+    if (e.key === 'Escape') setOptionsVisible(false)
+  }
+
   useEffect(() => {
     window.addEventListener('click', clickListener)
-    return () => window.removeEventListener('click', clickListener)
+    window.addEventListener('keyup', keyListener)
+    return () => {
+      window.removeEventListener('click', clickListener)
+      window.removeEventListener('keyup', keyListener)
+    }
   }, [])
 
   const _onSelect = (selected: option) => {
     if (onSearch) onSearch('')
-    if (onChange) onChange(selected)
+    if (onChange) onChange(selected.key)
     setOptionsVisible(false)
     _setSearch('')
   }
@@ -67,7 +76,9 @@ export default function Main({
     if (simpleSearch) _setSearch(search)
   }
 
-  if (value) options = options.filter(x => value.key !== x.key)
+  const selectedOptions = options.find(x => x.key === value)
+
+  if (value) options = options.filter(x => value !== x.key)
 
   if (_search) options = search(_search, options)
 
@@ -79,9 +90,9 @@ export default function Main({
       className={className}
       onClick={() => !disabled && setOptionsVisible(!optionsVisible)}
     >
-      <div className='mp-select-single'>{value ? valueHOC(value) : placeholder}</div>
+      <div className='mp-select-single'>{selectedOptions ? valueHOC(selectedOptions) : placeholder}</div>
 
-      {optionsVisible && !!(options.length || onSearch || simpleSearch) && (
+      {optionsVisible && (
         <div className='mp-input-expanded-area'>
           {!!(onSearch || simpleSearch || clearable) && (
             <div
@@ -102,6 +113,7 @@ export default function Main({
                   }}
                   className='mp-select-search'
                   onBlur={() => _setSearch('')}
+                  value={_search}
                   autoFocus
                 />
               ) : (
@@ -109,7 +121,7 @@ export default function Main({
               )}
 
               {!!clearable && (
-                <div className='mp-select-clear' onClick={() => !!onChange && onChange()}>
+                <div className='mp-select-clear' onClick={() => !!onChange && onChange('')}>
                   Clear
                 </div>
               )}
@@ -128,6 +140,12 @@ export default function Main({
               {optionHOC(x)}
             </div>
           ))}
+
+          {!options.length && (
+            <div onClick={() => _setSearch('')} style={{ display: 'flex', justifyContent: 'center' }}>
+              <Placeholder style={{ width: '50%', padding: '2rem 2rem' }} empty />
+            </div>
+          )}
         </div>
       )}
     </div>

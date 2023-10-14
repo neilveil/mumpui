@@ -5,7 +5,7 @@ import * as snippets from './snippets'
 import data from 'data'
 
 export default function Main() {
-  const [value, setValue] = useState<typeof data.countries>([data.countries[0]])
+  const [value, setValue] = useState([data.countries[0].key])
 
   return (
     <Docs name='multiSelect'>

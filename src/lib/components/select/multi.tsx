@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { type option } from '.'
 import search from './search'
+import Placeholder from '../placeholder'
 
 type multiple = Omit<React.InputHTMLAttributes<HTMLDivElement>, 'onChange' | 'value'> & {
   options?: option[]
-  value?: option[]
-  onChange?: (value: option[]) => void
+  value?: string[]
+  onChange?: (value: string[]) => void
   onSearch?: (search: string) => void
   simpleSearch?: boolean
   placeholder?: any
@@ -41,14 +42,22 @@ export default function Main({
     if (ref.current && !ref.current.contains(e.target)) setOptionsVisible(false)
   }
 
+  const keyListener = (e: any) => {
+    if (e.key === 'Escape') setOptionsVisible(false)
+  }
+
   useEffect(() => {
     window.addEventListener('click', clickListener)
-    return () => window.removeEventListener('click', clickListener)
+    window.addEventListener('keyup', keyListener)
+    return () => {
+      window.removeEventListener('click', clickListener)
+      window.removeEventListener('keyup', keyListener)
+    }
   }, [])
 
   const _onChange = (selected: option) => {
     if (onSearch) onSearch('')
-    if (onChange) onChange(value.concat(selected))
+    if (onChange) onChange(value.concat(selected.key))
     _setSearch('')
 
     const inputEl = ref.current.querySelector('input')
@@ -63,23 +72,27 @@ export default function Main({
     if (simpleSearch) _setSearch(search)
   }
 
-  const selectedKey = value.map(x => x.key)
+  const valueEl = value.map((x, i) => {
+    const option = options.find(y => y.key === x)
 
-  const valueEl = value.map((x, i) => (
-    <div key={i} className='mp-select-chip'>
-      {x.label}
-      <CrossIcon
-        color='var(--mp-c-font-light)'
-        onClick={e => {
-          if (disabled) return
-          e.stopPropagation()
-          if (onChange) onChange(value.filter(y => y.key !== x.key))
-        }}
-      />
-    </div>
-  ))
+    if (!option) return null
 
-  options = options.filter(x => !selectedKey.includes(x.key))
+    return (
+      <div key={i} className='mp-select-chip'>
+        {option.label}
+        <CrossIcon
+          color='var(--mp-c-font-light)'
+          onClick={e => {
+            if (disabled) return
+            e.stopPropagation()
+            if (onChange) onChange(value.filter(y => y !== x))
+          }}
+        />
+      </div>
+    )
+  })
+
+  options = options.filter(x => !value.includes(x.key))
 
   if (_search) options = search(_search, options)
 
@@ -93,7 +106,7 @@ export default function Main({
     >
       <div className='mp-select-multi'>{value.length ? valueEl : placeholder}</div>
 
-      {optionsVisible && !!(options.length || onSearch || simpleSearch) && (
+      {optionsVisible && (
         <div className='mp-input-expanded-area'>
           {!!(onSearch || simpleSearch || clearable) && (
             <div
@@ -114,6 +127,7 @@ export default function Main({
                   }}
                   onBlur={() => _setSearch('')}
                   className='mp-select-search'
+                  value={_search}
                   autoFocus
                 />
               ) : (
@@ -140,6 +154,12 @@ export default function Main({
               {optionHOC(x)}
             </div>
           ))}
+
+          {!options.length && (
+            <div onClick={() => _setSearch('')} style={{ display: 'flex', justifyContent: 'center' }}>
+              <Placeholder style={{ width: '50%', padding: '2rem 2rem' }} empty />
+            </div>
+          )}
         </div>
       )}
     </div>

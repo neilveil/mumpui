@@ -5,8 +5,7 @@ import * as snippets from './snippets'
 import data from 'data'
 
 export default function Main() {
-  const [value, setValue] = useState<(typeof data.countries)[0] | undefined>(data.countries[0])
-  const [valueNative, setValueNative] = useState('india')
+  const [value, setValue] = useState('india')
 
   return (
     <Docs name='select'>
@@ -53,11 +52,7 @@ export default function Main() {
 
       <Docs.Showcase title='⭐ Native select component' code={snippets.s2}>
         <Field label='Native Select' style={{ maxWidth: '15rem' }}>
-          <Select.Native
-            options={data.countries}
-            value={valueNative}
-            onChange={valueNative => setValueNative(valueNative)}
-          />
+          <Select.Native options={data.countries} value={value} onChange={valueNative => setValue(valueNative)} />
         </Field>
       </Docs.Showcase>
 
