@@ -56,7 +56,7 @@ export default {
       'The Dashboard component provides a structured layout for managing and visualizing data, offering an organized view of key metrics and insights.',
     link: '/docs/dashboard',
     keywords: ['dashboard', 'data-management', 'crud-operations', 'user-roles'],
-    related: ['table', 'list', 'pagination', 'chain', 'theme'],
+    related: ['menu', 'table', 'list', 'pagination', 'chain', 'theme'],
     img: ''
   },
   typography: {

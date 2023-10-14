@@ -165,12 +165,8 @@ import "mumpui/styles/dashboard-buttons.scss"
 export const globalConfig = `
 <MumpUI
   dashboard={{
-    // Usage same as props
-    sidebarImg: '',
-    sidebarPrefix: '',
-    sidebarBasePath: '',
-    sidebarItems: [],
-    onSidebarClick: (key) => {}
+    // Use a common sidebar on all dashboard pages
+    sidebar: {<div> .. </div>}
   }}
 />
 `

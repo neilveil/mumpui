@@ -54,15 +54,7 @@ export default function Main() {
       <Docs.Props
         title='Sidebar'
         type='component'
-        fields={[
-          { name: 'sidebarImg', type: 'boolean', usage: 'Sidebar image' },
-          { name: 'sidebarItems', type: 'array', usage: 'Sidebar items list, check example above' },
-          { name: 'onSidebarClick', type: 'function', usage: 'Sidebar item click callback' },
-          { name: 'sidebarAccess', type: 'array', usage: 'Array of strings of sidebar keys to be visible' },
-          { name: 'sidebarPrefix', type: 'any', usage: 'Content to be rendered at the top in the sidebar' },
-          { name: 'sidebarClassName', type: 'string' },
-          { name: 'sidebarStyle', type: 'object' }
-        ]}
+        fields={[{ name: 'sidebar', type: 'jsx', usage: 'Sidebar element' }]}
       />
 
       <Docs.Props
@@ -107,21 +99,6 @@ export default function Main() {
           { name: 'footerStyle', type: 'object' }
         ]}
       />
-
-      <Docs.Props
-        title='Pagination'
-        type='component'
-        fields={[
-          { name: 'paginationPageSize', type: 'number' },
-          { name: 'paginationTotalItems', type: 'number' },
-          { name: 'paginationOffset', type: 'number' },
-          { name: 'paginationOnChange', type: 'function' }
-        ]}
-      />
-
-      <Docs.Info>
-        Usage similar to <Link to='/docs/pagination'>Pagination</Link> component.
-      </Docs.Info>
 
       <Docs.Showcase title='Dashboard component global configuration' code={snippets.globalConfig} onlyCode />
       <Docs.Setup />

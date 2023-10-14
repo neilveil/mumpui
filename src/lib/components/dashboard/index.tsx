@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Button from '../button'
 import Input from '../input'
-import Pagination from '../pagination'
 import Loader from '../loader'
 import Placeholder from '../placeholder'
 
@@ -9,14 +8,6 @@ declare global {
   interface Window {
     toggleSidebar: any
   }
-}
-
-export interface sidebarItem {
-  icon?: any
-  name: any
-  path?: string
-  next?: sidebarItem[]
-  access?: string | string[]
 }
 
 interface props {
@@ -50,22 +41,12 @@ interface props {
   onCancel?: () => void
   footerClassName?: string
   footerStyle?: React.CSSProperties
-  // pagination
-  paginationPageSize?: number
-  paginationTotalItems?: number
-  paginationOffset?: number
-  paginationOnChange?: (offset: number) => void
   // Backward navigation arrow
   minBackNavWidth?: number
 }
 
-Main.sidebarImg = ''
-Main.sidebarPrefix = ''
-Main.sidebarBasePath = ''
-const SidebarItems: sidebarItem[] = []
-Main.sidebarItems = SidebarItems
-const OnSidebarClick: (path: string) => void = () => {}
-Main.onSidebarClick = OnSidebarClick
+const _sidebar: any = null
+Main.sidebar = _sidebar
 Main.minBackNavWidth = 0
 Main.width = '1366px'
 
@@ -92,6 +73,8 @@ export default function Main(props: props) {
     return () => window.removeEventListener('keyup', focusSearch)
   }, [])
 
+  const sidebar = props.sidebar !== undefined ? props.sidebar : Main.sidebar
+
   return (
     <div
       className={'mumpui mp-dashboard ' + (props.className || '')}
@@ -103,13 +86,13 @@ export default function Main(props: props) {
         </div>
       )}
 
-      {!!props.sidebar && (
+      {!!sidebar && (
         <>
-          <div className='mp-dashboard-sidebar'>{props.sidebar}</div>
+          <div className='mp-dashboard-sidebar'>{sidebar}</div>
 
           {!!expandable && (
             <div className='mp-dashboard-expandable' onClick={() => toggleSidebar()}>
-              <div onClick={e => e.stopPropagation()}>{props.sidebar}</div>
+              <div onClick={e => e.stopPropagation()}>{sidebar}</div>
             </div>
           )}
         </>
@@ -124,7 +107,7 @@ export default function Main(props: props) {
               <div className='mp-dashboard-header-left'>
                 {!!props.icon && <div className='mp-dashboard-icon'>{props.icon}</div>}
 
-                {!!props.sidebar && (
+                {!!sidebar && (
                   <div className='mp-dashboard-expandable-icon' onClick={toggleSidebar}>
                     {menuIcon}
                   </div>
@@ -175,24 +158,9 @@ export default function Main(props: props) {
           )}
         </div>
 
-        {(!!props.footer ||
-          !!props.paginationTotalItems ||
-          !!props.onDelete ||
-          !!props.onCreate ||
-          !!props.onUpdate) && (
+        {(!!props.footer || !!props.onDelete || !!props.onCreate || !!props.onUpdate) && (
           <div className={'mp-dashboard-footer ' + (props.footerClassName || '')} style={props.footerStyle || {}}>
             {!!props.footer && props.footer}
-
-            <div className='mp-dashboard-pagination'>
-              {!!props.paginationTotalItems && (
-                <Pagination
-                  pageSize={props.paginationPageSize || 0}
-                  totalItems={props.paginationTotalItems}
-                  offset={props.paginationOffset || 0}
-                  onChange={props.paginationOnChange || (() => {})}
-                />
-              )}
-            </div>
 
             <div className='mp-dashboard-footer-buttons'>
               <div>

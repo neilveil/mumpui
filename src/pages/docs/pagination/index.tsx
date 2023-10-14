@@ -11,7 +11,7 @@ export default function Main() {
   return (
     <Docs name='pagination'>
       <Docs.Showcase code={snippets.s1}>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div style={{ display: 'flex' }}>
           <Pagination
             pageSize={pageSize}
             totalItems={totalItems}

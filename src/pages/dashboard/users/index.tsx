@@ -1,5 +1,5 @@
 import data from 'data'
-import { Dashboard, Message, Table } from 'lib'
+import { Dashboard, Message, Pagination, Table } from 'lib'
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
@@ -33,15 +33,16 @@ export default function Main() {
         </div>
       }
       //
-      // onCreate={() => {}}
-      // onDelete={() => {}}
-      //
-      paginationPageSize={pageSize}
-      paginationTotalItems={users.length}
-      paginationOffset={offset}
-      paginationOnChange={offset => setOffset(offset)}
-      //
       sidebar={data.DashboardSidebar({})}
+      //
+      footer={
+        <Pagination
+          pageSize={pageSize}
+          totalItems={users.length}
+          offset={offset}
+          onChange={offset => setOffset(offset)}
+        />
+      }
     >
       <Table
         cols={[

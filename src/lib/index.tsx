@@ -1,5 +1,5 @@
 import Confirm from './components/confirm'
-import Dashboard, { sidebarItem } from './components/dashboard'
+import Dashboard from './components/dashboard'
 import Form from './components/form'
 import Message from './components/message'
 import Tooltip from './components/tooltip'
@@ -45,11 +45,7 @@ type message = {
 }
 
 type dashboard = {
-  sidebarImg?: string
-  sidebarPrefix?: any
-  sidebarBasePath?: string
-  sidebarItems?: sidebarItem[]
-  onSidebarClick?: (path: string) => void
+  sidebar?: any
   minBackNavWidth?: number
   width?: string
 }
@@ -69,11 +65,7 @@ const MumpUI = ({ tooltip, form, message, dashboard }: props) => {
   if (message && message.max !== undefined) Message.max = message.max
   if (message && message.duration !== undefined) Message.duration = message.duration
 
-  if (dashboard && dashboard.sidebarImg !== undefined) Dashboard.sidebarImg = dashboard.sidebarImg
-  if (dashboard && dashboard.sidebarPrefix !== undefined) Dashboard.sidebarPrefix = dashboard.sidebarPrefix
-  if (dashboard && dashboard.sidebarBasePath !== undefined) Dashboard.sidebarBasePath = dashboard.sidebarBasePath
-  if (dashboard && dashboard.sidebarItems !== undefined) Dashboard.sidebarItems = dashboard.sidebarItems
-  if (dashboard && dashboard.onSidebarClick !== undefined) Dashboard.onSidebarClick = dashboard.onSidebarClick
+  if (dashboard && dashboard.sidebar !== undefined) Dashboard.sidebar = dashboard.sidebar
   if (dashboard && dashboard.minBackNavWidth !== undefined) Dashboard.minBackNavWidth = dashboard.minBackNavWidth
   if (dashboard && dashboard.width !== undefined) Dashboard.width = dashboard.width
 

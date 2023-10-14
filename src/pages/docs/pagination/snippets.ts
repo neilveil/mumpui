@@ -5,7 +5,7 @@ const pageSize = 10
 
 ..
 
-<div style={{ display: 'flex', justifyContent: 'center' }}>
+<div>
   <Pagination
     pageSize={pageSize}
     totalItems={totalItems}
