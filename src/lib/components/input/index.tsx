@@ -6,18 +6,30 @@ type props = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'prefix'> & {
   suffix?: any
   onSuffixClick?: () => void
   onValue?: (value: string) => void
-  className?: string
-  style?: React.CSSProperties
+  parentClassName?: string
+  parentStyle?: React.CSSProperties
 }
 
-export default function Main({ prefix, onPrefixClick, suffix, onSuffixClick, onValue, onChange, ...props }: props) {
+export default function Main({
+  prefix,
+  onPrefixClick,
+  suffix,
+  onSuffixClick,
+  onValue,
+  onChange,
+  parentClassName = '',
+  parentStyle = {},
+  ...props
+}: props) {
+  parentClassName = 'mumpui mp-input ' + parentClassName
+
   const _onChange = (e: any) => {
     if (onChange) onChange(e)
     if (onValue) onValue(e.target.value)
   }
 
   return (
-    <div className='mumpui mp-input'>
+    <div className={parentClassName} style={parentStyle}>
       {prefix && (
         <div className='mp-prefix' onClick={onPrefixClick} style={{ cursor: onPrefixClick ? 'pointer' : '' }}>
           {prefix}

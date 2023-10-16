@@ -3,9 +3,20 @@ import React, { useCallback, useEffect, useRef } from 'react'
 type props = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
   autoHeight?: boolean
   onValue?: (value: string) => void
+  parentClassName?: string
+  parentStyle?: React.CSSProperties
 }
 
-export default function Main({ autoHeight, onValue, onChange, ...props }: props) {
+export default function Main({
+  autoHeight,
+  onValue,
+  onChange,
+  parentClassName = '',
+  parentStyle = {},
+  ...props
+}: props) {
+  parentClassName = 'mumpui mp-textarea ' + parentClassName
+
   const ref: any = useRef()
 
   const setHeight = useCallback(
@@ -32,7 +43,7 @@ export default function Main({ autoHeight, onValue, onChange, ...props }: props)
   }
 
   return (
-    <div className='mumpui mp-textarea'>
+    <div className={parentClassName} style={parentStyle}>
       <textarea {...props} ref={ref} onChange={_onChange} />
     </div>
   )

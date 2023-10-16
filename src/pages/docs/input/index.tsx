@@ -88,7 +88,9 @@ export default function Main() {
                 <code>e.target.value</code>
               </span>
             )
-          }
+          },
+          { name: 'parentClassName', type: 'string', usage: 'To add class on wrapper div' },
+          { name: 'parentStyle', type: 'object', usage: 'To add styling on wrapper div' }
         ]}
       />
     </Docs>

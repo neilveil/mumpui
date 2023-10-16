@@ -29,7 +29,9 @@ export default function Main() {
             name: 'autoHeight',
             type: 'boolean',
             usage: 'To automatically increase height with content'
-          }
+          },
+          { name: 'parentClassName', type: 'string', usage: 'To add class on wrapper div' },
+          { name: 'parentStyle', type: 'object', usage: 'To add styling on wrapper div' }
         ]}
       />
     </Docs>
