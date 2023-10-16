@@ -11,15 +11,15 @@ type item = {
   [key: string]: any
 }
 
-type props = Omit<React.HTMLAttributes<HTMLDivElement>, 'onClick'> & {
+type props = Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> & {
   active?: string
-  onClick?: (item: item) => void
+  onChange?: (key: string) => void
   items?: item[]
   access?: string | string[]
   basePath?: string
 }
 
-export default function Main({ active, onClick, items = [], access, basePath = '', className = '', ...props }: props) {
+export default function Main({ active, onChange, items = [], access, basePath = '', className = '', ...props }: props) {
   className = 'mumpui mp-menu ' + className
 
   const rerender = useState(false)
@@ -30,7 +30,7 @@ export default function Main({ active, onClick, items = [], access, basePath = '
         <MenuItem
           key={i}
           active={active}
-          onClick={onClick}
+          onClick={onChange}
           item={item}
           access={access}
           basePath={basePath}
@@ -58,7 +58,7 @@ function MenuItem({
   rerender
 }: {
   active?: string
-  onClick?: (key: item) => void
+  onClick?: (key: string) => void
   item: item
   access?: string | string[]
   basePath: string
@@ -83,7 +83,7 @@ function MenuItem({
 
   const _onClick = () => {
     if (isExpandable) setExpanded(!expanded)
-    else onClick(item)
+    else onClick(item.key || '')
 
     // To fix: If parent component is not updated while using menu for navigation, then the selected item in the menu doesn't update
     rerender[1](!rerender[0])

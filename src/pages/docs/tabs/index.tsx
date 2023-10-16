@@ -10,7 +10,7 @@ export default function Main() {
   return (
     <Docs name='tabs'>
       <Docs.Showcase code={snippets.s1}>
-        <Tabs items={data.tabs} active={active} onClick={(active: any) => setActive(active)} />
+        <Tabs items={data.tabs} active={active} onChange={active => setActive(active)} />
       </Docs.Showcase>
 
       <Docs.Props
@@ -20,7 +20,7 @@ export default function Main() {
           { name: '..', usage: 'All div element props' },
           { name: 'items', type: 'array', usage: 'Array of items' },
           { name: 'active', type: 'string', usage: 'Active tab key' },
-          { name: 'onClick', type: 'function', usage: 'To set active tab' }
+          { name: 'onChange', type: 'function', usage: 'To set active tab' }
         ]}
       />
 
@@ -31,12 +31,6 @@ export default function Main() {
           { name: 'key', type: 'string', usage: 'Unique string key' },
           { name: 'label', type: 'string', usage: 'Tab label to show' }
         ]}
-      />
-
-      <Docs.Props
-        title='onClick'
-        type='function'
-        fields={[{ name: 'key', type: 'string', usage: 'Clicked tab key' }]}
       />
     </Docs>
   )

@@ -5,14 +5,14 @@ import * as snippets from './snippets'
 import data from 'data'
 
 export default function Main() {
-  const [selected, setSelected] = useState<string | undefined>('home')
+  const [selected, setSelected] = useState('home')
 
   return (
     <Docs name='menu'>
       <Docs.Showcase title='Menu usage for selection' code={snippets.s1}>
         <Menu
           active={selected}
-          onClick={item => setSelected(item.key)}
+          onChange={key => setSelected(key)}
           items={data.menu}
           style={{ width: '100%', maxWidth: '12rem' }}
         />
@@ -40,7 +40,7 @@ export default function Main() {
         fields={[
           { name: '..', usage: 'All div element props' },
           { name: 'active', type: 'string' },
-          { name: 'onClick', type: 'function' },
+          { name: 'onChange', type: 'function' },
           { name: 'items', type: 'array', usage: 'Array of menu item objects' },
           { name: 'basePath', type: 'string', usage: 'Application base path which is also set in the router' }
         ]}

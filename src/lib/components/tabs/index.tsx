@@ -6,14 +6,14 @@ type item = {
   [key: string]: any
 }
 
-type props = Omit<React.HTMLAttributes<HTMLDivElement>, 'onClick'> & {
+type props = Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> & {
   items?: item[]
   active?: string
-  onClick?: (active: string) => void
+  onChange?: (active: string) => void
   className?: string
 }
 
-export default function Main({ items = [], active, onClick, className = '', ...props }: props) {
+export default function Main({ items = [], active, onChange, className = '', ...props }: props) {
   className = 'mumpui mp-tabs ' + className
 
   return (
@@ -24,7 +24,7 @@ export default function Main({ items = [], active, onClick, className = '', ...p
           className={active === key ? 'mp-tab-active' : ''}
           onClick={(e: any) => {
             e.target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
-            if (onClick) onClick(key)
+            if (onChange) onChange(key)
           }}
         >
           {label}

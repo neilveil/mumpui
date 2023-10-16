@@ -33,7 +33,8 @@ export default function Main() {
           { name: 'title', type: 'jsx', usage: 'Modal title' },
           { name: 'buttons', type: 'jsx', usage: 'Modal action buttons' },
           { name: 'visible', type: 'boolean', usage: 'To set the modal visibility' },
-          { name: 'onClose', type: 'function', usage: 'To close modal on background click' }
+          { name: 'onClose', type: 'function', usage: 'To close modal on background click' },
+          { name: 'width', type: 'string', usage: 'To change modal width', defaultValue: '600px' }
         ]}
       />
     </Docs>

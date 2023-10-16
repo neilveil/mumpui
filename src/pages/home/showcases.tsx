@@ -347,7 +347,7 @@ export default {
     Component() {
       const [active, setActive] = useState(data.tabs[0].key)
 
-      return <Tabs items={data.tabs} active={active} onClick={(active: string) => setActive(active)} />
+      return <Tabs items={data.tabs} active={active} onChange={active => setActive(active)} />
     }
   },
   menu: {
@@ -358,7 +358,7 @@ export default {
       return (
         <Menu
           active={selected}
-          onClick={(selected: any) => setSelected(selected)}
+          onChange={(selected: any) => setSelected(selected)}
           items={data.menu}
           style={{ width: '100%', maxWidth: '12rem' }}
         />
