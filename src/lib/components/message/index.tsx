@@ -54,7 +54,9 @@ export default class Main extends React.Component {
   }
 
   static messageCleaner = () =>
-    Main._this.setState({ messages: Main._this.state.messages.filter(x => x.expiry > Date.now()).slice(-Main.max) })
+    Main._this.setState({
+      messages: Main._this.state.messages.slice(-Main.max).filter(x => x.expiry > Date.now())
+    })
 
   componentDidMount = () => (Main._this = this)
 

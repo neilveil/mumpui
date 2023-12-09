@@ -99,11 +99,11 @@ export default class Main extends React.Component {
                   MumpUI{' '}
                   <span style={{ fontSize: '.7rem', color: '#888', fontWeight: 'var(--fw-bold)' }}>{version}</span>
                 </div>
-                <div className={s.info}>
+                <p className={s.info}>
                   A light-weight flexible & elegant
                   <br />
                   design system for developers.
-                </div>
+                </p>
 
                 {/* <div className={s.inspired}>
                   Inspired by&nbsp;
