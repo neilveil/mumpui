@@ -2,6 +2,7 @@
 
 :root {
   --mp-ff-primary: Roboto, sans-serif; // Primary font
+  --mp-line-height: 1.5;
 
   --mp-fw-light: 300; // Font weight light
   --mp-fw-regular: 400; // Font weight regular
@@ -10,10 +11,19 @@
   --base-font-size: 16px; // Base font size for font scaling style sheet
 }
 
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: var(--mp-line-height);
+}
+
 body,
 .mumpui {
   font-family: var(--mp-ff-primary);
-  line-height: 1.5;
 }
 
 .mumpui {

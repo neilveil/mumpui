@@ -48,6 +48,8 @@ import dashboard_users from './dashboard/users'
 import dashboard_users_create from './dashboard/users/create'
 import dashboard_users_update from './dashboard/users/update'
 
+import debug from './debug'
+
 interface route {
   path: string
   component: React.ComponentClass | React.FunctionComponent
@@ -104,7 +106,10 @@ const routes: route[] = [
   { path: '/dashboard/maxWidth', component: dashboard_maxWidth },
   { path: '/dashboard/noSidebar', component: dashboard_noSidebar },
   { path: '/dashboard/loader', component: dashboard_loader },
-  { path: '/dashboard/empty', component: dashboard_empty }
+  { path: '/dashboard/empty', component: dashboard_empty },
+
+  // Debug
+  { path: 'debug', component: debug }
 ]
 
 export default routes
