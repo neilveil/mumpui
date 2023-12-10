@@ -15,7 +15,7 @@ export default function Main({ className = '', label, position = 'top', delay, .
   return (
     <div {...props} className={className}>
       {props.children}
-      <div style={{ animationDelay: delay.toString() + 'ms' }} className={'mp-tooltip-text mp-tooltip-' + position}>
+      <div style={{ animationDelay: delay.toString() + 'ms' }} className={'mp-tooltip-label mp-tooltip-' + position}>
         {label}
       </div>
     </div>

@@ -1,11 +1,11 @@
 .mp-tooltip {
   position: relative;
 
-  &:hover .mp-tooltip-text {
+  &:hover .mp-tooltip-label {
     animation: mp-tooltip-appear 300ms ease forwards;
   }
 
-  .mp-tooltip-text {
+  .mp-tooltip-label {
     white-space: pre;
     background: var(--mp-c-bg);
     border: var(--mp-border-width) solid var(--mp-c-border);
@@ -17,6 +17,7 @@
     opacity: 0;
     z-index: 100;
     box-shadow: var(--mp-pop-up-shadow);
+    pointer-events: none;
   }
 
   @keyframes mp-tooltip-appear {
