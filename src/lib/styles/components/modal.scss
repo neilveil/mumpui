@@ -13,18 +13,26 @@
     width: calc(100% - 2rem);
     max-width: 600px;
     border-radius: var(--mp-border-radius);
-    padding: 1.5rem;
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
     animation: mp-modal-slide-in 200ms ease forwards;
-    overflow: auto;
     max-height: calc(100vh - 8rem);
+    display: flex;
+    flex-direction: column;
+
+    & > div {
+      padding: 1rem 1.25rem;
+    }
 
     .mp-modal-title {
       font-size: 1.125rem;
-      margin-bottom: 1rem;
       color: var(--c-font-dark);
+      border-bottom: var(--border);
+    }
+
+    .mp-modal-content {
+      overflow: auto;
     }
 
     .mp-modal-buttons {
@@ -32,7 +40,7 @@
       align-items: center;
       justify-content: flex-end;
       gap: 1rem;
-      margin-top: 1rem;
+      border-top: var(--border);
     }
   }
 
@@ -67,4 +75,8 @@
   .mp-dashboard-back {
     display: none;
   }
+}
+
+.noScrollbar::-webkit-scrollbar {
+  display: none !important;
 }

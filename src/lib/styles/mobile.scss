@@ -1,0 +1,8 @@
+*,
+:after,
+:before {
+  user-select: none;
+}
+*::-webkit-scrollbar {
+  display: none;
+}

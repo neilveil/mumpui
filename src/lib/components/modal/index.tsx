@@ -6,6 +6,7 @@ type props = React.HTMLAttributes<HTMLDivElement> & {
   visible?: boolean
   onClose?: () => void
   width?: number | string
+  noScrollbar?: boolean
 }
 
 export default function Main({
@@ -17,6 +18,7 @@ export default function Main({
   width,
   style = {},
   className = '',
+  noScrollbar = false,
   ...props
 }: props) {
   const ref: React.Ref<any> = useRef(null)
@@ -33,9 +35,9 @@ export default function Main({
         if (e.target.contains(ref.current) && onClose) onClose()
       }}
     >
-      <div {...props} className={'mp-modal-box ' + className} style={style}>
+      <div {...props} className={`mp-modal-box ${className}`} style={style}>
         {!!title && <div className='mp-modal-title'>{title}</div>}
-        {children}
+        <div className={`mp-modal-content ${noScrollbar ? 'noScrollbar' : ''}`}>{children}</div>
         {!!_buttons.length && <div className='mp-modal-buttons'>{_buttons}</div>}
       </div>
     </div>
