@@ -118,6 +118,20 @@ body {
   }
 }
 
+// Independent of light/dark theme
+.c-black-i {
+  color: black;
+}
+.f-black-i {
+  background-color: black;
+}
+.c-white-i {
+  color: white;
+}
+.f-white-i {
+  background-color: white;
+}
+
 body[data-theme='dark'] {
   @each $key, $value in $dark-colors {
     // Define color
