@@ -79,12 +79,12 @@ function Info({
   title?: boolean
 }) {
   return (
-    <div
+    <p
       className={className + ' ' + s.info}
       style={Object.assign(style, title ? { marginTop: '4rem', fontSize: '1rem', color: 'var(--mp-font-dark)' } : {})}
     >
       {children}
-    </div>
+    </p>
   )
 }
 

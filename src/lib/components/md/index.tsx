@@ -17,6 +17,8 @@ export default function Main({ children = '', className = '', ...props }: props)
   const ref: any = useRef()
 
   useEffect(() => {
+    if (!window.marked) return
+
     ref.current.innerHTML = window.marked.parse(children)
 
     ref.current.querySelectorAll('iframe[data-youtube]').forEach((el: any) => {
@@ -35,7 +37,14 @@ export default function Main({ children = '', className = '', ...props }: props)
     })
 
     ref.current.querySelectorAll('h1,h2,h3,h4,h5,h6').forEach((el: any) => {
-      el.id = el.innerHTML.toString().replaceAll(' ', '-').toLowerCase().trim()
+      el.id = el.innerHTML
+        .toString()
+        .trim()
+        .replaceAll(' ', '-')
+        .toLowerCase()
+        .split('')
+        .filter((x: string) => x.match(/[a-z0-9-]/))
+        .join('')
     })
 
     ref.current.querySelectorAll('a').forEach((el: any) => {
@@ -72,7 +81,11 @@ export default function Main({ children = '', className = '', ...props }: props)
   return <div {...props} className={className} ref={ref}></div>
 }
 
-Main.fetch = async (url: string) => await (await fetch(url)).text()
+Main.fetch = async (url: string, json?: boolean) => {
+  const request = await fetch(url)
+  if (json) return await request.json()
+  else await request.text()
+}
 
 Main.parse = (content: string, delimeter: string = '<!-- meta-break -->') => {
   const meta = content.includes(delimeter)
