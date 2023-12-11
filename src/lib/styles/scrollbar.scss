@@ -6,19 +6,12 @@ body {
   --c-scrollbar-bg: #f8f8f8;
   --c-scrollbar-thumb: #d8d8d8;
   --c-scrollbar-thumb-hover: #b8b8b8;
-
-  *::selection {
-    background: #0002;
-  }
 }
+
 body[data-theme='dark'] {
   --c-scrollbar-bg: #181818;
   --c-scrollbar-thumb: #282828;
   --c-scrollbar-thumb-hover: #484848;
-
-  *::selection {
-    background: #fff2;
-  }
 }
 
 ::-webkit-scrollbar {

@@ -175,3 +175,15 @@ body.mumpui {
   --c-overlay-bg: var(--mp-c-overlay-bg);
   --pop-up-shadow: var(--mp-pop-up-shadow);
 }
+
+// Selection colors
+body {
+  *::selection {
+    background: #0002;
+  }
+}
+body[data-theme='dark'] {
+  *::selection {
+    background: #fff2;
+  }
+}
