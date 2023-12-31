@@ -7,8 +7,8 @@ interface col {
   align?: 'left' | 'center' | 'right'
   wrap?: boolean
   render?: (value: any, x: any, index: [row: number, col: number]) => void
-  style?: React.CSSProperties
   className?: string
+  style?: React.CSSProperties
 }
 
 type props = React.TableHTMLAttributes<HTMLTableElement> & {
@@ -16,13 +16,24 @@ type props = React.TableHTMLAttributes<HTMLTableElement> & {
   data: object[]
   className?: string
   style?: React.CSSProperties
+  parentClassName?: string
+  parentStyle?: React.CSSProperties
 }
 
-export default function Main({ cols, data, className = '', style = {}, ...props }: props) {
+export default function Main({
+  cols,
+  data,
+  className = '',
+  style = {},
+  parentClassName = '',
+  parentStyle = {},
+  ...props
+}: props) {
+  parentClassName = 'mumpui mp-table-wrapper ' + parentClassName
   className = 'mumpui mp-table ' + className
 
   return (
-    <div className='mumpui mp-table-wrapper'>
+    <div className={parentClassName} style={parentStyle}>
       <table className={className} style={style} {...props}>
         <thead>
           <tr>

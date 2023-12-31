@@ -1,7 +1,7 @@
 {
   "name": "mumpui",
   "description": "A light-weight flexible & elegant design system for developers.",
-  "version": "1.4.9",
+  "version": "1.4.10",
   "main": "dist/index.js",
   "author": "neilveil",
   "repository": "neilveil/mumpui",
