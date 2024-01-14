@@ -14,6 +14,7 @@ interface col {
 type props = React.TableHTMLAttributes<HTMLTableElement> & {
   cols: col[]
   data: object[]
+  noHeader?: boolean
   className?: string
   style?: React.CSSProperties
   parentClassName?: string
@@ -23,6 +24,7 @@ type props = React.TableHTMLAttributes<HTMLTableElement> & {
 export default function Main({
   cols,
   data,
+  noHeader,
   className = '',
   style = {},
   parentClassName = '',
@@ -35,24 +37,26 @@ export default function Main({
   return (
     <div className={parentClassName} style={parentStyle}>
       <table className={className} style={style} {...props}>
-        <thead>
-          <tr>
-            {cols.map((x, i) => (
-              <th
-                key={i}
-                align={x.align || 'left'}
-                style={Object.assign(
-                  x.style ? x.style : {},
-                  x.width ? { width: x.width } : {},
-                  x.wrap ? { whiteSpace: 'normal' } : {}
-                )}
-                className={x.className || ''}
-              >
-                {x.name}
-              </th>
-            ))}
-          </tr>
-        </thead>
+        {!noHeader && (
+          <thead>
+            <tr>
+              {cols.map((x, i) => (
+                <th
+                  key={i}
+                  style={Object.assign(
+                    x.style ? x.style : {},
+                    x.width ? { width: x.width } : {},
+                    x.align ? { textAlign: x.align } : {},
+                    x.wrap ? { whiteSpace: 'normal' } : {}
+                  )}
+                  className={x.className || ''}
+                >
+                  {x.name}
+                </th>
+              ))}
+            </tr>
+          </thead>
+        )}
 
         <tbody>
           {data.map((x: any, i) => (
