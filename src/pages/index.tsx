@@ -26,6 +26,7 @@ import docs_multiSelect from './docs/multiSelect'
 import docs_note from './docs/note'
 import docs_pagination from './docs/pagination'
 import docs_placeholder from './docs/placeholder'
+import docs_progress from './docs/progress'
 import docs_radio from './docs/radio'
 import docs_range from './docs/range'
 import docs_search from './docs/search'
@@ -85,6 +86,7 @@ const routes: route[] = [
   { path: '/docs/note', component: docs_note },
   { path: '/docs/pagination', component: docs_pagination },
   { path: '/docs/placeholder', component: docs_placeholder },
+  { path: '/docs/progress', component: docs_progress },
   { path: '/docs/radio', component: docs_radio },
   { path: '/docs/range', component: docs_range },
   { path: '/docs/search', component: docs_search },

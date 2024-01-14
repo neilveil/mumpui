@@ -8,7 +8,7 @@ const [value, setValue] = useState('10')
 >
   <Range
     value={value}
-    onValud={value => setValue(value)}
+    onValue={value => setValue(value)}
     step={5}
   />
 </Field>

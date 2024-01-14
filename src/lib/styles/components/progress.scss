@@ -1,0 +1,13 @@
+.mp-progress {
+  position: fixed;
+  background-color: var(--mp-c-light);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 8px;
+
+  & > div {
+    background-color: var(--c-blue);
+    height: 8px;
+  }
+}

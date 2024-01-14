@@ -176,7 +176,7 @@ export default {
       'The Loader component visually indicates that a process is in progress, providing feedback to users while data or content is being loaded.',
     link: '/docs/loader',
     keywords: ['loader', 'loading-indicator', 'progress-indicator', 'loading-animation', 'process'],
-    related: ['placeholder', 'dashboard'],
+    related: ['progress', 'placeholder', 'dashboard'],
     img: ''
   },
   menu: {
@@ -257,7 +257,17 @@ export default {
       'The Placeholder component creates visual space and structure for content that is yet to be populated, ensuring a clean and organized layout.',
     link: '/docs/placeholder',
     keywords: ['placeholder', 'temporary-content', 'filler-content', 'empty', 'no-data'],
-    related: ['loader', 'dashboard'],
+    related: ['loader', 'progress', 'dashboard'],
+    img: ''
+  },
+  progress: {
+    type: 'Component',
+    name: 'Progress',
+    description:
+      'The Progress component provides a visual indicator of the progress of a task or process, offering feedback to users on the completion status.',
+    link: '/docs/progress',
+    keywords: ['progress', 'progress-bar', 'loading', 'progress-indicator', 'status'],
+    related: ['loader', 'placeholder', 'dashboard'],
     img: ''
   },
   radio: {

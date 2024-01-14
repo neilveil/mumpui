@@ -26,6 +26,7 @@ export default [
       showcases.list,
       showcases.table,
       showcases.loader,
+      showcases.progress,
       showcases.placeholder,
       showcases.divider,
       showcases.chain,

@@ -251,6 +251,24 @@ export default {
       return <Loader />
     }
   },
+  progress: {
+    ...metagraph.progress,
+    Component() {
+      return (
+        <div
+          style={{
+            position: 'relative',
+            backgroundColor: 'var(--c-light)',
+            height: 8,
+            borderRadius: '1rem',
+            overflow: 'hidden'
+          }}
+        >
+          <div style={{ height: 8, backgroundColor: 'var(--c-blue)', width: '40%', position: 'absolute' }}></div>
+        </div>
+      )
+    }
+  },
   placeholder: {
     ...metagraph.placeholder,
     Component() {
