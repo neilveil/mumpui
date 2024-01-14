@@ -16,7 +16,8 @@ export default function Main() {
         fields={[
           { name: '..', usage: 'All table element props' },
           { name: 'cols', type: 'array', usage: 'Columns config' },
-          { name: 'data', type: 'array', usage: 'Table data' }
+          { name: 'data', type: 'array', usage: 'Table data' },
+          { name: 'noHeader', type: 'boolean', usage: 'Do not show table header row' }
         ]}
       />
 

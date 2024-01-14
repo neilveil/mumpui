@@ -29,6 +29,18 @@
       font-size: 1rem;
       color: var(--c-font-dark);
       border-bottom: var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+
+      svg {
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
     }
 
     .mp-modal-content {
@@ -38,9 +50,14 @@
     .mp-modal-buttons {
       display: flex;
       align-items: center;
-      justify-content: flex-end;
-      gap: 1rem;
+      justify-content: space-between;
       border-top: var(--border);
+
+      & > div {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
     }
   }
 

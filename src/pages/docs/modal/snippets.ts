@@ -5,7 +5,16 @@ const [visible, setVisible] = useState(false)
 
 <Modal
   title='Demo Modal'
-  buttons={<Button onClick={() => setVisible(false)}>Close</Button>}
+  leftButtons={[
+    <Button key='close' onClick={() => setVisible(false)}>
+      Close
+    </Button>
+  ]}
+  buttons={[
+    <Button key='done' className='f-green c-bg' onClick={() => setVisible(false)}>
+      Done
+    </Button>
+  ]}
   visible={visible}
   onClose={() => setVisible(false)}
 >

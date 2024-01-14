@@ -13,11 +13,16 @@ export default function Main() {
 
         <Modal
           title='Demo Modal'
-          buttons={
+          leftButtons={[
             <Button key='close' onClick={() => setVisible(false)}>
               Close
             </Button>
-          }
+          ]}
+          buttons={[
+            <Button key='done' className='f-green c-bg' onClick={() => setVisible(false)}>
+              Done
+            </Button>
+          ]}
           visible={visible}
           onClose={() => setVisible(false)}
         >
@@ -34,7 +39,9 @@ export default function Main() {
           { name: 'buttons', type: 'jsx', usage: 'Modal action buttons' },
           { name: 'visible', type: 'boolean', usage: 'To set the modal visibility' },
           { name: 'onClose', type: 'function', usage: 'To close modal on background click' },
-          { name: 'width', type: 'string', usage: 'To change modal width', defaultValue: '600px' }
+          { name: 'width', type: 'string', usage: 'To change modal width', defaultValue: '600px' },
+          { name: 'noScrollbar', type: 'boolean', usage: 'Hide scrollbar on scrollable modals', defaultValue: 'false' },
+          { name: 'noCross', type: 'boolean', usage: 'Hide cross icon from modal header', defaultValue: 'false' }
         ]}
       />
     </Docs>
