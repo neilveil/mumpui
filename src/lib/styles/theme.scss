@@ -98,22 +98,49 @@ body {
 
     // Font color class
     .c-#{$key} {
-      color: #{$value};
+      color: var(--c-#{$key});
     }
 
     // Backgroun color class
     .f-#{$key} {
-      background-color: #{$value};
+      background-color: var(--c-#{$key});
     }
 
     // Solid border class
     .b-#{$key} {
-      border: var(--mp-border-width) solid #{$value};
+      border: var(--mp-border-width) solid var(--c-#{$key});
     }
 
     // Dashed border class
     .d-#{$key} {
-      border: var(--mp-border-width) dashed #{$value};
+      border: var(--mp-border-width) dashed var(--c-#{$key});
+    }
+  }
+}
+
+body[data-theme='dark'] {
+  @each $key, $value in $dark-colors {
+    // Define color
+    --mp-c-#{$key}: #{$value};
+
+    // Font color class
+    .c-#{$key} {
+      color: var(--c-#{$key});
+    }
+
+    // Backgroun color class
+    .f-#{$key} {
+      background-color: var(--c-#{$key});
+    }
+
+    // Solid border class
+    .b-#{$key} {
+      border: var(--mp-border-width) solid var(--c-#{$key});
+    }
+
+    // Dashed border class
+    .d-#{$key} {
+      border: var(--mp-border-width) dashed var(--c-#{$key});
     }
   }
 }
@@ -130,33 +157,6 @@ body {
 }
 .f-white-i {
   background-color: white;
-}
-
-body[data-theme='dark'] {
-  @each $key, $value in $dark-colors {
-    // Define color
-    --mp-c-#{$key}: #{$value};
-
-    // Font color class
-    .c-#{$key} {
-      color: #{$value};
-    }
-
-    // Backgroun color class
-    .f-#{$key} {
-      background-color: #{$value};
-    }
-
-    // Solid border class
-    .b-#{$key} {
-      border: var(--mp-border-width) solid #{$value};
-    }
-
-    // Dashed border class
-    .d-#{$key} {
-      border: var(--mp-border-width) dashed #{$value};
-    }
-  }
 }
 
 body {
