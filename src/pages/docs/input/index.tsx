@@ -15,7 +15,7 @@ export default function Main() {
             value={input}
             onChange={e => setInput(e.target.value)}
             placeholder='Type something..'
-            style={{ maxWidth: '15rem', margin: 'auto' }}
+            parentStyle={{ maxWidth: '15rem', margin: 'auto' }}
           />
         </div>
       </Docs.Showcase>

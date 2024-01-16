@@ -72,6 +72,8 @@
     color: var(--c-font-dark);
     text-align: right;
     user-select: none;
+    display: flex;
+    justify-content: flex-end;
 
     div {
       background: var(--c-light);

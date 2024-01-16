@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 
 type item = {
   key: string
@@ -16,14 +16,33 @@ type props = Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> & {
 export default function Main({ items = [], active, onChange, className = '', ...props }: props) {
   className = 'mumpui mp-tabs ' + className
 
+  // If init is not used, then the page will automatically scroll to tabs component on load
+  const init = useRef(false)
+
+  useEffect(() => {
+    const tabEl = document.querySelector(`div[data-mp-tab-key='${active}']`)
+
+    if (tabEl)
+      setTimeout(() => {
+        if (init.current)
+          tabEl.scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest',
+            inline: 'center'
+          })
+
+        init.current = true
+      }, 0)
+  }, [active])
+
   return (
     <div {...props} className={className}>
       {items.map(({ key, label }, i) => (
         <div
           key={i}
+          data-mp-tab-key={key}
           className={active === key ? 'mp-tab-active' : ''}
-          onClick={(e: any) => {
-            e.target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
+          onClick={() => {
             if (onChange) onChange(key)
           }}
         >

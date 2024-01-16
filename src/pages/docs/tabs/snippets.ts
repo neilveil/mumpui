@@ -8,7 +8,7 @@ const [active, setActive] = useState("${data.tabs[0].key}")
 <Tabs
   items={tabs}
   active={active}
-  onClick={(active) => setActive(active)}
+  onChange={(active) => setActive(active)}
 />
 
 ..
