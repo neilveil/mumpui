@@ -48,7 +48,7 @@ type radio = {
   disabled?: boolean
 }
 
-export function Radio(props: radio) {
+function Radio(props: radio) {
   return (
     <div className='mp-radio'>
       <label>
