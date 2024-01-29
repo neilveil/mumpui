@@ -1,7 +1,7 @@
 import React from 'react'
 
 type props = React.InputHTMLAttributes<HTMLDivElement> & {
-  label?: string
+  label?: string | JSX.Element
   className?: string
   style?: React.CSSProperties
 }
