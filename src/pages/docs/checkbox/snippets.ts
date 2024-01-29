@@ -29,6 +29,10 @@ const countries = ${JSON.stringify(data.countries, null, 2)}
 `
 
 export const s3 = `
+const [value, setValue] = useState(['india'])
+
+..
+
 <Checkboxes
   checked={value}
   options={countries}
