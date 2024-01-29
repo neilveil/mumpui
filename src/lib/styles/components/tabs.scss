@@ -10,14 +10,14 @@
   }
 
   & > div {
-    padding: 10px 20px;
+    padding: 0.5rem 1rem;
     white-space: pre;
     cursor: pointer;
     border-bottom: 2px solid transparent;
     transition: var(--transition);
     position: relative;
     text-align: center;
-    font-size: 16px;
+    font-size: 0.9rem;
 
     &:hover {
       color: var(--mp-c-primary);
@@ -27,7 +27,7 @@
   .mp-tab-active {
     color: var(--mp-c-primary);
     border-color: var(--mp-c-primary);
-    font-weight: var(--mp-semi-bold);
+    font-weight: var(--mp-fw-bold);
 
     // &::after {
     //   position: absolute;
