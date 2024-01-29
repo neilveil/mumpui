@@ -1,4 +1,9 @@
-// .mp-checkboxes {}
+.mp-checkboxes,
+.mp-radios {
+  label {
+    margin-right: 2rem;
+  }
+}
 
 .mp-checkbox,
 .mp-radio {
@@ -8,8 +13,6 @@
   position: relative;
 
   label {
-    margin-right: 2rem;
-
     &:hover > .mp-checkbox-icon,
     &:hover > .mp-radio-icon {
       background: var(--mp-c-light);
@@ -102,4 +105,31 @@
     display: inline-flex;
     align-items: center;
   }
+}
+
+.mp-grid-1,
+.mp-grid-2,
+.mp-grid-3,
+.mp-grid-4 {
+  display: grid;
+
+  label {
+    margin-right: 0;
+  }
+}
+
+.mp-grid-1 {
+  grid-template-columns: 1fr;
+}
+
+.mp-grid-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.mp-grid-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.mp-grid-4 {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }

@@ -187,3 +187,8 @@ body[data-theme='dark'] {
     background: #fff2;
   }
 }
+
+// Dark theme scrollbar
+:root:has(body[data-theme='dark']) {
+  color-scheme: dark;
+}

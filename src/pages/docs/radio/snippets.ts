@@ -22,10 +22,10 @@ const [value, setValue] = useState('india')
 ..
 
 <Radio
-  style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}
   checked={value}
   options={countries}
   onChange={value => setValue(value)}
+  className='mp-grid-2'
 />
 
 ..

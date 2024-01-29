@@ -13,12 +13,7 @@ export default function Main() {
       </Docs.Showcase>
 
       <Docs.Showcase title='Evenly distributed' code={snippets.s2}>
-        <Radio
-          style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}
-          checked={value}
-          options={countries}
-          onChange={value => setValue(value)}
-        />
+        <Radio checked={value} options={countries} onChange={value => setValue(value)} className='mp-grid-2' />
       </Docs.Showcase>
 
       <Docs.Props

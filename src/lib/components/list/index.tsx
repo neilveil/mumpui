@@ -1,16 +1,16 @@
 import React from 'react'
 
-type items = string | JSX.Element | items[]
+type item = string | JSX.Element | item[]
 type type = 'ul' | 'ol'
 
 type props = React.HTMLAttributes<HTMLUListElement> & {
-  items?: items[]
+  items?: item[]
   type?: 'ul' | 'ol'
 }
 
-function ListMaker({ items = [], type = 'ul', isTop = false }: { items: items[]; type: type; isTop: boolean }) {
-  const list = items.map((x: items, i: number) =>
-    typeof x === 'string' ? <li key={i}>{x}</li> : <ListMaker key={i} items={x} type={type} isTop={false} />
+function ListMaker({ items = [], type = 'ul', isTop = false }: { items: item[]; type: type; isTop: boolean }) {
+  const list = items.map((x: item, i: number) =>
+    Array.isArray(x) ? <ListMaker key={i} items={x} type={type} isTop={false} /> : <li key={i}>{x}</li>
   )
 
   if (isTop) return <>{list}</>

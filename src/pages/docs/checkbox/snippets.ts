@@ -30,10 +30,10 @@ const countries = ${JSON.stringify(data.countries, null, 2)}
 
 export const s3 = `
 <Checkboxes
-  style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}
   checked={value}
   options={countries}
   onChange={value => setValue(value)}
+  className='mp-grid-2'
 />
 
 ..

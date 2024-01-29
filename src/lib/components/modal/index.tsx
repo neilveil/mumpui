@@ -32,6 +32,9 @@ export default function Main({
 
   if (width) style.maxWidth = width
 
+  if (visible) document.body.style.overflow = 'hidden'
+  else document.body.style.overflow = ''
+
   return visible ? (
     <div
       className='mumpui mp-modal'

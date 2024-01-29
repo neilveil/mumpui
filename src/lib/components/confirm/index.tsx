@@ -41,6 +41,9 @@ export default class Main extends React.Component {
   componentDidMount = () => (Main._this = this)
   close = (id: number) => this.setState({ data: this.state.data.filter(x => x.id !== id) })
   render = () => {
+    if (this.state.data.length) document.body.style.overflow = 'hidden'
+    else document.body.style.overflow = ''
+
     return this.state.data.map((x, i) => (
       <div
         key={i}
