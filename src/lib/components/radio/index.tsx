@@ -2,7 +2,7 @@ import React from 'react'
 
 type option = {
   key: string
-  label: string
+  label: string | JSX.Element
   [key: string]: any
 }
 
@@ -43,7 +43,7 @@ export default function Main({
 type radio = {
   checked: boolean
   _key: string
-  label: string
+  label: string | JSX.Element
   onChange: (key: string) => void
   disabled?: boolean
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 
 type props = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange'> & {
-  label?: string
+  label?: string | JSX.Element
   checked?: boolean
   onChange?: (checked: boolean) => void
   disabled?: boolean

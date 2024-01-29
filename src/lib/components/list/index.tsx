@@ -1,6 +1,6 @@
 import React from 'react'
 
-type items = string | items[]
+type items = string | JSX.Element | items[]
 type type = 'ul' | 'ol'
 
 type props = React.HTMLAttributes<HTMLUListElement> & {

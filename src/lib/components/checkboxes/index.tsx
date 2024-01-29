@@ -3,7 +3,7 @@ import Checkbox from '../checkbox'
 
 type option = {
   key: string
-  label: string
+  label: string | JSX.Element
   [key: string]: any
 }
 
