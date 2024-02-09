@@ -48,6 +48,7 @@ export default class Main extends React.Component {
         onClick={e => {
           e.stopPropagation()
           this.close(x.id)
+          if (x.onCancel) x.onCancel()
         }}
       >
         <div className='mp-confirm-dialog' onClick={e => e.stopPropagation()}>
