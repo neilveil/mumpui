@@ -8,11 +8,9 @@ type props = React.HTMLAttributes<HTMLDivElement> & {
 export default function Main({ percent, className = '', ...props }: props) {
   className = `mumpui mp-progress ${className}`
 
-  return (
-    !!percent && (
-      <div {...props} className={className}>
-        <div style={{ width: percent + '%' }}></div>
-      </div>
-    )
-  )
+  return percent ? (
+    <div {...props} className={className}>
+      <div style={{ width: percent + '%' }}></div>
+    </div>
+  ) : null
 }
