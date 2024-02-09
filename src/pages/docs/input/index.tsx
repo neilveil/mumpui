@@ -20,7 +20,19 @@ export default function Main() {
         </div>
       </Docs.Showcase>
 
-      <Docs.Showcase title={<span>Different input type fields</span>} code={snippets.s2}>
+      <Docs.Showcase code={snippets.s2}>
+        <div>
+          <Input
+            value={input}
+            onValue={value => setInput(value)}
+            maxLength={50}
+            placeholder='Type something..'
+            parentStyle={{ maxWidth: '15rem', margin: 'auto' }}
+          />
+        </div>
+      </Docs.Showcase>
+
+      <Docs.Showcase title={<span>Different input type fields</span>} code={snippets.s3}>
         <Fields>
           <Field label='Text'>
             <Input type='text' placeholder='Enter mobile..' />
@@ -57,7 +69,7 @@ export default function Main() {
         experience.
       </Docs.Info>
 
-      <Docs.Showcase title='Prefix & suffix' code={snippets.s3}>
+      <Docs.Showcase title='Prefix & suffix' code={snippets.s4}>
         <Fields>
           <Input placeholder='Enter number..' prefix={'91'} />
 
@@ -89,6 +101,7 @@ export default function Main() {
               </span>
             )
           },
+          { name: 'maxLength', type: 'number', usage: 'Maximum characters allowed' },
           { name: 'parentClassName', type: 'string', usage: 'To add class on wrapper div' },
           { name: 'parentStyle', type: 'object', usage: 'To add styling on wrapper div' }
         ]}

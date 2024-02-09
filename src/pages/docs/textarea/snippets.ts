@@ -22,3 +22,17 @@ const [value, setValue] = useState('Hello there,\\nHow are you?\\nThis is the 3r
   </Field>
 </Fields>
 `
+
+export const s2 = `
+const [value, setValue] = useState('Hello there,\\nHow are you?\\nThis is the 3rd row.')
+
+..
+
+<Textarea
+  value={value}
+  onValue={value => setValue(value)}
+  maxLength={50}
+  placeholder='Type here..'
+  autoHeight
+/>
+`

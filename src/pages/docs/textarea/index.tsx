@@ -20,6 +20,20 @@ export default function Main() {
         </Fields>
       </Docs.Showcase>
 
+      <Docs.Showcase code={snippets.s2}>
+        <Fields className='col-in-mob'>
+          <Field label='Textarea'>
+            <Textarea
+              value={value}
+              onValue={value => setValue(value)}
+              maxLength={50}
+              placeholder='Type here..'
+              autoHeight
+            />
+          </Field>
+        </Fields>
+      </Docs.Showcase>
+
       <Docs.Props
         title='Textarea'
         type='component'
@@ -30,6 +44,7 @@ export default function Main() {
             type: 'boolean',
             usage: 'To automatically increase height with content'
           },
+          { name: 'maxLength', type: 'number', usage: 'Maximum characters allowed' },
           { name: 'parentClassName', type: 'string', usage: 'To add class on wrapper div' },
           { name: 'parentStyle', type: 'object', usage: 'To add styling on wrapper div' }
         ]}

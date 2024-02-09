@@ -11,6 +11,19 @@ const [input, setInput] = useState('')
 `
 
 export const s2 = `
+const [input, setInput] = useState('')
+
+..
+
+<Input
+  value={input}
+  onValue={value => setInput(value)}
+  maxLength={50}
+  placeholder='Type something..'
+/>
+`
+
+export const s3 = `
 <Fields>
   <Field label='Text'>
     <Input type='text' placeholder='Enter mobile..' />
@@ -42,7 +55,7 @@ export const s2 = `
 </Fields>
 `
 
-export const s3 = `
+export const s4 = `
 const [inputType, setInputType] = useState('password')
 
 ..
