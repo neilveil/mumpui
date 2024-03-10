@@ -19,6 +19,7 @@
     padding: var(--mp-input-padding);
     border-radius: var(--mp-border-radius);
     color: inherit;
+    line-height: var(--mp-line-height);
 
     &::placeholder {
       color: var(--mp-c-font-light);
