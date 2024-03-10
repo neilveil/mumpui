@@ -8,10 +8,11 @@ declare global {
 }
 
 type props = React.HTMLAttributes<HTMLDivElement> & {
+  allowScripts?: boolean
   className?: string
 }
 
-export default function Main({ children = '', className = '', ...props }: props) {
+export default function Main({ children = '', allowScripts, className = '', ...props }: props) {
   className = `mumpui mp-md ${className || ''}`
 
   const ref: any = useRef()
@@ -20,6 +21,8 @@ export default function Main({ children = '', className = '', ...props }: props)
     if (!window.marked) return
 
     ref.current.innerHTML = window.marked.parse(children)
+
+    if (!allowScripts) ref.current.querySelectorAll('script').forEach((x: any) => x.remove())
 
     ref.current.querySelectorAll('iframe[data-youtube]').forEach((el: any) => {
       el.setAttribute('allowfullscreen', '')

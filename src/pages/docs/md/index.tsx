@@ -3,7 +3,10 @@ import { MD } from 'lib'
 import * as snippets from './snippets'
 
 export default function Main() {
-  const content = '# Title\n\nHello there!'
+  const content = `
+  # Title
+  Hello there!
+  `
 
   return (
     <Docs name='markdown'>
