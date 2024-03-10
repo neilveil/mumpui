@@ -2,10 +2,11 @@ import React from 'react'
 
 type props = React.HTMLAttributes<HTMLDivElement> & {
   empty?: boolean
+  label?: string
   className?: string
 }
 
-export default function Main({ empty, children, className = '', ...props }: props) {
+export default function Main({ empty, label = 'No data!', children, className = '', ...props }: props) {
   className = `mumpui mp-placeholder ${className}`
 
   return (
@@ -40,7 +41,7 @@ export default function Main({ empty, children, className = '', ...props }: prop
         </g>
       </svg>
 
-      {!empty && <div className='mp-placeholder-text'>{children ? children : 'No data!'}</div>}
+      {!empty && <div className='mp-placeholder-text'>{children ? children : label}</div>}
     </div>
   )
 }

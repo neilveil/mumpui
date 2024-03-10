@@ -5,7 +5,8 @@
 
   .mp-loader-text {
     font-size: 0.7rem;
-    margin-top: 0.5rem;
+    user-select: none;
+    padding: 0.5rem;
   }
 
   svg {
