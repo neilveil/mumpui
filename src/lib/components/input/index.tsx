@@ -62,6 +62,10 @@ export default function Main({
           setProgressVisible(false)
           if (props.onBlur) props.onBlur(e)
         }}
+        onWheel={(e: any) => {
+          e.target.blur()
+          if (props.onScroll) props.onScroll(e)
+        }}
       />
 
       {suffix && (
