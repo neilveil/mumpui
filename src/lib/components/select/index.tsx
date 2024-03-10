@@ -88,7 +88,10 @@ export default function Main({
       tabIndex={0}
       ref={ref}
       className={className}
-      onClick={() => !disabled && setOptionsVisible(!optionsVisible)}
+      onClick={() => {
+        if (!disabled) setOptionsVisible(!optionsVisible)
+        if (!optionsVisible) _setSearch('')
+      }}
     >
       <div className='mp-select-single'>{selectedOptions ? valueHOC(selectedOptions) : placeholder}</div>
 
@@ -112,7 +115,7 @@ export default function Main({
                     }
                   }}
                   className='mp-select-search'
-                  onBlur={() => _setSearch('')}
+                  // onBlur={() => _setSearch('')}
                   value={_search}
                   autoFocus
                 />
@@ -128,9 +131,9 @@ export default function Main({
             </div>
           )}
 
-          {options.map((x, i) => (
+          {options.map(x => (
             <div
-              key={i}
+              key={x.key}
               className='mp-select-option'
               onClick={e => {
                 e.stopPropagation()
