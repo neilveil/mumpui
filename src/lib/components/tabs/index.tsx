@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 
 type item = {
   key: string
-  label: string
+  label: any
   [key: string]: any
 }
 
@@ -10,11 +10,12 @@ type props = Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> & {
   items?: item[]
   active?: string
   onChange?: (active: string) => void
+  alt?: boolean
   className?: string
 }
 
-export default function Main({ items = [], active, onChange, className = '', ...props }: props) {
-  className = 'mumpui mp-tabs ' + className
+export default function Main({ items = [], active, onChange, alt, className = '', ...props }: props) {
+  className = 'mumpui mp-tabs ' + className + (alt ? ' mp-tabs-alt' : '')
 
   // If init is not used, then the page will automatically scroll to tabs component on load
   const init = useRef(false)

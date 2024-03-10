@@ -13,7 +13,7 @@
     padding: 0.5rem 1rem;
     white-space: pre;
     cursor: pointer;
-    border-bottom: 2px solid transparent;
+    border: 2px solid transparent;
     transition: var(--transition);
     position: relative;
     text-align: center;
@@ -26,18 +26,22 @@
 
   .mp-tab-active {
     color: var(--mp-c-primary);
-    border-color: var(--mp-c-primary);
+    border-bottom-color: var(--mp-c-primary);
     font-weight: var(--mp-fw-bold);
+  }
+}
 
-    // &::after {
-    //   position: absolute;
-    //   content: '';
-    //   bottom: 0;
-    //   left: 0;
-    //   height: 2px;
-    //   width: 100%;
-    //   // margin-left: 25%;
-    //   background: var(--mp-c-primary);
-    // }
+.mp-tabs-alt {
+  gap: 0.5rem;
+
+  & > div {
+    padding: 0.25rem 0.75rem;
+    border: 1px solid var(--c-font-light);
+    border-radius: var(--mp-border-radius);
+    font-size: 0.7rem;
+  }
+
+  .mp-tab-active {
+    border-color: var(--mp-c-primary);
   }
 }
