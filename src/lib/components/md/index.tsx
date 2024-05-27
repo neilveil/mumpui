@@ -79,7 +79,7 @@ export default function Main({ children = '', allowScripts, className = '', ...p
       const el = document.querySelector(scrollToTitleId)
       if (scrollToTitleId && el) el.scrollIntoView()
     }, 100)
-  }, [children])
+  }, [allowScripts, children])
 
   return <div {...props} className={className} ref={ref}></div>
 }
