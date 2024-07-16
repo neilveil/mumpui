@@ -57,7 +57,7 @@ const submit = () => {
 >
   <Form style={{ width: '100%', maxWidth: 400 }} onSubmit={submit}>
     <Field label='Name'>
-      <Input placeholder='Enter name..' autoFocus />
+      <Input placeholder='Enter name..' />
     </Field>
 
     <Field label='Salary'>
@@ -93,7 +93,7 @@ const submit = () => {
 >
   <Form style={{ width: '100%', maxWidth: 400 }} onSubmit={submit}>
     <Field label='Name'>
-      <Input defaultValue='Jon' placeholder='Enter name..' autoFocus />
+      <Input defaultValue='Jon' placeholder='Enter name..' />
     </Field>
 
     <Field label='Salary'>

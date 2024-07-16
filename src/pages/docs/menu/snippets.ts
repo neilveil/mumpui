@@ -8,7 +8,7 @@ const [selected, setSelected] = useState('home')
 
 <Menu
   active={selected}
-  onClick={selected => setSelected(selected)}
+  onChange={selected => setSelected(selected)}
   items={items}
   style={{ width: '100%', maxWidth: '12rem' }}
 />

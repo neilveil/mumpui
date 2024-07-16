@@ -26,7 +26,7 @@ export default function Main() {
     >
       <Form style={{ width: '100%', maxWidth: 400 }} onSubmit={submit}>
         <Field label='Name'>
-          <Input defaultValue='Jon' placeholder='Enter name..' autoFocus />
+          <Input defaultValue='Jon' placeholder='Enter name..' />
         </Field>
 
         <Field label='Salary'>

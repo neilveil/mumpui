@@ -25,7 +25,7 @@ const [value, setValue] = useState('india')
   checked={value}
   options={countries}
   onChange={value => setValue(value)}
-  className='mp-grid-2'
+  className='mp-grid-2' // 'mp-grid-1' | 'mp-grid-2' | 'mp-grid-3' | 'mp-grid-4'
 />
 
 ..

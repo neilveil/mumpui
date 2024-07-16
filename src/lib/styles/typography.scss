@@ -97,6 +97,7 @@ ol {
 
 li {
   padding-left: 0.25rem;
+  font-size: inherit;
 }
 
 ul {
@@ -125,6 +126,7 @@ table {
   td {
     color: var(--mp-c-font-dark);
     border: var(--mp-border-width) solid var(--mp-c-border);
+    line-height: var(--mp-line-height);
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
     white-space: nowrap;
@@ -133,6 +135,7 @@ table {
   th {
     font-weight: var(--mp-fw-bold);
     background: var(--mp-c-light);
+    line-height: var(--mp-line-height);
   }
 }
 
