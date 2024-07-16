@@ -73,6 +73,7 @@ export default function Main() {
           { name: 'onSearch', type: 'function', usage: 'For advanced search implementation' },
           { name: 'clearable', type: 'boolean', usage: '' },
           { name: 'disabled', type: 'boolean', usage: '' },
+          { name: 'optionsSpace', type: 'boolean', usage: 'Leave margin for dropdown options' },
           { name: 'valueHOC', type: 'function', usage: 'Selected value HOC to customize selected option' },
           { name: 'optionHOC', type: 'function', usage: 'Option HOC to customize option in list' }
         ]}

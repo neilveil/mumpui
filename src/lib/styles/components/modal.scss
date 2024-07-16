@@ -16,6 +16,7 @@ body:has(.mp-modal) {
 
   .mp-modal-box {
     background: var(--mp-c-bg);
+    border: var(--border);
     width: calc(100% - 2rem);
     max-width: 600px;
     border-radius: var(--mp-border-radius);
@@ -79,26 +80,26 @@ body:has(.mp-modal) {
   }
 }
 
-.mp-edit-modal {
-  padding: 0 1rem !important;
-  border-radius: 0 !important;
+// .mp-edit-modal {
+//   padding: 0 1rem !important;
+//   border-radius: 0 !important;
 
-  .mp-dashboard-header {
-    padding: 1rem 0;
+//   .mp-dashboard-header {
+//     padding: 1rem 0;
 
-    .mp-dashboard-title {
-      font-size: 1.125rem;
-    }
-  }
+//     .mp-dashboard-title {
+//       font-size: 1.125rem;
+//     }
+//   }
 
-  .mp-dashboard-content {
-    min-height: unset;
-  }
+//   .mp-dashboard-content {
+//     min-height: unset;
+//   }
 
-  .mp-dashboard-back {
-    display: none;
-  }
-}
+//   .mp-dashboard-back {
+//     display: none;
+//   }
+// }
 
 .noScrollbar::-webkit-scrollbar {
   display: none !important;

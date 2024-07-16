@@ -73,7 +73,7 @@ textarea:disabled,
   width: 100%;
   top: 100%;
   z-index: 100;
-  max-height: 30vh;
+  max-height: var(--mp-dropdown-height);
   overflow: auto;
   margin-top: 0.5rem;
   animation: mp-input-expanded-area-appear 300ms ease forwards;

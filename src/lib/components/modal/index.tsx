@@ -1,9 +1,11 @@
 import React, { useRef } from 'react'
 
+type button = JSX.Element | null
+
 type props = React.HTMLAttributes<HTMLDivElement> & {
   title?: string | JSX.Element
-  buttons?: JSX.Element | JSX.Element[]
-  leftButtons?: JSX.Element | JSX.Element[]
+  buttons?: button | button[]
+  leftButtons?: button | button[]
   visible?: boolean
   onClose?: () => void
   width?: number | string

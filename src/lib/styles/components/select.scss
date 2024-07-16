@@ -35,6 +35,10 @@
   }
 }
 
+.mp-options-space {
+  margin-bottom: var(--mp-dropdown-height);
+}
+
 .mp-select-chip {
   padding-left: 0.5rem;
   background: var(--mp-c-light);

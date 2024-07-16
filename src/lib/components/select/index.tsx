@@ -20,6 +20,7 @@ type props = Omit<React.InputHTMLAttributes<HTMLDivElement>, 'onChange' | 'value
   placeholder?: any
   clearable?: boolean
   disabled?: boolean
+  optionsSpace?: boolean
   valueHOC?: (option: option) => any
   optionHOC?: (option: option) => any
 }
@@ -33,6 +34,7 @@ export default function Main({
   placeholder,
   clearable = false,
   disabled = false,
+  optionsSpace = false,
   className = '',
   valueHOC = (value: option) => <>{value.label}</>,
   optionHOC = (option: option) => <>{option.label}</>,
@@ -41,7 +43,11 @@ export default function Main({
   const [optionsVisible, setOptionsVisible] = useState(false)
   const [_search, _setSearch] = useState('')
 
-  className = 'mumpui mp-select ' + (disabled ? 'mp-disabled ' : '') + (className || '')
+  className =
+    'mumpui mp-select ' +
+    (disabled ? 'mp-disabled ' : '') +
+    (optionsSpace ? 'mp-options-space ' : '') +
+    (className || '')
 
   const ref: React.Ref<any> = useRef(null)
 
