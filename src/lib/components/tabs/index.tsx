@@ -15,20 +15,23 @@ type props = Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> & {
 }
 
 export default function Main({ items = [], active, onChange, alt, className = '', ...props }: props) {
+  const ref: any = useRef()
   className = 'mumpui mp-tabs ' + className + (alt ? ' mp-tabs-alt' : '')
 
   // If init is not used, then the page will automatically scroll to tabs component on load
   const init = useRef(false)
 
   useEffect(() => {
-    const tabEl = document.querySelector(`div[data-mp-tab-key='${active}']`)
+    if (!ref.current) return
+
+    const tabEl: HTMLDivElement = ref.current.querySelector(`div[data-mp-tab-key='${active}']`)
 
     if (tabEl)
       setTimeout(() => {
         if (init.current)
           tabEl.scrollIntoView({
             behavior: 'smooth',
-            block: 'nearest',
+            block: 'center',
             inline: 'center'
           })
 
@@ -37,7 +40,7 @@ export default function Main({ items = [], active, onChange, alt, className = ''
   }, [active])
 
   return (
-    <div {...props} className={className}>
+    <div {...props} className={className} ref={_ref => (ref.current = _ref)}>
       {items.map(({ key, label }, i) => (
         <div
           key={i}
