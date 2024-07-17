@@ -187,7 +187,7 @@ export default {
   colorPicker: {
     ...metagraph.colorPicker,
     Component() {
-      const [color, setColor] = useState('#0A94FF')
+      const [color, setColor] = useState('0A94FF')
 
       return (
         <ColorPicker

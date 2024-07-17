@@ -34,6 +34,7 @@ export default function Main({ value = '', className = '', onValue, placeholder 
         type='color'
         value={'#' + value}
       />
+      <span className='mp-color-picker-hash'>#&nbsp;</span>
       <input className='mp-color-picker-text' type='text' onChange={onChange} value={value} placeholder={placeholder} />
     </div>
   )

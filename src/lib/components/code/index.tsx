@@ -15,8 +15,11 @@ export default function Main({ snippet = '', lang = 'text', className, ...props 
   const ref: any = useRef()
 
   useEffect(() => {
-    if (ref.current && snippet && lang && window.Prism)
-      ref.current.innerHTML = window.Prism.highlight(snippet.trim(), window.Prism.languages[lang], lang)
+    if (ref.current && snippet && lang && window.Prism) {
+      setTimeout(
+        () => (ref.current.innerHTML = window.Prism.highlight(snippet.trim(), window.Prism.languages[lang], lang))
+      )
+    }
   }, [lang, snippet])
 
   className = 'mumpui mp-code ' + (className || '')

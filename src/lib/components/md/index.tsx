@@ -8,11 +8,12 @@ declare global {
 }
 
 type props = React.HTMLAttributes<HTMLDivElement> & {
+  content?: string
   allowScripts?: boolean
   className?: string
 }
 
-export default function Main({ children = '', allowScripts, className = '', ...props }: props) {
+export default function Main({ content = '', children = '', allowScripts, className = '', ...props }: props) {
   className = `mumpui mp-md ${className || ''}`
 
   const ref: any = useRef()
@@ -20,7 +21,7 @@ export default function Main({ children = '', allowScripts, className = '', ...p
   useEffect(() => {
     if (!window.marked) return
 
-    ref.current.innerHTML = window.marked.parse(children)
+    ref.current.innerHTML = window.marked.parse(children || content || '')
 
     if (!allowScripts) ref.current.querySelectorAll('script').forEach((x: any) => x.remove())
 
@@ -79,7 +80,7 @@ export default function Main({ children = '', allowScripts, className = '', ...p
       const el = document.querySelector(scrollToTitleId)
       if (scrollToTitleId && el) el.scrollIntoView()
     }, 100)
-  }, [allowScripts, children])
+  }, [allowScripts, content, children])
 
   return <div {...props} className={className} ref={ref}></div>
 }
