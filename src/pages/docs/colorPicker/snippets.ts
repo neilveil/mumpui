@@ -1,5 +1,5 @@
 export const s1 = `
-const [color, setColor] = useState('#0A94FF')
+const [color, setColor] = useState('0A94FF')
 
 ..
 

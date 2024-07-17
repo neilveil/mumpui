@@ -4,7 +4,7 @@ import { useState } from 'react'
 import * as snippets from './snippets'
 
 export default function Main() {
-  const [color, setColor] = useState('#0A94FF')
+  const [color, setColor] = useState('0A94FF')
 
   return (
     <Docs name='colorPicker'>
@@ -15,7 +15,7 @@ export default function Main() {
               placeholder='Select color..'
               value={color}
               onValue={value => setColor(value)}
-              style={{ maxWidth: '15rem' }}
+              // style={{ maxWidth: '15rem' }}
             />
           </Field>
         </div>
@@ -31,16 +31,7 @@ export default function Main() {
         type='component'
         fields={[
           { name: '..', usage: 'All div element props' },
-          {
-            name: 'onValue',
-            type: 'function',
-            usage: (
-              <span>
-                Better alternative of <code>onChange</code> listener <code>{`(value) => void`}</code>. No need to do{' '}
-                <code>e.target.value</code>
-              </span>
-            )
-          }
+          { name: 'onValue', type: 'function' }
         ]}
       />
     </Docs>

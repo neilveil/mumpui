@@ -7,7 +7,7 @@ type props = React.HTMLAttributes<HTMLDivElement> & {
   style?: React.CSSProperties
 }
 
-export default function Main({ value = '', className = '', onValue, ...props }: props) {
+export default function Main({ value = '', className = '', onValue, placeholder = '', ...props }: props) {
   className = 'mumpui mp-color-picker ' + className
 
   const onChange = (e: any) => {
@@ -16,13 +16,11 @@ export default function Main({ value = '', className = '', onValue, ...props }: 
     value = value
       .split('')
       .filter((x: string) => x)
-      .filter((x: string) => !!/[#0-9a-f]/i.exec(x))
+      .filter((x: string) => !!/[0-9a-f]/i.exec(x))
       .join('')
       .toLowerCase()
 
-    if (!value) value = '#'
-
-    if (onValue) onValue(value.slice(0, 7))
+    if (onValue) onValue(value.slice(0, 6))
   }
 
   value = value.toLocaleLowerCase()
@@ -34,9 +32,9 @@ export default function Main({ value = '', className = '', onValue, ...props }: 
         style={{ width: '4rem' }}
         onChange={onChange}
         type='color'
-        value={value}
+        value={'#' + value}
       />
-      <input className='mp-color-picker-text' type='text' onChange={onChange} value={value} />
+      <input className='mp-color-picker-text' type='text' onChange={onChange} value={value} placeholder={placeholder} />
     </div>
   )
 }
