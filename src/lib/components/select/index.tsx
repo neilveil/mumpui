@@ -4,6 +4,7 @@ import { default as Multi } from './multi'
 import { default as Native } from './native'
 import { default as search } from './search'
 import Placeholder from '../placeholder'
+import Loader from '../loader'
 
 export type option = {
   key: string
@@ -21,6 +22,7 @@ type props = Omit<React.InputHTMLAttributes<HTMLDivElement>, 'onChange' | 'value
   clearable?: boolean
   disabled?: boolean
   optionsSpace?: boolean
+  loading?: boolean
   valueHOC?: (option: option) => any
   optionHOC?: (option: option) => any
 }
@@ -35,6 +37,7 @@ export default function Main({
   clearable = false,
   disabled = false,
   optionsSpace = false,
+  loading = false,
   className = '',
   valueHOC = (value: option) => <>{value.label}</>,
   optionHOC = (option: option) => <>{option.label}</>,
@@ -82,7 +85,7 @@ export default function Main({
     if (simpleSearch) _setSearch(search)
   }
 
-  const selectedOptions = options.find(x => x.key === value)
+  const selectedOption = options.find(x => x.key === value)
 
   if (value) options = options.filter(x => value !== x.key)
 
@@ -99,7 +102,7 @@ export default function Main({
         if (!optionsVisible) _setSearch('')
       }}
     >
-      <div className='mp-select-single'>{selectedOptions ? valueHOC(selectedOptions) : placeholder}</div>
+      <div className='mp-select-single'>{selectedOption ? valueHOC(selectedOption) : value ? '-' : placeholder}</div>
 
       {optionsVisible && (
         <div className='mp-input-expanded-area'>
@@ -137,20 +140,22 @@ export default function Main({
             </div>
           )}
 
-          {options.map(x => (
-            <div
-              key={x.key}
-              className='mp-select-option'
-              onClick={e => {
-                e.stopPropagation()
-                _onSelect(x)
-              }}
-            >
-              {optionHOC(x)}
-            </div>
-          ))}
-
-          {!options.length && (
+          {loading ? (
+            <Loader />
+          ) : options.length ? (
+            options.map(x => (
+              <div
+                key={x.key}
+                className='mp-select-option'
+                onClick={e => {
+                  e.stopPropagation()
+                  _onSelect(x)
+                }}
+              >
+                {optionHOC(x)}
+              </div>
+            ))
+          ) : (
             <div onClick={() => _setSearch('')} style={{ display: 'flex', justifyContent: 'center' }}>
               <Placeholder style={{ width: '50%', padding: '2rem 2rem' }} empty />
             </div>

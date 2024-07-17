@@ -67,7 +67,10 @@ export default function Main() {
           { name: 'simpleSearch', type: 'function', usage: 'Show search box in dropdown' },
           { name: 'onSearch', type: 'function', usage: 'For advanced search implementation' },
           { name: 'clearable', type: 'boolean', usage: '' },
-          { name: 'disabled', type: 'boolean', usage: '' }
+          { name: 'disabled', type: 'boolean', usage: '' },
+          { name: 'optionsSpace', type: 'boolean', usage: 'Leave margin for dropdown options' },
+          { name: 'loading', type: 'boolean', usage: 'To show loader in place of dropdown options' },
+          { name: 'optionHOC', type: 'function', usage: 'Option HOC to customize option in list' }
         ]}
       />
 
