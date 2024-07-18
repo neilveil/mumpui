@@ -34,25 +34,28 @@ $light-colors: (
 
   'bg': #ffffff,
   'border': #e8e8e8,
+  'light': #f8f8f8,
 
   'font-dark': #181818,
-  'font': #686868,
-  'font-light': #a8a8a8,
+  'font': #484848,
+  'font-light': #a0a0a0,
 
-  'red': #f53b3b,
-  'blue': #0095f8,
-  'green': #68bf32,
-  'yellow': #f9c900,
+  'red': #f82020,
   'orange': #ff8a1f,
-  'pink': #ff41a9,
-  'purple': #b932c5,
+  'yellow': #f9c900,
+  'lime': #a3da19,
+  'green': #68bf32,
+  'cyan': #1fd8d8,
+  'blue': #00b9ff,
+  'indigo': #0c71ff,
   'violet': #722ed1,
-  'indigo': #0065f3,
-  'light': #f8f8f8,
+  'purple': #b932c5,
+  'pink': #ff41a9,
 
   'link': #0077ff,
   'mark': #fef4d5,
   'code': #181818,
+
   'black': #000000,
   'white': #ffffff,
   'transparent': #00000000,
@@ -65,25 +68,28 @@ $dark-colors: (
 
   'bg': #000000,
   'border': #181818,
-
-  'font-dark': #d8d8d8,
-  'font': #989898,
-  'font-light': #585858,
-
-  'red': #7e0606,
-  'blue': #006aaf,
-  'green': #2c6709,
-  'yellow': #8e7300,
-  'orange': #994900,
-  'pink': #9b0055,
-  'purple': #800e8a,
-  'violet': #4a1595,
-  'indigo': #0e4cb8,
   'light': #080808,
 
-  'link': #0058b5,
-  'mark': #393217,
+  'font-dark': #e0e0e0,
+  'font': #b0b0b0,
+  'font-light': #585858,
+
+  'red': #bd2323,
+  'orange': #b86418,
+  'yellow': #b59611,
+  'lime': #8bba16,
+  'green': #428e15,
+  'cyan': #0acaca,
+  'blue': #3295fd,
+  'indigo': #0044ff,
+  'violet': #9850ff,
+  'purple': #c20ced,
+  'pink': #dd009a,
+
+  'link': #3295fd,
+  'mark': #564400,
   'code': #b8b8b8,
+
   'black': #ffffff,
   'white': #000000,
   'transparent': #00000000,
@@ -122,40 +128,20 @@ body[data-theme='dark'] {
   @each $key, $value in $dark-colors {
     // Define color
     --mp-c-#{$key}: #{$value};
-
-    // Font color class
-    .c-#{$key} {
-      color: var(--c-#{$key});
-    }
-
-    // Backgroun color class
-    .f-#{$key} {
-      background-color: var(--c-#{$key});
-    }
-
-    // Solid border class
-    .b-#{$key} {
-      border: var(--mp-border-width) solid var(--c-#{$key});
-    }
-
-    // Dashed border class
-    .d-#{$key} {
-      border: var(--mp-border-width) dashed var(--c-#{$key});
-    }
   }
 }
 
 // Independent of light/dark theme
-.c-black-i {
+.ci-black {
   color: black;
 }
-.f-black-i {
+.fi-black {
   background-color: black;
 }
-.c-white-i {
+.ci-white {
   color: white;
 }
-.f-white-i {
+.fi-white {
   background-color: white;
 }
 

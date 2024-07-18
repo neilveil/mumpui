@@ -22,7 +22,8 @@ export default function Main() {
       </Docs.Showcase>
 
       <Docs.Info>
-        Primary color must be set for both light and dark theme, while the remaining colors can be used as default.
+        Primary colors must be set for both light and dark theme as shown above, while the remaining colors can be used
+        as default.
       </Docs.Info>
 
       <Docs.Showcase title='3 Font colors' code={snippets.s2} lang='css'>
@@ -49,7 +50,7 @@ export default function Main() {
         </p>
       </Docs.Showcase>
 
-      <Docs.Showcase title='10 palette colors' code={snippets.s3} lang='css'>
+      <Docs.Showcase title='Palette colors' code={snippets.s3} lang='css'>
         <div className={s.palette}>
           {colors
             .filter(x => x.type === 'palette')
@@ -57,12 +58,25 @@ export default function Main() {
               <ColorPatch key={i} name={name} color={color} />
             ))}
         </div>
+
+        <div className={s.coloredLines}>
+          {colors
+            .filter(x => x.type === 'palette')
+            .map(({ name, color }, i) => (
+              <div key={i} style={{ color: `var(${color})` }}>
+                This is {name} color font.
+              </div>
+            ))}
+        </div>
       </Docs.Showcase>
 
-      <Docs.Showcase title='Background & border color' code={snippets.s4} lang='css'>
+      <Docs.Showcase title='UI colors' code={snippets.s4} lang='css'>
         <div className={s.palette}>
-          <ColorPatch name='Background' color='--mp-c-bg' />
-          <ColorPatch name='Border' color='--mp-c-border' />
+          {colors
+            .filter(x => x.type === 'ui')
+            .map(({ name, color }, i) => (
+              <ColorPatch key={i} name={name} color={color} />
+            ))}
         </div>
       </Docs.Showcase>
 
@@ -142,12 +156,24 @@ const colors = [
     name: 'Bg',
     color: '--mp-c-bg',
     usage: 'Background color',
-    type: 'more'
+    type: 'ui'
+  },
+  {
+    name: 'Light',
+    color: '--mp-c-light',
+    usage: 'Hover / Card',
+    type: 'ui'
   },
   {
     name: 'Border',
     color: '--mp-c-border',
     usage: 'Border color',
+    type: 'ui'
+  },
+  {
+    name: 'Transparent',
+    color: '--mp-c-transparent',
+    usage: 'Transparent',
     type: 'more'
   },
   {
@@ -169,39 +195,9 @@ const colors = [
     type: 'font'
   },
   {
-    name: 'Green',
-    color: '--mp-c-green',
-    usage: 'Success / Competition / Okay / Done',
-    type: 'palette'
-  },
-  {
     name: 'Red',
     color: '--mp-c-red',
     usage: 'Danger / Error',
-    type: 'palette'
-  },
-  {
-    name: 'Blue',
-    color: '--mp-c-blue',
-    usage: 'Info / Notify / Wait',
-    type: 'palette'
-  },
-  {
-    name: 'Yellow',
-    color: '--mp-c-yellow',
-    usage: 'Warn / Delay / Slow / Wait',
-    type: 'palette'
-  },
-  {
-    name: 'Light',
-    color: '--mp-c-light',
-    usage: 'Hover / Card',
-    type: 'palette'
-  },
-  {
-    name: 'Indigo',
-    color: '--mp-c-indigo',
-    usage: 'Status / Label',
     type: 'palette'
   },
   {
@@ -211,14 +207,38 @@ const colors = [
     type: 'palette'
   },
   {
-    name: 'Pink',
-    color: '--mp-c-pink',
+    name: 'Yellow',
+    color: '--mp-c-yellow',
+    usage: 'Warn / Delay / Slow / Wait',
+    type: 'palette'
+  },
+  {
+    name: 'Lime',
+    color: '--mp-c-lime',
     usage: 'Status / Label',
     type: 'palette'
   },
   {
-    name: 'Purple',
-    color: '--mp-c-purple',
+    name: 'Green',
+    color: '--mp-c-green',
+    usage: 'Success / Competition / Okay / Done',
+    type: 'palette'
+  },
+  {
+    name: 'Cyan',
+    color: '--mp-c-cyan',
+    usage: 'Status / Label',
+    type: 'palette'
+  },
+  {
+    name: 'Blue',
+    color: '--mp-c-blue',
+    usage: 'Info / Notify / Wait',
+    type: 'palette'
+  },
+  {
+    name: 'Indigo',
+    color: '--mp-c-indigo',
     usage: 'Status / Label',
     type: 'palette'
   },
@@ -229,28 +249,34 @@ const colors = [
     type: 'palette'
   },
   {
+    name: 'Purple',
+    color: '--mp-c-purple',
+    usage: 'Status / Label',
+    type: 'palette'
+  },
+  {
+    name: 'Pink',
+    color: '--mp-c-pink',
+    usage: 'Status / Label',
+    type: 'palette'
+  },
+  {
     name: 'Link',
     color: '--mp-c-link',
     usage: 'Anchor tag',
-    type: 'Links'
+    type: 'tag'
   },
   {
     name: 'Mark',
     color: '--mp-c-mark',
     usage: 'Mark tag',
-    type: 'more'
+    type: 'tag'
   },
   {
     name: 'Code',
     color: '--mp-c-code',
     usage: 'Code tag',
-    type: 'more'
-  },
-  {
-    name: 'Transparent',
-    color: '--mp-c-transparent',
-    usage: 'Transparent',
-    type: 'more'
+    type: 'tag'
   }
 ]
 

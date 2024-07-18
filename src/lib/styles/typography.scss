@@ -4,7 +4,6 @@ h3,
 h4,
 h5,
 h6,
-p,
 b,
 i,
 strong,
@@ -163,4 +162,11 @@ strike {
     background-color: var(--mp-c-red);
     z-index: -1;
   }
+}
+
+.mp-content {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  padding: 1rem;
 }

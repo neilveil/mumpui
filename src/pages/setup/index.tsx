@@ -15,9 +15,15 @@ export default function Main() {
 
       <Code snippet={snippets.init} lang='jsx' />
 
-      <h2>Setp III - Import theme</h2>
+      <h2>Setp III - Setup theme</h2>
+
+      <Docs.Info>Import styles</Docs.Info>
 
       <Code snippet={snippets.theme} lang='jsx' />
+
+      <Docs.Info>Add MumpUI class</Docs.Info>
+
+      <Code snippet={snippets.body} lang='html' />
 
       <br />
 
