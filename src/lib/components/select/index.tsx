@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 
+import Loader from '../loader'
+import Placeholder from '../placeholder'
 import { default as Multi } from './multi'
 import { default as Native } from './native'
 import { default as search } from './search'
-import Placeholder from '../placeholder'
-import Loader from '../loader'
 
 export type option = {
   key: string

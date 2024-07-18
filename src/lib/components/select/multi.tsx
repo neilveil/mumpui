@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { type option } from '.'
-import search from './search'
+import Loader from '../loader'
 import Placeholder from '../placeholder'
-import { Loader } from 'lib'
+import search from './search'
 
 type multiple = Omit<React.InputHTMLAttributes<HTMLDivElement>, 'onChange' | 'value'> & {
   options?: option[]
