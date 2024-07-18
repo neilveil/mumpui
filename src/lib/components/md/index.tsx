@@ -87,8 +87,9 @@ export default function Main({ content = '', children = '', allowScripts, classN
 
 Main.fetch = async (url: string, json?: boolean) => {
   const request = await fetch(url)
+
   if (json) return await request.json()
-  else await request.text()
+  else return await request.text()
 }
 
 Main.parse = (content: string, delimeter: string = '<!-- meta-break -->') => {

@@ -79,6 +79,16 @@ export default {
     related: ['typography', 'code', 'theme'],
     img: ''
   },
+  markdownDemo: {
+    type: '',
+    name: 'Markdown Demo',
+    description:
+      'Effortlessly render Markdown content as HTML, complete with proper typographic styling, enabling seamless integration of rich text elements.',
+    link: '/markdown',
+    keywords: ['markdown', 'rendering', 'md-to-html', 'rich-text'],
+    related: ['typography', 'code', 'theme'],
+    img: ''
+  },
   code: {
     type: 'Component',
     name: 'Code',

@@ -21,6 +21,12 @@ export default function Main() {
         <MD content={content} />
       </Docs.Showcase>
 
+      <Docs.Info>
+        <a target='_blank' href='/mumpui/markdown'>
+          Demo →
+        </a>
+      </Docs.Info>
+
       <Docs.Props
         title='Markdown'
         type='component'

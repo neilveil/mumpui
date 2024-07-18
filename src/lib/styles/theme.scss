@@ -1,6 +1,6 @@
 // Theme
 body {
-  --mp-border-radius: 8px; // Elements border radius
+  --mp-border-radius: 6px; // Elements border radius
   --mp-border-width: 1px; // Elements border width
   --mp-c-overlay-bg: #0004; // Modal & confirm dialog background color
   --mp-pop-up-shadow: 0 8px 16px 0px #00000010; // Tooltip, select dropdown & search dropdown components shadow
@@ -15,7 +15,7 @@ body {
 }
 
 body[data-theme='dark'] {
-  --mp-border-radius: 8px; // Elements border radius
+  --mp-border-radius: 6px; // Elements border radius
   --mp-border-width: 1px; // Elements border width
   --mp-c-overlay-bg: #000b; // Modal & confirm dialog background color
   --mp-pop-up-shadow: 0 8px 16px 8px #00000088; // Tooltip, select dropdown & search dropdown components shadow

@@ -1,6 +1,7 @@
 import home from './home'
 import setup from './setup'
 import typography from './typography'
+import markdown from './markdown'
 
 import colorPicker from './docs/colorPicker'
 import docs_button from './docs/button'
@@ -60,6 +61,7 @@ const routes: route[] = [
   { path: '/', component: home },
   { path: '/setup', component: setup },
   { path: '/typography', component: typography },
+  { path: '/markdown', component: markdown },
 
   // Components
   { path: '/docs/button', component: docs_button },

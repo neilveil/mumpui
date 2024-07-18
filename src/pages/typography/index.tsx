@@ -4,7 +4,7 @@ export default function Main() {
   return (
     <Docs name='typography'>
       <Docs.Showcase>
-        <div className='mumpui mp-md'>
+        <div className='mumpui'>
           <h1>MumpUI / Typography</h1>
           <p>
             MumpUI comes prepacked with typography styling, making it ideal for rendering content, blogs, stories and

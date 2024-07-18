@@ -1,3 +1,5 @@
+$spacing: 1rem;
+
 .mp-md {
   width: 100%;
 
@@ -8,5 +10,67 @@
   img {
     width: 100%;
     margin: 2rem 0;
+  }
+
+  .caption {
+    text-align: center;
+    font-size: 0.8rem;
+    max-width: 75%;
+    margin: auto;
+    margin-top: -2rem;
+    text-align: center;
+    margin-bottom: calc(2 * $spacing);
+  }
+
+  .break {
+    margin: 2 * $spacing 0;
+    padding-top: 1px;
+    font-size: 1.5rem;
+    text-align: center;
+    letter-spacing: 1rem;
+    user-select: none;
+  }
+
+  .slider {
+    display: flex;
+    overflow: auto;
+    gap: $spacing;
+    margin: calc(2 * $spacing) 0;
+
+    & > img {
+      margin: 0;
+      margin-bottom: $spacing;
+      width: calc(100% - 2 * $spacing);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .slider {
+      display: flex;
+      overflow: auto;
+      gap: $spacing;
+    }
+
+    .slider::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .x2 {
+    img {
+      width: calc(50% - 2 * $spacing);
+    }
+  }
+
+  .x3 {
+    img {
+      width: calc(33% - 2 * $spacing);
+    }
+  }
+
+  .x4 {
+    img {
+      width: calc(25% - 2 * $spacing);
+    }
   }
 }
