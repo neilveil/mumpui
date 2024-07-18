@@ -22,7 +22,27 @@
 }
 
 .coloredLines {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
+  line-height: var(--mp-line-height);
+  font-size: 0.8rem;
+}
+
+.coloredButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+
+  & > div {
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--mp-border-radius);
+
+    &:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+  }
+  margin-top: 1.5rem;
   line-height: var(--mp-line-height);
   font-size: 0.8rem;
 }

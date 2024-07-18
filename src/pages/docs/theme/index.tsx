@@ -68,6 +68,16 @@ export default function Main() {
               </div>
             ))}
         </div>
+
+        <div className={s.coloredButtons}>
+          {colors
+            .filter(x => x.type === 'palette')
+            .map(({ name, color }, i) => (
+              <div key={i} style={{ backgroundColor: `var(${color})`, color: '#fff' }}>
+                {name}
+              </div>
+            ))}
+        </div>
       </Docs.Showcase>
 
       <Docs.Showcase title='UI colors' code={snippets.s4} lang='css'>
